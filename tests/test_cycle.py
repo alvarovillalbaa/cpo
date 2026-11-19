@@ -1,6 +1,6 @@
 import unittest
 
-from cpo import Observation, ProposalPair, Row, classify_json_reply, run_cycle
+from cpo import Observation, ProposalBatch, ProposalPair, Row, classify_json_reply, run_cycle, search
 
 
 class CycleTests(unittest.TestCase):
@@ -83,3 +83,19 @@ class CycleTests(unittest.TestCase):
         self.assertEqual(classify_json_reply('{"release":true}', {"release": True}), "pass")
         self.assertEqual(classify_json_reply('{"release":1}', {"release": True}), "wrong_types")
         self.assertEqual(classify_json_reply('{"release":false,"release":true}', {"release": True}), "invalid_json")
+
+    def test_exhausted_parent_yields_to_complementary_candidate(self):
+        train = [Row("train", "routing")]
+        validation = [Row("alpha", "routing"), Row("beta", "routing")]
+        passed = {"a": {"alpha"}, "beta repair": {"beta"}, "complete": {"alpha", "beta"}}
+        parents = []
+
+        def propose(parent, *_):
+            parents.append(parent)
+            next_prompt = "beta repair" if parent == "a" else "complete"
+            return ProposalBatch((next_prompt,), exhausted=True)
+
+        result = search("a", train, validation, lambda prompt, row: Observation(row.id in passed[prompt], {}),
+                        propose, metric_limit=15, rounds=4, train_per_round=1, adaptive=True)
+        self.assertEqual(parents, ["a", "beta repair"])
+        self.assertEqual(result.prompt, "complete")

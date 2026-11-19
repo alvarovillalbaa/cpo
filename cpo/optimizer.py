@@ -28,6 +28,14 @@ class ProposalPair:
 
 
 @dataclass(frozen=True)
+class ProposalBatch:
+    """Ordered prompts from a source that can declare a parent's queue exhausted."""
+
+    prompts: tuple[str, ...]
+    exhausted: bool = False
+
+
+@dataclass(frozen=True)
 class Candidate:
     prompt: str
     passed: frozenset
@@ -93,6 +101,7 @@ def search(initial, train, validation, evaluate, propose, *, metric_limit, round
     protected = archive[0].passed & critical
     events.append({'kind': 'validated', 'prompt': initial, 'passed': sorted(archive[0].passed)})
     attempted = {initial}
+    exhausted = set()
     cursor = 0
     reflections = 0
     successful_branch = 0
@@ -104,7 +113,9 @@ def search(initial, train, validation, evaluate, propose, *, metric_limit, round
         probe_count = min(train_per_round, len(probes), available - len(validation))
         if probe_count < 1:
             break
-        parent = archive[0]
+        parent = next((candidate for candidate in archive if candidate.prompt not in exhausted), None)
+        if parent is None:
+            break
         probes_this_round = [probes[index % len(probes)] for index in range(cursor, cursor + probe_count)]
         cursor += probe_count
         feedback = [(row, observe(parent.prompt, row)) for row in probes_this_round]
@@ -113,6 +124,10 @@ def search(initial, train, validation, evaluate, propose, *, metric_limit, round
         options = propose(parent.prompt, feedback, history, proposals_per_round)
         if isinstance(options, ProposalPair):
             options = (options.rewrite, options.repair)
+        elif isinstance(options, ProposalBatch):
+            if options.exhausted:
+                exhausted.add(parent.prompt)
+            options = options.prompts
         reflections += 1
         round_limit = min(metric_limit, len(cache) + max(len(validation),
                           (metric_limit - len(cache)) // (rounds - round_index)))
