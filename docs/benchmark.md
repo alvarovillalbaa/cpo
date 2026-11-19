@@ -1,0 +1,9 @@
+# Benchmark protocol
+
+The frontier benchmark compares CPO’s adaptive search, its original frontier ablation, and official GEPA 0.1.4 in sequential and two-proposal batched modes. Each arm has the same initial prompt, diagnostic vocabulary, evaluator, search rows, seed, 72-evaluation ceiling, and four-reflection ceiling. The deterministic callbacks execute policy patches against synthetic cases. Search and evaluation counts include physical callback invocations. Qualification is separate and uses a disjoint set of generated rows.
+
+The `v2` comparison uses the original synthetic generator. The `cpo-v1` comparison adds reverse precedence, a holdout with more legacy behavior, and cases requiring all three clauses. Each profile uses eight seeds and 36 holdout rows per seed. The acceptance rule requires zero matched critical losses in each profile. Each profile must also either add exact passes at equal or lower search cost, or tie exact passes with at least 10% fewer search calls. CPO must clear the rule against both stock GEPA variants to pass. The original frontier is reported as a separate ablation.
+
+The benchmark isolates search scheduling and selection in a narrow training and validation environment. Each row is held out by identity, and repeated rule patterns may occur across cohorts. The comparison estimates no provider cost or latency. The separate live research gate requires fresh proposal generation and independent qualification of the selected prompt against the same controls.
+
+The result JSON includes generator and optimizer source hashes, a per-trial dataset hash, exact pass outcomes, evaluation logs, matched critical losses, and the per-profile decision. To compare another optimizer, run it through the same callback boundaries and retain all profile outcomes, including failures.

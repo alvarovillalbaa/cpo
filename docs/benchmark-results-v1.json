@@ -1,0 +1,190 @@
+{
+  "cpo-v1": {
+    "comparisonsByProfile": {
+      "frontier": {
+        "legacy-heavy": {
+          "baselineSearchCalls": 447,
+          "cpoSearchCalls": 334,
+          "exactPassDelta": 56,
+          "matchedCriticalLosses": 0
+        },
+        "multi-clause": {
+          "baselineSearchCalls": 425,
+          "cpoSearchCalls": 281,
+          "exactPassDelta": 24,
+          "matchedCriticalLosses": 0
+        },
+        "reverse-precedence": {
+          "baselineSearchCalls": 447,
+          "cpoSearchCalls": 359,
+          "exactPassDelta": 88,
+          "matchedCriticalLosses": 0
+        }
+      },
+      "gepa": {
+        "legacy-heavy": {
+          "baselineSearchCalls": 465,
+          "cpoSearchCalls": 334,
+          "exactPassDelta": 121,
+          "matchedCriticalLosses": 8
+        },
+        "multi-clause": {
+          "baselineSearchCalls": 455,
+          "cpoSearchCalls": 281,
+          "exactPassDelta": 62,
+          "matchedCriticalLosses": 6
+        },
+        "reverse-precedence": {
+          "baselineSearchCalls": 455,
+          "cpoSearchCalls": 359,
+          "exactPassDelta": 117,
+          "matchedCriticalLosses": 6
+        }
+      },
+      "gepa-batched": {
+        "legacy-heavy": {
+          "baselineSearchCalls": 411,
+          "cpoSearchCalls": 334,
+          "exactPassDelta": -25,
+          "matchedCriticalLosses": 28
+        },
+        "multi-clause": {
+          "baselineSearchCalls": 388,
+          "cpoSearchCalls": 281,
+          "exactPassDelta": 1,
+          "matchedCriticalLosses": 10
+        },
+        "reverse-precedence": {
+          "baselineSearchCalls": 411,
+          "cpoSearchCalls": 359,
+          "exactPassDelta": 2,
+          "matchedCriticalLosses": 12
+        }
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "maxMetricCalls": 72,
+    "maxReflections": 4,
+    "protocol": "frontier-synthetic-cpo-v1",
+    "qualifiesAgainstStockGEPA": false,
+    "sourceSha256": {
+      "benchmarks/frontier.py": "825c82d90aad8ef2c37526e5275c86d283f6547dfeb04f711cfa7ed529f66438",
+      "cpo/_contract.py": "c3761ec58ca375bcc3be4b0a7edba3169835215b6c37ee9e25caba799bc11806",
+      "cpo/optimizer.py": "fab3e9c51a2a2e08c1d8c9700e47aaf69ba811b4738d3a045483a4e13e73a98f"
+    },
+    "summary": {
+      "frontier": {
+        "tradeoff": 1,
+        "win": 23
+      },
+      "gepa": {
+        "loss": 3,
+        "tradeoff": 2,
+        "win": 19
+      },
+      "gepa-batched": {
+        "loss": 7,
+        "tie": 2,
+        "tradeoff": 1,
+        "win": 14
+      }
+    },
+    "syntheticGate": {
+      "frontier": true,
+      "gepa": false,
+      "gepa-batched": false
+    }
+  },
+  "v2": {
+    "comparisonsByProfile": {
+      "frontier": {
+        "additive": {
+          "baselineSearchCalls": 248,
+          "cpoSearchCalls": 232,
+          "exactPassDelta": 0,
+          "matchedCriticalLosses": 0
+        },
+        "interaction": {
+          "baselineSearchCalls": 446,
+          "cpoSearchCalls": 230,
+          "exactPassDelta": 6,
+          "matchedCriticalLosses": 0
+        },
+        "transfer": {
+          "baselineSearchCalls": 446,
+          "cpoSearchCalls": 230,
+          "exactPassDelta": 8,
+          "matchedCriticalLosses": 0
+        }
+      },
+      "gepa": {
+        "additive": {
+          "baselineSearchCalls": 332,
+          "cpoSearchCalls": 232,
+          "exactPassDelta": 0,
+          "matchedCriticalLosses": 0
+        },
+        "interaction": {
+          "baselineSearchCalls": 425,
+          "cpoSearchCalls": 230,
+          "exactPassDelta": 54,
+          "matchedCriticalLosses": 0
+        },
+        "transfer": {
+          "baselineSearchCalls": 425,
+          "cpoSearchCalls": 230,
+          "exactPassDelta": 83,
+          "matchedCriticalLosses": 0
+        }
+      },
+      "gepa-batched": {
+        "additive": {
+          "baselineSearchCalls": 379,
+          "cpoSearchCalls": 232,
+          "exactPassDelta": 28,
+          "matchedCriticalLosses": 0
+        },
+        "interaction": {
+          "baselineSearchCalls": 407,
+          "cpoSearchCalls": 230,
+          "exactPassDelta": 35,
+          "matchedCriticalLosses": 0
+        },
+        "transfer": {
+          "baselineSearchCalls": 407,
+          "cpoSearchCalls": 230,
+          "exactPassDelta": 35,
+          "matchedCriticalLosses": 0
+        }
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "maxMetricCalls": 72,
+    "maxReflections": 4,
+    "protocol": "frontier-synthetic-v2",
+    "qualifiesAgainstStockGEPA": true,
+    "sourceSha256": {
+      "benchmarks/frontier.py": "825c82d90aad8ef2c37526e5275c86d283f6547dfeb04f711cfa7ed529f66438",
+      "cpo/_contract.py": "c3761ec58ca375bcc3be4b0a7edba3169835215b6c37ee9e25caba799bc11806",
+      "cpo/optimizer.py": "fab3e9c51a2a2e08c1d8c9700e47aaf69ba811b4738d3a045483a4e13e73a98f"
+    },
+    "summary": {
+      "frontier": {
+        "tie": 4,
+        "win": 20
+      },
+      "gepa": {
+        "win": 24
+      },
+      "gepa-batched": {
+        "tradeoff": 2,
+        "win": 22
+      }
+    },
+    "syntheticGate": {
+      "frontier": false,
+      "gepa": true,
+      "gepa-batched": true
+    }
+  }
+}
