@@ -23,6 +23,8 @@ The gate requires preserved holdout totals and lookup cost, with either more exa
 
 The test measures search on public, fixed outcomes. Each subject’s holdout rows recur across seeds, and the source supplies templates in advance. The replay leaves fresh proposal quality and provider cost unmeasured.
 
+The follow-up compared extra probes on tied candidates with two ways of reusing validation probes. It then froze the best exploratory trade-off before loading four new recorded panels. [Validation witness comparison](prompteval-witnesses.md)
+
 ## Reproduce
 
 ```sh

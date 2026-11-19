@@ -1,0 +1,1883 @@
+{
+  "confirmationDesign": {
+    "baselineSha256": "3f467c074f22b3d96d5ef0654fc9d9ba7c588363b51cc8ec62744a38a24b452c",
+    "candidate": "cpo-weighted-witnesses",
+    "controls": [
+      "gepa-sequential",
+      "gepa-batched"
+    ],
+    "gate": "per panel, preserve exact passes and calls, gain or ten percent savings on tie",
+    "holdoutPolicy": "same fixed 30 percent per subject, excluded from all search",
+    "lookupLimit": 171,
+    "models": [
+      "meta_llama_llama_3_8b",
+      "mistralai_mistral_7b_instruct_v0_2"
+    ],
+    "phase": "confirmation",
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "selectionPolicySha256": "8adee5268ea9eb1f6bcf09d3e9934d682a80cfa55edcf5b1042877953a13e078",
+    "subjects": [
+      "high_school_statistics",
+      "high_school_european_history"
+    ]
+  },
+  "phases": {
+    "confirmation": {
+      "fullReportSha256": "e671dc3ce149e8d851c62ab49dde53f6cce5f036c50907339e93d7d1cc9d8856",
+      "panels": {
+        "high_school_european_history/meta_llama_llama_3_8b": {
+          "comparisons": {
+            "cpo-weighted-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 16,
+                "passDelta": -1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 1
+              },
+              "gepa-batched": {
+                "lookupDelta": -1049,
+                "passDelta": -7,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 6
+              },
+              "gepa-sequential": {
+                "lookupDelta": -1192,
+                "passDelta": 0,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 3
+              },
+              "successive-halving": {
+                "lookupDelta": -2575,
+                "passDelta": -4,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 9
+              },
+              "uniform": {
+                "lookupDelta": -3727,
+                "passDelta": -7,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              }
+            }
+          },
+          "totals": {
+            "cpo-certificate": {
+              "evaluations": 4012,
+              "holdoutPasses": 1119
+            },
+            "cpo-exact-pool": {
+              "evaluations": 4041,
+              "holdoutPasses": 1114
+            },
+            "cpo-minibatch": {
+              "evaluations": 1665,
+              "holdoutPasses": 1116
+            },
+            "cpo-precomputed": {
+              "evaluations": 5009,
+              "holdoutPasses": 1110
+            },
+            "cpo-weighted-witnesses": {
+              "evaluations": 1681,
+              "holdoutPasses": 1115
+            },
+            "gepa-batched": {
+              "evaluations": 2730,
+              "holdoutPasses": 1122
+            },
+            "gepa-sequential": {
+              "evaluations": 2873,
+              "holdoutPasses": 1115
+            },
+            "successive-halving": {
+              "evaluations": 4256,
+              "holdoutPasses": 1119
+            },
+            "uniform": {
+              "evaluations": 5408,
+              "holdoutPasses": 1122
+            }
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_instruct_v0_2": {
+          "comparisons": {
+            "cpo-weighted-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 146,
+                "passDelta": 12,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 2
+              },
+              "gepa-batched": {
+                "lookupDelta": -565,
+                "passDelta": 9,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 4
+              },
+              "gepa-sequential": {
+                "lookupDelta": -650,
+                "passDelta": 13,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 3
+              },
+              "successive-halving": {
+                "lookupDelta": -2455,
+                "passDelta": -8,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 10
+              },
+              "uniform": {
+                "lookupDelta": -3607,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 6
+              }
+            }
+          },
+          "totals": {
+            "cpo-certificate": {
+              "evaluations": 4023,
+              "holdoutPasses": 1127
+            },
+            "cpo-exact-pool": {
+              "evaluations": 3952,
+              "holdoutPasses": 1126
+            },
+            "cpo-minibatch": {
+              "evaluations": 1655,
+              "holdoutPasses": 1112
+            },
+            "cpo-precomputed": {
+              "evaluations": 4838,
+              "holdoutPasses": 1126
+            },
+            "cpo-weighted-witnesses": {
+              "evaluations": 1801,
+              "holdoutPasses": 1124
+            },
+            "gepa-batched": {
+              "evaluations": 2366,
+              "holdoutPasses": 1115
+            },
+            "gepa-sequential": {
+              "evaluations": 2451,
+              "holdoutPasses": 1111
+            },
+            "successive-halving": {
+              "evaluations": 4256,
+              "holdoutPasses": 1132
+            },
+            "uniform": {
+              "evaluations": 5408,
+              "holdoutPasses": 1127
+            }
+          }
+        },
+        "high_school_statistics/meta_llama_llama_3_8b": {
+          "comparisons": {
+            "cpo-weighted-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 49,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-batched": {
+                "lookupDelta": -1059,
+                "passDelta": 3,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 5
+              },
+              "gepa-sequential": {
+                "lookupDelta": -1146,
+                "passDelta": -14,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 9
+              },
+              "successive-halving": {
+                "lookupDelta": -2495,
+                "passDelta": 8,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 10
+              },
+              "uniform": {
+                "lookupDelta": -3647,
+                "passDelta": 13,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 6
+              }
+            }
+          },
+          "totals": {
+            "cpo-certificate": {
+              "evaluations": 4075,
+              "holdoutPasses": 1129
+            },
+            "cpo-exact-pool": {
+              "evaluations": 5099,
+              "holdoutPasses": 1129
+            },
+            "cpo-minibatch": {
+              "evaluations": 1712,
+              "holdoutPasses": 1133
+            },
+            "cpo-precomputed": {
+              "evaluations": 5109,
+              "holdoutPasses": 1120
+            },
+            "cpo-weighted-witnesses": {
+              "evaluations": 1761,
+              "holdoutPasses": 1130
+            },
+            "gepa-batched": {
+              "evaluations": 2820,
+              "holdoutPasses": 1127
+            },
+            "gepa-sequential": {
+              "evaluations": 2907,
+              "holdoutPasses": 1144
+            },
+            "successive-halving": {
+              "evaluations": 4256,
+              "holdoutPasses": 1122
+            },
+            "uniform": {
+              "evaluations": 5408,
+              "holdoutPasses": 1117
+            }
+          }
+        },
+        "high_school_statistics/mistralai_mistral_7b_instruct_v0_2": {
+          "comparisons": {
+            "cpo-weighted-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": -26,
+                "passDelta": 5,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-batched": {
+                "lookupDelta": -1087,
+                "passDelta": -24,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 10
+              },
+              "gepa-sequential": {
+                "lookupDelta": -1268,
+                "passDelta": -18,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              },
+              "successive-halving": {
+                "lookupDelta": -2571,
+                "passDelta": -32,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 13
+              },
+              "uniform": {
+                "lookupDelta": -3723,
+                "passDelta": -20,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 12
+              }
+            }
+          },
+          "totals": {
+            "cpo-certificate": {
+              "evaluations": 4093,
+              "holdoutPasses": 774
+            },
+            "cpo-exact-pool": {
+              "evaluations": 5292,
+              "holdoutPasses": 775
+            },
+            "cpo-minibatch": {
+              "evaluations": 1711,
+              "holdoutPasses": 745
+            },
+            "cpo-precomputed": {
+              "evaluations": 5213,
+              "holdoutPasses": 771
+            },
+            "cpo-weighted-witnesses": {
+              "evaluations": 1685,
+              "holdoutPasses": 750
+            },
+            "gepa-batched": {
+              "evaluations": 2772,
+              "holdoutPasses": 774
+            },
+            "gepa-sequential": {
+              "evaluations": 2953,
+              "holdoutPasses": 768
+            },
+            "successive-halving": {
+              "evaluations": 4256,
+              "holdoutPasses": 782
+            },
+            "uniform": {
+              "evaluations": 5408,
+              "holdoutPasses": 770
+            }
+          }
+        }
+      },
+      "plan": {
+        "arms": [
+          "cpo-precomputed",
+          "cpo-exact-pool",
+          "cpo-certificate",
+          "cpo-minibatch",
+          "gepa-sequential",
+          "gepa-batched",
+          "uniform",
+          "successive-halving",
+          "cpo-weighted-witnesses"
+        ],
+        "callAccounting": "Distinct candidate-case lookups. The common proposal stream is supplied.",
+        "challengers": [
+          "cpo-weighted-witnesses"
+        ],
+        "corpusSha256": "fc1b47c8fb5a0f4d067457e7bbf48ea6e51c3cf55c8c408d74f942e2e8833e58",
+        "delivery": "recorded-outcome-replay",
+        "evaluationLookupLimit": 171,
+        "gepaVersion": "0.1.4",
+        "holdoutCaseIDs": {
+          "high_school_european_history": [
+            3,
+            15,
+            17,
+            19,
+            24,
+            25,
+            27,
+            30,
+            31,
+            32,
+            33,
+            44,
+            45,
+            47,
+            51,
+            58,
+            59,
+            60,
+            65,
+            68,
+            69,
+            70,
+            72,
+            74,
+            80,
+            82,
+            87,
+            88,
+            89,
+            96,
+            98,
+            101,
+            105,
+            112,
+            114,
+            115,
+            117,
+            119,
+            120,
+            129,
+            130,
+            133,
+            134,
+            139,
+            146,
+            148,
+            152,
+            157,
+            162
+          ],
+          "high_school_statistics": [
+            1,
+            3,
+            6,
+            10,
+            15,
+            16,
+            18,
+            19,
+            21,
+            22,
+            25,
+            29,
+            31,
+            32,
+            36,
+            42,
+            43,
+            44,
+            48,
+            56,
+            65,
+            68,
+            72,
+            81,
+            82,
+            92,
+            97,
+            100,
+            106,
+            108,
+            109,
+            116,
+            117,
+            121,
+            123,
+            130,
+            133,
+            137,
+            138,
+            139,
+            141,
+            142,
+            148,
+            149,
+            152,
+            154,
+            155,
+            156,
+            157,
+            158,
+            161,
+            166,
+            167,
+            172,
+            178,
+            180,
+            182,
+            183,
+            185,
+            197,
+            203,
+            204,
+            212,
+            215
+          ]
+        },
+        "minibatchLookupLimit": 48,
+        "minibatchProbeLimit": 6,
+        "models": [
+          "meta_llama_llama_3_8b",
+          "mistralai_mistral_7b_instruct_v0_2"
+        ],
+        "observedRepoRevision": "1639d5ea14c362f6964f260ae81bd903af760187",
+        "phase": "confirmation",
+        "poolSize": 13,
+        "probeSize": 2,
+        "protocol": "prompteval-validation-witnesses-v1",
+        "qualification": "Preserve holdout totals and lookups, with a gain or 10% fewer lookups",
+        "seeds": [
+          43101,
+          43120,
+          43139,
+          43158,
+          43177,
+          43196,
+          43215,
+          43234,
+          43253,
+          43272,
+          43291,
+          43310,
+          43329,
+          43348,
+          43367,
+          43386,
+          43405,
+          43424,
+          43443,
+          43462,
+          43481,
+          43500,
+          43519,
+          43538,
+          43557,
+          43576,
+          43595,
+          43614,
+          43633,
+          43652,
+          43671,
+          43690
+        ],
+        "sourceDataset": "PromptEval/PromptEval_MMLU_correctness",
+        "sourceSha256": {
+          "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+          "benchmarks/pool.py": "ba1e6012e5068d34a57b8139ecba2aff5dbe809051f6958a9f23134f5fe69016",
+          "benchmarks/prompteval_transfer.py": "3f467c074f22b3d96d5ef0654fc9d9ba7c588363b51cc8ec62744a38a24b452c",
+          "benchmarks/prompteval_witnesses.py": "8adee5268ea9eb1f6bcf09d3e9934d682a80cfa55edcf5b1042877953a13e078",
+          "cpo/__init__.py": "f5fa7191a6ee4ee3b4d627dd2d324f78e79969ef8a8e5b35031951af2280be56",
+          "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+          "cpo/certified_pool.py": "e290a11f7ec66d5a7349c78f8e82f0b2795d404789051340005f5e4b926c50ba",
+          "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+          "cpo/pool.py": "6ca9a357439c29e7a169263d5e8c563e3ac711decb4b0dad6d1e17c6f0ff80fb",
+          "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+        },
+        "subjects": [
+          "high_school_statistics",
+          "high_school_european_history"
+        ],
+        "trainRows": 12,
+        "validationRows": 24
+      },
+      "planSha256": "6d788c09adb8d4f3ce0d954c4969673a60d8375a2d2e70377436c9fd7b3a50fb"
+    },
+    "exploratory": {
+      "fullReportSha256": "ef3bf60f077f28c6398bab2b8388bc5d9edd9651c4a634e65581f82569c0c384",
+      "panels": {
+        "formal_logic/meta_llama_llama_3_8b": {
+          "comparisons": {
+            "cpo-paired-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 320,
+                "passDelta": 1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 6
+              },
+              "gepa-batched": {
+                "lookupDelta": -924,
+                "passDelta": 0,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 8
+              },
+              "gepa-sequential": {
+                "lookupDelta": -811,
+                "passDelta": -6,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 7
+              },
+              "successive-halving": {
+                "lookupDelta": -2128,
+                "passDelta": 9,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 6
+              },
+              "uniform": {
+                "lookupDelta": -3280,
+                "passDelta": -5,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 10
+              }
+            },
+            "cpo-shared-validation": {
+              "cpo-minibatch": {
+                "lookupDelta": 335,
+                "passDelta": -4,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              },
+              "gepa-batched": {
+                "lookupDelta": -909,
+                "passDelta": -5,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              },
+              "gepa-sequential": {
+                "lookupDelta": -796,
+                "passDelta": -11,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 9
+              },
+              "successive-halving": {
+                "lookupDelta": -2113,
+                "passDelta": 4,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 6
+              },
+              "uniform": {
+                "lookupDelta": -3265,
+                "passDelta": -10,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 11
+              }
+            },
+            "cpo-tie-probes": {
+              "cpo-minibatch": {
+                "lookupDelta": 538,
+                "passDelta": 1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 2
+              },
+              "gepa-batched": {
+                "lookupDelta": -706,
+                "passDelta": 0,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 8
+              },
+              "gepa-sequential": {
+                "lookupDelta": -593,
+                "passDelta": -6,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              },
+              "successive-halving": {
+                "lookupDelta": -1910,
+                "passDelta": 9,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 6
+              },
+              "uniform": {
+                "lookupDelta": -3062,
+                "passDelta": -5,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 12
+              }
+            },
+            "cpo-weighted-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": -27,
+                "passDelta": 3,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-batched": {
+                "lookupDelta": -1271,
+                "passDelta": 2,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 8
+              },
+              "gepa-sequential": {
+                "lookupDelta": -1158,
+                "passDelta": -4,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              },
+              "successive-halving": {
+                "lookupDelta": -2475,
+                "passDelta": 11,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 6
+              },
+              "uniform": {
+                "lookupDelta": -3627,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 11
+              }
+            }
+          },
+          "totals": {
+            "cpo-certificate": {
+              "evaluations": 4157,
+              "holdoutPasses": 468
+            },
+            "cpo-exact-pool": {
+              "evaluations": 5472,
+              "holdoutPasses": 475
+            },
+            "cpo-minibatch": {
+              "evaluations": 1808,
+              "holdoutPasses": 474
+            },
+            "cpo-paired-witnesses": {
+              "evaluations": 2128,
+              "holdoutPasses": 475
+            },
+            "cpo-precomputed": {
+              "evaluations": 5214,
+              "holdoutPasses": 472
+            },
+            "cpo-shared-validation": {
+              "evaluations": 2143,
+              "holdoutPasses": 470
+            },
+            "cpo-tie-probes": {
+              "evaluations": 2346,
+              "holdoutPasses": 475
+            },
+            "cpo-weighted-witnesses": {
+              "evaluations": 1781,
+              "holdoutPasses": 477
+            },
+            "gepa-batched": {
+              "evaluations": 3052,
+              "holdoutPasses": 475
+            },
+            "gepa-sequential": {
+              "evaluations": 2939,
+              "holdoutPasses": 481
+            },
+            "successive-halving": {
+              "evaluations": 4256,
+              "holdoutPasses": 466
+            },
+            "uniform": {
+              "evaluations": 5408,
+              "holdoutPasses": 480
+            }
+          }
+        },
+        "formal_logic/mistralai_mistral_7b_instruct_v0_2": {
+          "comparisons": {
+            "cpo-paired-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 443,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              },
+              "gepa-batched": {
+                "lookupDelta": -202,
+                "passDelta": -1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              },
+              "gepa-sequential": {
+                "lookupDelta": -383,
+                "passDelta": 0,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 10
+              },
+              "successive-halving": {
+                "lookupDelta": -2112,
+                "passDelta": -21,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 14
+              },
+              "uniform": {
+                "lookupDelta": -3264,
+                "passDelta": -8,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 10
+              }
+            },
+            "cpo-shared-validation": {
+              "cpo-minibatch": {
+                "lookupDelta": 444,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 7
+              },
+              "gepa-batched": {
+                "lookupDelta": -201,
+                "passDelta": -1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              },
+              "gepa-sequential": {
+                "lookupDelta": -382,
+                "passDelta": 0,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 9
+              },
+              "successive-halving": {
+                "lookupDelta": -2111,
+                "passDelta": -21,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 15
+              },
+              "uniform": {
+                "lookupDelta": -3263,
+                "passDelta": -8,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 11
+              }
+            },
+            "cpo-tie-probes": {
+              "cpo-minibatch": {
+                "lookupDelta": 581,
+                "passDelta": 1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 0
+              },
+              "gepa-batched": {
+                "lookupDelta": -64,
+                "passDelta": 3,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-sequential": {
+                "lookupDelta": -245,
+                "passDelta": 4,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "successive-halving": {
+                "lookupDelta": -1974,
+                "passDelta": -17,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 17
+              },
+              "uniform": {
+                "lookupDelta": -3126,
+                "passDelta": -4,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 11
+              }
+            },
+            "cpo-weighted-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 21,
+                "passDelta": -5,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 5
+              },
+              "gepa-batched": {
+                "lookupDelta": -624,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 5
+              },
+              "gepa-sequential": {
+                "lookupDelta": -805,
+                "passDelta": -2,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 7
+              },
+              "successive-halving": {
+                "lookupDelta": -2534,
+                "passDelta": -23,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 16
+              },
+              "uniform": {
+                "lookupDelta": -3686,
+                "passDelta": -10,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 10
+              }
+            }
+          },
+          "totals": {
+            "cpo-certificate": {
+              "evaluations": 4163,
+              "holdoutPasses": 397
+            },
+            "cpo-exact-pool": {
+              "evaluations": 5463,
+              "holdoutPasses": 391
+            },
+            "cpo-minibatch": {
+              "evaluations": 1701,
+              "holdoutPasses": 382
+            },
+            "cpo-paired-witnesses": {
+              "evaluations": 2144,
+              "holdoutPasses": 379
+            },
+            "cpo-precomputed": {
+              "evaluations": 5126,
+              "holdoutPasses": 386
+            },
+            "cpo-shared-validation": {
+              "evaluations": 2145,
+              "holdoutPasses": 379
+            },
+            "cpo-tie-probes": {
+              "evaluations": 2282,
+              "holdoutPasses": 383
+            },
+            "cpo-weighted-witnesses": {
+              "evaluations": 1722,
+              "holdoutPasses": 377
+            },
+            "gepa-batched": {
+              "evaluations": 2346,
+              "holdoutPasses": 380
+            },
+            "gepa-sequential": {
+              "evaluations": 2527,
+              "holdoutPasses": 379
+            },
+            "successive-halving": {
+              "evaluations": 4256,
+              "holdoutPasses": 400
+            },
+            "uniform": {
+              "evaluations": 5408,
+              "holdoutPasses": 387
+            }
+          }
+        },
+        "high_school_computer_science/meta_llama_llama_3_8b": {
+          "comparisons": {
+            "cpo-paired-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 380,
+                "passDelta": 1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 5
+              },
+              "gepa-batched": {
+                "lookupDelta": -367,
+                "passDelta": 1,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 6
+              },
+              "gepa-sequential": {
+                "lookupDelta": -326,
+                "passDelta": 5,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 5
+              },
+              "successive-halving": {
+                "lookupDelta": -2163,
+                "passDelta": -7,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 7
+              },
+              "uniform": {
+                "lookupDelta": -3315,
+                "passDelta": -13,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 10
+              }
+            },
+            "cpo-shared-validation": {
+              "cpo-minibatch": {
+                "lookupDelta": 368,
+                "passDelta": 0,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 5
+              },
+              "gepa-batched": {
+                "lookupDelta": -379,
+                "passDelta": 0,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 6
+              },
+              "gepa-sequential": {
+                "lookupDelta": -338,
+                "passDelta": 4,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 5
+              },
+              "successive-halving": {
+                "lookupDelta": -2175,
+                "passDelta": -8,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              },
+              "uniform": {
+                "lookupDelta": -3327,
+                "passDelta": -14,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 11
+              }
+            },
+            "cpo-tie-probes": {
+              "cpo-minibatch": {
+                "lookupDelta": 516,
+                "passDelta": 2,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 0
+              },
+              "gepa-batched": {
+                "lookupDelta": -231,
+                "passDelta": 2,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-sequential": {
+                "lookupDelta": -190,
+                "passDelta": 6,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "successive-halving": {
+                "lookupDelta": -2027,
+                "passDelta": -6,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 11
+              },
+              "uniform": {
+                "lookupDelta": -3179,
+                "passDelta": -12,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 11
+              }
+            },
+            "cpo-weighted-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 53,
+                "passDelta": 0,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-batched": {
+                "lookupDelta": -694,
+                "passDelta": 0,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 4
+              },
+              "gepa-sequential": {
+                "lookupDelta": -653,
+                "passDelta": 4,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 3
+              },
+              "successive-halving": {
+                "lookupDelta": -2490,
+                "passDelta": -8,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 10
+              },
+              "uniform": {
+                "lookupDelta": -3642,
+                "passDelta": -14,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 11
+              }
+            }
+          },
+          "totals": {
+            "cpo-certificate": {
+              "evaluations": 4058,
+              "holdoutPasses": 591
+            },
+            "cpo-exact-pool": {
+              "evaluations": 4879,
+              "holdoutPasses": 591
+            },
+            "cpo-minibatch": {
+              "evaluations": 1713,
+              "holdoutPasses": 589
+            },
+            "cpo-paired-witnesses": {
+              "evaluations": 2093,
+              "holdoutPasses": 590
+            },
+            "cpo-precomputed": {
+              "evaluations": 5112,
+              "holdoutPasses": 593
+            },
+            "cpo-shared-validation": {
+              "evaluations": 2081,
+              "holdoutPasses": 589
+            },
+            "cpo-tie-probes": {
+              "evaluations": 2229,
+              "holdoutPasses": 591
+            },
+            "cpo-weighted-witnesses": {
+              "evaluations": 1766,
+              "holdoutPasses": 589
+            },
+            "gepa-batched": {
+              "evaluations": 2460,
+              "holdoutPasses": 589
+            },
+            "gepa-sequential": {
+              "evaluations": 2419,
+              "holdoutPasses": 585
+            },
+            "successive-halving": {
+              "evaluations": 4256,
+              "holdoutPasses": 597
+            },
+            "uniform": {
+              "evaluations": 5408,
+              "holdoutPasses": 603
+            }
+          }
+        },
+        "high_school_computer_science/mistralai_mistral_7b_instruct_v0_2": {
+          "comparisons": {
+            "cpo-paired-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 292,
+                "passDelta": -4,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 6
+              },
+              "gepa-batched": {
+                "lookupDelta": -558,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 5
+              },
+              "gepa-sequential": {
+                "lookupDelta": -562,
+                "passDelta": -8,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 7
+              },
+              "successive-halving": {
+                "lookupDelta": -2214,
+                "passDelta": 8,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 5
+              },
+              "uniform": {
+                "lookupDelta": -3366,
+                "passDelta": 1,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 8
+              }
+            },
+            "cpo-shared-validation": {
+              "cpo-minibatch": {
+                "lookupDelta": 294,
+                "passDelta": -4,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 6
+              },
+              "gepa-batched": {
+                "lookupDelta": -556,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 5
+              },
+              "gepa-sequential": {
+                "lookupDelta": -560,
+                "passDelta": -8,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 7
+              },
+              "successive-halving": {
+                "lookupDelta": -2212,
+                "passDelta": 8,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 4
+              },
+              "uniform": {
+                "lookupDelta": -3364,
+                "passDelta": 1,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 7
+              }
+            },
+            "cpo-tie-probes": {
+              "cpo-minibatch": {
+                "lookupDelta": 477,
+                "passDelta": 0,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 0
+              },
+              "gepa-batched": {
+                "lookupDelta": -373,
+                "passDelta": 1,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-sequential": {
+                "lookupDelta": -377,
+                "passDelta": -4,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 6
+              },
+              "successive-halving": {
+                "lookupDelta": -2029,
+                "passDelta": 12,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 5
+              },
+              "uniform": {
+                "lookupDelta": -3181,
+                "passDelta": 5,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 7
+              }
+            },
+            "cpo-weighted-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": -31,
+                "passDelta": 2,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "gepa-batched": {
+                "lookupDelta": -881,
+                "passDelta": 3,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "gepa-sequential": {
+                "lookupDelta": -885,
+                "passDelta": -2,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 5
+              },
+              "successive-halving": {
+                "lookupDelta": -2537,
+                "passDelta": 14,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 5
+              },
+              "uniform": {
+                "lookupDelta": -3689,
+                "passDelta": 7,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 6
+              }
+            }
+          },
+          "totals": {
+            "cpo-certificate": {
+              "evaluations": 4076,
+              "holdoutPasses": 552
+            },
+            "cpo-exact-pool": {
+              "evaluations": 4972,
+              "holdoutPasses": 558
+            },
+            "cpo-minibatch": {
+              "evaluations": 1750,
+              "holdoutPasses": 564
+            },
+            "cpo-paired-witnesses": {
+              "evaluations": 2042,
+              "holdoutPasses": 560
+            },
+            "cpo-precomputed": {
+              "evaluations": 4996,
+              "holdoutPasses": 566
+            },
+            "cpo-shared-validation": {
+              "evaluations": 2044,
+              "holdoutPasses": 560
+            },
+            "cpo-tie-probes": {
+              "evaluations": 2227,
+              "holdoutPasses": 564
+            },
+            "cpo-weighted-witnesses": {
+              "evaluations": 1719,
+              "holdoutPasses": 566
+            },
+            "gepa-batched": {
+              "evaluations": 2600,
+              "holdoutPasses": 563
+            },
+            "gepa-sequential": {
+              "evaluations": 2604,
+              "holdoutPasses": 568
+            },
+            "successive-halving": {
+              "evaluations": 4256,
+              "holdoutPasses": 552
+            },
+            "uniform": {
+              "evaluations": 5408,
+              "holdoutPasses": 559
+            }
+          }
+        },
+        "world_religions/meta_llama_llama_3_8b": {
+          "comparisons": {
+            "cpo-paired-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 227,
+                "passDelta": 11,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 1
+              },
+              "gepa-batched": {
+                "lookupDelta": -531,
+                "passDelta": 9,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "gepa-sequential": {
+                "lookupDelta": -574,
+                "passDelta": 6,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "successive-halving": {
+                "lookupDelta": -2397,
+                "passDelta": 7,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 1
+              },
+              "uniform": {
+                "lookupDelta": -3549,
+                "passDelta": 12,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              }
+            },
+            "cpo-shared-validation": {
+              "cpo-minibatch": {
+                "lookupDelta": 222,
+                "passDelta": 9,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 1
+              },
+              "gepa-batched": {
+                "lookupDelta": -536,
+                "passDelta": 7,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "gepa-sequential": {
+                "lookupDelta": -579,
+                "passDelta": 4,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "successive-halving": {
+                "lookupDelta": -2402,
+                "passDelta": 5,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "uniform": {
+                "lookupDelta": -3554,
+                "passDelta": 10,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 3
+              }
+            },
+            "cpo-tie-probes": {
+              "cpo-minibatch": {
+                "lookupDelta": 466,
+                "passDelta": -1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 1
+              },
+              "gepa-batched": {
+                "lookupDelta": -292,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-sequential": {
+                "lookupDelta": -335,
+                "passDelta": -6,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 3
+              },
+              "successive-halving": {
+                "lookupDelta": -2158,
+                "passDelta": -5,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 8
+              },
+              "uniform": {
+                "lookupDelta": -3310,
+                "passDelta": 0,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 7
+              }
+            },
+            "cpo-weighted-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 54,
+                "passDelta": 6,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 0
+              },
+              "gepa-batched": {
+                "lookupDelta": -704,
+                "passDelta": 4,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "gepa-sequential": {
+                "lookupDelta": -747,
+                "passDelta": 1,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "successive-halving": {
+                "lookupDelta": -2570,
+                "passDelta": 2,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 4
+              },
+              "uniform": {
+                "lookupDelta": -3722,
+                "passDelta": 7,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 3
+              }
+            }
+          },
+          "totals": {
+            "cpo-certificate": {
+              "evaluations": 3920,
+              "holdoutPasses": 1255
+            },
+            "cpo-exact-pool": {
+              "evaluations": 2861,
+              "holdoutPasses": 1253
+            },
+            "cpo-minibatch": {
+              "evaluations": 1632,
+              "holdoutPasses": 1254
+            },
+            "cpo-paired-witnesses": {
+              "evaluations": 1859,
+              "holdoutPasses": 1265
+            },
+            "cpo-precomputed": {
+              "evaluations": 4168,
+              "holdoutPasses": 1256
+            },
+            "cpo-shared-validation": {
+              "evaluations": 1854,
+              "holdoutPasses": 1263
+            },
+            "cpo-tie-probes": {
+              "evaluations": 2098,
+              "holdoutPasses": 1253
+            },
+            "cpo-weighted-witnesses": {
+              "evaluations": 1686,
+              "holdoutPasses": 1260
+            },
+            "gepa-batched": {
+              "evaluations": 2390,
+              "holdoutPasses": 1256
+            },
+            "gepa-sequential": {
+              "evaluations": 2433,
+              "holdoutPasses": 1259
+            },
+            "successive-halving": {
+              "evaluations": 4256,
+              "holdoutPasses": 1258
+            },
+            "uniform": {
+              "evaluations": 5408,
+              "holdoutPasses": 1253
+            }
+          }
+        },
+        "world_religions/mistralai_mistral_7b_instruct_v0_2": {
+          "comparisons": {
+            "cpo-paired-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 209,
+                "passDelta": 2,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 2
+              },
+              "gepa-batched": {
+                "lookupDelta": -332,
+                "passDelta": -1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-sequential": {
+                "lookupDelta": -388,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 3
+              },
+              "successive-halving": {
+                "lookupDelta": -2404,
+                "passDelta": 2,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 5
+              },
+              "uniform": {
+                "lookupDelta": -3556,
+                "passDelta": 2,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 4
+              }
+            },
+            "cpo-shared-validation": {
+              "cpo-minibatch": {
+                "lookupDelta": 223,
+                "passDelta": 2,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-batched": {
+                "lookupDelta": -318,
+                "passDelta": -1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 4
+              },
+              "gepa-sequential": {
+                "lookupDelta": -374,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 4
+              },
+              "successive-halving": {
+                "lookupDelta": -2390,
+                "passDelta": 2,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 5
+              },
+              "uniform": {
+                "lookupDelta": -3542,
+                "passDelta": 2,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 5
+              }
+            },
+            "cpo-tie-probes": {
+              "cpo-minibatch": {
+                "lookupDelta": 516,
+                "passDelta": 0,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 0
+              },
+              "gepa-batched": {
+                "lookupDelta": -25,
+                "passDelta": -3,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 3
+              },
+              "gepa-sequential": {
+                "lookupDelta": -81,
+                "passDelta": -5,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 3
+              },
+              "successive-halving": {
+                "lookupDelta": -2097,
+                "passDelta": 0,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 8
+              },
+              "uniform": {
+                "lookupDelta": -3249,
+                "passDelta": 0,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 8
+              }
+            },
+            "cpo-weighted-witnesses": {
+              "cpo-minibatch": {
+                "lookupDelta": 47,
+                "passDelta": 4,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 0
+              },
+              "gepa-batched": {
+                "lookupDelta": -494,
+                "passDelta": 1,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 2
+              },
+              "gepa-sequential": {
+                "lookupDelta": -550,
+                "passDelta": -1,
+                "qualified": false,
+                "splitsWithLowerAccuracy": 2
+              },
+              "successive-halving": {
+                "lookupDelta": -2566,
+                "passDelta": 4,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 6
+              },
+              "uniform": {
+                "lookupDelta": -3718,
+                "passDelta": 4,
+                "qualified": true,
+                "splitsWithLowerAccuracy": 4
+              }
+            }
+          },
+          "totals": {
+            "cpo-certificate": {
+              "evaluations": 3835,
+              "holdoutPasses": 1197
+            },
+            "cpo-exact-pool": {
+              "evaluations": 3113,
+              "holdoutPasses": 1202
+            },
+            "cpo-minibatch": {
+              "evaluations": 1643,
+              "holdoutPasses": 1198
+            },
+            "cpo-paired-witnesses": {
+              "evaluations": 1852,
+              "holdoutPasses": 1200
+            },
+            "cpo-precomputed": {
+              "evaluations": 4395,
+              "holdoutPasses": 1177
+            },
+            "cpo-shared-validation": {
+              "evaluations": 1866,
+              "holdoutPasses": 1200
+            },
+            "cpo-tie-probes": {
+              "evaluations": 2159,
+              "holdoutPasses": 1198
+            },
+            "cpo-weighted-witnesses": {
+              "evaluations": 1690,
+              "holdoutPasses": 1202
+            },
+            "gepa-batched": {
+              "evaluations": 2184,
+              "holdoutPasses": 1201
+            },
+            "gepa-sequential": {
+              "evaluations": 2240,
+              "holdoutPasses": 1203
+            },
+            "successive-halving": {
+              "evaluations": 4256,
+              "holdoutPasses": 1198
+            },
+            "uniform": {
+              "evaluations": 5408,
+              "holdoutPasses": 1198
+            }
+          }
+        }
+      },
+      "plan": {
+        "arms": [
+          "cpo-precomputed",
+          "cpo-exact-pool",
+          "cpo-certificate",
+          "cpo-minibatch",
+          "gepa-sequential",
+          "gepa-batched",
+          "uniform",
+          "successive-halving",
+          "cpo-tie-probes",
+          "cpo-shared-validation",
+          "cpo-paired-witnesses",
+          "cpo-weighted-witnesses"
+        ],
+        "callAccounting": "Distinct candidate-case lookups. The common proposal stream is supplied.",
+        "challengers": [
+          "cpo-tie-probes",
+          "cpo-shared-validation",
+          "cpo-paired-witnesses",
+          "cpo-weighted-witnesses"
+        ],
+        "corpusSha256": "2c79f692d761cb816e0066269b1f330f7d961f885177f166e067221f10263243",
+        "delivery": "recorded-outcome-replay",
+        "evaluationLookupLimit": 171,
+        "gepaVersion": "0.1.4",
+        "holdoutCaseIDs": {
+          "formal_logic": [
+            5,
+            8,
+            10,
+            16,
+            21,
+            22,
+            23,
+            24,
+            27,
+            28,
+            30,
+            31,
+            35,
+            37,
+            39,
+            40,
+            41,
+            50,
+            51,
+            57,
+            60,
+            68,
+            74,
+            75,
+            81,
+            82,
+            83,
+            84,
+            89,
+            96,
+            98,
+            111,
+            113,
+            117,
+            119,
+            121,
+            123
+          ],
+          "high_school_computer_science": [
+            0,
+            9,
+            15,
+            19,
+            20,
+            23,
+            24,
+            28,
+            30,
+            36,
+            40,
+            42,
+            43,
+            44,
+            45,
+            52,
+            59,
+            64,
+            66,
+            70,
+            75,
+            76,
+            79,
+            81,
+            86,
+            87,
+            88,
+            90,
+            92,
+            93
+          ],
+          "world_religions": [
+            0,
+            2,
+            9,
+            19,
+            20,
+            21,
+            23,
+            24,
+            30,
+            31,
+            32,
+            33,
+            46,
+            51,
+            52,
+            55,
+            58,
+            61,
+            62,
+            63,
+            73,
+            74,
+            76,
+            77,
+            81,
+            82,
+            84,
+            86,
+            87,
+            92,
+            103,
+            104,
+            105,
+            106,
+            111,
+            112,
+            118,
+            119,
+            122,
+            127,
+            129,
+            131,
+            135,
+            138,
+            143,
+            144,
+            146,
+            148,
+            154,
+            156,
+            167
+          ]
+        },
+        "minibatchLookupLimit": 48,
+        "minibatchProbeLimit": 6,
+        "models": [
+          "meta_llama_llama_3_8b",
+          "mistralai_mistral_7b_instruct_v0_2"
+        ],
+        "observedRepoRevision": "1639d5ea14c362f6964f260ae81bd903af760187",
+        "phase": "exploratory",
+        "poolSize": 13,
+        "probeSize": 2,
+        "protocol": "prompteval-validation-witnesses-v1",
+        "qualification": "Preserve holdout totals and lookups, with a gain or 10% fewer lookups",
+        "seeds": [
+          43101,
+          43120,
+          43139,
+          43158,
+          43177,
+          43196,
+          43215,
+          43234,
+          43253,
+          43272,
+          43291,
+          43310,
+          43329,
+          43348,
+          43367,
+          43386,
+          43405,
+          43424,
+          43443,
+          43462,
+          43481,
+          43500,
+          43519,
+          43538,
+          43557,
+          43576,
+          43595,
+          43614,
+          43633,
+          43652,
+          43671,
+          43690
+        ],
+        "sourceDataset": "PromptEval/PromptEval_MMLU_correctness",
+        "sourceSha256": {
+          "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+          "benchmarks/pool.py": "ba1e6012e5068d34a57b8139ecba2aff5dbe809051f6958a9f23134f5fe69016",
+          "benchmarks/prompteval_transfer.py": "3f467c074f22b3d96d5ef0654fc9d9ba7c588363b51cc8ec62744a38a24b452c",
+          "benchmarks/prompteval_witnesses.py": "8adee5268ea9eb1f6bcf09d3e9934d682a80cfa55edcf5b1042877953a13e078",
+          "cpo/__init__.py": "f5fa7191a6ee4ee3b4d627dd2d324f78e79969ef8a8e5b35031951af2280be56",
+          "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+          "cpo/certified_pool.py": "e290a11f7ec66d5a7349c78f8e82f0b2795d404789051340005f5e4b926c50ba",
+          "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+          "cpo/pool.py": "6ca9a357439c29e7a169263d5e8c563e3ac711decb4b0dad6d1e17c6f0ff80fb",
+          "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+        },
+        "subjects": [
+          "formal_logic",
+          "high_school_computer_science",
+          "world_religions"
+        ],
+        "trainRows": 12,
+        "validationRows": 24
+      },
+      "planSha256": "09ce4cbff4e6fec8eaa6682fa3e301eeb9ae4d9c29c0f56db012c1c0bfc77b44"
+    }
+  }
+}
