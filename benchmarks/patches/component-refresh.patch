@@ -1,0 +1,15 @@
+--- a/cpo/optimizer.py
++++ b/cpo/optimizer.py
+@@ -68 +68 @@
+-           opening_pair=None):
++           opening_pair=None, refresh_training=None):
+@@ -146,0 +147,9 @@
++            if refresh_training is not None:
++                train_ids = {row.id for row in train}
++                observed_train = {key: value for key, value in cache.items() if key[1] in train_ids}
++                refresh = refresh_training(parent.prompt, tuple(probes_this_round), tuple(probes), observed_train)
++                if refresh is not None:
++                    if (refresh not in probes or refresh in probes_this_round
++                            or (parent.prompt, refresh.id) in observed_train):
++                        raise ValueError('Refresh must replace one probe with an unmeasured training row')
++                    probes_this_round[-1] = refresh
