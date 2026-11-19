@@ -25,6 +25,8 @@ Reserved training repair accepted 10 merges across the two caps. It added 133 ho
 
 The spare-budget arm found 41 candidate combinations and skipped 33 before buying any probes because a complete attempt could not fit. Its single accepted repair added 16 holdout passes over ordinary CPO at cap 144. The arm spent 26 additional calls at that cap. These are deterministic fixture results. The repair remains experimental. [Per-profile results and seal](component-merge-repair-results-v1.json)
 
+A follow-up used the same training diagnostics earlier, during ordinary proposal generation. [Component feedback benchmark](component-feedback.md)
+
 ## Reproduce
 
 ```sh

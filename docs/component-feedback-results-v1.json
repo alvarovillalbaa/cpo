@@ -1,0 +1,1621 @@
+{
+  "plan": {
+    "accounting": "Each distinct search evaluation and scripted reflection slot counts once",
+    "arms": [
+      "cpo-rotate",
+      "cpo-guarded",
+      "cpo-parent",
+      "cpo-archive",
+      "gepa-guarded",
+      "gepa-parent",
+      "gepa-archive",
+      "gepa-archive-merge"
+    ],
+    "caps": [
+      96,
+      144
+    ],
+    "cohortDigests": {
+      "component-interaction": "ada2f1d53dd8e47c533c2b4aecf7748680bb31da22a2b822ca7073dbbb8f6a50",
+      "legacy-heavy": "ada2f1d53dd8e47c533c2b4aecf7748680bb31da22a2b822ca7073dbbb8f6a50",
+      "multi-clause": "bb5668724d84d20ea9aceb9a48955e8f70ebf94e61e3d685d5d2d7807425f827",
+      "reverse-precedence": "c9b8b868cac8d2e734291b4fad775ef7f882605394c75ff9af82cd1236251c3d"
+    },
+    "delivery": "deterministic-fixture",
+    "gepaVersion": "0.1.4",
+    "primary": "cpo-archive",
+    "profiles": [
+      "reverse-precedence",
+      "legacy-heavy",
+      "multi-clause",
+      "component-interaction"
+    ],
+    "proposalRounds": 6,
+    "protocol": "cpo-component-feedback-v1",
+    "reflectionMinibatches": [
+      2,
+      6
+    ],
+    "seeds": [
+      57101,
+      57120,
+      57139,
+      57158,
+      57177,
+      57196,
+      57215,
+      57234,
+      57253,
+      57272,
+      57291,
+      57310,
+      57329,
+      57348,
+      57367,
+      57386
+    ],
+    "sourceSha256": {
+      "benchmarks/component_feedback.py": "b4e8454535bda82d1f5988fd13ca6b1a8dd7b34760facfedaafc427d0489401b",
+      "benchmarks/component_merge.py": "8100420e7b6547118454530ee28208607f43ccfd33dadee0564a4bf61210b5a0",
+      "benchmarks/frontier.py": "4bcf5c82082cc27a59a72b98728f21120498860211cd619e57a45cb52fb116ac",
+      "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+      "cpo/__init__.py": "f5fa7191a6ee4ee3b4d627dd2d324f78e79969ef8a8e5b35031951af2280be56",
+      "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+      "cpo/composition.py": "1749fe2fff089c880c6b2f4827b7b25812440f461e6b415e1061a41e2079a2bf",
+      "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+      "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+    }
+  },
+  "planSha256": "e4d9680e59caacb9e728a3a0af8f90dc8e5bc5fd3f71210ef8e673d0983b4cc7",
+  "reportSha256": "fa0a8b5cac22c6e8a03a46cb003e0f950dad3511a9d7f51260b1c0daeb3ee523",
+  "results": {
+    "2": {
+      "144": {
+        "component-interaction": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": -196,
+              "criticalLosses": 18,
+              "passDelta": -26,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": -13,
+              "criticalLosses": 0,
+              "passDelta": -13,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": 388,
+              "criticalLosses": 0,
+              "passDelta": 58,
+              "qualified": true
+            },
+            "gepa-archive": {
+              "callsSaved": -296,
+              "criticalLosses": 9,
+              "passDelta": 98,
+              "qualified": false
+            },
+            "gepa-archive-merge": {
+              "callsSaved": -349,
+              "criticalLosses": 9,
+              "passDelta": 92,
+              "qualified": false
+            },
+            "gepa-guarded": {
+              "callsSaved": -387,
+              "criticalLosses": 18,
+              "passDelta": 33,
+              "qualified": false
+            },
+            "gepa-parent": {
+              "callsSaved": -289,
+              "criticalLosses": 9,
+              "passDelta": 98,
+              "qualified": false
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1718,
+              "mergesAccepted": 0,
+              "passes": 473,
+              "trainingLookups": 192
+            },
+            "cpo-guarded": {
+              "calls": 1522,
+              "mergesAccepted": 0,
+              "passes": 499,
+              "trainingLookups": 192
+            },
+            "cpo-parent": {
+              "calls": 1705,
+              "mergesAccepted": 0,
+              "passes": 486,
+              "trainingLookups": 192
+            },
+            "cpo-rotate": {
+              "calls": 2106,
+              "mergesAccepted": 0,
+              "passes": 415,
+              "trainingLookups": 192
+            },
+            "gepa-archive": {
+              "calls": 1422,
+              "mergesAccepted": 0,
+              "passes": 375,
+              "trainingLookups": 530
+            },
+            "gepa-archive-merge": {
+              "calls": 1369,
+              "mergesAccepted": 3,
+              "passes": 381,
+              "trainingLookups": 512
+            },
+            "gepa-guarded": {
+              "calls": 1331,
+              "mergesAccepted": 0,
+              "passes": 440,
+              "trainingLookups": 598
+            },
+            "gepa-parent": {
+              "calls": 1429,
+              "mergesAccepted": 0,
+              "passes": 375,
+              "trainingLookups": 526
+            }
+          }
+        },
+        "legacy-heavy": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": 6,
+              "criticalLosses": 9,
+              "passDelta": -9,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 2,
+              "criticalLosses": 9,
+              "passDelta": -5,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": 762,
+              "criticalLosses": 0,
+              "passDelta": 133,
+              "qualified": true
+            },
+            "gepa-archive": {
+              "callsSaved": 9,
+              "criticalLosses": 0,
+              "passDelta": 148,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 43,
+              "criticalLosses": 0,
+              "passDelta": 157,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": -96,
+              "criticalLosses": 9,
+              "passDelta": 43,
+              "qualified": false
+            },
+            "gepa-parent": {
+              "callsSaved": 14,
+              "criticalLosses": 0,
+              "passDelta": 148,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1356,
+              "mergesAccepted": 0,
+              "passes": 567,
+              "trainingLookups": 114
+            },
+            "cpo-guarded": {
+              "calls": 1362,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 112
+            },
+            "cpo-parent": {
+              "calls": 1358,
+              "mergesAccepted": 0,
+              "passes": 572,
+              "trainingLookups": 124
+            },
+            "cpo-rotate": {
+              "calls": 2118,
+              "mergesAccepted": 0,
+              "passes": 434,
+              "trainingLookups": 186
+            },
+            "gepa-archive": {
+              "calls": 1365,
+              "mergesAccepted": 0,
+              "passes": 419,
+              "trainingLookups": 498
+            },
+            "gepa-archive-merge": {
+              "calls": 1399,
+              "mergesAccepted": 2,
+              "passes": 410,
+              "trainingLookups": 500
+            },
+            "gepa-guarded": {
+              "calls": 1260,
+              "mergesAccepted": 0,
+              "passes": 524,
+              "trainingLookups": 540
+            },
+            "gepa-parent": {
+              "calls": 1370,
+              "mergesAccepted": 0,
+              "passes": 419,
+              "trainingLookups": 492
+            }
+          }
+        },
+        "multi-clause": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": -267,
+              "criticalLosses": 4,
+              "passDelta": -4,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 36,
+              "criticalLosses": 4,
+              "passDelta": -4,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": -267,
+              "criticalLosses": 4,
+              "passDelta": -4,
+              "qualified": false
+            },
+            "gepa-archive": {
+              "callsSaved": -398,
+              "criticalLosses": 4,
+              "passDelta": 163,
+              "qualified": false
+            },
+            "gepa-archive-merge": {
+              "callsSaved": -399,
+              "criticalLosses": 4,
+              "passDelta": 154,
+              "qualified": false
+            },
+            "gepa-guarded": {
+              "callsSaved": -362,
+              "criticalLosses": 4,
+              "passDelta": 81,
+              "qualified": false
+            },
+            "gepa-parent": {
+              "callsSaved": -393,
+              "criticalLosses": 4,
+              "passDelta": 134,
+              "qualified": false
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1591,
+              "mergesAccepted": 0,
+              "passes": 489,
+              "trainingLookups": 138
+            },
+            "cpo-guarded": {
+              "calls": 1324,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 124
+            },
+            "cpo-parent": {
+              "calls": 1627,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 148
+            },
+            "cpo-rotate": {
+              "calls": 1324,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 124
+            },
+            "gepa-archive": {
+              "calls": 1193,
+              "mergesAccepted": 0,
+              "passes": 326,
+              "trainingLookups": 480
+            },
+            "gepa-archive-merge": {
+              "calls": 1192,
+              "mergesAccepted": 1,
+              "passes": 335,
+              "trainingLookups": 462
+            },
+            "gepa-guarded": {
+              "calls": 1229,
+              "mergesAccepted": 0,
+              "passes": 408,
+              "trainingLookups": 552
+            },
+            "gepa-parent": {
+              "calls": 1198,
+              "mergesAccepted": 0,
+              "passes": 355,
+              "trainingLookups": 474
+            }
+          }
+        },
+        "reverse-precedence": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": -12,
+              "criticalLosses": 6,
+              "passDelta": -6,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": -6,
+              "criticalLosses": 6,
+              "passDelta": 13,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": -12,
+              "criticalLosses": 6,
+              "passDelta": -6,
+              "qualified": false
+            },
+            "gepa-archive": {
+              "callsSaved": -115,
+              "criticalLosses": 2,
+              "passDelta": 223,
+              "qualified": false
+            },
+            "gepa-archive-merge": {
+              "callsSaved": -92,
+              "criticalLosses": 2,
+              "passDelta": 236,
+              "qualified": false
+            },
+            "gepa-guarded": {
+              "callsSaved": -94,
+              "criticalLosses": 6,
+              "passDelta": 126,
+              "qualified": false
+            },
+            "gepa-parent": {
+              "callsSaved": -110,
+              "criticalLosses": 2,
+              "passDelta": 223,
+              "qualified": false
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1354,
+              "mergesAccepted": 0,
+              "passes": 570,
+              "trainingLookups": 114
+            },
+            "cpo-guarded": {
+              "calls": 1342,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 112
+            },
+            "cpo-parent": {
+              "calls": 1348,
+              "mergesAccepted": 0,
+              "passes": 557,
+              "trainingLookups": 128
+            },
+            "cpo-rotate": {
+              "calls": 1342,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 112
+            },
+            "gepa-archive": {
+              "calls": 1239,
+              "mergesAccepted": 0,
+              "passes": 347,
+              "trainingLookups": 474
+            },
+            "gepa-archive-merge": {
+              "calls": 1262,
+              "mergesAccepted": 1,
+              "passes": 334,
+              "trainingLookups": 486
+            },
+            "gepa-guarded": {
+              "calls": 1260,
+              "mergesAccepted": 0,
+              "passes": 444,
+              "trainingLookups": 540
+            },
+            "gepa-parent": {
+              "calls": 1244,
+              "mergesAccepted": 0,
+              "passes": 347,
+              "trainingLookups": 468
+            }
+          }
+        }
+      },
+      "96": {
+        "component-interaction": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": -33,
+              "criticalLosses": 0,
+              "passDelta": -8,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 35,
+              "criticalLosses": 0,
+              "passDelta": -13,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": 264,
+              "criticalLosses": 0,
+              "passDelta": 122,
+              "qualified": true
+            },
+            "gepa-archive": {
+              "callsSaved": 30,
+              "criticalLosses": 0,
+              "passDelta": 87,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": -12,
+              "criticalLosses": 0,
+              "passDelta": 110,
+              "qualified": false
+            },
+            "gepa-guarded": {
+              "callsSaved": 22,
+              "criticalLosses": 0,
+              "passDelta": 51,
+              "qualified": true
+            },
+            "gepa-parent": {
+              "callsSaved": 37,
+              "criticalLosses": 0,
+              "passDelta": 87,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1309,
+              "mergesAccepted": 0,
+              "passes": 491,
+              "trainingLookups": 192
+            },
+            "cpo-guarded": {
+              "calls": 1276,
+              "mergesAccepted": 0,
+              "passes": 499,
+              "trainingLookups": 192
+            },
+            "cpo-parent": {
+              "calls": 1344,
+              "mergesAccepted": 0,
+              "passes": 504,
+              "trainingLookups": 192
+            },
+            "cpo-rotate": {
+              "calls": 1573,
+              "mergesAccepted": 0,
+              "passes": 369,
+              "trainingLookups": 169
+            },
+            "gepa-archive": {
+              "calls": 1339,
+              "mergesAccepted": 0,
+              "passes": 404,
+              "trainingLookups": 500
+            },
+            "gepa-archive-merge": {
+              "calls": 1297,
+              "mergesAccepted": 2,
+              "passes": 381,
+              "trainingLookups": 485
+            },
+            "gepa-guarded": {
+              "calls": 1331,
+              "mergesAccepted": 0,
+              "passes": 440,
+              "trainingLookups": 598
+            },
+            "gepa-parent": {
+              "calls": 1346,
+              "mergesAccepted": 0,
+              "passes": 404,
+              "trainingLookups": 496
+            }
+          }
+        },
+        "legacy-heavy": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": 11,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 8,
+              "criticalLosses": 0,
+              "passDelta": 4,
+              "qualified": true
+            },
+            "cpo-rotate": {
+              "callsSaved": 471,
+              "criticalLosses": 0,
+              "passDelta": 207,
+              "qualified": true
+            },
+            "gepa-archive": {
+              "callsSaved": 220,
+              "criticalLosses": 0,
+              "passDelta": 159,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 234,
+              "criticalLosses": 0,
+              "passDelta": 174,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": 155,
+              "criticalLosses": 0,
+              "passDelta": 52,
+              "qualified": true
+            },
+            "gepa-parent": {
+              "callsSaved": 225,
+              "criticalLosses": 0,
+              "passDelta": 159,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1105,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 114
+            },
+            "cpo-guarded": {
+              "calls": 1116,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 112
+            },
+            "cpo-parent": {
+              "calls": 1113,
+              "mergesAccepted": 0,
+              "passes": 572,
+              "trainingLookups": 124
+            },
+            "cpo-rotate": {
+              "calls": 1576,
+              "mergesAccepted": 0,
+              "passes": 369,
+              "trainingLookups": 167
+            },
+            "gepa-archive": {
+              "calls": 1325,
+              "mergesAccepted": 0,
+              "passes": 417,
+              "trainingLookups": 476
+            },
+            "gepa-archive-merge": {
+              "calls": 1339,
+              "mergesAccepted": 1,
+              "passes": 402,
+              "trainingLookups": 484
+            },
+            "gepa-guarded": {
+              "calls": 1260,
+              "mergesAccepted": 0,
+              "passes": 524,
+              "trainingLookups": 540
+            },
+            "gepa-parent": {
+              "calls": 1330,
+              "mergesAccepted": 0,
+              "passes": 417,
+              "trainingLookups": 470
+            }
+          }
+        },
+        "multi-clause": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": -122,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 37,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": -122,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "gepa-archive": {
+              "callsSaved": -42,
+              "criticalLosses": 0,
+              "passDelta": 167,
+              "qualified": false
+            },
+            "gepa-archive-merge": {
+              "callsSaved": -53,
+              "criticalLosses": 0,
+              "passDelta": 161,
+              "qualified": false
+            },
+            "gepa-guarded": {
+              "callsSaved": -6,
+              "criticalLosses": 0,
+              "passDelta": 85,
+              "qualified": false
+            },
+            "gepa-parent": {
+              "callsSaved": -37,
+              "criticalLosses": 0,
+              "passDelta": 138,
+              "qualified": false
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1235,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 134
+            },
+            "cpo-guarded": {
+              "calls": 1113,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 124
+            },
+            "cpo-parent": {
+              "calls": 1272,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 144
+            },
+            "cpo-rotate": {
+              "calls": 1113,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 124
+            },
+            "gepa-archive": {
+              "calls": 1193,
+              "mergesAccepted": 0,
+              "passes": 326,
+              "trainingLookups": 480
+            },
+            "gepa-archive-merge": {
+              "calls": 1182,
+              "mergesAccepted": 1,
+              "passes": 332,
+              "trainingLookups": 462
+            },
+            "gepa-guarded": {
+              "calls": 1229,
+              "mergesAccepted": 0,
+              "passes": 408,
+              "trainingLookups": 552
+            },
+            "gepa-parent": {
+              "calls": 1198,
+              "mergesAccepted": 0,
+              "passes": 355,
+              "trainingLookups": 474
+            }
+          }
+        },
+        "reverse-precedence": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": 5,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 4,
+              "criticalLosses": 0,
+              "passDelta": 19,
+              "qualified": true
+            },
+            "cpo-rotate": {
+              "callsSaved": 5,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "gepa-archive": {
+              "callsSaved": 108,
+              "criticalLosses": 0,
+              "passDelta": 238,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 132,
+              "criticalLosses": 0,
+              "passDelta": 249,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": 155,
+              "criticalLosses": 0,
+              "passDelta": 132,
+              "qualified": true
+            },
+            "gepa-parent": {
+              "callsSaved": 113,
+              "criticalLosses": 0,
+              "passDelta": 238,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1105,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 114
+            },
+            "cpo-guarded": {
+              "calls": 1110,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 112
+            },
+            "cpo-parent": {
+              "calls": 1109,
+              "mergesAccepted": 0,
+              "passes": 557,
+              "trainingLookups": 128
+            },
+            "cpo-rotate": {
+              "calls": 1110,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 112
+            },
+            "gepa-archive": {
+              "calls": 1213,
+              "mergesAccepted": 0,
+              "passes": 338,
+              "trainingLookups": 462
+            },
+            "gepa-archive-merge": {
+              "calls": 1237,
+              "mergesAccepted": 1,
+              "passes": 327,
+              "trainingLookups": 478
+            },
+            "gepa-guarded": {
+              "calls": 1260,
+              "mergesAccepted": 0,
+              "passes": 444,
+              "trainingLookups": 540
+            },
+            "gepa-parent": {
+              "calls": 1218,
+              "mergesAccepted": 0,
+              "passes": 338,
+              "trainingLookups": 456
+            }
+          }
+        }
+      }
+    },
+    "6": {
+      "144": {
+        "component-interaction": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": -52,
+              "criticalLosses": 0,
+              "passDelta": 25,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 36,
+              "criticalLosses": 0,
+              "passDelta": 7,
+              "qualified": true
+            },
+            "cpo-rotate": {
+              "callsSaved": 392,
+              "criticalLosses": 0,
+              "passDelta": 115,
+              "qualified": true
+            },
+            "gepa-archive": {
+              "callsSaved": 183,
+              "criticalLosses": 0,
+              "passDelta": 111,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 131,
+              "criticalLosses": 0,
+              "passDelta": 69,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": -64,
+              "criticalLosses": 0,
+              "passDelta": 103,
+              "qualified": false
+            },
+            "gepa-parent": {
+              "callsSaved": 192,
+              "criticalLosses": 0,
+              "passDelta": 111,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1819,
+              "mergesAccepted": 0,
+              "passes": 524,
+              "trainingLookups": 447
+            },
+            "cpo-guarded": {
+              "calls": 1767,
+              "mergesAccepted": 0,
+              "passes": 499,
+              "trainingLookups": 468
+            },
+            "cpo-parent": {
+              "calls": 1855,
+              "mergesAccepted": 0,
+              "passes": 517,
+              "trainingLookups": 453
+            },
+            "cpo-rotate": {
+              "calls": 2211,
+              "mergesAccepted": 0,
+              "passes": 409,
+              "trainingLookups": 406
+            },
+            "gepa-archive": {
+              "calls": 2002,
+              "mergesAccepted": 0,
+              "passes": 413,
+              "trainingLookups": 1177
+            },
+            "gepa-archive-merge": {
+              "calls": 1950,
+              "mergesAccepted": 4,
+              "passes": 455,
+              "trainingLookups": 1104
+            },
+            "gepa-guarded": {
+              "calls": 1755,
+              "mergesAccepted": 0,
+              "passes": 421,
+              "trainingLookups": 1082
+            },
+            "gepa-parent": {
+              "calls": 2011,
+              "mergesAccepted": 0,
+              "passes": 413,
+              "trainingLookups": 1174
+            }
+          }
+        },
+        "legacy-heavy": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": 48,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 25,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": 727,
+              "criticalLosses": 0,
+              "passDelta": 160,
+              "qualified": true
+            },
+            "gepa-archive": {
+              "callsSaved": 491,
+              "criticalLosses": 0,
+              "passDelta": 74,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 493,
+              "criticalLosses": 0,
+              "passDelta": 88,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": 185,
+              "criticalLosses": 0,
+              "passDelta": 24,
+              "qualified": true
+            },
+            "gepa-parent": {
+              "callsSaved": 506,
+              "criticalLosses": 0,
+              "passDelta": 83,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1504,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 309
+            },
+            "cpo-guarded": {
+              "calls": 1552,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 333
+            },
+            "cpo-parent": {
+              "calls": 1529,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 327
+            },
+            "cpo-rotate": {
+              "calls": 2231,
+              "mergesAccepted": 0,
+              "passes": 416,
+              "trainingLookups": 406
+            },
+            "gepa-archive": {
+              "calls": 1995,
+              "mergesAccepted": 0,
+              "passes": 502,
+              "trainingLookups": 1122
+            },
+            "gepa-archive-merge": {
+              "calls": 1997,
+              "mergesAccepted": 5,
+              "passes": 488,
+              "trainingLookups": 1100
+            },
+            "gepa-guarded": {
+              "calls": 1689,
+              "mergesAccepted": 0,
+              "passes": 552,
+              "trainingLookups": 1010
+            },
+            "gepa-parent": {
+              "calls": 2010,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 1132
+            }
+          }
+        },
+        "multi-clause": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": -63,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 40,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": -63,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "gepa-archive": {
+              "callsSaved": 296,
+              "criticalLosses": 0,
+              "passDelta": 112,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 191,
+              "criticalLosses": 0,
+              "passDelta": 96,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": 62,
+              "criticalLosses": 0,
+              "passDelta": 58,
+              "qualified": true
+            },
+            "gepa-parent": {
+              "callsSaved": 266,
+              "criticalLosses": 0,
+              "passDelta": 130,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1584,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 327
+            },
+            "cpo-guarded": {
+              "calls": 1521,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 339
+            },
+            "cpo-parent": {
+              "calls": 1624,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 345
+            },
+            "cpo-rotate": {
+              "calls": 1521,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 339
+            },
+            "gepa-archive": {
+              "calls": 1880,
+              "mergesAccepted": 0,
+              "passes": 381,
+              "trainingLookups": 1073
+            },
+            "gepa-archive-merge": {
+              "calls": 1775,
+              "mergesAccepted": 4,
+              "passes": 397,
+              "trainingLookups": 977
+            },
+            "gepa-guarded": {
+              "calls": 1646,
+              "mergesAccepted": 0,
+              "passes": 435,
+              "trainingLookups": 1003
+            },
+            "gepa-parent": {
+              "calls": 1850,
+              "mergesAccepted": 0,
+              "passes": 363,
+              "trainingLookups": 1052
+            }
+          }
+        },
+        "reverse-precedence": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": 37,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 16,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": 37,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "gepa-archive": {
+              "callsSaved": 430,
+              "criticalLosses": 0,
+              "passDelta": 107,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 408,
+              "criticalLosses": 0,
+              "passDelta": 125,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": 192,
+              "criticalLosses": 0,
+              "passDelta": 57,
+              "qualified": true
+            },
+            "gepa-parent": {
+              "callsSaved": 444,
+              "criticalLosses": 0,
+              "passDelta": 107,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1497,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 309
+            },
+            "cpo-guarded": {
+              "calls": 1534,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 333
+            },
+            "cpo-parent": {
+              "calls": 1513,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 321
+            },
+            "cpo-rotate": {
+              "calls": 1534,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 333
+            },
+            "gepa-archive": {
+              "calls": 1927,
+              "mergesAccepted": 0,
+              "passes": 469,
+              "trainingLookups": 1102
+            },
+            "gepa-archive-merge": {
+              "calls": 1905,
+              "mergesAccepted": 6,
+              "passes": 451,
+              "trainingLookups": 1058
+            },
+            "gepa-guarded": {
+              "calls": 1689,
+              "mergesAccepted": 0,
+              "passes": 519,
+              "trainingLookups": 1010
+            },
+            "gepa-parent": {
+              "calls": 1941,
+              "mergesAccepted": 0,
+              "passes": 469,
+              "trainingLookups": 1106
+            }
+          }
+        }
+      },
+      "96": {
+        "component-interaction": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": 15,
+              "criticalLosses": 0,
+              "passDelta": 25,
+              "qualified": true
+            },
+            "cpo-parent": {
+              "callsSaved": -7,
+              "criticalLosses": 0,
+              "passDelta": 7,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": 144,
+              "criticalLosses": 0,
+              "passDelta": 155,
+              "qualified": true
+            },
+            "gepa-archive": {
+              "callsSaved": 66,
+              "criticalLosses": 0,
+              "passDelta": 84,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 52,
+              "criticalLosses": 0,
+              "passDelta": 69,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": 13,
+              "criticalLosses": 0,
+              "passDelta": 55,
+              "qualified": true
+            },
+            "gepa-parent": {
+              "callsSaved": 71,
+              "criticalLosses": 0,
+              "passDelta": 72,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1436,
+              "mergesAccepted": 0,
+              "passes": 524,
+              "trainingLookups": 422
+            },
+            "cpo-guarded": {
+              "calls": 1451,
+              "mergesAccepted": 0,
+              "passes": 499,
+              "trainingLookups": 416
+            },
+            "cpo-parent": {
+              "calls": 1429,
+              "mergesAccepted": 0,
+              "passes": 517,
+              "trainingLookups": 419
+            },
+            "cpo-rotate": {
+              "calls": 1580,
+              "mergesAccepted": 0,
+              "passes": 369,
+              "trainingLookups": 328
+            },
+            "gepa-archive": {
+              "calls": 1502,
+              "mergesAccepted": 0,
+              "passes": 440,
+              "trainingLookups": 849
+            },
+            "gepa-archive-merge": {
+              "calls": 1488,
+              "mergesAccepted": 1,
+              "passes": 455,
+              "trainingLookups": 832
+            },
+            "gepa-guarded": {
+              "calls": 1449,
+              "mergesAccepted": 0,
+              "passes": 469,
+              "trainingLookups": 876
+            },
+            "gepa-parent": {
+              "calls": 1507,
+              "mergesAccepted": 0,
+              "passes": 452,
+              "trainingLookups": 849
+            }
+          }
+        },
+        "legacy-heavy": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": 60,
+              "criticalLosses": 0,
+              "passDelta": 2,
+              "qualified": true
+            },
+            "cpo-parent": {
+              "callsSaved": 12,
+              "criticalLosses": 0,
+              "passDelta": 4,
+              "qualified": true
+            },
+            "cpo-rotate": {
+              "callsSaved": 333,
+              "criticalLosses": 0,
+              "passDelta": 207,
+              "qualified": true
+            },
+            "gepa-archive": {
+              "callsSaved": 280,
+              "criticalLosses": 0,
+              "passDelta": 121,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 267,
+              "criticalLosses": 0,
+              "passDelta": 119,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": 236,
+              "criticalLosses": 0,
+              "passDelta": 71,
+              "qualified": true
+            },
+            "gepa-parent": {
+              "callsSaved": 280,
+              "criticalLosses": 0,
+              "passDelta": 124,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1241,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 305
+            },
+            "cpo-guarded": {
+              "calls": 1301,
+              "mergesAccepted": 0,
+              "passes": 574,
+              "trainingLookups": 326
+            },
+            "cpo-parent": {
+              "calls": 1253,
+              "mergesAccepted": 0,
+              "passes": 572,
+              "trainingLookups": 323
+            },
+            "cpo-rotate": {
+              "calls": 1574,
+              "mergesAccepted": 0,
+              "passes": 369,
+              "trainingLookups": 325
+            },
+            "gepa-archive": {
+              "calls": 1521,
+              "mergesAccepted": 0,
+              "passes": 455,
+              "trainingLookups": 846
+            },
+            "gepa-archive-merge": {
+              "calls": 1508,
+              "mergesAccepted": 1,
+              "passes": 457,
+              "trainingLookups": 832
+            },
+            "gepa-guarded": {
+              "calls": 1477,
+              "mergesAccepted": 0,
+              "passes": 505,
+              "trainingLookups": 871
+            },
+            "gepa-parent": {
+              "calls": 1521,
+              "mergesAccepted": 0,
+              "passes": 452,
+              "trainingLookups": 846
+            }
+          }
+        },
+        "multi-clause": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": 34,
+              "criticalLosses": 0,
+              "passDelta": -17,
+              "qualified": false
+            },
+            "cpo-parent": {
+              "callsSaved": 36,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-rotate": {
+              "callsSaved": 34,
+              "criticalLosses": 0,
+              "passDelta": -17,
+              "qualified": false
+            },
+            "gepa-archive": {
+              "callsSaved": 176,
+              "criticalLosses": 0,
+              "passDelta": 249,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 228,
+              "criticalLosses": 0,
+              "passDelta": 237,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": 156,
+              "criticalLosses": 0,
+              "passDelta": 152,
+              "qualified": true
+            },
+            "gepa-parent": {
+              "callsSaved": 185,
+              "criticalLosses": 0,
+              "passDelta": 243,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1268,
+              "mergesAccepted": 0,
+              "passes": 476,
+              "trainingLookups": 314
+            },
+            "cpo-guarded": {
+              "calls": 1302,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 333
+            },
+            "cpo-parent": {
+              "calls": 1304,
+              "mergesAccepted": 0,
+              "passes": 476,
+              "trainingLookups": 332
+            },
+            "cpo-rotate": {
+              "calls": 1302,
+              "mergesAccepted": 0,
+              "passes": 493,
+              "trainingLookups": 333
+            },
+            "gepa-archive": {
+              "calls": 1444,
+              "mergesAccepted": 0,
+              "passes": 227,
+              "trainingLookups": 839
+            },
+            "gepa-archive-merge": {
+              "calls": 1496,
+              "mergesAccepted": 1,
+              "passes": 239,
+              "trainingLookups": 844
+            },
+            "gepa-guarded": {
+              "calls": 1424,
+              "mergesAccepted": 0,
+              "passes": 324,
+              "trainingLookups": 849
+            },
+            "gepa-parent": {
+              "calls": 1453,
+              "mergesAccepted": 0,
+              "passes": 233,
+              "trainingLookups": 839
+            }
+          }
+        },
+        "reverse-precedence": {
+          "comparisons": {
+            "cpo-guarded": {
+              "callsSaved": 55,
+              "criticalLosses": 0,
+              "passDelta": 8,
+              "qualified": true
+            },
+            "cpo-parent": {
+              "callsSaved": 4,
+              "criticalLosses": 0,
+              "passDelta": 10,
+              "qualified": true
+            },
+            "cpo-rotate": {
+              "callsSaved": 55,
+              "criticalLosses": 0,
+              "passDelta": 8,
+              "qualified": true
+            },
+            "gepa-archive": {
+              "callsSaved": 228,
+              "criticalLosses": 0,
+              "passDelta": 216,
+              "qualified": true
+            },
+            "gepa-archive-merge": {
+              "callsSaved": 214,
+              "criticalLosses": 0,
+              "passDelta": 216,
+              "qualified": true
+            },
+            "gepa-guarded": {
+              "callsSaved": 236,
+              "criticalLosses": 0,
+              "passDelta": 177,
+              "qualified": true
+            },
+            "gepa-parent": {
+              "callsSaved": 232,
+              "criticalLosses": 0,
+              "passDelta": 228,
+              "qualified": true
+            }
+          },
+          "totals": {
+            "cpo-archive": {
+              "calls": 1241,
+              "mergesAccepted": 0,
+              "passes": 576,
+              "trainingLookups": 305
+            },
+            "cpo-guarded": {
+              "calls": 1296,
+              "mergesAccepted": 0,
+              "passes": 568,
+              "trainingLookups": 327
+            },
+            "cpo-parent": {
+              "calls": 1245,
+              "mergesAccepted": 0,
+              "passes": 566,
+              "trainingLookups": 317
+            },
+            "cpo-rotate": {
+              "calls": 1296,
+              "mergesAccepted": 0,
+              "passes": 568,
+              "trainingLookups": 327
+            },
+            "gepa-archive": {
+              "calls": 1469,
+              "mergesAccepted": 0,
+              "passes": 360,
+              "trainingLookups": 831
+            },
+            "gepa-archive-merge": {
+              "calls": 1455,
+              "mergesAccepted": 2,
+              "passes": 360,
+              "trainingLookups": 819
+            },
+            "gepa-guarded": {
+              "calls": 1477,
+              "mergesAccepted": 0,
+              "passes": 399,
+              "trainingLookups": 871
+            },
+            "gepa-parent": {
+              "calls": 1473,
+              "mergesAccepted": 0,
+              "passes": 348,
+              "trainingLookups": 831
+            }
+          }
+        }
+      }
+    }
+  }
+}
