@@ -74,6 +74,15 @@ class CycleTests(unittest.TestCase):
         self.assertEqual(self.search_calls[-1], ("challenger", "validation"))
         self.assertTrue(result.promoted)
 
+    def test_precomputed_opening_is_qualified_on_separate_rows(self):
+        self.propose = lambda *_: self.fail("The precomputed pair needs no reflection")
+        result = self.cycle(lambda prompt, row, _: row.critical or prompt == "challenger",
+                            opening_pair=ProposalPair(rewrite="challenger", repair="other"))
+        self.assertEqual(self.search_calls, [("incumbent", "validation"), ("challenger", "validation")])
+        self.assertEqual(result.search.reflections, 0)
+        self.assertEqual(result.qualification_evaluations, 4)
+        self.assertTrue(result.promoted)
+
     def test_family_regression_blocks_promotion_even_with_gain(self):
         self.holdout = [Row("west", "west"), Row("east-1", "east"), Row("east-2", "east")]
         result = self.cycle(lambda prompt, row, _: (row.family == "west") == (prompt == "incumbent"))

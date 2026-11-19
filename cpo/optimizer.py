@@ -64,8 +64,12 @@ def balanced_order(rows, seed):
 
 
 def search(initial, train, validation, evaluate, propose, *, metric_limit, rounds,
-           train_per_round, proposals_per_round=2, seed=0, race=True, adaptive=False, field_credit=False):
-    """Evaluate precisely the supplied search rows. Feedback from validation stays private."""
+           train_per_round, proposals_per_round=2, seed=0, race=True, adaptive=False, field_credit=False,
+           opening_pair=None):
+    """Search supplied rows. A precomputed pair uses the first round without a reflection.
+
+    Feedback supplied to propose comes only from training.
+    """
     combined = [row.id for row in (*train, *validation)]
     if not train or not validation or len(set(combined)) != len(combined):
         raise ValueError('Search requires nonempty train and validation cohorts with distinct IDs')
@@ -73,6 +77,8 @@ def search(initial, train, validation, evaluate, propose, *, metric_limit, round
         raise ValueError('Search budget must cover initial validation and allow positive round limits')
     if field_credit and any(type(row.fields) is not int or row.fields < 1 for row in (*train, *validation)):
         raise ValueError('Field-aware rows require a positive field count')
+    if opening_pair is not None and not isinstance(opening_pair, ProposalPair):
+        raise ValueError('A precomputed opening must be a ProposalPair')
 
     critical = {row.id for row in validation if row.critical}
     families = {row.id: row.family for row in validation}
@@ -123,27 +129,32 @@ def search(initial, train, validation, evaluate, propose, *, metric_limit, round
     for round_index in range(rounds):
         if archive[0].passed == validation_ids:
             break
-        available = metric_limit - len(cache)
+        use_opening = round_index == 0 and opening_pair is not None
         # Reserve the seed-sized validation cost for at least one candidate in this round.
-        probe_count = min(train_per_round, len(probes), available - len(validation))
-        if probe_count < 1:
+        available_for_probes = metric_limit - len(cache) - len(validation)
+        minimum_probes = 0 if use_opening else 1
+        if available_for_probes < minimum_probes:
             break
         parent = next((candidate for candidate in archive if candidate.prompt not in exhausted), None)
         if parent is None:
             break
-        probes_this_round = [probes[index % len(probes)] for index in range(cursor, cursor + probe_count)]
-        cursor += probe_count
-        feedback = [(row, observe(parent.prompt, row)) for row in probes_this_round]
-        history = [(candidate.prompt, dict(Counter(families[row_id] for row_id in sorted(candidate.passed))))
-                   for candidate in archive[:3]]
-        options = propose(parent.prompt, feedback, history, proposals_per_round)
+        if use_opening:
+            options = opening_pair
+        else:
+            probe_count = min(train_per_round, len(probes), available_for_probes)
+            probes_this_round = [probes[index % len(probes)] for index in range(cursor, cursor + probe_count)]
+            cursor += probe_count
+            feedback = [(row, observe(parent.prompt, row)) for row in probes_this_round]
+            history = [(candidate.prompt, dict(Counter(families[row_id] for row_id in sorted(candidate.passed))))
+                       for candidate in archive[:3]]
+            options = propose(parent.prompt, feedback, history, proposals_per_round)
+            reflections += 1
         if isinstance(options, ProposalPair):
             options = (options.rewrite, options.repair)
         elif isinstance(options, ProposalBatch):
             if options.exhausted:
                 exhausted.add(parent.prompt)
             options = options.prompts
-        reflections += 1
         round_limit = min(metric_limit, len(cache) + max(len(validation),
                           (metric_limit - len(cache)) // (rounds - round_index)))
         branches = list(enumerate(options[:proposals_per_round]))
