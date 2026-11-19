@@ -1,0 +1,120 @@
+{
+  "design": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261121,
+    "gepaVersion": "0.1.4",
+    "holdout": "Use the existing seeded 30 percent split per subject, shared by both models.",
+    "models": [
+      "google_flan_t5_xl",
+      "meta_llama_llama_3_70b_instruct"
+    ],
+    "primaryComparison": {
+      "candidate": "cpo-four-52",
+      "controls": [
+        "gepa-batched-eight-52",
+        "gepa-sequential-eight-52"
+      ],
+      "minimumLookupSavingPercent": 10,
+      "minimumLowerRangePassDifference": 0
+    },
+    "priorReportSha256": "b90014840d8dcad8e23a91ebb852082fbfe6a5e5c1c5ffd9461aefa7263e083a",
+    "protocol": "cpo-four-case-qualification-transfer-v1",
+    "schedule": {
+      "cycles": 4,
+      "minimumQualificationGain": 1,
+      "poolSize": 13,
+      "qualificationRowsPerCycle": 8,
+      "seeds": [
+        47101,
+        47120,
+        47139,
+        47158,
+        47177,
+        47196,
+        47215,
+        47234,
+        47253,
+        47272,
+        47291,
+        47310,
+        47329,
+        47348,
+        47367,
+        47386,
+        47405,
+        47424,
+        47443,
+        47462,
+        47481,
+        47500,
+        47519,
+        47538,
+        47557,
+        47576,
+        47595,
+        47614,
+        47633,
+        47652,
+        47671,
+        47690
+      ],
+      "trainRows": 12,
+      "validationRows": 24
+    },
+    "scope": "Freeze settings before reading the selected subject and model outcomes. Resample cases within each subject and keep both models and all episodes together. The primary statistic is the smaller candidate pass difference against the two original GEPA modes on each draw.",
+    "settings": {
+      "cpo-eight-52": {
+        "cap": 52,
+        "optimizer": "cpo",
+        "qualification": "eight-cases"
+      },
+      "cpo-four-52": {
+        "cap": 52,
+        "optimizer": "cpo",
+        "qualification": "four-cases"
+      },
+      "gepa-batched-eight-44": {
+        "cap": 44,
+        "optimizer": "batched",
+        "qualification": "eight-cases"
+      },
+      "gepa-batched-eight-52": {
+        "cap": 52,
+        "optimizer": "batched",
+        "qualification": "eight-cases"
+      },
+      "gepa-batched-four-52": {
+        "cap": 52,
+        "optimizer": "batched",
+        "qualification": "four-cases"
+      },
+      "gepa-sequential-eight-52": {
+        "cap": 52,
+        "optimizer": "sequential",
+        "qualification": "eight-cases"
+      }
+    },
+    "sourceDataset": "PromptEval/PromptEval_MMLU_correctness",
+    "sourceLicense": "MIT",
+    "sourceRevision": "1639d5ea14c362f6964f260ae81bd903af760187",
+    "sourceSha256": {
+      "benchmarks/archive_complementarity_transfer.py": "a145976db37cec43b9e943e5aeb01e9aa73fbf9648a9acce182897011aa68334",
+      "benchmarks/four_case_qualification_transfer.py": "62e4186e59292d7f73c5a04877fcbc5804f6c729f0130bcc81756d0b8c437bc6",
+      "benchmarks/gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "benchmarks/independent_mmlu_transfer.py": "fbce1acb98f6f4a8b567b2245822ee00446e0e882ce3fec262ab175c4d46ddc0",
+      "benchmarks/qualification_repeat_sensitivity.py": "7a63768e0b19ad236249104c96ac260ae2aebb49fb945dce2c9e2748772e6595",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7"
+    },
+    "subjects": [
+      "college_chemistry",
+      "college_medicine",
+      "human_sexuality",
+      "medical_genetics",
+      "professional_law",
+      "virology"
+    ],
+    "templateCount": 100,
+    "validationRows": 12
+  },
+  "designSha256": "89d6273b9142f51230bdafea0037c664522e9b343e0c09091d4bff6f2c66f1a2"
+}
