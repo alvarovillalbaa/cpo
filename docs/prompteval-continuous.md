@@ -26,6 +26,8 @@ The replay tests how candidate search and qualification interact over repeated c
 
 The follow-up used incumbent validation to choose a lower search cap. It nearly halved CPO's costs and fell short of batched GEPA on the transfer panels. [Early stopping and budget results](prompteval-continuous-budget.md)
 
+A separate replay qualified earlier contenders on each cycle's fresh cases before paying for search. It saved CPO lookups and still missed the gate against GEPA with the same option. [Archive qualification replay](prompteval-archive-cycles.md)
+
 ## Reproduce
 
 ```sh
