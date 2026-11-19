@@ -30,6 +30,8 @@ Both offline executions produced byte-identical reports across 784 GEPA model-pa
 
 A follow-up tested whether a shorter strict validation proof improves CPO's low-budget results. [Minimum-proof search](minimum-proof-budget.md)
 
+Resampling the 240 holdout cases showed how sensitive the 43-pass lead is to case composition and GEPA cap choice. [Paired resampling audit](independent-mmlu-cost-uncertainty.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`. The packaged archive supplies all inputs.
