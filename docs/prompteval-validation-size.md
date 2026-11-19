@@ -21,6 +21,8 @@ The 12-case scaled policy gained 29 passes and saved 28,215 lookups against 24-c
 
 Both scaled policies still need fewer paid lookups to clear the matched GEPA gate. The PromptEval archive supplies all prompts, reuses final holdout cases across episodes, and provides no critical labels. This evidence supports smaller validation panels as a way to improve replay efficiency. It leaves fresh-model performance open.
 
+The frozen 12-case policy transferred its own-cost savings to six other panels and still missed all matched GEPA gates. [Disjoint-subject replay](prompteval-validation-transfer.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4. Preview each phase, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
