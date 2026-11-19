@@ -12,6 +12,8 @@ The live comparison tests GEPA selection under those three reflection configurat
 
 ## First live result
 
+An offline check found that reply 10 determined the rejection under the original gate. The full experiment still dispatched all 216 qualification requests. [Early-rejection replay](typed-development-futility.md)
+
 The GPT‑6 Luna development trial finished and replayed offline. CPO 0.2.0 and the starting prompt passed 0 of 108 holdout replies. Each GEPA control passed 1 of 108, on outage credits. Development used 491 search requests and 216 holdout requests. The failed development gate prevented independent confirmation.
 
 CPO selected the starting prompt for every task. The search journal showed that all 12 ticket reflections omitted the canonical queue labels and that 115 validation replies across warehouse and outage had some correct fields with no exact pass. CPO 0.3.0 addresses the second problem with optional field credit. Its matched recorded-reply comparison tied the exact scoreboard and used 32 fewer search calls, with no matched critical losses. Its fresh model-backed performance remains open. [Field-aware replay](recorded-replay.md#field-aware-selection)
