@@ -25,6 +25,8 @@ The test measures search on public, fixed outcomes. Each subject’s holdout row
 
 The follow-up compared extra probes on tied candidates with two ways of reusing validation probes. It then froze the best exploratory trade-off before loading four new recorded panels. [Validation witness comparison](prompteval-witnesses.md)
 
+A separate follow-up tested whether a second model's training outcomes could rank templates for the target model on four new subjects. [Second-model screening](prompteval-proxy.md)
+
 ## Reproduce
 
 ```sh
