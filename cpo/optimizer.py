@@ -11,12 +11,14 @@ class Row:
     id: str
     family: str
     critical: bool = False
+    fields: int = 0
 
 
 @dataclass(frozen=True)
 class Observation:
     passed: bool
     feedback: dict
+    matched_fields: int = 0
 
 
 @dataclass(frozen=True)
@@ -39,6 +41,7 @@ class ProposalBatch:
 class Candidate:
     prompt: str
     passed: frozenset
+    matched_fields: int = 0
 
 
 @dataclass(frozen=True)
@@ -61,18 +64,21 @@ def balanced_order(rows, seed):
 
 
 def search(initial, train, validation, evaluate, propose, *, metric_limit, rounds,
-           train_per_round, proposals_per_round=2, seed=0, race=True, adaptive=False):
+           train_per_round, proposals_per_round=2, seed=0, race=True, adaptive=False, field_credit=False):
     """Evaluate precisely the supplied search rows. Feedback from validation stays private."""
     combined = [row.id for row in (*train, *validation)]
     if not train or not validation or len(set(combined)) != len(combined):
         raise ValueError('Search requires nonempty train and validation cohorts with distinct IDs')
     if metric_limit < len(validation) or min(rounds, train_per_round, proposals_per_round) < 1:
         raise ValueError('Search budget must cover initial validation and allow positive round limits')
+    if field_credit and any(type(row.fields) is not int or row.fields < 1 for row in (*train, *validation)):
+        raise ValueError('Field-aware rows require a positive field count')
 
     critical = {row.id for row in validation if row.critical}
     families = {row.id: row.family for row in validation}
     family_sizes = Counter(families.values())
     validation_ids = frozenset(families)
+    capacities = {row.id: row.fields if field_credit else 0 for row in validation}
     probes = balanced_order(train, seed)
     events = []
     cache = {}
@@ -82,7 +88,12 @@ def search(initial, train, validation, evaluate, propose, *, metric_limit, round
         if key not in cache:
             if len(cache) >= metric_limit:
                 raise RuntimeError('Search evaluation budget exhausted')
-            cache[key] = evaluate(prompt, row)
+            observed = evaluate(prompt, row)
+            if field_credit and (type(observed.matched_fields) is not int
+                                 or not 0 <= observed.matched_fields <= row.fields
+                                 or observed.passed != (observed.matched_fields == row.fields)):
+                raise ValueError('Field observations must match the row capacity and exact-pass decision')
+            cache[key] = observed
         return cache[key]
 
     def preference(prompt):
@@ -91,13 +102,17 @@ def search(initial, train, validation, evaluate, propose, *, metric_limit, round
     def rank(candidate):
         counts = Counter(families[row_id] for row_id in candidate.passed)
         balance = sum(Fraction(counts[family], size) for family, size in family_sizes.items())
-        return -len(candidate.passed & critical), -balance, -len(candidate.passed), preference(candidate.prompt)
+        return (-len(candidate.passed & critical), -balance, -len(candidate.passed),
+                -candidate.matched_fields, preference(candidate.prompt))
 
-    def dominates(candidate, possible, prompt):
+    def dominates(candidate, possible, fields, prompt):
         return candidate.passed > possible or (candidate.passed == possible
-                                               and preference(candidate.prompt) <= preference(prompt))
+                                               and (-candidate.matched_fields, preference(candidate.prompt))
+                                               <= (-fields, preference(prompt)))
 
-    archive = [Candidate(initial, frozenset(row.id for row in validation if observe(initial, row).passed))]
+    initial_results = [(row, observe(initial, row)) for row in validation]
+    archive = [Candidate(initial, frozenset(row.id for row, observed in initial_results if observed.passed),
+                         sum(observed.matched_fields for _, observed in initial_results) if field_credit else 0)]
     protected = archive[0].passed & critical
     events.append({'kind': 'validated', 'prompt': initial, 'passed': sorted(archive[0].passed)})
     attempted = {initial}
@@ -146,18 +161,25 @@ def search(initial, train, validation, evaluate, propose, *, metric_limit, round
             ordered = sorted(validation, key=lambda row: (not row.critical, row.id in reference.passed))
             passed = set()
             remaining = set(validation_ids)
+            fields, available_fields = 0, sum(capacities.values())
             status = 'validated'
             for row in ordered:
                 if len(cache) >= round_limit and (prompt, row.id) not in cache:
                     status = 'budget'
                     break
                 remaining.remove(row.id)
-                if observe(prompt, row).passed:
+                available_fields -= capacities[row.id]
+                observed = observe(prompt, row)
+                if field_credit:
+                    fields += observed.matched_fields
+                if observed.passed:
                     passed.add(row.id)
                 elif adaptive and row.id in protected:
                     status = 'critical_regression'
                     break
-                if race and remaining and any(dominates(other, passed | remaining, prompt) for other in archive):
+                if race and remaining and any(
+                    dominates(other, passed | remaining, fields + available_fields, prompt) for other in archive
+                ):
                     status = 'dominated'
                     break
             events.append({'kind': status, 'prompt': prompt, 'parent': parent.prompt,
@@ -166,14 +188,16 @@ def search(initial, train, validation, evaluate, propose, *, metric_limit, round
                 attempted.add(prompt)
             if status != 'validated':
                 continue
-            candidate = Candidate(prompt, frozenset(passed))
-            if not any(dominates(other, passed, prompt) for other in archive):
-                archive = [other for other in archive if not dominates(candidate, other.passed, other.prompt)]
+            candidate = Candidate(prompt, frozenset(passed), fields)
+            if not any(dominates(other, passed, fields, prompt) for other in archive):
+                archive = [other for other in archive
+                           if not dominates(candidate, other.passed, other.matched_fields, other.prompt)]
                 archive.append(candidate)
                 archive.sort(key=rank)
             if archive[0].passed == validation_ids:
                 break
-            if adaptive and candidate.passed > parent.passed:
+            if adaptive and (candidate.passed > parent.passed or
+                             candidate.passed == parent.passed and fields > parent.matched_fields):
                 successful_branch = branch
                 break
     return Result(archive[0].prompt, len(cache), reflections, events)

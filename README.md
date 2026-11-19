@@ -13,6 +13,8 @@ python -m benchmarks.frontier --protocol cpo-v2 --out cpo-v2.json
 
 The optimizer accepts evaluator and proposer callbacks. A proposer can return a `ProposalPair(rewrite=..., repair=...)` to evaluate the complete rewrite first. A finite proposal source can return `ProposalBatch(prompts, exhausted=True)` with its last batch so search can move to a different parent. Use `cpo.search` to inspect a search decision or `cpo.run_cycle` to separately qualify it. Call the next cycle with the returned prompt and a fresh qualification set. The core package does not require a provider SDK. See the benchmark for complete callback examples.
 
+Typed evaluators can set `Row.fields` and supply `Observation.matched_fields` with `field_credit=True`. This lets search retain a partial repair when exact validation outcomes tie. Holdout promotion still uses exact paired passes and critical cases.
+
 ## Evidence
 
 The original deterministic benchmark reproduced the adaptive frontier’s 720 of 720 holdout passes with 692 search calls, compared with 622 passes and 1,193 calls for batched GEPA. On the separate transfer benchmark, CPO reached 814 of 864 with 974 calls, while batched GEPA reached 836 with 1,210 calls. CPO failed the transfer gate because it lost matched critical cases. The recorded unrestricted live trials also missed their improvement gates. Fresh typed provider quality remains open. [Protocol](docs/benchmark.md) · [Versioned result](docs/benchmark-results-v1.json)
@@ -20,5 +22,7 @@ The original deterministic benchmark reproduced the adaptive frontier’s 720 of
 The rewrite-first follow-up cleared the synthetic gate on 24 fresh trials. It passed 864 of 864 holdout cases with 892 search calls. Sequential GEPA passed 526 with 1,393 calls, and batched GEPA passed 785 with 1,231 calls. Rewrite-first lost no matched critical cases against either GEPA variant. The original CPO ordering passed 859 with 942 calls on those same rows. [Confirmation result](docs/benchmark-results-v2.json)
 
 In a fixed-graph replay of recorded model replies, CPO cleared the gate against both GEPA controls on the second trial. Stopping at known proposal exhaustion saved 254 of 1,399 calls on matched splits and preserved all selected prompts. The replay isolates selection and leaves fresh model-backed performance unverified. [Recorded replay](docs/recorded-replay.md)
+
+The fresh typed study uses CPO 0.2.0 to generate, select, and test prompts under the same request limits as three GEPA configurations. [Model-backed validation protocol](docs/model-backed-validation.md)
 
 CPO draws on reflective feedback and complementary candidates from GEPA, attempt history from OPRO, and the separation of proposal generation and validation from MIPROv2. Its guarded promotion rule and comparison suite make these choices measurable. [GEPA](https://arxiv.org/abs/2507.19457) · [OPRO](https://arxiv.org/abs/2309.03409) · [MIPROv2](https://arxiv.org/abs/2406.11695)

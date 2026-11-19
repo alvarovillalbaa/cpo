@@ -29,7 +29,7 @@ class CycleResult:
 
 
 def run_cycle(incumbent, train, validation, holdout, evaluate, propose, *,
-              metric_limit, rounds, train_per_round, qualify, repeats=1, minimum_gain=1, seed=0):
+              metric_limit, rounds, train_per_round, qualify, repeats=1, minimum_gain=1, seed=0, field_credit=False):
     """Run one cycle. The qualifier returns a bool for each prompt, row, and repeat."""
     if type(repeats) is not int or repeats < 1 or type(minimum_gain) is not int or minimum_gain < 1:
         raise ValueError("Qualification repeat and gain thresholds must be positive integers")
@@ -39,7 +39,7 @@ def run_cycle(incumbent, train, validation, holdout, evaluate, propose, *,
         raise ValueError("Search and qualification require disjoint row IDs and a nonempty holdout")
 
     candidate = search(incumbent, train, validation, evaluate, propose, metric_limit=metric_limit,
-                       rounds=rounds, train_per_round=train_per_round, seed=seed, adaptive=True)
+                       rounds=rounds, train_per_round=train_per_round, seed=seed, adaptive=True, field_credit=field_credit)
     if candidate.prompt == incumbent:
         return CycleResult(incumbent, candidate, (), False)
 
