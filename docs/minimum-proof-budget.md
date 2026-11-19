@@ -22,6 +22,8 @@ On the earlier cohorts, most gains at cap 28 came from BBH and LMentry. The two 
 
 The seeded cap-28 traces reproduced on all 40 panels. Both offline executions of every phase were byte-identical. The tests exercised 5,120 binary panel, budget, and admission combinations and verified strict gain, critical-case protection, and lookup accounting. Fresh-model superiority and provider cost remain unverified.
 
+A follow-up proves validation gain from partially observed pairs, so a strict certificate can finish before the incumbent is fully measured. [Partial paired proofs](partial-pair-budget.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview the phase seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`. Phases are `independent`, `mmlu`, `bbh-lmentry`, and `bbh-lmentry-stress`.
