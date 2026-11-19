@@ -30,6 +30,8 @@ Deferred first-gain saved **13,332 lookups (20.1%)** against its eager reference
 
 The original rotation schedule required every incumbent lookup under the eager proof order. The paired rotation proof skipped 365 incumbent lookups and added 1,202 challenger lookups, for a net increase of 837. That leaves the cost of broader coverage open. [Sealed per-panel results](prompteval-lazy-incumbent-results-v1.json)
 
+A follow-up capped extra reads during screening. The two-read policy recovered 61 passes and met both GEPA gates on 10 of 18 panels. [Bounded discovery replay](prompteval-bounded-discovery.md)
+
 Each panel requires at least as many holdout passes at equal or lower cost against both controls. A pass tie requires at least 10% savings. The episodes reuse recorded outcomes and final holdout cases. These measurements cover callback lookups on archived prompts. Two offline executions of each phase produced byte-identical reports.
 
 ## Reproduce
