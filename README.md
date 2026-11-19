@@ -24,6 +24,8 @@ For an existing candidate pool, `cpo.select_pool` races exact validation scores 
 
 `cpo.select_certified_pool` offers an opt-in early stop. It returns a challenger once its observed passes exceed the incumbent’s full validation score and every protected critical case passes. Its result reports score bounds. Recorded-data comparisons were mixed. [Certificate and results](docs/certified-pool.md)
 
+The PromptEval transfer replay bundles six public correctness panels and a fixed holdout for each subject. Run `python -m benchmarks.prompteval_transfer` to preview its seal. [Transfer protocol and results](docs/prompteval-transfer.md)
+
 ## Evidence
 
 The original deterministic benchmark reproduced the adaptive frontier’s 720 of 720 holdout passes with 692 search calls, compared with 622 passes and 1,193 calls for batched GEPA. On the separate transfer benchmark, CPO reached 814 of 864 with 974 calls, while batched GEPA reached 836 with 1,210 calls. CPO failed the transfer gate because it lost matched critical cases. The recorded unrestricted live trials also missed their improvement gates. Fresh typed provider quality remains open. [Protocol](docs/benchmark.md) · [Versioned result](docs/benchmark-results-v1.json)
