@@ -22,6 +22,8 @@ On outage, summing distinct critical categories per promotion panel gives 382 fo
 
 The original provider holdout covers two of seven distinct directed outage pairs against diverse sequential GEPA and two of six against diverse batched GEPA. The deduplicated pass delta across the observed directed pairs is zero in each comparison. The missing pairs and fixed proposal bank limit what this replay says about independent performance.
 
+A follow-up checked a reserved long-outage case against the remaining failure mode. The loss counts persisted under every completion of the missing witness replies. [Reserved outage check](recorded-outage-witness.md)
+
 ## Reproduce offline
 
 Use the intact research archive and hash-pinned GEPA 0.1.4. Preview the plan, then use its seal with a fresh path.

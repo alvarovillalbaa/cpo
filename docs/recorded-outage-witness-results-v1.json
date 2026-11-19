@@ -1,0 +1,177 @@
+{
+  "baseline": {
+    "cpo": {
+      "calls": 6345,
+      "passes": 507,
+      "promotions": 128
+    },
+    "gepa-batched": {
+      "calls": 7516,
+      "passes": 432,
+      "promotions": 57
+    },
+    "gepa-sequential": {
+      "calls": 7270,
+      "passes": 431,
+      "promotions": 56
+    }
+  },
+  "baselineCriticalLossObservations": [
+    {
+      "case": "outage-validation-07",
+      "control": "gepa-batched",
+      "controlWitnessRequired": false,
+      "inPromotion": false,
+      "inTrain": true,
+      "inValidation": true,
+      "incumbentPassed": false,
+      "seed": 82642,
+      "witnessRequired": false
+    },
+    {
+      "case": "outage-validation-08",
+      "control": "gepa-sequential",
+      "controlWitnessRequired": true,
+      "inPromotion": false,
+      "inTrain": false,
+      "inValidation": false,
+      "incumbentPassed": false,
+      "seed": 82801,
+      "witnessRequired": true
+    },
+    {
+      "case": "outage-validation-08",
+      "control": "gepa-batched",
+      "controlWitnessRequired": true,
+      "inPromotion": false,
+      "inTrain": false,
+      "inValidation": false,
+      "incumbentPassed": false,
+      "seed": 82801,
+      "witnessRequired": true
+    },
+    {
+      "case": "outage-validation-08",
+      "control": "gepa-batched",
+      "controlWitnessRequired": true,
+      "inPromotion": false,
+      "inTrain": false,
+      "inValidation": false,
+      "incumbentPassed": false,
+      "seed": 87306,
+      "witnessRequired": true
+    }
+  ],
+  "missingWitnessPromptCount": 2,
+  "plan": {
+    "baselineReportSha256": "c95283b9edb80e3c640c4d95a0bb256278827c70c9a028dca5ce33258f9eb7be",
+    "disjointReserve": [
+      "outage-holdout-09",
+      "outage-holdout-11",
+      "outage-holdout-14"
+    ],
+    "gepaVersion": "0.1.4",
+    "incumbentPrescreenLookups": 2,
+    "paidAccounting": "Charge shared incumbent prescreen separately and one challenger evaluation per eligible split",
+    "protocol": "cpo-recorded-outage-witness-v1",
+    "remainingExternalCases": 15,
+    "retainedReplaySplits": 220,
+    "rule": "After promotion, require a pass on the witness if the target stratum was absent from all nine development cases",
+    "runnerSha256": "6b7cf4358951be94e4f4fbc2d1c94b2221c818aaad20fa2b0cb82856524c5101",
+    "selectedWitness": "outage-holdout-11",
+    "sourcePlanSha256": "4023fb794d1488f61a6518e28214423ed904b0f68b6ca67ea524af01aa3a3f84",
+    "targetStratum": [
+      2,
+      "MISSING"
+    ],
+    "task": "outage"
+  },
+  "planSha256": "b4d63fa7122678964aea8390e0163642f01b678844e8b08f248252c19f62ae25",
+  "possibleWorlds": 4,
+  "replayBounds": {
+    "candidateMetrics": {
+      "cpo": {
+        "calls": [
+          6379,
+          6379
+        ],
+        "passes": [
+          497,
+          507
+        ],
+        "promotions": [
+          115,
+          128
+        ]
+      },
+      "gepa-batched": {
+        "calls": [
+          7531,
+          7531
+        ],
+        "passes": [
+          430,
+          432
+        ],
+        "promotions": [
+          52,
+          57
+        ]
+      },
+      "gepa-sequential": {
+        "calls": [
+          7282,
+          7282
+        ],
+        "passes": [
+          430,
+          433
+        ],
+        "promotions": [
+          52,
+          56
+        ]
+      }
+    },
+    "matchedCriticalLosses": {
+      "gepa-batched": [
+        3,
+        3
+      ],
+      "gepa-sequential": [
+        1,
+        1
+      ]
+    },
+    "pairedPassDelta": {
+      "gepa-batched": [
+        67,
+        75
+      ],
+      "gepa-sequential": [
+        65,
+        76
+      ]
+    }
+  },
+  "witnessEvidence": {
+    "cpo": {
+      "missing": 13,
+      "recordedFailure": 0,
+      "recordedPass": 21,
+      "required": 34
+    },
+    "gepa-batched": {
+      "missing": 5,
+      "recordedFailure": 0,
+      "recordedPass": 10,
+      "required": 15
+    },
+    "gepa-sequential": {
+      "missing": 4,
+      "recordedFailure": 0,
+      "recordedPass": 8,
+      "required": 12
+    }
+  }
+}
