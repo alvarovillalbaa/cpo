@@ -1,0 +1,596 @@
+{
+  "plan": {
+    "basePlanSha256": "bf063476240f338603c871d865412df403784c5b2b27b998919419a46f86380c",
+    "baseReplaySha256": "ca96b59ab2aa01db9fe4cb40574bc59705d231fa7790c774be4d158881622e24",
+    "control": "Identical panel sizes, critical quotas, and number of swaps as the diverse allocation",
+    "gepaVersion": "0.1.4",
+    "policies": [
+      "two-critical",
+      "matched-swaps",
+      "risk-diverse"
+    ],
+    "primary": "cpo.risk-diverse",
+    "protocol": "cpo-recorded-promotion-strata-v1",
+    "riskStrataSha256": "9793df1907a6292ec4f2bc397b6e7d4a9bc8d5cd7ebd20aa38601122eb10c43e",
+    "sourceSha256": "674b6df100a537c2de4806fe7ccdb515b05c848598380c3d97f684fce827fb85",
+    "strataRules": {
+      "outage": "Duration bands below 30, 30\u2013119, and 120 or more, crossed with evidence status",
+      "ticket": "Topic",
+      "warehouse": "Nonpositive available stock, inspection, and tier"
+    },
+    "tieOrder": "Retain existing cases and order where possible, then use the seeded input order"
+  },
+  "planSha256": "f612c519f74f72ca0601e58422f655f0d797c36e6b1752497367b17dacc2d47f",
+  "results": {
+    "outage": {
+      "allocations": {
+        "matched-swaps": {
+          "criticalPromotionStrata": 395,
+          "criticalValidationStrata": 262,
+          "promotionCritical": 409,
+          "promotionStrata": 612,
+          "swaps": 178,
+          "swapsFromBaseline": 104,
+          "validationCritical": 269,
+          "validationStrata": 573
+        },
+        "risk-diverse": {
+          "criticalPromotionStrata": 408,
+          "criticalValidationStrata": 269,
+          "promotionCritical": 409,
+          "promotionStrata": 655,
+          "swaps": 172,
+          "swapsFromBaseline": 104,
+          "validationCritical": 269,
+          "validationStrata": 571
+        },
+        "two-critical": {
+          "criticalPromotionStrata": 382,
+          "criticalValidationStrata": 260,
+          "promotionCritical": 409,
+          "promotionStrata": 578,
+          "swaps": 96,
+          "swapsFromBaseline": 0,
+          "validationCritical": 269,
+          "validationStrata": 561
+        }
+      },
+      "comparisons": {
+        "cpo.matched-swaps": {
+          "callsSaved": -211,
+          "criticalLosses": 5,
+          "matchedOriginalHoldoutCases": 3006,
+          "matchedOriginalHoldoutTrials": 167,
+          "originalHoldoutPassDelta": 72,
+          "passDelta": 11,
+          "qualified": false
+        },
+        "cpo.two-critical": {
+          "callsSaved": -92,
+          "criticalLosses": 9,
+          "matchedOriginalHoldoutCases": 2952,
+          "matchedOriginalHoldoutTrials": 164,
+          "originalHoldoutPassDelta": 108,
+          "passDelta": 17,
+          "qualified": false
+        },
+        "gepa-batched.matched-swaps": {
+          "callsSaved": 837,
+          "criticalLosses": 3,
+          "matchedOriginalHoldoutCases": 2988,
+          "matchedOriginalHoldoutTrials": 166,
+          "originalHoldoutPassDelta": 432,
+          "passDelta": 84,
+          "qualified": false
+        },
+        "gepa-batched.risk-diverse": {
+          "callsSaved": 1171,
+          "criticalLosses": 3,
+          "matchedOriginalHoldoutCases": 2970,
+          "matchedOriginalHoldoutTrials": 165,
+          "originalHoldoutPassDelta": 387,
+          "passDelta": 75,
+          "qualified": false
+        },
+        "gepa-batched.two-critical": {
+          "callsSaved": 1052,
+          "criticalLosses": 7,
+          "matchedOriginalHoldoutCases": 2934,
+          "matchedOriginalHoldoutTrials": 163,
+          "originalHoldoutPassDelta": 441,
+          "passDelta": 83,
+          "qualified": false
+        },
+        "gepa-sequential.matched-swaps": {
+          "callsSaved": 659,
+          "criticalLosses": 2,
+          "matchedOriginalHoldoutCases": 2898,
+          "matchedOriginalHoldoutTrials": 161,
+          "originalHoldoutPassDelta": 405,
+          "passDelta": 81,
+          "qualified": false
+        },
+        "gepa-sequential.risk-diverse": {
+          "callsSaved": 925,
+          "criticalLosses": 1,
+          "matchedOriginalHoldoutCases": 2916,
+          "matchedOriginalHoldoutTrials": 162,
+          "originalHoldoutPassDelta": 360,
+          "passDelta": 76,
+          "qualified": false
+        },
+        "gepa-sequential.two-critical": {
+          "callsSaved": 726,
+          "criticalLosses": 4,
+          "matchedOriginalHoldoutCases": 2898,
+          "matchedOriginalHoldoutTrials": 161,
+          "originalHoldoutPassDelta": 414,
+          "passDelta": 82,
+          "qualified": false
+        }
+      },
+      "distinctProviderHoldoutPairs": {
+        "cpo.two-critical": {
+          "differentPromptPairs": 7,
+          "knownPassDelta": 0,
+          "matchedPairs": 2
+        },
+        "gepa-batched.risk-diverse": {
+          "differentPromptPairs": 6,
+          "knownPassDelta": 0,
+          "matchedPairs": 2
+        },
+        "gepa-sequential.risk-diverse": {
+          "differentPromptPairs": 7,
+          "knownPassDelta": 0,
+          "matchedPairs": 2
+        }
+      },
+      "totals": {
+        "cpo.matched-swaps": {
+          "archiveLookups": 957,
+          "calls": 6134,
+          "passes": 496,
+          "promotions": 119,
+          "qualificationEvaluations": 928
+        },
+        "cpo.risk-diverse": {
+          "archiveLookups": 975,
+          "calls": 6345,
+          "passes": 507,
+          "promotions": 128,
+          "qualificationEvaluations": 986
+        },
+        "cpo.two-critical": {
+          "archiveLookups": 978,
+          "calls": 6253,
+          "passes": 490,
+          "promotions": 115,
+          "qualificationEvaluations": 917
+        },
+        "gepa-batched.matched-swaps": {
+          "archiveLookups": 1110,
+          "calls": 7182,
+          "passes": 423,
+          "promotions": 51,
+          "qualificationEvaluations": 467
+        },
+        "gepa-batched.risk-diverse": {
+          "archiveLookups": 1158,
+          "calls": 7516,
+          "passes": 432,
+          "promotions": 57,
+          "qualificationEvaluations": 537
+        },
+        "gepa-batched.two-critical": {
+          "archiveLookups": 1137,
+          "calls": 7397,
+          "passes": 424,
+          "promotions": 52,
+          "qualificationEvaluations": 491
+        },
+        "gepa-sequential.matched-swaps": {
+          "archiveLookups": 1043,
+          "calls": 7004,
+          "passes": 426,
+          "promotions": 53,
+          "qualificationEvaluations": 490
+        },
+        "gepa-sequential.risk-diverse": {
+          "archiveLookups": 1100,
+          "calls": 7270,
+          "passes": 431,
+          "promotions": 56,
+          "qualificationEvaluations": 526
+        },
+        "gepa-sequential.two-critical": {
+          "archiveLookups": 1053,
+          "calls": 7071,
+          "passes": 425,
+          "promotions": 51,
+          "qualificationEvaluations": 501
+        }
+      }
+    },
+    "ticket": {
+      "allocations": {
+        "matched-swaps": {
+          "criticalPromotionStrata": 272,
+          "criticalValidationStrata": 162,
+          "promotionCritical": 282,
+          "promotionStrata": 645,
+          "swaps": 158,
+          "swapsFromBaseline": 73,
+          "validationCritical": 162,
+          "validationStrata": 643
+        },
+        "risk-diverse": {
+          "criticalPromotionStrata": 281,
+          "criticalValidationStrata": 162,
+          "promotionCritical": 282,
+          "promotionStrata": 659,
+          "swaps": 161,
+          "swapsFromBaseline": 73,
+          "validationCritical": 162,
+          "validationStrata": 660
+        },
+        "two-critical": {
+          "criticalPromotionStrata": 263,
+          "criticalValidationStrata": 162,
+          "promotionCritical": 282,
+          "promotionStrata": 617,
+          "swaps": 95,
+          "swapsFromBaseline": 0,
+          "validationCritical": 162,
+          "validationStrata": 616
+        }
+      },
+      "comparisons": {
+        "cpo.matched-swaps": {
+          "callsSaved": 0,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": false
+        },
+        "cpo.two-critical": {
+          "callsSaved": 0,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": false
+        },
+        "gepa-batched.matched-swaps": {
+          "callsSaved": 0,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": false
+        },
+        "gepa-batched.risk-diverse": {
+          "callsSaved": 0,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": false
+        },
+        "gepa-batched.two-critical": {
+          "callsSaved": 0,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": false
+        },
+        "gepa-sequential.matched-swaps": {
+          "callsSaved": 0,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": false
+        },
+        "gepa-sequential.risk-diverse": {
+          "callsSaved": 0,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": false
+        },
+        "gepa-sequential.two-critical": {
+          "callsSaved": 0,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": false
+        }
+      },
+      "distinctProviderHoldoutPairs": {
+        "cpo.two-critical": {
+          "differentPromptPairs": 0,
+          "knownPassDelta": 0,
+          "matchedPairs": 0
+        },
+        "gepa-batched.risk-diverse": {
+          "differentPromptPairs": 0,
+          "knownPassDelta": 0,
+          "matchedPairs": 0
+        },
+        "gepa-sequential.risk-diverse": {
+          "differentPromptPairs": 0,
+          "knownPassDelta": 0,
+          "matchedPairs": 0
+        }
+      },
+      "totals": {
+        "cpo.matched-swaps": {
+          "archiveLookups": 0,
+          "calls": 660,
+          "passes": 660,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "cpo.risk-diverse": {
+          "archiveLookups": 0,
+          "calls": 660,
+          "passes": 660,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "cpo.two-critical": {
+          "archiveLookups": 0,
+          "calls": 660,
+          "passes": 660,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-batched.matched-swaps": {
+          "archiveLookups": 0,
+          "calls": 660,
+          "passes": 660,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-batched.risk-diverse": {
+          "archiveLookups": 0,
+          "calls": 660,
+          "passes": 660,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-batched.two-critical": {
+          "archiveLookups": 0,
+          "calls": 660,
+          "passes": 660,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-sequential.matched-swaps": {
+          "archiveLookups": 0,
+          "calls": 660,
+          "passes": 660,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-sequential.risk-diverse": {
+          "archiveLookups": 0,
+          "calls": 660,
+          "passes": 660,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-sequential.two-critical": {
+          "archiveLookups": 0,
+          "calls": 660,
+          "passes": 660,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        }
+      }
+    },
+    "warehouse": {
+      "allocations": {
+        "matched-swaps": {
+          "criticalPromotionStrata": 269,
+          "criticalValidationStrata": 167,
+          "promotionCritical": 277,
+          "promotionStrata": 584,
+          "swaps": 166,
+          "swapsFromBaseline": 83,
+          "validationCritical": 168,
+          "validationStrata": 493
+        },
+        "risk-diverse": {
+          "criticalPromotionStrata": 277,
+          "criticalValidationStrata": 168,
+          "promotionCritical": 277,
+          "promotionStrata": 622,
+          "swaps": 164,
+          "swapsFromBaseline": 83,
+          "validationCritical": 168,
+          "validationStrata": 468
+        },
+        "two-critical": {
+          "criticalPromotionStrata": 260,
+          "criticalValidationStrata": 167,
+          "promotionCritical": 277,
+          "promotionStrata": 552,
+          "swaps": 98,
+          "swapsFromBaseline": 0,
+          "validationCritical": 168,
+          "validationStrata": 483
+        }
+      },
+      "comparisons": {
+        "cpo.matched-swaps": {
+          "callsSaved": 103,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": false
+        },
+        "cpo.two-critical": {
+          "callsSaved": 192,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": false
+        },
+        "gepa-batched.matched-swaps": {
+          "callsSaved": 787,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": true
+        },
+        "gepa-batched.risk-diverse": {
+          "callsSaved": 615,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": true
+        },
+        "gepa-batched.two-critical": {
+          "callsSaved": 959,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": true
+        },
+        "gepa-sequential.matched-swaps": {
+          "callsSaved": 787,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": true
+        },
+        "gepa-sequential.risk-diverse": {
+          "callsSaved": 615,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": true
+        },
+        "gepa-sequential.two-critical": {
+          "callsSaved": 959,
+          "criticalLosses": 0,
+          "matchedOriginalHoldoutCases": 3960,
+          "matchedOriginalHoldoutTrials": 220,
+          "originalHoldoutPassDelta": 0,
+          "passDelta": 0,
+          "qualified": true
+        }
+      },
+      "distinctProviderHoldoutPairs": {
+        "cpo.two-critical": {
+          "differentPromptPairs": 0,
+          "knownPassDelta": 0,
+          "matchedPairs": 0
+        },
+        "gepa-batched.risk-diverse": {
+          "differentPromptPairs": 0,
+          "knownPassDelta": 0,
+          "matchedPairs": 0
+        },
+        "gepa-sequential.risk-diverse": {
+          "differentPromptPairs": 0,
+          "knownPassDelta": 0,
+          "matchedPairs": 0
+        }
+      },
+      "totals": {
+        "cpo.matched-swaps": {
+          "archiveLookups": 251,
+          "calls": 1911,
+          "passes": 605,
+          "promotions": 0,
+          "qualificationEvaluations": 135
+        },
+        "cpo.risk-diverse": {
+          "archiveLookups": 236,
+          "calls": 1808,
+          "passes": 605,
+          "promotions": 0,
+          "qualificationEvaluations": 123
+        },
+        "cpo.two-critical": {
+          "archiveLookups": 273,
+          "calls": 2000,
+          "passes": 605,
+          "promotions": 0,
+          "qualificationEvaluations": 147
+        },
+        "gepa-batched.matched-swaps": {
+          "archiveLookups": 373,
+          "calls": 2595,
+          "passes": 605,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-batched.risk-diverse": {
+          "archiveLookups": 339,
+          "calls": 2423,
+          "passes": 605,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-batched.two-critical": {
+          "archiveLookups": 405,
+          "calls": 2767,
+          "passes": 605,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-sequential.matched-swaps": {
+          "archiveLookups": 373,
+          "calls": 2595,
+          "passes": 605,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-sequential.risk-diverse": {
+          "archiveLookups": 339,
+          "calls": 2423,
+          "passes": 605,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        },
+        "gepa-sequential.two-critical": {
+          "archiveLookups": 405,
+          "calls": 2767,
+          "passes": 605,
+          "promotions": 0,
+          "qualificationEvaluations": 0
+        }
+      }
+    }
+  }
+}
