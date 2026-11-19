@@ -31,6 +31,8 @@ Requiring two passes at the start gained nine on Falcon nutrition. It lost 14 on
 
 The replays reproduced all 40 published seeded CPO traces and the eight batched GEPA traces used for attribution. Two executions per phase produced byte-identical reports. The archive proof also matched the full gain decision on every three-case binary pair at both higher margins. These are retrospective results on recorded prompt pools. Fresh-model quality and provider costs remain unverified. [Sealed results and per-episode attribution](starting-prompt-margin-results-v1.json)
 
+A follow-up compared broader screens against the same controls and checked which of the 12 strict-gain misses they recovered. [Budgeted second probe](budgeted-second-probe.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview the phase seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`. Phases are `independent`, `mmlu`, `bbh-lmentry`, and `bbh-lmentry-stress`.
