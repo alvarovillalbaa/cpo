@@ -24,6 +24,8 @@ The two paired variants tied in passes on all 120 panel-cap combinations. The fa
 
 Two offline executions of every phase reproduced the report byte for byte. The tests covered 5,120 binary outcome, budget, and search combinations and checked lookup accounting, strict gain, and critical-case preservation. These are archived fixed-pool results. Fresh-prompt quality and provider costs remain unverified.
 
+A separate replay applied paired bounds to the archive check itself and measured the effect on search and qualification costs. [Paired archive preflight](paired-archive-preflight.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview a phase to get the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`. Phases are `independent`, `mmlu`, `bbh-lmentry`, and `bbh-lmentry-stress`.
