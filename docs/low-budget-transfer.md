@@ -23,6 +23,8 @@ Cap-28 CPO gained 12 passes against batched GEPA at cap 39 and spent 2,039 more 
 
 Two offline executions produced byte-identical reports. These are new-to-the-project archived subjects and model splits with fixed prompt templates. The resampling range is conditional on those subjects and trajectories. Fresh-prompt quality and live provider costs remain unverified.
 
+A follow-up gave seeded CPO credit for already paid incumbent replies. It found more validation certificates at cap 28 and scored fewer final passes on both archived cohorts. [Paid incumbent credit](paid-incumbent-credit.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 for offline replay. The packaged correctness snapshot supplies all inputs.
