@@ -36,6 +36,8 @@ First-gain used 18,370 fewer lookups (45.7%) than the prior CPO policy and finis
 
 The aggregate sums are descriptive. Each panel must match or exceed each control's final passes at equal or lower cost, and a score tie requires at least 10% savings. The panels reuse recorded outcomes, subjects, and fixed holdout cases from the prior transfer. The result supports keeping this selector opt-in. Two offline executions produced identical reports. [Sealed results](prompteval-single-finalist-results-v1.json)
 
+A follow-up tested a second certificate after a failed first-gain screen. All three retry policies spent more lookups, and aggregate holdout accuracy tied or fell. [Finalist retry replay](prompteval-finalist-retry.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview to obtain the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
