@@ -20,6 +20,8 @@ Each cap covers 12 seeds and four deterministic profiles. Entries give exact hol
 
 CPO rejected all 30 attempted merges. It selected the same prompts as the reserve-only control and spent 77 extra validation lookups across both caps. At cap 144 the guarded arm cleared both GEPA controls on the multi-clause and reverse-precedence profiles, where it attempted zero merges. GEPA accepted 44 merges across both caps. Native merge gained 62 holdout passes at cap 144 and lost 40 at cap 96 against GEPA without merging. The evidence supports a structural composition helper. The guarded search policy remains experimental. [Per-profile results and seal](component-merge-results-v1.json)
 
+A follow-up repaired some candidate merges using measured training regressions before guarded validation. [Training-counterexample repair](component-merge-repair.md)
+
 ## Reproduce
 
 The commands use the pinned GEPA package and a fixed Python hash seed.

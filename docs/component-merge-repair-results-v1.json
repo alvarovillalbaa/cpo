@@ -1,0 +1,1275 @@
+{
+  "plan": {
+    "accounting": "Each distinct search evaluation and scripted reflection slot counts once",
+    "arms": [
+      "cpo-ordinary",
+      "cpo-merge",
+      "cpo-probe-reserve",
+      "cpo-probe-veto",
+      "cpo-probe-repair",
+      "cpo-spare-repair",
+      "gepa",
+      "gepa-native-merge"
+    ],
+    "caps": [
+      96,
+      144
+    ],
+    "cohortDigests": {
+      "component-interaction": "013db4b821935d8c320403f4120c061e53d9a635c5ea3db0b7e27a50accfa7fa",
+      "legacy-heavy": "013db4b821935d8c320403f4120c061e53d9a635c5ea3db0b7e27a50accfa7fa",
+      "multi-clause": "fb9948c05066e6a60beb58c4a868db8c94c3597b99a6399ba9e8b51d19f3a245",
+      "reverse-precedence": "8ad3608f708237c0ab8a0cd442db11f7195cc06481cf86f2ca3b23b43d713811"
+    },
+    "delivery": "deterministic-fixture",
+    "gepaVersion": "0.1.4",
+    "maximumTrainingProbes": 4,
+    "primary": "cpo-probe-repair",
+    "profiles": [
+      "reverse-precedence",
+      "legacy-heavy",
+      "multi-clause",
+      "component-interaction"
+    ],
+    "proposalRounds": 6,
+    "protocol": "cpo-component-merge-repair-v1",
+    "reflectionMinibatch": 6,
+    "seeds": [
+      55201,
+      55220,
+      55239,
+      55258,
+      55277,
+      55296,
+      55315,
+      55334,
+      55353,
+      55372,
+      55391,
+      55410,
+      55429,
+      55448,
+      55467,
+      55486
+    ],
+    "sourceSha256": {
+      "benchmarks/component_merge.py": "8100420e7b6547118454530ee28208607f43ccfd33dadee0564a4bf61210b5a0",
+      "benchmarks/component_merge_repair.py": "248ae4cd38140c4b1d66bcc0e0c8c2e4fcf2ad33e56fbf404cb82cbfa1831fd6",
+      "benchmarks/frontier.py": "4bcf5c82082cc27a59a72b98728f21120498860211cd619e57a45cb52fb116ac",
+      "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+      "cpo/__init__.py": "f5fa7191a6ee4ee3b4d627dd2d324f78e79969ef8a8e5b35031951af2280be56",
+      "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+      "cpo/composition.py": "1749fe2fff089c880c6b2f4827b7b25812440f461e6b415e1061a41e2079a2bf",
+      "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+      "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+    }
+  },
+  "planSha256": "ddefee6012b7c85effab3dc15410d649a5240b7d50299e333e52c1a8b02f754d",
+  "reportSha256": "4bcb2a112783210fb39348c7b1aca2957ff20bb89ac32cd8ae90afe50eb58d3a",
+  "results": {
+    "144": {
+      "component-interaction": {
+        "comparisons": {
+          "cpo-probe-repair": {
+            "cpo-merge": {
+              "callsSaved": 34,
+              "criticalLosses": 0,
+              "passDelta": -20,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 124,
+              "criticalLosses": 0,
+              "passDelta": -46,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -27,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -13,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-spare-repair": {
+              "callsSaved": 130,
+              "criticalLosses": 0,
+              "passDelta": -46,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": -144,
+              "criticalLosses": 27,
+              "passDelta": -13,
+              "qualified": false
+            },
+            "gepa-native-merge": {
+              "callsSaved": -157,
+              "criticalLosses": 37,
+              "passDelta": 14,
+              "qualified": false
+            }
+          },
+          "cpo-spare-repair": {
+            "cpo-merge": {
+              "callsSaved": -96,
+              "criticalLosses": 0,
+              "passDelta": 26,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": -6,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-repair": {
+              "callsSaved": -130,
+              "criticalLosses": 0,
+              "passDelta": 46,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -157,
+              "criticalLosses": 0,
+              "passDelta": 46,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -143,
+              "criticalLosses": 0,
+              "passDelta": 46,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": -274,
+              "criticalLosses": 27,
+              "passDelta": 33,
+              "qualified": false
+            },
+            "gepa-native-merge": {
+              "callsSaved": -287,
+              "criticalLosses": 37,
+              "passDelta": 60,
+              "qualified": false
+            }
+          }
+        },
+        "totals": {
+          "cpo-merge": {
+            "calls": 2160,
+            "mergeCandidates": 11,
+            "mergesAccepted": 0,
+            "passes": 382,
+            "unfunded": 0
+          },
+          "cpo-ordinary": {
+            "calls": 2250,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 408,
+            "unfunded": 0
+          },
+          "cpo-probe-repair": {
+            "calls": 2126,
+            "mergeCandidates": 13,
+            "mergesAccepted": 0,
+            "passes": 362,
+            "unfunded": 0
+          },
+          "cpo-probe-reserve": {
+            "calls": 2099,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 362,
+            "unfunded": 0
+          },
+          "cpo-probe-veto": {
+            "calls": 2113,
+            "mergeCandidates": 13,
+            "mergesAccepted": 0,
+            "passes": 362,
+            "unfunded": 0
+          },
+          "cpo-spare-repair": {
+            "calls": 2256,
+            "mergeCandidates": 11,
+            "mergesAccepted": 0,
+            "passes": 408,
+            "unfunded": 5
+          },
+          "gepa": {
+            "calls": 1982,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 375,
+            "unfunded": 0
+          },
+          "gepa-native-merge": {
+            "calls": 1969,
+            "mergeCandidates": 13,
+            "mergesAccepted": 11,
+            "passes": 348,
+            "unfunded": 0
+          }
+        }
+      },
+      "legacy-heavy": {
+        "comparisons": {
+          "cpo-probe-repair": {
+            "cpo-merge": {
+              "callsSaved": -63,
+              "criticalLosses": 0,
+              "passDelta": 47,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 155,
+              "criticalLosses": 0,
+              "passDelta": -23,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -128,
+              "criticalLosses": 0,
+              "passDelta": 67,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -108,
+              "criticalLosses": 0,
+              "passDelta": 67,
+              "qualified": false
+            },
+            "cpo-spare-repair": {
+              "callsSaved": 175,
+              "criticalLosses": 0,
+              "passDelta": -39,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": -290,
+              "criticalLosses": 19,
+              "passDelta": -22,
+              "qualified": false
+            },
+            "gepa-native-merge": {
+              "callsSaved": -240,
+              "criticalLosses": 29,
+              "passDelta": -34,
+              "qualified": false
+            }
+          },
+          "cpo-spare-repair": {
+            "cpo-merge": {
+              "callsSaved": -238,
+              "criticalLosses": 0,
+              "passDelta": 86,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": -20,
+              "criticalLosses": 0,
+              "passDelta": 16,
+              "qualified": false
+            },
+            "cpo-probe-repair": {
+              "callsSaved": -175,
+              "criticalLosses": 17,
+              "passDelta": 39,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -303,
+              "criticalLosses": 0,
+              "passDelta": 106,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -283,
+              "criticalLosses": 0,
+              "passDelta": 106,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": -465,
+              "criticalLosses": 36,
+              "passDelta": 17,
+              "qualified": false
+            },
+            "gepa-native-merge": {
+              "callsSaved": -415,
+              "criticalLosses": 46,
+              "passDelta": 5,
+              "qualified": false
+            }
+          }
+        },
+        "totals": {
+          "cpo-merge": {
+            "calls": 2164,
+            "mergeCandidates": 11,
+            "mergesAccepted": 0,
+            "passes": 385,
+            "unfunded": 0
+          },
+          "cpo-ordinary": {
+            "calls": 2382,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 455,
+            "unfunded": 0
+          },
+          "cpo-probe-repair": {
+            "calls": 2227,
+            "mergeCandidates": 13,
+            "mergesAccepted": 5,
+            "passes": 432,
+            "unfunded": 0
+          },
+          "cpo-probe-reserve": {
+            "calls": 2099,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 365,
+            "unfunded": 0
+          },
+          "cpo-probe-veto": {
+            "calls": 2119,
+            "mergeCandidates": 13,
+            "mergesAccepted": 0,
+            "passes": 365,
+            "unfunded": 0
+          },
+          "cpo-spare-repair": {
+            "calls": 2402,
+            "mergeCandidates": 4,
+            "mergesAccepted": 1,
+            "passes": 471,
+            "unfunded": 2
+          },
+          "gepa": {
+            "calls": 1937,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 454,
+            "unfunded": 0
+          },
+          "gepa-native-merge": {
+            "calls": 1987,
+            "mergeCandidates": 13,
+            "mergesAccepted": 13,
+            "passes": 466,
+            "unfunded": 0
+          }
+        }
+      },
+      "multi-clause": {
+        "comparisons": {
+          "cpo-probe-repair": {
+            "cpo-merge": {
+              "callsSaved": 14,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 68,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-spare-repair": {
+              "callsSaved": 68,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": 300,
+              "criticalLosses": 0,
+              "passDelta": 8,
+              "qualified": true
+            },
+            "gepa-native-merge": {
+              "callsSaved": 149,
+              "criticalLosses": 0,
+              "passDelta": -14,
+              "qualified": false
+            }
+          },
+          "cpo-spare-repair": {
+            "cpo-merge": {
+              "callsSaved": -54,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-repair": {
+              "callsSaved": -68,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -68,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -68,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": 232,
+              "criticalLosses": 0,
+              "passDelta": 8,
+              "qualified": true
+            },
+            "gepa-native-merge": {
+              "callsSaved": 81,
+              "criticalLosses": 0,
+              "passDelta": -14,
+              "qualified": false
+            }
+          }
+        },
+        "totals": {
+          "cpo-merge": {
+            "calls": 1456,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "cpo-ordinary": {
+            "calls": 1510,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "cpo-probe-repair": {
+            "calls": 1442,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "cpo-probe-reserve": {
+            "calls": 1442,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "cpo-probe-veto": {
+            "calls": 1442,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "cpo-spare-repair": {
+            "calls": 1510,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "gepa": {
+            "calls": 1742,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 485,
+            "unfunded": 0
+          },
+          "gepa-native-merge": {
+            "calls": 1591,
+            "mergeCandidates": 15,
+            "mergesAccepted": 14,
+            "passes": 507,
+            "unfunded": 0
+          }
+        }
+      },
+      "reverse-precedence": {
+        "comparisons": {
+          "cpo-probe-repair": {
+            "cpo-merge": {
+              "callsSaved": 14,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 68,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-spare-repair": {
+              "callsSaved": 68,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": 256,
+              "criticalLosses": 0,
+              "passDelta": 56,
+              "qualified": true
+            },
+            "gepa-native-merge": {
+              "callsSaved": 132,
+              "criticalLosses": 0,
+              "passDelta": 44,
+              "qualified": true
+            }
+          },
+          "cpo-spare-repair": {
+            "cpo-merge": {
+              "callsSaved": -54,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-repair": {
+              "callsSaved": -68,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -68,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -68,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": 188,
+              "criticalLosses": 0,
+              "passDelta": 56,
+              "qualified": true
+            },
+            "gepa-native-merge": {
+              "callsSaved": 64,
+              "criticalLosses": 0,
+              "passDelta": 44,
+              "qualified": true
+            }
+          }
+        },
+        "totals": {
+          "cpo-merge": {
+            "calls": 1478,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 576,
+            "unfunded": 0
+          },
+          "cpo-ordinary": {
+            "calls": 1532,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 576,
+            "unfunded": 0
+          },
+          "cpo-probe-repair": {
+            "calls": 1464,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 576,
+            "unfunded": 0
+          },
+          "cpo-probe-reserve": {
+            "calls": 1464,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 576,
+            "unfunded": 0
+          },
+          "cpo-probe-veto": {
+            "calls": 1464,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 576,
+            "unfunded": 0
+          },
+          "cpo-spare-repair": {
+            "calls": 1532,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 576,
+            "unfunded": 0
+          },
+          "gepa": {
+            "calls": 1720,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 520,
+            "unfunded": 0
+          },
+          "gepa-native-merge": {
+            "calls": 1596,
+            "mergeCandidates": 16,
+            "mergesAccepted": 16,
+            "passes": 532,
+            "unfunded": 0
+          }
+        }
+      }
+    },
+    "96": {
+      "component-interaction": {
+        "comparisons": {
+          "cpo-probe-repair": {
+            "cpo-merge": {
+              "callsSaved": -4,
+              "criticalLosses": 0,
+              "passDelta": 5,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 188,
+              "criticalLosses": 0,
+              "passDelta": 2,
+              "qualified": true
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -54,
+              "criticalLosses": 0,
+              "passDelta": 5,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -38,
+              "criticalLosses": 0,
+              "passDelta": 5,
+              "qualified": false
+            },
+            "cpo-spare-repair": {
+              "callsSaved": 188,
+              "criticalLosses": 0,
+              "passDelta": 2,
+              "qualified": true
+            },
+            "gepa": {
+              "callsSaved": 0,
+              "criticalLosses": 36,
+              "passDelta": -52,
+              "qualified": false
+            },
+            "gepa-native-merge": {
+              "callsSaved": 9,
+              "criticalLosses": 46,
+              "passDelta": -57,
+              "qualified": false
+            }
+          },
+          "cpo-spare-repair": {
+            "cpo-merge": {
+              "callsSaved": -192,
+              "criticalLosses": 10,
+              "passDelta": 3,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-repair": {
+              "callsSaved": -188,
+              "criticalLosses": 10,
+              "passDelta": -2,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -242,
+              "criticalLosses": 10,
+              "passDelta": 3,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -226,
+              "criticalLosses": 10,
+              "passDelta": 3,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": -188,
+              "criticalLosses": 46,
+              "passDelta": -54,
+              "qualified": false
+            },
+            "gepa-native-merge": {
+              "callsSaved": -179,
+              "criticalLosses": 56,
+              "passDelta": -59,
+              "qualified": false
+            }
+          }
+        },
+        "totals": {
+          "cpo-merge": {
+            "calls": 1422,
+            "mergeCandidates": 14,
+            "mergesAccepted": 0,
+            "passes": 354,
+            "unfunded": 0
+          },
+          "cpo-ordinary": {
+            "calls": 1614,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 357,
+            "unfunded": 0
+          },
+          "cpo-probe-repair": {
+            "calls": 1426,
+            "mergeCandidates": 14,
+            "mergesAccepted": 1,
+            "passes": 359,
+            "unfunded": 0
+          },
+          "cpo-probe-reserve": {
+            "calls": 1372,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 354,
+            "unfunded": 0
+          },
+          "cpo-probe-veto": {
+            "calls": 1388,
+            "mergeCandidates": 14,
+            "mergesAccepted": 0,
+            "passes": 354,
+            "unfunded": 0
+          },
+          "cpo-spare-repair": {
+            "calls": 1614,
+            "mergeCandidates": 13,
+            "mergesAccepted": 0,
+            "passes": 357,
+            "unfunded": 13
+          },
+          "gepa": {
+            "calls": 1426,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 411,
+            "unfunded": 0
+          },
+          "gepa-native-merge": {
+            "calls": 1435,
+            "mergeCandidates": 6,
+            "mergesAccepted": 4,
+            "passes": 416,
+            "unfunded": 0
+          }
+        }
+      },
+      "legacy-heavy": {
+        "comparisons": {
+          "cpo-probe-repair": {
+            "cpo-merge": {
+              "callsSaved": -74,
+              "criticalLosses": 0,
+              "passDelta": 61,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 118,
+              "criticalLosses": 0,
+              "passDelta": 58,
+              "qualified": true
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -124,
+              "criticalLosses": 0,
+              "passDelta": 61,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -108,
+              "criticalLosses": 0,
+              "passDelta": 61,
+              "qualified": false
+            },
+            "cpo-spare-repair": {
+              "callsSaved": 118,
+              "criticalLosses": 0,
+              "passDelta": 58,
+              "qualified": true
+            },
+            "gepa": {
+              "callsSaved": -59,
+              "criticalLosses": 19,
+              "passDelta": -6,
+              "qualified": false
+            },
+            "gepa-native-merge": {
+              "callsSaved": -34,
+              "criticalLosses": 22,
+              "passDelta": 6,
+              "qualified": false
+            }
+          },
+          "cpo-spare-repair": {
+            "cpo-merge": {
+              "callsSaved": -192,
+              "criticalLosses": 10,
+              "passDelta": 3,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-repair": {
+              "callsSaved": -118,
+              "criticalLosses": 36,
+              "passDelta": -58,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -242,
+              "criticalLosses": 10,
+              "passDelta": 3,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -226,
+              "criticalLosses": 10,
+              "passDelta": 3,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": -177,
+              "criticalLosses": 46,
+              "passDelta": -64,
+              "qualified": false
+            },
+            "gepa-native-merge": {
+              "callsSaved": -152,
+              "criticalLosses": 49,
+              "passDelta": -52,
+              "qualified": false
+            }
+          }
+        },
+        "totals": {
+          "cpo-merge": {
+            "calls": 1422,
+            "mergeCandidates": 14,
+            "mergesAccepted": 0,
+            "passes": 354,
+            "unfunded": 0
+          },
+          "cpo-ordinary": {
+            "calls": 1614,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 357,
+            "unfunded": 0
+          },
+          "cpo-probe-repair": {
+            "calls": 1496,
+            "mergeCandidates": 14,
+            "mergesAccepted": 4,
+            "passes": 415,
+            "unfunded": 0
+          },
+          "cpo-probe-reserve": {
+            "calls": 1372,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 354,
+            "unfunded": 0
+          },
+          "cpo-probe-veto": {
+            "calls": 1388,
+            "mergeCandidates": 14,
+            "mergesAccepted": 0,
+            "passes": 354,
+            "unfunded": 0
+          },
+          "cpo-spare-repair": {
+            "calls": 1614,
+            "mergeCandidates": 13,
+            "mergesAccepted": 0,
+            "passes": 357,
+            "unfunded": 13
+          },
+          "gepa": {
+            "calls": 1437,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 421,
+            "unfunded": 0
+          },
+          "gepa-native-merge": {
+            "calls": 1462,
+            "mergeCandidates": 6,
+            "mergesAccepted": 6,
+            "passes": 409,
+            "unfunded": 0
+          }
+        }
+      },
+      "multi-clause": {
+        "comparisons": {
+          "cpo-probe-repair": {
+            "cpo-merge": {
+              "callsSaved": 13,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 66,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-spare-repair": {
+              "callsSaved": 66,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": 175,
+              "criticalLosses": 0,
+              "passDelta": 180,
+              "qualified": true
+            },
+            "gepa-native-merge": {
+              "callsSaved": 171,
+              "criticalLosses": 0,
+              "passDelta": 99,
+              "qualified": true
+            }
+          },
+          "cpo-spare-repair": {
+            "cpo-merge": {
+              "callsSaved": -53,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-repair": {
+              "callsSaved": -66,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -66,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -66,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": 109,
+              "criticalLosses": 0,
+              "passDelta": 180,
+              "qualified": true
+            },
+            "gepa-native-merge": {
+              "callsSaved": 105,
+              "criticalLosses": 0,
+              "passDelta": 99,
+              "qualified": true
+            }
+          }
+        },
+        "totals": {
+          "cpo-merge": {
+            "calls": 1244,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "cpo-ordinary": {
+            "calls": 1297,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "cpo-probe-repair": {
+            "calls": 1231,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "cpo-probe-reserve": {
+            "calls": 1231,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "cpo-probe-veto": {
+            "calls": 1231,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "cpo-spare-repair": {
+            "calls": 1297,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 493,
+            "unfunded": 0
+          },
+          "gepa": {
+            "calls": 1406,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 313,
+            "unfunded": 0
+          },
+          "gepa-native-merge": {
+            "calls": 1402,
+            "mergeCandidates": 10,
+            "mergesAccepted": 9,
+            "passes": 394,
+            "unfunded": 0
+          }
+        }
+      },
+      "reverse-precedence": {
+        "comparisons": {
+          "cpo-probe-repair": {
+            "cpo-merge": {
+              "callsSaved": 14,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 68,
+              "criticalLosses": 20,
+              "passDelta": -28,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-spare-repair": {
+              "callsSaved": 68,
+              "criticalLosses": 20,
+              "passDelta": -28,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": 249,
+              "criticalLosses": 0,
+              "passDelta": 143,
+              "qualified": true
+            },
+            "gepa-native-merge": {
+              "callsSaved": 182,
+              "criticalLosses": 10,
+              "passDelta": 107,
+              "qualified": false
+            }
+          },
+          "cpo-spare-repair": {
+            "cpo-merge": {
+              "callsSaved": -54,
+              "criticalLosses": 0,
+              "passDelta": 28,
+              "qualified": false
+            },
+            "cpo-ordinary": {
+              "callsSaved": 0,
+              "criticalLosses": 0,
+              "passDelta": 0,
+              "qualified": false
+            },
+            "cpo-probe-repair": {
+              "callsSaved": -68,
+              "criticalLosses": 0,
+              "passDelta": 28,
+              "qualified": false
+            },
+            "cpo-probe-reserve": {
+              "callsSaved": -68,
+              "criticalLosses": 0,
+              "passDelta": 28,
+              "qualified": false
+            },
+            "cpo-probe-veto": {
+              "callsSaved": -68,
+              "criticalLosses": 0,
+              "passDelta": 28,
+              "qualified": false
+            },
+            "gepa": {
+              "callsSaved": 181,
+              "criticalLosses": 0,
+              "passDelta": 171,
+              "qualified": true
+            },
+            "gepa-native-merge": {
+              "callsSaved": 114,
+              "criticalLosses": 0,
+              "passDelta": 135,
+              "qualified": true
+            }
+          }
+        },
+        "totals": {
+          "cpo-merge": {
+            "calls": 1233,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 532,
+            "unfunded": 0
+          },
+          "cpo-ordinary": {
+            "calls": 1287,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 560,
+            "unfunded": 0
+          },
+          "cpo-probe-repair": {
+            "calls": 1219,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 532,
+            "unfunded": 0
+          },
+          "cpo-probe-reserve": {
+            "calls": 1219,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 532,
+            "unfunded": 0
+          },
+          "cpo-probe-veto": {
+            "calls": 1219,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 532,
+            "unfunded": 0
+          },
+          "cpo-spare-repair": {
+            "calls": 1287,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 560,
+            "unfunded": 0
+          },
+          "gepa": {
+            "calls": 1468,
+            "mergeCandidates": 0,
+            "mergesAccepted": 0,
+            "passes": 389,
+            "unfunded": 0
+          },
+          "gepa-native-merge": {
+            "calls": 1401,
+            "mergeCandidates": 10,
+            "mergesAccepted": 10,
+            "passes": 425,
+            "unfunded": 0
+          }
+        }
+      }
+    }
+  }
+}
