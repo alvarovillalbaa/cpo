@@ -1,0 +1,105 @@
+{
+  "design": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261120,
+    "gepaVersion": "0.1.4",
+    "holdout": "Use the existing seeded 30 percent split per subject, shared by both models.",
+    "methods": {
+      "cpo-28": {
+        "cap": 28,
+        "optimizer": "deferred-first-gain"
+      },
+      "cpo-52": {
+        "cap": 52,
+        "optimizer": "deferred-first-gain"
+      },
+      "gepa-batched-39": {
+        "cap": 39,
+        "optimizer": "gepa-batched.runner-up"
+      },
+      "gepa-batched-44": {
+        "cap": 44,
+        "optimizer": "gepa-batched.runner-up"
+      },
+      "gepa-sequential-31": {
+        "cap": 31,
+        "optimizer": "gepa-sequential.runner-up"
+      }
+    },
+    "models": [
+      "google_flan_ul2",
+      "mistralai_mixtral_8x7b_instruct_v01"
+    ],
+    "primaryComparison": {
+      "candidate": "cpo-28",
+      "control": "gepa-sequential-31",
+      "minimumLookupSavingPercent": 10,
+      "minimumLowerRangePassDifference": 0
+    },
+    "priorPlanSha256": "dd99b264f458d73b0e59ea487a7f6ce4f76c28d15403be38812371bce6a55dd9",
+    "priorReportSha256": "6151722d65597149fc2b234825a6fd99b5fff7218009f4f572b9de21b9627f00",
+    "protocol": "cpo-low-budget-transfer-v1",
+    "schedule": {
+      "cycles": 4,
+      "minimumQualificationGain": 1,
+      "poolSize": 13,
+      "qualificationRowsPerCycle": 8,
+      "seeds": [
+        47101,
+        47120,
+        47139,
+        47158,
+        47177,
+        47196,
+        47215,
+        47234,
+        47253,
+        47272,
+        47291,
+        47310,
+        47329,
+        47348,
+        47367,
+        47386,
+        47405,
+        47424,
+        47443,
+        47462,
+        47481,
+        47500,
+        47519,
+        47538,
+        47557,
+        47576,
+        47595,
+        47614,
+        47633,
+        47652,
+        47671,
+        47690
+      ],
+      "trainRows": 12,
+      "validationRows": 24
+    },
+    "scope": "Fixed settings selected from the earlier archive before capture. Draw paired holdout cases within each new subject and keep both models and all episodes together.",
+    "sourceDataset": "PromptEval/PromptEval_MMLU_correctness",
+    "sourceLicense": "MIT",
+    "sourceRevision": "1639d5ea14c362f6964f260ae81bd903af760187",
+    "sourceSha256": {
+      "benchmarks/independent_mmlu_cost_uncertainty.py": "eafa5b70b6d8a9d4ee20e7b7f3974a5d3ca79e5b317f603c34f5f8c366149316",
+      "benchmarks/independent_mmlu_transfer.py": "fbce1acb98f6f4a8b567b2245822ee00446e0e882ce3fec262ab175c4d46ddc0",
+      "benchmarks/low_budget_transfer.py": "1411e5d04924f3b679c9403afe26dc4bfb48d831007c5ce27cf1a401d786e8d6"
+    },
+    "subjects": [
+      "clinical_knowledge",
+      "college_physics",
+      "electrical_engineering",
+      "high_school_biology",
+      "moral_scenarios",
+      "professional_medicine"
+    ],
+    "templateCount": 100,
+    "validationRows": 12
+  },
+  "designSha256": "e2563eab817dcafef3140a40c890ea07b9927d49e7e6379970d61b8da0c267e3"
+}
