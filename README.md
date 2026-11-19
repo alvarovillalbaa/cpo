@@ -23,6 +23,6 @@ The rewrite-first follow-up cleared the synthetic gate on 24 fresh trials. It pa
 
 In a fixed-graph replay of recorded model replies, CPO cleared the gate against both GEPA controls on the second trial. Stopping at known proposal exhaustion saved 254 of 1,399 calls on matched splits and preserved all selected prompts. The replay isolates selection and leaves fresh model-backed performance unverified. [Recorded replay](docs/recorded-replay.md)
 
-The fresh typed study uses CPO 0.2.0 to generate, select, and test prompts under the same request limits as three GEPA configurations. [Model-backed validation protocol](docs/model-backed-validation.md)
+The first live typed study failed its development gate. CPO 0.2.0 passed 0 of 108 holdout replies, and each GEPA control passed 1 of 108. The run reproduced offline. CPO 0.3.0’s optional field-aware search has a separate recorded-replay result. [Live results](docs/model-backed-validation.md#first-live-result)
 
 CPO draws on reflective feedback and complementary candidates from GEPA, attempt history from OPRO, and the separation of proposal generation and validation from MIPROv2. Its guarded promotion rule and comparison suite make these choices measurable. [GEPA](https://arxiv.org/abs/2507.19457) · [OPRO](https://arxiv.org/abs/2309.03409) · [MIPROv2](https://arxiv.org/abs/2406.11695)
