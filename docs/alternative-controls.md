@@ -28,6 +28,8 @@ The gate requires at least 14 of 18 passes in each task panel, preserved totals 
 
 ## Reproduce
 
+Use commit `fbfb7a3c74d9d0728ba0628a8ddd93ee1c3158b1` to reproduce the original source hashes. The later precomputed opening is evaluated separately. [Feedback budget study](feedback-budget.md)
+
 ```sh
 python -m pip install --require-hashes -r requirements-benchmark.txt
 python -m benchmarks.alternative_controls

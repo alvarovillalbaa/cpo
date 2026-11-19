@@ -24,6 +24,8 @@ The follow-up gives every optimizer all 16 labeled training examples in each ref
 
 The public `portable-grounded-v1` protocol compares field-aware CPO with the three GEPA 0.1.4 configurations on the released typed-policy cohorts. It uses its own starting instruction and development gate. The efficiency rule counts physical search calls, including the shared opening in each arm’s attributed total. One request samples each distinct selected instruction for a case and repeat. Qualification runs after all selections finish.
 
+Use commit `dadfd1144d650cd4374c97d7279ab08fc7915080` to reproduce the source hashes of the original fixture.
+
 ```sh
 python -m pip install --require-hashes -r requirements-benchmark.txt
 python -m benchmarks.grounded
