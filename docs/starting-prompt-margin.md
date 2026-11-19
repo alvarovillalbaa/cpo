@@ -33,6 +33,8 @@ The replays reproduced all 40 published seeded CPO traces and the eight batched 
 
 A follow-up compared broader screens against the same controls and checked which of the 12 strict-gain misses they recovered. [Budgeted second probe](budgeted-second-probe.md)
 
+A separate replay compared the fixed margin with gates that distinguish paired wins and losses at the same net gain. The paired rules yielded mixed results across all five archived cohorts. [Paired promotion evidence](paired-promotion-evidence.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview the phase seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`. Phases are `independent`, `mmlu`, `bbh-lmentry`, and `bbh-lmentry-stress`.
