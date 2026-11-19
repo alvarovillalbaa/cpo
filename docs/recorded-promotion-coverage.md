@@ -24,6 +24,8 @@ The two-critical policy gained 65 and 66 outage holdout passes and saved 818 and
 
 The result shows how much this recorded case bank can tell us about promotion coverage. A replay with fixed proposals cannot establish how fresh candidates would behave.
 
+The follow-up restored the individual fields behind the recorded scores. Protecting those fields at promotion changed no selection and left all six matched loss observations. [Field preservation replay](recorded-field-preservation.md)
+
 ## Reproduce
 
 Use the intact research archive and pinned GEPA dependency from the earlier replay.
