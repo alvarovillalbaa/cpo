@@ -27,6 +27,8 @@ The paired-evidence gate cut promotions from 1,090 to 475. It gained 20 passes a
 
 The win-ratio gate kept 1,052 promotions. It added three passes and used 126 additional lookups across the five cohorts. Seeded and win ratio cleared both GEPA cost-and-accuracy gates on 18 of 52 panels, fixed two-pass on 17, and paired evidence on 16. The five cohorts were available before this replay. The results leave the seeded gate as the default. [Sealed per-panel results](paired-promotion-evidence-results-v1.json)
 
+The next replay used the original one-pass gate and compared allocating qualification lookups to distinct cases or repeat replies. [Qualification repeat sensitivity](qualification-repeat-sensitivity.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Preview each phase to get its seal. Other phases are `independent`, `mmlu`, `bbh-lmentry`, and `bbh-lmentry-stress`.
