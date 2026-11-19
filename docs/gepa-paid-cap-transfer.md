@@ -26,6 +26,8 @@ The aggregate accuracy lead over batched GEPA survived omission of any one subje
 
 A follow-up ranked archived CPO prompts using earlier paid qualification. Requiring a prior paired win saved 5,729 lookups and cleared fewer panel-level GEPA gates than the original recency rule. [Archive complementarity replay](archive-complementarity-transfer.md)
 
+A cap sweep found a 708-pass CPO lead over the best affordable fixed GEPA setting. An exact task-by-task GEPA hindsight allocation scored 159 more passes than CPO at nearly the same cost. [Realized-cost frontier](paid-budget-frontier.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview each phase to get its seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
