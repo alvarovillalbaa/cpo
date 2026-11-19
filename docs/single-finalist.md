@@ -40,6 +40,8 @@ A follow-up tested a second certificate after a failed first-gain screen. All th
 
 A replay across 18 panels used earlier paid outcomes to pick the first-gain witness. The two rules gained six and 17 aggregate passes and added paid lookups. [Paid witness replay](prompteval-paid-witness.md)
 
+The opt-in lazy incumbent selector preserved first-gain decisions and saved 20.1% of lookups across the 18-panel replay. [Deferred incumbent reads](lazy-incumbent.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview to obtain the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.

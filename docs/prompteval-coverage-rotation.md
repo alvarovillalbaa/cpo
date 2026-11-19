@@ -29,6 +29,8 @@ The duel changed the initial nominee in 24 cycles with shared probes and 13 with
 
 The gate requires at least as many holdout passes at equal or lower cost against each control, with at least 10% savings on a score tie. The pooled gains show that spreading probes can improve accuracy under the same strict promotion rules. The panel losses and extra lookups also show why rotation stays benchmark-only. The replays reuse final holdout cases across seeds, and all three replay phases reproduced byte for byte. [Per-panel results and seals](prompteval-coverage-rotation-results-v1.json)
 
+A follow-up delayed incumbent reads while preserving each cycle's decisions. The shared first-gain screen saved 20.1% of paid lookups, while rotation with the eager proof order used the same number. [Deferred incumbent reads](lazy-incumbent.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview each phase to obtain its seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
