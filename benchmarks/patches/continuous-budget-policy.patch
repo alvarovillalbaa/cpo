@@ -1,0 +1,36 @@
+--- a/cpo/optimizer.py
++++ b/cpo/optimizer.py
+@@ -68 +68 @@
+-           opening_pair=None):
++           opening_pair=None, gain_target=None, idle_limit=None, leader_only=False):
+@@ -121,0 +122,7 @@
++    initial_passes = len(archive[0].passed)
++    idle = 0
++
++    def stop():
++        return (len(archive[0].passed) == len(validation) or
++                gain_target is not None and len(archive[0].passed) - initial_passes >= gain_target)
++
+@@ -130 +137 @@
+-        if archive[0].passed == validation_ids:
++        if stop() or idle_limit is not None and idle >= idle_limit:
+@@ -131,0 +139 @@
++        start = len(archive[0].passed)
+@@ -191 +199,5 @@
+-                if race and remaining and any(
++                if race and remaining and leader_only and rank(
++                        Candidate(prompt, frozenset(passed | remaining), fields + available_fields)) >= rank(archive[0]):
++                    status = 'dominated'
++                    break
++                if race and remaining and not leader_only and any(
+@@ -203 +215,4 @@
+-            if not any(dominates(other, passed, fields, prompt) for other in archive):
++            if leader_only:
++                if rank(candidate) < rank(archive[0]):
++                    archive = [candidate]
++            elif not any(dominates(other, passed, fields, prompt) for other in archive):
+@@ -208 +223 @@
+-            if archive[0].passed == validation_ids:
++            if stop():
+@@ -213,0 +229 @@
++        idle = idle + 1 if len(archive[0].passed) <= start else 0

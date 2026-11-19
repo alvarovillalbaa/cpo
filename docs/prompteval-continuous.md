@@ -24,6 +24,8 @@ On the transfer panels, the primary CPO cycle made 211 promotions and gained 46 
 
 The replay tests how candidate search and qualification interact over repeated cycles with a supplied proposal stream. New prompt generation, additional tasks, and live provider costs remain unmeasured. [Seals and panel results](prompteval-continuous-results-v1.json)
 
+The follow-up used incumbent validation to choose a lower search cap. It nearly halved CPO's costs and fell short of batched GEPA on the transfer panels. [Early stopping and budget results](prompteval-continuous-budget.md)
+
 ## Reproduce
 
 ```sh
