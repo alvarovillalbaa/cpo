@@ -24,6 +24,8 @@ Against these paid-cap controls, deferred first-gain finished **31 passes ahead 
 
 The aggregate accuracy lead over batched GEPA survived omission of any one subject and both of its model panels, with a minimum lead of 132 passes. Omitting LMentry's any-words-from-category task reversed the 31-pass aggregate accuracy lead over sequential GEPA. The lookup advantage against each control survived all single-task omissions. Both offline runs of every phase produced byte-identical reports. [Per-panel results and seals](gepa-paid-cap-transfer-results-v1.json)
 
+A follow-up ranked archived CPO prompts using earlier paid qualification. Requiring a prior paired win saved 5,729 lookups and cleared fewer panel-level GEPA gates than the original recency rule. [Archive complementarity replay](archive-complementarity-transfer.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview each phase to get its seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
