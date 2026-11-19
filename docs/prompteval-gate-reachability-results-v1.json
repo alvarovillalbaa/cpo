@@ -1,0 +1,802 @@
+{
+  "protocol": "cpo-prompteval-gate-reachability-results-v1",
+  "runs": {
+    "development": {
+      "report": {
+        "panels": {
+          "high_school_european_history/meta_llama_llama_3_8b": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 1
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 1
+              }
+            },
+            "episodeTraceSha256": "63cfbff63390334e94cf495d211551ca87a47e1f8a6fde2a70ba54fa46fbb1b9",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 1132,
+                "paidLookups": 3774
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 1120,
+                "paidLookups": 3792
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 1112,
+                "paidLookups": 5296
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 1184,
+              "qualification-only": 1183,
+              "strict-fresh": 1154,
+              "strict-with-archive": 1181,
+              "tie-with-archive": 1182
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1264,
+              "strict-fresh": 148,
+              "strict-with-archive": 1030,
+              "tie-with-archive": 1214
+            }
+          },
+          "high_school_european_history/mistralai_mistral_7b_instruct_v0_2": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 3
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 3
+              }
+            },
+            "episodeTraceSha256": "30b7877925bb8dc57b3e8c20dff623efd053deea2cb58e4ca360ae2b843d625e",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 1140,
+                "paidLookups": 3622
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 1143,
+                "paidLookups": 3627
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 1142,
+                "paidLookups": 5272
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 1184,
+              "qualification-only": 1179,
+              "strict-fresh": 1159,
+              "strict-with-archive": 1178,
+              "tie-with-archive": 1179
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1032,
+              "strict-fresh": 116,
+              "strict-with-archive": 761,
+              "tie-with-archive": 942
+            }
+          },
+          "high_school_statistics/meta_llama_llama_3_8b": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 7,
+                "strict-with-archive": 1
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 5,
+                "strict-with-archive": 1
+              }
+            },
+            "episodeTraceSha256": "2a5a22278e837c52907150d510ed1abe75347e5358f171bc77e72a743177d3e5",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 1107,
+                "paidLookups": 3724
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 1122,
+                "paidLookups": 3909
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 1107,
+                "paidLookups": 5456
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 1256,
+              "qualification-only": 1254,
+              "strict-fresh": 1197,
+              "strict-with-archive": 1243,
+              "tie-with-archive": 1254
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1469,
+              "strict-fresh": 290,
+              "strict-with-archive": 1177,
+              "tie-with-archive": 1416
+            }
+          },
+          "high_school_statistics/mistralai_mistral_7b_instruct_v0_2": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 4
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 5
+              }
+            },
+            "episodeTraceSha256": "97dfe1e0cc90c914c55353811cd77e4e4617a24eaf805568fe7a65638ca41390",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 770,
+                "paidLookups": 3655
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 765,
+                "paidLookups": 3983
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 767,
+                "paidLookups": 5550
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 912,
+              "qualification-only": 910,
+              "strict-fresh": 852,
+              "strict-with-archive": 908,
+              "tie-with-archive": 909
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1307,
+              "strict-fresh": 264,
+              "strict-with-archive": 1073,
+              "tie-with-archive": 1262
+            }
+          }
+        },
+        "plan": {
+          "archiveRelaxation": "Any previously offered prompt can replace the incumbent on a strict qualification gain.",
+          "freshRoutes": {
+            "any-offered": "pool membership only",
+            "qualification-only": "qualification strict gain",
+            "strict-fresh": "validation strict gain and qualification strict gain",
+            "strict-with-archive": "validation strict gain and qualification strict gain",
+            "tie-with-archive": "validation tie or gain and qualification strict gain"
+          },
+          "gepaVersion": "0.1.4",
+          "parentPlanSha256": "90f0f2e2e94d13832b671e8870f59f72a4e5d6e5f907b5578405c2fd3bfd4919",
+          "parentReportSha256": "7e995e97a52d68a10fa26a171b7fe61374be6eb291edaf76e8656659fdd3d3b0",
+          "phase": "development",
+          "protocol": "cpo-prompteval-gate-reachability-v1",
+          "rowsAndCap": [
+            12,
+            52
+          ],
+          "runnerSha256": "dd4d33660f57d48fba7d3aeb877614649facfcf9711cf00f91b252901cc33159",
+          "scope": "Optimistic retrospective ceilings. The measured arms keep their sealed budget and traces. The ceilings omit lookup costs and use holdout only to score full reachable sets."
+        },
+        "planSha256": "29d33dc65592f193b4ee72dc8a52d802b119f49500d6ec42f6105f35e2371596"
+      },
+      "reportSha256": "4ee1e77a88a524b3072eeadc01283c9219cfc77bfaa659302043482372c4ede6"
+    },
+    "finalist-transfer": {
+      "report": {
+        "panels": {
+          "formal_logic/meta_llama_llama_3_8b": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 8
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 11
+              }
+            },
+            "episodeTraceSha256": "7272631acc7be94c3d61931a0757b2c83cc8bbbaa6a6ce0d85f02fd7c89837c3",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 476,
+                "paidLookups": 3916
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 475,
+                "paidLookups": 3971
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 481,
+                "paidLookups": 5424
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 575,
+              "qualification-only": 572,
+              "strict-fresh": 549,
+              "strict-with-archive": 572,
+              "tie-with-archive": 572
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1344,
+              "strict-fresh": 306,
+              "strict-with-archive": 1156,
+              "tie-with-archive": 1282
+            }
+          },
+          "formal_logic/mistralai_mistral_7b_instruct_v0_2": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 5
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 8
+              }
+            },
+            "episodeTraceSha256": "20147313630580b21caf421f276db5243809f311a85bf162f1559abcfabd9bf3",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 388,
+                "paidLookups": 3537
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 397,
+                "paidLookups": 4046
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 405,
+                "paidLookups": 5495
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 499,
+              "qualification-only": 496,
+              "strict-fresh": 436,
+              "strict-with-archive": 488,
+              "tie-with-archive": 493
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1302,
+              "strict-fresh": 219,
+              "strict-with-archive": 1038,
+              "tie-with-archive": 1203
+            }
+          },
+          "high_school_computer_science/meta_llama_llama_3_8b": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 2
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 1
+              }
+            },
+            "episodeTraceSha256": "3a94f4fe515e890e1b23cff3254a8c89bcbb82cbe1be04d31adecbc3576389e3",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 590,
+                "paidLookups": 3592
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 588,
+                "paidLookups": 3679
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 589,
+                "paidLookups": 5285
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 654,
+              "qualification-only": 648,
+              "strict-fresh": 606,
+              "strict-with-archive": 640,
+              "tie-with-archive": 646
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1193,
+              "strict-fresh": 141,
+              "strict-with-archive": 838,
+              "tie-with-archive": 1073
+            }
+          },
+          "high_school_computer_science/mistralai_mistral_7b_instruct_v0_2": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 6
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 7
+              }
+            },
+            "episodeTraceSha256": "166ee99a76d63b45279c291a0dfd60da04ae4bfc28968c6414bb0adac630ce43",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 548,
+                "paidLookups": 3735
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 558,
+                "paidLookups": 3563
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 559,
+                "paidLookups": 5250
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 638,
+              "qualification-only": 629,
+              "strict-fresh": 585,
+              "strict-with-archive": 626,
+              "tie-with-archive": 629
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1241,
+              "strict-fresh": 140,
+              "strict-with-archive": 913,
+              "tie-with-archive": 1176
+            }
+          },
+          "world_religions/meta_llama_llama_3_8b": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 1
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 1
+              }
+            },
+            "episodeTraceSha256": "e5bfef6704d86fe52150ab8c6ffe4a8ed0a414216ce85a92b19eef16fe3079d3",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 1260,
+                "paidLookups": 3583
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 1257,
+                "paidLookups": 3350
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 1257,
+                "paidLookups": 4822
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 1312,
+              "qualification-only": 1306,
+              "strict-fresh": 1268,
+              "strict-with-archive": 1300,
+              "tie-with-archive": 1304
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 892,
+              "strict-fresh": 70,
+              "strict-with-archive": 509,
+              "tie-with-archive": 753
+            }
+          },
+          "world_religions/mistralai_mistral_7b_instruct_v0_2": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {},
+              "gepa-sequential.runner-up": {
+                "strict-with-archive": 1
+              }
+            },
+            "episodeTraceSha256": "ecdd51ffe5110acf9e0a337158893c9f80cc24507d58ea23c4d8a6a8a05a9460",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 1193,
+                "paidLookups": 3470
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 1191,
+                "paidLookups": 3419
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 1192,
+                "paidLookups": 4881
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 1248,
+              "qualification-only": 1239,
+              "strict-fresh": 1203,
+              "strict-with-archive": 1235,
+              "tie-with-archive": 1239
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 904,
+              "strict-fresh": 80,
+              "strict-with-archive": 640,
+              "tie-with-archive": 866
+            }
+          }
+        },
+        "plan": {
+          "archiveRelaxation": "Any previously offered prompt can replace the incumbent on a strict qualification gain.",
+          "freshRoutes": {
+            "any-offered": "pool membership only",
+            "qualification-only": "qualification strict gain",
+            "strict-fresh": "validation strict gain and qualification strict gain",
+            "strict-with-archive": "validation strict gain and qualification strict gain",
+            "tie-with-archive": "validation tie or gain and qualification strict gain"
+          },
+          "gepaVersion": "0.1.4",
+          "parentPlanSha256": "3a475e53ebf4b71e4825ac09d2d2618e69ce7f9e577ef4a5b2b3bf51e658a2e1",
+          "parentReportSha256": "7e995e97a52d68a10fa26a171b7fe61374be6eb291edaf76e8656659fdd3d3b0",
+          "phase": "finalist-transfer",
+          "protocol": "cpo-prompteval-gate-reachability-v1",
+          "rowsAndCap": [
+            12,
+            52
+          ],
+          "runnerSha256": "dd4d33660f57d48fba7d3aeb877614649facfcf9711cf00f91b252901cc33159",
+          "scope": "Optimistic retrospective ceilings. The measured arms keep their sealed budget and traces. The ceilings omit lookup costs and use holdout only to score full reachable sets."
+        },
+        "planSha256": "e535428581894a4478cd1b1bee52ad5656dfc623c100bfa42e158db4b87cf520"
+      },
+      "reportSha256": "6b5ddfe0249964fdf97858fa4b3cfc492b79673956d5a90a19cafa05897152a0"
+    },
+    "retrospective-transfer": {
+      "report": {
+        "panels": {
+          "business_ethics/meta_llama_llama_3_8b": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 3
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 3
+              }
+            },
+            "episodeTraceSha256": "4029840d80649f651bf0352eb644123b7196983c130742fae4e66aafd31fac2b",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 507,
+                "paidLookups": 3645
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 510,
+                "paidLookups": 3722
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 502,
+                "paidLookups": 5200
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 626,
+              "qualification-only": 624,
+              "strict-fresh": 582,
+              "strict-with-archive": 618,
+              "tie-with-archive": 623
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1395,
+              "strict-fresh": 289,
+              "strict-with-archive": 1131,
+              "tie-with-archive": 1314
+            }
+          },
+          "business_ethics/mistralai_mistral_7b_instruct_v0_2": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 3
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 3
+              }
+            },
+            "episodeTraceSha256": "0034d9e40ecfcb01810a1a020841a41f344cea9d1fb57b7ec34606b1e5e9d027",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 485,
+                "paidLookups": 3723
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 484,
+                "paidLookups": 3732
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 485,
+                "paidLookups": 5428
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 596,
+              "qualification-only": 585,
+              "strict-fresh": 533,
+              "strict-with-archive": 580,
+              "tie-with-archive": 585
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1202,
+              "strict-fresh": 158,
+              "strict-with-archive": 978,
+              "tie-with-archive": 1154
+            }
+          },
+          "high_school_geography/meta_llama_llama_3_8b": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 5
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 4
+              }
+            },
+            "episodeTraceSha256": "4c8d9797fb1644b07a4b506b3ea32960657aeb7d38c743de1e2d5e4034424dbc",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 1440,
+                "paidLookups": 3748
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 1434,
+                "paidLookups": 3640
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 1435,
+                "paidLookups": 5237
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 1536,
+              "qualification-only": 1535,
+              "strict-fresh": 1484,
+              "strict-with-archive": 1529,
+              "tie-with-archive": 1532
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1242,
+              "strict-fresh": 169,
+              "strict-with-archive": 910,
+              "tie-with-archive": 1129
+            }
+          },
+          "high_school_geography/mistralai_mistral_7b_instruct_v0_2": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 5,
+                "strict-with-archive": 1
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 4,
+                "strict-with-archive": 1
+              }
+            },
+            "episodeTraceSha256": "dc76b750f1a031a5661e9ee7edadfea9f0116e461dc48a74d8741466d9b63ee1",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 1526,
+                "paidLookups": 3827
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 1539,
+                "paidLookups": 3941
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 1526,
+                "paidLookups": 5599
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 1652,
+              "qualification-only": 1641,
+              "strict-fresh": 1583,
+              "strict-with-archive": 1636,
+              "tie-with-archive": 1639
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1182,
+              "strict-fresh": 229,
+              "strict-with-archive": 945,
+              "tie-with-archive": 1123
+            }
+          },
+          "high_school_mathematics/meta_llama_llama_3_8b": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 2,
+                "strict-with-archive": 1
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 4,
+                "strict-with-archive": 3
+              }
+            },
+            "episodeTraceSha256": "62d1599c6cba832194517d9c5d9f8133f41fa59c8cee0075236191585014b6f7",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 885,
+                "paidLookups": 3570
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 882,
+                "paidLookups": 4025
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 892,
+                "paidLookups": 5448
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 1075,
+              "qualification-only": 1065,
+              "strict-fresh": 972,
+              "strict-with-archive": 1060,
+              "tie-with-archive": 1064
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1411,
+              "strict-fresh": 325,
+              "strict-with-archive": 1261,
+              "tie-with-archive": 1372
+            }
+          },
+          "high_school_mathematics/mistralai_mistral_7b_instruct_v0_2": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 11
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 10
+              }
+            },
+            "episodeTraceSha256": "fbca47e64f6311fdbb8138331bb62b927a71b5cebd7bd42d928f221f9ced955f",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 877,
+                "paidLookups": 3592
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 900,
+                "paidLookups": 4077
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 894,
+                "paidLookups": 5520
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 1064,
+              "qualification-only": 1061,
+              "strict-fresh": 973,
+              "strict-with-archive": 1041,
+              "tie-with-archive": 1054
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1346,
+              "strict-fresh": 282,
+              "strict-with-archive": 1079,
+              "tie-with-archive": 1236
+            }
+          },
+          "prehistory/meta_llama_llama_3_8b": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 6,
+                "tie-with-archive": 1
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 5,
+                "strict-with-archive": 1,
+                "tie-with-archive": 1
+              }
+            },
+            "episodeTraceSha256": "110a2439790bbc1277fe9507664fcb1cbc2c29aca0d761f3bb5f1636002e6583",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 2302,
+                "paidLookups": 3879
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 2321,
+                "paidLookups": 3651
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 2318,
+                "paidLookups": 5333
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 2446,
+              "qualification-only": 2434,
+              "strict-fresh": 2362,
+              "strict-with-archive": 2415,
+              "tie-with-archive": 2420
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1122,
+              "strict-fresh": 149,
+              "strict-with-archive": 790,
+              "tie-with-archive": 998
+            }
+          },
+          "prehistory/mistralai_mistral_7b_instruct_v0_2": {
+            "cpoLossAttribution": {
+              "gepa-batched.runner-up": {
+                "strict-fresh": 3,
+                "strict-with-archive": 1
+              },
+              "gepa-sequential.runner-up": {
+                "strict-fresh": 3
+              }
+            },
+            "episodeTraceSha256": "e43b5b2a5cd074483fae41755503feefa3664d20883ffacadb86b77ba3ae61cf",
+            "measured": {
+              "cpo-cycle.runner-up": {
+                "holdoutPasses": 2165,
+                "paidLookups": 3889
+              },
+              "gepa-batched.runner-up": {
+                "holdoutPasses": 2174,
+                "paidLookups": 3844
+              },
+              "gepa-sequential.runner-up": {
+                "holdoutPasses": 2167,
+                "paidLookups": 5399
+              }
+            },
+            "oracleHoldoutPasses": {
+              "any-offered": 2252,
+              "qualification-only": 2244,
+              "strict-fresh": 2200,
+              "strict-with-archive": 2237,
+              "tie-with-archive": 2244
+            },
+            "reachablePromptCountSum": {
+              "any-offered": 1568,
+              "qualification-only": 1230,
+              "strict-fresh": 181,
+              "strict-with-archive": 945,
+              "tie-with-archive": 1198
+            }
+          }
+        },
+        "plan": {
+          "archiveRelaxation": "Any previously offered prompt can replace the incumbent on a strict qualification gain.",
+          "freshRoutes": {
+            "any-offered": "pool membership only",
+            "qualification-only": "qualification strict gain",
+            "strict-fresh": "validation strict gain and qualification strict gain",
+            "strict-with-archive": "validation strict gain and qualification strict gain",
+            "tie-with-archive": "validation tie or gain and qualification strict gain"
+          },
+          "gepaVersion": "0.1.4",
+          "parentPlanSha256": "b4916543a7ee2a1b3d1f5b045b6a2f42c0b99842ec02f78893ddc8cdc080bf0e",
+          "parentReportSha256": "7e995e97a52d68a10fa26a171b7fe61374be6eb291edaf76e8656659fdd3d3b0",
+          "phase": "retrospective-transfer",
+          "protocol": "cpo-prompteval-gate-reachability-v1",
+          "rowsAndCap": [
+            12,
+            52
+          ],
+          "runnerSha256": "dd4d33660f57d48fba7d3aeb877614649facfcf9711cf00f91b252901cc33159",
+          "scope": "Optimistic retrospective ceilings. The measured arms keep their sealed budget and traces. The ceilings omit lookup costs and use holdout only to score full reachable sets."
+        },
+        "planSha256": "5ef982eb0359794317c641226b8433a22689554fe28d6745fa3e641522805ca7"
+      },
+      "reportSha256": "5104ec8929dbfc02be51d959f78fd76cceee3ebde42c99a390ce445603692672"
+    }
+  }
+}

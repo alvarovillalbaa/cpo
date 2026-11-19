@@ -25,6 +25,8 @@ The primary rule changed the witness in 77 cycles, gained six aggregate passes, 
 
 The gate requires at least as many passes at equal or lower cost against each control, with 10% savings required on a pass tie. Replays reuse holdout cases across the 32 episodes per panel. The results describe archived prompt selection, so both witness policies stay in the benchmark. Each phase reproduced byte for byte in two offline executions. [Sealed results](prompteval-paid-witness-results-v1.json)
 
+A reachability audit found that an optimistic path through both strict gates could match the GEPA score in 153 of 166 losses using fresh prompts alone. Allowing validation ties explained two further losses after granting broad archive access. [Gate reachability audit](prompteval-gate-reachability.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview each phase to obtain its seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
