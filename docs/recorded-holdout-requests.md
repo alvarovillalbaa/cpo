@@ -8,7 +8,7 @@ The capture uses the archived runner’s candidate call with the local OpenAI Ag
 
 All 90 original outage reservation amounts agreed with the amounts calculated from the reconstructed SDK body lengths. The source journals contain neither historical request-body hashes nor a pinned provider model snapshot. The length check corroborates the request reconstruction. The new SHA-256 values fingerprint the bodies emitted by the verified local SDK. [Capture receipt](recorded-holdout-request-packet-v1.json)
 
-The 36 missing outcomes remain unobserved. A new comparison can measure all four finalists together under one verified model configuration using the 72-slot layout. Combining new estimates with the old replies would require evidence of a common model snapshot and compatible request settings. The packet contains no provider results and starts no run.
+The 36 missing outcomes remain unobserved. A new comparison can measure all four finalists together under one verified model configuration using the 72-slot layout. Combining new estimates with the old replies would require evidence of a common model snapshot and compatible request settings. Use the [offline journal scorer](recorded-holdout-score.md) to check and compare replies for this packet once they exist.
 
 ## Reproduce the offline packet
 
