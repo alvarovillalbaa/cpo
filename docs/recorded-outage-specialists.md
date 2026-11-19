@@ -21,6 +21,8 @@ Each cell reports replay passes and charged calls over 220 splits of the same 12
 
 The routed control cleared both recorded GEPA gates with the same specialist, including critical preservation. The archive-only prompt also passed all 14 retained provider cases outside the reserve. On the three retained long-outage cases, the specialist passed all three and the incumbent passed one. Those three cases include only one with missing evidence. The retained original bank still has missing replies for several underlying prompts chosen by ordinary search. The archived provider pairs for routing include three matched critical losses against each control, with 55 and 44 missing paired outcomes respectively. The replay win and retained archive checks describe an already studied outage bank. Fresh proposal quality and live superiority remain open.
 
+The cross-task follow-up tests whether to reuse a qualified archived prompt before paying for search. [Archive-first qualification](recorded-archive-first.md)
+
 ## Reproduce offline
 
 Use the source archive and pinned GEPA 0.1.4. Preview to obtain the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
