@@ -20,6 +20,12 @@ CPO selected the starting prompt for every task. The search journal showed that 
 
 The follow-up gives every optimizer all 16 labeled training examples in each reflection and explicitly allows canonical output values. It keeps the same policies while generating fresh case facts for search, development holdout, and independent confirmation. The CPO candidate enables field credit and provides bounded excerpts and aggregate validation counts from candidate history. Final scoring remains exact. The scripted verification exercised paired scoring and checkpoint replay. [Corpus generator](../benchmarks/typed_policy.py) · [Corpus tests](../tests/test_typed_policy.py)
 
+### Live run with a precomputed opening
+
+The later development run gave every arm the same four labeled examples at evaluation time and used CPO’s precomputed opening pair. It stopped after 163 recorded GPT‑6 Luna replies. The shared outage opening spent its entire 1,200-token cap on reasoning and returned no usable pair. Qualification never started.
+
+Offline replay recovered the completed ticket and warehouse searches. CPO and field-aware GEPA each passed every directly recorded matched validation case, 10 per task. Across those two tasks CPO used 50 attributed search calls and field-aware GEPA used 72, including the shared openings. The interrupted run provides search evidence on those two tasks. The held-out accuracy and independent confirmation remain unmeasured.
+
 ### Portable grounded fixture
 
 The public `portable-grounded-v1` protocol compares field-aware CPO with the three GEPA 0.1.4 configurations on the released typed-policy cohorts. It uses its own starting instruction and development gate. The efficiency rule counts physical search calls, including the shared opening in each arm’s attributed total. One request samples each distinct selected instruction for a case and repeat. Qualification runs after all selections finish.
