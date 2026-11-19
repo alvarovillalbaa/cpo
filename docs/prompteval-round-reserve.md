@@ -23,6 +23,8 @@ All rows below use the same runner-up policy across the eight transfer panels.
 
 At cap 88, fixed-round CPO gained 11 passes and saved 501 lookups. It scored 43 fewer complete challenger panels, spent 1,032 fewer lookups on those panels, and redirected some of the savings into training and partial validation. At cap 171, the fixed-round policy saved 1,725 lookups and lost 62 passes. Across both caps and both evaluation cohorts, no CPO setting cleared both matched GEPA gates on a panel. Substantially reducing the cost gap requires changing when CPO funds full challenger validation. The measured evidence covers supplied proposals and repeated recorded cases.
 
+The follow-up reduced challenger validation to 12 or eight cases while preserving the separate qualification gate. [Validation size comparison](prompteval-validation-size.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4. Preview the configuration, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`. Each development and transfer configuration has a separate seal.
