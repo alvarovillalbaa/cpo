@@ -26,6 +26,8 @@ The scored-history control isolates a mechanism from OPRO. The fixture refines t
 
 The gate requires at least 14 of 18 passes in each task panel, preserved totals in each matched panel, and no matched critical losses. It also requires eight added passes without extra calls or at least 10% fewer calls. At the primary cap of 56, CPO with demonstrations cleared the gate against instruction-only CPO, scored history, and the instruction and demonstration grid. It tied GEPA in every panel with no matched critical losses and saved 3.4% of search calls, short of the 10% threshold. At cap 40, its 11 additional passes against GEPA and the grid came at higher call counts. The bundled demonstrations reduced CPO’s own calls by 13.5% at both caps.
 
+The separate component-composition benchmark enables GEPA's native merge and compares it with a guarded CPO variant. [Merge comparison](component-merge.md)
+
 ## Reproduce
 
 Use commit `fbfb7a3c74d9d0728ba0628a8ddd93ee1c3158b1` to reproduce the original source hashes. The later precomputed opening is evaluated separately. [Feedback budget study](feedback-budget.md)
