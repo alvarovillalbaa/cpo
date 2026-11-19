@@ -27,6 +27,8 @@ Both offline executions of every phase produced byte-identical reports. The look
 
 The public fixed-pool cycle replay meters actual callback reads and matches these archived CPO decisions and deterministic lookup costs. [Fixed-pool cycle](fixed-pool-cycle.md)
 
+A later replay let GEPA spend the saved search lookups within the same paid ceiling. Both GEPA controls gained passes and spent more, and deferred first-gain retained a narrower aggregate accuracy lead. [Paid-cap follow-up](gepa-paid-cap-transfer.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview a phase to get its seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
