@@ -28,6 +28,8 @@ For the late-at-start variant, batched GEPA at cap 48 matched its score at 2,703
 
 Both offline executions produced byte-identical reports across 784 GEPA model-panel settings. The results describe recorded prompt selection. Fresh-prompt superiority and actual provider cost remain unverified. [Sealed full points, trace hashes, and task allocations](independent-mmlu-cost-frontier-results-v1.json)
 
+A follow-up tested whether a shorter strict validation proof improves CPO's low-budget results. [Minimum-proof search](minimum-proof-budget.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`. The packaged archive supplies all inputs.
