@@ -24,6 +24,8 @@ Four-case CPO saved **32.3%** of lookups against primary batched GEPA and **53.3
 
 The four-case schedule saved 3,161 lookups and lost 42 passes against eight-case CPO. The paired range was −77 to −8. Professional law accounted for 25 of those lost passes and 55 of the 60 lost against cap-52 batched GEPA. Omitting law left CPO behind eight-case CPO by 17, primary batched GEPA by five, and primary sequential GEPA by 13 passes. The lower-cost batched cap-44 arm scored 42 more passes than four-case CPO for 1,973 more lookups. These new panels reverse the earlier within-CPO quality gain. The eight-case default remains in place. [Sealed panel results](four-case-qualification-transfer-results-v1.json)
 
+A retrospective follow-up found that all 37 promotions missed at the first divergence began with a four-case tie. Extending ties recovered 51 passes over the shorter schedule on these panels and still finished below both primary GEPA controls. [Tie extension and loss attribution](qualification-role-transfer.md)
+
 Two executions with sockets and DNS blocked produced identical reports. Four focused tests passed, and the replay refused both a stale seal and an existing output path. Storage Guard measured 13.6 GiB free. The standing LAB exception covered the bounded capture and temporary pinned wheel overlay. The public pages totalled 8.5 MB and the reduced corpus is 476 KB. The 10.3 MB scratch tree was removed. This is prospective evidence on new archived scores. Fresh prompt generation and live provider costs remain unverified.
 
 ## Reproduce
