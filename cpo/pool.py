@@ -10,7 +10,7 @@ class PoolResult:
     evaluations: int
 
 
-def select_pool(candidates, validation, evaluate, *, metric_limit, screen_rows=0):
+def select_pool(candidates, validation, evaluate, *, metric_limit, screen_rows=0, max_challenges=None):
     """Race a fixed pool, optionally ordering challengers on a common prefix.
 
     The first candidate is the incumbent. A challenger needs a strictly higher
@@ -25,6 +25,8 @@ def select_pool(candidates, validation, evaluate, *, metric_limit, screen_rows=0
         raise ValueError('The budget must cover the incumbent')
     if type(screen_rows) is not int or not 0 <= screen_rows <= len(validation):
         raise ValueError('Screen size must fit within validation')
+    if max_challenges is not None and (type(max_challenges) is not int or max_challenges < 1):
+        raise ValueError('A shortlist must allow at least one challenge')
     if screen_rows and len(candidates) > 1:
         minimum = len(candidates) * screen_rows + 2 * (len(validation) - screen_rows)
         if metric_limit < minimum:
@@ -48,7 +50,7 @@ def select_pool(candidates, validation, evaluate, *, metric_limit, screen_rows=0
         screened = {prompt: sum(observe(prompt, row) for row in validation[:screen_rows])
                     for prompt in challengers}
         challengers.sort(key=screened.__getitem__, reverse=True)
-    for prompt in challengers:
+    for prompt in challengers[:max_challenges]:
         if len(leader_passes) == len(validation):
             break
         passed = set()

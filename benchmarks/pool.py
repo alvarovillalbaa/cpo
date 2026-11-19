@@ -10,7 +10,8 @@ from cpo import Observation, Row, select_pool
 from cpo._contract import digest
 
 
-SEEDS = {1: tuple(range(31123, 31883, 19)), 2: tuple(range(32213, 32973, 19))}
+SEEDS = {1: tuple(range(31123, 31883, 19)), 2: tuple(range(32213, 32973, 19)),
+         3: tuple(range(33301, 34061, 19))}
 COHORTS = {
     'abstract-algebra': (100, 100, 13, 24),
     'aime': (9, 45, 9, 10),
@@ -58,7 +59,7 @@ def successive_halving(candidates, validation, observe, limit):
     return active[0]
 
 
-def replay(matrix, seed, *, pool_size, validation_count, limit, screen_rows):
+def replay(matrix, seed, *, pool_size, validation_count, limit, screen_rows, shortlist):
     rng = Random(seed)
     candidates = [str(row) for row in rng.sample(range(len(matrix)), pool_size)]
     cases = list(range(len(matrix[0])))
@@ -66,7 +67,12 @@ def replay(matrix, seed, *, pool_size, validation_count, limit, screen_rows):
     validation, holdout = cases[:validation_count], cases[validation_count:]
     allowed = set(validation)
     arms = {}
-    for name in (*CONTROLS, 'cpo-exact', *(['cpo-screened'] if screen_rows else [])):
+    variants = {'cpo-exact': (0, None)}
+    if screen_rows:
+        variants['cpo-screened'] = (screen_rows, None)
+    if shortlist:
+        variants['cpo-shortlist'] = (screen_rows, 1)
+    for name in (*CONTROLS, *variants):
         journal = {}
 
         def observe(prompt, row):
@@ -84,9 +90,10 @@ def replay(matrix, seed, *, pool_size, validation_count, limit, screen_rows):
         elif name == 'successive-halving':
             picked = successive_halving(candidates, validation, observe, limit)
         else:
+            prefix, maximum = variants[name]
             candidate = select_pool(candidates, [Row(str(row), 'task') for row in validation],
                                     lambda prompt, row: Observation(observe(prompt, int(row.id)), {}),
-                                    metric_limit=limit, screen_rows=screen_rows if name == 'cpo-screened' else 0)
+                                    metric_limit=limit, screen_rows=prefix, max_challenges=maximum)
             picked = candidate.prompt
             if candidate.evaluations != len(journal):
                 raise ValueError('CPO did not match the replay lookup count')
@@ -98,13 +105,16 @@ def replay(matrix, seed, *, pool_size, validation_count, limit, screen_rows):
 
 def plan(name, phase, input_hash):
     _, _, pool_size, validation = COHORTS[name]
+    methods = {1: ('cpo-exact', []), 2: ('cpo-screened', ['cpo-exact']),
+               3: ('cpo-shortlist', ['cpo-exact', 'cpo-screened'])}
+    primary, additional_controls = methods[phase]
     return {
         'study': 'fixed-pool-alternatives', 'phase': phase, 'dataset': name, 'matrixSha256': input_hash,
         'seeds': list(SEEDS[phase]), 'poolSize': pool_size, 'validationCases': validation,
         'maxLookups': pool_size * validation * 55 // 100,
-        'screenRows': validation // 4 if phase == 2 else 0,
-        'primary': 'cpo-screened' if phase == 2 else 'cpo-exact',
-        'controls': [*CONTROLS, *(['cpo-exact'] if phase == 2 else [])],
+        'screenRows': validation // 4 if phase >= 2 else 0,
+        'shortlist': 1 if phase == 3 else None,
+        'primary': primary, 'controls': [*CONTROLS, *additional_controls],
         'gate': 'No aggregate holdout loss and no added lookups, with positive accuracy gain or 10% savings',
         'sourceSha256': {str(path.relative_to(Path(__file__).resolve().parents[1])): sha256(path.read_bytes()).hexdigest()
                          for path in (Path(__file__).resolve(), Path(__file__).resolve().parents[1] / 'cpo/pool.py')},
@@ -144,7 +154,8 @@ def main():
     if args.execute != seal or args.out is None:
         parser.error('Execution requires the current seal and a fresh output path')
     trials = [replay(matrix, seed, pool_size=frozen['poolSize'], validation_count=frozen['validationCases'],
-                     limit=frozen['maxLookups'], screen_rows=frozen['screenRows']) for seed in frozen['seeds']]
+                     limit=frozen['maxLookups'], screen_rows=frozen['screenRows'],
+                     shortlist=frozen['shortlist']) for seed in frozen['seeds']]
     totals, paired = summarize(trials, frozen['primary'], frozen['controls'])
     result = {'plan': frozen, 'planSha256': seal, 'totals': totals, 'paired': paired, 'trials': trials}
     with args.out.open('x') as handle:

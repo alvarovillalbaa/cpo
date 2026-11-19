@@ -15,6 +15,8 @@ The optimizer accepts evaluator and proposer callbacks. A proposer can return a 
 
 Typed evaluators can set `Row.fields` and supply `Observation.matched_fields` with `field_credit=True`. This lets search retain a partial repair when exact validation outcomes tie. Holdout promotion still uses exact paired passes and critical cases.
 
+For an existing candidate pool, `cpo.select_pool` races exact validation scores within a lookup cap. It can rank challengers on a shared prefix and limit how many receive a full challenge. A candidate replaces the incumbent only after all validation rows are accounted for and the incumbent’s critical passes are preserved. [Fixed-pool benchmark](docs/fixed-pool.md)
+
 ## Evidence
 
 The original deterministic benchmark reproduced the adaptive frontier’s 720 of 720 holdout passes with 692 search calls, compared with 622 passes and 1,193 calls for batched GEPA. On the separate transfer benchmark, CPO reached 814 of 864 with 974 calls, while batched GEPA reached 836 with 1,210 calls. CPO failed the transfer gate because it lost matched critical cases. The recorded unrestricted live trials also missed their improvement gates. Fresh typed provider quality remains open. [Protocol](docs/benchmark.md) · [Versioned result](docs/benchmark-results-v1.json)

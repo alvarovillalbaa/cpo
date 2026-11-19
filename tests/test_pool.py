@@ -41,6 +41,14 @@ class PoolTests(unittest.TestCase):
             select_pool(['base', 'a', 'b'], rows, lambda *_: self.fail('unexpected lookup'),
                         metric_limit=13, screen_rows=2)
 
+    def test_shortlist_only_certifies_the_highest_screened_challenger(self):
+        rows = [Row(str(i), 'task') for i in range(6)]
+        evaluate = self.evaluate({'base': {'2'}, 'later': {'2', '3', '4', '5'}, 'first': {'0', '1'}})
+        result = select_pool(['base', 'later', 'first'], rows, evaluate,
+                             metric_limit=18, screen_rows=2, max_challenges=1)
+        self.assertEqual(result.prompt, 'first')
+        self.assertEqual([row for prompt, row in self.calls if prompt == 'later'], ['0', '1'])
+
 
 if __name__ == '__main__':
     unittest.main()
