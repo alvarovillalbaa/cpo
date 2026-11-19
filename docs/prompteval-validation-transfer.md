@@ -27,6 +27,8 @@ Both offline runs returned identical reports. The result strengthens the evidenc
 
 The follow-up exposed an opt-in qualification API that preserves these decisions while stopping early. [Paired qualification certificate](paired-qualification.md)
 
+A second follow-up screened for a single finalist to reduce search cost. The cheapest policy cut CPO lookups by 45.7% and met both matched GEPA gates on one panel. [Single-finalist replay](single-finalist.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4. Preview to obtain the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
