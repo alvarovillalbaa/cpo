@@ -38,6 +38,8 @@ The aggregate sums are descriptive. Each panel must match or exceed each control
 
 A follow-up tested a second certificate after a failed first-gain screen. All three retry policies spent more lookups, and aggregate holdout accuracy tied or fell. [Finalist retry replay](prompteval-finalist-retry.md)
 
+A replay across 18 panels used earlier paid outcomes to pick the first-gain witness. The two rules gained six and 17 aggregate passes and added paid lookups. [Paid witness replay](prompteval-paid-witness.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview to obtain the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
