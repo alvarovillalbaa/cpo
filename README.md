@@ -11,6 +11,7 @@ python -m pip install --require-hashes -r requirements-benchmark.txt
 python -m benchmarks.frontier --protocol cpo-v2 --out cpo-v2.json
 python -m benchmarks.grounded --fixture --out grounded-fixture.json
 python -m benchmarks.grounded --replay grounded-fixture.json
+python -m benchmarks.alternative_controls --out alternative-controls.json
 ```
 
 The optimizer accepts evaluator and proposer callbacks. A proposer can return a `ProposalPair(rewrite=..., repair=...)` to evaluate the complete rewrite first. A finite proposal source can return `ProposalBatch(prompts, exhausted=True)` with its last batch so search can move to a different parent. Use `cpo.search` to inspect a search decision or `cpo.run_cycle` to separately qualify it. Call the next cycle with the returned prompt and a fresh qualification set. The core package does not require a provider SDK. See the benchmark for complete callback examples.
@@ -32,3 +33,5 @@ In a fixed-graph replay of recorded model replies, CPO cleared the gate against 
 The first live typed study failed its development gate. CPO 0.2.0 passed 0 of 108 holdout replies, and each GEPA control passed 1 of 108. The run reproduced offline. CPO 0.3.0’s optional field-aware search has a separate recorded-replay result. The grounded fixture exercises the full comparison locally with scripted replies. [Live results](docs/model-backed-validation.md#first-live-result) · [Grounded fixture](docs/model-backed-validation.md#portable-grounded-fixture)
 
 CPO draws on reflective feedback and complementary candidates from GEPA, attempt history from OPRO, and the separation of proposal generation and validation from MIPROv2. Its guarded promotion rule and comparison suite make these choices measurable. [GEPA](https://arxiv.org/abs/2507.19457) · [OPRO](https://arxiv.org/abs/2309.03409) · [MIPROv2](https://arxiv.org/abs/2406.11695)
+
+The alternative-controls fixture adds demonstrations to CPO and field-aware GEPA. CPO matched GEPA's 162 of 162 exact passes and spent 288 search calls against GEPA's 298, below the 10% savings gate. The same fixture compares scored instruction history and a fixed grid of instruction and demonstration combinations. [Protocol and results](docs/alternative-controls.md)
