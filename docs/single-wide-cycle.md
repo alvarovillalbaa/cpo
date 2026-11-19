@@ -23,6 +23,8 @@ The first-cycle rule produced the highest aggregate accuracy among the single-cy
 
 All four phases replayed byte for byte offline. The results cover 1,280 episodes per method and reproduce both static controls on all 40 panels. These experiments measure fixed archived prompt pools. Fresh-model superiority and provider costs remain unverified. [Sealed results](single-wide-cycle-results-v1.json)
 
+The newer MMLU panels also have a dense equal-cost comparison against both official GEPA modes. [Independent cost frontier](independent-mmlu-cost-frontier.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview the phase seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`. Phases are `independent`, `mmlu`, `bbh-lmentry`, and `bbh-lmentry-stress`.
