@@ -1,6 +1,8 @@
 """Select a fully evaluated prompt from a finite pool under a lookup cap."""
 
+from collections import Counter
 from dataclasses import dataclass
+from fractions import Fraction
 
 
 @dataclass(frozen=True)
@@ -10,11 +12,15 @@ class PoolResult:
     evaluations: int
 
 
-def select_pool(candidates, validation, evaluate, *, metric_limit, screen_rows=0, max_challenges=None):
+def select_pool(candidates, validation, evaluate, *, metric_limit, screen_rows=0, max_challenges=None,
+                adaptive_rejection=False):
     """Race a fixed pool, optionally ordering challengers on a common prefix.
 
     The first candidate is the incumbent. A challenger needs a strictly higher
     exact score and must preserve the original incumbent's critical passes.
+    Adaptive rejection uses measured screen outcomes, requires enough budget
+    to finish a challenge, and checks validation rows with lower observed
+    pass rates first.
     """
     candidates, validation = tuple(candidates), tuple(validation)
     if not candidates or len(set(candidates)) != len(candidates):
@@ -33,6 +39,7 @@ def select_pool(candidates, validation, evaluate, *, metric_limit, screen_rows=0
             raise ValueError('Budget must fund the screen and a complete first challenge')
 
     observations = {}
+    successes, counts = Counter(), Counter()
 
     def observe(prompt, row):
         key = prompt, row.id
@@ -41,6 +48,9 @@ def select_pool(candidates, validation, evaluate, *, metric_limit, screen_rows=0
             if type(result) is not bool:
                 raise ValueError('Pool observations require an exact boolean outcome')
             observations[key] = result
+            if adaptive_rejection:
+                successes[row.id] += result
+                counts[row.id] += 1
         return observations[key]
 
     leader, *challengers = candidates
@@ -53,8 +63,19 @@ def select_pool(candidates, validation, evaluate, *, metric_limit, screen_rows=0
     for prompt in challengers[:max_challenges]:
         if len(leader_passes) == len(validation):
             break
-        passed = set()
-        ordered = sorted(validation, key=lambda row: (row.id not in protected, row.id in leader_passes))
+        if adaptive_rejection:
+            if any(observations.get((prompt, row_id)) is False for row_id in protected):
+                continue
+            passed = {row.id for row in validation if observations.get((prompt, row.id)) is True}
+            unknown = [row for row in validation if (prompt, row.id) not in observations]
+            remaining_budget = metric_limit - len(observations)
+            if len(unknown) > remaining_budget or len(passed) + len(unknown) <= len(leader_passes):
+                continue
+            ordered = sorted(unknown, key=lambda row: (
+                row.id not in protected, Fraction(successes[row.id] + 1, counts[row.id] + 2)))
+        else:
+            passed = set()
+            ordered = sorted(validation, key=lambda row: (row.id not in protected, row.id in leader_passes))
         for count, row in enumerate(ordered, 1):
             if len(observations) >= metric_limit and (prompt, row.id) not in observations:
                 break
@@ -62,7 +83,7 @@ def select_pool(candidates, validation, evaluate, *, metric_limit, screen_rows=0
                 passed.add(row.id)
             elif row.id in protected:
                 break
-            if len(passed) + len(validation) - count <= len(leader_passes):
+            if len(passed) + len(ordered) - count <= len(leader_passes):
                 break
         else:
             leader, leader_passes = prompt, passed

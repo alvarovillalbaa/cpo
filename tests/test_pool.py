@@ -1,3 +1,4 @@
+from itertools import product
 import unittest
 
 from cpo import Observation, Row, select_pool
@@ -48,6 +49,41 @@ class PoolTests(unittest.TestCase):
                              metric_limit=18, screen_rows=2, max_challenges=1)
         self.assertEqual(result.prompt, 'first')
         self.assertEqual([row for prompt, row in self.calls if prompt == 'later'], ['0', '1'])
+
+    def test_adaptive_rejection_uses_cached_failure_before_buying_validation(self):
+        rows = [Row('screen', 'task'), Row('protected', 'task', critical=True), Row('other', 'task')]
+        scores = {'base': {'protected', 'other'}, 'challenger': {'protected', 'other'}}
+        baseline = select_pool(scores, rows, self.evaluate(scores), metric_limit=6, screen_rows=1)
+        adaptive = select_pool(scores, rows, self.evaluate(scores), metric_limit=6, screen_rows=1,
+                               adaptive_rejection=True)
+        self.assertEqual((baseline.prompt, baseline.evaluations), ('base', 5))
+        self.assertEqual((adaptive.prompt, adaptive.evaluations), ('base', 4))
+        self.assertEqual(self.calls[-1], ('challenger', 'screen'))
+
+    def test_adaptive_rejection_skips_a_challenge_it_cannot_finish(self):
+        rows = [Row(str(index), 'task') for index in range(4)]
+        scores = {'base': {'0', '1'}, 'new': {'0', '1', '2', '3'}}
+        adaptive = select_pool(scores, rows, self.evaluate(scores), metric_limit=7, adaptive_rejection=True)
+        self.assertEqual((adaptive.prompt, adaptive.evaluations), ('base', 4))
+        self.assertTrue(all(prompt == 'base' for prompt, _row in self.calls))
+
+    def test_adaptive_rejection_preserves_exact_funded_results_and_critical_passes(self):
+        rows = [Row(str(index), 'task', critical=index == 1) for index in range(3)]
+        prompts = ['base', 'a', 'b']
+        for outcomes in product((False, True), repeat=9):
+            scores = {prompt: {row.id for row, passed in zip(rows, outcomes[index * 3:index * 3 + 3]) if passed}
+                      for index, prompt in enumerate(prompts)}
+            for screen in (0, 1, 2):
+                baseline = select_pool(prompts, rows, self.evaluate(scores), metric_limit=9, screen_rows=screen)
+                adaptive = select_pool(prompts, rows, self.evaluate(scores), metric_limit=9, screen_rows=screen,
+                                       adaptive_rejection=True)
+                self.assertEqual((baseline.prompt, baseline.validation_passes),
+                                 (adaptive.prompt, adaptive.validation_passes))
+                self.assertEqual(len(self.calls), len(set(self.calls)))
+                self.assertEqual({row for prompt, row in self.calls if prompt == adaptive.prompt},
+                                 {row.id for row in rows})
+                if '1' in scores['base']:
+                    self.assertIn('1', scores[adaptive.prompt])
 
 
 if __name__ == '__main__':
