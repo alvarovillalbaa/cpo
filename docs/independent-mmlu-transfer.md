@@ -20,6 +20,8 @@ Seeded preflight gained 53 passes over retaining the starting prompt. It finishe
 
 Nutrition accounted for 21 of the 25 passes lost to batched GEPA. Falcon nutrition is the largest single panel deficit. The default scored 1,850 passes, compared with 1,863 for retaining the start and 1,867 for batched GEPA. Omitting nutrition and both its model panels leaves a four-pass deficit against batched GEPA. Giving each panel equal weight still leaves the default 0.158 percentage points below batched GEPA.
 
+A follow-up traced all 44 losing episodes and tested a larger qualification gain while the starting prompt remains incumbent. [Loss attribution and margin replay](starting-prompt-margin.md)
+
 These are newly captured panels of archived, supplied prompt templates. They test transfer to subjects and models outside the prior CPO experiments. The within-subject seeds share holdout cases. Fresh-prompt superiority and provider cost remain unverified. Two socket-blocked replays produced byte-identical reports from the frozen capture. [Full panel scores, gates, and hashes](independent-mmlu-transfer-results-v1.json)
 
 ## Reproduce
