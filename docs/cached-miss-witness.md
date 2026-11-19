@@ -19,6 +19,8 @@ The known-miss rule saved 1,670 lookups and lost 73 passes. Requiring one earlie
 
 The experiment uses 1,024 four-cycle episodes across 32 archived model-task panels. The seeded control reproduced the published callback trace, cost, and holdout totals on every panel. Both GEPA comparisons use the controls that reinvest cached lookups under the same paid cap. Each phase reproduced byte for byte in two offline executions. These are recorded prompt-pool outcomes. The replay leaves the benefit for fresh prompts and live provider costs unverified. [Static control](fixed-pool-cycle-replay-results-v1.json) · [GEPA controls](gepa-paid-cap-transfer-results-v1.json)
 
+The follow-up traced the ends-with-word loss to seed 47690 and compared giving fresh search priority over archive retries. [Fresh-first archive comparison](archive-after-fresh-search.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview the phase seal, then pass `--execute PLAN_SHA256 --out NEW_REPORT.json`. Phases are `mmlu`, `bbh-lmentry`, and `bbh-lmentry-stress`.
