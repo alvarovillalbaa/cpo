@@ -21,6 +21,8 @@ Certified halving brought the exact batched GEPA winner to qualification in five
 
 All four phases replayed twice offline with byte-identical results. The seeded control reproduced its published trace, score, and costs on all 40 panels. Exhaustive checks on 4,096 combinations of binary outcomes, budgets, and probe orders verified strict gain, critical-pass protection, and lookup accounting. These experiments evaluate recorded prompt pools. Fresh-model superiority and provider costs remain unverified.
 
+A follow-up limits the wider screen to one cycle and measures whether the added accuracy justifies the paid lookups. [Single wide cycle](single-wide-cycle.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview the phase seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`. Phases are `independent`, `mmlu`, `bbh-lmentry`, and `bbh-lmentry-stress`.
