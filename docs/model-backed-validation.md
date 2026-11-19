@@ -19,3 +19,18 @@ CPO selected the starting prompt for every task. The search journal showed that 
 ## Grounded follow-up
 
 The follow-up gives every optimizer all 16 labeled training examples in each reflection and explicitly allows canonical output values. It keeps the same policies while generating fresh case facts for search, development holdout, and independent confirmation. The CPO candidate enables field credit and provides bounded excerpts and aggregate validation counts from candidate history. Final scoring remains exact. The scripted verification exercised paired scoring and checkpoint replay. [Corpus generator](../benchmarks/typed_policy.py) · [Corpus tests](../tests/test_typed_policy.py)
+
+### Portable grounded fixture
+
+The public `portable-grounded-v1` protocol compares field-aware CPO with the three GEPA 0.1.4 configurations on the released typed-policy cohorts. It uses its own starting instruction and development gate. The efficiency rule counts physical search calls, including the shared opening in each arm’s attributed total. One request samples each distinct selected instruction for a case and repeat. Qualification runs after all selections finish.
+
+```sh
+python -m pip install --require-hashes -r requirements-benchmark.txt
+python -m benchmarks.grounded
+python -m benchmarks.grounded --fixture --out grounded-fixture.json
+python -m benchmarks.grounded --replay grounded-fixture.json
+```
+
+Preview prints the plan and its source and corpus hashes. The fixture uses a single deterministic responder for all arms. The responder uses supplied labels for ticket routing and predefined policy rules for the warehouse and outage tasks. The report records exact requests and responses, selected instructions, and scores. Replay verifies the plan, reconstructs each request against the journal, and recomputes the result.
+
+The fixture passed 108 of 108 development replies with CPO and 36 of 108 with each GEPA control. It made 414 search calls and 216 paired holdout calls, all to the local responder. Every GEPA control solved ticket routing and stalled on warehouse and outage, where initial changes improved individual fields without making the full answer correct. This verifies the field-credit path and the comparison harness under scripted conditions. The separate sealed Luna follow-up remains the live quality test, with independent confirmation after development qualifies. [Runner](../benchmarks/grounded.py) · [Fixture](../benchmarks/grounded_fixture.py) · [Tests](../tests/test_grounded.py)
