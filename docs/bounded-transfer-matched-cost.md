@@ -25,6 +25,8 @@ Search reuse removed 26,674 batched GEPA lookups and 6,875 deferred first-gain l
 
 Both offline executions of every phase produced byte-identical reports. The lookup savings describe deterministic evidence reuse on existing trajectories. Fresh provider accuracy, latency, and costs remain unmeasured. [Per-panel results and seals](bounded-transfer-matched-cost-results-v1.json)
 
+The public fixed-pool cycle replay meters actual callback reads and matches these archived CPO decisions and deterministic lookup costs. [Fixed-pool cycle](fixed-pool-cycle.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview a phase to get its seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.

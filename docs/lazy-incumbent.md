@@ -12,6 +12,8 @@ selection = select_with_lazy_incumbent(
 
 The callback supplies exact boolean outcomes through `Observation`. Use deterministic outcomes or a replay with fixed replies when comparing with the eager screen. Evaluation order can affect stochastic replies. The selector preserves a strict validation gain and critical incumbent passes. It returns the selected prompt, the attempted finalist, and the number of actual callback calls. Use separate qualification cases before promoting a finalist.
 
+The fixed-pool cycle runs this selector with independent, budgeted qualification through one API. [Fixed-pool cycle](fixed-pool-cycle.md)
+
 ## Recorded comparison
 
 The replay compares the opt-in selector with eager first-gain and eager rotation. An additional rotation arm uses the paired proof to settle a strict scalar gain while preserving critical passes. Every cycle keeps the same nominee, selected prompt, archive decisions, and qualification replies as its eager reference. The four-cycle schedules use 12 validation cases at a cap of 52 with independent eight-case qualification. The ordinary sequential and batched GEPA controls use their published decisions and costs. [Rotation benchmark](prompteval-coverage-rotation.md) · [Paired proof](paired-qualification.md)
