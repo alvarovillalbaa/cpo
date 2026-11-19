@@ -26,3 +26,5 @@ python -m benchmarks.prompteval_history --phase recheck --execute PLAN_SHA256 --
 ```
 
 Use `--phase exploratory` to replay the original six panels. The runner emits split-level choices, cache hits, paid lookup counts, and digests of the observations requested. [Runner](../benchmarks/prompteval_history.py) · [Accounting tests](../tests/test_prompteval_history.py)
+
+A separate experiment charges for source-subject observations and measures whether the resulting rankings transfer to disjoint subjects. [Cross-subject ranking](prompteval-subject-history.md)
