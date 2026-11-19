@@ -15,3 +15,7 @@ The live comparison tests GEPA selection under those three reflection configurat
 The GPT‑6 Luna development trial finished and replayed offline. CPO 0.2.0 and the starting prompt passed 0 of 108 holdout replies. Each GEPA control passed 1 of 108, on outage credits. Development used 491 search requests and 216 holdout requests. The failed development gate prevented independent confirmation.
 
 CPO selected the starting prompt for every task. The search journal showed that all 12 ticket reflections omitted the canonical queue labels and that 115 validation replies across warehouse and outage had some correct fields with no exact pass. CPO 0.3.0 addresses the second problem with optional field credit. Its matched recorded-reply comparison tied the exact scoreboard and used 32 fewer search calls, with no matched critical losses. Its fresh model-backed performance remains open. [Field-aware replay](recorded-replay.md#field-aware-selection)
+
+## Grounded follow-up
+
+The follow-up gives every optimizer all 16 labeled training examples in each reflection and explicitly allows canonical output values. It keeps the same policies while generating fresh case facts for search, development holdout, and independent confirmation. The CPO candidate enables field credit and provides bounded excerpts and aggregate validation counts from candidate history. Final scoring remains exact. The scripted verification exercised paired scoring and checkpoint replay. [Corpus generator](../benchmarks/typed_policy.py) · [Corpus tests](../tests/test_typed_policy.py)
