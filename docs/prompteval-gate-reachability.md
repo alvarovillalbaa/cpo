@@ -33,6 +33,8 @@ The strict fresh-only routes reached the comparison score in **153 of 166 losses
 
 The measured first-gain replay scored 18,791 holdout passes at 66,481 paid lookups. The strict fresh-only ceiling was 19,698 passes, and the strict ceiling with archive was 20,487. These ceilings choose the highest holdout score after enumerating complete paths and reuse held-out cases across seeds. They describe available headroom on these panels. Two offline executions of each phase produced byte-identical reports. [Panel results and seals](prompteval-gate-reachability-results-v1.json)
 
+A follow-up spread first probes across missed cases. This gained 54 aggregate holdout passes at a cost of 7,588 additional lookups under the existing gates. [Coverage rotation replay](prompteval-coverage-rotation.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview the phase, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
