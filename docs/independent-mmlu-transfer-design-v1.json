@@ -1,0 +1,87 @@
+{
+  "design": {
+    "archivePlanSha256": "a94a0b12d2bdf0b8f10d906a8860a958d6d0ec0c56ee0b99a4693ad1b1555bd0",
+    "gate": "Match both official GEPA controls at no extra cost, with more passes or 10% fewer lookups",
+    "gepaVersion": "0.1.4",
+    "holdout": "Use the existing seeded 30 percent split per subject, shared by both models.",
+    "methods": [
+      "retain-start",
+      "cpo-seeded-preflight",
+      "cpo-seeded-fresh-first",
+      "gepa-sequential.runner-up",
+      "gepa-batched.runner-up"
+    ],
+    "models": [
+      "google_gemma_7b_it",
+      "tiiuae_falcon_40b"
+    ],
+    "primary": "cpo-seeded-preflight",
+    "protocol": "cpo-independent-mmlu-transfer-v1",
+    "schedule": {
+      "cycles": 4,
+      "minimumQualificationGain": 1,
+      "poolSize": 13,
+      "qualificationRowsPerCycle": 8,
+      "seeds": [
+        47101,
+        47120,
+        47139,
+        47158,
+        47177,
+        47196,
+        47215,
+        47234,
+        47253,
+        47272,
+        47291,
+        47310,
+        47329,
+        47348,
+        47367,
+        47386,
+        47405,
+        47424,
+        47443,
+        47462,
+        47481,
+        47500,
+        47519,
+        47538,
+        47557,
+        47576,
+        47595,
+        47614,
+        47633,
+        47652,
+        47671,
+        47690
+      ],
+      "trainRows": 12,
+      "validationRows": 24
+    },
+    "scope": "Compare fixed policies on complete archived prompt template matrices. Compare each CPO arm against both official paid-cap GEPA modes, with a retain-start reference.",
+    "searchCap": 52,
+    "sourceDataset": "PromptEval/PromptEval_MMLU_correctness",
+    "sourceLicense": "MIT",
+    "sourceRevision": "1639d5ea14c362f6964f260ae81bd903af760187",
+    "sourceSha256": {
+      "benchmarks/archive_after_fresh_search.py": "150f13aef54cf0c7b05e517060ed12400503eb72ff7b12304948e18522425d19",
+      "benchmarks/episode_screen_adaptation.py": "eb0fd9ea86a56bd56bb480821b9071a234b2eebdec35e48fc8c70b803f8b9804",
+      "benchmarks/gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "benchmarks/independent_mmlu_transfer.py": "fbce1acb98f6f4a8b567b2245822ee00446e0e882ce3fec262ab175c4d46ddc0",
+      "cpo/challenger.py": "478272234d6443c1aeca6ff59c80abf43ac7437a458a13807e5ae2602b2b88ac",
+      "cpo/fixed_pool_cycle.py": "ae7877ace6cd043cbda3929ecc68cb5824b31aa491575029c81ba5a1c0f47649",
+      "cpo/lazy_incumbent.py": "c127c24775dd3e6a35513e1ab8c69d2acb97de3d05d7e2f2e5ebe09fe16e2b74",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7"
+    },
+    "subjects": [
+      "college_biology",
+      "machine_learning",
+      "nutrition",
+      "security_studies"
+    ],
+    "templateCount": 100,
+    "validationRows": 12
+  },
+  "designSha256": "9c0a73dbd7114183be1857a05850deb94a3d8800ebadebf6382e65a934e0583c"
+}
