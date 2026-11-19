@@ -24,6 +24,8 @@ The runner-up policy bypassed 160 of 1,024 CPO searches at the original cap and 
 
 At cap 88, runner-up CPO gained 26 passes and saved 7,374 lookups against standard CPO. It cleared the gate against both published full-budget GEPA controls on two transfer panels, compared with zero for standard CPO at 88. It cleared no transfer panel against both same-cap GEPA controls. The published standard controls at cap 171 scored 10,236 and 10,263 passes for 91,649 and 88,226 calls. Those comparisons preserve a fully funded reference for the smaller caps. Search still acts on supplied prompts and repeated archived cases. Fresh provider behavior remains unmeasured.
 
+A follow-up traced the remaining cost gap to full challenger validation and compared CPO's fixed-round mode. [Search cost attribution](prompteval-round-reserve.md)
+
 ## Reproduce offline
 
 Use the pinned GEPA 0.1.4 benchmark dependency. Preview each plan, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`. The archived development and transfer phases have separate seals for each cap.
