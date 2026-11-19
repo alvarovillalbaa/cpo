@@ -23,6 +23,8 @@ Deferred first-gain scored 60 more passes than two-read and saved 7,949 lookups 
 
 The data capture and each phase reproduced byte for byte in two offline runs. This is a comparison among recorded prompts and outcomes. It measures lookup cost and selection quality on the archived cohorts. A separate live evaluation is still needed for fresh prompt generation and provider costs. [Sealed panel results](bounded-discovery-transfer-results-v1.json)
 
+Applying the same cross-cycle reuse and early qualification stopping to all four arms narrowed deferred first-gain's batched GEPA lookup lead from 16.0% to 1.95%. It met both matched gates on 10 of 32 panels under the revised accounting. [Matched-cost follow-up](bounded-transfer-matched-cost.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview a phase to get its seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
