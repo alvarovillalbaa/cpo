@@ -27,6 +27,8 @@ On clean replay, four distinct cases gained 47 passes and saved 5,732 lookups ag
 
 Repeating the four cases at 1% noise added 12 CPO passes at a cost of 5,530 extra lookups over four single samples. At 5% it added 15 passes and 5,553 lookups. At 5%, eight distinct cases still scored higher than four repeated cases in aggregate. The two cohorts varied in which schedule scored highest. The replay leaves the qualification default unchanged. [Per-panel results and seals](qualification-repeat-sensitivity-results-v1.json)
 
+The prospective follow-up on 12 new panels reproduced the lookup savings and found an accuracy deficit against both original GEPA modes. [Four-case qualification transfer](four-case-qualification-transfer.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview each phase to get its seal, then execute with a fresh output path. The other phase is `development`.
