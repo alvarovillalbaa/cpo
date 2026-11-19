@@ -8,6 +8,8 @@ The menus contain CPO settings, official GEPA settings, and both. The CPO menu i
 
 The replay also computes a hindsight bound for each menu at the original aggregate CPO cost. The bound can choose separately for each task after seeing its outcomes. The fold tests exclude target outcomes from the choice step, while all menus and outcomes come from previously inspected archives. They measure retrospective selection transfer. [Replay runner](../benchmarks/task_budget_selection.py)
 
+A follow-up tests screen choice from earlier searches on the same incumbent. [Episode-based screen selection](episode-screen-adaptation.md)
+
 ## Results
 
 Each cell shows holdout passes and paid lookups across the 16 held-out tasks.
