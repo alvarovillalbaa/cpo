@@ -23,6 +23,8 @@ Cap-28 CPO scored higher than the reselected affordable GEPA setting in 3,888 dr
 
 Two offline executions produced byte-identical reports. All 312 replayed panel settings matched their published score, cost, and callback trace. Fresh-model superiority remains unverified.
 
+A follow-up froze cap 28 and its sequential GEPA control before capturing six further subjects and two unused model splits. [Low-budget transfer replication](low-budget-transfer.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
