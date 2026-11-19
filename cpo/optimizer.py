@@ -20,6 +20,14 @@ class Observation:
 
 
 @dataclass(frozen=True)
+class ProposalPair:
+    """A complete rewrite and a focused repair from the same training evidence."""
+
+    rewrite: str
+    repair: str
+
+
+@dataclass(frozen=True)
 class Candidate:
     prompt: str
     passed: frozenset
@@ -103,6 +111,8 @@ def search(initial, train, validation, evaluate, propose, *, metric_limit, round
         history = [(candidate.prompt, dict(Counter(families[row_id] for row_id in sorted(candidate.passed))))
                    for candidate in archive[:3]]
         options = propose(parent.prompt, feedback, history, proposals_per_round)
+        if isinstance(options, ProposalPair):
+            options = (options.rewrite, options.repair)
         reflections += 1
         round_limit = min(metric_limit, len(cache) + max(len(validation),
                           (metric_limit - len(cache)) // (rounds - round_index)))

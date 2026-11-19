@@ -12,7 +12,7 @@ from pathlib import Path
 from random import Random
 import re
 
-from cpo import Observation, Row, search
+from cpo import Observation, ProposalPair, Row, search
 from cpo._contract import digest
 
 
@@ -20,11 +20,16 @@ FAMILIES = ('aggregate', 'precedence', 'eligibility')
 PROFILES = ('additive', 'interaction', 'transfer')
 SECOND_SEEDS = (7039, 7121, 7211, 7331, 7411, 7523, 7643, 7741)
 CPO_SEEDS = (10103, 10111, 10133, 10141, 10151, 10159, 10163, 10169)
+CPO_CONFIRMATION_SEEDS = (10601, 10607, 10613, 10627, 10631, 10639, 10651, 10657)
 CPO_PROFILES = ('reverse-precedence', 'legacy-heavy', 'multi-clause')
 METRIC_LIMIT = 72
 REFLECTION_LIMIT = 4
 MINIBATCH = 3
 BASE = 'baseline'
+
+
+class EvaluationLimitReached(Exception):
+    """Stop an indivisible GEPA batch before it exceeds the physical cap."""
 
 
 def make_cases(profile, seed):
@@ -106,11 +111,20 @@ def proposals(parent, feedback):
 
 
 def run_gepa(train, validation, seed, evaluate, *, batched, enforce_reflections):
+    from gepa.core.result import GEPAResult
     from gepa.optimize_anything import EngineConfig, GEPAConfig, ReflectionConfig, optimize_anything
     from gepa.strategies.proposal_sampling import SameParentSampling
     from gepa.utils.stop_condition import ScoreThresholdStopper
 
     prompts = []
+
+    class CaptureState:
+        state = None
+
+        def on_iteration_end(self, event):
+            self.state = event['state']
+
+    capture = CaptureState()
 
     def reflect(request):
         if enforce_reflections and len(prompts) >= REFLECTION_LIMIT:
@@ -125,14 +139,24 @@ def run_gepa(train, validation, seed, evaluate, *, batched, enforce_reflections)
         return float(result.passed), result.feedback
 
     proposal_rounds = REFLECTION_LIMIT // 2 if batched and enforce_reflections else REFLECTION_LIMIT
-    result = optimize_anything(seed_candidate=BASE, evaluator=metric, dataset=train, valset=validation,
-        objective='Choose repair clauses that pass the recorded decisions and preserve the older behaviors.',
-        config=GEPAConfig(engine=EngineConfig(seed=seed, parallel=False, use_cloudpickle=False, cache_evaluation=True,
-            max_metric_calls=METRIC_LIMIT, max_candidate_proposals=proposal_rounds, track_best_outputs=False,
-            sampling_strategy=SameParentSampling(2) if batched else None),
-            reflection=ReflectionConfig(reflection_lm=reflect, reflection_minibatch_size=MINIBATCH),
-            stop_callbacks=ScoreThresholdStopper(1.0)))
-    return result.best_candidate, len(prompts), prompts
+    config = GEPAConfig(engine=EngineConfig(seed=seed, parallel=False, use_cloudpickle=False, cache_evaluation=True,
+        max_metric_calls=METRIC_LIMIT, max_candidate_proposals=proposal_rounds, track_best_outputs=False,
+        sampling_strategy=SameParentSampling(2) if batched else None),
+        reflection=ReflectionConfig(reflection_lm=reflect, reflection_minibatch_size=MINIBATCH),
+        stop_callbacks=ScoreThresholdStopper(1.0), callbacks=[capture])
+    try:
+        result = optimize_anything(seed_candidate=BASE, evaluator=metric, dataset=train, valset=validation,
+            objective='Choose repair clauses that pass the recorded decisions and preserve the older behaviors.',
+            config=config)
+    except EvaluationLimitReached:
+        if capture.state is None:
+            raise
+        result = GEPAResult.from_state(capture.state)
+        candidate = result.best_candidate
+        if not isinstance(candidate, dict) or len(candidate) != 1:
+            raise ValueError('The benchmark requires GEPA to optimize a single prompt')
+        return next(iter(candidate.values())), len(prompts), prompts, True
+    return result.best_candidate, len(prompts), prompts, False
 
 
 def compare(cases, seed, profiles, *, enforce_reflections):
@@ -141,18 +165,22 @@ def compare(cases, seed, profiles, *, enforce_reflections):
     results = {}
     for name, width, race, adaptive in profiles:
         calls = []
+        budget_stopped = False
 
         def evaluate(prompt, row):
-            if row['id'] not in search_rows or len(calls) >= METRIC_LIMIT:
-                raise RuntimeError('Search row or budget violation')
+            if row['id'] not in search_rows:
+                raise RuntimeError('Search row violation')
+            if len(calls) >= METRIC_LIMIT:
+                raise EvaluationLimitReached
             observed = score(prompt, search_rows[row['id']])
             calls.append({'prompt': prompt, 'row': row['id'], 'passed': observed.passed})
             return observed
 
         if name in ('gepa', 'gepa-batched'):
             with redirect_stdout(StringIO()):
-                prompt, reflections, events = run_gepa(train, validation, seed, evaluate, batched=name == 'gepa-batched',
-                                                        enforce_reflections=enforce_reflections)
+                prompt, reflections, events, budget_stopped = run_gepa(
+                    train, validation, seed, evaluate, batched=name == 'gepa-batched',
+                    enforce_reflections=enforce_reflections)
         else:
             def as_row(row):
                 return Row(row['id'], row['family'], row['critical'])
@@ -162,7 +190,11 @@ def compare(cases, seed, profiles, *, enforce_reflections):
 
             def propose(parent, feedback, history, width):
                 diagnosis = ' '.join(item.feedback['diagnosis'] for _, item in feedback)
-                return proposals(parent, diagnosis)
+                options = proposals(parent, diagnosis)
+                if name == 'cpo-rewrite-first':
+                    repair, rewrite = options
+                    return ProposalPair(rewrite=rewrite, repair=repair)
+                return options
 
             result = search(BASE, list(map(as_row, train)), list(map(as_row, validation)), evaluate_row,
                             propose, metric_limit=METRIC_LIMIT, rounds=REFLECTION_LIMIT, train_per_round=MINIBATCH,
@@ -173,7 +205,7 @@ def compare(cases, seed, profiles, *, enforce_reflections):
         outcomes = {row['id']: score(prompt, row).passed for row in holdout}
         results[name] = {'prompt': prompt, 'passes': sum(outcomes.values()), 'evaluations': len(calls),
                          'reflections': reflections, 'criticalFailures': sum(row['critical'] and not outcomes[row['id']] for row in holdout),
-                         'outcomes': outcomes, 'events': events, 'journal': calls}
+                         'outcomes': outcomes, 'events': events, 'journal': calls, 'budgetStopped': budget_stopped}
     return results
 
 
@@ -228,16 +260,24 @@ def qualifies(groups):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--protocol', choices=('v2', 'cpo-v1'), default='cpo-v1')
+    parser.add_argument('--protocol', choices=('v2', 'cpo-v1', 'cpo-v2'), default='cpo-v2')
     parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
     if version('gepa') != '0.1.4':
         raise SystemExit('The archived comparator is GEPA 0.1.4')
-    contender = 'cpo'
     arms = [('gepa', 1, False, False), ('gepa-batched', 2, False, False), ('frontier', 2, True, False),
-            (contender, 2, True, True)]
-    profiles, seeds, dataset = (PROFILES, SECOND_SEEDS, make_cases) if args.protocol == 'v2' else (
-        CPO_PROFILES, CPO_SEEDS, make_cpo_cases)
+            ('cpo', 2, True, True)]
+    contender = 'cpo'
+    controls = ('gepa', 'gepa-batched', 'frontier')
+    profiles, seeds, dataset = {
+        'v2': (PROFILES, SECOND_SEEDS, make_cases),
+        'cpo-v1': (CPO_PROFILES, CPO_SEEDS, make_cpo_cases),
+        'cpo-v2': (CPO_PROFILES, CPO_CONFIRMATION_SEEDS, make_cpo_cases),
+    }[args.protocol]
+    if args.protocol == 'cpo-v2':
+        contender = 'cpo-rewrite-first'
+        arms.append((contender, 2, True, True))
+        controls += ('cpo',)
     runs = []
     for profile in profiles:
         for seed in seeds:
@@ -247,7 +287,6 @@ def main():
                          'criticalHoldoutIDs': [row['id'] for row in cases['holdout'] if row['critical']],
                          'arms': compare(cases, seed, arms, enforce_reflections=True)})
     root = Path(__file__).resolve().parents[1]
-    controls = ('gepa', 'gepa-batched', 'frontier')
     comparisons = {name: compare_profiles(runs, profiles, contender, name) for name in controls}
     gates = {name: qualifies(groups) for name, groups in comparisons.items()}
     report = {'protocol': f'frontier-synthetic-{args.protocol}', 'gepaVersion': '0.1.4',

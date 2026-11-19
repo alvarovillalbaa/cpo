@@ -2,7 +2,6 @@
 
 from hashlib import sha256
 import json
-import re
 
 
 def digest(value):
@@ -26,9 +25,3 @@ def classification(text, expected, *, strict=True):
     if any(type(result[key]) is not type(value) for key, value in expected.items()):
         return 'wrong_types'
     return 'pass' if result == expected else 'wrong_values'
-
-
-def unwrap(text):
-    """Remove only a single complete Markdown code fence."""
-    match = re.fullmatch(r'```(?:json)?[ \t]*\r?\n([\s\S]*?)\r?\n```', text.strip(), re.IGNORECASE)
-    return match[1] if match else None

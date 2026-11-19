@@ -1,0 +1,164 @@
+{
+  "aggregate": {
+    "cpo": {
+      "budgetStopped": 0,
+      "criticalFailures": 5,
+      "evaluations": 899,
+      "passes": 859,
+      "reflections": 43
+    },
+    "cpo-rewrite-first": {
+      "budgetStopped": 0,
+      "criticalFailures": 0,
+      "evaluations": 849,
+      "passes": 864,
+      "reflections": 43
+    },
+    "frontier": {
+      "budgetStopped": 0,
+      "criticalFailures": 81,
+      "evaluations": 1425,
+      "passes": 631,
+      "reflections": 74
+    },
+    "gepa": {
+      "budgetStopped": 1,
+      "criticalFailures": 251,
+      "evaluations": 1301,
+      "passes": 526,
+      "reflections": 92
+    },
+    "gepa-batched": {
+      "budgetStopped": 2,
+      "criticalFailures": 22,
+      "evaluations": 1153,
+      "passes": 785,
+      "reflections": 78
+    }
+  },
+  "comparisonsByProfile": {
+    "cpo": {
+      "legacy-heavy": {
+        "baselineSearchCalls": 326,
+        "cpoSearchCalls": 316,
+        "exactPassDelta": 0,
+        "matchedCriticalLosses": 0
+      },
+      "multi-clause": {
+        "baselineSearchCalls": 268,
+        "cpoSearchCalls": 260,
+        "exactPassDelta": 5,
+        "matchedCriticalLosses": 0
+      },
+      "reverse-precedence": {
+        "baselineSearchCalls": 348,
+        "cpoSearchCalls": 316,
+        "exactPassDelta": 0,
+        "matchedCriticalLosses": 0
+      }
+    },
+    "frontier": {
+      "legacy-heavy": {
+        "baselineSearchCalls": 526,
+        "cpoSearchCalls": 316,
+        "exactPassDelta": 53,
+        "matchedCriticalLosses": 0
+      },
+      "multi-clause": {
+        "baselineSearchCalls": 447,
+        "cpoSearchCalls": 260,
+        "exactPassDelta": 50,
+        "matchedCriticalLosses": 0
+      },
+      "reverse-precedence": {
+        "baselineSearchCalls": 526,
+        "cpoSearchCalls": 316,
+        "exactPassDelta": 130,
+        "matchedCriticalLosses": 0
+      }
+    },
+    "gepa": {
+      "legacy-heavy": {
+        "baselineSearchCalls": 468,
+        "cpoSearchCalls": 316,
+        "exactPassDelta": 132,
+        "matchedCriticalLosses": 0
+      },
+      "multi-clause": {
+        "baselineSearchCalls": 465,
+        "cpoSearchCalls": 260,
+        "exactPassDelta": 95,
+        "matchedCriticalLosses": 0
+      },
+      "reverse-precedence": {
+        "baselineSearchCalls": 460,
+        "cpoSearchCalls": 316,
+        "exactPassDelta": 111,
+        "matchedCriticalLosses": 0
+      }
+    },
+    "gepa-batched": {
+      "legacy-heavy": {
+        "baselineSearchCalls": 435,
+        "cpoSearchCalls": 316,
+        "exactPassDelta": 15,
+        "matchedCriticalLosses": 0
+      },
+      "multi-clause": {
+        "baselineSearchCalls": 365,
+        "cpoSearchCalls": 260,
+        "exactPassDelta": 31,
+        "matchedCriticalLosses": 0
+      },
+      "reverse-precedence": {
+        "baselineSearchCalls": 431,
+        "cpoSearchCalls": 316,
+        "exactPassDelta": 33,
+        "matchedCriticalLosses": 0
+      }
+    }
+  },
+  "gepaVersion": "0.1.4",
+  "maxMetricCalls": 72,
+  "maxReflections": 4,
+  "protocol": "frontier-synthetic-cpo-v2",
+  "qualifiesAgainstStockGEPA": true,
+  "resultSha256": "a1e0c656f533f4ba52d740f9d81c28909c0f058f24e6d1901a5f18cf1f937fde",
+  "seeds": [
+    10601,
+    10607,
+    10613,
+    10627,
+    10631,
+    10639,
+    10651,
+    10657
+  ],
+  "sourceSha256": {
+    "benchmarks/frontier.py": "4bcf5c82082cc27a59a72b98728f21120498860211cd619e57a45cb52fb116ac",
+    "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+    "cpo/optimizer.py": "a0f9d547d1674aad0b688c839310f26f55faaaa8bb578c8a70a8b790db330118"
+  },
+  "summary": {
+    "cpo": {
+      "win": 24
+    },
+    "frontier": {
+      "win": 24
+    },
+    "gepa": {
+      "tradeoff": 2,
+      "win": 22
+    },
+    "gepa-batched": {
+      "tradeoff": 3,
+      "win": 21
+    }
+  },
+  "syntheticGate": {
+    "cpo": false,
+    "frontier": true,
+    "gepa": true,
+    "gepa-batched": true
+  }
+}

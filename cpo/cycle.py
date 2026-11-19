@@ -1,5 +1,6 @@
 """Select a challenger on search data and qualify it against the incumbent."""
 
+from collections import Counter
 from dataclasses import dataclass
 from random import Random
 
@@ -43,6 +44,7 @@ def run_cycle(incumbent, train, validation, holdout, evaluate, propose, *,
         return CycleResult(incumbent, candidate, (), False)
 
     outcomes = []
+    gain_by_family = Counter()
     order = Random(seed)
     for row in holdout:
         for repeat in range(repeats):
@@ -53,9 +55,10 @@ def run_cycle(incumbent, train, validation, holdout, evaluate, propose, *,
                 raise ValueError("The qualifier must return an exact boolean outcome")
             outcomes.append(MatchedOutcome(row.id, repeat, row.critical,
                                            observations[incumbent], observations[candidate.prompt]))
+            gain_by_family[row.family] += observations[candidate.prompt] - observations[incumbent]
 
-    gain = sum(result.challenger_passed - result.incumbent_passed for result in outcomes)
     critical_loss = any(result.critical and result.incumbent_passed and not result.challenger_passed
                         for result in outcomes)
-    promoted = gain >= minimum_gain and not critical_loss
+    promoted = (sum(gain_by_family.values()) >= minimum_gain and not critical_loss
+                and all(gain >= 0 for gain in gain_by_family.values()))
     return CycleResult(candidate.prompt if promoted else incumbent, candidate, tuple(outcomes), promoted)

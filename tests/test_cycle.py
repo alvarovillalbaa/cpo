@@ -1,6 +1,6 @@
 import unittest
 
-from cpo import Observation, Row, run_cycle
+from cpo import Observation, ProposalPair, Row, classify_json_reply, run_cycle
 
 
 class CycleTests(unittest.TestCase):
@@ -67,3 +67,19 @@ class CycleTests(unittest.TestCase):
         self.assertEqual(result.prompt, "incumbent")
         self.assertFalse(result.promoted)
         self.assertFalse(result.outcomes)
+
+    def test_complete_rewrite_is_evaluated_first(self):
+        self.propose = lambda *_: ProposalPair(rewrite="challenger", repair="other")
+        result = self.cycle(lambda prompt, row, _: row.critical or prompt == "challenger")
+        self.assertEqual(self.search_calls[-1], ("challenger", "validation"))
+        self.assertTrue(result.promoted)
+
+    def test_family_regression_blocks_promotion_even_with_gain(self):
+        self.holdout = [Row("west", "west"), Row("east-1", "east"), Row("east-2", "east")]
+        result = self.cycle(lambda prompt, row, _: (row.family == "west") == (prompt == "incumbent"))
+        self.assertFalse(result.promoted)
+
+    def test_typed_grading_rejects_coercion_and_duplicate_keys(self):
+        self.assertEqual(classify_json_reply('{"release":true}', {"release": True}), "pass")
+        self.assertEqual(classify_json_reply('{"release":1}', {"release": True}), "wrong_types")
+        self.assertEqual(classify_json_reply('{"release":false,"release":true}', {"release": True}), "invalid_json")
