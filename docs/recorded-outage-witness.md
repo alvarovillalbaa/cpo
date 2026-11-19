@@ -17,6 +17,8 @@ The call totals exclude the two shared incumbent lookups used to pick the reserv
 
 This is a retrospective check prompted by the recorded failures. The ranges describe the original replay, and the remaining provider holdout stays unscored for this policy. No witness request was sent.
 
+A follow-up qualified a previously archived prompt for long outages and compared routing with direct reuse. [Specialist replay](recorded-outage-specialists.md)
+
 ## Reproduce offline
 
 Use the intact research archive and pinned GEPA 0.1.4. Preview to obtain the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
