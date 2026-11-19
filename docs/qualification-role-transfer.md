@@ -31,6 +31,8 @@ The tie rule stops on a proven positive or negative gain in the first four cases
 
 The tie extension gained **76 passes and saved 2,343 lookups** against eight-case CPO across the three cohorts. Moral scenarios accounted for 57 gained passes. Omitting any one subject still leaves a gain of 19 to 78 passes. On the transfer panels, the variant gained 51 passes against four-case CPO and nine against eight-case CPO. It finished nine passes behind batched GEPA and 18 behind sequential GEPA, with 9,938 and 27,452 fewer lookups respectively. The four-case loss motivated the extension, making the gain retrospective. The eight-case default remains in place.
 
+The prospective BBH and LMentry follow-up kept the lookup advantage and scored below all four GEPA controls. [Cross-benchmark transfer](tie-extension-cross-benchmark.md)
+
 ## Diagnose the remaining gap
 
 An independent rerun of the eight-case CPO and both primary cap-52 GEPA controls reproduced their transfer traces. Counting the two controls separately, eight-case CPO lost 56 paired episodes. In 22, the final GEPA prompt would have failed to make a strict validation gain on CPO's actual path. In another 12 it would have gained on validation and failed qualification. GEPA retained the starting prompt in 13. CPO missed a challenger that would have passed both gates in eight, and an archive promotion skipped the winner's fresh search in one. These outcomes describe the incumbent and cohort at the cycle where the winning prompt was offered. [Per-episode loss audit](qualification-role-transfer-results-v1.json)
