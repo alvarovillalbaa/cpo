@@ -29,3 +29,5 @@ cmp feedback-budget.json docs/feedback-budget-results-v1.json
 ```
 
 The receipt includes the source and corpus digests, settings, matched outcomes, and paired judgment hashes. Use the source revision that introduced the receipt for byte-for-byte reproduction. [Runner](../benchmarks/feedback_budget.py) · [Feedback contract tests](../tests/test_feedback_budget.py)
+
+A separate ablation measures when stopping after the first observed error changes the outcome or cost. [Training probe schedules](feedback-probe-policy.md)

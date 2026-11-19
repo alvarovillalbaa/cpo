@@ -1,0 +1,23 @@
+--- a/cpo/optimizer.py
++++ b/cpo/optimizer.py
+@@ -68 +68 @@
+-           opening_pair=None):
++           opening_pair=None, feedback_policy='fixed'):
+@@ -87,0 +88,2 @@
++    if feedback_policy not in ('fixed', 'first-error', 'critical-first-error'):
++        raise ValueError('Unknown feedback policy')
+@@ -88,0 +91,2 @@
++    if feedback_policy == 'critical-first-error':
++        probes.sort(key=lambda row: not row.critical)
+@@ -145,3 +149,8 @@
+-            probes_this_round = [probes[index % len(probes)] for index in range(cursor, cursor + probe_count)]
+-            cursor += probe_count
+-            feedback = [(row, observe(parent.prompt, row)) for row in probes_this_round]
++            feedback = []
++            for _ in range(probe_count):
++                row = probes[cursor % len(probes)]
++                cursor += 1
++                observed = observe(parent.prompt, row)
++                feedback.append((row, observed))
++                if feedback_policy != 'fixed' and not observed.passed:
++                    break

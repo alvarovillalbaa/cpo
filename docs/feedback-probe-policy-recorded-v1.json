@@ -1,0 +1,615 @@
+{
+  "plan": {
+    "callAccounting": "one shared opening pair, evaluation lookups, and proposal slots outside the pair",
+    "caps": [
+      24,
+      144
+    ],
+    "gepaVersion": "0.1.4",
+    "officialControlsAtCap": 144,
+    "policies": [
+      "fixed",
+      "first-error",
+      "critical-first-error"
+    ],
+    "protocol": "typed-training-probe-recorded-v1",
+    "seeds": [
+      32201,
+      32220,
+      32239,
+      32258,
+      32277,
+      32296,
+      32315,
+      32334,
+      32353,
+      32372,
+      32391,
+      32410,
+      32429,
+      32448,
+      32467,
+      32486,
+      32505,
+      32524,
+      32543,
+      32562,
+      32581,
+      32600,
+      32619,
+      32638,
+      32657,
+      32676,
+      32695,
+      32714,
+      32733,
+      32752,
+      32771,
+      32790,
+      32809,
+      32828,
+      32847,
+      32866,
+      32885,
+      32904,
+      32923,
+      32942
+    ],
+    "sourcePlanSha256": "94217f23c9a8892c20023e6f2616626af365dd781372de832f4e2f6dc1b587ff",
+    "sourceSha256": {
+      "cpo_feedback_probe_replay.py": "444cf517dd493bbbaf457b2c3d0da8ffe1ca874bba4332c8787298ccf41c1965",
+      "cpo_recorded_opening_pair.py": "b170dbdcbc4cfc52a536ad58f5b81fef73f6ba2ce47b76761acaa4794be53184",
+      "field_lineage_replay.py": "227259e96b3e825e8b499228571aac0f4c829e8e50971439f845b8e417c31d33",
+      "optimizer.py": "1cf553612c497b60bcda731eb20759cce7144600307b2f3547e69980764f2715",
+      "rewrite_first_replay.py": "9255115179436bfae10d55960b56629cb66c77d19ee6673b2dd3ba8ffc658dd9"
+    }
+  },
+  "planSha256": "79e3a1d42db5ee30b655a0a2711234b0d31224f127e7e57a4e58b088d6af68d5",
+  "reportSha256": "21c7a0fd1879bea257222c844566fcb3bf36344b512f16e50b4a7340a4c81092",
+  "results": {
+    "144": {
+      "outage": {
+        "comparisons": {
+          "critical-first-error": {
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 3,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 25,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-batched": {
+              "additionalPasses": -3,
+              "chargedCallsSaved": 928,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-sequential": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 751,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "first-error": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": -3,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 22,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-batched": {
+              "additionalPasses": -3,
+              "chargedCallsSaved": 925,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-sequential": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 748,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "fixed": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": -25,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": -22,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-batched": {
+              "additionalPasses": -3,
+              "chargedCallsSaved": 903,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-sequential": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 726,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          }
+        },
+        "totals": {
+          "critical-first-error": {
+            "chargedCalls": 1008,
+            "passes": 89,
+            "proposalSlots": 176,
+            "searchCalls": 792
+          },
+          "first-error": {
+            "chargedCalls": 1011,
+            "passes": 89,
+            "proposalSlots": 176,
+            "searchCalls": 795
+          },
+          "fixed": {
+            "chargedCalls": 1033,
+            "passes": 89,
+            "proposalSlots": 176,
+            "searchCalls": 817
+          },
+          "gepa-field-batched": {
+            "chargedCalls": 1936,
+            "passes": 92,
+            "proposalSlots": 582,
+            "searchCalls": 1394
+          },
+          "gepa-field-sequential": {
+            "chargedCalls": 1759,
+            "passes": 89,
+            "proposalSlots": 580,
+            "searchCalls": 1180
+          }
+        }
+      },
+      "ticket": {
+        "comparisons": {
+          "critical-first-error": {
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-batched": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 262,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-field-sequential": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 80,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "first-error": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-batched": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 262,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-field-sequential": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 80,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "fixed": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-batched": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 262,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-field-sequential": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 80,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          }
+        },
+        "totals": {
+          "critical-first-error": {
+            "chargedCalls": 360,
+            "passes": 160,
+            "proposalSlots": 0,
+            "searchCalls": 320
+          },
+          "first-error": {
+            "chargedCalls": 360,
+            "passes": 160,
+            "proposalSlots": 0,
+            "searchCalls": 320
+          },
+          "fixed": {
+            "chargedCalls": 360,
+            "passes": 160,
+            "proposalSlots": 0,
+            "searchCalls": 320
+          },
+          "gepa-field-batched": {
+            "chargedCalls": 622,
+            "passes": 160,
+            "proposalSlots": 80,
+            "searchCalls": 582
+          },
+          "gepa-field-sequential": {
+            "chargedCalls": 440,
+            "passes": 160,
+            "proposalSlots": 40,
+            "searchCalls": 400
+          }
+        }
+      },
+      "warehouse": {
+        "comparisons": {
+          "critical-first-error": {
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-batched": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 482,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-field-sequential": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 256,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "first-error": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-batched": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 482,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-field-sequential": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 256,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "fixed": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "gepa-field-batched": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 482,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-field-sequential": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 256,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          }
+        },
+        "totals": {
+          "critical-first-error": {
+            "chargedCalls": 588,
+            "passes": 148,
+            "proposalSlots": 72,
+            "searchCalls": 476
+          },
+          "first-error": {
+            "chargedCalls": 588,
+            "passes": 148,
+            "proposalSlots": 72,
+            "searchCalls": 476
+          },
+          "fixed": {
+            "chargedCalls": 588,
+            "passes": 148,
+            "proposalSlots": 72,
+            "searchCalls": 476
+          },
+          "gepa-field-batched": {
+            "chargedCalls": 1070,
+            "passes": 148,
+            "proposalSlots": 248,
+            "searchCalls": 862
+          },
+          "gepa-field-sequential": {
+            "chargedCalls": 844,
+            "passes": 148,
+            "proposalSlots": 220,
+            "searchCalls": 624
+          }
+        }
+      }
+    },
+    "24": {
+      "outage": {
+        "comparisons": {
+          "critical-first-error": {
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": -6,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": -28,
+              "criticalLosses": 0,
+              "qualified": false
+            }
+          },
+          "first-error": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 6,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": -22,
+              "criticalLosses": 0,
+              "qualified": false
+            }
+          },
+          "fixed": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 28,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 22,
+              "criticalLosses": 0,
+              "qualified": false
+            }
+          }
+        },
+        "totals": {
+          "critical-first-error": {
+            "chargedCalls": 932,
+            "passes": 89,
+            "proposalSlots": 174,
+            "searchCalls": 718
+          },
+          "first-error": {
+            "chargedCalls": 926,
+            "passes": 89,
+            "proposalSlots": 172,
+            "searchCalls": 714
+          },
+          "fixed": {
+            "chargedCalls": 904,
+            "passes": 89,
+            "proposalSlots": 152,
+            "searchCalls": 712
+          }
+        }
+      },
+      "ticket": {
+        "comparisons": {
+          "critical-first-error": {
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            }
+          },
+          "first-error": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            }
+          },
+          "fixed": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            }
+          }
+        },
+        "totals": {
+          "critical-first-error": {
+            "chargedCalls": 360,
+            "passes": 160,
+            "proposalSlots": 0,
+            "searchCalls": 320
+          },
+          "first-error": {
+            "chargedCalls": 360,
+            "passes": 160,
+            "proposalSlots": 0,
+            "searchCalls": 320
+          },
+          "fixed": {
+            "chargedCalls": 360,
+            "passes": 160,
+            "proposalSlots": 0,
+            "searchCalls": 320
+          }
+        }
+      },
+      "warehouse": {
+        "comparisons": {
+          "critical-first-error": {
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            }
+          },
+          "first-error": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "fixed": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            }
+          },
+          "fixed": {
+            "critical-first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            },
+            "first-error": {
+              "additionalPasses": 0,
+              "chargedCallsSaved": 0,
+              "criticalLosses": 0,
+              "qualified": false
+            }
+          }
+        },
+        "totals": {
+          "critical-first-error": {
+            "chargedCalls": 586,
+            "passes": 148,
+            "proposalSlots": 72,
+            "searchCalls": 474
+          },
+          "first-error": {
+            "chargedCalls": 586,
+            "passes": 148,
+            "proposalSlots": 72,
+            "searchCalls": 474
+          },
+          "fixed": {
+            "chargedCalls": 586,
+            "passes": 148,
+            "proposalSlots": 72,
+            "searchCalls": 474
+          }
+        }
+      }
+    }
+  }
+}
