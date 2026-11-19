@@ -21,6 +21,8 @@ On ends-with-word seed 47690, the seeded arms both selected prompt 61 and scored
 
 A follow-up retained the seeded witness and used cached evidence only when the seeded screen found no validation certificate. [Bounded cached-witness fallback](cached-witness-fallback.md)
 
+The seeded preflight and fresh-first arms also ran on four unused MMLU subjects and two unused archival models under a design sealed before capture. [Independent MMLU transfer](independent-mmlu-transfer.md)
+
 All three phases reproduced byte for byte offline across 1,024 paired episodes per arm. These fixed prompt-pool results establish the effect of ordering on the archived trajectories. Fresh-model performance and provider costs remain unverified. [Sealed results and incident trace](archive-after-fresh-search-results-v1.json)
 
 ## Reproduce
