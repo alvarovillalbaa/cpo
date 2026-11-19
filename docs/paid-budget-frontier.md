@@ -21,6 +21,8 @@ At the published CPO point, the best affordable fixed GEPA setting was batched w
 
 Reducing the CPO ceiling from 52 to 36 saved 2,840 lookups and lost 19 passes. At the published point, CPO had higher accuracy on 16 panels, tied on one, and had lower accuracy on 15 against the best affordable GEPA setting chosen separately per panel. All counts describe recorded outcomes with holdout cases repeated across seeds. Both offline runs reproduced the same report byte for byte. [Sealed points and task allocations](paid-budget-frontier-results-v1.json)
 
+Selecting settings from other tasks recovered none of the GEPA hindsight accuracy gain. The primary CPO selector saved 6,110 lookups and lost nine passes against fixed CPO. [Held-out task selection](task-budget-selection.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview to get the seal, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.

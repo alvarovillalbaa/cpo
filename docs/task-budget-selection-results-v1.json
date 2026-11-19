@@ -1,0 +1,3863 @@
+{
+  "plan": {
+    "archiveSha256": "f18c5d115fb4e6c12da907ef1f0a81dd19fbca95e50f45e8f98da8264a14fb6c",
+    "frontierSha256": "1ba8cc12dd25bd11b050ad28b006621af1cc871825d2ea7536a6b9a250935f5b",
+    "matchedCostsSha256": "9ff02d2b6a9200dba0b573705de9036b53f00e9d1c4473221182623266003f4c",
+    "menus": {
+      "cpo": [
+        "deferred-first-gain",
+        "bounded-two-reads",
+        "paired-wins",
+        "require-win",
+        "archive-disabled"
+      ],
+      "gepa": [
+        "gepa-sequential.runner-up",
+        "gepa-batched.runner-up"
+      ],
+      "mixed": [
+        "deferred-first-gain",
+        "bounded-two-reads",
+        "paired-wins",
+        "require-win",
+        "archive-disabled",
+        "gepa-sequential.runner-up",
+        "gepa-batched.runner-up"
+      ]
+    },
+    "parentPlanSha256": "89ba8974fd03739b49524bfcba61d5cbd1abf434a70a3594f62f6b486c6f6228",
+    "primarySplit": "same-benchmark",
+    "protocol": "cpo-task-budget-selection-v1",
+    "ranking": "Mean task accuracy at mean relative training cost at most one, then lower cost.",
+    "reference": {
+      "cap": 52,
+      "method": "deferred-first-gain"
+    },
+    "runnerSha256": "9bc247a7b970ce1ddee8a44f3ca5041f38a77139285689ff757377fedb763a53",
+    "scope": "Held-out task selection with both model panels excluded from fitting. Replay sealed points.",
+    "splits": [
+      "other-tasks",
+      "same-benchmark",
+      "other-cohorts"
+    ],
+    "subjects": [
+      "anatomy",
+      "bbh-disambiguation_qa",
+      "bbh-formal_fallacies",
+      "bbh-hyperbaton",
+      "bbh-logical_deduction_five_objects",
+      "bbh-navigate",
+      "bbh-penguins_in_a_table",
+      "computer_security",
+      "high_school_chemistry",
+      "human_aging",
+      "lmentry-any_words_from_category",
+      "lmentry-ends_with_word",
+      "lmentry-first_alphabetically",
+      "lmentry-homophones",
+      "lmentry-less_letters",
+      "lmentry-rhyming_word"
+    ]
+  },
+  "planSha256": "bf637f35b87dc6005544ae52e132f2fdd4543473af86d18826dbbd66d3ed9f0a",
+  "reference": {
+    "holdoutPasses": 21023,
+    "paidLookups": 101034
+  },
+  "splits": {
+    "other-cohorts": {
+      "cpo": {
+        "folds": {
+          "anatomy": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1549,
+              "paidLookups": 4897
+            },
+            "trainingMetrics": {
+              "accuracy": "4441/7680",
+              "relativeCost": "3378583467601407693434991814497799/3574660777346651996120577757577280"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-disambiguation_qa": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1289,
+              "paidLookups": 5867
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-formal_fallacies": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1008,
+              "paidLookups": 6342
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "bbh-hyperbaton": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1171,
+              "paidLookups": 6910
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-logical_deduction_five_objects": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 858,
+              "paidLookups": 6327
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "bbh-navigate": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1088,
+              "paidLookups": 6695
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "bbh-penguins_in_a_table": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1011,
+              "paidLookups": 6199
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "computer_security": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1467,
+              "paidLookups": 5930
+            },
+            "trainingMetrics": {
+              "accuracy": "4441/7680",
+              "relativeCost": "3378583467601407693434991814497799/3574660777346651996120577757577280"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "high_school_chemistry": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 2004,
+              "paidLookups": 5071
+            },
+            "trainingMetrics": {
+              "accuracy": "4441/7680",
+              "relativeCost": "3378583467601407693434991814497799/3574660777346651996120577757577280"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "human_aging": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 2688,
+              "paidLookups": 5202
+            },
+            "trainingMetrics": {
+              "accuracy": "4441/7680",
+              "relativeCost": "3378583467601407693434991814497799/3574660777346651996120577757577280"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-any_words_from_category": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1611,
+              "paidLookups": 6116
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-ends_with_word": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 620,
+              "paidLookups": 6383
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-first_alphabetically": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 901,
+              "paidLookups": 6544
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "lmentry-homophones": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1393,
+              "paidLookups": 6145
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "lmentry-less_letters": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1198,
+              "paidLookups": 6622
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-rhyming_word": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1120,
+              "paidLookups": 6294
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          }
+        },
+        "totals": {
+          "holdoutPasses": 20976,
+          "paidLookups": 97544
+        }
+      },
+      "gepa": {
+        "folds": {
+          "anatomy": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1552,
+              "paidLookups": 4953
+            },
+            "trainingMetrics": {
+              "accuracy": "3149/5760",
+              "relativeCost": "6494479816753608787150206866533169/7149321554693303992241155515154560"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-disambiguation_qa": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1306,
+              "paidLookups": 5268
+            },
+            "trainingMetrics": {
+              "accuracy": "241523/422400",
+              "relativeCost": "209693447765498669778624999599/233508362710979629638559677600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-formal_fallacies": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1017,
+              "paidLookups": 6142
+            },
+            "trainingMetrics": {
+              "accuracy": "249443/422400",
+              "relativeCost": "1113848359511493390552468315794855219/1222886693024655540500515738795553600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "bbh-hyperbaton": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1186,
+              "paidLookups": 6224
+            },
+            "trainingMetrics": {
+              "accuracy": "241523/422400",
+              "relativeCost": "209693447765498669778624999599/233508362710979629638559677600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-logical_deduction_five_objects": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 851,
+              "paidLookups": 5892
+            },
+            "trainingMetrics": {
+              "accuracy": "249443/422400",
+              "relativeCost": "1113848359511493390552468315794855219/1222886693024655540500515738795553600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "bbh-navigate": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1069,
+              "paidLookups": 6043
+            },
+            "trainingMetrics": {
+              "accuracy": "249443/422400",
+              "relativeCost": "1113848359511493390552468315794855219/1222886693024655540500515738795553600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "bbh-penguins_in_a_table": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1013,
+              "paidLookups": 5753
+            },
+            "trainingMetrics": {
+              "accuracy": "241523/422400",
+              "relativeCost": "209693447765498669778624999599/233508362710979629638559677600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "computer_security": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1469,
+              "paidLookups": 4759
+            },
+            "trainingMetrics": {
+              "accuracy": "3149/5760",
+              "relativeCost": "6494479816753608787150206866533169/7149321554693303992241155515154560"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "high_school_chemistry": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 2021,
+              "paidLookups": 5109
+            },
+            "trainingMetrics": {
+              "accuracy": "3149/5760",
+              "relativeCost": "6494479816753608787150206866533169/7149321554693303992241155515154560"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "human_aging": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 2677,
+              "paidLookups": 5262
+            },
+            "trainingMetrics": {
+              "accuracy": "3149/5760",
+              "relativeCost": "6494479816753608787150206866533169/7149321554693303992241155515154560"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-any_words_from_category": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1382,
+              "paidLookups": 5701
+            },
+            "trainingMetrics": {
+              "accuracy": "241523/422400",
+              "relativeCost": "209693447765498669778624999599/233508362710979629638559677600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-ends_with_word": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 527,
+              "paidLookups": 6051
+            },
+            "trainingMetrics": {
+              "accuracy": "241523/422400",
+              "relativeCost": "209693447765498669778624999599/233508362710979629638559677600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-first_alphabetically": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 901,
+              "paidLookups": 6086
+            },
+            "trainingMetrics": {
+              "accuracy": "249443/422400",
+              "relativeCost": "1113848359511493390552468315794855219/1222886693024655540500515738795553600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "lmentry-homophones": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1202,
+              "paidLookups": 5871
+            },
+            "trainingMetrics": {
+              "accuracy": "249443/422400",
+              "relativeCost": "1113848359511493390552468315794855219/1222886693024655540500515738795553600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "lmentry-less_letters": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1064,
+              "paidLookups": 6011
+            },
+            "trainingMetrics": {
+              "accuracy": "241523/422400",
+              "relativeCost": "209693447765498669778624999599/233508362710979629638559677600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-rhyming_word": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1078,
+              "paidLookups": 6238
+            },
+            "trainingMetrics": {
+              "accuracy": "249443/422400",
+              "relativeCost": "1113848359511493390552468315794855219/1222886693024655540500515738795553600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          }
+        },
+        "totals": {
+          "holdoutPasses": 20315,
+          "paidLookups": 91363
+        }
+      },
+      "mixed": {
+        "folds": {
+          "anatomy": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1549,
+              "paidLookups": 4897
+            },
+            "trainingMetrics": {
+              "accuracy": "4441/7680",
+              "relativeCost": "3378583467601407693434991814497799/3574660777346651996120577757577280"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-disambiguation_qa": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1289,
+              "paidLookups": 5867
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-formal_fallacies": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1008,
+              "paidLookups": 6342
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "bbh-hyperbaton": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1171,
+              "paidLookups": 6910
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-logical_deduction_five_objects": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 858,
+              "paidLookups": 6327
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "bbh-navigate": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1088,
+              "paidLookups": 6695
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "bbh-penguins_in_a_table": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1011,
+              "paidLookups": 6199
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "computer_security": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1467,
+              "paidLookups": 5930
+            },
+            "trainingMetrics": {
+              "accuracy": "4441/7680",
+              "relativeCost": "3378583467601407693434991814497799/3574660777346651996120577757577280"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "high_school_chemistry": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 2004,
+              "paidLookups": 5071
+            },
+            "trainingMetrics": {
+              "accuracy": "4441/7680",
+              "relativeCost": "3378583467601407693434991814497799/3574660777346651996120577757577280"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "human_aging": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 2688,
+              "paidLookups": 5202
+            },
+            "trainingMetrics": {
+              "accuracy": "4441/7680",
+              "relativeCost": "3378583467601407693434991814497799/3574660777346651996120577757577280"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-any_words_from_category": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1611,
+              "paidLookups": 6116
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-ends_with_word": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 620,
+              "paidLookups": 6383
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-first_alphabetically": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 901,
+              "paidLookups": 6544
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "lmentry-homophones": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1393,
+              "paidLookups": 6145
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          },
+          "lmentry-less_letters": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1198,
+              "paidLookups": 6622
+            },
+            "trainingMetrics": {
+              "accuracy": "495139/844800",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-rhyming_word": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1120,
+              "paidLookups": 6294
+            },
+            "trainingMetrics": {
+              "accuracy": "519533/844800",
+              "relativeCost": "3446747574647689387309218827210091923/3668660079073966621501547216386660800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-less_letters"
+            ]
+          }
+        },
+        "totals": {
+          "holdoutPasses": 20976,
+          "paidLookups": 97544
+        }
+      }
+    },
+    "other-tasks": {
+      "cpo": {
+        "folds": {
+          "anatomy": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1549,
+              "paidLookups": 4897
+            },
+            "trainingMetrics": {
+              "accuracy": "3899/6600",
+              "relativeCost": "50137459097206437102358724874154930770329933/53140753950757671213657105167688376687495200"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-disambiguation_qa": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1303,
+              "paidLookups": 5565
+            },
+            "trainingMetrics": {
+              "accuracy": "742393/1267200",
+              "relativeCost": "14866512381902301804030979993730999864293819/15769226628305625632005628105836963322469600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-formal_fallacies": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1008,
+              "paidLookups": 6342
+            },
+            "trainingMetrics": {
+              "accuracy": "251791/422400",
+              "relativeCost": "87166922478065160114907017321833637709354693883/92518052628269105582977020096945463812929143200"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-hyperbaton": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1164,
+              "paidLookups": 6501
+            },
+            "trainingMetrics": {
+              "accuracy": "249503/422400",
+              "relativeCost": "25258875454597293502148548183271677285376071/26778018126850681789573667177118802840211040"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-logical_deduction_five_objects": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 858,
+              "paidLookups": 6327
+            },
+            "trainingMetrics": {
+              "accuracy": "253991/422400",
+              "relativeCost": "87254662833948204206529496565677359269033997953/92518052628269105582977020096945463812929143200"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-navigate": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1088,
+              "paidLookups": 6695
+            },
+            "trainingMetrics": {
+              "accuracy": "751853/1267200",
+              "relativeCost": "21604161063889095018522305660914835695089311/22997278803944594974640074595313314395458400"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-penguins_in_a_table": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1024,
+              "paidLookups": 5972
+            },
+            "trainingMetrics": {
+              "accuracy": "754669/1267200",
+              "relativeCost": "14055525263975035210408395794750785758106367/14924673758391531792704794337303672175016800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "computer_security": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1467,
+              "paidLookups": 5930
+            },
+            "trainingMetrics": {
+              "accuracy": "245059/422400",
+              "relativeCost": "13643600129128201234542464348500243897887491/14449172673476355705603157909877473654994400"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "high_school_chemistry": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 2004,
+              "paidLookups": 5071
+            },
+            "trainingMetrics": {
+              "accuracy": "251879/422400",
+              "relativeCost": "261136014154909427394224543381473967000725817/277000157569667980787356347595645101236314800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "human_aging": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 2688,
+              "paidLookups": 5202
+            },
+            "trainingMetrics": {
+              "accuracy": "1507/2560",
+              "relativeCost": "15699068262043023209448579543037041743902033/16636945266727046499366484462676760261271200"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-any_words_from_category": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1610,
+              "paidLookups": 5522
+            },
+            "trainingMetrics": {
+              "accuracy": "145777/253440",
+              "relativeCost": "629520710786581084965411059914411514587138667/665597500922799320740841871201046502251288800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-ends_with_word": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 632,
+              "paidLookups": 6067
+            },
+            "trainingMetrics": {
+              "accuracy": "771917/1267200",
+              "relativeCost": "177616478051893668033441430045323545867685883/188427805760222210963293319953045751146495200"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-first_alphabetically": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 901,
+              "paidLookups": 6544
+            },
+            "trainingMetrics": {
+              "accuracy": "760081/1267200",
+              "relativeCost": "814749050180997477410355345003151460840406019/864654697460458930682028225205097792644197600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-homophones": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1393,
+              "paidLookups": 6145
+            },
+            "trainingMetrics": {
+              "accuracy": "738433/1267200",
+              "relativeCost": "3013442002975302567734986702833177669439135117/3190277676836865709757828279205015993549280800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-less_letters": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1198,
+              "paidLookups": 6622
+            },
+            "trainingMetrics": {
+              "accuracy": "746027/1267200",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-rhyming_word": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1120,
+              "paidLookups": 6294
+            },
+            "trainingMetrics": {
+              "accuracy": "150089/253440",
+              "relativeCost": "165855410299220579240965922957214906066251239/175556077093489763914567400563463878202901600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters"
+            ]
+          }
+        },
+        "totals": {
+          "holdoutPasses": 21007,
+          "paidLookups": 95696
+        }
+      },
+      "gepa": {
+        "folds": {
+          "anatomy": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1552,
+              "paidLookups": 4953
+            },
+            "trainingMetrics": {
+              "accuracy": "119477/211200",
+              "relativeCost": "23995466746502194151623325535833230857742357/26570376975378835606828552583844188343747600"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-disambiguation_qa": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1306,
+              "paidLookups": 5268
+            },
+            "trainingMetrics": {
+              "accuracy": "355307/633600",
+              "relativeCost": "7147016232399275495049306996800602436385251/7884613314152812816002814052918481661234800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-formal_fallacies": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1017,
+              "paidLookups": 6142
+            },
+            "trainingMetrics": {
+              "accuracy": "8037/14080",
+              "relativeCost": "20920545020351149380013319009050412533403385991/23129513157067276395744255024236365953232285800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-hyperbaton": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1186,
+              "paidLookups": 6224
+            },
+            "trainingMetrics": {
+              "accuracy": "357947/633600",
+              "relativeCost": "60669822505149599323872692769572090842846171/66945045317126704473934167942797007100527600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-logical_deduction_five_objects": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 851,
+              "paidLookups": 5892
+            },
+            "trainingMetrics": {
+              "accuracy": "365317/633600",
+              "relativeCost": "41991833082551177545756969949036870743730832817/46259026314134552791488510048472731906464571600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-navigate": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1069,
+              "paidLookups": 6043
+            },
+            "trainingMetrics": {
+              "accuracy": "360521/633600",
+              "relativeCost": "281350129632028680817446127718285490442032397/310463263853252032157641007036729744338688400"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-penguins_in_a_table": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1013,
+              "paidLookups": 5753
+            },
+            "trainingMetrics": {
+              "accuracy": "361753/633600",
+              "relativeCost": "6749244312579900162981144762843013021390903/7462336879195765896352397168651836087508400"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "computer_security": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1469,
+              "paidLookups": 4759
+            },
+            "trainingMetrics": {
+              "accuracy": "351721/633600",
+              "relativeCost": "6623223489975722520225252459135385811269819/7224586336738177852801578954938736827497200"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "high_school_chemistry": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 2021,
+              "paidLookups": 5109
+            },
+            "trainingMetrics": {
+              "accuracy": "22613/39600",
+              "relativeCost": "500027544961495372693761057735245002483998847/554000315139335961574712695191290202472629600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "human_aging": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 2677,
+              "paidLookups": 5262
+            },
+            "trainingMetrics": {
+              "accuracy": "32479/57600",
+              "relativeCost": "7513486824605843056005321178000467812240777/8318472633363523249683242231338380130635600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-any_words_from_category": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1382,
+              "paidLookups": 5701
+            },
+            "trainingMetrics": {
+              "accuracy": "70727/126720",
+              "relativeCost": "300906080317798036646119272511954724359857583/332798750461399660370420935600523251125644400"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-ends_with_word": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 527,
+              "paidLookups": 6051
+            },
+            "trainingMetrics": {
+              "accuracy": "74489/126720",
+              "relativeCost": "85085724140151089381850521566419244914902867/94213902880111105481646659976522875573247600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-first_alphabetically": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 901,
+              "paidLookups": 6086
+            },
+            "trainingMetrics": {
+              "accuracy": "364217/633600",
+              "relativeCost": "784296171530143301728031184939455382798553717/864654697460458930682028225205097792644197600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-homophones": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1202,
+              "paidLookups": 5871
+            },
+            "trainingMetrics": {
+              "accuracy": "71519/126720",
+              "relativeCost": "289559381045545407328345477308870242231272249/319027767683686570975782827920501599354928080"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-less_letters": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1064,
+              "paidLookups": 6011
+            },
+            "trainingMetrics": {
+              "accuracy": "360631/633600",
+              "relativeCost": "5985890639108296329257768066217197341272319951/6608432330590650398784072864067533129494938800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-rhyming_word": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1078,
+              "paidLookups": 6238
+            },
+            "trainingMetrics": {
+              "accuracy": "360323/633600",
+              "relativeCost": "79492644185001934301417665591760878590534191/87778038546744881957283700281731939101450800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters"
+            ]
+          }
+        },
+        "totals": {
+          "holdoutPasses": 20315,
+          "paidLookups": 91363
+        }
+      },
+      "mixed": {
+        "folds": {
+          "anatomy": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1549,
+              "paidLookups": 4897
+            },
+            "trainingMetrics": {
+              "accuracy": "3899/6600",
+              "relativeCost": "50137459097206437102358724874154930770329933/53140753950757671213657105167688376687495200"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-disambiguation_qa": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1303,
+              "paidLookups": 5565
+            },
+            "trainingMetrics": {
+              "accuracy": "742393/1267200",
+              "relativeCost": "14866512381902301804030979993730999864293819/15769226628305625632005628105836963322469600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-formal_fallacies": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1008,
+              "paidLookups": 6342
+            },
+            "trainingMetrics": {
+              "accuracy": "251791/422400",
+              "relativeCost": "87166922478065160114907017321833637709354693883/92518052628269105582977020096945463812929143200"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-hyperbaton": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1164,
+              "paidLookups": 6501
+            },
+            "trainingMetrics": {
+              "accuracy": "249503/422400",
+              "relativeCost": "25258875454597293502148548183271677285376071/26778018126850681789573667177118802840211040"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-logical_deduction_five_objects": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 858,
+              "paidLookups": 6327
+            },
+            "trainingMetrics": {
+              "accuracy": "253991/422400",
+              "relativeCost": "87254662833948204206529496565677359269033997953/92518052628269105582977020096945463812929143200"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-navigate": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1088,
+              "paidLookups": 6695
+            },
+            "trainingMetrics": {
+              "accuracy": "751853/1267200",
+              "relativeCost": "21604161063889095018522305660914835695089311/22997278803944594974640074595313314395458400"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "bbh-penguins_in_a_table": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1024,
+              "paidLookups": 5972
+            },
+            "trainingMetrics": {
+              "accuracy": "754669/1267200",
+              "relativeCost": "14055525263975035210408395794750785758106367/14924673758391531792704794337303672175016800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "computer_security": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1467,
+              "paidLookups": 5930
+            },
+            "trainingMetrics": {
+              "accuracy": "245059/422400",
+              "relativeCost": "13643600129128201234542464348500243897887491/14449172673476355705603157909877473654994400"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "high_school_chemistry": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 2004,
+              "paidLookups": 5071
+            },
+            "trainingMetrics": {
+              "accuracy": "251879/422400",
+              "relativeCost": "261136014154909427394224543381473967000725817/277000157569667980787356347595645101236314800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "human_aging": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 2688,
+              "paidLookups": 5202
+            },
+            "trainingMetrics": {
+              "accuracy": "1507/2560",
+              "relativeCost": "15699068262043023209448579543037041743902033/16636945266727046499366484462676760261271200"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-any_words_from_category": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1610,
+              "paidLookups": 5522
+            },
+            "trainingMetrics": {
+              "accuracy": "145777/253440",
+              "relativeCost": "629520710786581084965411059914411514587138667/665597500922799320740841871201046502251288800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-ends_with_word": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 632,
+              "paidLookups": 6067
+            },
+            "trainingMetrics": {
+              "accuracy": "771917/1267200",
+              "relativeCost": "177616478051893668033441430045323545867685883/188427805760222210963293319953045751146495200"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-first_alphabetically": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 901,
+              "paidLookups": 6544
+            },
+            "trainingMetrics": {
+              "accuracy": "760081/1267200",
+              "relativeCost": "814749050180997477410355345003151460840406019/864654697460458930682028225205097792644197600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-homophones": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1393,
+              "paidLookups": 6145
+            },
+            "trainingMetrics": {
+              "accuracy": "738433/1267200",
+              "relativeCost": "3013442002975302567734986702833177669439135117/3190277676836865709757828279205015993549280800"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-less_letters": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1198,
+              "paidLookups": 6622
+            },
+            "trainingMetrics": {
+              "accuracy": "746027/1267200",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-rhyming_word": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1120,
+              "paidLookups": 6294
+            },
+            "trainingMetrics": {
+              "accuracy": "150089/253440",
+              "relativeCost": "165855410299220579240965922957214906066251239/175556077093489763914567400563463878202901600"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table",
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging",
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters"
+            ]
+          }
+        },
+        "totals": {
+          "holdoutPasses": 21007,
+          "paidLookups": 95696
+        }
+      }
+    },
+    "same-benchmark": {
+      "cpo": {
+        "folds": {
+          "anatomy": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1557,
+              "paidLookups": 5223
+            },
+            "trainingMetrics": {
+              "accuracy": "27173/42240",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging"
+            ]
+          },
+          "bbh-disambiguation_qa": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1303,
+              "paidLookups": 5565
+            },
+            "trainingMetrics": {
+              "accuracy": "857/1600",
+              "relativeCost": "28379223304936189/29541197544253200"
+            },
+            "trainingSubjects": [
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-formal_fallacies": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1008,
+              "paidLookups": 6342
+            },
+            "trainingMetrics": {
+              "accuracy": "5437/9600",
+              "relativeCost": "1806438384862812169/1883893543392755700"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-hyperbaton": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1164,
+              "paidLookups": 6501
+            },
+            "trainingMetrics": {
+              "accuracy": "5281/9600",
+              "relativeCost": "48268694985015769/50164459042585680"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-logical_deduction_five_objects": {
+            "cap": 28,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 839,
+              "paidLookups": 4366
+            },
+            "trainingMetrics": {
+              "accuracy": "1397/2400",
+              "relativeCost": "73074885895183117/103350152648857200"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-navigate": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1088,
+              "paidLookups": 6695
+            },
+            "trainingMetrics": {
+              "accuracy": "5357/9600",
+              "relativeCost": "368609201332330369/387736478729605200"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-penguins_in_a_table": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1024,
+              "paidLookups": 5972
+            },
+            "trainingMetrics": {
+              "accuracy": "1807/3200",
+              "relativeCost": "26776247148169577/27959058879195600"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate"
+            ]
+          },
+          "computer_security": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1469,
+              "paidLookups": 6403
+            },
+            "trainingMetrics": {
+              "accuracy": "149783/253440",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "high_school_chemistry",
+              "human_aging"
+            ]
+          },
+          "high_school_chemistry": {
+            "cap": 36,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 2022,
+              "paidLookups": 5117
+            },
+            "trainingMetrics": {
+              "accuracy": "56579/84480",
+              "relativeCost": "539796834712/557927383527"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "computer_security",
+              "human_aging"
+            ]
+          },
+          "human_aging": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 2686,
+              "paidLookups": 5561
+            },
+            "trainingMetrics": {
+              "accuracy": "14609/23040",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "computer_security",
+              "high_school_chemistry"
+            ]
+          },
+          "lmentry-any_words_from_category": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1610,
+              "paidLookups": 5522
+            },
+            "trainingMetrics": {
+              "accuracy": "439/800",
+              "relativeCost": "2980527624497725/3179539636549276"
+            },
+            "trainingSubjects": [
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-ends_with_word": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 632,
+              "paidLookups": 6067
+            },
+            "trainingMetrics": {
+              "accuracy": "1041/1600",
+              "relativeCost": "4176013462001747/4500570361307020"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-first_alphabetically": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 901,
+              "paidLookups": 6544
+            },
+            "trainingMetrics": {
+              "accuracy": "5977/9600",
+              "relativeCost": "9570852600044089/10326074987858630"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-homophones": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1393,
+              "paidLookups": 6145
+            },
+            "trainingMetrics": {
+              "accuracy": "1097/1920",
+              "relativeCost": "3093447610731437/3313013564320460"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-less_letters": {
+            "cap": 40,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1198,
+              "paidLookups": 6607
+            },
+            "trainingMetrics": {
+              "accuracy": "5663/9600",
+              "relativeCost": "585882959951090161/587316956120065600"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-rhyming_word": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1120,
+              "paidLookups": 6294
+            },
+            "trainingMetrics": {
+              "accuracy": "2879/4800",
+              "relativeCost": "3917409528057411/4193131019737660"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters"
+            ]
+          }
+        },
+        "totals": {
+          "holdoutPasses": 21014,
+          "paidLookups": 94924
+        }
+      },
+      "gepa": {
+        "folds": {
+          "anatomy": {
+            "cap": 40,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1546,
+              "paidLookups": 3204
+            },
+            "trainingMetrics": {
+              "accuracy": "81373/126720",
+              "relativeCost": "312494746895/570852754656"
+            },
+            "trainingSubjects": [
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging"
+            ]
+          },
+          "bbh-disambiguation_qa": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1306,
+              "paidLookups": 5268
+            },
+            "trainingMetrics": {
+              "accuracy": "107/200",
+              "relativeCost": "1071904176147013/1181647901770128"
+            },
+            "trainingSubjects": [
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-formal_fallacies": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1017,
+              "paidLookups": 6142
+            },
+            "trainingMetrics": {
+              "accuracy": "217/384",
+              "relativeCost": "84893931360684607/94194677169637785"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-hyperbaton": {
+            "cap": 28,
+            "method": "gepa-sequential.runner-up",
+            "realized": {
+              "holdoutPasses": 1171,
+              "paidLookups": 5257
+            },
+            "trainingMetrics": {
+              "accuracy": "5257/9600",
+              "relativeCost": "195384338272818367/250822295212928400"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-logical_deduction_five_objects": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 851,
+              "paidLookups": 5892
+            },
+            "trainingMetrics": {
+              "accuracy": "5591/9600",
+              "relativeCost": "11298690218149193/12402018317862864"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-navigate": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1069,
+              "paidLookups": 6043
+            },
+            "trainingMetrics": {
+              "accuracy": "1791/3200",
+              "relativeCost": "1054395504851106803/1163209436188815600"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-penguins_in_a_table": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1013,
+              "paidLookups": 5753
+            },
+            "trainingMetrics": {
+              "accuracy": "5429/9600",
+              "relativeCost": "5038762949591413/5591811775839120"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate"
+            ]
+          },
+          "computer_security": {
+            "cap": 28,
+            "method": "gepa-sequential.runner-up",
+            "realized": {
+              "holdoutPasses": 1471,
+              "paidLookups": 4413
+            },
+            "trainingMetrics": {
+              "accuracy": "7463/12672",
+              "relativeCost": "188551691513/232825545648"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "high_school_chemistry",
+              "human_aging"
+            ]
+          },
+          "high_school_chemistry": {
+            "cap": 28,
+            "method": "gepa-sequential.runner-up",
+            "realized": {
+              "holdoutPasses": 2019,
+              "paidLookups": 4430
+            },
+            "trainingMetrics": {
+              "accuracy": "28261/42240",
+              "relativeCost": "425840746096/557927383527"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "computer_security",
+              "human_aging"
+            ]
+          },
+          "human_aging": {
+            "cap": 28,
+            "method": "gepa-sequential.runner-up",
+            "realized": {
+              "holdoutPasses": 2678,
+              "paidLookups": 4299
+            },
+            "trainingMetrics": {
+              "accuracy": "1823/2880",
+              "relativeCost": "209607450115/268078037904"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "computer_security",
+              "high_school_chemistry"
+            ]
+          },
+          "lmentry-any_words_from_category": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1382,
+              "paidLookups": 5701
+            },
+            "trainingMetrics": {
+              "accuracy": "1193/2400",
+              "relativeCost": "576791279074992827/635907927309855200"
+            },
+            "trainingSubjects": [
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-ends_with_word": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 527,
+              "paidLookups": 6051
+            },
+            "trainingMetrics": {
+              "accuracy": "5627/9600",
+              "relativeCost": "162716772598489523/180022814452280800"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-first_alphabetically": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 901,
+              "paidLookups": 6086
+            },
+            "trainingMetrics": {
+              "accuracy": "1751/3200",
+              "relativeCost": "94557887250535503/103260749878586300"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-homophones": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1202,
+              "paidLookups": 5871
+            },
+            "trainingMetrics": {
+              "accuracy": "619/1200",
+              "relativeCost": "24315476003473751/26504108514563680"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-less_letters": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1064,
+              "paidLookups": 6011
+            },
+            "trainingMetrics": {
+              "accuracy": "509/960",
+              "relativeCost": "267792603208532933/293658478060032800"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-rhyming_word": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1078,
+              "paidLookups": 6238
+            },
+            "trainingMetrics": {
+              "accuracy": "423/800",
+              "relativeCost": "152858087744463679/167725240789506400"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters"
+            ]
+          }
+        },
+        "totals": {
+          "holdoutPasses": 20295,
+          "paidLookups": 86659
+        }
+      },
+      "mixed": {
+        "folds": {
+          "anatomy": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1557,
+              "paidLookups": 5223
+            },
+            "trainingMetrics": {
+              "accuracy": "27173/42240",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "computer_security",
+              "high_school_chemistry",
+              "human_aging"
+            ]
+          },
+          "bbh-disambiguation_qa": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1303,
+              "paidLookups": 5565
+            },
+            "trainingMetrics": {
+              "accuracy": "857/1600",
+              "relativeCost": "28379223304936189/29541197544253200"
+            },
+            "trainingSubjects": [
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-formal_fallacies": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1008,
+              "paidLookups": 6342
+            },
+            "trainingMetrics": {
+              "accuracy": "5437/9600",
+              "relativeCost": "1806438384862812169/1883893543392755700"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-hyperbaton": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1164,
+              "paidLookups": 6501
+            },
+            "trainingMetrics": {
+              "accuracy": "5281/9600",
+              "relativeCost": "48268694985015769/50164459042585680"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-logical_deduction_five_objects": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 851,
+              "paidLookups": 5892
+            },
+            "trainingMetrics": {
+              "accuracy": "5591/9600",
+              "relativeCost": "11298690218149193/12402018317862864"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-navigate",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-navigate": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1069,
+              "paidLookups": 6043
+            },
+            "trainingMetrics": {
+              "accuracy": "1791/3200",
+              "relativeCost": "1054395504851106803/1163209436188815600"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-penguins_in_a_table"
+            ]
+          },
+          "bbh-penguins_in_a_table": {
+            "cap": 44,
+            "method": "gepa-batched.runner-up",
+            "realized": {
+              "holdoutPasses": 1013,
+              "paidLookups": 5753
+            },
+            "trainingMetrics": {
+              "accuracy": "5429/9600",
+              "relativeCost": "5038762949591413/5591811775839120"
+            },
+            "trainingSubjects": [
+              "bbh-disambiguation_qa",
+              "bbh-formal_fallacies",
+              "bbh-hyperbaton",
+              "bbh-logical_deduction_five_objects",
+              "bbh-navigate"
+            ]
+          },
+          "computer_security": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1469,
+              "paidLookups": 6403
+            },
+            "trainingMetrics": {
+              "accuracy": "149783/253440",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "high_school_chemistry",
+              "human_aging"
+            ]
+          },
+          "high_school_chemistry": {
+            "cap": 36,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 2022,
+              "paidLookups": 5117
+            },
+            "trainingMetrics": {
+              "accuracy": "56579/84480",
+              "relativeCost": "539796834712/557927383527"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "computer_security",
+              "human_aging"
+            ]
+          },
+          "human_aging": {
+            "cap": 44,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 2686,
+              "paidLookups": 5561
+            },
+            "trainingMetrics": {
+              "accuracy": "14609/23040",
+              "relativeCost": "1"
+            },
+            "trainingSubjects": [
+              "anatomy",
+              "computer_security",
+              "high_school_chemistry"
+            ]
+          },
+          "lmentry-any_words_from_category": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1610,
+              "paidLookups": 5522
+            },
+            "trainingMetrics": {
+              "accuracy": "439/800",
+              "relativeCost": "2980527624497725/3179539636549276"
+            },
+            "trainingSubjects": [
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-ends_with_word": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 632,
+              "paidLookups": 6067
+            },
+            "trainingMetrics": {
+              "accuracy": "1041/1600",
+              "relativeCost": "4176013462001747/4500570361307020"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-first_alphabetically": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 901,
+              "paidLookups": 6544
+            },
+            "trainingMetrics": {
+              "accuracy": "5977/9600",
+              "relativeCost": "9570852600044089/10326074987858630"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-homophones",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-homophones": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1393,
+              "paidLookups": 6145
+            },
+            "trainingMetrics": {
+              "accuracy": "1097/1920",
+              "relativeCost": "3093447610731437/3313013564320460"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-less_letters",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-less_letters": {
+            "cap": 40,
+            "method": "deferred-first-gain",
+            "realized": {
+              "holdoutPasses": 1198,
+              "paidLookups": 6607
+            },
+            "trainingMetrics": {
+              "accuracy": "5663/9600",
+              "relativeCost": "585882959951090161/587316956120065600"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-rhyming_word"
+            ]
+          },
+          "lmentry-rhyming_word": {
+            "cap": 52,
+            "method": "require-win",
+            "realized": {
+              "holdoutPasses": 1120,
+              "paidLookups": 6294
+            },
+            "trainingMetrics": {
+              "accuracy": "2879/4800",
+              "relativeCost": "3917409528057411/4193131019737660"
+            },
+            "trainingSubjects": [
+              "lmentry-any_words_from_category",
+              "lmentry-ends_with_word",
+              "lmentry-first_alphabetically",
+              "lmentry-homophones",
+              "lmentry-less_letters"
+            ]
+          }
+        },
+        "totals": {
+          "holdoutPasses": 20996,
+          "paidLookups": 95579
+        }
+      }
+    }
+  },
+  "subjectHindsight": {
+    "cpo": {
+      "allocation": [
+        {
+          "cap": 28,
+          "method": "deferred-first-gain",
+          "subject": "anatomy"
+        },
+        {
+          "cap": 52,
+          "method": "bounded-two-reads",
+          "subject": "bbh-disambiguation_qa"
+        },
+        {
+          "cap": 52,
+          "method": "bounded-two-reads",
+          "subject": "bbh-formal_fallacies"
+        },
+        {
+          "cap": 28,
+          "method": "deferred-first-gain",
+          "subject": "bbh-hyperbaton"
+        },
+        {
+          "cap": 52,
+          "method": "archive-disabled",
+          "subject": "bbh-logical_deduction_five_objects"
+        },
+        {
+          "cap": 52,
+          "method": "archive-disabled",
+          "subject": "bbh-navigate"
+        },
+        {
+          "cap": 52,
+          "method": "bounded-two-reads",
+          "subject": "bbh-penguins_in_a_table"
+        },
+        {
+          "cap": 28,
+          "method": "deferred-first-gain",
+          "subject": "computer_security"
+        },
+        {
+          "cap": 44,
+          "method": "deferred-first-gain",
+          "subject": "high_school_chemistry"
+        },
+        {
+          "cap": 52,
+          "method": "archive-disabled",
+          "subject": "human_aging"
+        },
+        {
+          "cap": 36,
+          "method": "deferred-first-gain",
+          "subject": "lmentry-any_words_from_category"
+        },
+        {
+          "cap": 52,
+          "method": "require-win",
+          "subject": "lmentry-ends_with_word"
+        },
+        {
+          "cap": 36,
+          "method": "deferred-first-gain",
+          "subject": "lmentry-first_alphabetically"
+        },
+        {
+          "cap": 52,
+          "method": "bounded-two-reads",
+          "subject": "lmentry-homophones"
+        },
+        {
+          "cap": 52,
+          "method": "archive-disabled",
+          "subject": "lmentry-less_letters"
+        },
+        {
+          "cap": 36,
+          "method": "deferred-first-gain",
+          "subject": "lmentry-rhyming_word"
+        }
+      ],
+      "holdoutPasses": 21171,
+      "paidLookups": 94395
+    },
+    "gepa": {
+      "allocation": [
+        {
+          "cap": 28,
+          "method": "gepa-batched.runner-up",
+          "subject": "anatomy"
+        },
+        {
+          "cap": 28,
+          "method": "gepa-sequential.runner-up",
+          "subject": "bbh-disambiguation_qa"
+        },
+        {
+          "cap": 44,
+          "method": "gepa-batched.runner-up",
+          "subject": "bbh-formal_fallacies"
+        },
+        {
+          "cap": 36,
+          "method": "gepa-batched.runner-up",
+          "subject": "bbh-hyperbaton"
+        },
+        {
+          "cap": 28,
+          "method": "gepa-batched.runner-up",
+          "subject": "bbh-logical_deduction_five_objects"
+        },
+        {
+          "cap": 40,
+          "method": "gepa-batched.runner-up",
+          "subject": "bbh-navigate"
+        },
+        {
+          "cap": 28,
+          "method": "gepa-sequential.runner-up",
+          "subject": "bbh-penguins_in_a_table"
+        },
+        {
+          "cap": 36,
+          "method": "gepa-batched.runner-up",
+          "subject": "computer_security"
+        },
+        {
+          "cap": 40,
+          "method": "gepa-batched.runner-up",
+          "subject": "high_school_chemistry"
+        },
+        {
+          "cap": 40,
+          "method": "gepa-batched.runner-up",
+          "subject": "human_aging"
+        },
+        {
+          "cap": 68,
+          "method": "gepa-batched.runner-up",
+          "subject": "lmentry-any_words_from_category"
+        },
+        {
+          "cap": 68,
+          "method": "gepa-batched.runner-up",
+          "subject": "lmentry-ends_with_word"
+        },
+        {
+          "cap": 60,
+          "method": "gepa-sequential.runner-up",
+          "subject": "lmentry-first_alphabetically"
+        },
+        {
+          "cap": 60,
+          "method": "gepa-sequential.runner-up",
+          "subject": "lmentry-homophones"
+        },
+        {
+          "cap": 60,
+          "method": "gepa-sequential.runner-up",
+          "subject": "lmentry-less_letters"
+        },
+        {
+          "cap": 40,
+          "method": "gepa-sequential.runner-up",
+          "subject": "lmentry-rhyming_word"
+        }
+      ],
+      "holdoutPasses": 21182,
+      "paidLookups": 100995
+    },
+    "mixed": {
+      "allocation": [
+        {
+          "cap": 28,
+          "method": "deferred-first-gain",
+          "subject": "anatomy"
+        },
+        {
+          "cap": 28,
+          "method": "gepa-sequential.runner-up",
+          "subject": "bbh-disambiguation_qa"
+        },
+        {
+          "cap": 44,
+          "method": "gepa-batched.runner-up",
+          "subject": "bbh-formal_fallacies"
+        },
+        {
+          "cap": 48,
+          "method": "gepa-batched.runner-up",
+          "subject": "bbh-hyperbaton"
+        },
+        {
+          "cap": 28,
+          "method": "gepa-batched.runner-up",
+          "subject": "bbh-logical_deduction_five_objects"
+        },
+        {
+          "cap": 52,
+          "method": "archive-disabled",
+          "subject": "bbh-navigate"
+        },
+        {
+          "cap": 52,
+          "method": "bounded-two-reads",
+          "subject": "bbh-penguins_in_a_table"
+        },
+        {
+          "cap": 28,
+          "method": "gepa-batched.runner-up",
+          "subject": "computer_security"
+        },
+        {
+          "cap": 44,
+          "method": "deferred-first-gain",
+          "subject": "high_school_chemistry"
+        },
+        {
+          "cap": 28,
+          "method": "deferred-first-gain",
+          "subject": "human_aging"
+        },
+        {
+          "cap": 52,
+          "method": "require-win",
+          "subject": "lmentry-any_words_from_category"
+        },
+        {
+          "cap": 68,
+          "method": "gepa-batched.runner-up",
+          "subject": "lmentry-ends_with_word"
+        },
+        {
+          "cap": 60,
+          "method": "gepa-sequential.runner-up",
+          "subject": "lmentry-first_alphabetically"
+        },
+        {
+          "cap": 60,
+          "method": "gepa-sequential.runner-up",
+          "subject": "lmentry-homophones"
+        },
+        {
+          "cap": 52,
+          "method": "archive-disabled",
+          "subject": "lmentry-less_letters"
+        },
+        {
+          "cap": 36,
+          "method": "deferred-first-gain",
+          "subject": "lmentry-rhyming_word"
+        }
+      ],
+      "holdoutPasses": 21345,
+      "paidLookups": 100985
+    }
+  }
+}
