@@ -1,0 +1,106 @@
+{
+  "design": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261122,
+    "gepaVersion": "0.1.4",
+    "license": "CDLA-Permissive-2.0",
+    "methods": [
+      "cpo-ties",
+      "cpo-eight",
+      "gepa-batched-eight",
+      "gepa-batched-ties",
+      "gepa-sequential-eight",
+      "gepa-sequential-ties",
+      "retain-start"
+    ],
+    "models": [
+      "falcon-7b-instruct",
+      "mpt-7b-instruct"
+    ],
+    "parentPlanSha256": "9c3a7fa28d239405c34ec70a6734e882264ffac2ccc3ba08ae3d8a28c15df708",
+    "parentReportSha256": "8869663ddeb6c9e2331c927c9fb4bdc54d8266f356cb67dc1fb44c34c4ba25b7",
+    "primaryComparison": {
+      "candidate": "cpo-ties",
+      "controls": [
+        "gepa-batched-eight",
+        "gepa-batched-ties",
+        "gepa-sequential-eight",
+        "gepa-sequential-ties"
+      ],
+      "minimumLookupSavingPercent": 10,
+      "minimumLowerRangePassDifference": 0
+    },
+    "protocol": "cpo-tie-extension-cross-benchmark-v1",
+    "schedule": {
+      "cycles": 4,
+      "minimumQualificationGain": 1,
+      "poolSize": 13,
+      "qualificationRowsPerCycle": 8,
+      "seeds": [
+        47101,
+        47120,
+        47139,
+        47158,
+        47177,
+        47196,
+        47215,
+        47234,
+        47253,
+        47272,
+        47291,
+        47310,
+        47329,
+        47348,
+        47367,
+        47386,
+        47405,
+        47424,
+        47443,
+        47462,
+        47481,
+        47500,
+        47519,
+        47538,
+        47557,
+        47576,
+        47595,
+        47614,
+        47633,
+        47652,
+        47671,
+        47690
+      ],
+      "trainRows": 12,
+      "validationRows": 24
+    },
+    "scope": "Read only sealed recorded outcome panels. Both GEPA modes run their original eight-case qualification and the same four-case tie extension. Keep both model panels and all episodes paired within each resampled case; use the minimum gap against the controls.",
+    "searchCap": 52,
+    "sourceDataset": "https://github.com/SLAB-NLP/Multi-Prompt-LLM-Evaluation#raw-model-responses",
+    "sourceDirectoryOffset": 201103234,
+    "sourceDirectorySha256": "80223a5932a20eac284d1641753401de5207651bf278e2742e621fdddece673e",
+    "sourceETag": "1712686494526539d",
+    "sourceSha256": {
+      "benchmarks/archive_complementarity_transfer.py": "a145976db37cec43b9e943e5aeb01e9aa73fbf9648a9acce182897011aa68334",
+      "benchmarks/gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "benchmarks/qualification_role_transfer.py": "09a865fa6434cc39df4f3bfb29ea493d6d12c5a39145e7612e3abe7a31bf7070",
+      "benchmarks/tie_extension_cross_benchmark.py": "32940880808b8d7c10b7e17865bd94dc99314cfb43d1a6bc09b1c4b3288f2f7b",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7"
+    },
+    "sourceZipSize": 201185029,
+    "tasks": {
+      "BBH": [
+        "movie_recommendation",
+        "ruin_names",
+        "salient_translation_error_detection",
+        "snarks"
+      ],
+      "LMentry": [
+        "homophones",
+        "word_before"
+      ]
+    },
+    "templateCount": 100,
+    "validationRows": 12
+  },
+  "designSha256": "192ccff87150efe40aae245d35c56864cfde05dff0bd8ae4a74b59c4df37b18f"
+}
