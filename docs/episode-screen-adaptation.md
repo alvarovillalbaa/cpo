@@ -26,6 +26,8 @@ Waiting for two empty searches gained seven passes on MMLU and lost ten across t
 
 The two GEPA controls finished at 20,992 passes with 170,448 paid lookups for sequential search and 20,746 passes with 123,137 for batched search. These comparisons use archived fixed prompt pools. The replay exercises a rule that could run online, while its measured gains and losses are retrospective. Two independent offline executions of each phase produced byte-identical reports. [Sealed results and paired episode counts](episode-screen-adaptation-results-v1.json)
 
+A follow-up keeps the first-gain screen and uses earlier paid replies to choose the case it probes. [Cached witness replay](cached-miss-witness.md)
+
 ## Reproduce
 
 Preview each phase with GEPA 0.1.4. Add `--execute PLAN_SHA256 --out NEW_REPORT.json` to replay it. Supported phases are `mmlu`, `bbh-lmentry`, and `bbh-lmentry-stress`.
