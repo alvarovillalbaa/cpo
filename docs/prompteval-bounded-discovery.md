@@ -29,6 +29,8 @@ The two-read policy gained **61 passes** and spent 7,170 extra lookups relative 
 
 A panel must match or exceed the score of each control at equal or lower cost. A score tie requires at least 10% savings. The policy and alternate settings were fixed before replay. All three phases reproduced byte for byte across two offline runs. They reuse recorded outcomes and final holdout cases across seeds, so fresh model-backed results remain open. [Sealed panel results](prompteval-bounded-discovery-results-v1.json)
 
+On 32 archived transfer panels outside this study, frozen two-read beat both GEPA controls in aggregate at lower cost. Deferred first-gain earned 60 more passes and used 7,949 fewer lookups than two-read. [Frozen transfer results](bounded-discovery-transfer.md)
+
 ## Use the selector
 
 The optional selector defaults to the two-read policy. It reports the attempted finalist, the selected prompt, and the count of actual callback lookups. Use a separate qualification panel before promoting a finalist.
