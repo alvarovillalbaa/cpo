@@ -19,6 +19,8 @@ Fresh-first gained 26 passes and spent 5,538 more lookups with the seeded witnes
 
 On ends-with-word seed 47690, the seeded arms both selected prompt 61 and scored 30 of 30. Cached preflight selected the archived prompt 66 and scored 5 of 30. Cached fresh-first selected a different fresh prompt, 6, and scored 4 of 30. Giving fresh search priority removed the archive preemption in that episode. The cached witness still changed the final search enough to miss prompt 61.
 
+A follow-up retained the seeded witness and used cached evidence only when the seeded screen found no validation certificate. [Bounded cached-witness fallback](cached-witness-fallback.md)
+
 All three phases reproduced byte for byte offline across 1,024 paired episodes per arm. These fixed prompt-pool results establish the effect of ordering on the archived trajectories. Fresh-model performance and provider costs remain unverified. [Sealed results and incident trace](archive-after-fresh-search-results-v1.json)
 
 ## Reproduce
