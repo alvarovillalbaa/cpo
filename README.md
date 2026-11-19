@@ -22,6 +22,8 @@ If a rewrite and repair have already been generated, pass them as `opening_pair=
 
 For an existing candidate pool, `cpo.select_pool` races exact validation scores within a lookup cap. It can rank challengers on a shared prefix and limit how many receive a full challenge. A candidate replaces the incumbent only after all validation rows are accounted for and the incumbent’s critical passes are preserved. [Fixed-pool benchmark](docs/fixed-pool.md)
 
+`cpo.select_certified_pool` offers an opt-in early stop. It returns a challenger once its observed passes exceed the incumbent’s full validation score and every protected critical case passes. Its result reports score bounds. Recorded-data comparisons were mixed. [Certificate and results](docs/certified-pool.md)
+
 ## Evidence
 
 The original deterministic benchmark reproduced the adaptive frontier’s 720 of 720 holdout passes with 692 search calls, compared with 622 passes and 1,193 calls for batched GEPA. On the separate transfer benchmark, CPO reached 814 of 864 with 974 calls, while batched GEPA reached 836 with 1,210 calls. CPO failed the transfer gate because it lost matched critical cases. The recorded unrestricted live trials also missed their improvement gates. Fresh typed provider quality remains open. [Protocol](docs/benchmark.md) · [Versioned result](docs/benchmark-results-v1.json)
