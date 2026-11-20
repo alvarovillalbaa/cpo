@@ -1,0 +1,3290 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "candidate": "finish-four",
+    "challengerCounts": [
+      4,
+      8
+    ],
+    "corpusSha256": "83ea1db450d2113b23066158e8f4d6b6ba02b7dd537f9ae557ab41f331565e1f",
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "methods": [
+      "strict",
+      "paid-tie",
+      "finish-four",
+      "gepa-sequential",
+      "gepa-batched",
+      "retain-start"
+    ],
+    "minimumLookupSavingPercent": 10,
+    "primaryControls": [
+      "gepa-sequential",
+      "gepa-batched"
+    ],
+    "priorReportSha256": "783dafd77b24c294b4f63581be795a731331ce824b53af5a3508bbc60fc20c07",
+    "protocol": "cpo-recorded-math-validation-ties-v1",
+    "scope": "Keep the archived split seeds and holdout, reserve disjoint qualification cases, and give every arm a shared roster. Transfer the witnessed tie fallback to a strict fixed-pool race. Audit strict CPO under the same gate and omit each rotated start in turn. Report ARC historical costs and AIME lookup counts.",
+    "searchCap": 180,
+    "sourceSha256": {
+      "benchmarks/gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "benchmarks/recorded_math_validation_ties.py": "ea8a310a65392ddad1d3ecc5c1a4639674b941e8e02e344a81abf1ad802f07b0",
+      "benchmarks/routed_validation_ties.py": "116afb17765817c2cbf5ae1a434ebe980dcf04e6f588940877778008483fe399",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "cpo/pool.py": "5e5e2ca90b0e6839d6c14d6eb9ba3680874092063196fec406f396c765a03ec0"
+    }
+  },
+  "planSha256": "b8b6e7ed7d0e5fa6371b54503b480c785743a24ea280a68cbbcea9cf8990ba1d",
+  "results": {
+    "aime": {
+      "root/4": {
+        "byStart": {
+          "1": {
+            "finish-four": {
+              "holdoutPasses": 488,
+              "paidLookups": 1087,
+              "qualificationLookups": 234,
+              "searchLookups": 853,
+              "tieNominations": 7,
+              "tiePromotions": 3
+            },
+            "gepa-batched": {
+              "holdoutPasses": 491,
+              "paidLookups": 1085,
+              "qualificationLookups": 89,
+              "searchLookups": 996,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 493,
+              "paidLookups": 1175,
+              "qualificationLookups": 112,
+              "searchLookups": 1063,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 486,
+              "paidLookups": 1024,
+              "qualificationLookups": 189,
+              "searchLookups": 835,
+              "tieNominations": 1,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 500,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 486,
+              "paidLookups": 1016,
+              "qualificationLookups": 181,
+              "searchLookups": 835,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          }
+        },
+        "caseSensitivityRanges": {
+          "gepa-batched": [
+            -32,
+            22
+          ],
+          "gepa-sequential": [
+            -24,
+            13
+          ],
+          "joint": [
+            -32,
+            13
+          ],
+          "strict": [
+            -10,
+            13
+          ]
+        },
+        "changesFromStrict": {
+          "finish-four": {
+            "episodesGaining": 1,
+            "episodesLosing": 0,
+            "grossGain": 2,
+            "grossLoss": 0
+          },
+          "paid-tie": {
+            "episodesGaining": 0,
+            "episodesLosing": 0,
+            "grossGain": 0,
+            "grossLoss": 0
+          }
+        },
+        "gate": "failed",
+        "lookupSavingFractions": {
+          "gepa-batched": -0.0018433179723502304,
+          "gepa-sequential": 0.0748936170212766
+        },
+        "strictComparison": {
+          "caseSensitivityRanges": {
+            "gepa-batched": [
+              -25,
+              13
+            ],
+            "gepa-sequential": [
+              -20,
+              5
+            ],
+            "joint": [
+              -25,
+              4
+            ]
+          },
+          "gate": "failed",
+          "lookupSavingFractions": {
+            "gepa-batched": 0.06359447004608294,
+            "gepa-sequential": 0.13531914893617022
+          }
+        },
+        "totals": {
+          "finish-four": {
+            "holdoutPasses": 488,
+            "paidLookups": 1087,
+            "qualificationLookups": 234,
+            "searchLookups": 853,
+            "tieNominations": 7,
+            "tiePromotions": 3,
+            "traceSha256": "3899330d39c71254a3f30b25d778769d927bcc8390973d67001abd0a69ba6930"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 491,
+            "paidLookups": 1085,
+            "qualificationLookups": 89,
+            "searchLookups": 996,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "6c88c67cf0c74991dc89760b448fbf918fbc25fcde150a494de67e6be018d8f6"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 493,
+            "paidLookups": 1175,
+            "qualificationLookups": 112,
+            "searchLookups": 1063,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "828288aa638aeda9698c8533023fcfe35e73b0e81cf1a53d71e594dce4c4aaba"
+          },
+          "paid-tie": {
+            "holdoutPasses": 486,
+            "paidLookups": 1024,
+            "qualificationLookups": 189,
+            "searchLookups": 835,
+            "tieNominations": 1,
+            "tiePromotions": 0,
+            "traceSha256": "b392c4945ddbb074b7ff990247f0bd9fc38dbc5548aad2bc8dbe51378e3ab3f3"
+          },
+          "retain-start": {
+            "holdoutPasses": 500,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "5797dcf03f18ccbac51d2ee74ff0f720517642c2ba1315c584c7b1626be85632"
+          },
+          "strict": {
+            "holdoutPasses": 486,
+            "paidLookups": 1016,
+            "qualificationLookups": 181,
+            "searchLookups": 835,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "933b763761c8094a55d4663ef22d618da5f40f8ed2556c970dcfb6dfd77692fa"
+          }
+        },
+        "trialsPerMethod": 40
+      },
+      "root/8": {
+        "byStart": {
+          "1": {
+            "finish-four": {
+              "holdoutPasses": 475,
+              "paidLookups": 1492,
+              "qualificationLookups": 258,
+              "searchLookups": 1234,
+              "tieNominations": 7,
+              "tiePromotions": 3
+            },
+            "gepa-batched": {
+              "holdoutPasses": 494,
+              "paidLookups": 1794,
+              "qualificationLookups": 136,
+              "searchLookups": 1658,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 491,
+              "paidLookups": 1836,
+              "qualificationLookups": 167,
+              "searchLookups": 1669,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 476,
+              "paidLookups": 1430,
+              "qualificationLookups": 214,
+              "searchLookups": 1216,
+              "tieNominations": 1,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 500,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 476,
+              "paidLookups": 1422,
+              "qualificationLookups": 206,
+              "searchLookups": 1216,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          }
+        },
+        "caseSensitivityRanges": {
+          "gepa-batched": [
+            -47,
+            5
+          ],
+          "gepa-sequential": [
+            -33,
+            0
+          ],
+          "joint": [
+            -47,
+            -2
+          ],
+          "strict": [
+            -12,
+            10
+          ]
+        },
+        "changesFromStrict": {
+          "finish-four": {
+            "episodesGaining": 0,
+            "episodesLosing": 1,
+            "grossGain": 0,
+            "grossLoss": 1
+          },
+          "paid-tie": {
+            "episodesGaining": 0,
+            "episodesLosing": 0,
+            "grossGain": 0,
+            "grossLoss": 0
+          }
+        },
+        "gate": "failed",
+        "lookupSavingFractions": {
+          "gepa-batched": 0.16833890746934224,
+          "gepa-sequential": 0.18736383442265794
+        },
+        "strictComparison": {
+          "caseSensitivityRanges": {
+            "gepa-batched": [
+              -39,
+              0
+            ],
+            "gepa-sequential": [
+              -28,
+              -3
+            ],
+            "joint": [
+              -39,
+              -6
+            ]
+          },
+          "gate": "failed",
+          "lookupSavingFractions": {
+            "gepa-batched": 0.20735785953177258,
+            "gepa-sequential": 0.22549019607843138
+          }
+        },
+        "totals": {
+          "finish-four": {
+            "holdoutPasses": 475,
+            "paidLookups": 1492,
+            "qualificationLookups": 258,
+            "searchLookups": 1234,
+            "tieNominations": 7,
+            "tiePromotions": 3,
+            "traceSha256": "e057bc57aaba98965047d375404bfb1ce6fac90341b1fce13d75969490e3357d"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 494,
+            "paidLookups": 1794,
+            "qualificationLookups": 136,
+            "searchLookups": 1658,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "1da1733e5586e66e619a75ff53246bf193258b7b99434a44635e944a0c8a772f"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 491,
+            "paidLookups": 1836,
+            "qualificationLookups": 167,
+            "searchLookups": 1669,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "620303943131649964f47479da7309754d06496d39c27118c970deefbb89113c"
+          },
+          "paid-tie": {
+            "holdoutPasses": 476,
+            "paidLookups": 1430,
+            "qualificationLookups": 214,
+            "searchLookups": 1216,
+            "tieNominations": 1,
+            "tiePromotions": 0,
+            "traceSha256": "538e690fe56185c2b855a2a3b93fa9a9139446e2647a94c4052d420e3a83d39e"
+          },
+          "retain-start": {
+            "holdoutPasses": 500,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "5797dcf03f18ccbac51d2ee74ff0f720517642c2ba1315c584c7b1626be85632"
+          },
+          "strict": {
+            "holdoutPasses": 476,
+            "paidLookups": 1422,
+            "qualificationLookups": 206,
+            "searchLookups": 1216,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "034a5ea2ad7cfa5b3eb5aac24ef24b0e719dd036a6fae1f75913e99a9f1528ba"
+          }
+        },
+        "trialsPerMethod": 40
+      },
+      "rotated/4": {
+        "byStart": {
+          "2": {
+            "finish-four": {
+              "holdoutPasses": 506,
+              "paidLookups": 1035,
+              "qualificationLookups": 235,
+              "searchLookups": 800,
+              "tieNominations": 8,
+              "tiePromotions": 4
+            },
+            "gepa-batched": {
+              "holdoutPasses": 511,
+              "paidLookups": 1012,
+              "qualificationLookups": 80,
+              "searchLookups": 932,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 510,
+              "paidLookups": 1100,
+              "qualificationLookups": 85,
+              "searchLookups": 1015,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 506,
+              "paidLookups": 983,
+              "qualificationLookups": 197,
+              "searchLookups": 786,
+              "tieNominations": 3,
+              "tiePromotions": 2
+            },
+            "retain-start": {
+              "holdoutPasses": 511,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 502,
+              "paidLookups": 961,
+              "qualificationLookups": 175,
+              "searchLookups": 786,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "3": {
+            "finish-four": {
+              "holdoutPasses": 457,
+              "paidLookups": 1093,
+              "qualificationLookups": 247,
+              "searchLookups": 846,
+              "tieNominations": 3,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "holdoutPasses": 446,
+              "paidLookups": 1060,
+              "qualificationLookups": 93,
+              "searchLookups": 967,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 447,
+              "paidLookups": 1176,
+              "qualificationLookups": 119,
+              "searchLookups": 1057,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 453,
+              "paidLookups": 1073,
+              "qualificationLookups": 232,
+              "searchLookups": 841,
+              "tieNominations": 1,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 445,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 453,
+              "paidLookups": 1066,
+              "qualificationLookups": 225,
+              "searchLookups": 841,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "4": {
+            "finish-four": {
+              "holdoutPasses": 494,
+              "paidLookups": 1023,
+              "qualificationLookups": 232,
+              "searchLookups": 791,
+              "tieNominations": 9,
+              "tiePromotions": 4
+            },
+            "gepa-batched": {
+              "holdoutPasses": 487,
+              "paidLookups": 1053,
+              "qualificationLookups": 104,
+              "searchLookups": 949,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 486,
+              "paidLookups": 1111,
+              "qualificationLookups": 97,
+              "searchLookups": 1014,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 491,
+              "paidLookups": 956,
+              "qualificationLookups": 180,
+              "searchLookups": 776,
+              "tieNominations": 2,
+              "tiePromotions": 1
+            },
+            "retain-start": {
+              "holdoutPasses": 492,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 491,
+              "paidLookups": 941,
+              "qualificationLookups": 165,
+              "searchLookups": 776,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "5": {
+            "finish-four": {
+              "holdoutPasses": 453,
+              "paidLookups": 1178,
+              "qualificationLookups": 263,
+              "searchLookups": 915,
+              "tieNominations": 2,
+              "tiePromotions": 2
+            },
+            "gepa-batched": {
+              "holdoutPasses": 448,
+              "paidLookups": 1284,
+              "qualificationLookups": 230,
+              "searchLookups": 1054,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 458,
+              "paidLookups": 1337,
+              "qualificationLookups": 235,
+              "searchLookups": 1102,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 453,
+              "paidLookups": 1177,
+              "qualificationLookups": 263,
+              "searchLookups": 914,
+              "tieNominations": 2,
+              "tiePromotions": 2
+            },
+            "retain-start": {
+              "holdoutPasses": 419,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 452,
+              "paidLookups": 1162,
+              "qualificationLookups": 248,
+              "searchLookups": 914,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "6": {
+            "finish-four": {
+              "holdoutPasses": 568,
+              "paidLookups": 981,
+              "qualificationLookups": 188,
+              "searchLookups": 793,
+              "tieNominations": 7,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "holdoutPasses": 578,
+              "paidLookups": 976,
+              "qualificationLookups": 45,
+              "searchLookups": 931,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 578,
+              "paidLookups": 1053,
+              "qualificationLookups": 55,
+              "searchLookups": 998,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 568,
+              "paidLookups": 960,
+              "qualificationLookups": 175,
+              "searchLookups": 785,
+              "tieNominations": 5,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 582,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 568,
+              "paidLookups": 923,
+              "qualificationLookups": 138,
+              "searchLookups": 785,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "7": {
+            "finish-four": {
+              "holdoutPasses": 472,
+              "paidLookups": 1016,
+              "qualificationLookups": 223,
+              "searchLookups": 793,
+              "tieNominations": 10,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "holdoutPasses": 479,
+              "paidLookups": 1110,
+              "qualificationLookups": 108,
+              "searchLookups": 1002,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 480,
+              "paidLookups": 1123,
+              "qualificationLookups": 105,
+              "searchLookups": 1018,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 475,
+              "paidLookups": 953,
+              "qualificationLookups": 175,
+              "searchLookups": 778,
+              "tieNominations": 3,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 486,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 475,
+              "paidLookups": 932,
+              "qualificationLookups": 154,
+              "searchLookups": 778,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "8": {
+            "finish-four": {
+              "holdoutPasses": 547,
+              "paidLookups": 966,
+              "qualificationLookups": 186,
+              "searchLookups": 780,
+              "tieNominations": 10,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "holdoutPasses": 555,
+              "paidLookups": 964,
+              "qualificationLookups": 46,
+              "searchLookups": 918,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 557,
+              "paidLookups": 1062,
+              "qualificationLookups": 61,
+              "searchLookups": 1001,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 547,
+              "paidLookups": 876,
+              "qualificationLookups": 123,
+              "searchLookups": 753,
+              "tieNominations": 1,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 558,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 547,
+              "paidLookups": 872,
+              "qualificationLookups": 119,
+              "searchLookups": 753,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "9": {
+            "finish-four": {
+              "holdoutPasses": 547,
+              "paidLookups": 957,
+              "qualificationLookups": 204,
+              "searchLookups": 753,
+              "tieNominations": 10,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "holdoutPasses": 563,
+              "paidLookups": 985,
+              "qualificationLookups": 53,
+              "searchLookups": 932,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 563,
+              "paidLookups": 1059,
+              "qualificationLookups": 65,
+              "searchLookups": 994,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 547,
+              "paidLookups": 914,
+              "qualificationLookups": 175,
+              "searchLookups": 739,
+              "tieNominations": 6,
+              "tiePromotions": 1
+            },
+            "retain-start": {
+              "holdoutPasses": 563,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 548,
+              "paidLookups": 869,
+              "qualificationLookups": 130,
+              "searchLookups": 739,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          }
+        },
+        "caseSensitivityRanges": {
+          "gepa-batched": [
+            -67,
+            19
+          ],
+          "gepa-sequential": [
+            -82,
+            9
+          ],
+          "joint": [
+            -82,
+            9
+          ],
+          "strict": [
+            -14,
+            29
+          ]
+        },
+        "changesFromStrict": {
+          "finish-four": {
+            "episodesGaining": 6,
+            "episodesLosing": 2,
+            "grossGain": 12,
+            "grossLoss": 4
+          },
+          "paid-tie": {
+            "episodesGaining": 3,
+            "episodesLosing": 1,
+            "grossGain": 5,
+            "grossLoss": 1
+          }
+        },
+        "gate": "failed",
+        "lookupSavingFractions": {
+          "gepa-batched": 0.02309332070108953,
+          "gepa-sequential": 0.08557809555481653
+        },
+        "strictComparison": {
+          "caseSensitivityRanges": {
+            "gepa-batched": [
+              -63,
+              2
+            ],
+            "gepa-sequential": [
+              -77,
+              -10
+            ],
+            "joint": [
+              -77,
+              -10
+            ]
+          },
+          "gate": "failed",
+          "lookupSavingFractions": {
+            "gepa-batched": 0.08503079109426812,
+            "gepa-sequential": 0.14355392971954328
+          }
+        },
+        "totals": {
+          "finish-four": {
+            "holdoutPasses": 4044,
+            "paidLookups": 8249,
+            "qualificationLookups": 1778,
+            "searchLookups": 6471,
+            "tieNominations": 59,
+            "tiePromotions": 13,
+            "traceSha256": "55baae3eb464e0258d42a8330c0b1e5d62b600c5e1e43ea96930926a5fdf3962"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 4067,
+            "paidLookups": 8444,
+            "qualificationLookups": 759,
+            "searchLookups": 7685,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "af62fa208c2ef22a785e78bacf06f969f9c9c8319d7879d3dcf8e94e8865da06"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 4079,
+            "paidLookups": 9021,
+            "qualificationLookups": 822,
+            "searchLookups": 8199,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "d9be359a461f1b330b2cbd181ff910dd28b8eef9f670ac58cc1c93e9f291fc11"
+          },
+          "paid-tie": {
+            "holdoutPasses": 4040,
+            "paidLookups": 7892,
+            "qualificationLookups": 1520,
+            "searchLookups": 6372,
+            "tieNominations": 23,
+            "tiePromotions": 6,
+            "traceSha256": "af327b5875bad96e78e04f546e98f7f7ebdfbc08d39616362094881609a1d498"
+          },
+          "retain-start": {
+            "holdoutPasses": 4056,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f7e5fe5ece14730e2c6f35b51646de7be98094e7e1d2b071d6f44af354bee8dc"
+          },
+          "strict": {
+            "holdoutPasses": 4036,
+            "paidLookups": 7726,
+            "qualificationLookups": 1354,
+            "searchLookups": 6372,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "fb5e4b1ed0549be7e4b1f3903a9fbce945e44f07efdee3b95d101c79b36db9cb"
+          }
+        },
+        "trialsPerMethod": 320
+      },
+      "rotated/8": {
+        "byStart": {
+          "2": {
+            "finish-four": {
+              "holdoutPasses": 501,
+              "paidLookups": 1418,
+              "qualificationLookups": 237,
+              "searchLookups": 1181,
+              "tieNominations": 4,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "holdoutPasses": 500,
+              "paidLookups": 1695,
+              "qualificationLookups": 128,
+              "searchLookups": 1567,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 505,
+              "paidLookups": 1831,
+              "qualificationLookups": 150,
+              "searchLookups": 1681,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 501,
+              "paidLookups": 1384,
+              "qualificationLookups": 214,
+              "searchLookups": 1170,
+              "tieNominations": 1,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 511,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 501,
+              "paidLookups": 1377,
+              "qualificationLookups": 207,
+              "searchLookups": 1170,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "3": {
+            "finish-four": {
+              "holdoutPasses": 449,
+              "paidLookups": 1518,
+              "qualificationLookups": 262,
+              "searchLookups": 1256,
+              "tieNominations": 3,
+              "tiePromotions": 2
+            },
+            "gepa-batched": {
+              "holdoutPasses": 450,
+              "paidLookups": 1724,
+              "qualificationLookups": 150,
+              "searchLookups": 1574,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 448,
+              "paidLookups": 1792,
+              "qualificationLookups": 159,
+              "searchLookups": 1633,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 448,
+              "paidLookups": 1490,
+              "qualificationLookups": 240,
+              "searchLookups": 1250,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 445,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 448,
+              "paidLookups": 1490,
+              "qualificationLookups": 240,
+              "searchLookups": 1250,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "4": {
+            "finish-four": {
+              "holdoutPasses": 482,
+              "paidLookups": 1459,
+              "qualificationLookups": 255,
+              "searchLookups": 1204,
+              "tieNominations": 8,
+              "tiePromotions": 4
+            },
+            "gepa-batched": {
+              "holdoutPasses": 488,
+              "paidLookups": 1679,
+              "qualificationLookups": 124,
+              "searchLookups": 1555,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 485,
+              "paidLookups": 1721,
+              "qualificationLookups": 118,
+              "searchLookups": 1603,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 479,
+              "paidLookups": 1421,
+              "qualificationLookups": 226,
+              "searchLookups": 1195,
+              "tieNominations": 4,
+              "tiePromotions": 1
+            },
+            "retain-start": {
+              "holdoutPasses": 492,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 479,
+              "paidLookups": 1393,
+              "qualificationLookups": 198,
+              "searchLookups": 1195,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "5": {
+            "finish-four": {
+              "holdoutPasses": 449,
+              "paidLookups": 1610,
+              "qualificationLookups": 275,
+              "searchLookups": 1335,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "holdoutPasses": 445,
+              "paidLookups": 1936,
+              "qualificationLookups": 252,
+              "searchLookups": 1684,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 462,
+              "paidLookups": 1926,
+              "qualificationLookups": 256,
+              "searchLookups": 1670,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 449,
+              "paidLookups": 1610,
+              "qualificationLookups": 275,
+              "searchLookups": 1335,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 419,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 449,
+              "paidLookups": 1610,
+              "qualificationLookups": 275,
+              "searchLookups": 1335,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "6": {
+            "finish-four": {
+              "holdoutPasses": 558,
+              "paidLookups": 1401,
+              "qualificationLookups": 208,
+              "searchLookups": 1193,
+              "tieNominations": 5,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "holdoutPasses": 575,
+              "paidLookups": 1606,
+              "qualificationLookups": 75,
+              "searchLookups": 1531,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 572,
+              "paidLookups": 1669,
+              "qualificationLookups": 105,
+              "searchLookups": 1564,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 558,
+              "paidLookups": 1376,
+              "qualificationLookups": 195,
+              "searchLookups": 1181,
+              "tieNominations": 3,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 582,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 558,
+              "paidLookups": 1355,
+              "qualificationLookups": 174,
+              "searchLookups": 1181,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "7": {
+            "finish-four": {
+              "holdoutPasses": 473,
+              "paidLookups": 1397,
+              "qualificationLookups": 232,
+              "searchLookups": 1165,
+              "tieNominations": 8,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "holdoutPasses": 479,
+              "paidLookups": 1790,
+              "qualificationLookups": 151,
+              "searchLookups": 1639,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 481,
+              "paidLookups": 1745,
+              "qualificationLookups": 132,
+              "searchLookups": 1613,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 476,
+              "paidLookups": 1351,
+              "qualificationLookups": 200,
+              "searchLookups": 1151,
+              "tieNominations": 3,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 486,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 476,
+              "paidLookups": 1328,
+              "qualificationLookups": 177,
+              "searchLookups": 1151,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "8": {
+            "finish-four": {
+              "holdoutPasses": 542,
+              "paidLookups": 1377,
+              "qualificationLookups": 211,
+              "searchLookups": 1166,
+              "tieNominations": 9,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "holdoutPasses": 555,
+              "paidLookups": 1616,
+              "qualificationLookups": 81,
+              "searchLookups": 1535,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 558,
+              "paidLookups": 1695,
+              "qualificationLookups": 96,
+              "searchLookups": 1599,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 544,
+              "paidLookups": 1323,
+              "qualificationLookups": 176,
+              "searchLookups": 1147,
+              "tieNominations": 4,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 558,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 544,
+              "paidLookups": 1302,
+              "qualificationLookups": 155,
+              "searchLookups": 1147,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "9": {
+            "finish-four": {
+              "holdoutPasses": 545,
+              "paidLookups": 1369,
+              "qualificationLookups": 218,
+              "searchLookups": 1151,
+              "tieNominations": 7,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "holdoutPasses": 563,
+              "paidLookups": 1594,
+              "qualificationLookups": 78,
+              "searchLookups": 1516,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "holdoutPasses": 563,
+              "paidLookups": 1637,
+              "qualificationLookups": 101,
+              "searchLookups": 1536,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "holdoutPasses": 547,
+              "paidLookups": 1346,
+              "qualificationLookups": 206,
+              "searchLookups": 1140,
+              "tieNominations": 5,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "holdoutPasses": 563,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "holdoutPasses": 547,
+              "paidLookups": 1311,
+              "qualificationLookups": 171,
+              "searchLookups": 1140,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          }
+        },
+        "caseSensitivityRanges": {
+          "gepa-batched": [
+            -112,
+            -2
+          ],
+          "gepa-sequential": [
+            -125,
+            -25
+          ],
+          "joint": [
+            -126,
+            -25
+          ],
+          "strict": [
+            -26,
+            21
+          ]
+        },
+        "changesFromStrict": {
+          "finish-four": {
+            "episodesGaining": 3,
+            "episodesLosing": 4,
+            "grossGain": 5,
+            "grossLoss": 8
+          },
+          "paid-tie": {
+            "episodesGaining": 0,
+            "episodesLosing": 0,
+            "grossGain": 0,
+            "grossLoss": 0
+          }
+        },
+        "gate": "failed",
+        "lookupSavingFractions": {
+          "gepa-batched": 0.1532991202346041,
+          "gepa-sequential": 0.1760131278538813
+        },
+        "strictComparison": {
+          "caseSensitivityRanges": {
+            "gepa-batched": [
+              -99,
+              -7
+            ],
+            "gepa-sequential": [
+              -114,
+              -33
+            ],
+            "joint": [
+              -114,
+              -33
+            ]
+          },
+          "gate": "failed",
+          "lookupSavingFractions": {
+            "gepa-batched": 0.1813782991202346,
+            "gepa-sequential": 0.2033390410958904
+          }
+        },
+        "totals": {
+          "finish-four": {
+            "holdoutPasses": 3999,
+            "paidLookups": 11549,
+            "qualificationLookups": 1898,
+            "searchLookups": 9651,
+            "tieNominations": 44,
+            "tiePromotions": 10,
+            "traceSha256": "6d9187f22214a6797ed992f3d32098d65d9006c1f2bc70a62edd9d5d8bf297fc"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 4055,
+            "paidLookups": 13640,
+            "qualificationLookups": 1039,
+            "searchLookups": 12601,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "294e7427a2b84c94ba3fe7a5ad315a4cf92b83c7da9cd697d15506e41118e1ea"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 4074,
+            "paidLookups": 14016,
+            "qualificationLookups": 1117,
+            "searchLookups": 12899,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "7d0021ea8073e58ce0c27af29f89c82723b8dfec62d649d8dc92248e06ff7383"
+          },
+          "paid-tie": {
+            "holdoutPasses": 4002,
+            "paidLookups": 11301,
+            "qualificationLookups": 1732,
+            "searchLookups": 9569,
+            "tieNominations": 20,
+            "tiePromotions": 1,
+            "traceSha256": "5fb7f142752e216b6cb4c848dc2e43a383336cb8a692a3bcf695b5e877e80568"
+          },
+          "retain-start": {
+            "holdoutPasses": 4056,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f7e5fe5ece14730e2c6f35b51646de7be98094e7e1d2b071d6f44af354bee8dc"
+          },
+          "strict": {
+            "holdoutPasses": 4002,
+            "paidLookups": 11166,
+            "qualificationLookups": 1597,
+            "searchLookups": 9569,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "c6d0d2bc653af323e7ec96549c66588e82762914913560f0c4dee6be76e82b91"
+          }
+        },
+        "trialsPerMethod": 320
+      }
+    },
+    "arc": {
+      "root/4": {
+        "byStart": {
+          "0": {
+            "finish-four": {
+              "historicalCostNanodollars": 135077269300,
+              "historicalErrors": 74,
+              "holdoutPasses": 1561,
+              "paidLookups": 1308,
+              "qualificationLookups": 364,
+              "searchLookups": 944,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 170574015300,
+              "historicalErrors": 90,
+              "holdoutPasses": 1565,
+              "paidLookups": 1706,
+              "qualificationLookups": 357,
+              "searchLookups": 1349,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 161336455150,
+              "historicalErrors": 80,
+              "holdoutPasses": 1553,
+              "paidLookups": 1603,
+              "qualificationLookups": 359,
+              "searchLookups": 1244,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 135077269300,
+              "historicalErrors": 74,
+              "holdoutPasses": 1561,
+              "paidLookups": 1308,
+              "qualificationLookups": 364,
+              "searchLookups": 944,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 575,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 135077269300,
+              "historicalErrors": 74,
+              "holdoutPasses": 1561,
+              "paidLookups": 1308,
+              "qualificationLookups": 364,
+              "searchLookups": 944,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          }
+        },
+        "caseSensitivityRanges": {
+          "gepa-batched": [
+            -16,
+            8
+          ],
+          "gepa-sequential": [
+            -7,
+            23
+          ],
+          "joint": [
+            -16,
+            8
+          ],
+          "strict": [
+            0,
+            0
+          ]
+        },
+        "changesFromStrict": {
+          "finish-four": {
+            "episodesGaining": 0,
+            "episodesLosing": 0,
+            "grossGain": 0,
+            "grossLoss": 0
+          },
+          "paid-tie": {
+            "episodesGaining": 0,
+            "episodesLosing": 0,
+            "grossGain": 0,
+            "grossLoss": 0
+          }
+        },
+        "gate": "inconclusive",
+        "lookupSavingFractions": {
+          "gepa-batched": 0.23329425556858147,
+          "gepa-sequential": 0.18402994385527136
+        },
+        "strictComparison": {
+          "caseSensitivityRanges": {
+            "gepa-batched": [
+              -16,
+              8
+            ],
+            "gepa-sequential": [
+              -7,
+              23
+            ],
+            "joint": [
+              -16,
+              8
+            ]
+          },
+          "gate": "inconclusive",
+          "lookupSavingFractions": {
+            "gepa-batched": 0.23329425556858147,
+            "gepa-sequential": 0.18402994385527136
+          }
+        },
+        "totals": {
+          "finish-four": {
+            "historicalCostNanodollars": 135077269300,
+            "historicalErrors": 74,
+            "holdoutPasses": 1561,
+            "paidLookups": 1308,
+            "qualificationLookups": 364,
+            "searchLookups": 944,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "11aecdf3e4181833bb80e8dae817c53ac6456a977bc8dd1e60a26a6dbe7821ca"
+          },
+          "gepa-batched": {
+            "historicalCostNanodollars": 170574015300,
+            "historicalErrors": 90,
+            "holdoutPasses": 1565,
+            "paidLookups": 1706,
+            "qualificationLookups": 357,
+            "searchLookups": 1349,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "1303caf4bdc0b36ea92baa5a145f267b86c0f3abd51ceb0a7ecdc56081001c58"
+          },
+          "gepa-sequential": {
+            "historicalCostNanodollars": 161336455150,
+            "historicalErrors": 80,
+            "holdoutPasses": 1553,
+            "paidLookups": 1603,
+            "qualificationLookups": 359,
+            "searchLookups": 1244,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "367a4b9e360915d4b5902a8084cf7d9d224426c8000523b261909c6f3c5f0725"
+          },
+          "paid-tie": {
+            "historicalCostNanodollars": 135077269300,
+            "historicalErrors": 74,
+            "holdoutPasses": 1561,
+            "paidLookups": 1308,
+            "qualificationLookups": 364,
+            "searchLookups": 944,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "11aecdf3e4181833bb80e8dae817c53ac6456a977bc8dd1e60a26a6dbe7821ca"
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "historicalErrors": 0,
+            "holdoutPasses": 575,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e0bd9adafa7dec528ab9353844a168f280c4aa8beba3a23a3849a94968795b72"
+          },
+          "strict": {
+            "historicalCostNanodollars": 135077269300,
+            "historicalErrors": 74,
+            "holdoutPasses": 1561,
+            "paidLookups": 1308,
+            "qualificationLookups": 364,
+            "searchLookups": 944,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "11aecdf3e4181833bb80e8dae817c53ac6456a977bc8dd1e60a26a6dbe7821ca"
+          }
+        },
+        "trialsPerMethod": 40
+      },
+      "root/8": {
+        "byStart": {
+          "0": {
+            "finish-four": {
+              "historicalCostNanodollars": 169280166550,
+              "historicalErrors": 81,
+              "holdoutPasses": 1578,
+              "paidLookups": 1507,
+              "qualificationLookups": 360,
+              "searchLookups": 1147,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 233933426700,
+              "historicalErrors": 100,
+              "holdoutPasses": 1562,
+              "paidLookups": 2171,
+              "qualificationLookups": 354,
+              "searchLookups": 1817,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 242902012700,
+              "historicalErrors": 109,
+              "holdoutPasses": 1558,
+              "paidLookups": 2230,
+              "qualificationLookups": 357,
+              "searchLookups": 1873,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 169280166550,
+              "historicalErrors": 81,
+              "holdoutPasses": 1578,
+              "paidLookups": 1507,
+              "qualificationLookups": 360,
+              "searchLookups": 1147,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 575,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 169280166550,
+              "historicalErrors": 81,
+              "holdoutPasses": 1578,
+              "paidLookups": 1507,
+              "qualificationLookups": 360,
+              "searchLookups": 1147,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          }
+        },
+        "caseSensitivityRanges": {
+          "gepa-batched": [
+            -1,
+            35
+          ],
+          "gepa-sequential": [
+            -6,
+            48
+          ],
+          "joint": [
+            -6,
+            34
+          ],
+          "strict": [
+            0,
+            0
+          ]
+        },
+        "changesFromStrict": {
+          "finish-four": {
+            "episodesGaining": 0,
+            "episodesLosing": 0,
+            "grossGain": 0,
+            "grossLoss": 0
+          },
+          "paid-tie": {
+            "episodesGaining": 0,
+            "episodesLosing": 0,
+            "grossGain": 0,
+            "grossLoss": 0
+          }
+        },
+        "gate": "inconclusive",
+        "lookupSavingFractions": {
+          "gepa-batched": 0.30584983878397054,
+          "gepa-sequential": 0.3242152466367713
+        },
+        "strictComparison": {
+          "caseSensitivityRanges": {
+            "gepa-batched": [
+              -1,
+              35
+            ],
+            "gepa-sequential": [
+              -6,
+              48
+            ],
+            "joint": [
+              -6,
+              34
+            ]
+          },
+          "gate": "inconclusive",
+          "lookupSavingFractions": {
+            "gepa-batched": 0.30584983878397054,
+            "gepa-sequential": 0.3242152466367713
+          }
+        },
+        "totals": {
+          "finish-four": {
+            "historicalCostNanodollars": 169280166550,
+            "historicalErrors": 81,
+            "holdoutPasses": 1578,
+            "paidLookups": 1507,
+            "qualificationLookups": 360,
+            "searchLookups": 1147,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "220393675dbd9ef6ed32ff0ee5581f99b9bf723f09330b4df7d18ff0b6074cc8"
+          },
+          "gepa-batched": {
+            "historicalCostNanodollars": 233933426700,
+            "historicalErrors": 100,
+            "holdoutPasses": 1562,
+            "paidLookups": 2171,
+            "qualificationLookups": 354,
+            "searchLookups": 1817,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "18a94ba3399abd6bf8be9c164ca5e7783c5974de6d2f36cc08a9b7b11d0293ad"
+          },
+          "gepa-sequential": {
+            "historicalCostNanodollars": 242902012700,
+            "historicalErrors": 109,
+            "holdoutPasses": 1558,
+            "paidLookups": 2230,
+            "qualificationLookups": 357,
+            "searchLookups": 1873,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "46cab4328a738da95bc15cc3339a298a16a7b06313ad13a3b9fb2d2a5726de96"
+          },
+          "paid-tie": {
+            "historicalCostNanodollars": 169280166550,
+            "historicalErrors": 81,
+            "holdoutPasses": 1578,
+            "paidLookups": 1507,
+            "qualificationLookups": 360,
+            "searchLookups": 1147,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "220393675dbd9ef6ed32ff0ee5581f99b9bf723f09330b4df7d18ff0b6074cc8"
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "historicalErrors": 0,
+            "holdoutPasses": 575,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e0bd9adafa7dec528ab9353844a168f280c4aa8beba3a23a3849a94968795b72"
+          },
+          "strict": {
+            "historicalCostNanodollars": 169280166550,
+            "historicalErrors": 81,
+            "holdoutPasses": 1578,
+            "paidLookups": 1507,
+            "qualificationLookups": 360,
+            "searchLookups": 1147,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "220393675dbd9ef6ed32ff0ee5581f99b9bf723f09330b4df7d18ff0b6074cc8"
+          }
+        },
+        "trialsPerMethod": 40
+      },
+      "rotated/4": {
+        "byStart": {
+          "1": {
+            "finish-four": {
+              "historicalCostNanodollars": 174156547900,
+              "historicalErrors": 39,
+              "holdoutPasses": 1520,
+              "paidLookups": 1366,
+              "qualificationLookups": 369,
+              "searchLookups": 997,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 209370832900,
+              "historicalErrors": 39,
+              "holdoutPasses": 1464,
+              "paidLookups": 1679,
+              "qualificationLookups": 351,
+              "searchLookups": 1328,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 209607438550,
+              "historicalErrors": 34,
+              "holdoutPasses": 1515,
+              "paidLookups": 1658,
+              "qualificationLookups": 376,
+              "searchLookups": 1282,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 174156547900,
+              "historicalErrors": 39,
+              "holdoutPasses": 1520,
+              "paidLookups": 1366,
+              "qualificationLookups": 369,
+              "searchLookups": 997,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 731,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 174156547900,
+              "historicalErrors": 39,
+              "holdoutPasses": 1520,
+              "paidLookups": 1366,
+              "qualificationLookups": 369,
+              "searchLookups": 997,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "2": {
+            "finish-four": {
+              "historicalCostNanodollars": 155443976150,
+              "historicalErrors": 26,
+              "holdoutPasses": 1496,
+              "paidLookups": 1174,
+              "qualificationLookups": 379,
+              "searchLookups": 795,
+              "tieNominations": 2,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 127848797700,
+              "historicalErrors": 28,
+              "holdoutPasses": 1439,
+              "paidLookups": 1033,
+              "qualificationLookups": 97,
+              "searchLookups": 936,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 139424209450,
+              "historicalErrors": 31,
+              "holdoutPasses": 1443,
+              "paidLookups": 1116,
+              "qualificationLookups": 107,
+              "searchLookups": 1009,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 155443976150,
+              "historicalErrors": 26,
+              "holdoutPasses": 1496,
+              "paidLookups": 1174,
+              "qualificationLookups": 379,
+              "searchLookups": 795,
+              "tieNominations": 2,
+              "tiePromotions": 1
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1438,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 152304411100,
+              "historicalErrors": 26,
+              "holdoutPasses": 1495,
+              "paidLookups": 1151,
+              "qualificationLookups": 356,
+              "searchLookups": 795,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "3": {
+            "finish-four": {
+              "historicalCostNanodollars": 134021497250,
+              "historicalErrors": 48,
+              "holdoutPasses": 1531,
+              "paidLookups": 1021,
+              "qualificationLookups": 313,
+              "searchLookups": 708,
+              "tieNominations": 2,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 120956146150,
+              "historicalErrors": 44,
+              "holdoutPasses": 1522,
+              "paidLookups": 985,
+              "qualificationLookups": 93,
+              "searchLookups": 892,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 128781465850,
+              "historicalErrors": 43,
+              "holdoutPasses": 1524,
+              "paidLookups": 1049,
+              "qualificationLookups": 88,
+              "searchLookups": 961,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 130322257250,
+              "historicalErrors": 48,
+              "holdoutPasses": 1531,
+              "paidLookups": 992,
+              "qualificationLookups": 290,
+              "searchLookups": 702,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1519,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 130322257250,
+              "historicalErrors": 48,
+              "holdoutPasses": 1531,
+              "paidLookups": 992,
+              "qualificationLookups": 290,
+              "searchLookups": 702,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "4": {
+            "finish-four": {
+              "historicalCostNanodollars": 142828868700,
+              "historicalErrors": 48,
+              "holdoutPasses": 1461,
+              "paidLookups": 1088,
+              "qualificationLookups": 311,
+              "searchLookups": 777,
+              "tieNominations": 3,
+              "tiePromotions": 2
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 124053391100,
+              "historicalErrors": 34,
+              "holdoutPasses": 1418,
+              "paidLookups": 1004,
+              "qualificationLookups": 100,
+              "searchLookups": 904,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 133048055350,
+              "historicalErrors": 39,
+              "holdoutPasses": 1421,
+              "paidLookups": 1076,
+              "qualificationLookups": 110,
+              "searchLookups": 966,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 137958322700,
+              "historicalErrors": 48,
+              "holdoutPasses": 1456,
+              "paidLookups": 1050,
+              "qualificationLookups": 279,
+              "searchLookups": 771,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1405,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 137958322700,
+              "historicalErrors": 48,
+              "holdoutPasses": 1456,
+              "paidLookups": 1050,
+              "qualificationLookups": 279,
+              "searchLookups": 771,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "5": {
+            "finish-four": {
+              "historicalCostNanodollars": 69601911800,
+              "historicalErrors": 17,
+              "holdoutPasses": 1688,
+              "paidLookups": 496,
+              "qualificationLookups": 19,
+              "searchLookups": 477,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 80658239750,
+              "historicalErrors": 20,
+              "holdoutPasses": 1688,
+              "paidLookups": 621,
+              "qualificationLookups": 0,
+              "searchLookups": 621,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 85654979800,
+              "historicalErrors": 22,
+              "holdoutPasses": 1688,
+              "paidLookups": 663,
+              "qualificationLookups": 0,
+              "searchLookups": 663,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 69133537800,
+              "historicalErrors": 17,
+              "holdoutPasses": 1688,
+              "paidLookups": 492,
+              "qualificationLookups": 19,
+              "searchLookups": 473,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1688,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 69133537800,
+              "historicalErrors": 17,
+              "holdoutPasses": 1688,
+              "paidLookups": 492,
+              "qualificationLookups": 19,
+              "searchLookups": 473,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "6": {
+            "finish-four": {
+              "historicalCostNanodollars": 131612650550,
+              "historicalErrors": 51,
+              "holdoutPasses": 1517,
+              "paidLookups": 1084,
+              "qualificationLookups": 336,
+              "searchLookups": 748,
+              "tieNominations": 3,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 97799780950,
+              "historicalErrors": 47,
+              "holdoutPasses": 1502,
+              "paidLookups": 907,
+              "qualificationLookups": 59,
+              "searchLookups": 848,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 109767869450,
+              "historicalErrors": 49,
+              "holdoutPasses": 1499,
+              "paidLookups": 1013,
+              "qualificationLookups": 70,
+              "searchLookups": 943,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 128322666050,
+              "historicalErrors": 50,
+              "holdoutPasses": 1515,
+              "paidLookups": 1057,
+              "qualificationLookups": 313,
+              "searchLookups": 744,
+              "tieNominations": 1,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1498,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 126734485000,
+              "historicalErrors": 49,
+              "holdoutPasses": 1515,
+              "paidLookups": 1046,
+              "qualificationLookups": 302,
+              "searchLookups": 744,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "7": {
+            "finish-four": {
+              "historicalCostNanodollars": 124467619850,
+              "historicalErrors": 30,
+              "holdoutPasses": 1520,
+              "paidLookups": 981,
+              "qualificationLookups": 278,
+              "searchLookups": 703,
+              "tieNominations": 6,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 110307224700,
+              "historicalErrors": 14,
+              "holdoutPasses": 1508,
+              "paidLookups": 930,
+              "qualificationLookups": 56,
+              "searchLookups": 874,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 122291564000,
+              "historicalErrors": 13,
+              "holdoutPasses": 1508,
+              "paidLookups": 1033,
+              "qualificationLookups": 67,
+              "searchLookups": 966,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 113888078850,
+              "historicalErrors": 29,
+              "holdoutPasses": 1517,
+              "paidLookups": 903,
+              "qualificationLookups": 212,
+              "searchLookups": 691,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1508,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 113888078850,
+              "historicalErrors": 29,
+              "holdoutPasses": 1517,
+              "paidLookups": 903,
+              "qualificationLookups": 212,
+              "searchLookups": 691,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "8": {
+            "finish-four": {
+              "historicalCostNanodollars": 135813584950,
+              "historicalErrors": 27,
+              "holdoutPasses": 1552,
+              "paidLookups": 850,
+              "qualificationLookups": 196,
+              "searchLookups": 654,
+              "tieNominations": 1,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 136721938700,
+              "historicalErrors": 19,
+              "holdoutPasses": 1554,
+              "paidLookups": 863,
+              "qualificationLookups": 32,
+              "searchLookups": 831,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 139228935550,
+              "historicalErrors": 13,
+              "holdoutPasses": 1553,
+              "paidLookups": 856,
+              "qualificationLookups": 12,
+              "searchLookups": 844,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 134214595950,
+              "historicalErrors": 26,
+              "holdoutPasses": 1552,
+              "paidLookups": 838,
+              "qualificationLookups": 187,
+              "searchLookups": 651,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1553,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 134214595950,
+              "historicalErrors": 26,
+              "holdoutPasses": 1552,
+              "paidLookups": 838,
+              "qualificationLookups": 187,
+              "searchLookups": 651,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "9": {
+            "finish-four": {
+              "historicalCostNanodollars": 109449015000,
+              "historicalErrors": 20,
+              "holdoutPasses": 1604,
+              "paidLookups": 835,
+              "qualificationLookups": 198,
+              "searchLookups": 637,
+              "tieNominations": 3,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 96115268100,
+              "historicalErrors": 10,
+              "holdoutPasses": 1600,
+              "paidLookups": 776,
+              "qualificationLookups": 21,
+              "searchLookups": 755,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 102961975950,
+              "historicalErrors": 10,
+              "holdoutPasses": 1604,
+              "paidLookups": 832,
+              "qualificationLookups": 19,
+              "searchLookups": 813,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 106431960500,
+              "historicalErrors": 20,
+              "holdoutPasses": 1604,
+              "paidLookups": 809,
+              "qualificationLookups": 180,
+              "searchLookups": 629,
+              "tieNominations": 1,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1604,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 105254600500,
+              "historicalErrors": 19,
+              "holdoutPasses": 1604,
+              "paidLookups": 798,
+              "qualificationLookups": 169,
+              "searchLookups": 629,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          }
+        },
+        "caseSensitivityRanges": {
+          "gepa-batched": [
+            98,
+            293
+          ],
+          "gepa-sequential": [
+            46,
+            227
+          ],
+          "joint": [
+            46,
+            227
+          ],
+          "strict": [
+            1,
+            22
+          ]
+        },
+        "changesFromStrict": {
+          "finish-four": {
+            "episodesGaining": 5,
+            "episodesLosing": 0,
+            "grossGain": 11,
+            "grossLoss": 0
+          },
+          "paid-tie": {
+            "episodesGaining": 1,
+            "episodesLosing": 0,
+            "grossGain": 1,
+            "grossLoss": 0
+          }
+        },
+        "gate": "failed",
+        "lookupSavingFractions": {
+          "gepa-batched": -0.011025233007501705,
+          "gepa-sequential": 0.043136833046471604
+        },
+        "strictComparison": {
+          "caseSensitivityRanges": {
+            "gepa-batched": [
+              91,
+              279
+            ],
+            "gepa-sequential": [
+              38,
+              212
+            ],
+            "joint": [
+              38,
+              212
+            ]
+          },
+          "gate": "failed",
+          "lookupSavingFractions": {
+            "gepa-batched": 0.018413275744487385,
+            "gepa-sequential": 0.07099827882960413
+          }
+        },
+        "totals": {
+          "finish-four": {
+            "historicalCostNanodollars": 1177395672150,
+            "historicalErrors": 306,
+            "holdoutPasses": 13889,
+            "paidLookups": 8895,
+            "qualificationLookups": 2399,
+            "searchLookups": 6496,
+            "tieNominations": 20,
+            "tiePromotions": 6,
+            "traceSha256": "4f8287e61759f7dcd34d4072783f48d99ec3dfff53cd427861e0e6a3e7b39400"
+          },
+          "gepa-batched": {
+            "historicalCostNanodollars": 1103831620050,
+            "historicalErrors": 255,
+            "holdoutPasses": 13695,
+            "paidLookups": 8798,
+            "qualificationLookups": 809,
+            "searchLookups": 7989,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "5583e20468a08277be7ec3a4f77389ce25b3dfe8dc17e73b8d3a6720488028da"
+          },
+          "gepa-sequential": {
+            "historicalCostNanodollars": 1170766493950,
+            "historicalErrors": 254,
+            "holdoutPasses": 13755,
+            "paidLookups": 9296,
+            "qualificationLookups": 849,
+            "searchLookups": 8447,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "fe514f6b36604822b02db2a1085548323341ddf9217f5e7348055a9a587a2ea3"
+          },
+          "paid-tie": {
+            "historicalCostNanodollars": 1149871943150,
+            "historicalErrors": 303,
+            "holdoutPasses": 13879,
+            "paidLookups": 8681,
+            "qualificationLookups": 2228,
+            "searchLookups": 6453,
+            "tieNominations": 4,
+            "tiePromotions": 1,
+            "traceSha256": "d361de787912c7258f751e4fee113262af8c3cd2f22b6afb517145daae207df8"
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "historicalErrors": 0,
+            "holdoutPasses": 12944,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0e69f7a7c44928f2ebc883e752bd6d1715416112b18b42875132a35df5689f67"
+          },
+          "strict": {
+            "historicalCostNanodollars": 1143966837050,
+            "historicalErrors": 301,
+            "holdoutPasses": 13878,
+            "paidLookups": 8636,
+            "qualificationLookups": 2183,
+            "searchLookups": 6453,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8ae35aa5a203810f4f947e86564047349e37cee70fdb3db7bf7eb0b8dd0ec4fb"
+          }
+        },
+        "trialsPerMethod": 360
+      },
+      "rotated/8": {
+        "byStart": {
+          "1": {
+            "finish-four": {
+              "historicalCostNanodollars": 199841218950,
+              "historicalErrors": 62,
+              "holdoutPasses": 1531,
+              "paidLookups": 1544,
+              "qualificationLookups": 368,
+              "searchLookups": 1176,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 276513403650,
+              "historicalErrors": 58,
+              "holdoutPasses": 1518,
+              "paidLookups": 2186,
+              "qualificationLookups": 370,
+              "searchLookups": 1816,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 284711235300,
+              "historicalErrors": 50,
+              "holdoutPasses": 1524,
+              "paidLookups": 2239,
+              "qualificationLookups": 376,
+              "searchLookups": 1863,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 199841218950,
+              "historicalErrors": 62,
+              "holdoutPasses": 1531,
+              "paidLookups": 1544,
+              "qualificationLookups": 368,
+              "searchLookups": 1176,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 731,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 199841218950,
+              "historicalErrors": 62,
+              "holdoutPasses": 1531,
+              "paidLookups": 1544,
+              "qualificationLookups": 368,
+              "searchLookups": 1176,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "2": {
+            "finish-four": {
+              "historicalCostNanodollars": 179674908300,
+              "historicalErrors": 41,
+              "holdoutPasses": 1506,
+              "paidLookups": 1332,
+              "qualificationLookups": 379,
+              "searchLookups": 953,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 199643479550,
+              "historicalErrors": 44,
+              "holdoutPasses": 1455,
+              "paidLookups": 1604,
+              "qualificationLookups": 172,
+              "searchLookups": 1432,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 234786150250,
+              "historicalErrors": 48,
+              "holdoutPasses": 1447,
+              "paidLookups": 1888,
+              "qualificationLookups": 221,
+              "searchLookups": 1667,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 179674908300,
+              "historicalErrors": 41,
+              "holdoutPasses": 1506,
+              "paidLookups": 1332,
+              "qualificationLookups": 379,
+              "searchLookups": 953,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1438,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 179674908300,
+              "historicalErrors": 41,
+              "holdoutPasses": 1506,
+              "paidLookups": 1332,
+              "qualificationLookups": 379,
+              "searchLookups": 953,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "3": {
+            "finish-four": {
+              "historicalCostNanodollars": 161809631650,
+              "historicalErrors": 63,
+              "holdoutPasses": 1540,
+              "paidLookups": 1209,
+              "qualificationLookups": 348,
+              "searchLookups": 861,
+              "tieNominations": 2,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 176130937150,
+              "historicalErrors": 56,
+              "holdoutPasses": 1525,
+              "paidLookups": 1427,
+              "qualificationLookups": 105,
+              "searchLookups": 1322,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 211192020100,
+              "historicalErrors": 62,
+              "holdoutPasses": 1527,
+              "paidLookups": 1684,
+              "qualificationLookups": 164,
+              "searchLookups": 1520,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 158197206650,
+              "historicalErrors": 63,
+              "holdoutPasses": 1540,
+              "paidLookups": 1181,
+              "qualificationLookups": 325,
+              "searchLookups": 856,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1519,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 158197206650,
+              "historicalErrors": 63,
+              "holdoutPasses": 1540,
+              "paidLookups": 1181,
+              "qualificationLookups": 325,
+              "searchLookups": 856,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "4": {
+            "finish-four": {
+              "historicalCostNanodollars": 175270016400,
+              "historicalErrors": 66,
+              "holdoutPasses": 1474,
+              "paidLookups": 1292,
+              "qualificationLookups": 326,
+              "searchLookups": 966,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 197976088250,
+              "historicalErrors": 43,
+              "holdoutPasses": 1434,
+              "paidLookups": 1603,
+              "qualificationLookups": 193,
+              "searchLookups": 1410,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 222237078600,
+              "historicalErrors": 58,
+              "holdoutPasses": 1433,
+              "paidLookups": 1773,
+              "qualificationLookups": 191,
+              "searchLookups": 1582,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 175270016400,
+              "historicalErrors": 66,
+              "holdoutPasses": 1474,
+              "paidLookups": 1292,
+              "qualificationLookups": 326,
+              "searchLookups": 966,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1405,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 175270016400,
+              "historicalErrors": 66,
+              "holdoutPasses": 1474,
+              "paidLookups": 1292,
+              "qualificationLookups": 326,
+              "searchLookups": 966,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "5": {
+            "finish-four": {
+              "historicalCostNanodollars": 88732105400,
+              "historicalErrors": 29,
+              "holdoutPasses": 1688,
+              "paidLookups": 622,
+              "qualificationLookups": 19,
+              "searchLookups": 603,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 112354922950,
+              "historicalErrors": 32,
+              "holdoutPasses": 1688,
+              "paidLookups": 873,
+              "qualificationLookups": 0,
+              "searchLookups": 873,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 131482928200,
+              "historicalErrors": 29,
+              "holdoutPasses": 1688,
+              "paidLookups": 999,
+              "qualificationLookups": 0,
+              "searchLookups": 999,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 88167983900,
+              "historicalErrors": 29,
+              "holdoutPasses": 1688,
+              "paidLookups": 617,
+              "qualificationLookups": 19,
+              "searchLookups": 598,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1688,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 88167983900,
+              "historicalErrors": 29,
+              "holdoutPasses": 1688,
+              "paidLookups": 617,
+              "qualificationLookups": 19,
+              "searchLookups": 598,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "6": {
+            "finish-four": {
+              "historicalCostNanodollars": 158311124750,
+              "historicalErrors": 59,
+              "holdoutPasses": 1521,
+              "paidLookups": 1239,
+              "qualificationLookups": 337,
+              "searchLookups": 902,
+              "tieNominations": 2,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 165090499450,
+              "historicalErrors": 62,
+              "holdoutPasses": 1503,
+              "paidLookups": 1433,
+              "qualificationLookups": 104,
+              "searchLookups": 1329,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 187252666600,
+              "historicalErrors": 73,
+              "holdoutPasses": 1503,
+              "paidLookups": 1648,
+              "qualificationLookups": 116,
+              "searchLookups": 1532,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 155021140250,
+              "historicalErrors": 58,
+              "holdoutPasses": 1519,
+              "paidLookups": 1212,
+              "qualificationLookups": 314,
+              "searchLookups": 898,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1498,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 155021140250,
+              "historicalErrors": 58,
+              "holdoutPasses": 1519,
+              "paidLookups": 1212,
+              "qualificationLookups": 314,
+              "searchLookups": 898,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "7": {
+            "finish-four": {
+              "historicalCostNanodollars": 156099214200,
+              "historicalErrors": 45,
+              "holdoutPasses": 1519,
+              "paidLookups": 1192,
+              "qualificationLookups": 301,
+              "searchLookups": 891,
+              "tieNominations": 2,
+              "tiePromotions": 1
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 177508385250,
+              "historicalErrors": 26,
+              "holdoutPasses": 1507,
+              "paidLookups": 1468,
+              "qualificationLookups": 78,
+              "searchLookups": 1390,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 217022373050,
+              "historicalErrors": 33,
+              "holdoutPasses": 1504,
+              "paidLookups": 1749,
+              "qualificationLookups": 125,
+              "searchLookups": 1624,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 152067403200,
+              "historicalErrors": 44,
+              "holdoutPasses": 1516,
+              "paidLookups": 1167,
+              "qualificationLookups": 281,
+              "searchLookups": 886,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1508,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 152067403200,
+              "historicalErrors": 44,
+              "holdoutPasses": 1516,
+              "paidLookups": 1167,
+              "qualificationLookups": 281,
+              "searchLookups": 886,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "8": {
+            "finish-four": {
+              "historicalCostNanodollars": 168576645550,
+              "historicalErrors": 42,
+              "holdoutPasses": 1554,
+              "paidLookups": 1067,
+              "qualificationLookups": 233,
+              "searchLookups": 834,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 192766471250,
+              "historicalErrors": 31,
+              "holdoutPasses": 1551,
+              "paidLookups": 1275,
+              "qualificationLookups": 44,
+              "searchLookups": 1231,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 221872746050,
+              "historicalErrors": 27,
+              "holdoutPasses": 1555,
+              "paidLookups": 1416,
+              "qualificationLookups": 23,
+              "searchLookups": 1393,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 168576645550,
+              "historicalErrors": 42,
+              "holdoutPasses": 1554,
+              "paidLookups": 1067,
+              "qualificationLookups": 233,
+              "searchLookups": 834,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1553,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 168576645550,
+              "historicalErrors": 42,
+              "holdoutPasses": 1554,
+              "paidLookups": 1067,
+              "qualificationLookups": 233,
+              "searchLookups": 834,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          },
+          "9": {
+            "finish-four": {
+              "historicalCostNanodollars": 134973025450,
+              "historicalErrors": 36,
+              "holdoutPasses": 1604,
+              "paidLookups": 998,
+              "qualificationLookups": 197,
+              "searchLookups": 801,
+              "tieNominations": 2,
+              "tiePromotions": 0
+            },
+            "gepa-batched": {
+              "historicalCostNanodollars": 142690900600,
+              "historicalErrors": 20,
+              "holdoutPasses": 1600,
+              "paidLookups": 1154,
+              "qualificationLookups": 32,
+              "searchLookups": 1122,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "gepa-sequential": {
+              "historicalCostNanodollars": 176917607500,
+              "historicalErrors": 26,
+              "holdoutPasses": 1604,
+              "paidLookups": 1394,
+              "qualificationLookups": 63,
+              "searchLookups": 1331,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "paid-tie": {
+              "historicalCostNanodollars": 131815713950,
+              "historicalErrors": 36,
+              "holdoutPasses": 1604,
+              "paidLookups": 971,
+              "qualificationLookups": 179,
+              "searchLookups": 792,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "retain-start": {
+              "historicalCostNanodollars": 0,
+              "historicalErrors": 0,
+              "holdoutPasses": 1604,
+              "paidLookups": 0,
+              "qualificationLookups": 0,
+              "searchLookups": 0,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            },
+            "strict": {
+              "historicalCostNanodollars": 131815713950,
+              "historicalErrors": 36,
+              "holdoutPasses": 1604,
+              "paidLookups": 971,
+              "qualificationLookups": 179,
+              "searchLookups": 792,
+              "tieNominations": 0,
+              "tiePromotions": 0
+            }
+          }
+        },
+        "caseSensitivityRanges": {
+          "gepa-batched": [
+            54,
+            261
+          ],
+          "gepa-sequential": [
+            55,
+            251
+          ],
+          "joint": [
+            51,
+            250
+          ],
+          "strict": [
+            -2,
+            12
+          ]
+        },
+        "changesFromStrict": {
+          "finish-four": {
+            "episodesGaining": 2,
+            "episodesLosing": 0,
+            "grossGain": 5,
+            "grossLoss": 0
+          },
+          "paid-tie": {
+            "episodesGaining": 0,
+            "episodesLosing": 0,
+            "grossGain": 0,
+            "grossLoss": 0
+          }
+        },
+        "gate": "passed",
+        "lookupSavingFractions": {
+          "gepa-batched": 0.19411809874836827,
+          "gepa-sequential": 0.2903989181879648
+        },
+        "strictComparison": {
+          "caseSensitivityRanges": {
+            "gepa-batched": [
+              54,
+              253
+            ],
+            "gepa-sequential": [
+              55,
+              243
+            ],
+            "joint": [
+              52,
+              241
+            ]
+          },
+          "gate": "passed",
+          "lookupSavingFractions": {
+            "gepa-batched": 0.202718267680258,
+            "gepa-sequential": 0.29797160243407705
+          }
+        },
+        "totals": {
+          "finish-four": {
+            "historicalCostNanodollars": 1423287890650,
+            "historicalErrors": 443,
+            "holdoutPasses": 13937,
+            "paidLookups": 10495,
+            "qualificationLookups": 2508,
+            "searchLookups": 7987,
+            "tieNominations": 8,
+            "tiePromotions": 3,
+            "traceSha256": "ff99979023d4b5bb27a0d04e84041d6931a6714d6f8735fbe3a74d20bd7312d3"
+          },
+          "gepa-batched": {
+            "historicalCostNanodollars": 1640675088100,
+            "historicalErrors": 372,
+            "holdoutPasses": 13781,
+            "paidLookups": 13023,
+            "qualificationLookups": 1098,
+            "searchLookups": 11925,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "2bff03e846b031dcab19b2c752f34bfc86751ac9871731309b859e907326b8a8"
+          },
+          "gepa-sequential": {
+            "historicalCostNanodollars": 1887474805650,
+            "historicalErrors": 406,
+            "holdoutPasses": 13785,
+            "paidLookups": 14790,
+            "qualificationLookups": 1279,
+            "searchLookups": 13511,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ce02b5e2609757a3c4a9b538bd47f6506d6c91975e948044941cbdff93811c87"
+          },
+          "paid-tie": {
+            "historicalCostNanodollars": 1408632237150,
+            "historicalErrors": 441,
+            "holdoutPasses": 13932,
+            "paidLookups": 10383,
+            "qualificationLookups": 2424,
+            "searchLookups": 7959,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3bcc662605f58b65f903f8a69f47a7f1ccdea7fe2db2513e29cc0b7b854d0eb0"
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "historicalErrors": 0,
+            "holdoutPasses": 12944,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0e69f7a7c44928f2ebc883e752bd6d1715416112b18b42875132a35df5689f67"
+          },
+          "strict": {
+            "historicalCostNanodollars": 1408632237150,
+            "historicalErrors": 441,
+            "holdoutPasses": 13932,
+            "paidLookups": 10383,
+            "qualificationLookups": 2424,
+            "searchLookups": 7959,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3bcc662605f58b65f903f8a69f47a7f1ccdea7fe2db2513e29cc0b7b854d0eb0"
+          }
+        },
+        "trialsPerMethod": 360
+      }
+    }
+  }
+}

@@ -27,6 +27,8 @@ On the confirmation panels, finishing a tie with up to four reads nominated 85 t
 
 Requiring two net qualification gains cut tie promotions to two on the confirmation panels and cut the gain over strict CPO to one pass. Split qualification matched the ordinary four-read score and saved 22 lookups there, with 13 fewer passes on BBH and LMentry. The ordinary four-read policy lost four passes against strict CPO on the MMLU pilot. On confirmation, it led sequential GEPA by 12 passes and batched GEPA by 39, with 37.9% and 11.6% fewer lookups, respectively. Its joint paired range against those cap-52 controls was **−50 to +70 passes**. The four-read policy was selected for this retrospective range after comparing variants on the same archived outcomes. Fresh proposal quality and provider costs remain unverified.
 
+The follow-up transfers the witnessed tie proof to the recorded ARC-AGI and AIME candidate pools and compares both the tie policy and strict CPO with the same GEPA controls. [ARC and AIME transfer](recorded-math-validation-ties.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Preview each phase to get its seal. The other phases are `model-transfer`, `bbh-lmentry`, and `mmlu`.
