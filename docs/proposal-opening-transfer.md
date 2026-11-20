@@ -26,6 +26,8 @@ The eight-case screen gained 132 passes over retaining the start and 24 over ori
 
 The screen used fewer lookups in every snapshot. Its holdout score beat batched GEPA in two of the four snapshots and the retained start in three. The archive supplies the opening pair and later proposals, so the lookup totals account for evaluations and qualification. Live proposal quality and generation cost remain unmeasured. CPO keeps its default search. [Panel counts, traces, and paired ranges](proposal-opening-transfer-results-v1.json)
 
+The opt-in package API reproduces the frozen screen’s archive path and adds full-validation guards for typed rows, critical cases, and families. [Opening-screen cycle API](opening-screen-cycle.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path. The repository contains the four hash-pinned input snapshots.

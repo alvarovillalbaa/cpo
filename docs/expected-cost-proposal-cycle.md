@@ -23,6 +23,8 @@ Use distinct, disjoint row IDs throughout. `evaluate(prompt, row)` returns a CPO
 
 Use `result.prompt` for the deployment, `result.search` for the existing search result, and `result.qualification` for the decision and exact replies observed in callback order. If search retains the incumbent, qualification is skipped. An undecided proof also retains the incumbent. The expected-cost scheduler applies to one repeat on at most eight rows in one or two families without critical cases. Other panels, and caps below the full paired panel size, use the seeded exact certificate. The early stop assumes each prompt and case returns the same outcome regardless of evaluation order. [Fixed-pool API](expected-cost-cycle.md) · [Paired certificate](paired-qualification.md)
 
+Use the [opening-screen cycle](opening-screen-cycle.md) when the proposal pair is already available and the cycle budget is reserved for validation and qualification.
+
 ## Results
 
 The new cycle preserved all 7,680 search journals and deployments across the 12 archived panels and five search caps. At cap 171 it reduced qualification lookups from **20,800 to 17,945**. The seeded early stop used 19,450. This reduced total CPO lookups at that cap by 1.1%.
