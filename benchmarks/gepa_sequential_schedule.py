@@ -5,7 +5,9 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 
-def select_field_rewrites(initial, bank, groups, evaluate, reflect, trace, *, cap, seed, observed_charge=None):
+def select_field_rewrites(
+    initial, bank, groups, evaluate, reflect, trace, *, cap, seed, observed_charge=None, reinvest_savings=False,
+):
     from benchmarks import grounded
     from cpo import Row
     from cpo.sequential_field_rewrite import select_sequential_field_rewrites
@@ -23,7 +25,7 @@ def select_field_rewrites(initial, bank, groups, evaluate, reflect, trace, *, ca
     return select_sequential_field_rewrites(
         initial, training, validation, lambda p, row: evaluate(p, row.id), schedule, propose,
         rounds=grounded.REFLECTION_LIMIT, minibatch_size=grounded.MINIBATCH, metric_limit=cap,
-        observed_charge=observed_charge,
+        observed_charge=observed_charge, reinvest_savings=reinvest_savings,
     )
 
 

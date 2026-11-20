@@ -77,6 +77,23 @@ The public deterministic fixture generates later rewrites from the errors in eac
 PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback
 ```
 
+## Reinvest saved reads
+
+Set `reinvest_savings=True` to budget each additional round against paid evaluation reads. The selector reserves unread validation grades for every eligible parent. It then reserves the selected parent's missing training replies and a complete new child's training and validation replies. The same proposal limit and independent admission gate apply. The default keeps the original native round horizon.
+
+At the shared 48-read search cap, the deterministic fixture gained 21 held-out passes across its two seed sets and cut counted calls from 2,224 to 2,021. Every path preserved or improved its holdout pass count and retained all matched critical passes. Seven paths used more calls. Counts include evaluations, proposal generation, and admission. Scores tied at caps 40 and 56. [Fixture results](sequential-field-paid-budget-results-v1.json)
+
+| Fixture seed set at cap 48 | Native → CPO held-out passes | Native → CPO counted calls |
+| --- | ---: | ---: |
+| Published seeds | 299 → 310 of 324 | 1,133 → 1,041 |
+| Replication seeds | 310 → 320 of 324 | 1,091 → 980 |
+
+The Sol archive held at 382 of 480 passes for both policies. At cap 24, extra reflections raised the recorded cost from $35.63 to $38.24 despite fewer search reads. At cap 56, the number of reflections stayed at 190 and cost fell from $46.81 to $40.21. The read cap covers evaluations. Real proposal prices and fresh model quality remain unverified.
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback --paid-budget
+```
+
 ## Verify
 
 ```sh

@@ -6,7 +6,7 @@ from .paired_field_rewrite import _validated_field_score, _wins
 
 def select_sequential_field_rewrites(
     incumbent, training, validation, evaluate, schedule, propose, *,
-    rounds, minibatch_size, metric_limit, observed_charge=None,
+    rounds, minibatch_size, metric_limit, observed_charge=None, reinvest_savings=False,
 ):
     """Match sequential GEPA's field gates, full-round reserve and score order.
 
@@ -15,6 +15,10 @@ def select_sequential_field_rewrites(
     in validation order, paying for any missing replies. The proposer receives
     (index, parent, examples), with only paid training rows and observations.
     It runs for every entered round so stateful proposal sequences stay intact.
+
+    With reinvest_savings, budget charged reads and still-unread validation
+    reserved for every tracked prompt. Once the scheduler picks a parent,
+    reserve only its missing minibatch reads alongside a full new child.
     """
     training, validation = tuple(training), tuple(validation)
     train_ids, val_ids = tuple(row.id for row in training), tuple(row.id for row in validation)
@@ -38,13 +42,17 @@ def select_sequential_field_rewrites(
     replies, scores, charges = {}, {}, {}
     # Maintain the control's round horizon even when the paired proof
     # skips reads. This also gives every actual read a place in the reserve.
-    accounted = {(incumbent, case) for case in val_ids}
-    reserve = 2 * minibatch_size + len(val_ids)
+    validation_reserve = {(incumbent, case) for case in val_ids}
+    accounted = set(validation_reserve)
+    child_reserve = minibatch_size + len(val_ids)
+
+    def committed_reads():
+        return len(scores.keys() | validation_reserve) if reinvest_savings else len(accounted)
 
     def observe(prompt, case):
         key = prompt, case
         if key not in scores:
-            if key not in accounted or len(accounted) > metric_limit:
+            if key not in accounted or len(scores) >= metric_limit:
                 raise ValueError('A field read exceeded the sequential search scope')
             row = by_id[case]
             reply = evaluate(prompt, row)
@@ -67,7 +75,9 @@ def select_sequential_field_rewrites(
 
     latest = incumbent
     for index in range(rounds):
-        if len(accounted) + reserve > metric_limit:
+        min_reserve = child_reserve if reinvest_savings else child_reserve + minibatch_size
+        remaining = metric_limit - committed_reads()
+        if min_reserve > remaining:
             break
         if latest is not None and perfect(latest):
             return latest
@@ -75,16 +85,22 @@ def select_sequential_field_rewrites(
         batch = tuple(ids)
         if parent not in pool or len(batch) != minibatch_size or len(set(batch)) != len(batch) or not set(batch) <= train_set:
             raise ValueError('The schedule must select a tracked parent and distinct training rows')
+        if reinvest_savings and child_reserve + sum((parent, case) not in scores for case in batch) > remaining:
+            break
         accounted.update((parent, case) for case in batch)
         for case in batch:
             observe(parent, case)
         child = propose(index, parent, tuple((by_id[case], replies[parent, case]) for case in batch))
-        accounted.update((child, case) for case in batch)
         latest = None
+        if reinvest_savings and all(scores[parent, case] == denominator for case in batch):
+            continue
+        accounted.update((child, case) for case in batch)
         if child != parent and _wins(parent, child, batch, scores, observe, denominator):
             latest = child
             pool.append(child)
-            accounted.update((child, case) for case in val_ids)
+            new_reserve = {(child, case) for case in val_ids}
+            validation_reserve.update(new_reserve)
+            accounted.update(new_reserve)
 
     leader = incumbent
     for rewrite in dict.fromkeys(pool[1:]):

@@ -65,3 +65,33 @@ def test_stateful_proposer_runs_on_a_perfect_training_batch():
         rounds=2, minibatch_size=1, metric_limit=8,
     )
     assert selected == 'start' and proposed == [0, 1]
+
+
+@pytest.mark.parametrize(('reinvest', 'expected_calls', 'winner'), ((False, 1, 'start'), (True, 2, 'repair')))
+def test_reinvests_saved_reads_without_dropping_the_validation_reserve(reinvest, expected_calls, winner):
+    training = tuple(Row(f't{case}', 'task', fields=1) for case in range(4))
+    validation = tuple(Row(f'v{case}', 'task', fields=1) for case in range(4))
+    paid, proposals = [], []
+
+    def evaluate(prompt, row):
+        assert len(paid) < 13
+        paid.append((prompt, row.id))
+        passed = prompt == 'repair' or (prompt == 'start' and row.id in ('t0', 't1'))
+        return Observation(passed, {}, int(passed))
+
+    def propose(index, parent, samples):
+        proposals.append((index, parent))
+        assert tuple(reply.passed for _, reply in samples) == ((True, True), (True, False))[index]
+        return ('rejected', 'repair')[index]
+
+    def schedule(index, pool, _grades):
+        assert pool == ('start',)
+        return 'start', (('t0', 't1'), ('t1', 't2'))[index]
+
+    selected = select_sequential_field_rewrites(
+        'start', training, validation, evaluate, schedule, propose, rounds=2, minibatch_size=2,
+        metric_limit=13, reinvest_savings=reinvest,
+    )
+    assert len(proposals) == expected_calls and selected == winner
+    assert len(paid) == len(set(paid))
+    assert any(prompt == 'rejected' for prompt, _ in paid) != reinvest
