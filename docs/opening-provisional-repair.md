@@ -21,6 +21,8 @@ One provisional parent advanced to a successful second repair in each cohort. Co
 
 On the new panels, the policy gained 17 aggregate passes and used 129 fewer calls than sequential GEPA. It still lost 12 matched critical passes. The two failing wrong-rule panels accounted for 11 losses. Full validation exposed errors in those openings, while both selected training probes passed and the first repair remained idle. Another critical loss came from a two-omission panel where the permitted second set of probes also passed. These results distinguish the tied-parent failure from a training probe that misses the failing input regime. The primary gate on the new cohort remains unmet. [Profile outcomes, costs, and gate results](opening-provisional-repair-results-v1.json)
 
+The follow-up selected training probes using input features associated with validation failures. [Probe-routing benchmark](opening-repair-probe-routing.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
