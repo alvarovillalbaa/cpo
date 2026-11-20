@@ -94,3 +94,28 @@ class GroundedStagedTests(TestCase):
         with self.assertRaisesRegex(ValueError, 'current seal'):
             study.run('0' * 64, target, lambda *_: self.fail('Responder called'), delivery='fixture')
         self.assertFalse(target.exists())
+
+    def test_certified_protocol_replays_and_cannot_bind_full_validation(self):
+        reference, certified, confirmation = (self.root / name for name in ('full', 'certified', 'confirmation'))
+        full = study.run(self.seal, reference, fixture.respond, delivery='fixture')
+        _, plan, _ = study.prepare(certify_final_draft=True)
+        self.assertTrue(plan['certifyFinalDraft'])
+        self.assertIn('cpo/anchored_validation.py', plan['sourceSha256'])
+        self.assertEqual(plan['logicalLimitsByRole'], self.plan['logicalLimitsByRole'])
+        with self.assertRaisesRegex(ValueError, 'current seal'):
+            study.run(self.seal, certified, lambda *_: self.fail('Responder called'),
+                      delivery='fixture', certify_final_draft=True)
+        result = study.run(digest(plan), certified, fixture.respond, delivery='fixture', certify_final_draft=True)
+        for key in ('selected', 'admissionDecisions', 'holdout', 'outcome'):
+            self.assertEqual(result[key], full[key])
+        self.assertLessEqual(result['logicalCallsByRole']['evaluation'], full['logicalCallsByRole']['evaluation'])
+        self.assertEqual(study.replay(certified, self.root / 'verified'), result)
+        with self.assertRaisesRegex(ValueError, 'current seal'):
+            study.prepare(certified)
+        with self.assertRaisesRegex(ValueError, 'current seal'):
+            study.prepare(reference, certify_final_draft=True)
+        _, bound, _ = study.prepare(certified, certify_final_draft=True)
+        panel = study.run(digest(bound), confirmation, fixture.respond, delivery='fixture', development=certified,
+                          certify_final_draft=True)
+        self.assertTrue(panel['outcome']['qualified'])
+        self.assertEqual(study.replay(confirmation, self.root / 'verified-panel', development=certified), panel)

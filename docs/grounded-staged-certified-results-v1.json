@@ -1,0 +1,278 @@
+{
+  "confirmation": {
+    "archiveSha256": {
+      "plan.json": "99e665dcba7cdef9f8ea9dd114db1603efd414c2a2de2488349dc9fd27477e75",
+      "result.json": "f5840cd5013a733d3aa1301b23daca160ae87c026ef826618263e7f3aff53d43",
+      "wire.jsonl": "980231e8fd7c481609fe749fa7d71062d6f0dcdd7ea53917a349caeb8a09381d"
+    },
+    "logicalCallsByRole": {
+      "qualification": 144
+    },
+    "outcome": {
+      "comparisons": {
+        "gepa-batched": {
+          "addedPasses": 14,
+          "criticalLosses": 0,
+          "qualified": true
+        },
+        "gepa-sequential": {
+          "addedPasses": 4,
+          "criticalLosses": 0,
+          "qualified": true
+        },
+        "initial": {
+          "addedPasses": 44,
+          "criticalLosses": 0,
+          "qualified": true
+        }
+      },
+      "passesByTask": {
+        "cpo": {
+          "outage": 16,
+          "ticket": 16,
+          "warehouse": 16
+        },
+        "gepa-batched": {
+          "outage": 12,
+          "ticket": 14,
+          "warehouse": 8
+        },
+        "gepa-sequential": {
+          "outage": 12,
+          "ticket": 16,
+          "warehouse": 16
+        },
+        "initial": {
+          "outage": 0,
+          "ticket": 4,
+          "warehouse": 0
+        }
+      },
+      "qualified": true
+    },
+    "physicalCallsByRole": {
+      "qualification": 144
+    },
+    "plan": {
+      "arms": [
+        "cpo",
+        "gepa-sequential",
+        "gepa-batched"
+      ],
+      "certifyFinalDraft": true,
+      "confirmationRequestCeiling": 192,
+      "corpusSha256": "a8bc9978274d57cbe0a57638b78bb7c0a8ae0fce075c2567410f653295cf7182",
+      "developmentArchiveSha256": {
+        "plan.json": "a675ae547829794f4160f5046648edea3f1e53d02eeb3630c7d6772fbea97271",
+        "result.json": "c2310c858de6516eea951c4d974e8ce21f2998d8a5d03a1ad413ae2ba1be90f7",
+        "wire.jsonl": "9258fb2a03631e59dbf7471b69e8525041e0afd306baf80826e03f06e0bac406"
+      },
+      "developmentDelivery": "fixture",
+      "developmentPlanSha256": "487e9563ed6182400f78141fcc5100084e6dfc1399f755d3a39970d1de567159",
+      "familyFields": {
+        "outage": "Plan",
+        "ticket": "Channel",
+        "warehouse": "Tier"
+      },
+      "gate": {
+        "efficiencyPercent": 90,
+        "minimumAddedPasses": 4,
+        "minimumTaskPasses": 12
+      },
+      "gepaVersion": "0.1.4",
+      "laterRetryCap": 8,
+      "logicalLimitsByRole": {
+        "qualification": 192
+      },
+      "planSha256": "bc202e1f211f9fdff89e32a2b031c94726895434ebea3be9c053072135145414",
+      "promptsSha256": "c1280ad4be22d8828729c2e08218b1a2dca7314ba40cbfa48911adeba53d2caa",
+      "protocol": "portable-grounded-staged-certified-v1-confirmation",
+      "repeats": 2,
+      "scope": "Staged CPO and two native field-scored GEPA controls with shared independent admission.",
+      "searchCap": 56,
+      "seed": 66029,
+      "sourceSha256": {
+        "benchmarks/feedback_budget.py": "faa0add092587ee151fc8071027bbd065053daf5d182bd87d903e5608a9e0f25",
+        "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+        "benchmarks/grounded_fixture.py": "f42d309d629cafd303f42bc319dc388333398134644597ad274de9d380cf2a31",
+        "benchmarks/grounded_staged.py": "3bbb929a12eaf9baf8352ac0eb9f3344ca4d361f71c321fa44f907efb2764ee8",
+        "benchmarks/grounded_staged_fixture.py": "f51677efd9b8205f273ce2242701d27813cd16c9376f0bb98cb760d0e574c98c",
+        "benchmarks/opening_screen_typed.py": "d24df6871f8fc266118faf4ac59b11c641b845a26d5c18accf3ac840821f7da8",
+        "benchmarks/typed_policy.py": "9fb85272a82c61499ba7b614d233964f9e8c077ad1ca630ac1030737202a0f1f",
+        "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+        "cpo/anchored_validation.py": "20d4ae69a2dd763800adc2c5a7b85ce0285510ca957cae4d5f5058c23a376ac0",
+        "cpo/expected_cost_proposal_cycle.py": "67c24e4b7fce56a1b941762ff8932ceedd64e07e7ff6c034b8ab0e71cc6cd182",
+        "cpo/expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+        "cpo/family_qualification.py": "9ca2fd90b8da62743f4d95165af336103ccf2447a0585522a3a5698199eb0f9b",
+        "cpo/opening_repair_cycle.py": "842f1bae68bfee3f098156dd13d673a41d3221ee74644a1f5e00b77c0dd60889",
+        "cpo/opening_screen_cycle.py": "0578b09f6f6efb55ca02b41daa2ecedb636a624db663ad2c8f1317355d8f26c2",
+        "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+        "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+        "cpo/routed_repair_cycle.py": "8daa5e6f1f49ffe3b0d49c0ea1842233ecc3f8b119738e891a4b5877b631484a",
+        "cpo/validation_guided_repair.py": "e99b6362aab2ba3d60bfb5c93b3f6374b75891d94001db08ab75d4d726c33029",
+        "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+      },
+      "splitSizes": {
+        "admission": 8,
+        "confirmation": 8,
+        "holdout": 18,
+        "train": 16,
+        "validation": 12
+      }
+    },
+    "searchCallsByArm": {
+      "cpo": 165,
+      "gepa-batched": 174,
+      "gepa-sequential": 197
+    }
+  },
+  "development": {
+    "archiveSha256": {
+      "plan.json": "a675ae547829794f4160f5046648edea3f1e53d02eeb3630c7d6772fbea97271",
+      "result.json": "c2310c858de6516eea951c4d974e8ce21f2998d8a5d03a1ad413ae2ba1be90f7",
+      "wire.jsonl": "9258fb2a03631e59dbf7471b69e8525041e0afd306baf80826e03f06e0bac406"
+    },
+    "logicalCallsByRole": {
+      "admission": 159,
+      "evaluation": 359,
+      "qualification": 324,
+      "reflection": 12
+    },
+    "outcome": {
+      "comparisons": {
+        "gepa-batched": {
+          "addedPasses": 28,
+          "criticalLosses": 0,
+          "qualified": true
+        },
+        "gepa-sequential": {
+          "addedPasses": 8,
+          "criticalLosses": 0,
+          "qualified": true
+        },
+        "initial": {
+          "addedPasses": 100,
+          "criticalLosses": 0,
+          "qualified": true
+        }
+      },
+      "passesByTask": {
+        "cpo": {
+          "outage": 36,
+          "ticket": 36,
+          "warehouse": 36
+        },
+        "gepa-batched": {
+          "outage": 28,
+          "ticket": 32,
+          "warehouse": 20
+        },
+        "gepa-sequential": {
+          "outage": 28,
+          "ticket": 36,
+          "warehouse": 36
+        },
+        "initial": {
+          "outage": 0,
+          "ticket": 8,
+          "warehouse": 0
+        }
+      },
+      "qualified": true
+    },
+    "physicalCallsByRole": {
+      "admission": 104,
+      "evaluation": 184,
+      "qualification": 324,
+      "reflection": 12
+    },
+    "plan": {
+      "arms": [
+        "cpo",
+        "gepa-sequential",
+        "gepa-batched"
+      ],
+      "certifyFinalDraft": true,
+      "corpusSha256": "a8bc9978274d57cbe0a57638b78bb7c0a8ae0fce075c2567410f653295cf7182",
+      "developmentRequestCeiling": 1272,
+      "familyFields": {
+        "outage": "Plan",
+        "ticket": "Channel",
+        "warehouse": "Tier"
+      },
+      "gate": {
+        "efficiencyPercent": 90,
+        "minimumAddedPasses": 8,
+        "minimumTaskPasses": 27
+      },
+      "gepaVersion": "0.1.4",
+      "laterRetryCap": 8,
+      "logicalLimitsByRole": {
+        "admission": 288,
+        "evaluation": 504,
+        "qualification": 432,
+        "reflection": 48
+      },
+      "planSha256": "487e9563ed6182400f78141fcc5100084e6dfc1399f755d3a39970d1de567159",
+      "protocol": "portable-grounded-staged-certified-v1",
+      "repeats": 2,
+      "scope": "Staged CPO and two native field-scored GEPA controls with shared independent admission.",
+      "searchCap": 56,
+      "seed": 66029,
+      "sourceSha256": {
+        "benchmarks/feedback_budget.py": "faa0add092587ee151fc8071027bbd065053daf5d182bd87d903e5608a9e0f25",
+        "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+        "benchmarks/grounded_fixture.py": "f42d309d629cafd303f42bc319dc388333398134644597ad274de9d380cf2a31",
+        "benchmarks/grounded_staged.py": "3bbb929a12eaf9baf8352ac0eb9f3344ca4d361f71c321fa44f907efb2764ee8",
+        "benchmarks/grounded_staged_fixture.py": "f51677efd9b8205f273ce2242701d27813cd16c9376f0bb98cb760d0e574c98c",
+        "benchmarks/opening_screen_typed.py": "d24df6871f8fc266118faf4ac59b11c641b845a26d5c18accf3ac840821f7da8",
+        "benchmarks/typed_policy.py": "9fb85272a82c61499ba7b614d233964f9e8c077ad1ca630ac1030737202a0f1f",
+        "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+        "cpo/anchored_validation.py": "20d4ae69a2dd763800adc2c5a7b85ce0285510ca957cae4d5f5058c23a376ac0",
+        "cpo/expected_cost_proposal_cycle.py": "67c24e4b7fce56a1b941762ff8932ceedd64e07e7ff6c034b8ab0e71cc6cd182",
+        "cpo/expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+        "cpo/family_qualification.py": "9ca2fd90b8da62743f4d95165af336103ccf2447a0585522a3a5698199eb0f9b",
+        "cpo/opening_repair_cycle.py": "842f1bae68bfee3f098156dd13d673a41d3221ee74644a1f5e00b77c0dd60889",
+        "cpo/opening_screen_cycle.py": "0578b09f6f6efb55ca02b41daa2ecedb636a624db663ad2c8f1317355d8f26c2",
+        "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+        "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+        "cpo/routed_repair_cycle.py": "8daa5e6f1f49ffe3b0d49c0ea1842233ecc3f8b119738e891a4b5877b631484a",
+        "cpo/validation_guided_repair.py": "e99b6362aab2ba3d60bfb5c93b3f6374b75891d94001db08ab75d4d726c33029",
+        "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+      },
+      "splitSizes": {
+        "admission": 8,
+        "confirmation": 8,
+        "holdout": 18,
+        "train": 16,
+        "validation": 12
+      }
+    },
+    "searchCallsByArm": {
+      "cpo": 165,
+      "gepa-batched": 174,
+      "gepa-sequential": 197
+    }
+  },
+  "fullValidation": {
+    "logicalCallsByRole": {
+      "admission": 159,
+      "evaluation": 362,
+      "qualification": 324,
+      "reflection": 12
+    },
+    "physicalCallsByRole": {
+      "admission": 104,
+      "evaluation": 186,
+      "qualification": 324,
+      "reflection": 12
+    },
+    "planSha256": "eda84a108aee089eda4c1c6eb56a4edb9d3e0994624b32617c8ded470086fed2",
+    "searchCallsByArm": {
+      "cpo": 168,
+      "gepa-batched": 174,
+      "gepa-sequential": 197
+    }
+  },
+  "schema": "grounded-staged-certified-rehearsal-v1"
+}
