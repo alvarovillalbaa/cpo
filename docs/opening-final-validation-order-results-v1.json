@@ -1,0 +1,315 @@
+{
+  "portable": {
+    "design": {
+      "archivedScheduleBefore": "original row order within known and critical groups",
+      "costGate": "use no more reads in either fresh mode and fewer in at least one",
+      "decision": "exactly preserve original nomination, admission and holdout replies",
+      "freshCohortSha256": "fa22aa0c2b7d4e253ade7250b33b78400a99199560730fc51dbf1f787bac1dc9",
+      "freshSeeds": [
+        66713,
+        66721,
+        66733,
+        66739
+      ],
+      "gepaVersion": "0.1.4",
+      "protocol": "cpo-opening-final-validation-order-v1",
+      "schedule": "preserve known and critical priority, then ascending family upper bound",
+      "searchCap": 56,
+      "sourceSha256": {
+        "anchored_validation.py": "20d4ae69a2dd763800adc2c5a7b85ce0285510ca957cae4d5f5058c23a376ac0",
+        "family_qualification.py": "9ca2fd90b8da62743f4d95165af336103ccf2447a0585522a3a5698199eb0f9b",
+        "opening_final_validation_order.py": "05b0ccfdade28d3b2add6ff26078c5c139fa714da41d0a45bc75a5c21af87b3e",
+        "opening_interaction_transfer.py": "348a8e69fe057be95a6380a91193bcdc6a4d5f404f464712a1b7e782e429d37d",
+        "opening_screen_cycle.py": "a66e540551ad157fd1a2ee55c094e5f4b16ca894b1b51493f021c51175175240",
+        "opening_screen_typed.py": "d24df6871f8fc266118faf4ac59b11c641b845a26d5c18accf3ac840821f7da8",
+        "opening_staged_witness_transfer.py": "702e4381a96637d58dd012ca0c2b3583671d604db24e2d55e0c2bb90f2b9ce3d",
+        "opening_validation_certificate_transfer.py": "65e1d6d924152ec8ddd29eddd66a93c5b6c0ac48cbc84ad4265271913e15bd2b",
+        "optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+        "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364",
+        "validation_guided_repair.py": "238ffa97895fc7ecd841e7e07c8d49d8b09fd209ec8bb1a2c0b1b7521c4b48c6"
+      }
+    },
+    "designSha256": "659e2a0809a04856ef292037806e8bba4705df47c34691d9c368bc01044400cf",
+    "results": {
+      "costGatePassed": true,
+      "modes": {
+        "held-out": {
+          "changedByPanel": {
+            "archive/one-exception/66721": 1,
+            "archive/overlap/66713": 1,
+            "archive/overlap/66739": 2,
+            "archive/three-exceptions/66713": 1,
+            "dispatch/one-exception/66721": 1,
+            "dispatch/one-exception/66733": 1,
+            "dispatch/overlap/66713": 3,
+            "dispatch/three-exceptions/66713": 3,
+            "dispatch/three-exceptions/66733": 1,
+            "dispatch/three-exceptions/66739": 1,
+            "venue/overlap/66733": 2,
+            "venue/overlap/66739": 1,
+            "venue/three-exceptions/66721": 2
+          },
+          "comparisons": {
+            "exact-certificate": {
+              "callDelta": -20,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 0,
+              "passed": false
+            },
+            "gepa-batched": {
+              "callDelta": -48,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 120,
+              "passed": true
+            },
+            "gepa-sequential": {
+              "callDelta": -282,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 76,
+              "passed": true
+            }
+          },
+          "panels": 36,
+          "searchReadsSaved": 20,
+          "totals": {
+            "exact-certificate": {
+              "countedCalls": 2228,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1436
+            },
+            "gepa-batched": {
+              "countedCalls": 2256,
+              "holdoutPasses": 528,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 36,
+              "qualificationLookups": 726,
+              "searchLookups": 1494
+            },
+            "gepa-sequential": {
+              "countedCalls": 2490,
+              "holdoutPasses": 572,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 110,
+              "qualificationLookups": 716,
+              "searchLookups": 1664
+            },
+            "tight-family-certificate": {
+              "countedCalls": 2208,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1416
+            }
+          },
+          "traceSha256": "02c471b8fd969443c46dbc1e7080adf7c4555278936a20214d7a28601f2adfdb"
+        },
+        "shifted-exceptions": {
+          "changedByPanel": {
+            "archive/one-exception/66721": 1,
+            "archive/overlap/66721": 1,
+            "archive/overlap/66733": 1,
+            "archive/overlap/66739": 1,
+            "archive/three-exceptions/66713": 1,
+            "archive/three-exceptions/66721": 1,
+            "archive/three-exceptions/66733": -1,
+            "dispatch/one-exception/66713": 1,
+            "dispatch/one-exception/66739": 1,
+            "dispatch/overlap/66713": 1,
+            "venue/one-exception/66713": 1,
+            "venue/overlap/66739": 1,
+            "venue/three-exceptions/66713": 2,
+            "venue/three-exceptions/66739": -1
+          },
+          "comparisons": {
+            "exact-certificate": {
+              "callDelta": -11,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 0,
+              "passed": false
+            },
+            "gepa-batched": {
+              "callDelta": -26,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 134,
+              "passed": true
+            },
+            "gepa-sequential": {
+              "callDelta": -283,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 84,
+              "passed": true
+            }
+          },
+          "panels": 36,
+          "searchReadsSaved": 11,
+          "totals": {
+            "exact-certificate": {
+              "countedCalls": 2247,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1455
+            },
+            "gepa-batched": {
+              "countedCalls": 2262,
+              "holdoutPasses": 514,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 36,
+              "qualificationLookups": 732,
+              "searchLookups": 1494
+            },
+            "gepa-sequential": {
+              "countedCalls": 2519,
+              "holdoutPasses": 564,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 115,
+              "qualificationLookups": 723,
+              "searchLookups": 1681
+            },
+            "tight-family-certificate": {
+              "countedCalls": 2236,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1444
+            }
+          },
+          "traceSha256": "d38650da2add3407a547555879a799ee0cdf0527cb9ed4e3a1da8eda29de2719"
+        }
+      }
+    }
+  },
+  "recordedSol": {
+    "cohorts": {
+      "matched-seeds": {
+        "outage": {
+          "orderedTraceSha256": "4a978b0effe341ce5d6f62c6c35b70569fe28bde346f7c75a7566e737ac39624",
+          "originalTraceSha256": "fb047f61f6720ddeaa78b205452bc05636ba48ecf847782395f2c11f6b8157a4",
+          "paths": 40,
+          "readsSavedFrequency": {
+            "-1": 4,
+            "0": 36
+          },
+          "totals": {
+            "ordered_historicalMicrousd": 6741960,
+            "ordered_searchReads": 539,
+            "original_historicalMicrousd": 6708864,
+            "original_searchReads": 535
+          }
+        },
+        "ticket": {
+          "orderedTraceSha256": "80ae6301c19cc50d48efd6d6247efe24f533b7fa480da9331faf25259a4d746c",
+          "originalTraceSha256": "80ae6301c19cc50d48efd6d6247efe24f533b7fa480da9331faf25259a4d746c",
+          "paths": 40,
+          "readsSavedFrequency": {
+            "0": 40
+          },
+          "totals": {
+            "ordered_historicalMicrousd": 2453472,
+            "ordered_searchReads": 209,
+            "original_historicalMicrousd": 2453472,
+            "original_searchReads": 209
+          }
+        },
+        "warehouse": {
+          "orderedTraceSha256": "dc00149b98f5298e1b3e4b858b2805adbdbdadf904edcc66fdd44ef8757e3acd",
+          "originalTraceSha256": "dc00149b98f5298e1b3e4b858b2805adbdbdadf904edcc66fdd44ef8757e3acd",
+          "paths": 40,
+          "readsSavedFrequency": {
+            "0": 40
+          },
+          "totals": {
+            "ordered_historicalMicrousd": 4390368,
+            "ordered_searchReads": 260,
+            "original_historicalMicrousd": 4390368,
+            "original_searchReads": 260
+          }
+        }
+      },
+      "second-seeds": {
+        "outage": {
+          "orderedTraceSha256": "62ab8ec33ff1997c8cced5cfb6970a8210f786f1a6a3f4adb7d9f65670f82b6d",
+          "originalTraceSha256": "7cf665d78e6c346fa60f9d3aa4fafaded89d060a35e9b6733d891c084e47774a",
+          "paths": 40,
+          "readsSavedFrequency": {
+            "-1": 3,
+            "0": 37
+          },
+          "totals": {
+            "ordered_historicalMicrousd": 6549768,
+            "ordered_searchReads": 525,
+            "original_historicalMicrousd": 6525840,
+            "original_searchReads": 522
+          }
+        },
+        "ticket": {
+          "orderedTraceSha256": "275da6927c9c7521dd9098cc12a07ac637be53e92bfcb1478c2af91c78ad8b76",
+          "originalTraceSha256": "275da6927c9c7521dd9098cc12a07ac637be53e92bfcb1478c2af91c78ad8b76",
+          "paths": 40,
+          "readsSavedFrequency": {
+            "0": 40
+          },
+          "totals": {
+            "ordered_historicalMicrousd": 2446200,
+            "ordered_searchReads": 205,
+            "original_historicalMicrousd": 2446200,
+            "original_searchReads": 205
+          }
+        },
+        "warehouse": {
+          "orderedTraceSha256": "de52360830397411256894f13e329a8b2dfb423197ad7b29729d234dfe243a3c",
+          "originalTraceSha256": "de52360830397411256894f13e329a8b2dfb423197ad7b29729d234dfe243a3c",
+          "paths": 40,
+          "readsSavedFrequency": {
+            "0": 40
+          },
+          "totals": {
+            "ordered_historicalMicrousd": 4695216,
+            "ordered_searchReads": 300,
+            "original_historicalMicrousd": 4695216,
+            "original_searchReads": 300
+          }
+        }
+      }
+    },
+    "protocol": "sol-final-validation-order-replay-v1",
+    "sourcePlanSha256": "48cadf93b180ba66d7c3edfb8fe5c75f8d5dbdc0eb3bdcb1fa3ee7dc9b2c9a6a",
+    "sourceReportSha256": "f089a2b051a307d0802bf9b6fde7019aa20ff1cd813cab048a626a4c19491be8"
+  },
+  "schema": "cpo-final-validation-order-results-v1",
+  "verification": {
+    "allSixArchivedSolPathsMatched": true,
+    "baseRevision": "c06bf3449db7602a35db1c09c755752203e2bbed",
+    "existingReportPreserved": true,
+    "focusedTests": "7 passed",
+    "gepaWheelSha256": "12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "networkGuardVerified": true,
+    "scratchBytes": 32027623,
+    "scratchRemoved": true,
+    "solReplaySourceSha256": "75c91d4fb736119ce4527a9def7b7c6e310addb20301491250cb2a41a537ba3b",
+    "staleSealRejectedWithoutOutput": true,
+    "standingLabStorageException": true,
+    "storageGuardFreeGiB": 6.3,
+    "twiceByteIdenticalPerDataset": true
+  }
+}
