@@ -20,6 +20,8 @@ Both early-veto variants recovered all 18 warehouse holdout passes at cap 48. Th
 
 On the six untouched seeds at cap 48, coverage-first scored 324/324 with 790 lookups. Batched GEPA scored 280/324 with 897, sequential GEPA scored 306/324 with 849, and the previous coverage gate scored 324/324 with 831. Across all seeds at cap 48, descriptive 95% paired bootstrap intervals for the lookup difference were [−280, 187] against batched GEPA and [−265, 0] against sequential GEPA. The intervals describe resampling 24 fixture seeds with all three tasks grouped together, using 10,000 draws with seed 3501. The aggregate lookup savings at cap 48 were 58 and 129, respectively. Generalization to fresh model replies remains unverified. [Matched outcomes, critical losses and lookup counts](joint-coverage-confirmation-results-v1.json)
 
+The follow-up tested the same confirmation rule on recorded model outcomes. Early rejection improved the outage replay over the late gate, and matched critical losses against GEPA persisted. [Recorded transfer](recorded-coverage-confirmation.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 and Optuna 4.5.0. The [verification receipt](joint-coverage-confirmation-verification-v1.json) records wheel fingerprints.
