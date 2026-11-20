@@ -21,6 +21,8 @@ At cap 48, CPO gained 102 passes over the strongest affordable GEPA setting for 
 
 At cap 48 the precheck preserved CPO's 1,777 pooled passes and reduced lookups from 8,821 to 5,290. It skipped 469 of 660 searches. Ticket and warehouse accounted for 413 skips. Retaining those two starts also reproduces their holdout scores and has zero search and qualification cost in this replay. [All points, score matches and critical losses](recorded-coverage-frontier-results-v1.json)
 
+A follow-up used one shared validation case to prioritize small groups of challengers and brought the cap-48 CPO result below the prior fixed GEPA lookup count. [Challenger screening replay](recorded-coverage-window.md)
+
 ## Reproduce
 
 Use the intact GEPA research and Open Evals archives with pinned GEPA 0.1.4.
