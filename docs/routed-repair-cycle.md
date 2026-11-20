@@ -35,11 +35,13 @@ next_incumbent = result.prompt
 
 A repair must add exact validation passes and preserve critical passes and each family's score. A first repair that keeps every row's exact outcome and, with `field_credit=True`, preserves every row's matched-field count can serve as the second repair's parent. The last accepted nominee stays eligible for qualification. `qualification_limit` caps the separate proof. `result.prompt` returns the starting incumbent if qualification rejects the nominee or ends undecided.
 
+Set `recover_stalls=True` to consider an opening with a strict matched-field gain that preserves every row's exact outcome and field score. With this option, a first batch of passing probes can also use the remaining stage on unused training rows. The option was tested on clean, incomplete, and redundant feature mappings. [Stall recovery results](opening-stall-recovery.md)
+
 ## Reproduce the comparison
 
 Clean source and an independently installed wheel reproduced the three sealed cohort traces across all 90 scripted policy panels. Each environment passed 14 focused tests with socket creation and DNS blocked. Wheel builds and installs used local tooling with the index disabled. The CLI rejected a stale seal and preserved an existing report. The 29.6 MB scratch directory was removed under the standing LAB exception after Storage Guard measured 4.5 GiB free. [Benchmark results](opening-repair-probe-routing.md) · [Replay artifact](routed-repair-api-replay-v1.json) · [Verification receipt](routed-repair-api-verification-v1.json)
 
-The panels use one scripted rule generator. The replay measures neither live model quality nor provider costs. Use GEPA 0.1.4 and a fresh output path to reproduce the comparison.
+The panels use one scripted rule generator. The replay measures neither live model quality nor provider costs. Use GEPA 0.1.4, the source at commit `7abb73f5f2a94be65011533188270738bc5fe3c3`, and a fresh output path to reproduce the original report seal.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.routed_repair_api_replay

@@ -34,10 +34,21 @@ def _rank_probes(training, validation, passed, features):
     return sorted(training, key=lambda row: sum(weights.get(key, 0) for key in features(row)), reverse=True)
 
 
+def _opening_plateau(result, incumbent, validation, ledger):
+    if not result.events or result.events[-1]['kind'] != 'full-validation':
+        return None
+    candidate = result.events[-1]['prompt']
+    paired = [(ledger[incumbent, row.id], ledger[candidate, row.id]) for row in validation]
+    if (any(old.passed != new.passed or old.matched_fields > new.matched_fields for old, new in paired)
+            or not any(old.matched_fields < new.matched_fields for old, new in paired)):
+        return None
+    return candidate
+
+
 def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, propose, *, input_features,
                             opening_pair, metric_limit, qualify, diagnostic_prompt=None, max_training_probes=2,
                             screen_rows=8, repeats=1, minimum_gain=1, seed=0, field_credit=False,
-                            qualification_limit=None):
+                            qualification_limit=None, recover_stalls=False):
     """Route training probes using input-only categorical features of each row.
 
     Each repair funds a full validation panel before evaluating training probes.
@@ -46,6 +57,11 @@ def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, pro
     The second repair may build on a row-preserving tie, but the nominee must
     improve exact validation passes while preserving critical passes and scores
     by family. Only the final nominee enters independent qualification.
+
+    With recover_stalls, a row-preserving field-credit gain at the opening
+    may supply repair context. A batch of passing probes may also yield its
+    parent to the unused repair stage. The existing stage and budget caps
+    apply, and a provisional opening still needs a strict validation gain.
     """
     if not callable(input_features):
         raise ValueError('The input feature extractor must be callable')
@@ -55,6 +71,8 @@ def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, pro
         raise ValueError('The training probe cap must be a nonnegative integer')
     if qualification_limit is not None and (type(qualification_limit) is not int or qualification_limit < 0):
         raise ValueError('Qualification limit must be a nonnegative integer')
+    if type(recover_stalls) is not bool:
+        raise ValueError('Recover stalls must be a boolean')
 
     train, validation, holdout = tuple(train), tuple(validation), tuple(holdout)
     ledger, feature_cache = {}, {}
@@ -90,7 +108,11 @@ def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, pro
     result = opening.search
     accepted = parent = result.prompt
     if accepted == incumbent:
-        return opening
+        if not (recover_stalls and field_credit):
+            return opening
+        parent = _opening_plateau(result, incumbent, validation, ledger)
+        if parent is None:
+            return opening
 
     events, used, reflections = list(result.events), set(), 0
     training = balanced_order(train, seed)
@@ -109,6 +131,8 @@ def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, pro
         event = {'kind': 'routed-probes', 'probeRows': [row.id for row in probes], 'status': 'no-training-error'}
         events.append(event)
         if all(reply.passed for _, reply in feedback):
+            if recover_stalls:
+                continue
             break
 
         repair = _first_proposal(propose(parent, feedback, [], 1))
@@ -138,6 +162,8 @@ def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, pro
             break
 
     result = replace(result, prompt=accepted, evaluations=len(ledger), reflections=reflections, events=events)
+    if accepted == incumbent:
+        return ExpectedCostProposalCycleResult(result, None)
     options = dict(repeats=repeats, minimum_gain=minimum_gain, seed=seed, evaluation_limit=qualification_limit)
     if qualification_limit is not None and qualification_limit < 2 * repeats * len(holdout):
         decision = certify_paired_qualification(incumbent, accepted, holdout, qualify, **options)

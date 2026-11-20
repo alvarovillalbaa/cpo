@@ -19,7 +19,7 @@ On `stock/two-missing/60373`, full validation found zero exact gain over the sta
 
 ## Reproduce offline
 
-Use GEPA 0.1.4 and a fresh output path.
+Use GEPA 0.1.4, the source at commit `5bfa5067c2b0ddeb63c2ffc698a141b7d8bf41a7`, and a fresh output path.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.opening_probe_robustness
@@ -29,3 +29,5 @@ PYTHONHASHSEED=0 python -B -m benchmarks.opening_probe_robustness \
 ```
 
 Two offline replays matched byte for byte. Each replay ran 60 scripted panels under three feature modes, with 120 native GEPA paths shared across modes. Eleven focused tests passed. The runner rejected an altered seal and preserved an existing output. Storage Guard measured 4.6 GiB free. The 29.3 MB scratch export was removed under the standing LAB exception. Live performance on incomplete or redundant features remains unmeasured. [Verification receipt](opening-probe-robustness-verification-v1.json)
+
+The follow-up let a field-score gain unlock repair context and allowed unused probes after a passing batch. It cleared the clean and redundant-feature transfer gates and still missed the critical-case gate with a field hidden. [Stall recovery comparison](opening-stall-recovery.md)

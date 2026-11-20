@@ -86,7 +86,42 @@ class RoutedRepairCycleTests(TestCase):
 
     def test_rejects_invalid_options_before_dispatch(self):
         for options in ({'input_features': None}, {'max_training_probes': True},
-                        {'qualification_limit': -1}, {'diagnostic_prompt': 'raw'}):
+                        {'qualification_limit': -1}, {'diagnostic_prompt': 'raw'}, {'recover_stalls': 1}):
             with self.subTest(options=options), self.assertRaises(ValueError):
                 self.cycle(**options)
         self.assertEqual(self.search, [])
+
+    def test_recovers_a_field_plateau_without_qualifying_the_provisional_opening(self):
+        self.scores['opening'] = (2, 1, 1, 0)
+        self.scores['provisional'] = (2, 2, 1, 0)
+        blocked = self.cycle()
+        self.assertEqual(blocked.search.prompt, 'old')
+        self.assertEqual(self.proposals, [])
+        recovered = self.cycle(recover_stalls=True)
+        self.assertEqual(recovered.prompt, 'final')
+        self.assertEqual(self.transforms, ['opening', 'provisional'])
+        self.assertEqual({prompt for prompt, _, _ in self.proof}, {'old', 'final'})
+
+    def test_field_plateau_rejects_per_row_regressions_before_training(self):
+        self.scores['old'] = (2, 0, 1, 0)
+        self.scores['opening'] = (2, 1, 0, 1)
+        outcome = self.cycle(recover_stalls=True)
+        self.assertEqual(outcome.search.prompt, 'old')
+        self.assertEqual((self.transforms, self.proposals, self.proof), ([], [], []))
+
+    def test_retry_uses_unused_probes_and_keeps_the_validation_reserve(self):
+        evaluate = self.evaluate
+
+        def pass_top_probes(prompt, row):
+            if row.id in ('t2', 't3'):
+                self.search.append((prompt, row.id))
+                return Observation(True, {'case': row.id}, 2)
+            return evaluate(prompt, row)
+
+        self.evaluate = pass_top_probes
+        self.scores['provisional'] = self.scores['final']
+        outcome = self.cycle(recover_stalls=True, metric_limit=16)
+        self.assertEqual(outcome.search.prompt, 'provisional')
+        self.assertEqual(outcome.search.evaluations, 16)
+        self.assertEqual([event['status'] for event in outcome.search.events[-2:]], ['no-training-error', 'accepted'])
+        self.assertEqual({row.id for row, _ in self.proposals[0][1]}, {'t0', 't1'})
