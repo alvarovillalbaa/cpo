@@ -16,6 +16,7 @@ def run_validation_guided_repair_cycle(
     incumbent, train, validation, holdout, evaluate, propose, *, input_features, opening_pair,
     metric_limit, qualify, diagnostic_prompt=None, screen_rows=8, repeats=1, minimum_gain=1,
     seed=0, field_credit=False, qualification_limit=None, retry_probe_limit=0, certify_final_draft=False,
+    certify_opening=False,
 ):
     """Stage up to three training-supported edits before final validation.
 
@@ -33,6 +34,9 @@ def run_validation_guided_repair_cycle(
     certify_final_draft allows final validation to stop when exact bounds
     settle the same decision. Training and independent qualification retain
     their original schedules.
+
+    certify_opening skips unnecessary incumbent reads when the supplied
+    rewrite passes all validation and a measured incumbent miss proves gain.
     """
     if not callable(input_features):
         raise ValueError('The input feature extractor must be callable')
@@ -75,6 +79,7 @@ def run_validation_guided_repair_cycle(
         incumbent, train, validation, holdout, observe, opening_pair=opening_pair,
         metric_limit=metric_limit, qualify=deferred, screen_rows=screen_rows, repeats=repeats,
         minimum_gain=minimum_gain, seed=seed, field_credit=field_credit, qualification_limit=0,
+        certify_opening=certify_opening,
     )
     result = opening.search
     anchor = parent = result.prompt

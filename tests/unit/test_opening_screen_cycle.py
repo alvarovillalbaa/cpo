@@ -80,6 +80,39 @@ class OpeningScreenCycleTests(TestCase):
         self.assertEqual(result.prompt, 'old')
         self.assertEqual(self.qualification_calls, [])
 
+    def test_perfect_opening_skips_incumbent_suffix_with_same_limited_qualification(self):
+        self.known['rewrite'] = '111111'
+        oracle = self.run_cycle(qualification_limit=3)
+        original_proof = self.qualification_calls.copy()
+        self.qualification_calls.clear()
+        self.search_calls.clear()
+        result = self.run_cycle(qualification_limit=3, certify_opening=True)
+        self.assertEqual(result.search.prompt, oracle.search.prompt)
+        self.assertEqual(result.qualification, oracle.qualification)
+        self.assertEqual(self.qualification_calls, original_proof)
+        self.assertEqual(result.search.evaluations, 7)
+        self.assertEqual(set(self.search_calls), {('old', '0'), *(('rewrite', row.id) for row in self.validation)})
+        self.assertEqual(result.search.events[-1]['kind'], 'certified-full-validation')
+
+    def test_opening_certificate_falls_back_and_protects_critical_suffix(self):
+        self.validation[2] = Row('2', 'task', critical=True)
+        result = self.run_cycle(qualification_limit=0, certify_opening=True)
+        self.assertEqual(result.search.prompt, 'old')
+        self.assertEqual(result.search.evaluations, 12)
+        self.assertEqual(len(set(self.search_calls)), 12)
+        self.assertIsNone(result.qualification)
+        self.assertTrue(result.search.events[-1]['critical_loss'])
+
+    def test_full_budget_expected_schedule_keeps_complete_validation(self):
+        self.known['rewrite'] = '111111'
+        original = self.run_cycle()
+        reference = self.search_calls.copy(), self.qualification_calls.copy()
+        self.search_calls.clear()
+        self.qualification_calls.clear()
+        default = self.run_cycle(certify_opening=True)
+        self.assertEqual(default, original)
+        self.assertEqual((self.search_calls, self.qualification_calls), reference)
+
     def test_short_panel_uses_its_available_rows(self):
         self.validation = self.validation[:2]
         result = self.run_cycle(screen_rows=8, metric_limit=4)

@@ -109,3 +109,36 @@ class ValidationGuidedRepairTests(TestCase):
                 self.assertEqual(set(reads) - set(fewer), {('repair', 'ordinary')})
                 self.assertEqual(set(fewer) - set(reads), set())
                 passes['repair'].discard('critical')
+
+    def test_certified_opening_in_the_repair_cycle_keeps_independent_proof(self):
+        train = [Row('t0', 'a')]
+        validation = [Row('miss', 'a'), Row('critical', 'a', True), Row('ordinary', 'b')]
+        holdout = [Row('q0', 'a'), Row('q1', 'b')]
+
+        def run(certify):
+            calls, qualifier = [], []
+
+            def evaluate(prompt, row):
+                calls.append((prompt, row.id))
+                return Observation(prompt == 'rewrite' or prompt == 'old' and row.id != 'miss', {})
+
+            def qualify(prompt, row, repeat):
+                qualifier.append((prompt, row.id, repeat))
+                return prompt == 'rewrite'
+
+            outcome = run_validation_guided_repair_cycle(
+                'old', train, validation, holdout, evaluate, lambda *_: self.fail('An edit should not be requested'),
+                input_features=lambda _: self.fail('A feature probe should not be requested'),
+                opening_pair=ProposalPair('rewrite', 'repair'), metric_limit=6, screen_rows=2, qualify=qualify,
+                repeats=2, certify_opening=certify, certify_final_draft=True,
+            )
+            return outcome, calls, qualifier
+
+        full, calls, proof = run(False)
+        shortcut, saved, same_proof = run(True)
+        self.assertEqual(full.prompt, 'rewrite')
+        self.assertEqual(shortcut.prompt, full.prompt)
+        self.assertEqual(shortcut.qualification, full.qualification)
+        self.assertEqual(same_proof, proof)
+        self.assertEqual(set(calls) - set(saved), {('old', 'ordinary')})
+        self.assertEqual(shortcut.search.evaluations, len(saved))

@@ -40,6 +40,8 @@ The shared schedule closed the batched cost gap in both modes. CPO cleared three
 
 The optional retry recovered both losses and preserved every matched critical pass on a separate scripted cohort. [Residual retry results](opening-residual-retry.md)
 
+The cycle also accepts `certify_opening=True` for a perfect rewrite and `certify_final_draft=True` for later edits. [Opening certificate integration](opening-certificate.md#use-it-inside-staged-repair)
+
 ## Reproduce offline
 
 Use GEPA 0.1.4, the source at commit `48d3121190940f3335b65564d701cadcb00920fa`, and a fresh output path to reproduce this seal.

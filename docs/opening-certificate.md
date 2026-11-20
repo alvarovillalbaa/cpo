@@ -20,6 +20,12 @@ result = search_with_opening_certificate(
 
 The function returns a search result. Use independent qualification before deploying its selected prompt. Equivalence assumes fixed valid replies for a prompt and case. The certificate can change the order in which a live evaluator sees requests.
 
+## Use it inside staged repair
+
+Pass `certify_opening=True` to `run_validation_guided_repair_cycle`. The cycle extends a perfect short-screen rewrite through the full validation suffix before certifying it. An imperfect suffix triggers the complete validation check, with the earlier reads reused. Combine the option with `certify_final_draft=True` to also certify later edits. [Staged repair API](../cpo/validation_guided_repair.py)
+
+The integrated replay tested both options together on 240 sealed Sol paths. The opening option saved 403 incumbent evaluations and $1.782816 in historical search estimates. It preserved all nominations, proposal sequences, and 1,330 admission callbacks. Both variants made 239 admissions. The archival run used four training cases, four validation cases, and four disjoint admission cases with one recorded reply each. In the original GEPA research checkout, `python -B run_recorded_opening_cost.py --staged-opening --out NEW_REPORT.json` reproduces the report with SHA-256 `5534dfed2bb0905dd93815466b0735183abe5eefa5f74fd03979f28909f01c91`.
+
 ## Recorded Sol token costs
 
 The previous audit found a pooled CPO cost advantage but missed the 10% savings requirement for tied ticket-routing scores against sequential GEPA. Replaying the certificate on the same archived receipts cleared that gap. [Baseline and costing method](recorded-opening-token-cost.md)
