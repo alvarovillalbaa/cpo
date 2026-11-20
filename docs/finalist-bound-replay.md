@@ -37,3 +37,5 @@ PYTHONHASHSEED=0 python -B -m benchmarks.finalist_bound_replay \
 ```
 
 Two offline replays per cohort matched byte for byte. Both variants preserved the original nominee, promotion, qualification trace, and final holdout score in all 20,480 paired cycle checks. All 80 original CPO panel traces reproduced. The unit test checked both bound policies on 4,096 binary matrices, including critical protection and exact paid counts. The CLI rejected a stale seal. Storage Guard measured 15.8 GiB free, and the 11.9 MB scratch overlay was removed under the standing LAB exception. The data are deterministic archived outcomes. Fresh proposal quality and provider costs remain unverified. [Replay runner](../benchmarks/finalist_bound_replay.py)
+
+The follow-up tests whether the shortlist can be settled before completing the probes and measures when paying for a second finalist improves the outcome. [Early screening and backup finalists](finalist-screen-budget.md)
