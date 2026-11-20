@@ -119,3 +119,26 @@ class GroundedStagedTests(TestCase):
                           certify_final_draft=True)
         self.assertTrue(panel['outcome']['qualified'])
         self.assertEqual(study.replay(confirmation, self.root / 'verified-panel', development=certified), panel)
+
+    def test_combined_protocol_binds_both_certificates_and_rejects_single_certificate(self):
+        from benchmarks.grounded_staged_combined_fixture import mixed_fixture
+
+        single, combined = self.root / 'single', self.root / 'combined'
+        _, prior, _ = study.prepare(certify_final_draft=True)
+        baseline = study.run(digest(prior), single, mixed_fixture, delivery='fixture', certify_final_draft=True)
+        flags = {'certify_final_draft': True, 'certify_opening': True}
+        _, frozen, _ = study.prepare(**flags)
+        self.assertEqual(frozen['protocol'], 'portable-grounded-staged-combined-v1')
+        self.assertTrue(frozen['certifyOpening'] and frozen['certifyFinalDraft'])
+        self.assertIn('cpo/opening_certificate.py', frozen['sourceSha256'])
+        self.assertEqual(prior['logicalLimitsByRole'], frozen['logicalLimitsByRole'])
+        current = study.run(digest(frozen), combined, mixed_fixture, delivery='fixture', **flags)
+        self.assertEqual(current['selected'], baseline['selected'])
+        self.assertEqual(current['admissionDecisions'], baseline['admissionDecisions'])
+        self.assertEqual(current['holdout'], baseline['holdout'])
+        self.assertLess(current['searchCallsByArm']['cpo'], baseline['searchCallsByArm']['cpo'])
+        self.assertEqual(study.replay(combined, self.root / 'replayed'), current)
+        with self.assertRaisesRegex(ValueError, 'current seal'):
+            study.prepare(combined, certify_final_draft=True)
+        with self.assertRaisesRegex(ValueError, 'current seal'):
+            study.prepare(single, **flags)

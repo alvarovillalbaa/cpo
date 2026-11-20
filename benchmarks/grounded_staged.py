@@ -69,9 +69,9 @@ def cohorts():
     return result
 
 
-def plan(groups, *, certify_final_draft=False):
-    if type(certify_final_draft) is not bool:
-        raise ValueError('The staged certificate setting must be boolean')
+def plan(groups, *, certify_final_draft=False, certify_opening=False):
+    if any(type(flag) is not bool for flag in (certify_final_draft, certify_opening)):
+        raise ValueError('Staged certificate settings must be boolean')
     names = ('benchmarks/grounded_staged.py', 'benchmarks/grounded_staged_fixture.py',
              'benchmarks/grounded.py', 'benchmarks/grounded_fixture.py', 'benchmarks/feedback_budget.py',
              'benchmarks/typed_policy.py', 'benchmarks/opening_screen_typed.py', 'cpo/_contract.py',
@@ -81,6 +81,8 @@ def plan(groups, *, certify_final_draft=False):
              'requirements-benchmark.txt')
     if certify_final_draft:
         names += ('cpo/anchored_validation.py',)
+    if certify_opening:
+        names += ('cpo/opening_certificate.py',)
     sources = {}
     for name in names:
         path = Path(find_spec(f'cpo.{Path(name).stem}').origin) if name.startswith('cpo/') else ROOT / name
@@ -93,6 +95,9 @@ def plan(groups, *, certify_final_draft=False):
               'scope': 'Staged CPO and two native field-scored GEPA controls with shared independent admission.'}
     if certify_final_draft:
         frozen.update(protocol='portable-grounded-staged-certified-v1', certifyFinalDraft=True)
+    if certify_opening:
+        protocol = 'portable-grounded-staged-combined-v1' if certify_final_draft else 'portable-grounded-staged-opening-v1'
+        frozen.update(protocol=protocol, certifyOpening=True)
     return frozen
 
 
@@ -108,7 +113,7 @@ def cases(task, rows):
                 row['critical'], len(row['expected'])) for row in rows]
 
 
-def choose(task, groups, dispatch, *, certify_final_draft=False):
+def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening=False):
     train, validation, admission = (groups[name] for name in ('train', 'validation', 'admission'))
     training = [{key: row[key] for key in ('id', 'input', 'expected')} for row in train]
     train_ids = {row['id'] for row in train}
@@ -156,7 +161,7 @@ def choose(task, groups, dispatch, *, certify_final_draft=False):
                 lambda parent, feedback, *_: reflect(parent, [reply.feedback for _, reply in feedback]),
                 input_features=input_features, opening_pair=ProposalPair(*bank), metric_limit=grounded.METRIC_LIMIT,
                 qualify=qualify, repeats=grounded.REPEATS, seed=SEED, field_credit=True, retry_probe_limit=RETRY_LIMIT,
-                certify_final_draft=certify_final_draft,
+                certify_final_draft=certify_final_draft, certify_opening=certify_opening,
             )
             nominee, selected[arm] = result.search.prompt, result.prompt
             proof = result.qualification
@@ -206,14 +211,15 @@ def record(handle, value):
     fsync(handle.fileno())
 
 
-def prepare(development=None, *, certify_final_draft=False):
+def prepare(development=None, *, certify_final_draft=False, certify_opening=False):
     groups = cohorts()
-    frozen = plan(groups, certify_final_draft=certify_final_draft)
+    frozen = plan(groups, certify_final_draft=certify_final_draft, certify_opening=certify_opening)
     if development is None:
         return groups, frozen, None
     snapshots = {name: (development / name).read_bytes() for name in ARCHIVE_FILES}
     with TemporaryDirectory(prefix='cpo-confirmation-bind-') as scratch:
-        result = replay(development, Path(scratch) / 'verified', certify_final_draft=certify_final_draft)
+        result = replay(development, Path(scratch) / 'verified', certify_final_draft=certify_final_draft,
+                        certify_opening=certify_opening)
     if not result['outcome']['qualified']:
         raise ValueError('Independent confirmation requires a qualifying development archive')
     if any((development / name).read_bytes() != raw for name, raw in snapshots.items()):
@@ -229,11 +235,11 @@ def prepare(development=None, *, certify_final_draft=False):
     return groups, bound, result
 
 
-def run(seal, directory, respond, *, delivery, development=None, certify_final_draft=False):
+def run(seal, directory, respond, *, delivery, development=None, certify_final_draft=False, certify_opening=False):
     """Run with an explicitly supplied text responder and preserve an exact journal."""
     if development is not None and directory.resolve().is_relative_to(development.resolve()):
         raise ValueError('Confirmation requires an archive outside the development directory')
-    groups, frozen, prior = prepare(development, certify_final_draft=certify_final_draft)
+    groups, frozen, prior = prepare(development, certify_final_draft=certify_final_draft, certify_opening=certify_opening)
     if seal != digest(frozen) or version('gepa') != frozen['gepaVersion'] or delivery not in ('fixture', 'model'):
         raise ValueError('Use the current seal, pinned GEPA, and declared delivery')
     if prior is not None and prior['delivery'] != delivery:
@@ -283,7 +289,7 @@ def run(seal, directory, respond, *, delivery, development=None, certify_final_d
                 for task, task_groups in groups.items():
                     prompts[task], decisions[task] = choose(
                         task, task_groups, lambda *args, **kw: dispatch(task, *args, **kw),
-                        certify_final_draft=certify_final_draft)
+                        certify_final_draft=certify_final_draft, certify_opening=certify_opening)
             else:
                 prompts, decisions = prior['selected'], prior['admissionDecisions']
             split = 'holdout' if prior is None else 'confirmation'
@@ -303,12 +309,14 @@ def run(seal, directory, respond, *, delivery, development=None, certify_final_d
     return result
 
 
-def replay(directory, fresh, *, development=None, certify_final_draft=None):
+def replay(directory, fresh, *, development=None, certify_final_draft=None, certify_opening=None):
     if fresh.resolve().is_relative_to(directory.resolve()):
         raise ValueError('Replay requires a separate archive outside its source directory')
     saved = grounded.load_json((directory / 'plan.json').read_bytes())
     if certify_final_draft is None:
         certify_final_draft = saved.get('certifyFinalDraft', False)
+    if certify_opening is None:
+        certify_opening = saved.get('certifyOpening', False)
     seal = saved.get('planSha256')
     delivery = saved.get('delivery')
     pending = iter((directory / 'wire.jsonl').read_bytes().splitlines())
@@ -324,7 +332,7 @@ def replay(directory, fresh, *, development=None, certify_final_draft=None):
         return finish.get('response')
 
     result = run(seal, fresh, respond, delivery=delivery, development=development,
-                 certify_final_draft=certify_final_draft)
+                 certify_final_draft=certify_final_draft, certify_opening=certify_opening)
     if next(pending, None) is not None or any((directory / name).read_bytes() != (fresh / name).read_bytes()
                                              for name in ARCHIVE_FILES):
         raise ValueError('The replayed archive differs from the saved results')
@@ -338,6 +346,8 @@ def main():
     modes.add_argument('--replay', type=Path)
     parser.add_argument('--certify-final-draft', action='store_true',
                         help='Use the separately sealed exact final-draft validation protocol')
+    parser.add_argument('--certify-opening', action='store_true',
+                        help='Enable the separately sealed exact opening rewrite certificate')
     parser.add_argument('--development', type=Path, help='Bind an independent panel to this development archive')
     parser.add_argument('--out', type=Path)
     args = parser.parse_args()
@@ -347,12 +357,14 @@ def main():
         from benchmarks.grounded_staged_fixture import respond
 
         result = run(args.fixture, args.out, respond, delivery='fixture', development=args.development,
-                     certify_final_draft=args.certify_final_draft)
+                     certify_final_draft=args.certify_final_draft, certify_opening=args.certify_opening)
     elif args.replay:
         result = replay(args.replay, args.out, development=args.development,
-                        certify_final_draft=True if args.certify_final_draft else None)
+                        certify_final_draft=True if args.certify_final_draft else None,
+                        certify_opening=True if args.certify_opening else None)
     else:
-        _, frozen, _ = prepare(args.development, certify_final_draft=args.certify_final_draft)
+        _, frozen, _ = prepare(args.development, certify_final_draft=args.certify_final_draft,
+                               certify_opening=args.certify_opening)
         result = {**frozen, 'planSha256': digest(frozen)}
     print(json.dumps(result, sort_keys=True, indent=2))
 

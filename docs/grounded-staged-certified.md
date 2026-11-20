@@ -6,7 +6,7 @@ The certified development fixture used 624 distinct physical replies, compared w
 
 ## Reproduce offline
 
-Use GEPA 0.1.4 and fresh archive paths. The confirmation seal binds the exact certified development archive, including its delivery class. The runner rejects the use of a full-validation archive as certified development.
+Use source from commit `de4f2457cdfe8aa93e1085abd568cce35a2d54a1`, GEPA 0.1.4, and fresh archive paths. The confirmation seal binds the exact certified development archive, including its delivery class. The runner rejects the use of a full-validation archive as certified development. The newer combined protocol enables both exact certificates. [Combined comparison](grounded-staged-combined.md)
 
 ```sh
 python -B -m benchmarks.grounded_staged --certify-final-draft \
