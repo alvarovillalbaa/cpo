@@ -28,6 +28,8 @@ The gate requires at least 14 of 18 passes in each task panel, preserved totals 
 
 The separate component-composition benchmark enables GEPA's native merge and compares it with a guarded CPO variant. [Merge comparison](component-merge.md)
 
+An archived fixed-pool comparison tests scored history, Successive Halving, and probability-guided validation allocation alongside CPO and both GEPA modes. [Recorded score allocation](recorded-score-allocation.md)
+
 ## Reproduce
 
 Use commit `fbfb7a3c74d9d0728ba0628a8ddd93ee1c3158b1` to reproduce the original source hashes. The later precomputed opening is evaluated separately. [Feedback budget study](feedback-budget.md)

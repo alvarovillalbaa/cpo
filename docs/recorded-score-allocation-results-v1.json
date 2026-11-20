@@ -1,0 +1,642 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "challengers": 8,
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "retain-start",
+      "strict-precheck",
+      "full-score-history",
+      "successive-halving",
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck",
+      "posterior-allocation"
+    ],
+    "minimumLookupSavingPercent": 10,
+    "priorPlanSha256": "a82528da4c0e71807ab0591e7956c7fbb6c33ad66549377c07a1aa95862541c5",
+    "protocol": "cpo-recorded-score-allocation-v1",
+    "scope": "Use rotated starts and the original seeded rosters. Allocate validation replies from a shared fixed prompt pool under two paid caps. All arms use the incumbent precheck and independent qualification. Report recorded ARC costs and AIME lookup counts.",
+    "searchCaps": [
+      36,
+      52
+    ],
+    "sourceReportSha256": "e28e02dd61f2a53ca927c5a389774647bad110b8d4b8c5074667cd96e99d0fbb",
+    "sourceSha256": {
+      "benchmarks/gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "benchmarks/pool.py": "ba1e6012e5068d34a57b8139ecba2aff5dbe809051f6958a9f23134f5fe69016",
+      "benchmarks/recorded_math_validation_ties.py": "ea8a310a65392ddad1d3ecc5c1a4639674b941e8e02e344a81abf1ad802f07b0",
+      "benchmarks/recorded_score_allocation.py": "78b50888ce60b51e6a5366dcf2aad6df3cbe1e9f867fa98156e725330b94678d",
+      "benchmarks/recorded_training_backup.py": "c7a81031c50422f3b1ee3526207b1eab4b3c341551e33067a901d7a121cf35d8",
+      "benchmarks/recorded_training_corroboration.py": "d5b7600cb817033643f32585e61925e581d73d887bc662123158b61159510e5a",
+      "benchmarks/recorded_validation_stability.py": "91451429cc63b2957eca302662366f6d9830f46aa127b907b06aa05b14b80ebf",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "cpo/pool.py": "5e5e2ca90b0e6839d6c14d6eb9ba3680874092063196fec406f396c765a03ec0"
+    }
+  },
+  "planSha256": "66cb2e3592d55e6177bfffdf9f1ceda64aae77c9d9a4338428512fb9e9d10bcd",
+  "results": {
+    "aime": {
+      "36": {
+        "posteriorVsGepa": {
+          "caseSensitivityRanges": {
+            "full-score-history": [
+              -48,
+              -10
+            ],
+            "gepa-batched": [
+              -111,
+              -21
+            ],
+            "gepa-sequential": [
+              -121,
+              -37
+            ],
+            "joint": [
+              -122,
+              -37
+            ],
+            "retain-start": [
+              -130,
+              21
+            ],
+            "strict-precheck": [
+              -18,
+              7
+            ],
+            "successive-halving": [
+              -72,
+              -18
+            ]
+          },
+          "gate": "failed",
+          "lookupSavingFractions": {
+            "gepa-batched": -0.381605486083098,
+            "gepa-sequential": -0.030591775325977934
+          }
+        },
+        "totals": {
+          "full-score-history": {
+            "holdoutPasses": 4030,
+            "paidLookups": 12215,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1649,
+            "searchLookups": 10566,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "5df96c85fc911ad1d3c6dc91b390414f8fd82b91e7ed30adad4c515da0d16298"
+          },
+          "gepa-batched-precheck": {
+            "holdoutPasses": 4066,
+            "paidLookups": 7437,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1124,
+            "searchLookups": 6313,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "890a0edbfc97421e92abf6af7dfb3e45a39cd37bebec21acecd480b79a4cae96"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 4079,
+            "paidLookups": 9970,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1288,
+            "searchLookups": 8682,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "69933fe4e24216eca341d7cbde1c3771e72836d7eb224cb25c925c79c8a2707f"
+          },
+          "posterior-allocation": {
+            "holdoutPasses": 4001,
+            "paidLookups": 10275,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1725,
+            "searchLookups": 8550,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ba2439bcb0c91bdbb0c0969df9173e80f0bcd25b4f524955bb8f992d8391a6c7"
+          },
+          "retain-start": {
+            "holdoutPasses": 4056,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f7e5fe5ece14730e2c6f35b51646de7be98094e7e1d2b071d6f44af354bee8dc"
+          },
+          "strict-precheck": {
+            "holdoutPasses": 4007,
+            "paidLookups": 10260,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1733,
+            "searchLookups": 8527,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8e08ff75400cd8c2188c44278f11a2f42804b3ee9fac5db6e7014739d2fd7630"
+          },
+          "successive-halving": {
+            "holdoutPasses": 4045,
+            "paidLookups": 9374,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1749,
+            "searchLookups": 7625,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ce93d051f2995058b4e12f192b008e8a94d152d3e1b8c8d18a1ce22026b24689"
+          }
+        },
+        "trialsPerMethod": 320
+      },
+      "52": {
+        "posteriorVsGepa": {
+          "caseSensitivityRanges": {
+            "full-score-history": [
+              -38,
+              -6
+            ],
+            "gepa-batched": [
+              -111,
+              -18
+            ],
+            "gepa-sequential": [
+              -114,
+              -33
+            ],
+            "joint": [
+              -116,
+              -34
+            ],
+            "retain-start": [
+              -130,
+              23
+            ],
+            "strict-precheck": [
+              0,
+              0
+            ],
+            "successive-halving": [
+              -60,
+              -9
+            ]
+          },
+          "gate": "failed",
+          "lookupSavingFractions": {
+            "gepa-batched": 0.11743509950045042,
+            "gepa-sequential": 0.19430322966507177
+          }
+        },
+        "totals": {
+          "full-score-history": {
+            "holdoutPasses": 4023,
+            "paidLookups": 15643,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1729,
+            "searchLookups": 13914,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "69e2222bf0cf1f20dd68107ad87df8999c82911c3d74b454779d19db4bbcd71b"
+          },
+          "gepa-batched-precheck": {
+            "holdoutPasses": 4065,
+            "paidLookups": 12211,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1329,
+            "searchLookups": 10882,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "97d1d46bc21fb62d6897993febb6dca6c5897356ac1973b1c209f95ff6a3e610"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 4074,
+            "paidLookups": 13376,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1419,
+            "searchLookups": 11957,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ba527ebb00d4bb692d7af8396869d986e1c64c9804bb8b4c15c828ea9a126842"
+          },
+          "posterior-allocation": {
+            "holdoutPasses": 4002,
+            "paidLookups": 10777,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1756,
+            "searchLookups": 9021,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0da74d653d60eed47cd2f5f00cd1f90537b452701409b89e92e550b0418e5a43"
+          },
+          "retain-start": {
+            "holdoutPasses": 4056,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f7e5fe5ece14730e2c6f35b51646de7be98094e7e1d2b071d6f44af354bee8dc"
+          },
+          "strict-precheck": {
+            "holdoutPasses": 4002,
+            "paidLookups": 10959,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1756,
+            "searchLookups": 9203,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "305f27354c18e3014483eb003babca16525f01d316d5b4dfcaee1b14c6044b3d"
+          },
+          "successive-halving": {
+            "holdoutPasses": 4036,
+            "paidLookups": 10271,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1731,
+            "searchLookups": 8540,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3f55e7da6e5b7d7800a7cca3822b675a898e804ef7cf9c59f391e2bef812871c"
+          }
+        },
+        "trialsPerMethod": 320
+      }
+    },
+    "arc": {
+      "36": {
+        "posteriorVsGepa": {
+          "caseSensitivityRanges": {
+            "full-score-history": [
+              65,
+              164
+            ],
+            "gepa-batched": [
+              196,
+              430
+            ],
+            "gepa-sequential": [
+              86,
+              285
+            ],
+            "joint": [
+              86,
+              285
+            ],
+            "retain-start": [
+              767,
+              1245
+            ],
+            "strict-precheck": [
+              19,
+              56
+            ],
+            "successive-halving": [
+              57,
+              127
+            ]
+          },
+          "gate": "failed",
+          "lookupSavingFractions": {
+            "gepa-batched": -0.3194375516956162,
+            "gepa-sequential": 0.04877757901013715
+          }
+        },
+        "totals": {
+          "full-score-history": {
+            "historicalCostNanodollars": 1115479663400,
+            "historicalErrors": 309,
+            "holdoutPasses": 13839,
+            "paidLookups": 9002,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2378,
+            "searchLookups": 6624,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3cdc7232fee402b259bb605740950fb68b4302ed71014307810bd89fbbf43bf7"
+          },
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 755538137050,
+            "historicalErrors": 179,
+            "holdoutPasses": 13641,
+            "paidLookups": 6045,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1704,
+            "searchLookups": 4341,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "53ffb8d369583b18fa42d935ab929fc43fe98685c5389fc492c26ab37e615a6e"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 1064254876650,
+            "historicalErrors": 219,
+            "holdoutPasses": 13768,
+            "paidLookups": 8385,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1953,
+            "searchLookups": 6432,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3abec5ddd203b709b661e1b98f9996597e87cdd6db8635d4d115e5325ef0a2a5"
+          },
+          "posterior-allocation": {
+            "historicalCostNanodollars": 1077259761200,
+            "historicalErrors": 324,
+            "holdoutPasses": 13952,
+            "paidLookups": 7976,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2611,
+            "searchLookups": 5365,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f98e5b30a22c6238f319ebf0f4db0b814ef81d530cf0aef09f7fb4ad96ac85f0"
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "historicalErrors": 0,
+            "holdoutPasses": 12944,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0e69f7a7c44928f2ebc883e752bd6d1715416112b18b42875132a35df5689f67"
+          },
+          "strict-precheck": {
+            "historicalCostNanodollars": 1074937220450,
+            "historicalErrors": 322,
+            "holdoutPasses": 13915,
+            "paidLookups": 8039,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2595,
+            "searchLookups": 5444,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "a57e5b750cd05acf83b7710481a9a05c9e479877f2dbbdcb0c6becb191d35b01"
+          },
+          "successive-halving": {
+            "historicalCostNanodollars": 1253499167600,
+            "historicalErrors": 313,
+            "holdoutPasses": 13862,
+            "paidLookups": 9885,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2519,
+            "searchLookups": 7366,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "265368c60342cb8514e60505400340fa0b0286bda453a0f23e3be11a1324c10f"
+          }
+        },
+        "trialsPerMethod": 360
+      },
+      "52": {
+        "posteriorVsGepa": {
+          "caseSensitivityRanges": {
+            "full-score-history": [
+              19,
+              65
+            ],
+            "gepa-batched": [
+              76,
+              304
+            ],
+            "gepa-sequential": [
+              53,
+              237
+            ],
+            "joint": [
+              53,
+              237
+            ],
+            "retain-start": [
+              743,
+              1226
+            ],
+            "strict-precheck": [
+              0,
+              0
+            ],
+            "successive-halving": [
+              10,
+              60
+            ]
+          },
+          "gate": "passed",
+          "lookupSavingFractions": {
+            "gepa-batched": 0.1459493537879584,
+            "gepa-sequential": 0.27227146566389115
+          }
+        },
+        "totals": {
+          "full-score-history": {
+            "historicalCostNanodollars": 1464841221900,
+            "historicalErrors": 401,
+            "holdoutPasses": 13890,
+            "paidLookups": 11752,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2552,
+            "searchLookups": 9200,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0ad1df7e58b29fd3fa9d9f328f7439ac038ed4acde445c0824c5c89b6a3e0d72"
+          },
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 1194709882550,
+            "historicalErrors": 269,
+            "holdoutPasses": 13744,
+            "paidLookups": 9517,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2018,
+            "searchLookups": 7499,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "643c98bedb3751ac44f4e0415ff74b819d2138dd2b4511852f21c8cdaa2039a3"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 1422254473400,
+            "historicalErrors": 314,
+            "holdoutPasses": 13789,
+            "paidLookups": 11169,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2086,
+            "searchLookups": 9083,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "1e5d372e4a498ea4c2ba11d89f341efbf6b0e91234d0dc320867be99f24cd1ff"
+          },
+          "posterior-allocation": {
+            "historicalCostNanodollars": 1099089343450,
+            "historicalErrors": 335,
+            "holdoutPasses": 13932,
+            "paidLookups": 8128,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2635,
+            "searchLookups": 5493,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ab4b4ff98b91ccb54ecdd80006635aac1e6fa226c097fc8a1ebec3903bea8d0b"
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "historicalErrors": 0,
+            "holdoutPasses": 12944,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0e69f7a7c44928f2ebc883e752bd6d1715416112b18b42875132a35df5689f67"
+          },
+          "strict-precheck": {
+            "historicalCostNanodollars": 1134184195950,
+            "historicalErrors": 350,
+            "holdoutPasses": 13932,
+            "paidLookups": 8422,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2635,
+            "searchLookups": 5787,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0ac9b1cf561c79305ab973562b8a6488aabbf8925977a5be0d9b9675a2a42828"
+          },
+          "successive-halving": {
+            "historicalCostNanodollars": 1422485607200,
+            "historicalErrors": 360,
+            "holdoutPasses": 13898,
+            "paidLookups": 11227,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2591,
+            "searchLookups": 8636,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "08a6d1e82d233c73fe078081245c48d1155ed818c9fdf2e378842074757f591f"
+          }
+        },
+        "trialsPerMethod": 360
+      }
+    }
+  }
+}
