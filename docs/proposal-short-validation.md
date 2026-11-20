@@ -21,6 +21,8 @@ On the additional archive, the 12-case screen selected 718 challengers over 1,02
 
 The eight-case screen finished one pass behind batched GEPA, used 23,357 fewer lookups, and had a joint paired range of −51 to +39 passes. It used 889 fewer lookups than original cap-72 CPO and called the proposal callback 1,749 times, compared with 69 calls for cap-72 CPO. The callback returns archived proposals in this benchmark. Live reflection cost would have to average below 0.53 evaluation lookups per extra callback for the lookup saving against cap-72 CPO to cover the added calls. The original search remains the default. [Panel outcomes, search counters, and paired ranges](proposal-short-validation-results-v1.json)
 
+The follow-up capped later calls to the proposer while retaining short screening and full validation. [Reflection cap replay](proposal-reflection-cap.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
