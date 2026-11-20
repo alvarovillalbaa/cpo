@@ -33,6 +33,8 @@ On the eight-challenger AIME rotation, a paid validation certificate identified 
 
 On the eight-challenger ARC rotation, the precheck skipped 106 searches and cut the certified backup's paid lookups by 2,498. The matched saving against batched GEPA was 1.8% and strict CPO scored 110 more passes on 206 fewer lookups. Every matched backup comparison missed the archived superiority gate. These findings apply to retrospectively chosen training cases and stored model replies. Fresh-model qualification remains pending.
 
+A follow-up tested whether protecting the same validation replies could recover the gains without a separate training check. It also measured the incumbent precheck on strict CPO. [Validation stability replay](recorded-validation-stability.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 and the bundled score snapshot. Preview the plan seal, then run to a fresh report path.

@@ -1,0 +1,2256 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "challengerCounts": [
+      4,
+      8
+    ],
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "methods": [
+      "retain-start",
+      "strict",
+      "certified-precheck",
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck",
+      "strict-precheck",
+      "split-veto",
+      "split-race",
+      "row-race"
+    ],
+    "minimumLookupSavingPercent": 10,
+    "priorPlanSha256": "93ba18473387eb885d5bfe6f0cca2f4d043795b3fbc91f17abe274445c7b144c",
+    "priorReportSha256": "e5c74e67ab56d98935056ffb31ca8a85df10f222ff9f65cc20f98b20e50c74b0",
+    "protocol": "cpo-recorded-validation-stability-v1",
+    "scope": "Require strict validation gain with nonnegative margin in each seeded half or preserve every incumbent validation pass. Compare a post-selection veto and an eligibility-aware race. Apply the same paid qualification precheck as GEPA.",
+    "searchCap": 180,
+    "sourceSha256": {
+      "benchmarks/recorded_math_validation_ties.py": "ea8a310a65392ddad1d3ecc5c1a4639674b941e8e02e344a81abf1ad802f07b0",
+      "benchmarks/recorded_training_backup.py": "c7a81031c50422f3b1ee3526207b1eab4b3c341551e33067a901d7a121cf35d8",
+      "benchmarks/recorded_training_corroboration.py": "d5b7600cb817033643f32585e61925e581d73d887bc662123158b61159510e5a",
+      "benchmarks/recorded_validation_stability.py": "91451429cc63b2957eca302662366f6d9830f46aa127b907b06aa05b14b80ebf",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "cpo/pool.py": "5e5e2ca90b0e6839d6c14d6eb9ba3680874092063196fec406f396c765a03ec0"
+    }
+  },
+  "planSha256": "a82528da4c0e71807ab0591e7956c7fbb6c33ad66549377c07a1aa95862541c5",
+  "results": {
+    "aime": {
+      "root/4": {
+        "changesFromStrict": {
+          "row-race": {
+            "nominations": 24,
+            "promotions": 7,
+            "trialsImproved": 2,
+            "trialsRegressed": 0
+          },
+          "split-race": {
+            "nominations": 26,
+            "promotions": 9,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "split-veto": {
+            "nominations": 26,
+            "promotions": 9,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "strict-precheck": {
+            "nominations": 27,
+            "promotions": 9,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          }
+        },
+        "comparisons": {
+          "certified-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -17,
+                12
+              ],
+              "gepa-sequential": [
+                -20,
+                13
+              ],
+              "joint": [
+                -21,
+                9
+              ],
+              "strict-precheck": [
+                -14,
+                20
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.06872246696035242,
+              "gepa-sequential": 0.007364975450081833
+            }
+          },
+          "row-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -20,
+                13
+              ],
+              "gepa-sequential": [
+                -17,
+                6
+              ],
+              "joint": [
+                -21,
+                5
+              ],
+              "strict-precheck": [
+                -3,
+                8
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.11013215859030837,
+              "gepa-sequential": 0.1734860883797054
+            }
+          },
+          "split-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -25,
+                13
+              ],
+              "gepa-sequential": [
+                -20,
+                5
+              ],
+              "joint": [
+                -25,
+                4
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.08898678414096917,
+              "gepa-sequential": 0.15384615384615385
+            }
+          },
+          "split-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -25,
+                13
+              ],
+              "gepa-sequential": [
+                -20,
+                5
+              ],
+              "joint": [
+                -25,
+                4
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.0881057268722467,
+              "gepa-sequential": 0.1530278232405892
+            }
+          },
+          "strict-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -25,
+                13
+              ],
+              "gepa-sequential": [
+                -20,
+                5
+              ],
+              "joint": [
+                -25,
+                4
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.0828193832599119,
+              "gepa-sequential": 0.14811783960720132
+            }
+          }
+        },
+        "totals": {
+          "certified-precheck": {
+            "availableBackups": 5,
+            "backupPromotions": 0,
+            "holdoutPasses": 489,
+            "paidLookups": 1213,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 121,
+            "searchLookups": 1092,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "cb4df15999ad5b01acab7eb57a3a4e37fa9bb85b2e713b3fde80b2d58b9e67a4",
+            "trainingChecks": 32,
+            "trainingLookups": 257,
+            "trainingVetoes": 22
+          },
+          "gepa-batched-precheck": {
+            "holdoutPasses": 491,
+            "paidLookups": 1135,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 139,
+            "searchLookups": 996,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "6d1cbfd67f5aad858179d0a824961b0dbc54559610a09c61e39c0cee6a211ca4"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 493,
+            "paidLookups": 1222,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 159,
+            "searchLookups": 1063,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e33a0593953de432bdfbb5e3748207aee6ae257bd34a6204ad1cda2803228b94"
+          },
+          "retain-start": {
+            "holdoutPasses": 500,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "5797dcf03f18ccbac51d2ee74ff0f720517642c2ba1315c584c7b1626be85632"
+          },
+          "row-race": {
+            "holdoutPasses": 488,
+            "paidLookups": 1010,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 187,
+            "searchLookups": 823,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "a32935f9704c9dfc832ff73a0da7581d22f83b9d1acffac09565e7c94a604553"
+          },
+          "split-race": {
+            "holdoutPasses": 486,
+            "paidLookups": 1034,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 200,
+            "searchLookups": 834,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ee28a58e75d6ce33271af6dcd49132d7e2eca56ce0b738e50bcaec632e856e89"
+          },
+          "split-veto": {
+            "holdoutPasses": 486,
+            "paidLookups": 1035,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 200,
+            "searchLookups": 835,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8895c60947e2360043137ab5e423420fb6fcf58a724ab2db6c6b363ed58ea32b"
+          },
+          "strict": {
+            "holdoutPasses": 486,
+            "paidLookups": 1016,
+            "qualificationLookups": 181,
+            "searchLookups": 835,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "933b763761c8094a55d4663ef22d618da5f40f8ed2556c970dcfb6dfd77692fa"
+          },
+          "strict-precheck": {
+            "holdoutPasses": 486,
+            "paidLookups": 1041,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 206,
+            "searchLookups": 835,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "d573ee6f6de3e4109cf7d518167f4a88e5668917bb7dae60e66040e756c06a1d"
+          }
+        },
+        "trialsPerMethod": 40
+      },
+      "root/8": {
+        "changesFromStrict": {
+          "row-race": {
+            "nominations": 29,
+            "promotions": 10,
+            "trialsImproved": 1,
+            "trialsRegressed": 1
+          },
+          "split-race": {
+            "nominations": 30,
+            "promotions": 11,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "split-veto": {
+            "nominations": 30,
+            "promotions": 11,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "strict-precheck": {
+            "nominations": 31,
+            "promotions": 11,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          }
+        },
+        "comparisons": {
+          "certified-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -23,
+                4
+              ],
+              "gepa-sequential": [
+                -27,
+                16
+              ],
+              "joint": [
+                -27,
+                3
+              ],
+              "strict-precheck": [
+                -9,
+                28
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.09934497816593886,
+              "gepa-sequential": 0.1148068669527897
+            }
+          },
+          "row-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -40,
+                0
+              ],
+              "gepa-sequential": [
+                -31,
+                -3
+              ],
+              "joint": [
+                -40,
+                -6
+              ],
+              "strict-precheck": [
+                -6,
+                4
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.2287117903930131,
+              "gepa-sequential": 0.24195278969957082
+            }
+          },
+          "split-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -39,
+                0
+              ],
+              "gepa-sequential": [
+                -28,
+                -3
+              ],
+              "joint": [
+                -39,
+                -6
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.21561135371179038,
+              "gepa-sequential": 0.2290772532188841
+            }
+          },
+          "split-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -39,
+                0
+              ],
+              "gepa-sequential": [
+                -28,
+                -3
+              ],
+              "joint": [
+                -39,
+                -6
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.2177947598253275,
+              "gepa-sequential": 0.23122317596566525
+            }
+          },
+          "strict-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -39,
+                0
+              ],
+              "gepa-sequential": [
+                -28,
+                -3
+              ],
+              "joint": [
+                -39,
+                -6
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.21451965065502182,
+              "gepa-sequential": 0.22800429184549356
+            }
+          }
+        },
+        "totals": {
+          "certified-precheck": {
+            "availableBackups": 7,
+            "backupNominations": 1,
+            "backupPromotions": 0,
+            "holdoutPasses": 485,
+            "paidLookups": 1650,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 133,
+            "searchLookups": 1517,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bae5f61b17f0506924f7b7ae3353a1c8c12b021d24d2ae7c0805b8b72557fc1c",
+            "trainingChecks": 38,
+            "trainingLookups": 301,
+            "trainingVetoes": 25
+          },
+          "gepa-batched-precheck": {
+            "holdoutPasses": 494,
+            "paidLookups": 1832,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 174,
+            "searchLookups": 1658,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "dcad2447cd9ff6cab507fd3803c640696c5982f7c0d68c65b80421a711a4b97d"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 491,
+            "paidLookups": 1864,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 195,
+            "searchLookups": 1669,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "99b4ce6e5876520256846291d6db08630e98a4dce088bfd7e5be682ffed8f1ba"
+          },
+          "retain-start": {
+            "holdoutPasses": 500,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "5797dcf03f18ccbac51d2ee74ff0f720517642c2ba1315c584c7b1626be85632"
+          },
+          "row-race": {
+            "holdoutPasses": 475,
+            "paidLookups": 1413,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 211,
+            "searchLookups": 1202,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "4618b65450479715c718aa53afe475bb35b464b26237630049240a9b149821b5"
+          },
+          "split-race": {
+            "holdoutPasses": 476,
+            "paidLookups": 1437,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 217,
+            "searchLookups": 1220,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "19b19b1421dbc3d216561a4367eaa38599a9250b5965d90b5b0999d2bd90e7bb"
+          },
+          "split-veto": {
+            "holdoutPasses": 476,
+            "paidLookups": 1433,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 217,
+            "searchLookups": 1216,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bc9ce0f574746c0f729c58e318decd3d9def846e5d45f5fb50074f5808240724"
+          },
+          "strict": {
+            "holdoutPasses": 476,
+            "paidLookups": 1422,
+            "qualificationLookups": 206,
+            "searchLookups": 1216,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "034a5ea2ad7cfa5b3eb5aac24ef24b0e719dd036a6fae1f75913e99a9f1528ba"
+          },
+          "strict-precheck": {
+            "holdoutPasses": 476,
+            "paidLookups": 1439,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 223,
+            "searchLookups": 1216,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "5f0b28eaa5638dbdbc47cce94d39986800a526fd56034c586c53cd2691ea2964"
+          }
+        },
+        "trialsPerMethod": 40
+      },
+      "rotated/4": {
+        "changesFromStrict": {
+          "row-race": {
+            "nominations": 167,
+            "promotions": 47,
+            "trialsImproved": 5,
+            "trialsRegressed": 8
+          },
+          "split-race": {
+            "nominations": 185,
+            "promotions": 55,
+            "trialsImproved": 1,
+            "trialsRegressed": 1
+          },
+          "split-veto": {
+            "nominations": 182,
+            "promotions": 54,
+            "trialsImproved": 0,
+            "trialsRegressed": 1
+          },
+          "strict-precheck": {
+            "nominations": 189,
+            "promotions": 55,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          }
+        },
+        "comparisons": {
+          "certified-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                39
+              ],
+              "gepa-sequential": [
+                -26,
+                25
+              ],
+              "joint": [
+                -27,
+                25
+              ],
+              "strict-precheck": [
+                3,
+                82
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.05018216006581267,
+              "gepa-sequential": 0.011066843736166445
+            }
+          },
+          "row-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -65,
+                -5
+              ],
+              "gepa-sequential": [
+                -78,
+                -16
+              ],
+              "joint": [
+                -78,
+                -16
+              ],
+              "strict-precheck": [
+                -23,
+                15
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.11246915031143495,
+              "gepa-sequential": 0.16423196104471005
+            }
+          },
+          "split-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -65,
+                3
+              ],
+              "gepa-sequential": [
+                -80,
+                -9
+              ],
+              "joint": [
+                -80,
+                -9
+              ],
+              "strict-precheck": [
+                -8,
+                7
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.10059936537783523,
+              "gepa-sequential": 0.15305444887118194
+            }
+          },
+          "split-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -63,
+                -2
+              ],
+              "gepa-sequential": [
+                -78,
+                -14
+              ],
+              "joint": [
+                -78,
+                -14
+              ],
+              "strict-precheck": [
+                -8,
+                3
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.10165706898577977,
+              "gepa-sequential": 0.15405046480743692
+            }
+          },
+          "strict-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -63,
+                2
+              ],
+              "gepa-sequential": [
+                -77,
+                -10
+              ],
+              "joint": [
+                -77,
+                -10
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.09683864143847691,
+              "gepa-sequential": 0.14951305887560867
+            }
+          }
+        },
+        "totals": {
+          "certified-precheck": {
+            "availableBackups": 36,
+            "backupNominations": 12,
+            "backupPromotions": 5,
+            "holdoutPasses": 4078,
+            "paidLookups": 8936,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 999,
+            "searchLookups": 7937,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "d91252006f0585ff9a2bbe91faac775ed3f9c78eb211929c6ad4c1cf09b2cb0a",
+            "trainingChecks": 225,
+            "trainingLookups": 1823,
+            "trainingVetoes": 151
+          },
+          "gepa-batched-precheck": {
+            "holdoutPasses": 4067,
+            "paidLookups": 8509,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1165,
+            "searchLookups": 7344,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "335b9762a01edbbc69baf53b7f15c48b799e56d779593527cce4535ac2ebf779"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 4079,
+            "paidLookups": 9036,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1209,
+            "searchLookups": 7827,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8c8a9159517e5be885766f7856f15d1950bf4f291a2ee66d9908503bdaa832ee"
+          },
+          "retain-start": {
+            "holdoutPasses": 4056,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f7e5fe5ece14730e2c6f35b51646de7be98094e7e1d2b071d6f44af354bee8dc"
+          },
+          "row-race": {
+            "holdoutPasses": 4033,
+            "paidLookups": 7552,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1449,
+            "searchLookups": 6103,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bc149570268ea53fd58742764b4adf9da653f37c7a813251fdfd06bb31b3be3a"
+          },
+          "split-race": {
+            "holdoutPasses": 4036,
+            "paidLookups": 7653,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1545,
+            "searchLookups": 6108,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "cb0ab23aad7dbaa8a6d0c13778d14477205d92aa807843cdf4bda781b8b8f5fb"
+          },
+          "split-veto": {
+            "holdoutPasses": 4034,
+            "paidLookups": 7644,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1530,
+            "searchLookups": 6114,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "104d6383673cc73cfd9615dc82f67c711526f030c0e0413aeb64946bc442989e"
+          },
+          "strict": {
+            "holdoutPasses": 4036,
+            "paidLookups": 7726,
+            "qualificationLookups": 1354,
+            "searchLookups": 6372,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "fb5e4b1ed0549be7e4b1f3903a9fbce945e44f07efdee3b95d101c79b36db9cb"
+          },
+          "strict-precheck": {
+            "holdoutPasses": 4036,
+            "paidLookups": 7685,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1571,
+            "searchLookups": 6114,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "10600f20437d47e23cc9aabfe92a0c46e7929377706f950d9f3c30f719bfff39"
+          }
+        },
+        "trialsPerMethod": 320
+      },
+      "rotated/8": {
+        "changesFromStrict": {
+          "row-race": {
+            "nominations": 206,
+            "promotions": 61,
+            "trialsImproved": 5,
+            "trialsRegressed": 8
+          },
+          "split-race": {
+            "nominations": 217,
+            "promotions": 64,
+            "trialsImproved": 2,
+            "trialsRegressed": 2
+          },
+          "split-veto": {
+            "nominations": 211,
+            "promotions": 62,
+            "trialsImproved": 1,
+            "trialsRegressed": 2
+          },
+          "strict-precheck": {
+            "nominations": 224,
+            "promotions": 66,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          }
+        },
+        "comparisons": {
+          "certified-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -14,
+                51
+              ],
+              "gepa-sequential": [
+                -23,
+                23
+              ],
+              "joint": [
+                -23,
+                22
+              ],
+              "strict-precheck": [
+                30,
+                115
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.06532438478747203,
+              "gepa-sequential": 0.08644314868804664
+            }
+          },
+          "row-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -104,
+                -14
+              ],
+              "gepa-sequential": [
+                -118,
+                -39
+              ],
+              "joint": [
+                -118,
+                -39
+              ],
+              "strict-precheck": [
+                -22,
+                14
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.18791946308724833,
+              "gepa-sequential": 0.20626822157434402
+            }
+          },
+          "split-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -102,
+                -10
+              ],
+              "gepa-sequential": [
+                -118,
+                -33
+              ],
+              "joint": [
+                -118,
+                -33
+              ],
+              "strict-precheck": [
+                -14,
+                11
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.18568232662192394,
+              "gepa-sequential": 0.20408163265306123
+            }
+          },
+          "split-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -99,
+                -9
+              ],
+              "gepa-sequential": [
+                -113,
+                -34
+              ],
+              "joint": [
+                -113,
+                -34
+              ],
+              "strict-precheck": [
+                -9,
+                9
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.188441461595824,
+              "gepa-sequential": 0.20677842565597668
+            }
+          },
+          "strict-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -99,
+                -7
+              ],
+              "gepa-sequential": [
+                -114,
+                -33
+              ],
+              "joint": [
+                -114,
+                -33
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.18277404921700224,
+              "gepa-sequential": 0.20123906705539357
+            }
+          }
+        },
+        "totals": {
+          "certified-precheck": {
+            "availableBackups": 58,
+            "backupNominations": 16,
+            "backupPromotions": 6,
+            "holdoutPasses": 4073,
+            "paidLookups": 12534,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1097,
+            "searchLookups": 11437,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8c7f90f33283979b7f6cb0adab46e3aebe88cda78bfd78175b901e2d7e7c18f7",
+            "trainingChecks": 282,
+            "trainingLookups": 2234,
+            "trainingVetoes": 188
+          },
+          "gepa-batched-precheck": {
+            "holdoutPasses": 4055,
+            "paidLookups": 13410,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1370,
+            "searchLookups": 12040,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "db226ae3b5f8a306ec9012b7607331a93ca3e0a32faa2761e678a1fa24d25a2c"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 4074,
+            "paidLookups": 13720,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1419,
+            "searchLookups": 12301,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3daef1869296bf7e1ab72f4630f638834996dfb4857697fafdb1f29dbbe0ead9"
+          },
+          "retain-start": {
+            "holdoutPasses": 4056,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f7e5fe5ece14730e2c6f35b51646de7be98094e7e1d2b071d6f44af354bee8dc"
+          },
+          "row-race": {
+            "holdoutPasses": 3998,
+            "paidLookups": 10890,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1654,
+            "searchLookups": 9236,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e125543caa7e5ec2fb100f2050178dcf9af97064b47b3e9ac9649feedb4cb070"
+          },
+          "split-race": {
+            "holdoutPasses": 4001,
+            "paidLookups": 10920,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1709,
+            "searchLookups": 9211,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3789d57b08f0127855c5975d7ae214ce90cfca32da9df98f1c4961aecd0bb50a"
+          },
+          "split-veto": {
+            "holdoutPasses": 4002,
+            "paidLookups": 10883,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1680,
+            "searchLookups": 9203,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "51c31f419cd916dbfc25149f0f8131ba9e4d1e150fa97022421827ce007ec00c"
+          },
+          "strict": {
+            "holdoutPasses": 4002,
+            "paidLookups": 11166,
+            "qualificationLookups": 1597,
+            "searchLookups": 9569,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "c6d0d2bc653af323e7ec96549c66588e82762914913560f0c4dee6be76e82b91"
+          },
+          "strict-precheck": {
+            "holdoutPasses": 4002,
+            "paidLookups": 10959,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1756,
+            "searchLookups": 9203,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "305f27354c18e3014483eb003babca16525f01d316d5b4dfcaee1b14c6044b3d"
+          }
+        },
+        "trialsPerMethod": 320
+      }
+    },
+    "arc": {
+      "root/4": {
+        "changesFromStrict": {
+          "row-race": {
+            "nominations": 40,
+            "promotions": 40,
+            "trialsImproved": 0,
+            "trialsRegressed": 1
+          },
+          "split-race": {
+            "nominations": 40,
+            "promotions": 40,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "split-veto": {
+            "nominations": 40,
+            "promotions": 40,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "strict-precheck": {
+            "nominations": 40,
+            "promotions": 40,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          }
+        },
+        "comparisons": {
+          "certified-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                8
+              ],
+              "gepa-sequential": [
+                -7,
+                23
+              ],
+              "joint": [
+                -16,
+                8
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.07033997655334115,
+              "gepa-sequential": -0.13911416094822207
+            }
+          },
+          "row-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                7
+              ],
+              "gepa-sequential": [
+                -8,
+                21
+              ],
+              "joint": [
+                -16,
+                6
+              ],
+              "strict-precheck": [
+                -7,
+                5
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.2321219226260258,
+              "gepa-sequential": 0.18278228321896445
+            }
+          },
+          "split-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                8
+              ],
+              "gepa-sequential": [
+                -7,
+                23
+              ],
+              "joint": [
+                -16,
+                8
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.23329425556858147,
+              "gepa-sequential": 0.18402994385527136
+            }
+          },
+          "split-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                8
+              ],
+              "gepa-sequential": [
+                -7,
+                23
+              ],
+              "joint": [
+                -16,
+                8
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.23329425556858147,
+              "gepa-sequential": 0.18402994385527136
+            }
+          },
+          "strict-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                8
+              ],
+              "gepa-sequential": [
+                -7,
+                23
+              ],
+              "joint": [
+                -16,
+                8
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.23329425556858147,
+              "gepa-sequential": 0.18402994385527136
+            }
+          }
+        },
+        "totals": {
+          "certified-precheck": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 182534936200,
+            "historicalErrors": 103,
+            "holdoutPasses": 1561,
+            "paidLookups": 1826,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 364,
+            "searchLookups": 1462,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "46937991f3ec512a10e4a4872d6db4d5cca459ed7dfb425856f49685bddca533",
+            "trainingChecks": 40,
+            "trainingLookups": 518,
+            "trainingVetoes": 0
+          },
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 170574015300,
+            "historicalErrors": 90,
+            "holdoutPasses": 1565,
+            "paidLookups": 1706,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 357,
+            "searchLookups": 1349,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f433fd96acf8cf2cd02b87de83534671d7d7ab4a29daee8379b50105b0f1424d"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 161336455150,
+            "historicalErrors": 80,
+            "holdoutPasses": 1553,
+            "paidLookups": 1603,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 359,
+            "searchLookups": 1244,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "2081d80ba9cde644f721fc2104eb5a7c43da96ee16162e0074cbadc042054ef2"
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "historicalErrors": 0,
+            "holdoutPasses": 575,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e0bd9adafa7dec528ab9353844a168f280c4aa8beba3a23a3849a94968795b72"
+          },
+          "row-race": {
+            "historicalCostNanodollars": 135502732300,
+            "historicalErrors": 73,
+            "holdoutPasses": 1560,
+            "paidLookups": 1310,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 364,
+            "searchLookups": 946,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "88bcb2be815dabdbd5108db08b73e973886f9f9d2d17c56cbcf38ba655135edf"
+          },
+          "split-race": {
+            "historicalCostNanodollars": 135089140800,
+            "historicalErrors": 74,
+            "holdoutPasses": 1561,
+            "paidLookups": 1308,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 364,
+            "searchLookups": 944,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e015cb632379f1ddecedaef7449d3188a677f4cb60b90070d05ddb09f89593c8"
+          },
+          "split-veto": {
+            "historicalCostNanodollars": 135077269300,
+            "historicalErrors": 74,
+            "holdoutPasses": 1561,
+            "paidLookups": 1308,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 364,
+            "searchLookups": 944,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "6633cfbc95db91d944b5fec1aca9b13c749a6d13dd89125b587de19d6f74c8e2"
+          },
+          "strict": {
+            "historicalCostNanodollars": 135077269300,
+            "historicalErrors": 74,
+            "holdoutPasses": 1561,
+            "paidLookups": 1308,
+            "qualificationLookups": 364,
+            "searchLookups": 944,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "11aecdf3e4181833bb80e8dae817c53ac6456a977bc8dd1e60a26a6dbe7821ca"
+          },
+          "strict-precheck": {
+            "historicalCostNanodollars": 135077269300,
+            "historicalErrors": 74,
+            "holdoutPasses": 1561,
+            "paidLookups": 1308,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 364,
+            "searchLookups": 944,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "6633cfbc95db91d944b5fec1aca9b13c749a6d13dd89125b587de19d6f74c8e2"
+          }
+        },
+        "trialsPerMethod": 40
+      },
+      "root/8": {
+        "changesFromStrict": {
+          "row-race": {
+            "nominations": 40,
+            "promotions": 40,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "split-race": {
+            "nominations": 40,
+            "promotions": 40,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "split-veto": {
+            "nominations": 40,
+            "promotions": 40,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "strict-precheck": {
+            "nominations": 40,
+            "promotions": 40,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          }
+        },
+        "comparisons": {
+          "certified-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -1,
+                35
+              ],
+              "gepa-sequential": [
+                -6,
+                48
+              ],
+              "joint": [
+                -6,
+                34
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.06725011515430677,
+              "gepa-sequential": 0.09192825112107623
+            }
+          },
+          "row-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -1,
+                35
+              ],
+              "gepa-sequential": [
+                -6,
+                48
+              ],
+              "joint": [
+                -6,
+                34
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.30492860432980196,
+              "gepa-sequential": 0.3233183856502242
+            }
+          },
+          "split-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -1,
+                35
+              ],
+              "gepa-sequential": [
+                -6,
+                48
+              ],
+              "joint": [
+                -6,
+                34
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.30584983878397054,
+              "gepa-sequential": 0.3242152466367713
+            }
+          },
+          "split-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -1,
+                35
+              ],
+              "gepa-sequential": [
+                -6,
+                48
+              ],
+              "joint": [
+                -6,
+                34
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.30584983878397054,
+              "gepa-sequential": 0.3242152466367713
+            }
+          },
+          "strict-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -1,
+                35
+              ],
+              "gepa-sequential": [
+                -6,
+                48
+              ],
+              "joint": [
+                -6,
+                34
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.30584983878397054,
+              "gepa-sequential": 0.3242152466367713
+            }
+          }
+        },
+        "totals": {
+          "certified-precheck": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 217955067350,
+            "historicalErrors": 110,
+            "holdoutPasses": 1578,
+            "paidLookups": 2025,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 360,
+            "searchLookups": 1665,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "dce6944a0a0351613180059d447e9370c21f20d6894c1dcb764bef4fdd60c9b7",
+            "trainingChecks": 40,
+            "trainingLookups": 518,
+            "trainingVetoes": 0
+          },
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 233933426700,
+            "historicalErrors": 100,
+            "holdoutPasses": 1562,
+            "paidLookups": 2171,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 354,
+            "searchLookups": 1817,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "132b0f46531a618900ff0decda0faa1071b6e6a3419a39243e0e9385f58fc288"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 242902012700,
+            "historicalErrors": 109,
+            "holdoutPasses": 1558,
+            "paidLookups": 2230,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 357,
+            "searchLookups": 1873,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ba1f085dfb5d7df96822ad4f127dad76d8c978a46852a0e17e0dd08d711ac6bd"
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "historicalErrors": 0,
+            "holdoutPasses": 575,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e0bd9adafa7dec528ab9353844a168f280c4aa8beba3a23a3849a94968795b72"
+          },
+          "row-race": {
+            "historicalCostNanodollars": 169519604050,
+            "historicalErrors": 81,
+            "holdoutPasses": 1578,
+            "paidLookups": 1509,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 360,
+            "searchLookups": 1149,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "6fe9f8d12a12bb1014f206f36fb536b9b082d3e2b26079a5d0de5bf91a839f83"
+          },
+          "split-race": {
+            "historicalCostNanodollars": 169292038050,
+            "historicalErrors": 81,
+            "holdoutPasses": 1578,
+            "paidLookups": 1507,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 360,
+            "searchLookups": 1147,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "4fabb9ad87853f5f8f64015288e4bc64f679ef2cff701ff0c42a12d95e97b007"
+          },
+          "split-veto": {
+            "historicalCostNanodollars": 169280166550,
+            "historicalErrors": 81,
+            "holdoutPasses": 1578,
+            "paidLookups": 1507,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 360,
+            "searchLookups": 1147,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "328067fe3dfc1606c708c32a7ea72d71e9bde31fa6e26042f13784fdcb5aea4c"
+          },
+          "strict": {
+            "historicalCostNanodollars": 169280166550,
+            "historicalErrors": 81,
+            "holdoutPasses": 1578,
+            "paidLookups": 1507,
+            "qualificationLookups": 360,
+            "searchLookups": 1147,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "220393675dbd9ef6ed32ff0ee5581f99b9bf723f09330b4df7d18ff0b6074cc8"
+          },
+          "strict-precheck": {
+            "historicalCostNanodollars": 169280166550,
+            "historicalErrors": 81,
+            "holdoutPasses": 1578,
+            "paidLookups": 1507,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 360,
+            "searchLookups": 1147,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "328067fe3dfc1606c708c32a7ea72d71e9bde31fa6e26042f13784fdcb5aea4c"
+          }
+        },
+        "trialsPerMethod": 40
+      },
+      "rotated/4": {
+        "changesFromStrict": {
+          "row-race": {
+            "nominations": 145,
+            "promotions": 85,
+            "trialsImproved": 1,
+            "trialsRegressed": 3
+          },
+          "split-race": {
+            "nominations": 147,
+            "promotions": 87,
+            "trialsImproved": 1,
+            "trialsRegressed": 0
+          },
+          "split-veto": {
+            "nominations": 146,
+            "promotions": 86,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "strict-precheck": {
+            "nominations": 147,
+            "promotions": 87,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          }
+        },
+        "comparisons": {
+          "certified-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                14,
+                120
+              ],
+              "gepa-sequential": [
+                -40,
+                55
+              ],
+              "joint": [
+                -40,
+                55
+              ],
+              "strict-precheck": [
+                -169,
+                -69
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.17057679844458845,
+              "gepa-sequential": -0.11866716214542301
+            }
+          },
+          "row-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                65,
+                246
+              ],
+              "gepa-sequential": [
+                12,
+                180
+              ],
+              "joint": [
+                12,
+                180
+              ],
+              "strict-precheck": [
+                -40,
+                -19
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.07258587167854828,
+              "gepa-sequential": 0.11371237458193979
+            }
+          },
+          "split-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                91,
+                282
+              ],
+              "gepa-sequential": [
+                39,
+                214
+              ],
+              "joint": [
+                39,
+                214
+              ],
+              "strict-precheck": [
+                -2,
+                6
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.07051198963058976,
+              "gepa-sequential": 0.11173045955654651
+            }
+          },
+          "split-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                91,
+                278
+              ],
+              "gepa-sequential": [
+                38,
+                213
+              ],
+              "joint": [
+                38,
+                213
+              ],
+              "strict-precheck": [
+                -5,
+                5
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.0729747245625405,
+              "gepa-sequential": 0.11408398364920104
+            }
+          },
+          "strict-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                91,
+                279
+              ],
+              "gepa-sequential": [
+                38,
+                212
+              ],
+              "joint": [
+                38,
+                212
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.07193778353856124,
+              "gepa-sequential": 0.1130930261365044
+            }
+          }
+        },
+        "totals": {
+          "certified-precheck": {
+            "availableBackups": 10,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "historicalCostNanodollars": 1179201547850,
+            "historicalErrors": 307,
+            "holdoutPasses": 13761,
+            "paidLookups": 9031,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1921,
+            "searchLookups": 7110,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "48d85b5600caf2abdbc6ded2f36d5254da431b40ea75eb9ba5ccf167f18b4b0c",
+            "trainingChecks": 157,
+            "trainingLookups": 2440,
+            "trainingVetoes": 78
+          },
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 965229092050,
+            "historicalErrors": 220,
+            "holdoutPasses": 13695,
+            "paidLookups": 7715,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1857,
+            "searchLookups": 5858,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "df74e24ac806929d1ea33d50b15b085f42e0e886375d18ef0ae8ce0471e85a80"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 1013598280200,
+            "historicalErrors": 212,
+            "holdoutPasses": 13755,
+            "paidLookups": 8073,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1888,
+            "searchLookups": 6185,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "29665d97bce219e2ad805ed1c1ea930d299d5e8bf5faf4f9bf4d1cd63365ea75"
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "historicalErrors": 0,
+            "holdoutPasses": 12944,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0e69f7a7c44928f2ebc883e752bd6d1715416112b18b42875132a35df5689f67"
+          },
+          "row-race": {
+            "historicalCostNanodollars": 938517780900,
+            "historicalErrors": 250,
+            "holdoutPasses": 13849,
+            "paidLookups": 7155,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2472,
+            "searchLookups": 4683,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "060eafafc50fa19f266b1bdd24ee92315918c2dba1ebd1bc26c0b911c8b048d2"
+          },
+          "split-race": {
+            "historicalCostNanodollars": 941437136900,
+            "historicalErrors": 250,
+            "holdoutPasses": 13880,
+            "paidLookups": 7171,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2490,
+            "searchLookups": 4681,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "2d3c5c98d3bbab88fcc93ebcea1fe78cbb6a9e8afbd86028209a498b4a8a0676"
+          },
+          "split-veto": {
+            "historicalCostNanodollars": 939101990400,
+            "historicalErrors": 250,
+            "holdoutPasses": 13878,
+            "paidLookups": 7152,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2482,
+            "searchLookups": 4670,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "c55bd340855fbbf0bfe273bb581b1e6887a87e66bee3ca802d142394cf5deeb7"
+          },
+          "strict": {
+            "historicalCostNanodollars": 1143966837050,
+            "historicalErrors": 301,
+            "holdoutPasses": 13878,
+            "paidLookups": 8636,
+            "qualificationLookups": 2183,
+            "searchLookups": 6453,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8ae35aa5a203810f4f947e86564047349e37cee70fdb3db7bf7eb0b8dd0ec4fb"
+          },
+          "strict-precheck": {
+            "historicalCostNanodollars": 940216336900,
+            "historicalErrors": 250,
+            "holdoutPasses": 13878,
+            "paidLookups": 7160,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2490,
+            "searchLookups": 4670,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "77e7377f2ef879ccfb5e6b2120d4225472e99af3cf78aefe93cb7fb31749835d"
+          }
+        },
+        "trialsPerMethod": 360
+      },
+      "rotated/8": {
+        "changesFromStrict": {
+          "row-race": {
+            "nominations": 163,
+            "promotions": 95,
+            "trialsImproved": 0,
+            "trialsRegressed": 2
+          },
+          "split-race": {
+            "nominations": 164,
+            "promotions": 96,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "split-veto": {
+            "nominations": 164,
+            "promotions": 96,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          },
+          "strict-precheck": {
+            "nominations": 164,
+            "promotions": 96,
+            "trialsImproved": 0,
+            "trialsRegressed": 0
+          }
+        },
+        "comparisons": {
+          "certified-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -9,
+                92
+              ],
+              "gepa-sequential": [
+                -7,
+                86
+              ],
+              "joint": [
+                -12,
+                81
+              ],
+              "strict-precheck": [
+                -170,
+                -55
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.0181733889661567,
+              "gepa-sequential": 0.11478013710081926
+            }
+          },
+          "row-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                30,
+                221
+              ],
+              "gepa-sequential": [
+                32,
+                209
+              ],
+              "joint": [
+                27,
+                208
+              ],
+              "strict-precheck": [
+                -39,
+                -18
+              ]
+            },
+            "gate": "passed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.21882243857209085,
+              "gepa-sequential": 0.2956863400769102
+            }
+          },
+          "split-race": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                54,
+                253
+              ],
+              "gepa-sequential": [
+                55,
+                243
+              ],
+              "joint": [
+                52,
+                241
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "passed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.2180806675938804,
+              "gepa-sequential": 0.29501755559271026
+            }
+          },
+          "split-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                54,
+                253
+              ],
+              "gepa-sequential": [
+                55,
+                243
+              ],
+              "joint": [
+                52,
+                241
+              ],
+              "strict-precheck": [
+                0,
+                0
+              ]
+            },
+            "gate": "passed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.2191006026889198,
+              "gepa-sequential": 0.2959371342584852
+            }
+          },
+          "strict-precheck": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                54,
+                253
+              ],
+              "gepa-sequential": [
+                55,
+                243
+              ],
+              "joint": [
+                52,
+                241
+              ]
+            },
+            "gate": "passed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.2191006026889198,
+              "gepa-sequential": 0.2959371342584852
+            }
+          }
+        },
+        "totals": {
+          "certified-precheck": {
+            "availableBackups": 12,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "historicalCostNanodollars": 1408922522450,
+            "historicalErrors": 422,
+            "holdoutPasses": 13822,
+            "paidLookups": 10589,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2054,
+            "searchLookups": 8535,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "4cf1c55e1a3a32ed223169f23256a65a42808d2507ab0c89718f670287abaf3c",
+            "trainingChecks": 176,
+            "trainingLookups": 2748,
+            "trainingVetoes": 82
+          },
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 1358628084350,
+            "historicalErrors": 299,
+            "holdoutPasses": 13781,
+            "paidLookups": 10785,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2039,
+            "searchLookups": 8746,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "03345a2e2ea7bb9bd52c7d48c434f3007ca7d6dc08e46bdbe2a6dfbcb54d5e3a"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 1519983178350,
+            "historicalErrors": 328,
+            "holdoutPasses": 13785,
+            "paidLookups": 11962,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2104,
+            "searchLookups": 9858,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e78fbdd7c977d7645433ad75325c67d3cad8ce7308a15f736259ba76ef2366cd"
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "historicalErrors": 0,
+            "holdoutPasses": 12944,
+            "paidLookups": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0e69f7a7c44928f2ebc883e752bd6d1715416112b18b42875132a35df5689f67"
+          },
+          "row-race": {
+            "historicalCostNanodollars": 1133651415950,
+            "historicalErrors": 350,
+            "holdoutPasses": 13904,
+            "paidLookups": 8425,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2627,
+            "searchLookups": 5798,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "aec690fd456818ba49b5d7deeeca9b4654582e2ecf39deec8ffe37471b0a7e51"
+          },
+          "split-race": {
+            "historicalCostNanodollars": 1135561443450,
+            "historicalErrors": 350,
+            "holdoutPasses": 13932,
+            "paidLookups": 8433,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2635,
+            "searchLookups": 5798,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bfaae20b7b625642835d76b822b68f70a6728ca93912171c701f3eda55e2f902"
+          },
+          "split-veto": {
+            "historicalCostNanodollars": 1134184195950,
+            "historicalErrors": 350,
+            "holdoutPasses": 13932,
+            "paidLookups": 8422,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2635,
+            "searchLookups": 5787,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0ac9b1cf561c79305ab973562b8a6488aabbf8925977a5be0d9b9675a2a42828"
+          },
+          "strict": {
+            "historicalCostNanodollars": 1408632237150,
+            "historicalErrors": 441,
+            "holdoutPasses": 13932,
+            "paidLookups": 10383,
+            "qualificationLookups": 2424,
+            "searchLookups": 7959,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3bcc662605f58b65f903f8a69f47a7f1ccdea7fe2db2513e29cc0b7b854d0eb0"
+          },
+          "strict-precheck": {
+            "historicalCostNanodollars": 1134184195950,
+            "historicalErrors": 350,
+            "holdoutPasses": 13932,
+            "paidLookups": 8422,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2635,
+            "searchLookups": 5787,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0ac9b1cf561c79305ab973562b8a6488aabbf8925977a5be0d9b9675a2a42828"
+          }
+        },
+        "trialsPerMethod": 360
+      }
+    }
+  }
+}
