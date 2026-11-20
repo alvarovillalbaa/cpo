@@ -7,13 +7,12 @@ from hashlib import sha256
 from importlib.metadata import version
 from io import BytesIO
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import subprocess
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
 from zipfile import ZipFile
 
-from benchmarks import cross_benchmark_prompt_race as cross
 from benchmarks import family_qualification_order as family
 from benchmarks import gepa_paid_cap_transfer as gepa
 from benchmarks import late_miss_transfer as inventory
@@ -45,6 +44,7 @@ TASKS = {
 PRIMARY = 'expected-order'
 CONTROL = 'original-cpo'
 LIMIT = 80_000_000
+TEMPLATE_GROUPS = ('default', 'rephrase', 'cot', 'gradual')
 
 
 def fetch_range(start, end):
@@ -68,8 +68,34 @@ def directory():
 
 
 def targets():
-    return [(cross.identity(benchmark, task), benchmark, task, model)
+    return [(f'{benchmark.lower()}-{task}', benchmark, task, model)
             for benchmark, tasks in TASKS.items() for task in tasks for model in MODELS]
+
+
+def member_name(entries, benchmark, task, model):
+    prefix = 'big_bench_hard' if benchmark == 'BBH' else 'lmentry'
+    suffix = benchmark, task, f'{prefix}_{task}_{model}_temp0.3_mt10_0.json'
+    matches = [entry for entry in entries if PurePosixPath(entry.filename).parts[-3:] == suffix]
+    if len(matches) != 1 or matches[0].file_size > 32_000_000:
+        raise ValueError(f'Expected one bounded input for {benchmark}/{task}/{model}')
+    return matches[0]
+
+
+def reduce_member(raw, subject):
+    samples = json.loads(raw)['samples']
+    cases = sorted(samples, key=int)
+    first = samples[cases[0]]
+    templates = [(group, key) for group in TEMPLATE_GROUPS for key in first[group]]
+    keys = sorted(templates, key=lambda item: (item[0] != 'default', digest((subject, *item))))[:100]
+    if len(cases) < 98 or len(keys) != 100:
+        raise ValueError('The panel must fund the original prompt and case split')
+    scores = []
+    for group, key in keys:
+        values = [samples[case][group][key]['auto_validation'] for case in cases]
+        if any(type(value) not in (bool, int) or value not in (0, 1) for value in values):
+            raise ValueError('The source must provide exact binary correctness labels')
+        scores.append(''.join('1' if value else '0' for value in values))
+    return {'caseIDs': cases, 'templateIDs': [list(key) for key in keys], 'correctness': scores}
 
 
 def freeze():
@@ -82,7 +108,7 @@ def freeze():
     successors = dict(zip(offsets, offsets[1:], strict=False))
     members = []
     for subject, benchmark, task, model in targets():
-        item = cross.member_name(entries, benchmark, task, model)
+        item = member_name(entries, benchmark, task, model)
         start = item.header_offset + archive.DIRECTORY_OFFSET
         end = successors[item.header_offset] + archive.DIRECTORY_OFFSET - 1
         if not 0 <= start <= end < archive.DIRECTORY_OFFSET or end - start + 1 > 4_000_000:
@@ -108,7 +134,7 @@ def design(members, previous):
     _, settings, _ = cohorts['llama-mistral']
     paths = ('benchmarks/qualification_order_transfer.py', 'benchmarks/witness_validation_cost_frontier.py',
              'benchmarks/family_qualification_order.py', 'benchmarks/gepa_paid_cap_transfer.py',
-             'benchmarks/tie_extension_cross_benchmark.py', 'benchmarks/cross_benchmark_prompt_race.py',
+             'benchmarks/tie_extension_cross_benchmark.py',
              'cpo/expected_qualification.py')
     return {
         **{k: settings[k] for k in ('schedule', 'searchCap', 'validationRows', 'gepaVersion')},
@@ -147,7 +173,7 @@ def capture(plan):
                 if info.file_size != item['size'] or f'{info.CRC:08x}' != item['crc32']:
                     raise ValueError('The selected ZIP member differs from the sealed manifest')
                 raw = stored.read(info)
-                panels.append({**cross.reduce_member(raw, item['subject']),
+                panels.append({**reduce_member(raw, item['subject']),
                                **{k: item[k] for k in ('subject', 'benchmark', 'task', 'model')},
                                'sourceMember': item['path'], 'sourceCRC32': item['crc32'],
                                'sourceSha256': sha256(raw).hexdigest()})
