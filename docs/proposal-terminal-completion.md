@@ -20,6 +20,8 @@ On the eight transfer panels, the cap-72 baseline stopped with a partially measu
 
 The certificate changed 171 search nominations on transfer, including 55 with unpaid validation cases remaining. It used 923 fewer lookups than full completion and reached the same holdout score. Compared with the original cap-72 route, it used 3,698 more lookups and scored 28 fewer passes despite 24 additional promotions. Batched GEPA scored 54 more passes and used 17,697 more lookups than the certificate. The joint paired 95% range against the two GEPA controls was −108 to −5. This benchmark leaves the two terminal policies experimental. [Panel results, audit counts, and paired ranges](proposal-terminal-completion-results-v1.json)
 
+The follow-up replay tests whether buying early validation replies can improve the order in which opening proposals are scored. [Opening proposal order](proposal-opening-duel.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
