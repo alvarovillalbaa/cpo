@@ -24,6 +24,8 @@ The hybrid chose identical final programs to plain TPE on all 36 panels across b
 
 The fixture supports combining model-based search with exact rejection on a fixed set of instruction and demonstration choices. Fresh proposal quality and end-to-end MIPROv2 performance remain unverified.
 
+A follow-up traced the matched critical losses and tested whether the fixed program pool could support a risk coverage requirement. [Critical-case coverage replay](joint-risk-coverage.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 and Optuna 4.5.0 in an isolated benchmark environment. The receipt records wheel fingerprints and the existing Python dependency versions used for the replay.
