@@ -30,6 +30,8 @@ The separate component-composition benchmark enables GEPA's native merge and com
 
 An archived fixed-pool comparison tests scored history, Successive Halving, and probability-guided validation allocation alongside CPO and both GEPA modes. [Recorded score allocation](recorded-score-allocation.md)
 
+A joint-selection fixture tests the Optuna sampler used by MIPROv2 and combines its proposals with CPO's exact rejection bounds under the same lookup budget. [Joint sampler comparison](joint-sampler-comparison.md)
+
 ## Reproduce
 
 Use commit `fbfb7a3c74d9d0728ba0628a8ddd93ee1c3158b1` to reproduce the original source hashes. The later precomputed opening is evaluated separately. [Feedback budget study](feedback-budget.md)
