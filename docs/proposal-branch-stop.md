@@ -19,6 +19,8 @@ Only the final nominee is eligible for promotion. It still has to pass expected-
 
 On transfer, the one-pass policy extended 635 of 1,024 cycles and changed 347 nominees during the extension. It saved 15,288 lookups and gained two passes relative to cap 104. Compared with cap 72 it added 25,002 lookups and gained three passes. It used 3,607 more lookups and scored 23 fewer passes than batched GEPA. Its joint paired 95% range against both GEPA controls was −85 to +36. The two-pass rule spent more and scored lower than the one-pass rule. The observed results do not support the staged rule for the proposal cycle. [Panel results, extension counts, and paired ranges](proposal-branch-stop-results-v1.json)
 
+The follow-up tested using the remaining cap-72 allowance to measure the last partially validated challenger. [Terminal completion replay](proposal-terminal-completion.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
