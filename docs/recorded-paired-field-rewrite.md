@@ -143,6 +143,17 @@ PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback \
   --quoted-budget --parent-bounds --tie-bounds
 ```
 
+### Skip reflections when the parent minibatch passes
+
+In paid-read mode, set `skip_perfect_after` to the number of supplied opening slots. Once their parent feedback has been evaluated, later slots skip reflection if every training case passed. A child cannot strictly improve a perfect minibatch. The scheduled slot still counts toward the round limit. Use a proposer whose later replies depend on the slot and feedback, since skipping a call can shift a stateful reply queue.
+
+At the highest recorded Sol ceiling, CPO skipped two of three later paid reflections and preserved every nominee, admission, and holdout result. The other recorded ceilings had no later paid reflections. In the one-unit scripted fixture, CPO used seven later reflections instead of 14 and gained ten holdout passes, from 609 to 619 of 648. It bought 50 more evaluations. Total charge rose from 1,883 to 1,924 units and remained below sequential GEPA's 2,141 units for 593 passes. [Fixture results](sequential-field-quote-skip-perfect-reflections-results-v1.json)
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback \
+  --quoted-budget --parent-bounds --tie-bounds --skip-perfect-reflections
+```
+
 The same parent option works with the evaluation-only cap. On the Sol archive at cap 24, this mode bought enough extra proposals that CPO cost $37.63 against sequential GEPA's $35.63, with the same number of passes. [Paid-read fixture results](sequential-field-paid-parent-bounds-results-v1.json)
 
 ```sh

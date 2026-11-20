@@ -67,6 +67,51 @@ def test_stateful_proposer_runs_on_a_perfect_training_batch():
     assert selected == 'start' and proposed == [0, 1]
 
 
+@pytest.mark.parametrize(('skip_after', 'winner', 'expected_slots'),
+                         ((None, 'start', [0, 1, 2]), (2, 'repair', [0, 1, 3])))
+def test_skip_keeps_supplied_slots_and_can_fund_a_later_reflection(skip_after, winner, expected_slots):
+    training = (Row('pass', 'task', fields=1), Row('miss', 'task', fields=1))
+    validation = (Row('validation', 'task', fields=1),)
+    scheduled, proposed, settled = [], [], []
+    reads = set()
+
+    def evaluate(prompt, row):
+        assert (prompt, row.id) not in reads
+        reads.add((prompt, row.id))
+        assert len(reads) + sum(settled) <= 7
+        passed = prompt == 'repair' or row.id == 'pass'
+        return Observation(passed, {}, int(passed))
+
+    def schedule(index, pool, _grades):
+        assert pool == ('start',)
+        scheduled.append(index)
+        return 'start', (('miss' if index == 3 else 'pass'),)
+
+    def propose(index, parent, samples):
+        proposed.append(index)
+        assert samples[0][1].passed == (index < 3)
+        return 'repair' if index == 3 else parent
+
+    def quote(index, _parent):
+        return (0, 0, 3, 2)[index]
+
+    def settle(index, parent, _child):
+        assert proposed[-1] == index
+        settled.append(quote(index, parent))
+        assert len(reads) + sum(settled) <= 7
+        return settled[-1]
+
+    selected = select_sequential_field_rewrites(
+        'start', training, validation, evaluate, schedule, propose, rounds=4, minibatch_size=1,
+        metric_limit=8, reinvest_savings=True, observed_charge=lambda *_: 1,
+        price_budget=SequentialSearchBudget(7, 1, quote, settle), skip_perfect_after=skip_after,
+    )
+    assert selected == winner
+    assert proposed == expected_slots
+    assert scheduled == [0, 1, 2, 3]
+    assert settled == ([0, 0, 3] if skip_after is None else [0, 0, 2])
+
+
 @pytest.mark.parametrize(('reinvest', 'expected_calls', 'winner'), ((False, 1, 'start'), (True, 2, 'repair')))
 def test_reinvests_saved_reads_without_dropping_the_validation_reserve(reinvest, expected_calls, winner):
     training = tuple(Row(f't{case}', 'task', fields=1) for case in range(4))
