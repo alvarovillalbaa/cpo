@@ -20,6 +20,8 @@ Each cell gives holdout passes out of 1,080 and total counted calls. Both GEPA c
 
 The 12-probe option passed both GEPA gates in every confirmation mode and preserved every matched critical pass. It used 10 extra training probes on three missing-field panels and 10 on four panels with no router features. Each of those seven panels produced an accepted repair. The intact and redundant-feature modes used zero fallback probes and exactly matched the routed arm. Across the two earlier cohorts it also recovered all 41 critical passes previously lost to sequential GEPA with a field hidden. The same scripted rule generator supplies all three cohorts. Live comparison remains pending. [Sealed results](opening-probe-fallback-results-v1.json)
 
+A separate fixture exposed overlapping attribute pairs and limited each proposal to one witnessed edit. CPO's aggregate pass lead did not clear the critical-loss and cost gates across all profiles. [Interaction transfer](opening-interaction-transfer.md)
+
 ## Reproduce offline
 
 Use GEPA 0.1.4 and a fresh output path.
