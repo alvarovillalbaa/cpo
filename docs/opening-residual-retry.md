@@ -15,6 +15,8 @@ The retry preserved every baseline pass and every matched critical pass against 
 
 A follow-up swept nine GEPA search ceilings on these same input panels. At CPO’s realized cost, CPO led the best per-panel GEPA hindsight allocation by 75 passes with original faults and 76 with shifted faults. [Matched-cost comparison](opening-retry-cost-frontier.md)
 
+A second replay used exact bounds to reduce the last draft's validation reads. It preserved all decisions and closed the fixture call-count gap with batched GEPA. [Terminal validation certificate](opening-validation-certificate.md)
+
 ## Reproduce offline
 
 Use GEPA 0.1.4 and a fresh output path.
