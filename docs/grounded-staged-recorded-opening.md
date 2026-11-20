@@ -14,3 +14,5 @@ Opening-only and staged CPO chose the same prompts in all 240 paths. Staged CPO 
 The original study's separate holdout contained matching results for the two CPO policies on all paths. Missing GEPA replies on that holdout left the direction of the quality difference unresolved. This replay uses a fixed proposal graph, so later repair could only try previously recorded edits. The portable fixture isolates the benefit when useful repairs are available. Fresh model proposals still need to be compared against both opening-only and the GEPA controls. The original provider archives are required to reproduce the recorded comparison. The portable fixture remains runnable from this repository.
 
 The prospective protocol now includes both CPO policies as direct controls and binds them to the same independent confirmation panel. [Prospective comparison](grounded-staged-policy-comparison.md)
+
+The receipt audit found that opening-only stayed at least 10% cheaper than both GEPA controls on each task under every matched historical charge assignment. [Recorded cost bounds](grounded-opening-price-bounds.md)
