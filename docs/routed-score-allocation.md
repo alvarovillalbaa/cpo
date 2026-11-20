@@ -28,6 +28,8 @@ Using the posterior allocator only when the route widens gained three passes and
 
 Applying posterior allocation to all fresh searches gained 45 passes over the original route and used 44,341 more lookups. It changed 150 of 512 final prompts. Its paired range against the original route was −13 to +100. It also used more lookups than both cap-52 GEPA controls and failed the savings gate. The original route remains the better-supported allocation for this cohort. These results use archived outcomes and fixed proposal rosters. Fresh-model performance remains unverified.
 
+The next replay reused replies already paid for in the archive comparison to skip final-cycle search when a strict qualification gain was impossible. [Paid qualification reuse](routed-paid-qualification.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 and the bundled archives.
