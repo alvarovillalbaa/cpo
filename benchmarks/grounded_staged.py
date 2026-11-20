@@ -24,6 +24,7 @@ SEED = 66029
 SPLITS = {'train': 16, 'validation': 12, 'admission': 8, 'holdout': 18, 'confirmation': 8}
 ARMS = ('cpo', 'gepa-sequential', 'gepa-batched')
 CACHED_OPENING = 'gepa-cached-opening'
+PAIRED_FIELD_REWRITE = 'paired-field-rewrite'
 RETRY_LIMIT = 8
 FAMILY = {'ticket': 'Channel', 'warehouse': 'Tier', 'outage': 'Plan'}
 BOUNDARIES = (0, 1, 4, 5, 8, 9, 12, 14)
@@ -115,7 +116,7 @@ def cases(task, rows):
 
 
 def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening=False,
-           native_gepa_selector=None, cached_opening_selector=None):
+           native_gepa_selector=None, cached_opening_selector=None, paired_rewrite_selector=None):
     train, validation, admission = (groups[name] for name in ('train', 'validation', 'admission'))
     training = [{key: row[key] for key in ('id', 'input', 'expected')} for row in train]
     train_ids = {row['id'] for row in train}
@@ -138,6 +139,8 @@ def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening
     Random(f'{SEED}:{task}').shuffle(order)
     if cached_opening_selector is not None:
         order.append(CACHED_OPENING)
+    if paired_rewrite_selector is not None:
+        order.append(PAIRED_FIELD_REWRITE)
     native_select = native_gepa_selector or opening_screen_typed.gepa_select
     for arm in order:
         def evaluate(prompt, row_id):
@@ -171,9 +174,9 @@ def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening
             nominee, selected[arm] = result.search.prompt, result.prompt
             proof = result.qualification
         else:
-            if arm == CACHED_OPENING:
-                nominee = cached_opening_selector(grounded.BASELINE, bank, groups, evaluate,
-                                                   cap=grounded.METRIC_LIMIT, seed=SEED)
+            if arm in (CACHED_OPENING, PAIRED_FIELD_REWRITE):
+                select = cached_opening_selector if arm == CACHED_OPENING else paired_rewrite_selector
+                nominee = select(grounded.BASELINE, bank, groups, evaluate, cap=grounded.METRIC_LIMIT, seed=SEED)
             else:
                 nominee = native_select(grounded.BASELINE, bank, groups, evaluate, reflect,
                                         cap=grounded.METRIC_LIMIT, seed=SEED,
