@@ -8,10 +8,10 @@ from importlib.metadata import version
 import json
 from pathlib import Path
 from random import Random
-from types import SimpleNamespace
 from unittest.mock import patch
 
 from benchmarks import recorded_opening_dominance_transfer as transfer
+from benchmarks.gepa_sequential_schedule import sequential_schedule, traced_native_schedule
 from cpo import Observation, Row
 from cpo._contract import digest
 from cpo.paired_rewrite import select_same_parent_rewrites, select_sequential_rewrites
@@ -39,58 +39,6 @@ def prepare():
             'sourcesSha256': {name: sha256((transfer.ROOT / name).read_bytes()).hexdigest() for name in names},
             'scope': 'native first minibatch, strict binary gains, unchanged independent admission'}
     return plan, scores, reference['results']
-
-
-def sequential_schedule(validation, seed, minibatch_size, trace):
-    from gepa.core.data_loader import ListDataLoader
-    from gepa.gepa_utils import select_program_candidate_from_pareto_front
-    from gepa.strategies.batch_sampler import EpochShuffledBatchSampler
-
-    rng = Random(seed)
-    loader = ListDataLoader(validation)
-    sampler = EpochShuffledBatchSampler(minibatch_size, rng=rng)
-
-    def schedule(index, pool, grades):
-        if len(pool) == 1:
-            # The only program owns every case without needing its grades.
-            parent = rng.choice(pool * len(validation))
-        else:
-            profiles = [grades(prompt) for prompt in pool]
-            fronts = {}
-            for case, scores in enumerate(zip(*profiles, strict=True)):
-                best = max(scores)
-                fronts[case] = {owner for owner, score in enumerate(scores) if score == best}
-            parent = pool[select_program_candidate_from_pareto_front(fronts, [sum(s) for s in profiles], rng)]
-        batch = tuple(validation[case].id for case in sampler.next_minibatch_ids(loader, SimpleNamespace(i=index)))
-        trace.append((pool, parent, batch))
-        return parent, batch
-
-    return schedule
-
-
-def traced_native_schedule(select, incumbent, bank, groups, evaluate, trace, **options):
-    from gepa.strategies.batch_sampler import EpochShuffledBatchSampler
-    from gepa.strategies.candidate_selector import ParetoCandidateSelector
-
-    select_parent = ParetoCandidateSelector.select_candidate_idx
-    sample_batch = EpochShuffledBatchSampler.next_minibatch_ids
-    pool, parent_prompt = (), None
-
-    def parent(selector, state):
-        nonlocal pool, parent_prompt
-        position = select_parent(selector, state)
-        pool = tuple(next(iter(candidate.values())) for candidate in state.program_candidates)
-        parent_prompt, = state.program_candidates[position].values()
-        return position
-
-    def batch(sampler, loader, state):
-        ids = sample_batch(sampler, loader, state)
-        trace.append((pool, parent_prompt, tuple(row['id'] for row in loader.fetch(ids))))
-        return ids
-
-    with (patch.object(ParetoCandidateSelector, 'select_candidate_idx', parent),
-          patch.object(EpochShuffledBatchSampler, 'next_minibatch_ids', batch)):
-        return select(incumbent, bank, groups, evaluate, **options)
 
 
 def compare_group(cells, settings, starts, reference, *, charge_aware=False, control=NATIVE):

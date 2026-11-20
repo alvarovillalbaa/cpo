@@ -58,10 +58,29 @@ Native GEPA compares exact passes before matched fields by giving one exact pass
 
 An integer tie can still advance under native arithmetic. With seven fields across four validation cases, scores proportional to `1 + 5` and `0 + 6` have equal integer totals. After the native division by 39, their floating-point sums differ. A focused test verified that native GEPA and the paired selector both advance the latter rewrite. A gate with a possible tie reads the needed replies and applies the native comparison order, including cached-before-fresh validation scores. The same complete comparison applies when the early rounding bound is unavailable.
 
+## Follow a sequence of field-scored rewrites
+
+`select_sequential_field_rewrites` passes paid training feedback to a proposer, with separate rows for validation. Each strict minibatch improvement enters the parent pool. The scheduler can request complete validation grades to reproduce the native Pareto draw. The selector keeps the native full-round budget reserve and uses paired score bounds whenever the remaining replies cannot change an acceptance decision or the final ranking.
+
+The archived Sol comparison matched native sequential GEPA's parent pools, minibatches, ordered later proposals, nominations, admission decisions, and all 480 held-out outcomes at each cap. The full cap included 190 recorded reflections across 87 replay paths. These paths use the original parent-linked proposal graph and historical prices.
+
+| Search cap | Matched passes | Native → paired search reads | Native → paired total cost |
+| --- | ---: | ---: | ---: |
+| 12 | 382 / 480 | 2,880 → 1,962 | $29.003640 → $22.789632 |
+| 24 | 382 / 480 | 3,502 → 2,814 | $35.633544 → $32.084040 |
+| 40 | 382 / 480 | 4,108 → 3,463 | $46.811472 → $43.575840 |
+| 56 | 382 / 480 | 4,108 → 3,463 | $46.811472 → $43.575840 |
+
+The public deterministic fixture generates later rewrites from the errors in each selected parent's paid training replies. At cap 56, it matched all 19 later proposal inputs and outputs, including seven edits that changed the parent prompt. It preserved 314 of 324 held-out passes while reducing search reads from 672 to 532 and leaving admission reads at 525. The archived graph and deterministic fixture leave live proposal quality unverified. [Fixture receipt](sequential-field-feedback-results-v1.json)
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback
+```
+
 ## Verify
 
 ```sh
-python -m pytest -q tests/unit/test_paired_field_rewrite.py
+python -m pytest -q tests/unit/test_paired_field_rewrite.py tests/unit/test_sequential_field_rewrite.py
 ```
 
 The tests enumerate all 65,536 field profiles for two prompts on four three-field cases with and without observed-charge ordering. They check the native result and verify that each paid read belongs to the complete native comparison. The Sol replay used the pinned GEPA 0.1.4 first minibatch and exact published control receipts. Two offline runs matched byte for byte. Fresh proposal generation and independent live confirmation remain unverified.
