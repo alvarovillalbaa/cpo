@@ -35,6 +35,8 @@ The measured first-gain replay scored 18,791 holdout passes at 66,481 paid looku
 
 A follow-up spread first probes across missed cases. This gained 54 aggregate holdout passes at a cost of 7,588 additional lookups under the existing gates. [Coverage rotation replay](prompteval-coverage-rotation.md)
 
+The later MMLU audit counted which paths remain reachable at CPO’s observed episode cost and distinguished retaining the start from paying for fresh moves. [Priced reachability](priced-gate-reachability.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview the phase, then add `--execute PLAN_SHA256 --out NEW_REPORT.json`.
