@@ -27,6 +27,8 @@ On ARC with rotated incumbents and eight challengers, **strict CPO already clear
 
 The four-read rule added five passes to strict CPO at the cost of 112 lookups in that configuration. Its paired range against strict CPO was −2 to +12. It also cleared the GEPA gate with a joint range of +51 to +250. At four challengers and rotated starts, both CPO settings had higher historical cost than batched GEPA. All four AIME configurations missed the gate. At eight challengers and rotated starts, the four-read rule's joint range was **−126 to −25 passes**. The result supports fixed-pool CPO selection on a specific ARC archive and gives mixed evidence for adding ties. Fresh generation and fresh-task performance remain unverified. [Results and incumbent-level receipts](recorded-math-validation-ties-results-v1.json)
 
+The follow-up traced a majority of AIME's gross losses to departures from the starting prompt and tested a training-evidence veto after qualification. [Training corroboration](recorded-training-corroboration.md)
+
 ## Source coverage
 
 The authors' BBH and LMentry release covers 14 and 10 tasks, respectively. Earlier CPO archives already include almost the same roster. DOVE and PromptSuite require account consent to access their file contents. The ARC and AIME matrices supplied a usable comparison in two other task families. Both matrices had appeared in earlier CPO work. [Task inventory in the authors' paper](https://aclanthology.org/2024.tacl-1.52/) · [DOVE access](https://huggingface.co/datasets/nlphuji/DOVE_Lite) · [PromptSuite access](https://huggingface.co/datasets/eliyahabba/PromptSuite)
