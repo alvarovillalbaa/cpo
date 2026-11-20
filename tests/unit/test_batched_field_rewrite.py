@@ -1,7 +1,9 @@
 from random import Random
 
 from benchmarks.batched_field_feedback import compare_search
-from cpo import Observation
+from cpo import Observation, Row
+from cpo.batched_field_rewrite import select_batched_field_rewrites
+from cpo.sequential_field_rewrite import SequentialSearchBudget
 
 
 def test_batched_field_choices_and_feedback_match_native_across_rounds():
@@ -42,3 +44,38 @@ def test_batched_field_choices_and_feedback_match_native_across_rounds():
             if len(proposals) >= 4:
                 seen.add('later-rounds')
     assert seen == {'saved', 'changed-parent', 'later-rounds'}
+
+
+def test_quote_reserves_both_proposals_and_unread_validation_before_a_batch():
+    training = (Row('t1', 'fixture', fields=1), Row('t2', 'fixture', fields=1))
+    validation = (Row('v1', 'fixture', fields=1), Row('v2', 'fixture', fields=1))
+
+    def run(limit, *, repeated=False):
+        settled, proposals = [], []
+
+        def evaluate(prompt, _row):
+            assert sum(settled) + 5 <= limit
+            settled.append(5)
+            passed = prompt == 'first'
+            return Observation(passed, {}, int(passed))
+
+        def schedule(_index, _pool, _grades):
+            return 'start', (('t1',), ('t1' if repeated else 't2',))
+
+        def propose(index, _parent, _observations):
+            assert sum(settled) + 7 <= limit
+            settled.append(7)
+            proposals.append(index)
+            return 'first' if index == 0 else 'start'
+
+        budget = SequentialSearchBudget(limit, 5, lambda *_: 7, lambda *_: 7)
+        selected = select_batched_field_rewrites(
+            'start', training, validation, evaluate, schedule, propose, rounds=1, width=2,
+            minibatch_size=1, metric_limit=10, observed_charge=lambda *_: 5, price_budget=budget,
+        )
+        return selected, proposals, sum(settled)
+
+    assert run(9) == ('start', [], 0)
+    assert run(63) == ('start', [], 5)
+    assert run(64)[:2] == ('first', [0, 1])
+    assert run(59, repeated=True)[:2] == ('first', [0, 1])
