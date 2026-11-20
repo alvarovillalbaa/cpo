@@ -16,9 +16,11 @@ With shifted faults, the shorter opening saved 35 calls against ordinary staged 
 
 In a diagnostic replay, all 11 panels with a matched critical loss against sequential GEPA stopped after a later pair of training probes both passed. They finished with 10–17 search lookups unspent. One panel also rejected the resulting repair chain on full validation.
 
+The follow-up checked for remaining validation misses before paying for later probes. It cleared the sequential gate on new panels in both fault modes and finished within 19 calls of batched GEPA. [Validation-guided routing](opening-validation-routing.md)
+
 ## Reproduce offline
 
-Use GEPA 0.1.4 and a fresh output path.
+Use GEPA 0.1.4, the source at commit `bcd03259cc341c9d0ce689f57ba301e467b0076c`, and a fresh output path to reproduce the original seal.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.opening_staged_witness_transfer

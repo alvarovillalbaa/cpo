@@ -28,7 +28,7 @@ MAX_REPAIRS = 3
 OPENING_FALLBACK = 12
 
 
-def cycle(features, *, opening_witness_only=False):
+def cycle(features, *, opening_witness_only=False, validation_probe_limit=0):
     def run(incumbent, train, validation, holdout, evaluate, propose, *, opening_pair, metric_limit, qualify,
             seed, field_credit, repeats, rounds, train_per_round):
         train, validation, holdout = tuple(train), tuple(validation), tuple(holdout)
@@ -76,13 +76,32 @@ def cycle(features, *, opening_witness_only=False):
                 # Recheck witnesses on the new instruction. Its remaining errors
                 # on these rows can reveal a second interacting rule.
                 candidates = [*witnesses, *available][:min(train_per_round, capacity)]
+                if validation_probe_limit and step > 0:
+                    remaining_miss = None
+                    checked = event.setdefault('residualChecks', [])
+                    for row, anchor_passed in zip(validation, passed, strict=True):
+                        if anchor_passed:
+                            continue
+                        if len(ledger) + len(validation) >= metric_limit:
+                            break
+                        current_passed = observe(parent, row).passed
+                        checked.append((step, row.id, current_passed))
+                        if not current_passed:
+                            remaining_miss = row
+                            break
+                    if remaining_miss is None:
+                        break
+                    spare = metric_limit - len(ledger) - len(validation)
+                    candidates = _rank_probes([*witnesses, *available], (remaining_miss,), (False,), vector)
+                    candidates = candidates[:min(validation_probe_limit, spare)]
                 diagnostic_prompt = previous.repair_api.strip_demonstrations(parent)
                 feedback = []
+                stop_at_failure = opening_witness_only if step == 0 else validation_probe_limit > 0
                 for row in candidates:
                     reply = observe(diagnostic_prompt, row)
                     feedback.append((row, reply))
                     used.add(row.id)
-                    if opening_witness_only and step == 0 and not reply.passed:
+                    if stop_at_failure and not reply.passed:
                         break
                 if step == 0 and all(reply.passed for _, reply in feedback):
                     remaining = metric_limit - len(ledger) - len(validation)
