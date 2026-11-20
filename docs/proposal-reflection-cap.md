@@ -22,6 +22,8 @@ The zero-callback arm scored three passes above batched GEPA on the additional a
 
 The additional archive registered 12,251 sequential GEPA and 12,112 batched GEPA custom proposer callbacks. GEPA’s archived callback supplies one candidate at a time. CPO’s callback can supply two. These counts measure each adapter’s work separately, and the benchmark supplies the proposals from the archive. Live reflection cost remains unmeasured. [Panel traces, callback counts, and paired ranges](proposal-reflection-cap-results-v1.json)
 
+The follow-up compared both supplied proposals within the zero-later-callback budget. [Opening pair replay](proposal-opening-pool.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
