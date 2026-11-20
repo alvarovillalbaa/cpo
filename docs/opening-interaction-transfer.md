@@ -27,3 +27,9 @@ PYTHONHASHSEED=0 python -B -m benchmarks.opening_interaction_transfer \
 ```
 
 Two clean source replays blocked sockets and DNS and matched byte for byte. Each ran 36 scripted panels and 72 native GEPA paths. Sixteen focused tests passed. The runner rejected an altered seal and preserved an existing report. Storage Guard measured 4.6 GiB free and the 29.5 MB scratch export was removed under the standing LAB exception. Live accuracy on interacting rules remains unmeasured. [Verification receipt](opening-interaction-transfer-verification-v1.json)
+
+## Early fallback pilot
+
+An exploratory run allowed fallback on the first passing batch if two full validation panels and one later training probe could still be funded. It ran on the same 36 panels. CPO with pair features scored 616 passes in 2,909 calls and recovered the matched critical loss against sequential GEPA. The minimum panel score still blocked the sequential gate, and batched GEPA still used 251 fewer calls. [Pilot patch](../benchmarks/patches/interaction-early-fallback.patch)
+
+To reproduce the pilot, apply the patch in a disposable export of `8956f4a95291ffa98cd65b3b186693b3200736a5`. Run the benchmark preview there and use the new seal printed for the patched source.

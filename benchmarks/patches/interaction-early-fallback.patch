@@ -1,0 +1,23 @@
+diff --git a/cpo/routed_repair_cycle.py b/cpo/routed_repair_cycle.py
+--- a/cpo/routed_repair_cycle.py
++++ b/cpo/routed_repair_cycle.py
+@@ -147,9 +147,9 @@
+         event = {'kind': 'routed-probes', 'probeRows': [row.id for row in probes], 'status': 'no-training-error'}
+         events.append(event)
+         if all(reply.passed for _, reply in feedback):
+-            if recover_stalls and attempt == 0:
+-                continue
+-            capacity = min(fallback_remaining, metric_limit - len(ledger) - len(validation))
++            next_stage = recover_stalls and attempt == 0
++            reserve = 2 * len(validation) + 1 if next_stage else len(validation)
++            capacity = min(fallback_remaining, metric_limit - len(ledger) - reserve)
+             for row in _fallback_probes(training, used, features, capacity):
+                 event.setdefault('fallbackRows', []).append(row.id)
+                 reply = observe(probe_prompt, row)
+@@ -161,4 +161,6 @@
+                 if not reply.passed:
+                     break
+             else:
++                if next_stage:
++                    continue
+                 break
