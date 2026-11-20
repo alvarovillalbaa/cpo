@@ -22,6 +22,8 @@ The same-witness retry found 134 additional validation winners across 429 retry 
 
 The shared-miss arm saved 10.4%, 8.1%, and 7.2% of paid lookups against batched GEPA. Its joint paired accuracy ranges against both GEPA controls were −59 to +55, −29 to +68, and −86 to +60 passes. Neither retry cleared the combined gate on any cohort. The existing CPO selector remains in place. Fresh-model comparisons remain pending.
 
+The follow-up tested requiring a validation gain beyond the screening case. [Validation beyond the first probe](independent-witness-validation.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path. Preview the design to obtain the seal.
