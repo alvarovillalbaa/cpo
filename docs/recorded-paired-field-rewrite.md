@@ -42,6 +42,16 @@ nominee = select_paired_field_rewrite(
 
 On the 240 Sol paths, this order reproduced every decision and held-out result while reducing search reads from 1,253 to 1,228 and attributed cost from $19.371768 to $18.736560. Both seed sets cost less. Fifteen individual paths cost more. On two complete Luna validation panels, the same rewrite nominations went from 39 to 28 reads and from $0.034427 to $0.024452, including the shared openings. Luna qualification remains unverified. Row-paired ordering is the default.
 
+## Reproduce the path-level cost bound
+
+In the Sol archive, charge-aware ordering retained a **17.40% pooled savings floor** against fixed-rewrite GEPA when each path and policy could incur separate charges within the observed ranges. Warehouse had the weakest task floor at 15.96%. The pooled cost margin at the 10% gate was $1.706069 for charge-aware and $1.117901 for row-paired. These figures use the archived replies and fixed shared opening charges.
+
+The bundled data consists of anonymous grouped read counts, price endpoints, and observed cost pairs. The verifier recomputes the bounds and checks which extrema the recorded charges attain. The original archive replay established the underlying read sets and nominations before export. From a source checkout, run the calculation using the bundled data and the Python standard library. [Grouped path charges](../benchmarks/data/paired-field-path-charge-costs-v1.jsonl)
+
+```sh
+python -B -m benchmarks.path_local_charge_bounds
+```
+
 ## How the proof handles score ties
 
 Native GEPA compares exact passes before matched fields by giving one exact pass more weight than all possible partial credit. Across the two gates, the proof caches paid replies and bounds the integer score difference from the known credits and remaining field capacities. When the possible integer margin is strictly positive or negative, the proof can stop if the margin exceeds a conservative bound for native float rounding.
