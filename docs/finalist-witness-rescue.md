@@ -28,6 +28,8 @@ Rescue after an empty opening recovered **13 of the 30 missing passes** on the l
 
 The added witness can improve coverage, with uneven returns from a separate round of probing. None of the rescue arms matches the strongest holdout score on the later model splits. This is a retrospective selection study using archived outcomes. Fresh prompt generation and provider charges remain unverified. [Complete results](finalist-witness-rescue-results-v1.json)
 
+The follow-up allocates one opening probe per challenger across the two misses observed by the route. It also tests whether a third incumbent reply can fund the wider race selectively. [Split opening witnesses](routed-witness-split.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview each phase for its seal. The other phases are `bbh-lmentry` and `mmlu`.
