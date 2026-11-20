@@ -27,6 +27,8 @@ In 49 of the 50 read-without-witness comparisons, no matching target at that sta
 
 The audit uses held-out outcomes to identify viable targets after the fact. It establishes which stage blocked the observed choices. It leaves open whether a different first probe can reach those targets within the same lookup budget.
 
+A follow-up alternated between two incumbent misses under bounded lookahead. It recovered two of the 50 read-without-witness comparisons and missed the overall lookup-savings gate. [Bounded miss alternation](bounded-miss-alternation.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Two source-export runs matched byte for byte with sockets and DNS disabled and reproduced 84 published control traces. Five focused tests checked cached-read accounting, exact gate classification, full scoring, truncation, and archive preemption. The CLI rejected a stale seal and preserved an existing report. Storage Guard measured 12.8 GiB free. The 20.7 MB temporary overlay was removed under the standing LAB exception. [Tests](../tests/unit/test_affordable_challenger_attribution.py) · [Verification receipt](affordable-challenger-attribution-verification-v1.json) · [Storage authorization](../../lab/docs/runbooks/lab-storage-exceptions.md)
