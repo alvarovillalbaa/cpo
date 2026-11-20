@@ -47,7 +47,7 @@ def _check_charge(charge, quote):
 def select_sequential_field_rewrites(
     incumbent, training, validation, evaluate, schedule, propose, *,
     rounds, minibatch_size, metric_limit, observed_charge=None, reinvest_savings=False, price_budget=None,
-    certify_boundary_ties=False,
+    certify_boundary_ties=False, skip_perfect_after=None,
 ):
     """Match sequential GEPA's field gates, full-round reserve and score order.
 
@@ -66,6 +66,11 @@ def select_sequential_field_rewrites(
     With a SequentialSearchBudget, reserve both evaluation and proposal
     charges before dispatch. observed_charge must settle each evaluation.
     Set certify_boundary_ties to use the native comparison at a bound of zero.
+
+    With reinvest_savings, skip_perfect_after identifies the number of
+    supplied opening slots. A later slot with perfect parent feedback uses
+    the scheduled round without calling or settling a reflection. Later
+    proposals must depend on the slot and feedback rather than call count.
     """
     training, validation = tuple(training), tuple(validation)
     train_ids, val_ids = tuple(row.id for row in training), tuple(row.id for row in validation)
@@ -83,6 +88,9 @@ def select_sequential_field_rewrites(
         raise ValueError('Observed charge must be a callback')
     if price_budget is not None and (not isinstance(price_budget, SequentialSearchBudget) or observed_charge is None):
         raise ValueError('A sequential price budget requires observed evaluation charges')
+    if skip_perfect_after is not None and (type(skip_perfect_after) is not int
+            or not 0 <= skip_perfect_after <= rounds or not reinvest_savings):
+        raise ValueError('Skipping perfect reflections requires paid-read mode and a valid opening slot count')
 
     weight = 1 << (max(len(train_ids), len(val_ids)) * fields).bit_length()
     denominator = weight + fields
@@ -171,13 +179,16 @@ def select_sequential_field_rewrites(
         accounted.update((parent, case) for case in batch)
         for case in batch:
             observe(parent, case)
+        latest = None
+        perfect_batch = reinvest_savings and all(scores[parent, case] == denominator for case in batch)
+        if perfect_batch and skip_perfect_after is not None and index >= skip_perfect_after:
+            continue
         child = propose(index, parent, tuple((by_id[case], replies[parent, case]) for case in batch))
         if price_budget is not None:
             charge = price_budget.observed_proposal(index, parent, child)
             _check_charge(charge, quote)
             settled_charge += charge
-        latest = None
-        if reinvest_savings and all(scores[parent, case] == denominator for case in batch):
+        if perfect_batch:
             continue
         accounted.update((child, case) for case in batch)
         if child != parent and _wins(parent, child, batch, scores, observe, denominator,
