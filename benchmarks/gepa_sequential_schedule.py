@@ -33,7 +33,7 @@ def select_field_rewrites(
     )
 
 
-def sequential_schedule(validation, seed, minibatch_size, trace, *, training=None, parent_bounds=False):
+def sequential_schedule(validation, seed, minibatch_size, trace, *, training=None, parent_bounds=False, width=1):
     from gepa.core.data_loader import ListDataLoader
     from gepa.gepa_utils import select_program_candidate_from_pareto_front
     from gepa.strategies.batch_sampler import EpochShuffledBatchSampler
@@ -62,10 +62,13 @@ def sequential_schedule(validation, seed, minibatch_size, trace, *, training=Non
                 fronts[case] = {owner for owner, score in enumerate(scores) if score == best}
             averages = [sum(profile) / len(validation) for profile in profiles]
             parent = pool[select_program_candidate_from_pareto_front(fronts, averages, rng)]
-        ids = sampler.next_minibatch_ids(loader, SimpleNamespace(i=index))
-        batch = tuple(training[case].id for case in ids)
-        trace.append((pool, parent, batch))
-        return parent, batch
+        batches = []
+        for _ in range(width):
+            ids = sampler.next_minibatch_ids(loader, SimpleNamespace(i=index))
+            batch = tuple(training[case].id for case in ids)
+            batches.append(batch)
+            trace.append((pool, parent, batch))
+        return parent, batches[0] if width == 1 else tuple(batches)
 
     return schedule
 

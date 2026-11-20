@@ -147,3 +147,15 @@ python -m pytest -q tests/unit/test_paired_field_rewrite.py tests/unit/test_sequ
 The tests enumerate all 65,536 field profiles for two prompts on four three-field cases with and without observed-charge ordering. They check the native result and verify that each paid read belongs to the complete native comparison. The Sol replay used the pinned GEPA 0.1.4 first minibatch and exact published control receipts. Two offline runs matched byte for byte. Fresh proposal generation and independent live confirmation remain unverified.
 
 The parent-draw test checks all 729 two-candidate combinations of three grades on three validation cases and eight seeds against GEPA 0.1.4, including the generator state after each draw.
+
+## Follow multiple same-parent batches
+
+`select_batched_field_rewrites` keeps GEPA's full-read round horizon while evaluating only the replies needed for each strict gate. A round draws one parent and samples a training minibatch for each proposal from that parent. The selector adds the strict minibatch winners to the pool in order, removing duplicate winners within the round. Later proposals receive the same paid training feedback, including repetitions from the sampler's epoch padding. A repeated case uses the paid reply already in the cache. Independent admission runs after nomination.
+
+On 36 deterministic panels at the 76-read cap, CPO and native width-two GEPA matched the candidate pools, parents, minibatches, all 30 later proposal requests and outputs, admission, and all 648 held-out outcomes. Both passed 622. CPO reduced search evaluations from 1,658 to 1,179 and used the same 1,038 admission evaluations. Every paid CPO search reply also appeared in the native trace. Scripted replies exercise the schedule and evaluation savings. [Fixture results](batched-field-feedback-results-v1.json)
+
+The recorded Sol replay matched batched GEPA on all 960 paths across four caps, including the reflection edges, nominees, admissions, and held-out outcomes. At cap 56 both methods used 186 recorded reflections on 88 paths and passed 380 of 480 held-out cases. CPO reduced search reads from 5,466 to 4,485. The historical charge, including the shared opening, recorded reflections, and admission, fell from $53.18 to $48.13. This 9.5% reduction applies to the recorded trajectories. Fresh provider performance remains unverified.
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.batched_field_feedback
+```
