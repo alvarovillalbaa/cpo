@@ -31,6 +31,8 @@ On the third-miss route, combining split qualification with a final-cycle reserv
 
 For that combined setting, 4,096 paired draws resampled holdout cases within subjects, with both models and all episodes carried together. The fixed sequential cap-35 difference had a central 95% range of −45 to +90 passes. Against the two original cap-52 controls the combined policy gained 44 passes against batched GEPA and trailed sequential GEPA by 28. It cleared 10% lookup savings against both. The joint range was −90 to +30 passes. The combined setting and cost comparators were selected for this audit after observing the archived results. Fresh proposal quality and provider spending remain unverified. [Full comparisons and reserves](routed-start-protection-results-v1.json)
 
+The follow-up froze the combined policy and the original gate before capturing 16 new model and subject outcomes. [Model-split confirmation](routed-start-model-confirmation.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. Preview to get the seal for `model-transfer`, `bbh-lmentry`, or `mmlu`, then execute to a fresh output path.
