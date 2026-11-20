@@ -26,6 +26,8 @@ At cap 36, risk coverage cost 96 more lookups than matched moves and passed one 
 
 Ticket outcomes and cost were identical under all layouts. Warehouse retained 605 passes out of 660 under every layout. Risk coverage raised CPO's warehouse lookup count by 279 and 370 against the original allocation at the two caps. The evidence supports leaving risk allocation optional. Repairing the identified outage evidence gap requires cases from the missing conditions. [Totals, matched comparisons and loss attribution](recorded-critical-allocation-results-v1.json)
 
+A separate audit checked the two lost outage conditions against the retained Luna replies and the sealed v5 case panels. [Luna outage evidence](luna-outage-evidence.md)
+
 ## Reproduce
 
 Use the intact GEPA research archive, its original Open Evals source study, and GEPA 0.1.4.

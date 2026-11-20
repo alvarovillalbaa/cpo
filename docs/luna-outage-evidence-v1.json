@@ -1,0 +1,139 @@
+{
+  "inputs": {
+    "luna-v1": "c1df027c9b8ea160dd42771360c005655b480626",
+    "luna-v5": "94d4b50f6f2bc96f52b6cef9d16e92db7ce26b2a",
+    "recorded": "edf0d8c5e8849a8e662fa66982667478c62b5494"
+  },
+  "results": {
+    "luna-v1": {
+      "developmentQualified": false,
+      "model": "gpt-6-luna",
+      "outageHoldout": {
+        "120-plus/missing": {
+          "criticalRepeats": 6,
+          "matchedRepeats": 6,
+          "passes/cpo": 0,
+          "passes/initial": 0,
+          "passes/local-first-batched": 0,
+          "passes/local-first-exact": 0,
+          "passes/rewrite-first-exact": 0
+        },
+        "120-plus/posted": {
+          "criticalRepeats": 0,
+          "matchedRepeats": 8,
+          "passes/cpo": 0,
+          "passes/initial": 0,
+          "passes/local-first-batched": 0,
+          "passes/local-first-exact": 0,
+          "passes/rewrite-first-exact": 0
+        },
+        "30-to-119/missing": {
+          "criticalRepeats": 6,
+          "matchedRepeats": 6,
+          "passes/cpo": 0,
+          "passes/initial": 0,
+          "passes/local-first-batched": 0,
+          "passes/local-first-exact": 0,
+          "passes/rewrite-first-exact": 0
+        },
+        "30-to-119/posted": {
+          "criticalRepeats": 4,
+          "matchedRepeats": 12,
+          "passes/cpo": 0,
+          "passes/initial": 0,
+          "passes/local-first-batched": 0,
+          "passes/local-first-exact": 0,
+          "passes/rewrite-first-exact": 0
+        },
+        "under-30/missing": {
+          "criticalRepeats": 2,
+          "matchedRepeats": 2,
+          "passes/cpo": 0,
+          "passes/initial": 0,
+          "passes/local-first-batched": 0,
+          "passes/local-first-exact": 0,
+          "passes/rewrite-first-exact": 0
+        },
+        "under-30/posted": {
+          "criticalRepeats": 0,
+          "matchedRepeats": 2,
+          "passes/cpo": 0,
+          "passes/initial": 0,
+          "passes/local-first-batched": 1,
+          "passes/local-first-exact": 1,
+          "passes/rewrite-first-exact": 1
+        }
+      },
+      "planSha256": "8c673bcdc1107c821622a46940c94cf4ec36d9331251d4177f94566b32c181dd",
+      "qualificationWireSha256": "cfdf8f2e32e579e53067bab32b8b3c79878942b5281699c3be18dfc838dcd4a0",
+      "searchWireSha256": "8ea87cc74ecb6109f936b100c3c9fa500ebae21068d2539a96d9a272b2806558",
+      "studyProviderRequests": 707
+    },
+    "luna-v5": {
+      "independentPanelSha256": "cd5260800c7613e8a29b364595419d6dfdfdf281e2bf17e371fd34e69ce29f45",
+      "model": "gpt-6-luna",
+      "outageEvaluationReplies": 0,
+      "physicalRepliesVerified": 163,
+      "plannedCriticalCasesByCondition": {
+        "confirmation": {
+          "120-plus/missing": 1,
+          "120-plus/posted": 1,
+          "under-30/missing": 1
+        },
+        "demonstrations": {
+          "120-plus/missing": 1,
+          "120-plus/posted": 1
+        },
+        "holdout": {
+          "120-plus/missing": 2,
+          "120-plus/posted": 5,
+          "30-to-119/missing": 1,
+          "under-30/missing": 1
+        },
+        "train": {
+          "120-plus/missing": 2,
+          "120-plus/posted": 4,
+          "30-to-119/missing": 1,
+          "under-30/missing": 1
+        },
+        "validation": {
+          "120-plus/missing": 2,
+          "120-plus/posted": 3,
+          "30-to-119/missing": 1
+        }
+      },
+      "qualificationReplies": 0,
+      "recoveryClaimPresent": false,
+      "recoveryPlanSha256": "3f34a88c0459892689a731ba96ba7545f4509208f1de84be40149e7e7816ccb9",
+      "sourcePlanSha256": "aca2d8ff43b25c01b6e4a3c38147ab13cc4eab25511378de953c24b722f9bdda",
+      "sourceWireSha256": "dd294251790305bb7a58fc63e86836e30f882eb0ff7fc5e95cd13aa1a22ee6b4"
+    },
+    "recorded": {
+      "criticalLossesByCondition": {
+        "gepa-batched": {
+          "120-plus/posted": 1
+        },
+        "gepa-sequential": {
+          "120-plus/missing": 1,
+          "120-plus/posted": 1
+        }
+      },
+      "distinctLossCases": {
+        "gepa-batched": 1,
+        "gepa-sequential": 2
+      },
+      "planSha256": "851b71ea69a92a6347d659b3da1cf28d0eb18eb004a4d263062576af057f4be8",
+      "traceSha256": "ca74f784dccc4081ed5f2753ec4866f580b3c7f370a8c244a0ba7a0d49b02552",
+      "uniqueLossCasesAcrossControls": 2
+    }
+  },
+  "schema": "cpo-luna-outage-evidence-v1",
+  "verification": {
+    "diskScope": "Disposable source exports, pinned wheel, and replay scratch",
+    "freeGiBBefore": 17.5,
+    "gepaWheelSha256": "12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "python": "3.12.14",
+    "runnerSha256": "13caf043a5a594654deeb01054b8a075d31e75a735686d4082e503637dd178e1",
+    "sourceAndOverlayBytes": 18919884
+  }
+}
