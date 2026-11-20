@@ -21,6 +21,8 @@ On the additional archive, Rescue opened 309 sibling challenges across 1,024 cyc
 
 Rescue improved the development score by seven passes. It lost 19 on the earlier transfer archive while adding 3,877 lookups. The earlier eight-case screen scored higher at lower cost on both transfer cohorts. CPO’s default search stays in place. [Panel outcomes, rescue counters, and intervals](proposal-opening-rescue-results-v1.json)
 
+The follow-up froze the earlier eight-case screen and measured it on 30 archived panels outside the preceding proposal comparisons. [Opening transfer replay](proposal-opening-transfer.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
