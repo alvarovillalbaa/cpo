@@ -36,6 +36,8 @@ The published CPO route still beats retaining the start in aggregate by 107 pass
 
 The follow-up found that previously paid matched cases favored the final prompt in all 109 losses where retaining the start would have matched GEPA. [Paid-evidence retention replay](paid-start-retention.md)
 
+A separate follow-up kept the starting comparator fixed and banked qualified challengers for one final deployment. It recovered six of the 85 fresh-path losses and lost 83 net passes at lower cost. [Deferred adoption replay](deferred-adoption.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Two source-export replays matched byte for byte with sockets and DNS blocked. Both reproduced all 84 published CPO and GEPA panel traces and verified containment of the measured CPO finale under the optimistic priced archive model on all 896 episodes. Three focused tests checked one-move-per-cycle semantics, repeated validation cost, archive admission, and the two-half gate. The CLI rejected a stale seal and preserved an existing report. Storage Guard measured 13.2 GiB free. The 20.3 MB scratch overlay was removed under the standing LAB exception. [Verification receipt](priced-gate-reachability-verification-v1.json) · [Tests](../tests/unit/test_priced_gate_reachability.py) · [Storage authorization](../../lab/docs/runbooks/lab-storage-exceptions.md)
