@@ -29,6 +29,8 @@ On the later MMLU model splits, the split retry led batched GEPA by **nine passe
 
 Widening on a third pass led batched GEPA on all three cohorts in aggregate. The later MMLU lead was 20 passes with 11.9% fewer lookups, with 52 fewer passes than sequential GEPA. The BBH and LMentry advantage was sensitive to dropping a task. Widening on a third miss beat both GEPA controls on the MMLU pilot, where its five-pass lead over sequential GEPA was also sensitive to dropping a subject. These archived cohorts show that routing can move the search cost and score tradeoff. The strongest sequential GEPA result on the later model splits remains ahead of the new arms. [Full results and panel receipts](routed-witness-split-results-v1.json)
 
+At comparable realized lookup cost, the third-pass route finishes one pass behind sequential GEPA. The follow-up sweeps both GEPA modes across all integer paid caps from 20 through 68. [Matched-cost model frontier](routed-model-cost-frontier.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview each phase for its seal. The other phases are `bbh-lmentry` and `mmlu`.
