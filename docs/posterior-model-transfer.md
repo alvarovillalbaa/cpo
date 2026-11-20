@@ -1,0 +1,9 @@
+# Confirm posterior allocation on new archived model panels
+
+The prior posterior-wide policy saved lookups against both GEPA controls on archived MMLU trajectories. Its joint paired accuracy range included zero. This experiment keeps the existing policy and tests it on model-by-subject panels absent from the local CPO snapshots. [Prior result](routed-score-allocation.md)
+
+The six subjects are high-school geography, government and politics, microeconomics, statistics, moral disputes, and world religions. The model splits are Gemma 7B base and Flan-T5 XXL. Some subjects appeared with other models in previous replays. The trial tests transfer to new recorded prompt outcomes for these model-subject combinations. Its frozen input objects come from the MIT-licensed PromptEval correctness archive. [Source archive](https://huggingface.co/datasets/PromptEval/PromptEval_MMLU_correctness) · [License](../benchmarks/data/LICENSE.prompteval)
+
+The three CPO arms use the same 32 seeded four-cycle episodes, case partitions, and independent eight-case qualification. The candidate uses posterior allocation when the original route widens. The exact-wide arm uses an exact race at the same trigger. Official sequential and batched GEPA use the same 52-lookup search limit, and a secondary batched control uses cap 47. Retaining the starting prompt is a zero-lookup control.
+
+The primary gate requires at least 10% lookup savings against both cap-52 GEPA modes and a nonnegative lower endpoint for the joint central 95% paired range. Draws resample original holdout cases within subject and keep both models and all 32 episodes together. The complete design and source object identities are frozen before retrieving correctness rows. [Frozen design](posterior-model-transfer-design-v1.json) · [Runner](../benchmarks/posterior_model_transfer.py)
