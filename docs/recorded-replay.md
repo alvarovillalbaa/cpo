@@ -35,3 +35,5 @@ Across two sets of 40 seeds per task, precomputed CPO selected the same prompts 
 Retaining two parents with equal validation scores was also tested on 120 replay splits with new seeds. It changed 19 selections, spent 560 more calls than the default CPO, and gained zero holdout passes. The optimizer keeps its existing tie behavior.
 
 The seed sets reuse the recorded rows and proposal graph. The result isolates search efficiency. Fresh proposal quality, provider timing, and provider spend remain unmeasured. [Precomputed opening API](feedback-budget.md)
+
+An audit against the retained provider token receipts found a pooled historical cost advantage. Ticket routing missed the per-task 10% savings threshold against sequential GEPA when priced by those receipts. [Historical token-cost results](recorded-opening-token-cost.md)
