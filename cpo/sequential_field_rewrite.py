@@ -47,6 +47,7 @@ def _check_charge(charge, quote):
 def select_sequential_field_rewrites(
     incumbent, training, validation, evaluate, schedule, propose, *,
     rounds, minibatch_size, metric_limit, observed_charge=None, reinvest_savings=False, price_budget=None,
+    certify_boundary_ties=False,
 ):
     """Match sequential GEPA's field gates, full-round reserve and score order.
 
@@ -64,6 +65,7 @@ def select_sequential_field_rewrites(
 
     With a SequentialSearchBudget, reserve both evaluation and proposal
     charges before dispatch. observed_charge must settle each evaluation.
+    Set certify_boundary_ties to use the native comparison at a bound of zero.
     """
     training, validation = tuple(training), tuple(validation)
     train_ids, val_ids = tuple(row.id for row in training), tuple(row.id for row in validation)
@@ -178,7 +180,8 @@ def select_sequential_field_rewrites(
         if reinvest_savings and all(scores[parent, case] == denominator for case in batch):
             continue
         accounted.update((child, case) for case in batch)
-        if child != parent and _wins(parent, child, batch, scores, observe, denominator):
+        if child != parent and _wins(parent, child, batch, scores, observe, denominator,
+                                     certify_boundary_ties=certify_boundary_ties):
             latest = child
             pool.append(child)
             new_reserve = {(child, case) for case in val_ids}
@@ -200,6 +203,6 @@ def select_sequential_field_rewrites(
             return observed
 
         if _wins(leader, rewrite, val_ids, paired, observe_pair, denominator,
-                 charges=paired_charges, full_order=val_ids):
+                 charges=paired_charges, full_order=val_ids, certify_boundary_ties=certify_boundary_ties):
             leader = rewrite
     return leader

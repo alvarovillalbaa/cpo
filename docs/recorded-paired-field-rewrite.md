@@ -58,6 +58,8 @@ Native GEPA compares exact passes before matched fields by giving one exact pass
 
 An integer tie can still advance under native arithmetic. With seven fields across four validation cases, scores proportional to `1 + 5` and `0 + 6` have equal integer totals. After the native division by 39, their floating-point sums differ. A focused test verified that native GEPA and the paired selector both advance the latter rewrite. A gate with a possible tie reads the needed replies and applies the native comparison order, including cached-before-fresh validation scores. The same complete comparison applies when the early rounding bound is unavailable.
 
+The paired and sequential selectors accept `certify_boundary_ties=True`. When an integer bound equals zero, a tie can occur only if every unknown grade reaches its corresponding extreme. The selector evaluates that hypothetical tie using GEPA's native floating-point order. It can skip the remaining replies if the tie and every strict integer margin inside the bound give the same result. Otherwise it buys another grade or completes the native comparison.
+
 ## Follow a sequence of field-scored rewrites
 
 `select_sequential_field_rewrites` passes paid training feedback to a proposer, with separate rows for validation. Each strict minibatch improvement enters the parent pool. The scheduler can request complete validation grades to reproduce the native Pareto draw. The selector keeps the native full-round budget reserve and uses paired score bounds whenever the remaining replies cannot change an acceptance decision or the final ranking.
@@ -130,6 +132,15 @@ Run the public fixture with the same two options. With one-unit reflections, CPO
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback --quoted-budget --parent-bounds
+```
+
+### Certify score bounds that touch zero
+
+Across 720 recorded Sol paths at three spending ceilings, the optional proof preserved every CPO nominee, admission, and held-out outcome. It saved nine additional search reads at the second ceiling and 13 at the highest. The other ceiling and the scripted fixture used the same reads as the previous selector. [Scripted fixture results](sequential-field-quote-tie-bounds-results-v1.json)
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback \
+  --quoted-budget --parent-bounds --tie-bounds
 ```
 
 The same parent option works with the evaluation-only cap. On the Sol archive at cap 24, this mode bought enough extra proposals that CPO cost $37.63 against sequential GEPA's $35.63, with the same number of passes. [Paid-read fixture results](sequential-field-paid-parent-bounds-results-v1.json)
