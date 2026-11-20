@@ -1,4 +1,4 @@
-"""Compare staged and opening-only CPO prospectively against native GEPA."""
+"""Compare staged and opening-only CPO against split-safe GEPA controls."""
 
 import argparse
 from collections import Counter, defaultdict
@@ -10,17 +10,20 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from benchmarks import grounded, grounded_staged as staged
+from benchmarks import gepa_cached_opening, gepa_disjoint_cases, grounded, grounded_staged as staged
 from benchmarks import grounded_staged_case_evidence as evidence
 from benchmarks import grounded_staged_opening_ablation as opening
 from cpo._contract import digest
 
 
 POLICIES = ('cpo', 'opening-only')
-ARMS = (*staged.ARMS, POLICIES[1])
+CONTROLS = (*staged.ARMS[1:], staged.CACHED_OPENING)
+ARMS = (POLICIES[0], *CONTROLS, POLICIES[1])
 CERTIFICATES = {'certify_opening': True, 'certify_final_draft': True}
 PANEL_GATE = {'minimumTaskPasses': 12, 'minimumAddedPasses': 4, 'efficiencyPercent': 90}
 ARCHIVE_FILES = staged.ARCHIVE_FILES
+CACHED_OPENING_MINIBATCH = 2
+CACHED_OPENING_READS = 2 * staged.SPLITS['validation']
 
 
 def archive_bytes(directory):
@@ -31,19 +34,25 @@ def prepare(development=None):
     groups, base, _ = staged.prepare(**CERTIFICATES)
     tasks, repeats = len(groups), base['repeats']
     limits = dict(base['logicalLimitsByRole'])
-    limits['evaluation'] += tasks * base['searchCap']
-    limits['admission'] += tasks * 2 * staged.SPLITS['admission'] * repeats
-    limits['qualification'] += tasks * staged.SPLITS['holdout'] * repeats
+    additional_arms = len(ARMS) - len(staged.ARMS)
+    limits['evaluation'] += tasks * (base['searchCap'] + CACHED_OPENING_READS)
+    limits['admission'] += additional_arms * tasks * 2 * staged.SPLITS['admission'] * repeats
+    limits['qualification'] += additional_arms * tasks * staged.SPLITS['holdout'] * repeats
     modules = (Path(__file__), Path(opening.__file__), Path(evidence.__file__),
+               Path(gepa_cached_opening.__file__), Path(gepa_disjoint_cases.__file__),
                Path(__file__).with_name('grounded_staged_combined_fixture.py'))
-    frozen = {**base, 'protocol': 'portable-grounded-staged-policy-comparison-v1', 'arms': list(ARMS),
-              'scope': 'Matched staged and opening-only CPO policies with both native GEPA controls.',
+    frozen = {**base, 'protocol': 'portable-grounded-staged-policy-comparison-v2', 'arms': list(ARMS),
+              'scope': 'Both CPO policies, two split-safe native GEPA controls and fixed-opening GEPA.',
               'sourceSha256': {**base['sourceSha256'], **{
                   f'benchmarks/{path.name}': sha256(path.read_bytes()).hexdigest() for path in modules}},
               'combinedPlanSha256': digest(base), 'logicalLimitsByRole': limits,
               'developmentRequestCeiling': sum(limits.values()),
-              'openingControl': {'placement': 'after original arms for each task', 'sharedOpening': True,
-                                 'laterProposals': 0, 'admission': 'same exact family certificate'}}
+              'openingControl': {'placement': 'after staged and GEPA arms for each task', 'sharedOpening': True,
+                                 'laterProposals': 0, 'admission': 'same exact family certificate'},
+              'nativeGepaCaseIds': 'original case IDs, disjoint across train and validation',
+              'cachedGepaOpening': {'proposal': 'supplied rewrite', 'minibatch': CACHED_OPENING_MINIBATCH,
+                                    'observations': 'reuse validation replies', 'laterProposals': 0,
+                                    'evaluationLimitPerTask': CACHED_OPENING_READS}}
     if development is None:
         return groups, frozen, None
 
@@ -70,7 +79,7 @@ def grade(heldout, costs, gate):
     for policy in POLICIES:
         rows = {task: [{**row, 'passes': {**row['passes'], 'cpo': row['passes'][policy]}} for row in panel]
                 for task, panel in heldout.items()}
-        verdict = staged.grade(rows, {**costs, 'cpo': costs[policy]}, gate)
+        verdict = staged.grade(rows, {**costs, 'cpo': costs[policy]}, gate, controls=CONTROLS)
         verdict['passesByTask'][policy] = verdict['passesByTask'].pop('cpo')
         by_policy[policy] = verdict
 
@@ -114,11 +123,13 @@ class Journal:
 
         self.logical[role] += 1
         self.by_arm[task, arm, role] += 1
-        limits = self.request_limits
+        limit = self.request_limits.get(role)
         if role == 'reflection':
-            limits = {'reflection': 1 if arm == 'shared' else (3 if arm == 'cpo' else grounded.REFLECTION_LIMIT)}
+            limit = {'shared': 1, 'cpo': 3, staged.CACHED_OPENING: 0}.get(arm, grounded.REFLECTION_LIMIT)
+        if role == 'evaluation' and arm == staged.CACHED_OPENING:
+            limit = CACHED_OPENING_READS
         if (self.logical[role] > self.logical_limits.get(role, 0) or
-                (role in limits and self.by_arm[task, arm, role] > limits[role])):
+                (limit is not None and self.by_arm[task, arm, role] > limit)):
             raise grounded.ResponderFailed from ValueError('A request exceeded a sealed task or role limit')
 
         if role != 'reflection' and key in self.samples:
@@ -142,6 +153,11 @@ class Journal:
         if role != 'qualification':
             self.search_uses[arm].append(sequence)
         return text
+
+
+def select_cached_gepa(initial, bank, groups, evaluate, *, cap, seed):
+    return gepa_cached_opening.select_opening(initial, bank[:1], groups, evaluate, cap=cap, seed=seed, width=1,
+                                              minibatch_size=CACHED_OPENING_MINIBATCH)
 
 
 def run(seal, directory, respond, *, delivery, development=None):
@@ -175,7 +191,10 @@ def run(seal, directory, respond, *, delivery, development=None):
             if prior is None:
                 for task, task_groups in groups.items():
                     search = {part: task_groups[part] for part in ('train', 'validation', 'admission')}
-                    prompts[task], decisions[task] = staged.choose(task, search, partial(dispatch, task), **CERTIFICATES)
+                    prompts[task], decisions[task] = staged.choose(
+                        task, search, partial(dispatch, task), **CERTIFICATES,
+                        native_gepa_selector=gepa_disjoint_cases.select, cached_opening_selector=select_cached_gepa,
+                    )
                     prompt, counts, status = opening.opening_only(task, search, partial(journal.send, 'opening-only'))
                     prompts[task]['opening-only'] = prompt
                     decisions[task]['opening-only'] = {'admission': status, 'admissionLookups': counts['admission']}

@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SEED = 66029
 SPLITS = {'train': 16, 'validation': 12, 'admission': 8, 'holdout': 18, 'confirmation': 8}
 ARMS = ('cpo', 'gepa-sequential', 'gepa-batched')
+CACHED_OPENING = 'gepa-cached-opening'
 RETRY_LIMIT = 8
 FAMILY = {'ticket': 'Channel', 'warehouse': 'Tier', 'outage': 'Plan'}
 BOUNDARIES = (0, 1, 4, 5, 8, 9, 12, 14)
@@ -113,7 +114,8 @@ def cases(task, rows):
                 row['critical'], len(row['expected'])) for row in rows]
 
 
-def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening=False):
+def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening=False,
+           native_gepa_selector=None, cached_opening_selector=None):
     train, validation, admission = (groups[name] for name in ('train', 'validation', 'admission'))
     training = [{key: row[key] for key in ('id', 'input', 'expected')} for row in train]
     train_ids = {row['id'] for row in train}
@@ -134,6 +136,9 @@ def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening
     decision_log = {}
     order = list(ARMS)
     Random(f'{SEED}:{task}').shuffle(order)
+    if cached_opening_selector is not None:
+        order.append(CACHED_OPENING)
+    native_select = native_gepa_selector or opening_screen_typed.gepa_select
     for arm in order:
         def evaluate(prompt, row_id):
             row = search_rows[row_id]
@@ -166,9 +171,13 @@ def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening
             nominee, selected[arm] = result.search.prompt, result.prompt
             proof = result.qualification
         else:
-            nominee = opening_screen_typed.gepa_select(grounded.BASELINE, bank, groups, evaluate, reflect,
-                                                        cap=grounded.METRIC_LIMIT, seed=SEED,
-                                                        width=2 if arm == 'gepa-batched' else 1)
+            if arm == CACHED_OPENING:
+                nominee = cached_opening_selector(grounded.BASELINE, bank, groups, evaluate,
+                                                   cap=grounded.METRIC_LIMIT, seed=SEED)
+            else:
+                nominee = native_select(grounded.BASELINE, bank, groups, evaluate, reflect,
+                                        cap=grounded.METRIC_LIMIT, seed=SEED,
+                                        width=2 if arm == 'gepa-batched' else 1)
             proof = certify_family_qualification(grounded.BASELINE, nominee, cases(task, admission), qualify,
                                                  repeats=grounded.REPEATS, seed=SEED)
             selected[arm] = proof.prompt
@@ -177,11 +186,11 @@ def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening
     return selected, decision_log
 
 
-def grade(outcomes, costs, gate):
+def grade(outcomes, costs, gate, *, controls=ARMS[1:]):
     totals = {arm: {task: sum(row['passes'][arm] for row in rows) for task, rows in outcomes.items()}
-              for arm in ('initial', *ARMS)}
+              for arm in ('initial', 'cpo', *controls)}
     comparisons = {}
-    for arm in ('initial', *ARMS[1:]):
+    for arm in ('initial', *controls):
         deltas, critical_losses = Counter(), 0
         for rows in outcomes.values():
             for row in rows:

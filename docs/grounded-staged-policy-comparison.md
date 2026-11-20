@@ -1,6 +1,6 @@
 # Compare CPO with and without later repairs in one run
 
-The original seal records the list-loader configuration for the two GEPA controls. A separate replay identified a training and validation cache collision in that configuration. [Cache correction and split-safe adapter](grounded-gepa-cache-controls.md)
+The original seal records the list-loader configuration for the two GEPA controls. A separate replay identified a training and validation cache collision in that configuration. [Cache correction](grounded-gepa-cache-controls.md) · [Split-safe comparison](grounded-staged-policy-comparison-v2.md)
 
 This protocol adds opening-only CPO alongside staged CPO, sequential GEPA, batched GEPA, and the starting prompt. The opening-only policy screens the same shared rewrite and repair, applies the same admission rule, and requests no later proposals. For each task it selects after the three original search arms and before holdout scoring. The recorded Sol replay motivated this control because opening-only matched every staged selection with fewer lookups. [Recorded comparison](grounded-staged-recorded-opening.md) · [Runner](../benchmarks/grounded_staged_policy_comparison.py)
 
@@ -17,7 +17,7 @@ The added control required zero extra physical requests in these profiles. Both 
 
 ## Reproduce offline
 
-Use pinned GEPA 0.1.4 and fresh output paths. The example runs the fixture where every rewrite needs repair. Use `--profile perfect-ticket-rewrite` for both phases to run the other fixture.
+Use source from commit `c06bf3449db7602a35db1c09c755752203e2bbed`, pinned GEPA 0.1.4, and fresh output paths. The example runs the fixture where every rewrite needs repair. Use `--profile perfect-ticket-rewrite` for both phases to run the other fixture.
 
 ```sh
 python -B -m benchmarks.grounded_staged_policy_comparison

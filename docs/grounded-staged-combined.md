@@ -15,7 +15,7 @@ The opening-only ablation measures the additional passes and search uses from th
 
 ## Reproduce offline
 
-Use GEPA 0.1.4 and fresh directories. The two-profile comparison is available through `python -B -m benchmarks.grounded_staged_combined_fixture --out NEW_REPORT.json`.
+Use source from commit `f69172107421b84d23fb01178bb8331c90883455`, GEPA 0.1.4, and fresh directories. The two-profile comparison is available through `python -B -m benchmarks.grounded_staged_combined_fixture --out NEW_REPORT.json`.
 
 ```sh
 python -B -m benchmarks.grounded_staged --certify-opening --certify-final-draft \

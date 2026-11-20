@@ -15,7 +15,7 @@ A follow-up on recorded model replies found no added passes from staged repair i
 
 ## Reproduce offline
 
-Use the pinned GEPA 0.1.4 dependency and a fresh output path. The ablation verifies all three archive files for each published combined development and confirmation fixture before evaluating the matched control outcomes.
+Use source from commit `34defe647a9ebb92f927b186f16f90017d1dde6e`, the pinned GEPA 0.1.4 dependency, and a fresh output path. The ablation verifies all three archive files for each published combined development and confirmation fixture before evaluating the matched control outcomes.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.grounded_staged_opening_ablation
