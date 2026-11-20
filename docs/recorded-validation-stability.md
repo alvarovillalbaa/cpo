@@ -32,6 +32,8 @@ On ARC with eight challengers, the strict CPO precheck saved 1,961 lookups with 
 
 The validation-only safeguards deliver little of the AIME benefit of reading separate training cases. Strict CPO with the shared precheck is the strongest observed setting on the eight-challenger ARC rotation. These replays reuse stored outcomes and seeded case splits. Fresh-model qualification remains pending.
 
+The package exposes the precheck through an opt-in cycle and reproduces the strict CPO and both GEPA traces through that entry point. [Qualification precheck API](qualification-precheck.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 and the bundled archives. Preview the seal, then execute to a fresh report path.

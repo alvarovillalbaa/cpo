@@ -18,6 +18,8 @@ The search callback `evaluate(prompt, row)` returns an `Observation` with an exa
 
 For deterministic evidence reuse, scope your callback cache to one optimizer episode and include every input that determines the response. Keep qualification repeats distinct in the cache key. With an archive check, pass the remaining search budget to the cycle and account for any already observed qualification replies in the callback. The API counts callback calls. The transfer replay meters distinct underlying lookups separately. [Matched-cost transfer](bounded-transfer-matched-cost.md)
 
+For a separate entry point that can skip the supplied search when the incumbent has no room to improve, use the opt-in qualification precheck. [Precheck API and measured costs](qualification-precheck.md)
+
 ## Verify on the archived transfer
 
 The replay uses the same frozen starts, schedules, archive nominations, and cohorts as the 32-panel matched-cost transfer. It calls the public cycle for fresh searches, reuses search outcomes in the validation callback, and charges only the qualification replies its callbacks read. It checks each archived search hash, promotion, final prompt, holdout score, and lookup total.
