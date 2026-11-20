@@ -9,9 +9,11 @@ The replay runs the original CPO cycle on the sealed panels, reconstructs its te
 | Original faults | 648 / 648 | 2,286 | 2,261 | 2,524 | 2,282 |
 | Shifted faults | 648 / 648 | 2,324 | 2,280 | 2,499 | 2,283 |
 
-The certificate saves 25 and 44 reads in the two confirmation panels, closing the counted-call gap with batched GEPA. The fixture's accuracy and critical-case checks are unchanged. The function is available separately for callers with an already measured anchor. The sealed staged runner still uses full validation. The retained v5 live search stopped before recording any terminal staged repair, so provider savings remain unmeasured. [Original comparison](opening-residual-retry.md)
+The certificate saves 25 and 44 reads in the two confirmation panels, closing the counted-call gap with batched GEPA. The fixture's accuracy and critical-case checks are unchanged. The function is available separately for callers with an already measured anchor. A later opt-in runs the certificate inside the repair cycle and reproduced these savings with actual fixture callbacks. The retained v5 live search stopped before recording any terminal staged repair, so provider savings remain unmeasured. [Original comparison](opening-residual-retry.md) · [Integrated transfer test](opening-validation-certificate-transfer.md)
 
 ## Reproduce
+
+Use the source from commit `19b1c0647df5aaf0cda9c5e1f114e214ed1e783f` for this sealed report.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.opening_validation_certificate \

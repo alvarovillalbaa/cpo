@@ -19,7 +19,7 @@ A second replay used exact bounds to reduce the last draft's validation reads. I
 
 ## Reproduce offline
 
-Use GEPA 0.1.4 and a fresh output path.
+Use source from commit `a2da284dc398e8f4804b59a97802c689080387ca`, GEPA 0.1.4, and a fresh output path.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.opening_residual_retry

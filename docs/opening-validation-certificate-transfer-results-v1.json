@@ -1,0 +1,662 @@
+{
+  "design": {
+    "cohortSha256": {
+      "confirmation": "59cbcd8a034c65925df12e116b310ad44aebc7623f7df7547297c2f96f1a3427",
+      "fresh": "6d46d75e618ccbe5969042634e673da55a52d1398ab8ddb686fa8121a84179c1",
+      "pilot": "6f74672c965caaeb7b9eec8f374dcd15a2de8f01b645de61d3fc91257b57986f"
+    },
+    "earlierReplaySha256": "baec6f42969cfb15e164bcdfdda88ab0a4a1613943c8dd38ab49de78192c9b40",
+    "freshSeeds": [
+      66103,
+      66107,
+      66109,
+      66137
+    ],
+    "gate": "Match full CPO decisions and critical passes. Against both GEPA modes preserve every panel, pass at least 14 cases per panel, and gain at least eight passes at no added calls or spend at least ten percent fewer calls.",
+    "gepaVersion": "0.1.4",
+    "protocol": "cpo-opening-validation-certificate-transfer-v1",
+    "retryProbeCap": 8,
+    "searchCap": 56,
+    "sourceSha256": {
+      "benchmarks/opening_interaction_transfer.py": "348a8e69fe057be95a6380a91193bcdc6a4d5f404f464712a1b7e782e429d37d",
+      "benchmarks/opening_screen_typed.py": "d24df6871f8fc266118faf4ac59b11c641b845a26d5c18accf3ac840821f7da8",
+      "benchmarks/opening_staged_witness_transfer.py": "702e4381a96637d58dd012ca0c2b3583671d604db24e2d55e0c2bb90f2b9ce3d",
+      "benchmarks/opening_validation_certificate_transfer.py": "65e1d6d924152ec8ddd29eddd66a93c5b6c0ac48cbc84ad4265271913e15bd2b",
+      "cpo/anchored_validation.py": "20d4ae69a2dd763800adc2c5a7b85ce0285510ca957cae4d5f5058c23a376ac0",
+      "cpo/family_qualification.py": "9ca2fd90b8da62743f4d95165af336103ccf2447a0585522a3a5698199eb0f9b",
+      "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+      "cpo/validation_guided_repair.py": "e99b6362aab2ba3d60bfb5c93b3f6374b75891d94001db08ab75d4d726c33029",
+      "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+    }
+  },
+  "designSha256": "e2a9d7d479013c39bc2679c5e23e61d468aaf08a24321807c54618d7d0e53b1f",
+  "results": {
+    "cohorts": {
+      "confirmation": {
+        "held-out": {
+          "comparisons": {
+            "full-validation": {
+              "callDelta": -25,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 0,
+              "passed": false
+            },
+            "gepa-batched": {
+              "callDelta": -21,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 126,
+              "passed": true
+            },
+            "gepa-sequential": {
+              "callDelta": -263,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 78,
+              "passed": true
+            }
+          },
+          "lookupsSavedByPanel": {
+            "archive/one-exception/65521": 0,
+            "archive/one-exception/65537": 1,
+            "archive/one-exception/65543": 0,
+            "archive/one-exception/65551": 0,
+            "archive/overlap/65521": 0,
+            "archive/overlap/65537": 1,
+            "archive/overlap/65543": 1,
+            "archive/overlap/65551": 1,
+            "archive/three-exceptions/65521": 0,
+            "archive/three-exceptions/65537": 0,
+            "archive/three-exceptions/65543": 1,
+            "archive/three-exceptions/65551": 0,
+            "dispatch/one-exception/65521": 1,
+            "dispatch/one-exception/65537": 0,
+            "dispatch/one-exception/65543": 0,
+            "dispatch/one-exception/65551": 0,
+            "dispatch/overlap/65521": 2,
+            "dispatch/overlap/65537": 1,
+            "dispatch/overlap/65543": 1,
+            "dispatch/overlap/65551": 1,
+            "dispatch/three-exceptions/65521": 0,
+            "dispatch/three-exceptions/65537": 2,
+            "dispatch/three-exceptions/65543": 2,
+            "dispatch/three-exceptions/65551": 1,
+            "venue/one-exception/65521": 0,
+            "venue/one-exception/65537": 0,
+            "venue/one-exception/65543": 1,
+            "venue/one-exception/65551": 0,
+            "venue/overlap/65521": 1,
+            "venue/overlap/65537": 2,
+            "venue/overlap/65543": 0,
+            "venue/overlap/65551": 1,
+            "venue/three-exceptions/65521": 3,
+            "venue/three-exceptions/65537": 1,
+            "venue/three-exceptions/65543": 0,
+            "venue/three-exceptions/65551": 0
+          },
+          "panels": 36,
+          "totals": {
+            "exact-certificate": {
+              "countedCalls": 2261,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1469
+            },
+            "full-validation": {
+              "countedCalls": 2286,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1494
+            },
+            "gepa-batched": {
+              "countedCalls": 2282,
+              "holdoutPasses": 522,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 36,
+              "qualificationLookups": 734,
+              "searchLookups": 1512
+            },
+            "gepa-sequential": {
+              "countedCalls": 2524,
+              "holdoutPasses": 570,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 110,
+              "qualificationLookups": 718,
+              "searchLookups": 1696
+            }
+          },
+          "traceSha256": "96c0206416cdd4e5809bf179d9b0c537c3d99e55324bd756ab272553e3bf8ff1"
+        },
+        "shifted-exceptions": {
+          "comparisons": {
+            "full-validation": {
+              "callDelta": -44,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 0,
+              "passed": false
+            },
+            "gepa-batched": {
+              "callDelta": -3,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 136,
+              "passed": true
+            },
+            "gepa-sequential": {
+              "callDelta": -219,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 85,
+              "passed": true
+            }
+          },
+          "lookupsSavedByPanel": {
+            "archive/one-exception/65521": 0,
+            "archive/one-exception/65537": 0,
+            "archive/one-exception/65543": 0,
+            "archive/one-exception/65551": 0,
+            "archive/overlap/65521": 1,
+            "archive/overlap/65537": 1,
+            "archive/overlap/65543": 2,
+            "archive/overlap/65551": 2,
+            "archive/three-exceptions/65521": 3,
+            "archive/three-exceptions/65537": 4,
+            "archive/three-exceptions/65543": 2,
+            "archive/three-exceptions/65551": 3,
+            "dispatch/one-exception/65521": 1,
+            "dispatch/one-exception/65537": 0,
+            "dispatch/one-exception/65543": 0,
+            "dispatch/one-exception/65551": 0,
+            "dispatch/overlap/65521": 1,
+            "dispatch/overlap/65537": 1,
+            "dispatch/overlap/65543": 0,
+            "dispatch/overlap/65551": 0,
+            "dispatch/three-exceptions/65521": 0,
+            "dispatch/three-exceptions/65537": 2,
+            "dispatch/three-exceptions/65543": 0,
+            "dispatch/three-exceptions/65551": 3,
+            "venue/one-exception/65521": 1,
+            "venue/one-exception/65537": 0,
+            "venue/one-exception/65543": 0,
+            "venue/one-exception/65551": 0,
+            "venue/overlap/65521": 2,
+            "venue/overlap/65537": 2,
+            "venue/overlap/65543": 0,
+            "venue/overlap/65551": 2,
+            "venue/three-exceptions/65521": 3,
+            "venue/three-exceptions/65537": 2,
+            "venue/three-exceptions/65543": 3,
+            "venue/three-exceptions/65551": 3
+          },
+          "panels": 36,
+          "totals": {
+            "exact-certificate": {
+              "countedCalls": 2280,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1488
+            },
+            "full-validation": {
+              "countedCalls": 2324,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1532
+            },
+            "gepa-batched": {
+              "countedCalls": 2283,
+              "holdoutPasses": 512,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 36,
+              "qualificationLookups": 735,
+              "searchLookups": 1512
+            },
+            "gepa-sequential": {
+              "countedCalls": 2499,
+              "holdoutPasses": 563,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 116,
+              "qualificationLookups": 725,
+              "searchLookups": 1658
+            }
+          },
+          "traceSha256": "ba2b85f1fe8e4f277fd9d29ae0e519080b03846782d0e77b2fd1c1fbd25fe665"
+        }
+      },
+      "fresh": {
+        "held-out": {
+          "comparisons": {
+            "full-validation": {
+              "callDelta": -29,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 0,
+              "passed": false
+            },
+            "gepa-batched": {
+              "callDelta": -37,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 111,
+              "passed": true
+            },
+            "gepa-sequential": {
+              "callDelta": -289,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 77,
+              "passed": true
+            }
+          },
+          "lookupsSavedByPanel": {
+            "archive/one-exception/66103": 0,
+            "archive/one-exception/66107": 0,
+            "archive/one-exception/66109": 1,
+            "archive/one-exception/66137": 1,
+            "archive/overlap/66103": 2,
+            "archive/overlap/66107": 0,
+            "archive/overlap/66109": 2,
+            "archive/overlap/66137": 1,
+            "archive/three-exceptions/66103": 3,
+            "archive/three-exceptions/66107": 2,
+            "archive/three-exceptions/66109": 1,
+            "archive/three-exceptions/66137": 1,
+            "dispatch/one-exception/66103": 1,
+            "dispatch/one-exception/66107": 0,
+            "dispatch/one-exception/66109": 0,
+            "dispatch/one-exception/66137": 0,
+            "dispatch/overlap/66103": 1,
+            "dispatch/overlap/66107": 1,
+            "dispatch/overlap/66109": 0,
+            "dispatch/overlap/66137": 0,
+            "dispatch/three-exceptions/66103": 0,
+            "dispatch/three-exceptions/66107": 3,
+            "dispatch/three-exceptions/66109": 3,
+            "dispatch/three-exceptions/66137": 1,
+            "venue/one-exception/66103": 0,
+            "venue/one-exception/66107": 0,
+            "venue/one-exception/66109": 0,
+            "venue/one-exception/66137": 0,
+            "venue/overlap/66103": 1,
+            "venue/overlap/66107": 1,
+            "venue/overlap/66109": 0,
+            "venue/overlap/66137": 0,
+            "venue/three-exceptions/66103": 1,
+            "venue/three-exceptions/66107": 2,
+            "venue/three-exceptions/66109": 0,
+            "venue/three-exceptions/66137": 0
+          },
+          "panels": 36,
+          "totals": {
+            "exact-certificate": {
+              "countedCalls": 2239,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1447
+            },
+            "full-validation": {
+              "countedCalls": 2268,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1476
+            },
+            "gepa-batched": {
+              "countedCalls": 2276,
+              "holdoutPasses": 537,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 36,
+              "qualificationLookups": 728,
+              "searchLookups": 1512
+            },
+            "gepa-sequential": {
+              "countedCalls": 2528,
+              "holdoutPasses": 571,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 126,
+              "qualificationLookups": 716,
+              "searchLookups": 1686
+            }
+          },
+          "traceSha256": "ab106c57a6c60326c9e0b308b44c2d95cc3b4c0097ada4e04cbae63e7b2fdefa"
+        },
+        "shifted-exceptions": {
+          "comparisons": {
+            "full-validation": {
+              "callDelta": -31,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 0,
+              "passed": false
+            },
+            "gepa-batched": {
+              "callDelta": -43,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 130,
+              "passed": true
+            },
+            "gepa-sequential": {
+              "callDelta": -240,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 87,
+              "passed": true
+            }
+          },
+          "lookupsSavedByPanel": {
+            "archive/one-exception/66103": 0,
+            "archive/one-exception/66107": 0,
+            "archive/one-exception/66109": 0,
+            "archive/one-exception/66137": 0,
+            "archive/overlap/66103": 0,
+            "archive/overlap/66107": 0,
+            "archive/overlap/66109": 0,
+            "archive/overlap/66137": 0,
+            "archive/three-exceptions/66103": 0,
+            "archive/three-exceptions/66107": 3,
+            "archive/three-exceptions/66109": 3,
+            "archive/three-exceptions/66137": 4,
+            "dispatch/one-exception/66103": 1,
+            "dispatch/one-exception/66107": 1,
+            "dispatch/one-exception/66109": 0,
+            "dispatch/one-exception/66137": 1,
+            "dispatch/overlap/66103": 2,
+            "dispatch/overlap/66107": 2,
+            "dispatch/overlap/66109": 0,
+            "dispatch/overlap/66137": 2,
+            "dispatch/three-exceptions/66103": 0,
+            "dispatch/three-exceptions/66107": 2,
+            "dispatch/three-exceptions/66109": 0,
+            "dispatch/three-exceptions/66137": 3,
+            "venue/one-exception/66103": 0,
+            "venue/one-exception/66107": 0,
+            "venue/one-exception/66109": 0,
+            "venue/one-exception/66137": 0,
+            "venue/overlap/66103": 0,
+            "venue/overlap/66107": 0,
+            "venue/overlap/66109": 0,
+            "venue/overlap/66137": 1,
+            "venue/three-exceptions/66103": 3,
+            "venue/three-exceptions/66107": 2,
+            "venue/three-exceptions/66109": 0,
+            "venue/three-exceptions/66137": 1
+          },
+          "panels": 36,
+          "totals": {
+            "exact-certificate": {
+              "countedCalls": 2244,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1452
+            },
+            "full-validation": {
+              "countedCalls": 2275,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1483
+            },
+            "gepa-batched": {
+              "countedCalls": 2287,
+              "holdoutPasses": 518,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 36,
+              "qualificationLookups": 739,
+              "searchLookups": 1512
+            },
+            "gepa-sequential": {
+              "countedCalls": 2484,
+              "holdoutPasses": 561,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 113,
+              "qualificationLookups": 725,
+              "searchLookups": 1646
+            }
+          },
+          "traceSha256": "556fc990e9d4458d0a872e914e5201b1c39a9b8f7c0a4126d7a8ed9481ee0628"
+        }
+      },
+      "pilot": {
+        "held-out": {
+          "comparisons": {
+            "full-validation": {
+              "callDelta": -33,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 0,
+              "passed": false
+            },
+            "gepa-batched": {
+              "callDelta": -70,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 122,
+              "passed": true
+            },
+            "gepa-sequential": {
+              "callDelta": -249,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 86,
+              "passed": true
+            }
+          },
+          "lookupsSavedByPanel": {
+            "archive/one-exception/64951": 0,
+            "archive/one-exception/64969": 0,
+            "archive/one-exception/64997": 1,
+            "archive/one-exception/65003": 0,
+            "archive/overlap/64951": 1,
+            "archive/overlap/64969": 1,
+            "archive/overlap/64997": 2,
+            "archive/overlap/65003": 0,
+            "archive/three-exceptions/64951": 0,
+            "archive/three-exceptions/64969": 0,
+            "archive/three-exceptions/64997": 1,
+            "archive/three-exceptions/65003": 4,
+            "dispatch/one-exception/64951": 0,
+            "dispatch/one-exception/64969": 1,
+            "dispatch/one-exception/64997": 0,
+            "dispatch/one-exception/65003": 0,
+            "dispatch/overlap/64951": 2,
+            "dispatch/overlap/64969": 0,
+            "dispatch/overlap/64997": 1,
+            "dispatch/overlap/65003": 3,
+            "dispatch/three-exceptions/64951": 0,
+            "dispatch/three-exceptions/64969": 2,
+            "dispatch/three-exceptions/64997": 1,
+            "dispatch/three-exceptions/65003": 1,
+            "venue/one-exception/64951": 0,
+            "venue/one-exception/64969": 0,
+            "venue/one-exception/64997": 0,
+            "venue/one-exception/65003": 0,
+            "venue/overlap/64951": 1,
+            "venue/overlap/64969": 2,
+            "venue/overlap/64997": 2,
+            "venue/overlap/65003": 1,
+            "venue/three-exceptions/64951": 3,
+            "venue/three-exceptions/64969": 1,
+            "venue/three-exceptions/64997": 1,
+            "venue/three-exceptions/65003": 1
+          },
+          "panels": 36,
+          "totals": {
+            "exact-certificate": {
+              "countedCalls": 2206,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1414
+            },
+            "full-validation": {
+              "countedCalls": 2239,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1447
+            },
+            "gepa-batched": {
+              "countedCalls": 2276,
+              "holdoutPasses": 526,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 36,
+              "qualificationLookups": 737,
+              "searchLookups": 1503
+            },
+            "gepa-sequential": {
+              "countedCalls": 2455,
+              "holdoutPasses": 562,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 116,
+              "qualificationLookups": 727,
+              "searchLookups": 1612
+            }
+          },
+          "traceSha256": "8ebb75c65e6e92607f9e223b014fe017fa374075bf31925279d2e436e6aef4a1"
+        },
+        "shifted-exceptions": {
+          "comparisons": {
+            "full-validation": {
+              "callDelta": -39,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 0,
+              "passed": false
+            },
+            "gepa-batched": {
+              "callDelta": -40,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 133,
+              "passed": true
+            },
+            "gepa-sequential": {
+              "callDelta": -267,
+              "criticalLosses": 0,
+              "panelsWithLoss": 0,
+              "passDelta": 90,
+              "passed": true
+            }
+          },
+          "lookupsSavedByPanel": {
+            "archive/one-exception/64951": 0,
+            "archive/one-exception/64969": 1,
+            "archive/one-exception/64997": 1,
+            "archive/one-exception/65003": 0,
+            "archive/overlap/64951": 1,
+            "archive/overlap/64969": 0,
+            "archive/overlap/64997": 1,
+            "archive/overlap/65003": 3,
+            "archive/three-exceptions/64951": 1,
+            "archive/three-exceptions/64969": 2,
+            "archive/three-exceptions/64997": 2,
+            "archive/three-exceptions/65003": 2,
+            "dispatch/one-exception/64951": 0,
+            "dispatch/one-exception/64969": 0,
+            "dispatch/one-exception/64997": 1,
+            "dispatch/one-exception/65003": 0,
+            "dispatch/overlap/64951": 2,
+            "dispatch/overlap/64969": 1,
+            "dispatch/overlap/64997": 1,
+            "dispatch/overlap/65003": 2,
+            "dispatch/three-exceptions/64951": 2,
+            "dispatch/three-exceptions/64969": 4,
+            "dispatch/three-exceptions/64997": 2,
+            "dispatch/three-exceptions/65003": 1,
+            "venue/one-exception/64951": 0,
+            "venue/one-exception/64969": 0,
+            "venue/one-exception/64997": 0,
+            "venue/one-exception/65003": 0,
+            "venue/overlap/64951": 0,
+            "venue/overlap/64969": 0,
+            "venue/overlap/64997": 0,
+            "venue/overlap/65003": 0,
+            "venue/three-exceptions/64951": 2,
+            "venue/three-exceptions/64969": 3,
+            "venue/three-exceptions/64997": 2,
+            "venue/three-exceptions/65003": 2
+          },
+          "panels": 36,
+          "totals": {
+            "exact-certificate": {
+              "countedCalls": 2236,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1444
+            },
+            "full-validation": {
+              "countedCalls": 2275,
+              "holdoutPasses": 648,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 108,
+              "qualificationLookups": 684,
+              "searchLookups": 1483
+            },
+            "gepa-batched": {
+              "countedCalls": 2276,
+              "holdoutPasses": 515,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 36,
+              "qualificationLookups": 737,
+              "searchLookups": 1503
+            },
+            "gepa-sequential": {
+              "countedCalls": 2503,
+              "holdoutPasses": 558,
+              "nominated": 36,
+              "promoted": 36,
+              "proposalCalls": 122,
+              "qualificationLookups": 730,
+              "searchLookups": 1651
+            }
+          },
+          "traceSha256": "2afcd57d9b434f9f8b1877149e68851d33670920eb8282307fd1fc88b3be1546"
+        }
+      }
+    },
+    "freshGatePassed": true
+  }
+}

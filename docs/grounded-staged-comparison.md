@@ -19,7 +19,7 @@ The case-level audit groups repeat replies and reports how the comparison margin
 
 ## Run the offline comparison
 
-Use pinned GEPA 0.1.4 and fresh output paths. The second seal derives from the development archive’s exact bytes.
+Use source from commit `f904067ee106ae64fc7ba34a728dca48ed5df39e`, pinned GEPA 0.1.4, and fresh output paths. The second seal derives from the development archive’s exact bytes. Run the case-level audit from commit `f5a6ef7ea3851a080bb5f5c529a2fd5c3d7b5a56`, which includes the audit and the same sealed runner sources.
 
 ```sh
 python -B -m benchmarks.grounded_staged \

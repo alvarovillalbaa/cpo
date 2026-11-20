@@ -15,7 +15,7 @@ CPO led the per-panel hindsight allocation by 75 and 76 passes at its recorded c
 
 ## Reproduce offline
 
-Use GEPA 0.1.4 and a fresh output path.
+Use source from commit `2942fa9484f74d81031566adc01d49f15849cd69`, GEPA 0.1.4, and a fresh output path.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.opening_retry_cost_frontier

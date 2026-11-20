@@ -71,3 +71,41 @@ class ValidationGuidedRepairTests(TestCase):
         no_spare = cycle(1, metric_limit=without_retry.search.evaluations + 1)
         self.assertLessEqual(no_spare.search.evaluations, without_retry.search.evaluations + 1)
         self.assertEqual(no_spare.search.prompt, 'opening')
+
+    def test_final_certificate_skips_an_unneeded_reply_and_preserves_qualification(self):
+        train = [Row('t0', 'a')]
+        validation = [Row('critical', 'a', critical=True), Row('ordinary', 'a'), Row('miss-1', 'a'), Row('miss-2', 'a')]
+        holdout = [Row('q0', 'a')]
+        passes = {'old': {'critical'}, 'opening': {'critical', 'ordinary'}, 'other': set(),
+                  'repair': {row.id for row in validation}}
+
+        def run(certify, draft):
+            calls, qualification = [], []
+
+            def evaluate(prompt, row):
+                calls.append((prompt, row.id))
+                return Observation(row.id in passes[prompt], {})
+
+            def qualify(prompt, row, repeat):
+                qualification.append((prompt, row.id, repeat))
+                return prompt != 'old'
+
+            result = run_validation_guided_repair_cycle(
+                'old', train, validation, holdout, evaluate, lambda *_: draft,
+                input_features=lambda _: {}, opening_pair=ProposalPair('opening', 'other'),
+                metric_limit=24, qualify=qualify, certify_final_draft=certify,
+            )
+            self.assertEqual(result.search.evaluations, len(calls))
+            return result, calls, qualification
+
+        for expected in ('repair', 'opening'):
+            with self.subTest(expected=expected):
+                original, reads, proof = run(False, 'repair')
+                certified, fewer, certified_proof = run(True, 'repair')
+                self.assertEqual(original.prompt, expected)
+                self.assertEqual(certified.prompt, expected)
+                self.assertEqual(certified_proof, proof)
+                self.assertEqual(certified.search.events, original.search.events)
+                self.assertEqual(set(reads) - set(fewer), {('repair', 'ordinary')})
+                self.assertEqual(set(fewer) - set(reads), set())
+                passes['repair'].discard('critical')

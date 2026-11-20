@@ -3,6 +3,7 @@
 from collections import Counter
 from dataclasses import replace
 
+from .anchored_validation import certify_validation_gain
 from .expected_cost_proposal_cycle import ExpectedCostProposalCycleResult
 from .family_qualification import certify_family_qualification
 from .opening_repair_cycle import _first_proposal
@@ -14,9 +15,9 @@ from .routed_repair_cycle import _categorical_features, _fallback_probes, _rank_
 def run_validation_guided_repair_cycle(
     incumbent, train, validation, holdout, evaluate, propose, *, input_features, opening_pair,
     metric_limit, qualify, diagnostic_prompt=None, screen_rows=8, repeats=1, minimum_gain=1,
-    seed=0, field_credit=False, qualification_limit=None, retry_probe_limit=0,
+    seed=0, field_credit=False, qualification_limit=None, retry_probe_limit=0, certify_final_draft=False,
 ):
-    """Stage up to three training-supported edits before one full validation.
+    """Stage up to three training-supported edits before final validation.
 
     The screened opening is the validated fallback. After an edit, check its
     remaining opening validation misses to route the next training probes.
@@ -28,6 +29,10 @@ def run_validation_guided_repair_cycle(
     A positive retry_probe_limit funds additional, less-exposed training rows
     when a residual miss has no failing routed probe. The cap is shared across
     the later stages, and the full final validation reserve still applies.
+
+    certify_final_draft allows final validation to stop when exact bounds
+    settle the same decision. Training and independent qualification retain
+    their original schedules.
     """
     if not callable(input_features):
         raise ValueError('The input feature extractor must be callable')
@@ -37,6 +42,8 @@ def run_validation_guided_repair_cycle(
         raise ValueError('Qualification limit must be a nonnegative integer')
     if type(retry_probe_limit) is not int or retry_probe_limit < 0:
         raise ValueError('The retry probe cap must be a nonnegative integer')
+    if type(certify_final_draft) is not bool:
+        raise ValueError('Final validation certification requires a boolean flag')
 
     train, validation, holdout = tuple(train), tuple(validation), tuple(holdout)
     ledger, vectors = {}, {}
@@ -145,13 +152,20 @@ def run_validation_guided_repair_cycle(
             proposed.add(parent)
 
     if parent != anchor:
-        gains = Counter()
-        critical_loss = False
-        for row in validation:
-            before, after = ledger[anchor, row.id].passed, observe(parent, row).passed
-            gains[row.family] += after - before
-            critical_loss |= row.critical and before and not after
-        if not critical_loss and min(gains.values()) >= 0 and sum(gains.values()) > 0:
+        anchor_passes = {row.id: hit for row, hit in zip(validation, opening_passes, strict=True)}
+        if certify_final_draft:
+            known = {row.id: ledger[parent, row.id].passed for row in validation if (parent, row.id) in ledger}
+            accepted = certify_validation_gain(validation, anchor_passes, lambda row: observe(parent, row).passed,
+                                               known=known)
+        else:
+            gains = Counter()
+            critical_loss = False
+            for row in validation:
+                before, after = anchor_passes[row.id], observe(parent, row).passed
+                gains[row.family] += after - before
+                critical_loss |= row.critical and before and not after
+            accepted = not critical_loss and min(gains.values()) >= 0 and sum(gains.values()) > 0
+        if accepted:
             anchor = parent
             event['status'] = 'accepted'
         else:
