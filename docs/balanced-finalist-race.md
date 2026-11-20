@@ -29,6 +29,8 @@ The six-candidate race brought the final score to at least GEPA's score in 61 of
 
 Widening after two misses triggered in 761 of the 1,536 scheduled BBH and LMentry cycles and 311 of 1,536 MMLU cycles. It gained **38 passes and saved 1,088 lookups** against batched GEPA on MMLU. It gained **29 passes and saved 18,602 lookups** against sequential GEPA. The MMLU accuracy difference remains nonnegative against both controls after omitting any one subject. Removing professional law leaves an eight-pass lead over batched GEPA and a tie with sequential GEPA. On BBH and LMentry the same policy gained 33 passes and paid 7,795 more lookups than batched GEPA, and scored 28 fewer passes than sequential GEPA. The routing decision was tested after observing these archives. The default stays at seeded first-gain. [Sealed results](balanced-finalist-race-results-v1.json)
 
+The prospective transfer to two unused MMLU model splits gained 58 passes over seeded CPO and failed the frozen gate against both GEPA controls. [Model-split transfer](routed-finalist-model-transfer.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. The other phase is `mmlu`. Preview its separate seal before executing.
