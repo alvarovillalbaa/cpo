@@ -19,6 +19,8 @@ The gate requires the joint paired 95% range against both official GEPA modes to
 
 On the additional panels, the veto arm reviewed 61 one-pass promotions. The extra cases tied on 53, favored the challenger on two, and favored the incumbent on six. The veto arm gained four passes over cap-72 CPO and used 264 more lookups. It saved 22,204 lookups against batched GEPA and finished 16 passes behind it. The joint range against both GEPA controls was −72 to +26 passes. The rule failed the primary gate, so the original promotion rule remains the default. [Panel counts, scores, and intervals](proposal-qualification-veto-results-v1.json)
 
+The follow-up moved the budget change to search, with short screening and full validation of the chosen challenger. [Short validation replay](proposal-short-validation.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
