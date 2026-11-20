@@ -4,6 +4,7 @@ from itertools import product
 
 from cpo import Observation, ProposalPair, Row
 from cpo.opening_screen_cycle import run_opening_screen_cycle
+from cpo.opening_validation import certify_opening_validation
 
 
 def test_opening_validation_certificate_matches_full_reads_and_qualification():
@@ -60,3 +61,19 @@ def test_validation_certificate_skips_remaining_pairs_once_rejected():
     assert result.search.events[-1]['kind'] == 'certified-validation-gate'
     assert result.qualification is None
     assert all(case != 'unneeded' for _, case in calls)
+
+
+def test_remaining_read_order_cannot_precede_an_unresolved_critical_row():
+    rows = (Row('ordinary', 'a'), Row('critical', 'b', True))
+    paid = {}
+
+    def observe(prompt, row):
+        reply = Observation(prompt == 'incumbent', {})
+        paid[prompt, row.id] = reply
+        return reply
+
+    def order(missing):
+        raise AssertionError('A critical regression must settle before ordering ordinary reads')
+
+    assert not certify_opening_validation('incumbent', 'rewrite', rows, paid, observe, order_missing=order)
+    assert list(paid) == [('incumbent', 'critical'), ('rewrite', 'critical')]

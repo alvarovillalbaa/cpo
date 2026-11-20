@@ -8,7 +8,8 @@ from cpo import Observation, Row
 from cpo.paired_rewrite import select_paired_rewrite
 
 
-def test_paid_reads_are_a_subset_of_complete_native_gates():
+@pytest.mark.parametrize('priced', (False, True))
+def test_paid_reads_are_a_subset_of_complete_native_gates(priced):
     validation = tuple(Row(str(i), f'family-{i}', critical=True) for i in range(4))
     batch = ('2', '0')
     for bits in product((False, True), repeat=8):
@@ -24,7 +25,12 @@ def test_paid_reads_are_a_subset_of_complete_native_gates():
         new = sum(bits[4:])
         gain = sum(int(outcomes['rewrite', case]) - int(outcomes['start', case]) for case in batch)
         expected = 'rewrite' if gain > 0 and new > old else 'start'
-        assert select_paired_rewrite('start', 'rewrite', validation, batch, evaluate) == expected
+        def price(prompt, row, reply):
+            assert paid[-1] == (prompt, row.id) and reply.passed == outcomes[prompt, row.id]
+            return 1 + int(row.id) + (prompt == 'rewrite')
+
+        assert select_paired_rewrite('start', 'rewrite', validation, batch, evaluate,
+                                     observed_charge=price if priced else None) == expected
         complete = {('start', row.id) for row in validation}
         if old < len(validation):
             complete.update(('rewrite', case) for case in batch)
@@ -32,6 +38,41 @@ def test_paid_reads_are_a_subset_of_complete_native_gates():
             complete.update(('rewrite', row.id) for row in validation)
         assert len(paid) == len(set(paid))
         assert set(paid) <= complete
+
+
+def test_charges_reorder_full_validation_after_the_same_minibatch():
+    rows = tuple(Row(str(i), 'archive') for i in range(4))
+
+    def read(observed_charge):
+        paid = []
+
+        def evaluate(prompt, row):
+            paid.append((prompt, row.id))
+            return Observation(prompt == 'rewrite', {})
+
+        assert select_paired_rewrite('start', 'rewrite', rows, ('2', '0'), evaluate,
+                                     observed_charge=observed_charge) == 'rewrite'
+        return paid
+
+    old = read(lambda prompt, *_: 1 if prompt == 'start' else 10)
+    new = read(lambda prompt, *_: 1 if prompt == 'rewrite' else 10)
+    assert old[:3] == new[:3] == [('start', '2'), ('rewrite', '2'), ('start', '0')]
+    assert old[3] == ('start', '1')
+    assert new[3] == ('rewrite', '0')
+    assert read(lambda *_: None) == read(lambda *_: 0) == read(lambda *_: 1)
+
+
+def test_invalid_charge_fails_after_the_observed_reply():
+    paid = []
+
+    def evaluate(prompt, row):
+        paid.append((prompt, row.id))
+        return Observation(False, {})
+
+    with pytest.raises(ValueError, match='nonnegative integers'):
+        select_paired_rewrite('start', 'rewrite', (Row('known', 'family'),), ('known',), evaluate,
+                              observed_charge=lambda *_: -1)
+    assert paid == [('start', 'known')]
 
 
 def test_minibatch_requires_distinct_known_cases_before_reading():

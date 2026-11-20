@@ -13,9 +13,28 @@ The proof first checks whether the incumbent already passes every minibatch case
 
 The harness recovers the seeded first minibatch by tracing native GEPA 0.1.4 with synthetic replies. Neither selector uses scores from the held-out split to choose a prompt. Native control trace hashes matched the published transfer benchmark. Search and admission count toward cost. Recorded ARC evaluator charges supply the dollar estimates, and the shared supplied rewrite carries no charge in either arm.
 
+## Opt in to observed-charge ordering
+
+`select_paired_rewrite` accepts an optional `observed_charge(prompt, row, observation)` callback. Return a nonnegative integer in a consistent unit, or `None` for an unavailable charge. The callback runs after an actual evaluation. The selector ranks the remaining full-validation reads by observed gain per charge and uses gain per read when either prompt lacks a usable charge. The minibatch and strict binary gates keep the same decisions. Row-paired ordering is the default.
+
+```python
+from cpo.paired_rewrite import select_paired_rewrite
+
+nominee = select_paired_rewrite(
+    incumbent, rewrite, validation_rows, minibatch_ids, evaluate,
+    observed_charge=lambda _prompt, _row, reply: reply.feedback.get("charge_microusd"),
+)
+```
+
+The package reproduced the exact archived request traces for the charge-aware replay. Across 760 ARC and AIME paths, it used 4,782 paid reads versus 4,880 for row-paired CPO and 8,785 for fixed-rewrite GEPA. All nominations, admission decisions, and 28,200 held-out scores matched. Pooled recorded ARC cost fell from $330.69 to $321.00 against row-paired CPO. It rose on 37 individual ARC paths. AIME used the missing-charge fallback.
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.recorded_paired_rewrite --charge-aware
+```
+
 ## Reproduce offline
 
-Use the published source and GEPA 0.1.4. The first command prints the seal and the second writes a fresh report.
+Use the [original row-paired source](https://github.com/alvarovillalbaa/cpo/tree/9addc6c7901b4d78c90a4c85d0920ec016da370e) and GEPA 0.1.4 to reproduce the sealed baseline. The first command prints the seal and the second writes a fresh report.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.recorded_paired_rewrite

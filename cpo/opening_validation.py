@@ -3,8 +3,11 @@
 from collections import Counter
 
 
-def certify_opening_validation(incumbent, challenger, rows, observations, observe):
-    """Reuse the search observations and read only until the exact gate is settled."""
+def certify_opening_validation(incumbent, challenger, rows, observations, observe, *, order_missing=None):
+    """Reuse observations and settle the exact gate, checking critical rows first.
+
+    An optional order_missing callback permutes the remaining queries.
+    """
     sizes = Counter(row.family for row in rows)
     lower = Counter({family: -count for family, count in sizes.items()})
     upper = sizes.copy()
@@ -38,15 +41,19 @@ def certify_opening_validation(incumbent, challenger, rows, observations, observ
             return True
         return None
 
+    def unobserved():
+        for row in rows:
+            for prompt in prompts:
+                if (prompt, row.id) not in observations:
+                    yield prompt, row
+
     def remaining():
         for row in rows:
             for prompt in prompts:
                 if row.id in unresolved_critical and (prompt, row.id) not in observations:
                     yield prompt, row
-        for row in rows:
-            for prompt in prompts:
-                if (prompt, row.id) not in observations:
-                    yield prompt, row
+        pending = unobserved()
+        yield from pending if order_missing is None else order_missing(pending)
 
     for row in rows:
         for prompt in prompts:
