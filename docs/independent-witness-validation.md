@@ -27,6 +27,8 @@ Both variants cleared the 10% savings requirement against both cap-52 GEPA contr
 
 For cost context, the second-repair arm gained ten passes and saved 1,025 lookups against the previously published cap-47 batched GEPA point on Llama and Mistral. On Mixtral and Falcon it gained 15 passes and saved 125 lookups. On Gemma and Flan it gained 14 passes and used 518 more lookups. These are descriptive comparisons against one lower-cost setting. The evidence leaves the original CPO selector in place. [Llama and Mistral cap 47](routed-score-allocation.md) · [Gemma and Flan cap 47](posterior-model-transfer.md) · [Mixtral and Falcon cap 47](late-miss-transfer.md)
 
+The follow-up swept both GEPA modes at caps 20 through 68 and reselected the strongest affordable control in paired resamples. [Matched-cost replay](witness-validation-cost-frontier.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path. Preview the seal before running the benchmark.
