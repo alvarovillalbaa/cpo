@@ -45,10 +45,22 @@ def _opening_plateau(result, incumbent, validation, ledger):
     return candidate
 
 
+def _fallback_probes(training, used, features, limit):
+    if limit <= 0:
+        return
+    remaining = [(row, features(row)) for row in training if row.id not in used]
+    seen = Counter(key for row in training if row.id in used for key in features(row))
+    for _ in range(min(limit, len(remaining))):
+        index = min(range(len(remaining)), key=lambda i: sum(seen[key] for key in remaining[i][1]))
+        row, keys = remaining.pop(index)
+        yield row
+        seen.update(keys)
+
+
 def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, propose, *, input_features,
                             opening_pair, metric_limit, qualify, diagnostic_prompt=None, max_training_probes=2,
                             screen_rows=8, repeats=1, minimum_gain=1, seed=0, field_credit=False,
-                            qualification_limit=None, recover_stalls=False):
+                            qualification_limit=None, recover_stalls=False, fallback_probe_limit=0):
     """Route training probes using input-only categorical features of each row.
 
     Each repair funds a full validation panel before evaluating training probes.
@@ -62,6 +74,11 @@ def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, pro
     may supply repair context. A batch of passing probes may also yield its
     parent to the unused repair stage. The existing stage and budget caps
     apply, and a provisional opening still needs a strict validation gain.
+
+    After an otherwise terminal batch of passing probes, fallback_probe_limit
+    allows extra training probes on unused inputs with less-seen features.
+    This per-cycle allowance stops at the first witnessed miss and leaves the
+    full repair validation reserve intact.
     """
     if not callable(input_features):
         raise ValueError('The input feature extractor must be callable')
@@ -73,6 +90,8 @@ def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, pro
         raise ValueError('Qualification limit must be a nonnegative integer')
     if type(recover_stalls) is not bool:
         raise ValueError('Recover stalls must be a boolean')
+    if type(fallback_probe_limit) is not int or fallback_probe_limit < 0:
+        raise ValueError('The fallback probe cap must be a nonnegative integer')
 
     train, validation, holdout = tuple(train), tuple(validation), tuple(holdout)
     ledger, feature_cache = {}, {}
@@ -115,6 +134,7 @@ def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, pro
             return opening
 
     events, used, reflections = list(result.events), set(), 0
+    fallback_remaining = fallback_probe_limit
     training = balanced_order(train, seed)
     for attempt in range(2):
         passed = [ledger[parent, row.id].passed for row in validation]
@@ -131,9 +151,19 @@ def run_routed_repair_cycle(incumbent, train, validation, holdout, evaluate, pro
         event = {'kind': 'routed-probes', 'probeRows': [row.id for row in probes], 'status': 'no-training-error'}
         events.append(event)
         if all(reply.passed for _, reply in feedback):
-            if recover_stalls:
+            if recover_stalls and attempt == 0:
                 continue
-            break
+            capacity = min(fallback_remaining, metric_limit - len(ledger) - len(validation))
+            for row in _fallback_probes(training, used, features, capacity):
+                event.setdefault('fallbackRows', []).append(row.id)
+                reply = observe(probe_prompt, row)
+                feedback.append((row, reply))
+                used.add(row.id)
+                fallback_remaining -= 1
+                if not reply.passed:
+                    break
+            else:
+                break
 
         repair = _first_proposal(propose(parent, feedback, [], 1))
         reflections += 1

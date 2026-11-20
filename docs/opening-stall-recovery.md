@@ -19,9 +19,11 @@ Stall recovery preserved every baseline holdout pass across both cohorts and all
 
 The clean and redundant-feature transfer modes cleared both GEPA gates. With a field missing, stall recovery beat sequential GEPA by 54 passes and used 189 fewer calls, while losing 15 matched critical passes across three panels. At least one panel also fell below the 14-pass floor for the batched GEPA comparison. The full transfer gate failed. The option stays opt-in. Live qualification remains pending. [Sealed results](opening-stall-recovery-results-v1.json)
 
+The follow-up reserved additional training probes only for a passing batch that would end search. It recovered the missing-field critical passes and cleared both GEPA gates on fresh scripted panels across four feature modes. [Funded fallback probes](opening-probe-fallback.md)
+
 ## Reproduce offline
 
-Use GEPA 0.1.4 and a fresh output path.
+Use GEPA 0.1.4, the source at commit `2c460eb0469a1e112e1cf88b3c11206480e074cf`, and a fresh output path to reproduce the original seal.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.opening_stall_recovery

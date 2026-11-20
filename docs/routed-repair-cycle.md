@@ -37,6 +37,8 @@ A repair must add exact validation passes and preserve critical passes and each 
 
 Set `recover_stalls=True` to consider an opening with a strict matched-field gain that preserves every row's exact outcome and field score. With this option, a first batch of passing probes can also use the remaining stage on unused training rows. The option was tested on clean, incomplete, and redundant feature mappings. [Stall recovery results](opening-stall-recovery.md)
 
+Set `fallback_probe_limit` to allow extra training probes when a passing batch would otherwise end search. The cycle stops probing at the first observed failure and reserves enough lookups to validate the repair. The fallback is off by default. [Fallback comparison](opening-probe-fallback.md)
+
 ## Reproduce the comparison
 
 Clean source and an independently installed wheel reproduced the three sealed cohort traces across all 90 scripted policy panels. Each environment passed 14 focused tests with socket creation and DNS blocked. Wheel builds and installs used local tooling with the index disabled. The CLI rejected a stale seal and preserved an existing report. The 29.6 MB scratch directory was removed under the standing LAB exception after Storage Guard measured 4.5 GiB free. [Benchmark results](opening-repair-probe-routing.md) · [Replay artifact](routed-repair-api-replay-v1.json) · [Verification receipt](routed-repair-api-verification-v1.json)

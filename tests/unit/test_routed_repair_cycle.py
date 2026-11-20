@@ -86,7 +86,8 @@ class RoutedRepairCycleTests(TestCase):
 
     def test_rejects_invalid_options_before_dispatch(self):
         for options in ({'input_features': None}, {'max_training_probes': True},
-                        {'qualification_limit': -1}, {'diagnostic_prompt': 'raw'}, {'recover_stalls': 1}):
+                        {'qualification_limit': -1}, {'diagnostic_prompt': 'raw'}, {'recover_stalls': 1},
+                        {'fallback_probe_limit': True}, {'fallback_probe_limit': -1}):
             with self.subTest(options=options), self.assertRaises(ValueError):
                 self.cycle(**options)
         self.assertEqual(self.search, [])
@@ -125,3 +126,36 @@ class RoutedRepairCycleTests(TestCase):
         self.assertEqual(outcome.search.evaluations, 16)
         self.assertEqual([event['status'] for event in outcome.search.events[-2:]], ['no-training-error', 'accepted'])
         self.assertEqual({row.id for row, _ in self.proposals[0][1]}, {'t0', 't1'})
+
+    def test_fallback_stops_at_first_witness_and_passes_training_only(self):
+        evaluate = self.evaluate
+
+        def pass_top_probes(prompt, row):
+            if row.id in ('t2', 't3'):
+                self.search.append((prompt, row.id))
+                return Observation(True, {'case': row.id}, 2)
+            return evaluate(prompt, row)
+
+        self.evaluate = pass_top_probes
+        self.scores['provisional'] = self.scores['final']
+        outcome = self.cycle(fallback_probe_limit=2, metric_limit=16)
+        event = outcome.search.events[-1]
+        self.assertEqual(event['status'], 'accepted')
+        self.assertEqual(len(event['fallbackRows']), 1)
+        self.assertIn(event['fallbackRows'][0], ('t0', 't1'))
+        self.assertEqual(outcome.search.evaluations, 15)
+        self.assertEqual([row.id for row, _ in self.proposals[0][1]], event['probeRows'] + event['fallbackRows'])
+        self.assertEqual({prompt for prompt, _, _ in self.proof}, {'old', 'provisional'})
+
+    def test_fallback_preserves_full_validation_reserve(self):
+        evaluate = self.evaluate
+
+        def pass_training(prompt, row):
+            return Observation(True, {}, 2) if row.id.startswith('t') else evaluate(prompt, row)
+
+        self.evaluate = pass_training
+        outcome = self.cycle(fallback_probe_limit=2, metric_limit=14)
+        self.assertEqual(outcome.search.evaluations, 10)
+        self.assertEqual(outcome.search.events[-1]['status'], 'no-training-error')
+        self.assertNotIn('fallbackRows', outcome.search.events[-1])
+        self.assertEqual(self.proposals, [])
