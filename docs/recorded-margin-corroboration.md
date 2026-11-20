@@ -35,6 +35,8 @@ On ARC with eight challengers, strength first gained 46 passes and saved 686 loo
 
 The AIME result favors keeping the separate training check. A larger gain on the same small qualification panel did not supply equivalent evidence. These are comparisons on reused recorded outcomes and seeded case splits. Fresh-model qualification remains pending.
 
+The follow-up measured the same two proofs on first departures from the starting prompt across 16 archived MMLU panels. [MMLU transfer](routed-training-corroboration.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 and the bundled archives. Preview the seal, then execute to a fresh report path.
