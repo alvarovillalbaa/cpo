@@ -47,3 +47,5 @@ PYTHONHASHSEED=0 python -B -m benchmarks.routed_repair_api_replay \
   --execute b0111989bb3b2294991eff508f08ed1f778b133680d5dc92fa5a4bbe4b0603cc \
   --out NEW_REPORT.json
 ```
+
+A later stress test used 60 disjoint scripted panels. With one feature hidden, routed repair scored 1,013 of 1,080 holdout passes and sequential GEPA scored 1,024. The combined feature-deduplication and coverage variant failed the critical-case gate. [Feature stress test](opening-probe-robustness.md)
