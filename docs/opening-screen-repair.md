@@ -19,6 +19,8 @@ At cap 56, two probes recovered eight warehouse passes for 26 extra calls over t
 
 Four probes found repair evidence in three outage panels. That arm tied sequential GEPA on aggregate holdout passes and used 150 fewer calls. It still lost ten matched critical passes across three outage panels. Both staged policies missed the gate against sequential GEPA. The primary result identifies observed training evidence as the constraint for this staged repair. Adaptive CPO remains the stronger tested typed route at cap 56. [Typed outcomes and lookup receipts](opening-screen-repair-results-v1.json)
 
+The follow-up evaluated the instruction alone on the two paid training probes, with demonstrations restored for validation and qualification. [Instruction-only diagnostic benchmark](opening-repair-diagnostic.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
