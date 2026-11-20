@@ -30,7 +30,7 @@ def archive_bytes(directory):
     return {name: (directory / name).read_bytes() for name in ARCHIVE_FILES}
 
 
-def prepare(development=None):
+def prepare(development=None, *, certify_validation=False):
     groups, base, _ = staged.prepare(**CERTIFICATES)
     tasks, repeats = len(groups), base['repeats']
     limits = dict(base['logicalLimitsByRole'])
@@ -53,12 +53,17 @@ def prepare(development=None):
               'cachedGepaOpening': {'proposal': 'supplied rewrite', 'minibatch': CACHED_OPENING_MINIBATCH,
                                     'observations': 'reuse validation replies', 'laterProposals': 0,
                                     'evaluationLimitPerTask': CACHED_OPENING_READS}}
+    if certify_validation:
+        frozen['protocol'] = 'portable-grounded-staged-policy-comparison-v3'
+        frozen['openingControl']['validation'] = 'exact promotion gate from bounded paired validation'
+        names = ('cpo/opening_validation.py', 'benchmarks/grounded_staged_certified_opening_comparison.py')
+        frozen['sourceSha256'].update({name: sha256((staged.ROOT / name).read_bytes()).hexdigest() for name in names})
     if development is None:
         return groups, frozen, None
 
     source = archive_bytes(development)
     with TemporaryDirectory(prefix='cpo-policy-comparison-bind-') as scratch:
-        prior = replay(development, Path(scratch) / 'verified')
+        prior = replay(development, Path(scratch) / 'verified', certify_validation=certify_validation)
     if archive_bytes(development) != source:
         raise ValueError('The development archive changed during confirmation binding')
     passing = prior['outcome']['qualifyingPolicies']
@@ -160,10 +165,10 @@ def select_cached_gepa(initial, bank, groups, evaluate, *, cap, seed):
                                               minibatch_size=CACHED_OPENING_MINIBATCH)
 
 
-def run(seal, directory, respond, *, delivery, development=None):
+def run(seal, directory, respond, *, delivery, development=None, certify_validation=False):
     if development is not None and directory.resolve().is_relative_to(development.resolve()):
         raise ValueError('Confirmation requires a separate archive')
-    groups, frozen, prior = prepare(development)
+    groups, frozen, prior = prepare(development, certify_validation=certify_validation)
     if seal != digest(frozen) or version('gepa') != frozen['gepaVersion'] or delivery not in ('fixture', 'model'):
         raise ValueError('Use the current comparison seal, pinned GEPA, and declared delivery')
     if prior is not None and prior['delivery'] != delivery:
@@ -195,7 +200,8 @@ def run(seal, directory, respond, *, delivery, development=None):
                         task, search, partial(dispatch, task), **CERTIFICATES,
                         native_gepa_selector=gepa_disjoint_cases.select, cached_opening_selector=select_cached_gepa,
                     )
-                    prompt, counts, status = opening.opening_only(task, search, partial(journal.send, 'opening-only'))
+                    prompt, counts, status = opening.opening_only(
+                        task, search, partial(journal.send, 'opening-only'), certify_validation=certify_validation)
                     prompts[task]['opening-only'] = prompt
                     decisions[task]['opening-only'] = {'admission': status, 'admissionLookups': counts['admission']}
 
@@ -219,7 +225,7 @@ def run(seal, directory, respond, *, delivery, development=None):
     return result
 
 
-def replay(directory, fresh, *, development=None):
+def replay(directory, fresh, *, development=None, certify_validation=False):
     if fresh.resolve().is_relative_to(directory.resolve()):
         raise ValueError('Replay requires a separate archive')
     source = archive_bytes(directory)
@@ -236,13 +242,14 @@ def replay(directory, fresh, *, development=None):
             raise ValueError('The comparison journal ended early or changed its request')
         return finish.get('response')
 
-    result = run(plan.get('planSha256'), fresh, respond, delivery=plan.get('delivery'), development=development)
+    result = run(plan.get('planSha256'), fresh, respond, delivery=plan.get('delivery'), development=development,
+                 certify_validation=certify_validation)
     if next(pending, None) is not None or archive_bytes(fresh) != source or archive_bytes(directory) != source:
         raise ValueError('The saved comparison differs from its replay')
     return result
 
 
-def main():
+def main(*, certify_validation=False):
     parser = argparse.ArgumentParser(description=__doc__)
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--fixture', metavar='PLAN_SHA256')
@@ -254,11 +261,12 @@ def main():
     if bool(args.fixture or args.replay) != bool(args.out) or (args.out and args.out.exists()):
         parser.error('Fixture and replay require a fresh --out archive')
     if args.fixture:
-        result = run(args.fixture, args.out, opening.PROFILES[args.profile], delivery='fixture', development=args.development)
+        result = run(args.fixture, args.out, opening.PROFILES[args.profile], delivery='fixture',
+                     development=args.development, certify_validation=certify_validation)
     elif args.replay:
-        result = replay(args.replay, args.out, development=args.development)
+        result = replay(args.replay, args.out, development=args.development, certify_validation=certify_validation)
     else:
-        _, frozen, _ = prepare(args.development)
+        _, frozen, _ = prepare(args.development, certify_validation=certify_validation)
         result = {**frozen, 'planSha256': digest(frozen)}
     print(json.dumps(result, indent=2, sort_keys=True))
 

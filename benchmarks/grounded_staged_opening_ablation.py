@@ -35,7 +35,7 @@ def plan():
     return groups, combined, design
 
 
-def opening_only(task, groups, respond):
+def opening_only(task, groups, respond, *, certify_validation=False):
     train, validation, admission = (groups[name] for name in ('train', 'validation', 'admission'))
     evaluation = {row['id']: row for row in (*train, *validation)}
     admission_rows = {row['id']: row for row in admission}
@@ -71,7 +71,7 @@ def opening_only(task, groups, respond):
         BASELINE, staged.cases(task, train), staged.cases(task, validation), staged.cases(task, admission),
         evaluate, opening_pair=ProposalPair(*pair), metric_limit=grounded.METRIC_LIMIT,
         qualify=qualify, qualification_limit=0, repeats=repeats, seed=staged.SEED,
-        field_credit=True, certify_opening=True)
+        field_credit=True, certify_opening=True, certify_validation=certify_validation)
     nominee = screened.search.prompt
     proof = certify_family_qualification(BASELINE, nominee, staged.cases(task, admission), qualify,
                                          repeats=repeats, seed=staged.SEED)
