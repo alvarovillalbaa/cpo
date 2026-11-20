@@ -1,0 +1,2390 @@
+{
+  "design": {
+    "gate": "Joint paired 95 percent lower endpoint above zero and paid cost at or below both GEPA modes.",
+    "policies": [
+      "opening-rescue",
+      "opening-rescue-screened"
+    ],
+    "primary": "cpo-opening-rescue",
+    "primaryCohort": "independent-archive",
+    "protocol": "cpo-proposal-opening-rescue-v1",
+    "referenceReportSha256": "5073e9f876ac2192cbcf0450cc280b4b9549506304ee183abaa786c0018fda09",
+    "scope": "Preserve successful original nominations. After a full validation rejection, use the remaining funded budget to score the other supplied opening. The optional screen requires that it at least tie the incumbent on the short prefix.",
+    "screenWidth": 8,
+    "searchCap": 72,
+    "sourceSha256": "eb72ee05c00e004c46ba6bc11dd15d4208cd4441be07dd1a44bb1f54c2c7a9cc"
+  },
+  "designSha256": "1429cb2d29a181313aac4eafa5aa64edcc7d582cfb22d7e81c101dcbe6d63232",
+  "results": {
+    "development": {
+      "pairedComparisons": {
+        "cpo-171": {
+          "jointPairedRange95": [
+            -12,
+            47
+          ],
+          "lookupDelta": {
+            "gepa-batched": 42160,
+            "gepa-sequential": 41410
+          },
+          "passDelta": {
+            "gepa-batched": 16,
+            "gepa-sequential": 53
+          }
+        },
+        "cpo-72": {
+          "jointPairedRange95": [
+            -50,
+            18
+          ],
+          "lookupDelta": {
+            "gepa-batched": -11017,
+            "gepa-sequential": -11767
+          },
+          "passDelta": {
+            "gepa-batched": -17,
+            "gepa-sequential": 20
+          }
+        },
+        "cpo-opening-rescue": {
+          "jointPairedRange95": [
+            -42,
+            20
+          ],
+          "lookupDelta": {
+            "gepa-batched": -21269,
+            "gepa-sequential": -22019
+          },
+          "passDelta": {
+            "gepa-batched": -11,
+            "gepa-sequential": 26
+          }
+        },
+        "cpo-opening-rescue-screened": {
+          "jointPairedRange95": [
+            -42,
+            20
+          ],
+          "lookupDelta": {
+            "gepa-batched": -21294,
+            "gepa-sequential": -22044
+          },
+          "passDelta": {
+            "gepa-batched": -11,
+            "gepa-sequential": 26
+          }
+        },
+        "cpo-short-8-r0": {
+          "jointPairedRange95": [
+            -47,
+            11
+          ],
+          "lookupDelta": {
+            "gepa-batched": -23334,
+            "gepa-sequential": -24084
+          },
+          "passDelta": {
+            "gepa-batched": -18,
+            "gepa-sequential": 19
+          }
+        }
+      },
+      "panels": {
+        "high_school_european_history/meta_llama_llama_3_8b": {
+          "cpo-171": {
+            "expected": 1466,
+            "full": 1776,
+            "holdoutPasses": 1126,
+            "paidLookups": 21402,
+            "promotions": 19,
+            "reflections": 451,
+            "searchLookups": 19936,
+            "seeded": 1667,
+            "traceSha256": "83e0aaa13bd7f83490bedcf8cef3f8165f94bd818cede38c840b1b4ba43a4021"
+          },
+          "cpo-72": {
+            "expected": 919,
+            "full": 1072,
+            "holdoutPasses": 1120,
+            "paidLookups": 8316,
+            "promotions": 12,
+            "reflections": 19,
+            "searchLookups": 7397,
+            "seeded": 1011,
+            "traceSha256": "1c1283814d6a5f19ffcf6bdd8628cd7d382a746077cdd508f38bf19095733b84"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2304,
+            "expected": 643,
+            "fullPanelRejections": 34,
+            "holdoutPasses": 1121,
+            "paidLookups": 5425,
+            "prefixPerfect": 9,
+            "promotions": 13,
+            "reflections": 0,
+            "rescueLookups": 395,
+            "rescueNominations": 9,
+            "rescueOpportunities": 34,
+            "rescuesCompared": 34,
+            "screenCandidates": 217,
+            "screenLookups": 2083,
+            "screenNominees": 72,
+            "searchLookups": 4782,
+            "traceSha256": "551626e4852900e84107f3851d909b4dcf53e6cdb10f239218a9d15f4fc28e73"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2304,
+            "expected": 643,
+            "fullPanelRejections": 34,
+            "holdoutPasses": 1121,
+            "paidLookups": 5466,
+            "prefixPerfect": 9,
+            "promotions": 13,
+            "reflections": 0,
+            "rescueLookups": 436,
+            "rescueNominations": 9,
+            "rescueOpportunities": 34,
+            "rescuePrefixRejections": 7,
+            "rescuesCompared": 27,
+            "screenCandidates": 217,
+            "screenLookups": 2083,
+            "screenNominees": 72,
+            "searchLookups": 4823,
+            "traceSha256": "4a2d9e6684bb1dc85f9dfe7ec67e1ff12c64eed1f9f7caf42b43e4602611c5f5"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2272,
+            "expected": 517,
+            "fullPanelRejections": 33,
+            "holdoutPasses": 1120,
+            "paidLookups": 4871,
+            "prefixPerfect": 9,
+            "promotions": 9,
+            "reflections": 0,
+            "screenCandidates": 219,
+            "screenLookups": 2082,
+            "screenNominees": 71,
+            "searchLookups": 4354,
+            "traceSha256": "e769463d7c5c12948c8b7151c00148d43bb6599772c5dbf35832d40ce7b9d415"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1116,
+            "paidLookups": 10736,
+            "promotions": 9,
+            "qualificationLookups": 608,
+            "searchLookups": 10128,
+            "traceSha256": "88049340e0a1e9a9e130a1657d033f356904246ec086e80dfa8ed6998ccb5e2f"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1118,
+            "paidLookups": 10690,
+            "promotions": 5,
+            "qualificationLookups": 480,
+            "searchLookups": 10210,
+            "traceSha256": "c9a47429cfdfdaaf551a0d172b4e144f685dfc5f99708c0d61cd15a07c82d33b"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-171": {
+            "expected": 1395,
+            "full": 1696,
+            "holdoutPasses": 1133,
+            "paidLookups": 21046,
+            "promotions": 14,
+            "reflections": 478,
+            "searchLookups": 19651,
+            "seeded": 1593,
+            "traceSha256": "cf0dd167b7700c5901857c4005a0926dca5124433d6e9ad0ddfd43b9ef925971"
+          },
+          "cpo-72": {
+            "expected": 958,
+            "full": 1152,
+            "holdoutPasses": 1131,
+            "paidLookups": 8105,
+            "promotions": 19,
+            "reflections": 21,
+            "searchLookups": 7147,
+            "seeded": 1097,
+            "traceSha256": "3b5bdd1dbca9e3e62a5a9c47ce8b85abb7d5779752a329686c9b465009817cba"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2336,
+            "expected": 535,
+            "fullPanelRejections": 38,
+            "holdoutPasses": 1139,
+            "paidLookups": 5230,
+            "prefixPerfect": 6,
+            "promotions": 10,
+            "reflections": 0,
+            "rescueLookups": 290,
+            "rescueNominations": 6,
+            "rescueOpportunities": 38,
+            "rescuesCompared": 38,
+            "screenCandidates": 220,
+            "screenLookups": 2069,
+            "screenNominees": 73,
+            "searchLookups": 4695,
+            "traceSha256": "e0278a4508c25474ea27235853917f523ef006e87e10db020e39f2bd60c54952"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2336,
+            "expected": 535,
+            "fullPanelRejections": 38,
+            "holdoutPasses": 1139,
+            "paidLookups": 5339,
+            "prefixPerfect": 6,
+            "promotions": 10,
+            "reflections": 0,
+            "rescueLookups": 399,
+            "rescueNominations": 6,
+            "rescueOpportunities": 38,
+            "rescuePrefixRejections": 2,
+            "rescuesCompared": 36,
+            "screenCandidates": 220,
+            "screenLookups": 2069,
+            "screenNominees": 73,
+            "searchLookups": 4804,
+            "traceSha256": "37bd0145d55f690ad9d4ea3a7a8055f797097903e1921612e728c9418281dae8"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2336,
+            "expected": 472,
+            "fullPanelRejections": 38,
+            "holdoutPasses": 1139,
+            "paidLookups": 4877,
+            "prefixPerfect": 6,
+            "promotions": 8,
+            "reflections": 0,
+            "screenCandidates": 220,
+            "screenLookups": 2069,
+            "screenNominees": 73,
+            "searchLookups": 4405,
+            "traceSha256": "aa5d7ed45150b4652b6c2d80b62368567f30d2f4b0ff933158476a98fff957c8"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1144,
+            "paidLookups": 9806,
+            "promotions": 1,
+            "qualificationLookups": 384,
+            "searchLookups": 9422,
+            "traceSha256": "6aef2e73b5744d9da79d2454c7913ab7c7867c9c5bf84bb853d473e71754b062"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1141,
+            "paidLookups": 10099,
+            "promotions": 9,
+            "qualificationLookups": 448,
+            "searchLookups": 9651,
+            "traceSha256": "3c50a5ab73e56302a4ae0e43dbb0f2b46f7a0bae38de8d029a64c7ac7e08e529"
+          }
+        },
+        "high_school_statistics/meta_llama_llama_3_8b": {
+          "cpo-171": {
+            "expected": 1407,
+            "full": 1600,
+            "holdoutPasses": 1140,
+            "paidLookups": 21959,
+            "promotions": 32,
+            "reflections": 361,
+            "searchLookups": 20552,
+            "seeded": 1493,
+            "traceSha256": "974f8aa2fdd6e5589bbd97ee898117525d162d9c24fcdd0bbaaa8c6c765893e6"
+          },
+          "cpo-72": {
+            "expected": 810,
+            "full": 912,
+            "holdoutPasses": 1133,
+            "paidLookups": 8401,
+            "promotions": 25,
+            "reflections": 11,
+            "searchLookups": 7591,
+            "seeded": 859,
+            "traceSha256": "3816b2848a94a4ace998dfce6397cc521e2334181c85e0a9a240d20a3bb73326"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2560,
+            "expected": 672,
+            "fullPanelRejections": 42,
+            "holdoutPasses": 1120,
+            "paidLookups": 6058,
+            "prefixPerfect": 0,
+            "promotions": 16,
+            "reflections": 0,
+            "rescueLookups": 538,
+            "rescueNominations": 9,
+            "rescueOpportunities": 42,
+            "rescuesCompared": 42,
+            "screenCandidates": 224,
+            "screenLookups": 2288,
+            "screenNominees": 80,
+            "searchLookups": 5386,
+            "traceSha256": "a2c2f9f9c9855263b4cdaedfd16d41ad6a944ac47cbc6ca10d30b88e03498422"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2560,
+            "expected": 657,
+            "fullPanelRejections": 42,
+            "holdoutPasses": 1120,
+            "paidLookups": 6009,
+            "prefixPerfect": 0,
+            "promotions": 16,
+            "reflections": 0,
+            "rescueLookups": 504,
+            "rescueNominations": 8,
+            "rescueOpportunities": 42,
+            "rescuePrefixRejections": 14,
+            "rescuesCompared": 28,
+            "screenCandidates": 224,
+            "screenLookups": 2288,
+            "screenNominees": 80,
+            "searchLookups": 5352,
+            "traceSha256": "c85d39e871b31c023178c7904755ab066181b3104571b6e320b0e62172457bfb"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2560,
+            "expected": 560,
+            "fullPanelRejections": 41,
+            "holdoutPasses": 1118,
+            "paidLookups": 5414,
+            "prefixPerfect": 0,
+            "promotions": 14,
+            "reflections": 0,
+            "screenCandidates": 225,
+            "screenLookups": 2294,
+            "screenNominees": 80,
+            "searchLookups": 4854,
+            "traceSha256": "f5f8880afdda44f8e7ceab8e98779bf467cccd93453299539f9b311258347467"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1116,
+            "paidLookups": 11942,
+            "promotions": 11,
+            "qualificationLookups": 704,
+            "searchLookups": 11238,
+            "traceSha256": "42637e68e6a2581efb7a8e37342b75053931e2bde02eccb7ed85e03fc4e31b06"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1109,
+            "paidLookups": 12087,
+            "promotions": 15,
+            "qualificationLookups": 800,
+            "searchLookups": 11287,
+            "traceSha256": "0fedde907031dd9dfde6e9912f51654f0a448a5d028d563c3bded3b3012d6243"
+          }
+        },
+        "high_school_statistics/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-171": {
+            "expected": 1502,
+            "full": 1648,
+            "holdoutPasses": 793,
+            "paidLookups": 21947,
+            "promotions": 29,
+            "reflections": 349,
+            "searchLookups": 20445,
+            "seeded": 1529,
+            "traceSha256": "e7ac0a5dbe5cd3724e2187e9b91340c5ed6e60a722957de4b6c04dbf79f9ddbb"
+          },
+          "cpo-72": {
+            "expected": 883,
+            "full": 960,
+            "holdoutPasses": 775,
+            "paidLookups": 8355,
+            "promotions": 21,
+            "reflections": 4,
+            "searchLookups": 7472,
+            "seeded": 907,
+            "traceSha256": "d9950dd5ede7ddec956b9cfb008060609e3528d7bdaf1a0cbeb0550b91ddc48f"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2560,
+            "expected": 678,
+            "fullPanelRejections": 42,
+            "holdoutPasses": 785,
+            "paidLookups": 6212,
+            "prefixPerfect": 0,
+            "promotions": 24,
+            "reflections": 0,
+            "rescueLookups": 526,
+            "rescueNominations": 9,
+            "rescueOpportunities": 42,
+            "rescuesCompared": 42,
+            "screenCandidates": 233,
+            "screenLookups": 2448,
+            "screenNominees": 80,
+            "searchLookups": 5534,
+            "traceSha256": "f19712eace740acabc5364f593e0be145c774b2e24df53bbac7566185ee4f27f"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2560,
+            "expected": 660,
+            "fullPanelRejections": 41,
+            "holdoutPasses": 785,
+            "paidLookups": 6086,
+            "prefixPerfect": 0,
+            "promotions": 23,
+            "reflections": 0,
+            "rescueLookups": 421,
+            "rescueNominations": 7,
+            "rescueOpportunities": 41,
+            "rescuePrefixRejections": 15,
+            "rescuesCompared": 26,
+            "screenCandidates": 232,
+            "screenLookups": 2445,
+            "screenNominees": 80,
+            "searchLookups": 5426,
+            "traceSha256": "d8db0487bdf0c32831ae539a052ce70071bfbbf427c960fa31844ec84813a859"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2656,
+            "expected": 592,
+            "fullPanelRejections": 42,
+            "holdoutPasses": 781,
+            "paidLookups": 5698,
+            "prefixPerfect": 0,
+            "promotions": 17,
+            "reflections": 0,
+            "screenCandidates": 230,
+            "screenLookups": 2450,
+            "screenNominees": 83,
+            "searchLookups": 5106,
+            "traceSha256": "d398bb53e57bacec211850fe75eea165686785c96ac460eb7065acbb5101e46f"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 800,
+            "paidLookups": 11710,
+            "promotions": 17,
+            "qualificationLookups": 976,
+            "searchLookups": 10734,
+            "traceSha256": "dfdce213c3cb9e8c46712053988be863baaea63bb7406b4ebc433884d730d501"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 771,
+            "paidLookups": 12068,
+            "promotions": 13,
+            "qualificationLookups": 800,
+            "searchLookups": 11268,
+            "traceSha256": "2e2ab727e5449909444534c2bc029baa1af35c79e1517892c08357865a1fd6bc"
+          }
+        }
+      },
+      "totals": {
+        "cpo-171": {
+          "expected": 5770,
+          "full": 6720,
+          "holdoutPasses": 4192,
+          "paidLookups": 86354,
+          "promotions": 94,
+          "reflections": 1639,
+          "searchLookups": 80584,
+          "seeded": 6282
+        },
+        "cpo-72": {
+          "expected": 3570,
+          "full": 4096,
+          "holdoutPasses": 4159,
+          "paidLookups": 33177,
+          "promotions": 77,
+          "reflections": 55,
+          "searchLookups": 29607,
+          "seeded": 3874
+        },
+        "cpo-opening-rescue": {
+          "completionLookups": 9760,
+          "expected": 2528,
+          "fullPanelRejections": 156,
+          "holdoutPasses": 4165,
+          "paidLookups": 22925,
+          "prefixPerfect": 15,
+          "promotions": 63,
+          "reflections": 0,
+          "rescueLookups": 1749,
+          "rescueNominations": 33,
+          "rescueOpportunities": 156,
+          "rescuesCompared": 156,
+          "screenCandidates": 894,
+          "screenLookups": 8888,
+          "screenNominees": 305,
+          "searchLookups": 20397
+        },
+        "cpo-opening-rescue-screened": {
+          "completionLookups": 9760,
+          "expected": 2495,
+          "fullPanelRejections": 155,
+          "holdoutPasses": 4165,
+          "paidLookups": 22900,
+          "prefixPerfect": 15,
+          "promotions": 62,
+          "reflections": 0,
+          "rescueLookups": 1760,
+          "rescueNominations": 30,
+          "rescueOpportunities": 155,
+          "rescuePrefixRejections": 38,
+          "rescuesCompared": 117,
+          "screenCandidates": 893,
+          "screenLookups": 8885,
+          "screenNominees": 305,
+          "searchLookups": 20405
+        },
+        "cpo-short-8-r0": {
+          "completionLookups": 9824,
+          "expected": 2141,
+          "fullPanelRejections": 154,
+          "holdoutPasses": 4158,
+          "paidLookups": 20860,
+          "prefixPerfect": 15,
+          "promotions": 48,
+          "reflections": 0,
+          "screenCandidates": 894,
+          "screenLookups": 8895,
+          "screenNominees": 307,
+          "searchLookups": 18719
+        },
+        "gepa-batched": {
+          "holdoutPasses": 4176,
+          "paidLookups": 44194,
+          "promotions": 38,
+          "qualificationLookups": 2672,
+          "searchLookups": 41522
+        },
+        "gepa-sequential": {
+          "holdoutPasses": 4139,
+          "paidLookups": 44944,
+          "promotions": 42,
+          "qualificationLookups": 2528,
+          "searchLookups": 42416
+        }
+      }
+    },
+    "independent-archive": {
+      "pairedComparisons": {
+        "cpo-171": {
+          "jointPairedRange95": [
+            -64,
+            56
+          ],
+          "lookupDelta": {
+            "gepa-batched": 86486,
+            "gepa-sequential": 83139
+          },
+          "passDelta": {
+            "gepa-batched": 1,
+            "gepa-sequential": 9
+          }
+        },
+        "cpo-72": {
+          "jointPairedRange95": [
+            -75,
+            23
+          ],
+          "lookupDelta": {
+            "gepa-batched": -22468,
+            "gepa-sequential": -25815
+          },
+          "passDelta": {
+            "gepa-batched": -20,
+            "gepa-sequential": -12
+          }
+        },
+        "cpo-opening-rescue": {
+          "jointPairedRange95": [
+            -52,
+            37
+          ],
+          "lookupDelta": {
+            "gepa-batched": -41822,
+            "gepa-sequential": -45169
+          },
+          "passDelta": {
+            "gepa-batched": -3,
+            "gepa-sequential": 5
+          }
+        },
+        "cpo-opening-rescue-screened": {
+          "jointPairedRange95": [
+            -52,
+            37
+          ],
+          "lookupDelta": {
+            "gepa-batched": -41924,
+            "gepa-sequential": -45271
+          },
+          "passDelta": {
+            "gepa-batched": -3,
+            "gepa-sequential": 5
+          }
+        },
+        "cpo-short-8-r0": {
+          "jointPairedRange95": [
+            -48,
+            43
+          ],
+          "lookupDelta": {
+            "gepa-batched": -46251,
+            "gepa-sequential": -49598
+          },
+          "passDelta": {
+            "gepa-batched": 3,
+            "gepa-sequential": 11
+          }
+        }
+      },
+      "panels": {
+        "college_biology/google_gemma_7b_it": {
+          "cpo-171": {
+            "expected": 1506,
+            "full": 1616,
+            "holdoutPasses": 922,
+            "paidLookups": 22136,
+            "promotions": 25,
+            "reflections": 373,
+            "searchLookups": 20630,
+            "seeded": 1543,
+            "traceSha256": "11ba07b14cbdf865fd4ef40cf7ca69bc0fe5a523342250f251620bdac9171476"
+          },
+          "cpo-72": {
+            "expected": 760,
+            "full": 832,
+            "holdoutPasses": 926,
+            "paidLookups": 8129,
+            "promotions": 14,
+            "reflections": 6,
+            "searchLookups": 7369,
+            "seeded": 777,
+            "traceSha256": "85b9d411463150e8a7955a6e54f0ad1a6db3cd37d6c6907f779a40df4b91ae48"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2016,
+            "expected": 508,
+            "fullPanelRejections": 32,
+            "holdoutPasses": 929,
+            "paidLookups": 5233,
+            "prefixPerfect": 0,
+            "promotions": 11,
+            "reflections": 0,
+            "rescueLookups": 377,
+            "rescueNominations": 4,
+            "rescueOpportunities": 32,
+            "rescuesCompared": 32,
+            "screenCandidates": 232,
+            "screenLookups": 2332,
+            "screenNominees": 63,
+            "searchLookups": 4725,
+            "traceSha256": "61cc0a9dd64960b4b450be33f0f27fe70653fdc1b1ffb37d18cc840080acafc7"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2016,
+            "expected": 508,
+            "fullPanelRejections": 32,
+            "holdoutPasses": 929,
+            "paidLookups": 5215,
+            "prefixPerfect": 0,
+            "promotions": 11,
+            "reflections": 0,
+            "rescueLookups": 359,
+            "rescueNominations": 4,
+            "rescueOpportunities": 32,
+            "rescuePrefixRejections": 6,
+            "rescuesCompared": 26,
+            "screenCandidates": 232,
+            "screenLookups": 2332,
+            "screenNominees": 63,
+            "searchLookups": 4707,
+            "traceSha256": "0449b29417207a6e64f0e830dcc65447b5daa8bd7e7a58857436cd772b8e6c1d"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2016,
+            "expected": 466,
+            "fullPanelRejections": 31,
+            "holdoutPasses": 926,
+            "paidLookups": 4800,
+            "prefixPerfect": 0,
+            "promotions": 11,
+            "reflections": 0,
+            "screenCandidates": 230,
+            "screenLookups": 2318,
+            "screenNominees": 63,
+            "searchLookups": 4334,
+            "traceSha256": "bcdd1c7e61eb41bb83af5be8551f4e3d8fde3bf384cb3a54f1e6204c26241e94"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 922,
+            "paidLookups": 10692,
+            "promotions": 17,
+            "qualificationLookups": 640,
+            "searchLookups": 10052,
+            "traceSha256": "4fcd8a460deea5fc764bccd278f088520de998ee169a4b9200c7c5cdf8f4b707"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 922,
+            "paidLookups": 10966,
+            "promotions": 15,
+            "qualificationLookups": 528,
+            "searchLookups": 10438,
+            "traceSha256": "751bfd7cc1ad193b5528a68f0e58ec8d14a49790ac60568d2537135754cad681"
+          }
+        },
+        "college_biology/tiiuae_falcon_40b": {
+          "cpo-171": {
+            "expected": 1542,
+            "full": 1760,
+            "holdoutPasses": 1038,
+            "paidLookups": 22203,
+            "promotions": 25,
+            "reflections": 411,
+            "searchLookups": 20661,
+            "seeded": 1646,
+            "traceSha256": "668d5c38bb5b9af02a2744590a1f7f0f9b63ebc7e24b9db2c47b06ba38d27eec"
+          },
+          "cpo-72": {
+            "expected": 1055,
+            "full": 1200,
+            "holdoutPasses": 1044,
+            "paidLookups": 8463,
+            "promotions": 21,
+            "reflections": 11,
+            "searchLookups": 7408,
+            "seeded": 1127,
+            "traceSha256": "7f1ae64a49aca6ac13723a3df8afa8cafb9f7f9b6fddbf1fd6e15d7a8bff82c7"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2560,
+            "expected": 729,
+            "fullPanelRejections": 33,
+            "holdoutPasses": 1045,
+            "paidLookups": 5898,
+            "prefixPerfect": 0,
+            "promotions": 13,
+            "reflections": 0,
+            "rescueLookups": 359,
+            "rescueNominations": 5,
+            "rescueOpportunities": 33,
+            "rescuesCompared": 33,
+            "screenCandidates": 223,
+            "screenLookups": 2250,
+            "screenNominees": 80,
+            "searchLookups": 5169,
+            "traceSha256": "3429075241b016b6626d6781d0750e9fbcdf0714848bf8b6df917371a70905a7"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2560,
+            "expected": 729,
+            "fullPanelRejections": 33,
+            "holdoutPasses": 1045,
+            "paidLookups": 5876,
+            "prefixPerfect": 0,
+            "promotions": 13,
+            "reflections": 0,
+            "rescueLookups": 337,
+            "rescueNominations": 5,
+            "rescueOpportunities": 33,
+            "rescuePrefixRejections": 13,
+            "rescuesCompared": 20,
+            "screenCandidates": 223,
+            "screenLookups": 2250,
+            "screenNominees": 80,
+            "searchLookups": 5147,
+            "traceSha256": "d82ae2f3d9cf265603866c63872e45d134733acab7c1ccc8f7de02b0a1e2be0f"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2624,
+            "expected": 692,
+            "fullPanelRejections": 33,
+            "holdoutPasses": 1050,
+            "paidLookups": 5584,
+            "prefixPerfect": 0,
+            "promotions": 14,
+            "reflections": 0,
+            "screenCandidates": 223,
+            "screenLookups": 2268,
+            "screenNominees": 82,
+            "searchLookups": 4892,
+            "traceSha256": "3f9fe28566786a369c7235626144cb48f953f324f50a708d9f91150ce7d752ee"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1036,
+            "paidLookups": 11312,
+            "promotions": 11,
+            "qualificationLookups": 800,
+            "searchLookups": 10512,
+            "traceSha256": "ac2f8206c33654ca0edb14850191eb0c9d23db4be44b45e922cdbde6d0418017"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1046,
+            "paidLookups": 11395,
+            "promotions": 9,
+            "qualificationLookups": 736,
+            "searchLookups": 10659,
+            "traceSha256": "ea0724943a052c542fcdb76881924f142ba42e06927f25f7b3e3ecbec484b9bb"
+          }
+        },
+        "machine_learning/google_gemma_7b_it": {
+          "cpo-171": {
+            "expected": 1303,
+            "full": 1408,
+            "holdoutPasses": 415,
+            "paidLookups": 21884,
+            "promotions": 23,
+            "reflections": 329,
+            "searchLookups": 20581,
+            "seeded": 1317,
+            "traceSha256": "e9b90adcccfd5aeb8539c68ee51428305659bd69d3ed35924c078cce027897ef"
+          },
+          "cpo-72": {
+            "expected": 690,
+            "full": 752,
+            "holdoutPasses": 405,
+            "paidLookups": 8334,
+            "promotions": 15,
+            "reflections": 3,
+            "searchLookups": 7644,
+            "seeded": 695,
+            "traceSha256": "0725c5374adb74bb062c7f4b58ea1bcf5e0c12546b5e49aab5937b24a7962e4e"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2112,
+            "expected": 565,
+            "fullPanelRejections": 31,
+            "holdoutPasses": 409,
+            "paidLookups": 5489,
+            "prefixPerfect": 0,
+            "promotions": 12,
+            "reflections": 0,
+            "rescueLookups": 385,
+            "rescueNominations": 4,
+            "rescueOpportunities": 31,
+            "rescuesCompared": 31,
+            "screenCandidates": 230,
+            "screenLookups": 2427,
+            "screenNominees": 66,
+            "searchLookups": 4924,
+            "traceSha256": "0475fd6aecbd2c435db3119b6cdbd05d6c8b061151bb8bfd486019e0c4daf374"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2112,
+            "expected": 549,
+            "fullPanelRejections": 31,
+            "holdoutPasses": 409,
+            "paidLookups": 5410,
+            "prefixPerfect": 0,
+            "promotions": 12,
+            "reflections": 0,
+            "rescueLookups": 322,
+            "rescueNominations": 3,
+            "rescueOpportunities": 31,
+            "rescuePrefixRejections": 9,
+            "rescuesCompared": 22,
+            "screenCandidates": 230,
+            "screenLookups": 2427,
+            "screenNominees": 66,
+            "searchLookups": 4861,
+            "traceSha256": "7d43ebdb6e02853714f60c132b2e69b02206e27a400f65ee57936a7d249d31cd"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2112,
+            "expected": 503,
+            "fullPanelRejections": 31,
+            "holdoutPasses": 408,
+            "paidLookups": 5042,
+            "prefixPerfect": 0,
+            "promotions": 11,
+            "reflections": 0,
+            "screenCandidates": 230,
+            "screenLookups": 2427,
+            "screenNominees": 66,
+            "searchLookups": 4539,
+            "traceSha256": "229b15177e34798b4e74dc33561201b47632aa66ff0bed564053229befdd7bd6"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 410,
+            "paidLookups": 12314,
+            "promotions": 15,
+            "qualificationLookups": 864,
+            "searchLookups": 11450,
+            "traceSha256": "d797a94ab8c04033f6f2f1121d9f785b51febad9d1bf1382f784046d43c5564f"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 416,
+            "paidLookups": 12687,
+            "promotions": 16,
+            "qualificationLookups": 800,
+            "searchLookups": 11887,
+            "traceSha256": "053db6c7b6a222f83818f3875acba62f6015887d8147eaa2e908564fdeed4c9a"
+          }
+        },
+        "machine_learning/tiiuae_falcon_40b": {
+          "cpo-171": {
+            "expected": 1433,
+            "full": 1632,
+            "holdoutPasses": 265,
+            "paidLookups": 22027,
+            "promotions": 20,
+            "reflections": 327,
+            "searchLookups": 20594,
+            "seeded": 1514,
+            "traceSha256": "d666af87fec0d41d4ac6c9a120c7e9f7c629f2d788d4b6d9c6477a1652b7b8ec"
+          },
+          "cpo-72": {
+            "expected": 951,
+            "full": 1088,
+            "holdoutPasses": 256,
+            "paidLookups": 8391,
+            "promotions": 11,
+            "reflections": 1,
+            "searchLookups": 7440,
+            "seeded": 1002,
+            "traceSha256": "a2fcf96dc733f27d7bf5ca3360a9f74be38ff7cb7e3564429cc1a0d44d0db63d"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2976,
+            "expected": 772,
+            "fullPanelRejections": 49,
+            "holdoutPasses": 254,
+            "paidLookups": 7001,
+            "prefixPerfect": 0,
+            "promotions": 11,
+            "reflections": 0,
+            "rescueLookups": 694,
+            "rescueNominations": 10,
+            "rescueOpportunities": 49,
+            "rescuesCompared": 49,
+            "screenCandidates": 222,
+            "screenLookups": 2559,
+            "screenNominees": 93,
+            "searchLookups": 6229,
+            "traceSha256": "f0478e062c884aea5fb338a400af8db8e828ac94df81bec432d1cab70e72e90e"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2976,
+            "expected": 772,
+            "fullPanelRejections": 49,
+            "holdoutPasses": 254,
+            "paidLookups": 6963,
+            "prefixPerfect": 0,
+            "promotions": 11,
+            "reflections": 0,
+            "rescueLookups": 656,
+            "rescueNominations": 10,
+            "rescueOpportunities": 49,
+            "rescuePrefixRejections": 7,
+            "rescuesCompared": 42,
+            "screenCandidates": 222,
+            "screenLookups": 2559,
+            "screenNominees": 93,
+            "searchLookups": 6191,
+            "traceSha256": "019e45905044f27ea5be29938589d475f98e49636907643127b18c0fa6056aa7"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2944,
+            "expected": 613,
+            "fullPanelRejections": 49,
+            "holdoutPasses": 253,
+            "paidLookups": 6110,
+            "prefixPerfect": 0,
+            "promotions": 8,
+            "reflections": 0,
+            "screenCandidates": 221,
+            "screenLookups": 2553,
+            "screenNominees": 92,
+            "searchLookups": 5497,
+            "traceSha256": "49b97ec4f4ed35dd3f1a3c3344e071c93d21f997f7eb890e435da7ff4baf31ef"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 262,
+            "paidLookups": 10414,
+            "promotions": 6,
+            "qualificationLookups": 608,
+            "searchLookups": 9806,
+            "traceSha256": "16ec4bba25badeaab976ce3980de12d76bb3c529ff5a35b76d1dbc63926a6536"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 268,
+            "paidLookups": 11092,
+            "promotions": 8,
+            "qualificationLookups": 688,
+            "searchLookups": 10404,
+            "traceSha256": "505234432f1c41b814c754baa3e7cee740406e48b1bd97388f6435121a4a48be"
+          }
+        },
+        "nutrition/google_gemma_7b_it": {
+          "cpo-171": {
+            "expected": 1442,
+            "full": 1584,
+            "holdoutPasses": 1771,
+            "paidLookups": 22018,
+            "promotions": 23,
+            "reflections": 444,
+            "searchLookups": 20576,
+            "seeded": 1477,
+            "traceSha256": "f2f4caad635f94977a76a7e14e06dff23671c5a93559ac592e53c102230a81a4"
+          },
+          "cpo-72": {
+            "expected": 1027,
+            "full": 1120,
+            "holdoutPasses": 1774,
+            "paidLookups": 8360,
+            "promotions": 21,
+            "reflections": 13,
+            "searchLookups": 7333,
+            "seeded": 1062,
+            "traceSha256": "23e58094ba99b008bee9f4418d576cf564a292211eadb53f61a66b10b6fcc52a"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2432,
+            "expected": 687,
+            "fullPanelRejections": 37,
+            "holdoutPasses": 1782,
+            "paidLookups": 5888,
+            "prefixPerfect": 0,
+            "promotions": 14,
+            "reflections": 0,
+            "rescueLookups": 447,
+            "rescueNominations": 8,
+            "rescueOpportunities": 37,
+            "rescuesCompared": 37,
+            "screenCandidates": 230,
+            "screenLookups": 2322,
+            "screenNominees": 76,
+            "searchLookups": 5201,
+            "traceSha256": "0df1c83ac50bd58a7dd7e38c506a44f282783607828eecc8fa291cf2cb54be22"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2432,
+            "expected": 671,
+            "fullPanelRejections": 37,
+            "holdoutPasses": 1782,
+            "paidLookups": 5898,
+            "prefixPerfect": 0,
+            "promotions": 14,
+            "reflections": 0,
+            "rescueLookups": 473,
+            "rescueNominations": 7,
+            "rescueOpportunities": 37,
+            "rescuePrefixRejections": 4,
+            "rescuesCompared": 33,
+            "screenCandidates": 230,
+            "screenLookups": 2322,
+            "screenNominees": 76,
+            "searchLookups": 5227,
+            "traceSha256": "d80abaa58e9c75444b72886febb99684fc31742444bb7b6036b3da9370db9c76"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2432,
+            "expected": 573,
+            "fullPanelRejections": 37,
+            "holdoutPasses": 1782,
+            "paidLookups": 5327,
+            "prefixPerfect": 0,
+            "promotions": 14,
+            "reflections": 0,
+            "screenCandidates": 230,
+            "screenLookups": 2322,
+            "screenNominees": 76,
+            "searchLookups": 4754,
+            "traceSha256": "f295ce354d85c36dcb22edf14f907bc24605ba5241e7c72b067768c328524532"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1779,
+            "paidLookups": 11038,
+            "promotions": 14,
+            "qualificationLookups": 736,
+            "searchLookups": 10302,
+            "traceSha256": "25ad09704b12b816a5ad203d62d58a415b3890578f97e4190e6a89567a9474d5"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1779,
+            "paidLookups": 11067,
+            "promotions": 16,
+            "qualificationLookups": 672,
+            "searchLookups": 10395,
+            "traceSha256": "dd5d31a8d3d0b7756fc4eb8505b546e7ba478e9398f5589e85bdd673dd8563aa"
+          }
+        },
+        "nutrition/tiiuae_falcon_40b": {
+          "cpo-171": {
+            "expected": 1499,
+            "full": 1696,
+            "holdoutPasses": 1855,
+            "paidLookups": 21945,
+            "promotions": 34,
+            "reflections": 352,
+            "searchLookups": 20446,
+            "seeded": 1571,
+            "traceSha256": "72b5e2f0ee75c5e0f1dbd1c3c31f92e9f745319f48ece7447f28e606336d0585"
+          },
+          "cpo-72": {
+            "expected": 871,
+            "full": 976,
+            "holdoutPasses": 1853,
+            "paidLookups": 8409,
+            "promotions": 11,
+            "reflections": 15,
+            "searchLookups": 7538,
+            "seeded": 916,
+            "traceSha256": "b046f63dd8c6505346d36a2159a5f3454049e6720bca705d6938a6e9dd428deb"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2528,
+            "expected": 643,
+            "fullPanelRejections": 43,
+            "holdoutPasses": 1860,
+            "paidLookups": 5997,
+            "prefixPerfect": 0,
+            "promotions": 10,
+            "reflections": 0,
+            "rescueLookups": 517,
+            "rescueNominations": 10,
+            "rescueOpportunities": 43,
+            "rescuesCompared": 43,
+            "screenCandidates": 232,
+            "screenLookups": 2309,
+            "screenNominees": 79,
+            "searchLookups": 5354,
+            "traceSha256": "6118a70223a169f640b22c9bec843aa88fd3c53591b1f7e67ec97ee2fe7697d9"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2528,
+            "expected": 629,
+            "fullPanelRejections": 43,
+            "holdoutPasses": 1860,
+            "paidLookups": 5993,
+            "prefixPerfect": 0,
+            "promotions": 10,
+            "reflections": 0,
+            "rescueLookups": 527,
+            "rescueNominations": 9,
+            "rescueOpportunities": 43,
+            "rescuePrefixRejections": 8,
+            "rescuesCompared": 35,
+            "screenCandidates": 232,
+            "screenLookups": 2309,
+            "screenNominees": 79,
+            "searchLookups": 5364,
+            "traceSha256": "8365c3953f30593b0df8a27e4136aef63c89b0f493c3bcb3be80e4870c2ef604"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2528,
+            "expected": 509,
+            "fullPanelRejections": 43,
+            "holdoutPasses": 1862,
+            "paidLookups": 5346,
+            "prefixPerfect": 0,
+            "promotions": 9,
+            "reflections": 0,
+            "screenCandidates": 232,
+            "screenLookups": 2309,
+            "screenNominees": 79,
+            "searchLookups": 4837,
+            "traceSha256": "3a2f55f42daf0d0576d46e0fb136cfeec618bc83391adceef8209aa0af55cee4"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1858,
+            "paidLookups": 11576,
+            "promotions": 13,
+            "qualificationLookups": 752,
+            "searchLookups": 10824,
+            "traceSha256": "8c101da8335649f029ad01ed07004531e810c609dcb572709b60ac32ad01efdb"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1866,
+            "paidLookups": 12192,
+            "promotions": 16,
+            "qualificationLookups": 896,
+            "searchLookups": 11296,
+            "traceSha256": "50b67ce3a40de133be37ae8604169b069bd9c64230ca2b55487cfdc4c7b432e1"
+          }
+        },
+        "security_studies/google_gemma_7b_it": {
+          "cpo-171": {
+            "expected": 1624,
+            "full": 1824,
+            "holdoutPasses": 1380,
+            "paidLookups": 21837,
+            "promotions": 24,
+            "reflections": 412,
+            "searchLookups": 20213,
+            "seeded": 1688,
+            "traceSha256": "54084337e1b2c1d2afdd360a9cdae9a352462937c513e513518d13fc5711462b"
+          },
+          "cpo-72": {
+            "expected": 981,
+            "full": 1088,
+            "holdoutPasses": 1373,
+            "paidLookups": 8424,
+            "promotions": 16,
+            "reflections": 15,
+            "searchLookups": 7443,
+            "seeded": 1011,
+            "traceSha256": "12f211ffb6a0215a9f179882c61592f1cb4e160b7c8b3b15e7b4d4bce6421750"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2752,
+            "expected": 698,
+            "fullPanelRejections": 45,
+            "holdoutPasses": 1375,
+            "paidLookups": 6265,
+            "prefixPerfect": 1,
+            "promotions": 7,
+            "reflections": 0,
+            "rescueLookups": 518,
+            "rescueNominations": 8,
+            "rescueOpportunities": 45,
+            "rescuesCompared": 45,
+            "screenCandidates": 227,
+            "screenLookups": 2297,
+            "screenNominees": 86,
+            "searchLookups": 5567,
+            "traceSha256": "63ced3aa01c14fc9c6d3e72a6477149273aefdc8d570cee8d40ae3e02f92a442"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2752,
+            "expected": 698,
+            "fullPanelRejections": 45,
+            "holdoutPasses": 1375,
+            "paidLookups": 6306,
+            "prefixPerfect": 1,
+            "promotions": 7,
+            "reflections": 0,
+            "rescueLookups": 559,
+            "rescueNominations": 8,
+            "rescueOpportunities": 45,
+            "rescuePrefixRejections": 6,
+            "rescuesCompared": 39,
+            "screenCandidates": 227,
+            "screenLookups": 2297,
+            "screenNominees": 86,
+            "searchLookups": 5608,
+            "traceSha256": "0a70c47f7c1e10dd43f5d7af62d0c3cadd36d2fe645672b4f97cbd443aa11c20"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2752,
+            "expected": 591,
+            "fullPanelRejections": 45,
+            "holdoutPasses": 1375,
+            "paidLookups": 5640,
+            "prefixPerfect": 1,
+            "promotions": 7,
+            "reflections": 0,
+            "screenCandidates": 227,
+            "screenLookups": 2297,
+            "screenNominees": 86,
+            "searchLookups": 5049,
+            "traceSha256": "4c2bfe2181d89e37a7034e92f79b1f901ff46c7003acae5847e954a7101c1e93"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1378,
+            "paidLookups": 10924,
+            "promotions": 9,
+            "qualificationLookups": 624,
+            "searchLookups": 10300,
+            "traceSha256": "0c27be7ad1c72b006e44652960e8125c7cc7bd81c0e942de2496c4f057789a82"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1369,
+            "paidLookups": 11282,
+            "promotions": 9,
+            "qualificationLookups": 624,
+            "searchLookups": 10658,
+            "traceSha256": "e5536d71bdbedc3ebcda22d931a88351100dd302f6661a9fab1f96c814938497"
+          }
+        },
+        "security_studies/tiiuae_falcon_40b": {
+          "cpo-171": {
+            "expected": 1542,
+            "full": 1792,
+            "holdoutPasses": 1375,
+            "paidLookups": 21862,
+            "promotions": 22,
+            "reflections": 388,
+            "searchLookups": 20320,
+            "seeded": 1678,
+            "traceSha256": "982af4b366829c961d1bbc6d235a91111a91cc8c02952347d8b5923d07f533c9"
+          },
+          "cpo-72": {
+            "expected": 1097,
+            "full": 1232,
+            "holdoutPasses": 1369,
+            "paidLookups": 8448,
+            "promotions": 20,
+            "reflections": 5,
+            "searchLookups": 7351,
+            "seeded": 1158,
+            "traceSha256": "094b122b739907103e21705a13f3655f36fdf8bb8807f0d73b1e1f91a54f9a0b"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2592,
+            "expected": 644,
+            "fullPanelRejections": 39,
+            "holdoutPasses": 1363,
+            "paidLookups": 5833,
+            "prefixPerfect": 7,
+            "promotions": 15,
+            "reflections": 0,
+            "rescueLookups": 366,
+            "rescueNominations": 4,
+            "rescueOpportunities": 39,
+            "rescuesCompared": 39,
+            "screenCandidates": 216,
+            "screenLookups": 2231,
+            "screenNominees": 81,
+            "searchLookups": 5189,
+            "traceSha256": "656da672317fdac1f4eb33b924f9307614bd88feb2b24a84f3934de8c24b04f8"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2592,
+            "expected": 644,
+            "fullPanelRejections": 39,
+            "holdoutPasses": 1363,
+            "paidLookups": 5841,
+            "prefixPerfect": 7,
+            "promotions": 15,
+            "reflections": 0,
+            "rescueLookups": 374,
+            "rescueNominations": 4,
+            "rescueOpportunities": 39,
+            "rescuePrefixRejections": 11,
+            "rescuesCompared": 28,
+            "screenCandidates": 216,
+            "screenLookups": 2231,
+            "screenNominees": 81,
+            "searchLookups": 5197,
+            "traceSha256": "407289785af1417a3702efe8d4bf4a115a4127fc2e3bdc1b786f3c6490dc5f9e"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2528,
+            "expected": 587,
+            "fullPanelRejections": 38,
+            "holdoutPasses": 1367,
+            "paidLookups": 5326,
+            "prefixPerfect": 7,
+            "promotions": 14,
+            "reflections": 0,
+            "screenCandidates": 216,
+            "screenLookups": 2211,
+            "screenNominees": 79,
+            "searchLookups": 4739,
+            "traceSha256": "5ffbd83b18f93db24aedb83b8a80593479838ca684f5c26b2e1fc9be21f5f853"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1375,
+            "paidLookups": 11156,
+            "promotions": 11,
+            "qualificationLookups": 720,
+            "searchLookups": 10436,
+            "traceSha256": "6299619ce5f5d603d6489a194aa8315e2f8d75655746fd05007351a7a9378d3e"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1346,
+            "paidLookups": 12092,
+            "promotions": 10,
+            "qualificationLookups": 768,
+            "searchLookups": 11324,
+            "traceSha256": "cb9156f0a80ef64b968e0c18d13a48d42289e9259ce6547cadcae90332b37145"
+          }
+        }
+      },
+      "primaryPassed": false,
+      "totals": {
+        "cpo-171": {
+          "expected": 11891,
+          "full": 13312,
+          "holdoutPasses": 9021,
+          "paidLookups": 175912,
+          "promotions": 196,
+          "reflections": 3036,
+          "searchLookups": 164021,
+          "seeded": 12434
+        },
+        "cpo-72": {
+          "expected": 7432,
+          "full": 8288,
+          "holdoutPasses": 9000,
+          "paidLookups": 66958,
+          "promotions": 129,
+          "reflections": 69,
+          "searchLookups": 59526,
+          "seeded": 7748
+        },
+        "cpo-opening-rescue": {
+          "completionLookups": 19968,
+          "expected": 5246,
+          "fullPanelRejections": 309,
+          "holdoutPasses": 9017,
+          "paidLookups": 47604,
+          "prefixPerfect": 8,
+          "promotions": 93,
+          "reflections": 0,
+          "rescueLookups": 3663,
+          "rescueNominations": 53,
+          "rescueOpportunities": 309,
+          "rescuesCompared": 309,
+          "screenCandidates": 1812,
+          "screenLookups": 18727,
+          "screenNominees": 624,
+          "searchLookups": 42358
+        },
+        "cpo-opening-rescue-screened": {
+          "completionLookups": 19968,
+          "expected": 5200,
+          "fullPanelRejections": 309,
+          "holdoutPasses": 9017,
+          "paidLookups": 47502,
+          "prefixPerfect": 8,
+          "promotions": 93,
+          "reflections": 0,
+          "rescueLookups": 3607,
+          "rescueNominations": 50,
+          "rescueOpportunities": 309,
+          "rescuePrefixRejections": 64,
+          "rescuesCompared": 245,
+          "screenCandidates": 1812,
+          "screenLookups": 18727,
+          "screenNominees": 624,
+          "searchLookups": 42302
+        },
+        "cpo-short-8-r0": {
+          "completionLookups": 19936,
+          "expected": 4534,
+          "fullPanelRejections": 307,
+          "holdoutPasses": 9023,
+          "paidLookups": 43175,
+          "prefixPerfect": 8,
+          "promotions": 88,
+          "reflections": 0,
+          "screenCandidates": 1809,
+          "screenLookups": 18705,
+          "screenNominees": 623,
+          "searchLookups": 38641
+        },
+        "gepa-batched": {
+          "holdoutPasses": 9020,
+          "paidLookups": 89426,
+          "promotions": 96,
+          "qualificationLookups": 5744,
+          "searchLookups": 83682
+        },
+        "gepa-sequential": {
+          "holdoutPasses": 9012,
+          "paidLookups": 92773,
+          "promotions": 99,
+          "qualificationLookups": 5712,
+          "searchLookups": 87061
+        }
+      }
+    },
+    "retrospective-transfer": {
+      "pairedComparisons": {
+        "cpo-171": {
+          "jointPairedRange95": [
+            -62,
+            73
+          ],
+          "lookupDelta": {
+            "gepa-batched": 84218,
+            "gepa-sequential": 80795
+          },
+          "passDelta": {
+            "gepa-batched": 7,
+            "gepa-sequential": 34
+          }
+        },
+        "cpo-72": {
+          "jointPairedRange95": [
+            -77,
+            21
+          ],
+          "lookupDelta": {
+            "gepa-batched": -21395,
+            "gepa-sequential": -24818
+          },
+          "passDelta": {
+            "gepa-batched": -26,
+            "gepa-sequential": 1
+          }
+        },
+        "cpo-opening-rescue": {
+          "jointPairedRange95": [
+            -87,
+            11
+          ],
+          "lookupDelta": {
+            "gepa-batched": -42129,
+            "gepa-sequential": -45552
+          },
+          "passDelta": {
+            "gepa-batched": -35,
+            "gepa-sequential": -8
+          }
+        },
+        "cpo-opening-rescue-screened": {
+          "jointPairedRange95": [
+            -87,
+            11
+          ],
+          "lookupDelta": {
+            "gepa-batched": -42108,
+            "gepa-sequential": -45531
+          },
+          "passDelta": {
+            "gepa-batched": -35,
+            "gepa-sequential": -8
+          }
+        },
+        "cpo-short-8-r0": {
+          "jointPairedRange95": [
+            -65,
+            28
+          ],
+          "lookupDelta": {
+            "gepa-batched": -46006,
+            "gepa-sequential": -49429
+          },
+          "passDelta": {
+            "gepa-batched": -16,
+            "gepa-sequential": 11
+          }
+        }
+      },
+      "panels": {
+        "business_ethics/meta_llama_llama_3_8b": {
+          "cpo-171": {
+            "expected": 1300,
+            "full": 1472,
+            "holdoutPasses": 530,
+            "paidLookups": 21784,
+            "promotions": 30,
+            "reflections": 392,
+            "searchLookups": 20484,
+            "seeded": 1366,
+            "traceSha256": "21e8b3f04286a090ba0d13c6ec04e81817d58dfca64e574a87d8235827f8a863"
+          },
+          "cpo-72": {
+            "expected": 874,
+            "full": 976,
+            "holdoutPasses": 520,
+            "paidLookups": 8317,
+            "promotions": 19,
+            "reflections": 4,
+            "searchLookups": 7443,
+            "seeded": 918,
+            "traceSha256": "282fa1186e0e0142cb500a795808cc44b3bef40e3045d355bad9e4c7845f018e"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2496,
+            "expected": 560,
+            "fullPanelRejections": 46,
+            "holdoutPasses": 502,
+            "paidLookups": 5799,
+            "prefixPerfect": 3,
+            "promotions": 13,
+            "reflections": 0,
+            "rescueLookups": 516,
+            "rescueNominations": 8,
+            "rescueOpportunities": 46,
+            "rescuesCompared": 46,
+            "screenCandidates": 221,
+            "screenLookups": 2227,
+            "screenNominees": 78,
+            "searchLookups": 5239,
+            "traceSha256": "cef849931c7724e01cf465b6ecfdb13569457090974a7df20d5f9cbc55a4f90f"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2496,
+            "expected": 560,
+            "fullPanelRejections": 46,
+            "holdoutPasses": 502,
+            "paidLookups": 5774,
+            "prefixPerfect": 3,
+            "promotions": 13,
+            "reflections": 0,
+            "rescueLookups": 491,
+            "rescueNominations": 8,
+            "rescueOpportunities": 46,
+            "rescuePrefixRejections": 18,
+            "rescuesCompared": 28,
+            "screenCandidates": 221,
+            "screenLookups": 2227,
+            "screenNominees": 78,
+            "searchLookups": 5214,
+            "traceSha256": "2e1f183d8396e84327a0640a9786354989ab3a94654a78673ebfcafd5f55974c"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2592,
+            "expected": 477,
+            "fullPanelRejections": 47,
+            "holdoutPasses": 505,
+            "paidLookups": 5306,
+            "prefixPerfect": 3,
+            "promotions": 10,
+            "reflections": 0,
+            "screenCandidates": 219,
+            "screenLookups": 2237,
+            "screenNominees": 81,
+            "searchLookups": 4829,
+            "traceSha256": "65bf0afd050a0680744812863e761708b3969174419c963a002ca044f51e7a52"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 523,
+            "paidLookups": 10722,
+            "promotions": 14,
+            "qualificationLookups": 480,
+            "searchLookups": 10242,
+            "traceSha256": "1bb6adaf1ef22885beefa1669c87a055f1a524594b0b3222410672f0fecd4b12"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 522,
+            "paidLookups": 11150,
+            "promotions": 13,
+            "qualificationLookups": 512,
+            "searchLookups": 10638,
+            "traceSha256": "d8169f91972fe9e9b11e15433ed92e320ed845a850f6cafb0d0982afc597aa40"
+          }
+        },
+        "business_ethics/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-171": {
+            "expected": 1686,
+            "full": 1856,
+            "holdoutPasses": 503,
+            "paidLookups": 22027,
+            "promotions": 24,
+            "reflections": 463,
+            "searchLookups": 20341,
+            "seeded": 1760,
+            "traceSha256": "a92b81515bac10bbe693c568a90827f1d4ac88b48633d6b386251312db65b77f"
+          },
+          "cpo-72": {
+            "expected": 1182,
+            "full": 1312,
+            "holdoutPasses": 496,
+            "paidLookups": 8470,
+            "promotions": 12,
+            "reflections": 14,
+            "searchLookups": 7288,
+            "seeded": 1238,
+            "traceSha256": "d673c607a57d3ae1b1d7bbfa175d8bf9fd06727083e7d060d50a2cc8cffae028"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2496,
+            "expected": 753,
+            "fullPanelRejections": 35,
+            "holdoutPasses": 498,
+            "paidLookups": 5920,
+            "prefixPerfect": 3,
+            "promotions": 10,
+            "reflections": 0,
+            "rescueLookups": 376,
+            "rescueNominations": 9,
+            "rescueOpportunities": 35,
+            "rescuesCompared": 35,
+            "screenCandidates": 224,
+            "screenLookups": 2295,
+            "screenNominees": 78,
+            "searchLookups": 5167,
+            "traceSha256": "b64147da6c1ee1bc3bf21adf5e8f4ed54982e0a0db9277406ceeea27fdc2e537"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2496,
+            "expected": 753,
+            "fullPanelRejections": 35,
+            "holdoutPasses": 498,
+            "paidLookups": 5962,
+            "prefixPerfect": 3,
+            "promotions": 10,
+            "reflections": 0,
+            "rescueLookups": 418,
+            "rescueNominations": 9,
+            "rescueOpportunities": 35,
+            "rescuePrefixRejections": 5,
+            "rescuesCompared": 30,
+            "screenCandidates": 224,
+            "screenLookups": 2295,
+            "screenNominees": 78,
+            "searchLookups": 5209,
+            "traceSha256": "98e8f36ce6b49be9820d7d292f364712441a3ee48ccd595f79bd95f2a6207884"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2496,
+            "expected": 615,
+            "fullPanelRejections": 35,
+            "holdoutPasses": 496,
+            "paidLookups": 5406,
+            "prefixPerfect": 3,
+            "promotions": 9,
+            "reflections": 0,
+            "screenCandidates": 224,
+            "screenLookups": 2295,
+            "screenNominees": 78,
+            "searchLookups": 4791,
+            "traceSha256": "566428a20b38598778db1bf29228832415094f27a6f6999750d53db01c4e302e"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 496,
+            "paidLookups": 10344,
+            "promotions": 8,
+            "qualificationLookups": 624,
+            "searchLookups": 9720,
+            "traceSha256": "7c0a20d9fadf3b525e6f8a1081648fcd355f77ab7126c991538eade3901e5073"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 493,
+            "paidLookups": 10787,
+            "promotions": 10,
+            "qualificationLookups": 704,
+            "searchLookups": 10083,
+            "traceSha256": "4965c558f52bb43ea000cdc641daf2a4728d92a2e8674d2f49466a120bddbdba"
+          }
+        },
+        "high_school_geography/meta_llama_llama_3_8b": {
+          "cpo-171": {
+            "expected": 1387,
+            "full": 1760,
+            "holdoutPasses": 1431,
+            "paidLookups": 20252,
+            "promotions": 18,
+            "reflections": 471,
+            "searchLookups": 18865,
+            "seeded": 1638,
+            "traceSha256": "50822f90750293de954afa5405738b2e46eb253a2234712e5a2a50387bcc068a"
+          },
+          "cpo-72": {
+            "expected": 900,
+            "full": 1120,
+            "holdoutPasses": 1433,
+            "paidLookups": 8192,
+            "promotions": 14,
+            "reflections": 38,
+            "searchLookups": 7292,
+            "seeded": 1050,
+            "traceSha256": "f468f0007cf0be9d3554f8f9e38c43b62f9e22540d03d1a9ea2981c5627c2f8d"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2144,
+            "expected": 505,
+            "fullPanelRejections": 33,
+            "holdoutPasses": 1424,
+            "paidLookups": 4910,
+            "prefixPerfect": 23,
+            "promotions": 7,
+            "reflections": 0,
+            "rescueLookups": 322,
+            "rescueNominations": 6,
+            "rescueOpportunities": 33,
+            "rescuesCompared": 33,
+            "screenCandidates": 185,
+            "screenLookups": 1939,
+            "screenNominees": 67,
+            "searchLookups": 4405,
+            "traceSha256": "9c0ed58f055147578414939461d070a6b6fb16591349c0a3d5f9718145c2f661"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2144,
+            "expected": 492,
+            "fullPanelRejections": 33,
+            "holdoutPasses": 1424,
+            "paidLookups": 4961,
+            "prefixPerfect": 23,
+            "promotions": 7,
+            "reflections": 0,
+            "rescueLookups": 386,
+            "rescueNominations": 5,
+            "rescueOpportunities": 33,
+            "rescuePrefixRejections": 6,
+            "rescuesCompared": 27,
+            "screenCandidates": 185,
+            "screenLookups": 1939,
+            "screenNominees": 67,
+            "searchLookups": 4469,
+            "traceSha256": "4803aaed71019dff1d1c6677d318c43401ca7387eb80bcbce3a356e8be5a437e"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2144,
+            "expected": 425,
+            "fullPanelRejections": 33,
+            "holdoutPasses": 1424,
+            "paidLookups": 4508,
+            "prefixPerfect": 23,
+            "promotions": 7,
+            "reflections": 0,
+            "screenCandidates": 185,
+            "screenLookups": 1939,
+            "screenNominees": 67,
+            "searchLookups": 4083,
+            "traceSha256": "4428ad572160112e3c53d0e095ddb336bf4b34274ba5b06eecd31446c383b1e4"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1441,
+            "paidLookups": 10682,
+            "promotions": 6,
+            "qualificationLookups": 560,
+            "searchLookups": 10122,
+            "traceSha256": "2287d2a5f3b49d3ae95d583d034c200b5ed930f071b95e9fe168e56c0f386064"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1425,
+            "paidLookups": 11064,
+            "promotions": 9,
+            "qualificationLookups": 672,
+            "searchLookups": 10392,
+            "traceSha256": "646c8d10728c088b085e6ffb92de9a041cd53a5dc3481c777f601d197bc80fb9"
+          }
+        },
+        "high_school_geography/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-171": {
+            "expected": 1575,
+            "full": 1872,
+            "holdoutPasses": 1523,
+            "paidLookups": 21325,
+            "promotions": 29,
+            "reflections": 449,
+            "searchLookups": 19750,
+            "seeded": 1754,
+            "traceSha256": "ec2ab44ed5bd725e69226621613a3d77c6778126378f9656ba3d8987c6479f90"
+          },
+          "cpo-72": {
+            "expected": 930,
+            "full": 1088,
+            "holdoutPasses": 1534,
+            "paidLookups": 8203,
+            "promotions": 17,
+            "reflections": 13,
+            "searchLookups": 7273,
+            "seeded": 1023,
+            "traceSha256": "728729c48a9bfd8a932c43c7abe4e8549dbdded7462b76436db066f3a77e6636"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2432,
+            "expected": 665,
+            "fullPanelRejections": 36,
+            "holdoutPasses": 1531,
+            "paidLookups": 5552,
+            "prefixPerfect": 13,
+            "promotions": 11,
+            "reflections": 0,
+            "rescueLookups": 386,
+            "rescueNominations": 9,
+            "rescueOpportunities": 36,
+            "rescuesCompared": 36,
+            "screenCandidates": 201,
+            "screenLookups": 2069,
+            "screenNominees": 76,
+            "searchLookups": 4887,
+            "traceSha256": "de4fb6c19777590397e05ae4bd364758a8af2152a7854749ed9e2a4e11940bbf"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2432,
+            "expected": 665,
+            "fullPanelRejections": 36,
+            "holdoutPasses": 1531,
+            "paidLookups": 5602,
+            "prefixPerfect": 13,
+            "promotions": 11,
+            "reflections": 0,
+            "rescueLookups": 436,
+            "rescueNominations": 9,
+            "rescueOpportunities": 36,
+            "rescuePrefixRejections": 5,
+            "rescuesCompared": 31,
+            "screenCandidates": 201,
+            "screenLookups": 2069,
+            "screenNominees": 76,
+            "searchLookups": 4937,
+            "traceSha256": "b4f3a0b6d006724682440e3be2d8f1a34e619425f91f185e9bc9cd3ee42eb6d8"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2432,
+            "expected": 563,
+            "fullPanelRejections": 34,
+            "holdoutPasses": 1533,
+            "paidLookups": 5054,
+            "prefixPerfect": 13,
+            "promotions": 9,
+            "reflections": 0,
+            "screenCandidates": 200,
+            "screenLookups": 2059,
+            "screenNominees": 76,
+            "searchLookups": 4491,
+            "traceSha256": "d7dfae2c78f7724ce036713b814419736c3f319b5bff2a9817380b0130c86643"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1546,
+            "paidLookups": 10808,
+            "promotions": 7,
+            "qualificationLookups": 512,
+            "searchLookups": 10296,
+            "traceSha256": "eb61ef257920aff214350abdf79eb6a33c63f333987855d81ab6ad72c0db525b"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1537,
+            "paidLookups": 11573,
+            "promotions": 10,
+            "qualificationLookups": 624,
+            "searchLookups": 10949,
+            "traceSha256": "0e2d4d1861eefd1e3372574098e3d3ce21571ea9959bd699a2b5e7268e2e1db7"
+          }
+        },
+        "high_school_mathematics/meta_llama_llama_3_8b": {
+          "cpo-171": {
+            "expected": 1506,
+            "full": 1696,
+            "holdoutPasses": 886,
+            "paidLookups": 21986,
+            "promotions": 34,
+            "reflections": 300,
+            "searchLookups": 20480,
+            "seeded": 1551,
+            "traceSha256": "7fc9d0ebec5673970bef97fdeb2a7c7d8361f448f15ca2bce5b662fd9572fea7"
+          },
+          "cpo-72": {
+            "expected": 767,
+            "full": 832,
+            "holdoutPasses": 875,
+            "paidLookups": 8444,
+            "promotions": 14,
+            "reflections": 2,
+            "searchLookups": 7677,
+            "seeded": 766,
+            "traceSha256": "d49d5f85e73697cb89f8de38410884d57a00205d22f7eee1b554e14c9880acc6"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2464,
+            "expected": 691,
+            "fullPanelRejections": 32,
+            "holdoutPasses": 884,
+            "paidLookups": 6109,
+            "prefixPerfect": 0,
+            "promotions": 16,
+            "reflections": 0,
+            "rescueLookups": 449,
+            "rescueNominations": 4,
+            "rescueOpportunities": 32,
+            "rescuesCompared": 32,
+            "screenCandidates": 229,
+            "screenLookups": 2505,
+            "screenNominees": 77,
+            "searchLookups": 5418,
+            "traceSha256": "ffd93bb0620475c3a1023192a8b5f1ee3eec6888de192ba11e2a09251a87e989"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2464,
+            "expected": 691,
+            "fullPanelRejections": 32,
+            "holdoutPasses": 884,
+            "paidLookups": 6034,
+            "prefixPerfect": 0,
+            "promotions": 16,
+            "reflections": 0,
+            "rescueLookups": 374,
+            "rescueNominations": 4,
+            "rescueOpportunities": 32,
+            "rescuePrefixRejections": 11,
+            "rescuesCompared": 21,
+            "screenCandidates": 229,
+            "screenLookups": 2505,
+            "screenNominees": 77,
+            "searchLookups": 5343,
+            "traceSha256": "1a43d10b620eef0b80726a4acb77664cfafadc9ddc00bfb7de519f856424f22b"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2496,
+            "expected": 635,
+            "fullPanelRejections": 33,
+            "holdoutPasses": 888,
+            "paidLookups": 5638,
+            "prefixPerfect": 0,
+            "promotions": 15,
+            "reflections": 0,
+            "screenCandidates": 229,
+            "screenLookups": 2507,
+            "screenNominees": 78,
+            "searchLookups": 5003,
+            "traceSha256": "91e98408138c13aafd1198a1b174f8a942497bec0a47ba7b2de8cfb23918eb6a"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 871,
+            "paidLookups": 12216,
+            "promotions": 19,
+            "qualificationLookups": 880,
+            "searchLookups": 11336,
+            "traceSha256": "66f46c7ef5f1c9601503bdde9df2d61be1df42ed770bcbef7b38202802f395c1"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 884,
+            "paidLookups": 12669,
+            "promotions": 12,
+            "qualificationLookups": 848,
+            "searchLookups": 11821,
+            "traceSha256": "f80ebba5fc3d4e15c0eab657eb6be9b4feeb21df604160a3beead8dd224feb0b"
+          }
+        },
+        "high_school_mathematics/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-171": {
+            "expected": 1575,
+            "full": 1792,
+            "holdoutPasses": 920,
+            "paidLookups": 22161,
+            "promotions": 33,
+            "reflections": 303,
+            "searchLookups": 20586,
+            "seeded": 1647,
+            "traceSha256": "1c1e9e4172d96ff9a2a325a32e2c5d31c471ab95bc7391d31810ca3ed7b7925c"
+          },
+          "cpo-72": {
+            "expected": 893,
+            "full": 1024,
+            "holdoutPasses": 908,
+            "paidLookups": 8380,
+            "promotions": 13,
+            "reflections": 1,
+            "searchLookups": 7487,
+            "seeded": 937,
+            "traceSha256": "a15ce4cb501d48f4d0029f077e8276df84b23cb50514d8c7b0e919da10b817e8"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2752,
+            "expected": 823,
+            "fullPanelRejections": 35,
+            "holdoutPasses": 900,
+            "paidLookups": 6557,
+            "prefixPerfect": 0,
+            "promotions": 16,
+            "reflections": 0,
+            "rescueLookups": 462,
+            "rescueNominations": 9,
+            "rescueOpportunities": 35,
+            "rescuesCompared": 35,
+            "screenCandidates": 225,
+            "screenLookups": 2520,
+            "screenNominees": 86,
+            "searchLookups": 5734,
+            "traceSha256": "087f6eaba2719c668d19727ccff86eb7feed9a18fc8aa46b24b2ee622b081f70"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2752,
+            "expected": 792,
+            "fullPanelRejections": 35,
+            "holdoutPasses": 900,
+            "paidLookups": 6425,
+            "prefixPerfect": 0,
+            "promotions": 16,
+            "reflections": 0,
+            "rescueLookups": 361,
+            "rescueNominations": 7,
+            "rescueOpportunities": 35,
+            "rescuePrefixRejections": 14,
+            "rescuesCompared": 21,
+            "screenCandidates": 225,
+            "screenLookups": 2520,
+            "screenNominees": 86,
+            "searchLookups": 5633,
+            "traceSha256": "a97ceedaac9461ed8cfa92678ebed1f23576685da2a578108f72ac924795ad0b"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2752,
+            "expected": 707,
+            "fullPanelRejections": 34,
+            "holdoutPasses": 902,
+            "paidLookups": 5958,
+            "prefixPerfect": 0,
+            "promotions": 14,
+            "reflections": 0,
+            "screenCandidates": 224,
+            "screenLookups": 2499,
+            "screenNominees": 86,
+            "searchLookups": 5251,
+            "traceSha256": "3adc04de7afa8aade11da82469ca92e9654c6056a070b4efa2acacbf7eb534d1"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 897,
+            "paidLookups": 12268,
+            "promotions": 25,
+            "qualificationLookups": 944,
+            "searchLookups": 11324,
+            "traceSha256": "e70f2fbe42c2a0c392a6871c2eb8919dc0f21b52375ec46712929a26b9f5f100"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 893,
+            "paidLookups": 12656,
+            "promotions": 17,
+            "qualificationLookups": 944,
+            "searchLookups": 11712,
+            "traceSha256": "1af94e69dabe2238e7d592a8b7612a978715f8c624b34ee8e3e17544a4681be8"
+          }
+        },
+        "prehistory/meta_llama_llama_3_8b": {
+          "cpo-171": {
+            "expected": 1592,
+            "full": 1840,
+            "holdoutPasses": 2310,
+            "paidLookups": 21550,
+            "promotions": 22,
+            "reflections": 435,
+            "searchLookups": 19958,
+            "seeded": 1744,
+            "traceSha256": "184ddb97fbe675553d70600c493dd1ad584d7c4c4e81d9ee7afb24862b2c44e6"
+          },
+          "cpo-72": {
+            "expected": 1190,
+            "full": 1344,
+            "holdoutPasses": 2304,
+            "paidLookups": 8462,
+            "promotions": 21,
+            "reflections": 19,
+            "searchLookups": 7272,
+            "seeded": 1272,
+            "traceSha256": "4b29183ae789061f83eeac6667402036dbe32aa70176418c7e27e2fcbf00d063"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2240,
+            "expected": 613,
+            "fullPanelRejections": 35,
+            "holdoutPasses": 2323,
+            "paidLookups": 5304,
+            "prefixPerfect": 8,
+            "promotions": 7,
+            "reflections": 0,
+            "rescueLookups": 358,
+            "rescueNominations": 8,
+            "rescueOpportunities": 35,
+            "rescuesCompared": 35,
+            "screenCandidates": 210,
+            "screenLookups": 2093,
+            "screenNominees": 70,
+            "searchLookups": 4691,
+            "traceSha256": "c855a1dfcfcd1d3378cf368a15f075468a649e5ea579f6cc08023f5ee7f1bccc"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2240,
+            "expected": 613,
+            "fullPanelRejections": 35,
+            "holdoutPasses": 2323,
+            "paidLookups": 5356,
+            "prefixPerfect": 8,
+            "promotions": 7,
+            "reflections": 0,
+            "rescueLookups": 410,
+            "rescueNominations": 8,
+            "rescueOpportunities": 35,
+            "rescuePrefixRejections": 8,
+            "rescuesCompared": 27,
+            "screenCandidates": 210,
+            "screenLookups": 2093,
+            "screenNominees": 70,
+            "searchLookups": 4743,
+            "traceSha256": "af823d9b5f09ff490bac69c54bf2a899551c47bbb4045b81898ebf72056111f4"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2240,
+            "expected": 496,
+            "fullPanelRejections": 35,
+            "holdoutPasses": 2320,
+            "paidLookups": 4829,
+            "prefixPerfect": 8,
+            "promotions": 5,
+            "reflections": 0,
+            "screenCandidates": 210,
+            "screenLookups": 2093,
+            "screenNominees": 70,
+            "searchLookups": 4333,
+            "traceSha256": "d49c1c9fe533539fb9c22d2c4fb5ec4a95d811b93875ee2b4dd2b1677e6434a4"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 2324,
+            "paidLookups": 10398,
+            "promotions": 8,
+            "qualificationLookups": 512,
+            "searchLookups": 9886,
+            "traceSha256": "04b2b39a9ad9a7fc2da05ea2ad414cf4e85576c8a7679980496fc6bfe9e9480f"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 2312,
+            "paidLookups": 11221,
+            "promotions": 7,
+            "qualificationLookups": 624,
+            "searchLookups": 10597,
+            "traceSha256": "f956ef13821db37b209230a3db9eaef85f2a5b2c532a7c992c4a137b364eabea"
+          }
+        },
+        "prehistory/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-171": {
+            "expected": 1554,
+            "full": 1792,
+            "holdoutPasses": 2167,
+            "paidLookups": 21359,
+            "promotions": 21,
+            "reflections": 457,
+            "searchLookups": 19805,
+            "seeded": 1708,
+            "traceSha256": "2d2a762645b4edf6188cad219df6c3735e2364c56b432e48b8c2ce13ad496fb4"
+          },
+          "cpo-72": {
+            "expected": 1056,
+            "full": 1232,
+            "holdoutPasses": 2167,
+            "paidLookups": 8363,
+            "promotions": 12,
+            "reflections": 15,
+            "searchLookups": 7307,
+            "seeded": 1166,
+            "traceSha256": "86f337c98d5793be6dd37ea84b92441cc1527f80fc1bc6479b0328bc2b83d8f1"
+          },
+          "cpo-opening-rescue": {
+            "completionLookups": 2656,
+            "expected": 694,
+            "fullPanelRejections": 42,
+            "holdoutPasses": 2166,
+            "paidLookups": 5946,
+            "prefixPerfect": 4,
+            "promotions": 12,
+            "reflections": 0,
+            "rescueLookups": 389,
+            "rescueNominations": 9,
+            "rescueOpportunities": 42,
+            "rescuesCompared": 42,
+            "screenCandidates": 221,
+            "screenLookups": 2207,
+            "screenNominees": 83,
+            "searchLookups": 5252,
+            "traceSha256": "472eb3dae1c177328ba89035ab829385fdfbae05b9c3b49b2ba1f36276de3229"
+          },
+          "cpo-opening-rescue-screened": {
+            "completionLookups": 2656,
+            "expected": 694,
+            "fullPanelRejections": 42,
+            "holdoutPasses": 2166,
+            "paidLookups": 6004,
+            "prefixPerfect": 4,
+            "promotions": 12,
+            "reflections": 0,
+            "rescueLookups": 447,
+            "rescueNominations": 9,
+            "rescueOpportunities": 42,
+            "rescuePrefixRejections": 8,
+            "rescuesCompared": 34,
+            "screenCandidates": 221,
+            "screenLookups": 2207,
+            "screenNominees": 83,
+            "searchLookups": 5310,
+            "traceSha256": "afac20d995b96e51c2db3f519078ffc6ed617178c67e66f2571df408288cf56c"
+          },
+          "cpo-short-8-r0": {
+            "completionLookups": 2720,
+            "expected": 576,
+            "fullPanelRejections": 43,
+            "holdoutPasses": 2179,
+            "paidLookups": 5521,
+            "prefixPerfect": 4,
+            "promotions": 8,
+            "reflections": 0,
+            "screenCandidates": 220,
+            "screenLookups": 2225,
+            "screenNominees": 85,
+            "searchLookups": 4945,
+            "traceSha256": "7d15402454d110715e83d96c26de66d7dd08ecb71dced21de380ed9bea856525"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 2165,
+            "paidLookups": 10788,
+            "promotions": 6,
+            "qualificationLookups": 528,
+            "searchLookups": 10260,
+            "traceSha256": "37c523753eed9775efe93c0463e57505b4368bac66c5e2f98563b849022048c7"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 2170,
+            "paidLookups": 10529,
+            "promotions": 4,
+            "qualificationLookups": 496,
+            "searchLookups": 10033,
+            "traceSha256": "2bfd74b0f4a9c6a76a73af0c19526b3293b0ea717658ff2e5171234264cbfde2"
+          }
+        }
+      },
+      "totals": {
+        "cpo-171": {
+          "expected": 12175,
+          "full": 14080,
+          "holdoutPasses": 10270,
+          "paidLookups": 172444,
+          "promotions": 211,
+          "reflections": 3270,
+          "searchLookups": 160269,
+          "seeded": 13168
+        },
+        "cpo-72": {
+          "expected": 7792,
+          "full": 8928,
+          "holdoutPasses": 10237,
+          "paidLookups": 66831,
+          "promotions": 122,
+          "reflections": 106,
+          "searchLookups": 59039,
+          "seeded": 8370
+        },
+        "cpo-opening-rescue": {
+          "completionLookups": 19680,
+          "expected": 5304,
+          "fullPanelRejections": 294,
+          "holdoutPasses": 10228,
+          "paidLookups": 46097,
+          "prefixPerfect": 54,
+          "promotions": 92,
+          "reflections": 0,
+          "rescueLookups": 3258,
+          "rescueNominations": 62,
+          "rescueOpportunities": 294,
+          "rescuesCompared": 294,
+          "screenCandidates": 1716,
+          "screenLookups": 17855,
+          "screenNominees": 615,
+          "searchLookups": 40793
+        },
+        "cpo-opening-rescue-screened": {
+          "completionLookups": 19680,
+          "expected": 5260,
+          "fullPanelRejections": 294,
+          "holdoutPasses": 10228,
+          "paidLookups": 46118,
+          "prefixPerfect": 54,
+          "promotions": 92,
+          "reflections": 0,
+          "rescueLookups": 3323,
+          "rescueNominations": 59,
+          "rescueOpportunities": 294,
+          "rescuePrefixRejections": 75,
+          "rescuesCompared": 219,
+          "screenCandidates": 1716,
+          "screenLookups": 17855,
+          "screenNominees": 615,
+          "searchLookups": 40858
+        },
+        "cpo-short-8-r0": {
+          "completionLookups": 19872,
+          "expected": 4494,
+          "fullPanelRejections": 294,
+          "holdoutPasses": 10247,
+          "paidLookups": 42220,
+          "prefixPerfect": 54,
+          "promotions": 77,
+          "reflections": 0,
+          "screenCandidates": 1711,
+          "screenLookups": 17854,
+          "screenNominees": 621,
+          "searchLookups": 37726
+        },
+        "gepa-batched": {
+          "holdoutPasses": 10263,
+          "paidLookups": 88226,
+          "promotions": 93,
+          "qualificationLookups": 5040,
+          "searchLookups": 83186
+        },
+        "gepa-sequential": {
+          "holdoutPasses": 10236,
+          "paidLookups": 91649,
+          "promotions": 82,
+          "qualificationLookups": 5424,
+          "searchLookups": 86225
+        }
+      }
+    }
+  }
+}

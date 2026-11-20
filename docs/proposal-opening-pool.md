@@ -22,6 +22,8 @@ On the additional archive, both proposals advanced past the prefix in 153 of 1,0
 
 Full pair gained 16 passes over Screened pair on the additional archive and spent 23,295 more lookups. On earlier transfer it fell 64 passes behind batched GEPA, with a joint paired range of −118 to −15. The earlier eight-case screen with zero later callbacks had the highest holdout score among the opening-only methods on both transfer cohorts. The results leave the original search in place. [Panel scores, paid costs, and paired ranges](proposal-opening-pool-results-v1.json)
 
+The follow-up retained the original short-screen path and tested the sibling only after its first finalist failed full validation. [Opening rescue replay](proposal-opening-rescue.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
