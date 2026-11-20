@@ -4,6 +4,8 @@ CPO 0.4.0 adds a selector for a finite set of prompts. It evaluates the incumben
 
 The opt-in `adaptive_rejection=True` setting uses paid screen outcomes and skips unaffordable challenges. Its lookup order reduced validation cost across 18 recorded panels while preserving all selections under a fully funded four-challenger schedule. [Adaptive rejection](prompteval-rejection.md)
 
+For tasks with declared critical strata, the coverage-first selector can abandon an impossible coverage check before completing the validation panel. [Coverage-aware fixed-pool API and qualification example](covered-pool.md)
+
 ## Protocol
 
 The replay uses recorded correctness matrices for Llama 3 8B on PromptEval’s abstract algebra subset and for candidate pools published with GEPA on AIME and ARC-AGI. Each phase uses 40 seeded splits per dataset, partitions validation and held-out rows, and caps search at 55% of the full validation grid. All arms see the same pool and validation order within each split. The gates require preserved aggregate held-out correctness and no added lookups, with either an accuracy gain or at least 10% savings. [PromptEval paper](https://arxiv.org/abs/2405.17202) · [PromptEval dataset](https://huggingface.co/datasets/PromptEval/PromptEval_MMLU_correctness) · [GEPA artifact](https://github.com/gepa-ai/gepa)
