@@ -7,6 +7,60 @@ from .opening_validation import certify_opening_validation
 from .optimizer import Row
 
 
+class _BinaryReplies:
+    def __init__(self, validation, evaluate, observed_charge):
+        if observed_charge is not None and not callable(observed_charge):
+            raise ValueError('Observed charge must be a callback')
+        validation = tuple(validation)
+        self.by_id = {row.id: row for row in validation}
+        if not validation or len(self.by_id) != len(validation):
+            raise ValueError('Binary rewrite selection requires distinct validation rows')
+        # Binary gain gates use one family. The evaluator receives original rows.
+        self.rows = {row.id: Row(row.id, 'validation') for row in validation}
+        self.full = tuple(self.rows.values())
+        self.evaluate = evaluate
+        self.observed_charge = observed_charge
+        self.observations, self.charges = {}, {}
+
+    def batch(self, ids):
+        ids = tuple(ids)
+        if not ids or len(set(ids)) != len(ids) or not set(ids) <= self.rows.keys():
+            raise ValueError('The minibatch must be a nonempty subset of distinct validation rows')
+        return tuple(self.rows[case] for case in ids)
+
+    def observe(self, prompt, row):
+        key = prompt, row.id
+        if key not in self.observations:
+            original = self.by_id[row.id]
+            reply = self.evaluate(prompt, original)
+            if type(reply.passed) is not bool:
+                raise ValueError('Paired rewrite selection requires binary pass results')
+            if self.observed_charge is not None:
+                self.charges[key] = read_charge(self.observed_charge, prompt, original, reply)
+            self.observations[key] = reply
+        return self.observations[key]
+
+    def improves_batch(self, parent, rewrite, batch):
+        return certify_opening_validation(parent, rewrite, batch, self.observations, self.observe)
+
+    def _order_missing(self, leader, rewrite, missing):
+        scores = {key: int(reply.passed) for key, reply in self.observations.items() if key[0] in (leader, rewrite)}
+        pending = [(prompt, row.id, row) for prompt, row in missing]
+        for prompt, case, row in by_observed_cost(pending, scores, leader, rewrite, 1, self.charges):
+            yield prompt, row
+            scores[prompt, case] = int(self.observations[prompt, case].passed)
+
+    def improves_full(self, leader, rewrite):
+        order = partial(self._order_missing, leader, rewrite) if self.observed_charge is not None else None
+        return certify_opening_validation(leader, rewrite, self.full, self.observations, self.observe,
+                                          order_missing=order)
+
+    def perfect(self, prompt):
+        if any(owner == prompt and not reply.passed for (owner, _), reply in self.observations.items()):
+            return False
+        return all(self.observe(prompt, row).passed for row in self.full)
+
+
 def select_paired_rewrite(incumbent, rewrite, validation, minibatch_ids, evaluate, *, observed_charge=None):
     """Require strict gain on the supplied minibatch and on all validation.
 
@@ -30,50 +84,64 @@ def select_same_parent_rewrites(incumbent, proposals, validation, evaluate, *, o
     full binary validation gate selects the best passing proposal in order,
     keeping the earlier prompt on a tie. All gates share one reply cache.
     """
-    if observed_charge is not None and not callable(observed_charge):
-        raise ValueError('Observed charge must be a callback')
-    validation = tuple(validation)
-    by_id = {row.id: row for row in validation}
-    proposals = tuple((prompt, tuple(batch)) for prompt, batch in proposals)
+    replies = _BinaryReplies(validation, evaluate, observed_charge)
+    proposals = tuple((prompt, replies.batch(batch)) for prompt, batch in proposals)
     prompts = {prompt for prompt, _ in proposals}
     if not proposals or len(prompts) != len(proposals) or (len(prompts) > 1 and incumbent in prompts):
         raise ValueError('The same-parent search requires distinct supplied rewrites')
-    if not validation or len(by_id) != len(validation) or any(
-            not batch or len(set(batch)) != len(batch) or not set(batch) <= by_id.keys() for _, batch in proposals):
-        raise ValueError('The minibatch must be a nonempty subset of distinct validation rows')
     if prompts == {incumbent}:
         return incumbent
 
-    # The two gain gates use one family. The evaluator receives original rows.
-    rows = {row.id: Row(row.id, 'validation') for row in validation}
-    full = tuple(rows.values())
-    observations, charges = {}, {}
-
-    def observe(prompt, row):
-        key = prompt, row.id
-        if key not in observations:
-            reply = evaluate(prompt, by_id[row.id])
-            if type(reply.passed) is not bool:
-                raise ValueError('Paired rewrite selection requires binary pass results')
-            if observed_charge is not None:
-                charges[key] = read_charge(observed_charge, prompt, by_id[row.id], reply)
-            observations[key] = reply
-        return observations[key]
-
-    def order_missing(leader, rewrite, missing):
-        scores = {key: int(reply.passed) for key, reply in observations.items() if key[0] in (leader, rewrite)}
-        pending = [(prompt, row.id, row) for prompt, row in missing]
-        for prompt, case, row in by_observed_cost(pending, scores, leader, rewrite, 1, charges):
-            yield prompt, row
-            scores[prompt, case] = int(observations[prompt, case].passed)
-
     leader = incumbent
     for rewrite, batch in proposals:
-        minibatch = tuple(rows[case] for case in batch)
-        if (all(observe(incumbent, row).passed for row in minibatch)
-                or not certify_opening_validation(incumbent, rewrite, minibatch, observations, observe)):
+        if (all(replies.observe(incumbent, row).passed for row in batch)
+                or not replies.improves_batch(incumbent, rewrite, batch)):
             continue
-        order = partial(order_missing, leader, rewrite) if observed_charge is not None else None
-        if certify_opening_validation(leader, rewrite, full, observations, observe, order_missing=order):
+        if replies.improves_full(leader, rewrite):
+            leader = rewrite
+    return leader
+
+
+def select_sequential_rewrites(incumbent, validation, evaluate, schedule, propose, *, rounds, observed_charge=None):
+    """Select rewrites sequentially, with optional full grades for parent selection.
+
+    schedule(round_index, pool, grades) returns a tracked parent and its
+    minibatch IDs. grades(prompt) pays for any missing validation grades for
+    a tracked prompt, in validation order. A minibatch improvement enrolls
+    the rewrite in the pool even if it has a lower full score than the incumbent.
+    propose(round_index, parent, examples) gets the original rows and paid
+    parent observations on its minibatch. A perfect minibatch skips the round.
+    The best full-validation score wins, keeping the earlier prompt on ties.
+    """
+    if type(rounds) is not int or rounds < 0:
+        raise ValueError('Sequential rewrite rounds must be a nonnegative integer')
+    replies = _BinaryReplies(validation, evaluate, observed_charge)
+    pool = [incumbent]
+    if rounds == 0 or replies.perfect(incumbent):
+        return incumbent
+
+    def grades(prompt):
+        if prompt not in pool:
+            raise ValueError('Full grades are available only for tracked prompts')
+        return tuple(replies.observe(prompt, row).passed for row in replies.full)
+
+    for index in range(rounds):
+        parent, ids = schedule(index, tuple(pool), grades)
+        if parent not in pool:
+            raise ValueError('The rewrite parent must be tracked')
+        batch = replies.batch(ids)
+        examples = tuple((replies.by_id[row.id], replies.observe(parent, row)) for row in batch)
+        if all(reply.passed for _, reply in examples):
+            continue
+        rewrite = propose(index, parent, examples)
+        if rewrite in pool or not replies.improves_batch(parent, rewrite, batch):
+            continue
+        pool.append(rewrite)
+        if index + 1 < rounds and replies.perfect(rewrite):
+            return rewrite
+
+    leader = incumbent
+    for rewrite in pool[1:]:
+        if replies.improves_full(leader, rewrite):
             leader = rewrite
     return leader

@@ -45,10 +45,27 @@ With identical supplied proposals and seeded minibatches, charge-aware CPO match
 | AIME original | 497 / 1,000 | 525 → 388 | Unavailable |
 | AIME rotated | 4,073 / 8,000 | 4,352 → 3,388 | Unavailable |
 
-Sequential GEPA scored 13,508 of 17,280 on rotated ARC, one pass above the batched result. The same-parent selector requires its proposals up front. Sequential proposal generation from updated parents remains a separate comparison. [Native control results](recorded-opening-dominance-transfer-results-v1.json)
-
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.recorded_paired_rewrite --same-parent-charge-aware
+```
+
+## Select rewrites sequentially
+
+`select_sequential_rewrites` accepts a scheduler and a proposer. The scheduler can request completed validation grades for tracked prompts when choosing a parent and minibatch. The proposer receives that parent's paid minibatch feedback. A strict minibatch improvement enrolls the rewrite as a possible parent even when its overall score is lower. A perfect minibatch skips proposal generation. The final selection applies the binary validation proof to the enrolled prompts and keeps the earlier one on a tie.
+
+The archive replay used GEPA 0.1.4's seeded Pareto selector and batch sampler with the same two supplied rewrites. The candidate pool, parent choices, minibatches, nominee, admission decision, and 28,200 held-out outcomes matched on all 760 paths. On 118 paths GEPA and CPO both selected the first rewrite as the second parent. CPO used 9,224 reads versus 11,489, a 19.7% reduction. Pooled ARC evaluation cost fell by 20.5% at recorded rates. [Sequential replay results](recorded-sequential-paired-rewrite-results-v1.json)
+
+| Archive and incumbent | Matched passes | Sequential GEPA → CPO reads | ARC cost at recorded rates |
+| --- | ---: | ---: | ---: |
+| ARC original | 1,395 / 1,920 | 982 → 860 | $95.17 → $84.91 |
+| ARC rotated | 13,508 / 17,280 | 5,649 → 4,374 | $715.88 → $559.53 |
+| AIME original | 497 / 1,000 | 536 → 433 | Unavailable |
+| AIME rotated | 4,073 / 8,000 | 4,322 → 3,557 | Unavailable |
+
+Each path used a subset of the native read set. On AIME, where charges were unavailable, the charge-aware fallback used 11 more reads than row-paired CPO across both groups. The replay compares evaluation and admission costs with fixed proposals. Fresh rewriting from selected parent feedback remains unverified.
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.recorded_paired_rewrite --sequential-charge-aware
 ```
 
 ## Reproduce offline
@@ -63,6 +80,6 @@ PYTHONHASHSEED=0 python -B -m benchmarks.recorded_paired_rewrite \
 python -m pytest -q tests/unit/test_paired_rewrite.py
 ```
 
-The focused tests verify selection and read-set inclusion on all 256 binary outcome matrices for one proposal and all 4,096 matrices for two proposals over four cases. Two offline replays matched byte for byte with socket and DNS access blocked. Fresh proposal generation and model performance remain unverified.
+The focused tests verify selection and read-set inclusion on all 256 binary outcome matrices for one proposal and all 4,096 matrices for both batched and sequential proposals over four cases. The sequential tests also verify which parent feedback reaches the proposer. Two offline replays matched byte for byte with socket and DNS access blocked. Fresh proposal generation and model performance remain unverified.
 
 The same two-gate approach also works with uniform field credit and preserves native rounding on ties. [Typed Sol comparison](recorded-paired-field-rewrite.md)

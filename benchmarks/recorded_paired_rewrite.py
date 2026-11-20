@@ -8,12 +8,13 @@ from importlib.metadata import version
 import json
 from pathlib import Path
 from random import Random
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from benchmarks import recorded_opening_dominance_transfer as transfer
 from cpo import Observation, Row
 from cpo._contract import digest
-from cpo.paired_rewrite import select_same_parent_rewrites
+from cpo.paired_rewrite import select_same_parent_rewrites, select_sequential_rewrites
 
 
 REFERENCE = transfer.ROOT / 'docs/recorded-opening-dominance-transfer-results-v1.json'
@@ -22,6 +23,7 @@ PAIRED_REFERENCE = transfer.ROOT / 'docs/recorded-paired-rewrite-results-v1.json
 PAIRED_REFERENCE_SHA = '93a4961939b6e6dbdba1a9633d888e65a8721ffe13bb09482aa71e9fa1abc00c'
 NATIVE = 'gepa-rewrite'
 BATCHED = 'gepa-batched'
+SEQUENTIAL = 'gepa-sequential'
 
 
 def prepare():
@@ -37,6 +39,58 @@ def prepare():
             'sourcesSha256': {name: sha256((transfer.ROOT / name).read_bytes()).hexdigest() for name in names},
             'scope': 'native first minibatch, strict binary gains, unchanged independent admission'}
     return plan, scores, reference['results']
+
+
+def sequential_schedule(validation, seed, minibatch_size, trace):
+    from gepa.core.data_loader import ListDataLoader
+    from gepa.gepa_utils import select_program_candidate_from_pareto_front
+    from gepa.strategies.batch_sampler import EpochShuffledBatchSampler
+
+    rng = Random(seed)
+    loader = ListDataLoader(validation)
+    sampler = EpochShuffledBatchSampler(minibatch_size, rng=rng)
+
+    def schedule(index, pool, grades):
+        if len(pool) == 1:
+            # The only program owns every case without needing its grades.
+            parent = rng.choice(pool * len(validation))
+        else:
+            profiles = [grades(prompt) for prompt in pool]
+            fronts = {}
+            for case, scores in enumerate(zip(*profiles, strict=True)):
+                best = max(scores)
+                fronts[case] = {owner for owner, score in enumerate(scores) if score == best}
+            parent = pool[select_program_candidate_from_pareto_front(fronts, [sum(s) for s in profiles], rng)]
+        batch = tuple(validation[case].id for case in sampler.next_minibatch_ids(loader, SimpleNamespace(i=index)))
+        trace.append((pool, parent, batch))
+        return parent, batch
+
+    return schedule
+
+
+def traced_native_schedule(select, incumbent, bank, groups, evaluate, trace, **options):
+    from gepa.strategies.batch_sampler import EpochShuffledBatchSampler
+    from gepa.strategies.candidate_selector import ParetoCandidateSelector
+
+    select_parent = ParetoCandidateSelector.select_candidate_idx
+    sample_batch = EpochShuffledBatchSampler.next_minibatch_ids
+    pool, parent_prompt = (), None
+
+    def parent(selector, state):
+        nonlocal pool, parent_prompt
+        position = select_parent(selector, state)
+        pool = tuple(next(iter(candidate.values())) for candidate in state.program_candidates)
+        parent_prompt, = state.program_candidates[position].values()
+        return position
+
+    def batch(sampler, loader, state):
+        ids = sample_batch(sampler, loader, state)
+        trace.append((pool, parent_prompt, tuple(row['id'] for row in loader.fetch(ids))))
+        return ids
+
+    with (patch.object(ParetoCandidateSelector, 'select_candidate_idx', parent),
+          patch.object(EpochShuffledBatchSampler, 'next_minibatch_ids', batch)):
+        return select(incumbent, bank, groups, evaluate, **options)
 
 
 def compare_group(cells, settings, starts, reference, *, charge_aware=False, control=NATIVE):
@@ -62,6 +116,7 @@ def compare_group(cells, settings, starts, reference, *, charge_aware=False, con
 
     totals = {'native': Counter(), 'paired': Counter()}
     traces = {'native': [], 'paired': []}
+    parent_schedules = []
     savings = Counter(pathsWithFewerReads=0, pathsWithLowerCost=0)
     size = len(next(iter(cells.values())))
     for seed in settings['seeds']:
@@ -70,6 +125,7 @@ def compare_group(cells, settings, starts, reference, *, charge_aware=False, con
             others = [prompt for prompt in cells if prompt != start]
             pair = Random(f'{seed}/{start}').sample(others, len(others))[:2]
             observed = {'native': set(), 'paired': set()}
+            schedules = {'native': [], 'paired': []}
 
             def run(mode):
                 def select(incumbent, bank, groups, evaluate, *, cap, seed, width, minibatch_size):
@@ -78,20 +134,30 @@ def compare_group(cells, settings, starts, reference, *, charge_aware=False, con
                         return evaluate(prompt, case)
 
                     if mode == 'native':
+                        if control == SEQUENTIAL:
+                            return traced_native_schedule(native_select, incumbent, bank, groups, read, schedules[mode],
+                                                          cap=cap, seed=seed, width=width, minibatch_size=minibatch_size)
                         return native_select(incumbent, bank, groups, read, cap=cap, seed=seed, width=width,
                                              minibatch_size=minibatch_size)
                     validation = tuple(Row(row['id'], 'archive') for row in groups['validation'])
-                    batches = minibatches(len(validation), seed, len(bank))
-                    proposals = tuple((prompt, tuple(validation[index].id for index in batch))
-                                      for prompt, batch in zip(bank, batches, strict=True))
 
                     def observed_charge(prompt, row, _reply):
                         return cells[prompt][int(row.id)][1]
 
+                    def evaluate_row(prompt, row):
+                        return read(prompt, row.id)
+
                     charge = observed_charge if charge_aware else None
+                    if control == SEQUENTIAL:
+                        schedule = sequential_schedule(validation, seed, minibatch_size, schedules[mode])
+                        return select_sequential_rewrites(incumbent, validation, evaluate_row, schedule,
+                                                          lambda index, *_: bank[index], rounds=len(bank),
+                                                          observed_charge=charge)
+                    batches = minibatches(len(validation), seed, len(bank))
+                    proposals = tuple((prompt, tuple(validation[index].id for index in batch))
+                                      for prompt, batch in zip(bank, batches, strict=True))
                     return select_same_parent_rewrites(incumbent, proposals, validation,
-                                                       lambda prompt, row: read(prompt, row.id),
-                                                       observed_charge=charge)
+                                                       evaluate_row, observed_charge=charge)
 
                 with patch.object(transfer.gepa_cached_opening, 'select_opening', select):
                     point = transfer.trial(cells, start, pair, cohorts, seed, control)
@@ -100,6 +166,10 @@ def compare_group(cells, settings, starts, reference, *, charge_aware=False, con
                 return point
 
             native, paired = run('native'), run('paired')
+            if schedules['paired'] != schedules['native']:
+                raise ValueError('Paired bounds changed the native candidate pool, parent or minibatch sequence')
+            if control == SEQUENTIAL:
+                parent_schedules.append([seed, start, schedules['native']])
             if any(native[key] != paired[key] for key in ('nominee', 'selected', 'admission', 'passed')):
                 raise ValueError('Paired bounds changed a native decision')
             if not observed['paired'] <= observed['native']:
@@ -111,8 +181,13 @@ def compare_group(cells, settings, starts, reference, *, charge_aware=False, con
     points = {mode: {**record, 'traceSha256': digest(traces[mode])} for mode, record in totals.items()}
     if points['native'] != reference['totals'][control]:
         raise ValueError('The native control did not reproduce its complete published trace')
-    return {'pathsPerArm': len(traces['native']), 'heldoutUsesPerArm': reference['heldoutUsesPerArm'],
-            'totals': points, 'savings': savings}
+    result = {'pathsPerArm': len(traces['native']), 'heldoutUsesPerArm': reference['heldoutUsesPerArm'],
+              'totals': points, 'savings': savings}
+    if control == SEQUENTIAL:
+        result['parentScheduleSha256'] = digest(parent_schedules)
+        result['pathsUsingRewriteAsParent'] = sum(
+            any(parent != start for _, parent, _ in schedule) for _, start, schedule in parent_schedules)
+    return result
 
 
 def measure(plan, sources, reference):
@@ -157,7 +232,7 @@ def measure_charge_aware():
             'corpusSha256': prior['corpusSha256'], 'newProviderRequests': 0, 'results': results}
 
 
-def measure_same_parent_charge_aware():
+def measure_multiple_charge_aware(control):
     prior, sources, expected, _ = archived_controls()
     results = {}
     for task, settings in prior['datasets'].items():
@@ -166,12 +241,19 @@ def measure_same_parent_charge_aware():
         results[task] = {}
         for group in prior['incumbentGroups']:
             incumbents = starts[:1] if group == 'root' else starts[1:]
-            before = compare_group(cells, settings, incumbents, expected[task][group], control=BATCHED)
-            after = compare_group(cells, settings, incumbents, expected[task][group], control=BATCHED, charge_aware=True)
-            results[task][group] = {'paths': after['pathsPerArm'], 'heldoutUses': after['heldoutUsesPerArm'],
-                                    'native': before['totals']['native'], 'rowPaired': before['totals']['paired'],
-                                    'chargeAware': after['totals']['paired'], 'chargeAwareSavings': after['savings']}
-    return {'schema': 'recorded-same-parent-charge-aware-rewrite-v1', 'nativeReferenceSha256': REFERENCE_SHA,
+            before = compare_group(cells, settings, incumbents, expected[task][group], control=control)
+            after = compare_group(cells, settings, incumbents, expected[task][group], control=control, charge_aware=True)
+            result = {'paths': after['pathsPerArm'], 'heldoutUses': after['heldoutUsesPerArm'],
+                      'native': before['totals']['native'], 'rowPaired': before['totals']['paired'],
+                      'chargeAware': after['totals']['paired'], 'chargeAwareSavings': after['savings']}
+            if control == SEQUENTIAL:
+                for key in ('parentScheduleSha256', 'pathsUsingRewriteAsParent'):
+                    if after[key] != before[key]:
+                        raise ValueError('The sequential control did not reproduce its parent schedule')
+                    result[key] = after[key]
+            results[task][group] = result
+    mode = 'same-parent' if control == BATCHED else 'sequential'
+    return {'schema': f'recorded-{mode}-charge-aware-rewrite-v1', 'nativeReferenceSha256': REFERENCE_SHA,
             'corpusSha256': prior['corpusSha256'], 'newProviderRequests': 0, 'results': results}
 
 
@@ -181,13 +263,15 @@ def main():
     mode.add_argument('--execute', metavar='PLAN_SHA256')
     mode.add_argument('--charge-aware', action='store_true', help='Replay the observed-charge policy offline')
     mode.add_argument('--same-parent-charge-aware', action='store_true', help='Replay both supplied rewrites offline')
+    mode.add_argument('--sequential-charge-aware', action='store_true', help='Replay the sequential parent choices offline')
     parser.add_argument('--out', type=Path)
     args = parser.parse_args()
-    if args.charge_aware or args.same_parent_charge_aware:
+    if args.charge_aware or args.same_parent_charge_aware or args.sequential_charge_aware:
         if args.out is not None or version('gepa') != '0.1.4':
             parser.error('Use GEPA 0.1.4 and capture the charge-aware report from stdout')
-        measure_offline = measure_charge_aware if args.charge_aware else measure_same_parent_charge_aware
-        print(json.dumps(measure_offline(), indent=2, sort_keys=True))
+        control = BATCHED if args.same_parent_charge_aware else SEQUENTIAL
+        result = measure_charge_aware() if args.charge_aware else measure_multiple_charge_aware(control)
+        print(json.dumps(result, indent=2, sort_keys=True))
         return
     plan, sources, reference = prepare()
     seal = digest(plan)
