@@ -27,6 +27,8 @@ The paid-proof arm saved 3,978 lookups and lost 83 net holdout passes versus ord
 
 Both methods saved more than 10% of lookups against both cap-52 GEPA controls. The reconfirm arm failed the Llama and Mistral quality gate, with a joint paired range of −132 to −24. Its Gemma and Flan range was −59 to +13. The paid-proof ranges were −115 to +6 and −61 to +28. Keeping the starting prompt fixed avoided some harmful moves on these panels. The resulting trajectory lost more passes than it recovered. CPO retains per-cycle adoption. These are comparisons on supplied recorded prompt pools.
 
+The subsequent audit found that 50 of the 85 affordable-path losses stopped at screening without a paid gain witness. [Challenger-stage attribution](affordable-challenger-attribution.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Two source-export replays matched byte for byte and reproduced 140 published panel-control records with sockets and DNS blocked. Three focused tests verified the anchor, paid ranking, and final reconfirmation. The CLI rejected a stale seal and preserved an existing report. Storage Guard measured 14.1 GiB free. The 20.6 MB temporary overlay was removed under the standing LAB exception. Fresh model performance remains unverified. [Tests](../tests/unit/test_deferred_adoption.py) · [Verification receipt](deferred-adoption-verification-v1.json) · [Storage authorization](../../lab/docs/runbooks/lab-storage-exceptions.md)

@@ -1,0 +1,3281 @@
+{
+  "design": {
+    "controls": [
+      "strict",
+      "gepa-sequential.runner-up/52",
+      "gepa-batched.runner-up/52"
+    ],
+    "costedAuditReportSha256": "e32701bf2885ce910e871c2888b2ec06f2e044b5afcb5309ec704ef637d42b51",
+    "deferredReportSha256": "d03337b32884058a3a7c54d360dc5b1b2d19f5aa1020741ac4a4be45ce96e82d",
+    "parentDesignSha256": "f603258972431049683afcf65c9bb482c9e56c9a946429604667a18b475c2127",
+    "protocol": "cpo-affordable-challenger-attribution-v1",
+    "scope": "Evaluate every single-move matching prompt from the start on the earlier 85 full-panel-price losses. Attribute the furthest reached candidate on the actual CPO path using its paid validation evidence, its gates, and its final selection.",
+    "sourceSha256": {
+      "benchmarks/affordable_challenger_attribution.py": "37776b9ce3ac3c9b6579f019a0f4e17ccfa4e8bb6fa119ec6b451d56960f44b3",
+      "benchmarks/archive_complementarity_transfer.py": "a145976db37cec43b9e943e5aeb01e9aa73fbf9648a9acce182897011aa68334",
+      "benchmarks/finalist_screen_budget.py": "f54bf22754866ec787315b1fb804994198b1967c4085159ab5b646fc5c16c2b3",
+      "benchmarks/priced_gate_reachability.py": "9078d4f2d1699716c0c5a218b526931316d7d6e0b50bfd4165dd0e2303400ae5",
+      "benchmarks/routed_start_protection.py": "769a85cfda408d5607c0b834cdb7f9081de212af19bb612c8f9dfb9222e4328f",
+      "benchmarks/routed_witness_split.py": "ad88a5680142a5f1615a13f2d0daddabbd4bba766fc152a467f330bee4d63c5e"
+    },
+    "stagesInOrder": [
+      "deployed-earlier",
+      "fully-scored-other-nominee",
+      "paid-gain-witness",
+      "read-without-witness",
+      "outside-wide-roster",
+      "unread",
+      "archive-preempted",
+      "blocked-against-current",
+      "multiple-moves"
+    ]
+  },
+  "designSha256": "ad0d26d01c0cc781a06be4ffa0c9e9f6a7bda40ef47d30e6f8fa6bb6763e1cff",
+  "results": {
+    "gemma-flan": {
+      "allMatchingTargetsByStage": {
+        "archive-preempted": 6,
+        "blocked-against-current": 4,
+        "deployed-earlier": 1,
+        "outside-wide-roster": 3,
+        "read-without-witness": 22,
+        "unread": 7
+      },
+      "lossesByFurthestStage": {
+        "archive-preempted": 2,
+        "deployed-earlier": 1,
+        "multiple-moves": 3,
+        "outside-wide-roster": 1,
+        "read-without-witness": 14,
+        "unread": 1
+      },
+      "panels": {
+        "high_school_geography/google_flan_t5_xxl": {
+          "losingComparisons": [],
+          "originalCpo": {
+            "holdoutPasses": 1420,
+            "paidLookups": 2743,
+            "traceSha256": "fafb2b21b40d8dcce0aba0f3f98a1fb1ee23b8b66f2d1f239992c103246dd460"
+          }
+        },
+        "high_school_geography/google_gemma_7b": {
+          "losingComparisons": [
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47101,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 6,
+                  "prompt": "38",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "40",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "60",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47101,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 6,
+                  "prompt": "38",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "40",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "60",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47424,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 12,
+                  "prompt": "54",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47424,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 12,
+                  "prompt": "54",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 1525,
+            "paidLookups": 3079,
+            "traceSha256": "c5b515c9c0e4d74237d2dc0a4d834a0a2fe4235db509f2b6c51ca79b95747430"
+          }
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "losingComparisons": [],
+          "originalCpo": {
+            "holdoutPasses": 1402,
+            "paidLookups": 2710,
+            "traceSha256": "b25c6eb4a5e4690a7afb5dee90b1264e8ac6cc10fcb5c0c00f1ff028a16e4ada"
+          }
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "losingComparisons": [],
+          "originalCpo": {
+            "holdoutPasses": 1652,
+            "paidLookups": 3417,
+            "traceSha256": "866a41614d8cd4f6d8996295944413def4a02d3c86280fde57f31534633a63f8"
+          }
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "losingComparisons": [
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "outside-wide-roster",
+              "seed": 47633,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 9,
+                  "prompt": "73",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 11,
+                  "prompt": "15",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 1462,
+            "paidLookups": 2642,
+            "traceSha256": "a2a56acbdafb0760dea752cf8f443c6b5c248a0124c379a0fe43a7d28d904076"
+          }
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "losingComparisons": [
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47101,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "20",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47101,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "20",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "multiple-moves",
+              "seed": 47253,
+              "targets": []
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "multiple-moves",
+              "seed": 47253,
+              "targets": []
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "archive-preempted",
+              "seed": 47405,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 2,
+                  "prompt": "71",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 4,
+                  "prompt": "9",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "8",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "31",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "archive-preempted",
+              "seed": 47405,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 2,
+                  "prompt": "71",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 4,
+                  "prompt": "9",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "8",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "31",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "multiple-moves",
+              "seed": 47462,
+              "targets": []
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 1419,
+            "paidLookups": 3313,
+            "traceSha256": "e2f6fcbd8bdcc211aa65cd84f0291ffc0ab0ffeaf4184160088a40c9797d8116"
+          }
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "losingComparisons": [],
+          "originalCpo": {
+            "holdoutPasses": 854,
+            "paidLookups": 2765,
+            "traceSha256": "349afebf971ba4b90b78631ecd1f45c5f1dcd09ebd51d088136bac20832d0bd5"
+          }
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "losingComparisons": [
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47291,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "7",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47291,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "7",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47367,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 1,
+                  "paidReads": 2,
+                  "position": 1,
+                  "prompt": "38",
+                  "route": "balanced",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 3,
+                  "prompt": "39",
+                  "route": "balanced",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 7,
+                  "prompt": "65",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "58",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 9,
+                  "prompt": "57",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47386,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "4",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 6,
+                  "prompt": "6",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47386,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "4",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 6,
+                  "prompt": "6",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "deployed-earlier",
+              "seed": 47690,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "96",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 5,
+                  "prompt": "67",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 6,
+                  "paidReads": 12,
+                  "position": 3,
+                  "prompt": "28",
+                  "route": "split-witness",
+                  "stage": "deployed-earlier",
+                  "witnessed": true
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "8",
+                  "route": "split-witness",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 943,
+            "paidLookups": 3586,
+            "traceSha256": "d3d3b569538b55d8592bf2012235299c24c5aa1f70454a861ad31a18e65779d0"
+          }
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "losingComparisons": [
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47234,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "82",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "22",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 7,
+                  "prompt": "72",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "68",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 2161,
+            "paidLookups": 2434,
+            "traceSha256": "36385c8401f72284c05938c044d06566cc02cf28d4910aac061b01164e68a7d0"
+          }
+        },
+        "moral_disputes/google_gemma_7b": {
+          "losingComparisons": [
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47367,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "37",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47367,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "37",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 5,
+                  "prompt": "97",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47557,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 9,
+                  "prompt": "3",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 2215,
+            "paidLookups": 3219,
+            "traceSha256": "912616115b432fee9d32ab3240f667afd187eb8be67ab4b2e3d0f4250dd70eaf"
+          }
+        },
+        "world_religions/google_flan_t5_xxl": {
+          "losingComparisons": [],
+          "originalCpo": {
+            "holdoutPasses": 1073,
+            "paidLookups": 2446,
+            "traceSha256": "5f10bb0b4eca3a91dcea8d66dcfa4ad9097ac3ef7a2cb9840fc1e5b3d88ee4d6"
+          }
+        },
+        "world_religions/google_gemma_7b": {
+          "losingComparisons": [],
+          "originalCpo": {
+            "holdoutPasses": 1309,
+            "paidLookups": 3142,
+            "traceSha256": "c9ce46d40af53e950411f4d26a0ddc6190b25ded64e032a1218510781c1beb68"
+          }
+        }
+      }
+    },
+    "llama-mistral": {
+      "allMatchingTargetsByStage": {
+        "archive-preempted": 9,
+        "blocked-against-current": 24,
+        "deployed-earlier": 3,
+        "outside-wide-roster": 14,
+        "paid-gain-witness": 1,
+        "read-without-witness": 94,
+        "unread": 49
+      },
+      "lossesByFurthestStage": {
+        "archive-preempted": 4,
+        "blocked-against-current": 2,
+        "deployed-earlier": 3,
+        "multiple-moves": 2,
+        "outside-wide-roster": 2,
+        "paid-gain-witness": 1,
+        "read-without-witness": 36,
+        "unread": 13
+      },
+      "panels": {
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "losingComparisons": [
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "deployed-earlier",
+              "seed": 47291,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 7,
+                  "paidReads": 12,
+                  "position": 2,
+                  "prompt": "99",
+                  "route": "deferred",
+                  "stage": "deployed-earlier",
+                  "witnessed": true
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "79",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47462,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "29",
+                  "route": "balanced",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 5,
+                  "prompt": "33",
+                  "route": "balanced",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 7,
+                  "prompt": "19",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 8,
+                  "prompt": "24",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 9,
+                  "prompt": "69",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "26",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "21",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 11,
+                  "prompt": "3",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 8,
+                  "prompt": "94",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 11,
+                  "prompt": "57",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47576,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "91",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47690,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "91",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "10",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "95",
+                  "route": "split-witness",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47690,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "91",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "10",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "95",
+                  "route": "split-witness",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 404,
+            "paidLookups": 3344,
+            "traceSha256": "0a4547c2ef9e6dd8017e79a0d3d053fe6187189ac5bfe9d0617175a08ac98aa4"
+          }
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "losingComparisons": [
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "archive-preempted",
+              "seed": 47177,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 6,
+                  "prompt": "86",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47386,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "12",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 6,
+                  "prompt": "79",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "1",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "paid-gain-witness",
+              "seed": 47519,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 5,
+                  "prompt": "11",
+                  "route": "balanced",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "93",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 1,
+                  "paidReads": 2,
+                  "position": 5,
+                  "prompt": "16",
+                  "route": "balanced",
+                  "stage": "paid-gain-witness",
+                  "witnessed": true
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "blocked-against-current",
+              "seed": 47595,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "88",
+                  "route": "balanced",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 338,
+            "paidLookups": 3217,
+            "traceSha256": "815f5b21d9b79a4c92583cc976d65c2892ad08472442cda2f552d73748e344d1"
+          }
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "losingComparisons": [],
+          "originalCpo": {
+            "holdoutPasses": 725,
+            "paidLookups": 3024,
+            "traceSha256": "6320011a230161f4162fe002a022a1c1d54650597b2dd164cfd24a335cbc5ec0"
+          }
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "losingComparisons": [
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47633,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 4,
+                  "prompt": "23",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 9,
+                  "prompt": "93",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 725,
+            "paidLookups": 3143,
+            "traceSha256": "2c70db3201792a5a7dd9bd029d1bea30dfc0f97f2273ffe6d179e4f7ee64ca18"
+          }
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "losingComparisons": [
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47500,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 5,
+                  "prompt": "56",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 753,
+            "paidLookups": 2850,
+            "traceSha256": "d45e301e6e2d7d349853e5515427d655bfea045491c2fbae8de63fd7301e7ae2"
+          }
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "losingComparisons": [
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47120,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "18",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 6,
+                  "prompt": "58",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 7,
+                  "prompt": "1",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "23",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 6,
+                  "prompt": "44",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "91",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 8,
+                  "prompt": "19",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "52",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 11,
+                  "prompt": "15",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47120,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "18",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 6,
+                  "prompt": "58",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 7,
+                  "prompt": "1",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "23",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 6,
+                  "prompt": "44",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "91",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 8,
+                  "prompt": "19",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "52",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 11,
+                  "prompt": "15",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47139,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 11,
+                  "prompt": "8",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "17",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 12,
+                  "prompt": "4",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "23",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47139,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 11,
+                  "prompt": "8",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "17",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 12,
+                  "prompt": "4",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "23",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47196,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "5",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47462,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "74",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "8",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 11,
+                  "prompt": "4",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "86",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47557,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "36",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "57",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47557,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "36",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "57",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "archive-preempted",
+              "seed": 47576,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 3,
+                  "prompt": "19",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "17",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "14",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "35",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "8",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "44",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 5,
+                  "prompt": "54",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 12,
+                  "prompt": "86",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47614,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 4,
+                  "prompt": "74",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 6,
+                  "prompt": "54",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47671,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "36",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "83",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47671,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "36",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "83",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 684,
+            "paidLookups": 3195,
+            "traceSha256": "7f3e0d08bee6a2fde045dfa47a928ff3edaeb4e0085a5f3c1a2b6d4a1fd13e06"
+          }
+        },
+        "formal_logic/meta_llama_llama_3_8b_instruct": {
+          "losingComparisons": [
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47386,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "72",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "32",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "13",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 11,
+                  "prompt": "83",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47386,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "72",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "32",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "13",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 11,
+                  "prompt": "83",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "deployed-earlier",
+              "seed": 47690,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 5,
+                  "paidReads": 11,
+                  "position": 4,
+                  "prompt": "56",
+                  "route": "deferred",
+                  "stage": "deployed-earlier",
+                  "witnessed": true
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "82",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 11,
+                  "prompt": "57",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "29",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "21",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 7,
+                  "prompt": "54",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "78",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 11,
+                  "prompt": "79",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 541,
+            "paidLookups": 3181,
+            "traceSha256": "7279636c0484c47c725b1eb60a16e51bfe6c5b707d43e9cd7b83f8f7a19644ef"
+          }
+        },
+        "formal_logic/mistralai_mistral_7b_v0_1": {
+          "losingComparisons": [
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47139,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 6,
+                  "prompt": "35",
+                  "route": "balanced",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47196,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 7,
+                  "prompt": "70",
+                  "route": "split-witness",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "85",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "79",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 3,
+                  "prompt": "3",
+                  "route": "split-witness",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "55",
+                  "route": "split-witness",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47329,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "17",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "79",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "11",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 7,
+                  "prompt": "63",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "multiple-moves",
+              "seed": 47367,
+              "targets": []
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "multiple-moves",
+              "seed": 47367,
+              "targets": []
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47424,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "1",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "4",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "57",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 5,
+                  "prompt": "71",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 6,
+                  "prompt": "20",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47424,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "1",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "4",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "57",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 5,
+                  "prompt": "71",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 6,
+                  "prompt": "20",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47500,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "4",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 11,
+                  "prompt": "44",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47500,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "4",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 11,
+                  "prompt": "44",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47538,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 6,
+                  "prompt": "93",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 2,
+                  "prompt": "37",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47652,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 9,
+                  "prompt": "4",
+                  "route": "split-witness",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 8,
+                  "prompt": "8",
+                  "route": "archive",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "outside-wide-roster",
+              "seed": 47690,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 7,
+                  "prompt": "54",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 9,
+                  "prompt": "5",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "20",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 6,
+                  "prompt": "44",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "outside-wide-roster",
+              "seed": 47690,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 7,
+                  "prompt": "54",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 9,
+                  "prompt": "5",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "20",
+                  "route": "balanced",
+                  "stage": "outside-wide-roster",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 6,
+                  "prompt": "44",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 291,
+            "paidLookups": 3407,
+            "traceSha256": "37ad25e64e320ac1db714e5f00a0fb67817628b8d3ad5b7c3e89697d3d013d0c"
+          }
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "losingComparisons": [],
+          "originalCpo": {
+            "holdoutPasses": 1124,
+            "paidLookups": 2480,
+            "traceSha256": "0af8b50dd886542334926fa78747c23d8f84eba083f311c03d25ace57c3bc4bf"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "losingComparisons": [
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47158,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 7,
+                  "prompt": "4",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47310,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "18",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "60",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "83",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "11",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 8,
+                  "prompt": "38",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 9,
+                  "prompt": "19",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "10",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47310,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "18",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 4,
+                  "prompt": "60",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "83",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "11",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 8,
+                  "prompt": "38",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 9,
+                  "prompt": "19",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "10",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 1098,
+            "paidLookups": 3059,
+            "traceSha256": "1976d1256f4b51a033f6eda329a5f536e80dea99efe37d788a357e83c8bcfc6b"
+          }
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "losingComparisons": [],
+          "originalCpo": {
+            "holdoutPasses": 4156,
+            "paidLookups": 3144,
+            "traceSha256": "5b15c08dde6433f5e1de4d6f13fd1ecf85f7fd2a2e640bbd98ad6b025d6cb19d"
+          }
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "losingComparisons": [
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47234,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 4,
+                  "prompt": "83",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47253,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "98",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47272,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "1",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47557,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 2,
+                  "prompt": "54",
+                  "route": "split-witness",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "63",
+                  "route": "split-witness",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 5,
+                  "prompt": "97",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 7,
+                  "prompt": "64",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47633,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "37",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47633,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "37",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 3784,
+            "paidLookups": 3352,
+            "traceSha256": "8530d72baf4b8e126915ce6fb4e0ed95199bfd28939f1d1305413ad7a6c6571e"
+          }
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "losingComparisons": [],
+          "originalCpo": {
+            "holdoutPasses": 871,
+            "paidLookups": 2891,
+            "traceSha256": "d978fa1c8af3938e717b4b7afc0bda037d332dac1378b71f3ba2228d6013ef67"
+          }
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "losingComparisons": [
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "blocked-against-current",
+              "seed": 47120,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 11,
+                  "paidReads": 12,
+                  "position": 5,
+                  "prompt": "14",
+                  "route": "deferred",
+                  "stage": "blocked-against-current",
+                  "witnessed": true
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47652,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "86",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 4,
+                  "prompt": "63",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 11,
+                  "prompt": "60",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "8",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47652,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 2,
+                  "prompt": "86",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 4,
+                  "prompt": "63",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 11,
+                  "prompt": "60",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 8,
+                  "prompt": "8",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "deployed-earlier",
+              "seed": 47671,
+              "targets": [
+                {
+                  "cycle": 0,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 5,
+                  "prompt": "17",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 0,
+                  "paidPasses": 9,
+                  "paidReads": 11,
+                  "position": 10,
+                  "prompt": "86",
+                  "route": "deferred",
+                  "stage": "deployed-earlier",
+                  "witnessed": true
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 11,
+                  "prompt": "20",
+                  "route": "archive",
+                  "stage": "blocked-against-current",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 841,
+            "paidLookups": 3377,
+            "traceSha256": "8c73eb0e622f1868c7cef197cf19db01d90bae7101306f902c9355e38a46066e"
+          }
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "losingComparisons": [
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47272,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 6,
+                  "prompt": "54",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 7,
+                  "prompt": "60",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "45",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47576,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 9,
+                  "prompt": "85",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 738,
+            "paidLookups": 2668,
+            "traceSha256": "af3e500d06c509eee317f8cb1b20b59b052bc93ceb58bbee2b3fd280c3e82392"
+          }
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "losingComparisons": [
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "archive-preempted",
+              "seed": 47120,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "11",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "archive-preempted",
+              "seed": 47120,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "11",
+                  "route": "archive",
+                  "stage": "archive-preempted",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47329,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 2,
+                  "prompt": "54",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 4,
+                  "prompt": "2",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 8,
+                  "prompt": "99",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "60",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "83",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47329,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 2,
+                  "prompt": "54",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 4,
+                  "prompt": "2",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 8,
+                  "prompt": "99",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 10,
+                  "prompt": "60",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "83",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47500,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 1,
+                  "prompt": "20",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 7,
+                  "prompt": "5",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "unread",
+              "seed": 47576,
+              "targets": [
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 0,
+                  "position": 12,
+                  "prompt": "20",
+                  "route": "deferred",
+                  "stage": "unread",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47614,
+              "targets": [
+                {
+                  "cycle": 1,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 12,
+                  "prompt": "1",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 3,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 6,
+                  "prompt": "37",
+                  "route": "split-witness",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-batched.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47633,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "14",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "60",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 12,
+                  "prompt": "10",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            },
+            {
+              "control": "gepa-sequential.runner-up/52",
+              "furthestStage": "read-without-witness",
+              "seed": 47633,
+              "targets": [
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 3,
+                  "prompt": "14",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 10,
+                  "prompt": "60",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                },
+                {
+                  "cycle": 2,
+                  "paidPasses": 0,
+                  "paidReads": 1,
+                  "position": 12,
+                  "prompt": "10",
+                  "route": "deferred",
+                  "stage": "read-without-witness",
+                  "witnessed": false
+                }
+              ]
+            }
+          ],
+          "originalCpo": {
+            "holdoutPasses": 651,
+            "paidLookups": 2998,
+            "traceSha256": "99d9655c52f7f8c28e3dc8249d727388fcf9275a1c5a7071c86fdf5fe86ed999"
+          }
+        }
+      }
+    }
+  }
+}
