@@ -16,7 +16,7 @@ All 240 selections and admission decisions matched the previous CPO policy. CPO 
 
 The dominance proof saved **15.10%** against GEPA at the original attributed prices. The conservative lower bound with separate prices per policy was **12.43% pooled** and **11.53% on outage**. Both clear the 10% gate. Outage went from 549 to 486 search reads. Ticket added 48 reads and its estimated cost fell from $4.899672 to $4.680000. Across the archive, 45 paths read more than the preceding CPO policy and 40 cost more. The savings are aggregate results.
 
-A one-row screen also reduced cost but lost a recorded outage pass. The dominance proof keeps the existing screen and preserves its decision on fixed replies. Fresh models, costs, and qualification still require prospective evidence.
+A one-row screen also reduced cost but lost a recorded outage pass. The dominance proof keeps the existing screen and preserves its decision on fixed replies. The ARC-AGI and AIME transfer kept those decisions and used more reads. Fresh models, costs, and qualification still require prospective evidence. [Cross-archive results](recorded-opening-dominance-transfer.md)
 
 ```sh
 python -B -m benchmarks.certified_opening_cost_sensitivity \

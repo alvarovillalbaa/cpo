@@ -1,0 +1,681 @@
+{
+  "plan": {
+    "admission": "same exact paired family certificate on separate cases",
+    "arms": [
+      "certified-validation",
+      "opening-dominance",
+      "gepa-rewrite",
+      "gepa-sequential",
+      "gepa-batched"
+    ],
+    "corpusSha256": "83ea1db450d2113b23066158e8f4d6b6ba02b7dd537f9ae557ab41f331565e1f",
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaMinibatchSize": 2,
+    "gepaVersion": "0.1.4",
+    "historicalCosts": "observed ARC evaluator charges, shared supplied proposals excluded for every arm",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "metricCap": "three times validation size",
+    "openingPair": "first two distinct nonincumbent IDs in the existing seeded roster",
+    "protocol": "recorded-opening-dominance-transfer-v1",
+    "scoring": "archived binary grades and one family per archive",
+    "screenSize": "ceil(two-thirds of validation)",
+    "sourceSha256": {
+      "benchmarks/gepa_cached_opening.py": "dcc94ad5b20eb5242198c969c6dd524c2ad181a153ec826a974c5271d88b79ff",
+      "benchmarks/grounded_staged_case_evidence.py": "15e0bd625681ff7194ad74e282f8da9cfd6e0691af68f1d1abf7de447385cd35",
+      "benchmarks/recorded_math_validation_ties.py": "ea8a310a65392ddad1d3ecc5c1a4639674b941e8e02e344a81abf1ad802f07b0",
+      "benchmarks/recorded_opening_dominance_transfer.py": "345cc68d843c97f87ebb7444e96e3f7325b5fd28da570332a74414e6755b1844",
+      "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+      "cpo/family_qualification.py": "9ca2fd90b8da62743f4d95165af336103ccf2447a0585522a3a5698199eb0f9b",
+      "cpo/opening_certificate.py": "0c33b20108d240656a8f15602e5f5b2a4ceb27b57e1f2e2cf4c2deeb5d455539",
+      "cpo/opening_dominance.py": "86786743ebea794dd1f1fa8de6551fbd35a7b8edeaa969a694c6c1f8d23dc970",
+      "cpo/opening_screen_cycle.py": "d2d60763878b49470c9fd39b25292092f703123a2abf6aff04c91245c583c51e",
+      "cpo/opening_validation.py": "493c74b7c8a3f91b9e167cc331e35d41485510658d0f3a03b273e911eee03929",
+      "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+    }
+  },
+  "planSha256": "0a612d1785a7cb4cea3857d5778837e84b271f093687b46902891f018c83d02c",
+  "results": {
+    "aime": {
+      "root": {
+        "comparisons": {
+          "gepa-batched": {
+            "addedPasses": -9,
+            "caseResampling95PassDifference": [
+              -20,
+              1
+            ],
+            "casesWithLowerTotal": 8,
+            "pairedLosses": 20,
+            "pathsWithDifferentNominees": 13,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 0,
+                "losses": 0,
+                "paths": 0
+              },
+              "onlyCpoPromoted": {
+                "gains": 8,
+                "losses": 15,
+                "paths": 3
+              },
+              "onlyGepaPromoted": {
+                "gains": 3,
+                "losses": 5,
+                "paths": 1
+              }
+            }
+          },
+          "gepa-rewrite": {
+            "addedPasses": -9,
+            "caseResampling95PassDifference": [
+              -20,
+              1
+            ],
+            "casesWithLowerTotal": 8,
+            "pairedLosses": 20,
+            "pathsWithDifferentNominees": 13,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 0,
+                "losses": 0,
+                "paths": 0
+              },
+              "onlyCpoPromoted": {
+                "gains": 8,
+                "losses": 15,
+                "paths": 3
+              },
+              "onlyGepaPromoted": {
+                "gains": 3,
+                "losses": 5,
+                "paths": 1
+              }
+            }
+          },
+          "gepa-sequential": {
+            "addedPasses": -9,
+            "caseResampling95PassDifference": [
+              -20,
+              1
+            ],
+            "casesWithLowerTotal": 8,
+            "pairedLosses": 20,
+            "pathsWithDifferentNominees": 14,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 0,
+                "losses": 0,
+                "paths": 0
+              },
+              "onlyCpoPromoted": {
+                "gains": 8,
+                "losses": 15,
+                "paths": 3
+              },
+              "onlyGepaPromoted": {
+                "gains": 3,
+                "losses": 5,
+                "paths": 1
+              }
+            }
+          }
+        },
+        "heldoutUsesPerArm": 1000,
+        "pathsPerArm": 40,
+        "proofReadChanges": {
+          "pathsWithFewerReads": 0,
+          "pathsWithMoreReads": 15
+        },
+        "totals": {
+          "certified-validation": {
+            "admissionReads": 99,
+            "holdoutPasses": 488,
+            "paidReads": 508,
+            "searchReads": 409,
+            "traceSha256": "62e9d8f67919c72daeb239e2bbf5524661b072524c014007caf3fa05571e6200"
+          },
+          "gepa-batched": {
+            "admissionReads": 65,
+            "holdoutPasses": 497,
+            "paidReads": 525,
+            "searchReads": 460,
+            "traceSha256": "2e5cd608454024d29f2fc116762931dddcb84467f0b352a3698d793af5d65b13"
+          },
+          "gepa-rewrite": {
+            "admissionReads": 54,
+            "holdoutPasses": 497,
+            "paidReads": 414,
+            "searchReads": 360,
+            "traceSha256": "bce67fcbc882793713e3e32f63fcc61254aabed9c50dd27e469dfe65c0be731f"
+          },
+          "gepa-sequential": {
+            "admissionReads": 72,
+            "holdoutPasses": 497,
+            "paidReads": 536,
+            "searchReads": 464,
+            "traceSha256": "59d677fd98a5d99d834dbdd1dd54865113ab80fec05ca67a36cbb71afaa3b7d5"
+          },
+          "opening-dominance": {
+            "admissionReads": 99,
+            "holdoutPasses": 488,
+            "paidReads": 535,
+            "searchReads": 436,
+            "traceSha256": "9392f1bd9862e3f8dafb104676ec288dd3a7eb1457871d8a86e7757ba8edbc4e"
+          }
+        }
+      },
+      "rotated": {
+        "comparisons": {
+          "gepa-batched": {
+            "addedPasses": -29,
+            "caseResampling95PassDifference": [
+              -46,
+              -13
+            ],
+            "casesWithLowerTotal": 19,
+            "pairedLosses": 98,
+            "pathsWithDifferentNominees": 88,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 8,
+                "losses": 10,
+                "paths": 3
+              },
+              "onlyCpoPromoted": {
+                "gains": 39,
+                "losses": 61,
+                "paths": 15
+              },
+              "onlyGepaPromoted": {
+                "gains": 22,
+                "losses": 27,
+                "paths": 7
+              }
+            }
+          },
+          "gepa-rewrite": {
+            "addedPasses": -29,
+            "caseResampling95PassDifference": [
+              -52,
+              -7
+            ],
+            "casesWithLowerTotal": 14,
+            "pairedLosses": 98,
+            "pathsWithDifferentNominees": 107,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 1,
+                "losses": 4,
+                "paths": 1
+              },
+              "onlyCpoPromoted": {
+                "gains": 55,
+                "losses": 73,
+                "paths": 19
+              },
+              "onlyGepaPromoted": {
+                "gains": 13,
+                "losses": 21,
+                "paths": 5
+              }
+            }
+          },
+          "gepa-sequential": {
+            "addedPasses": -29,
+            "caseResampling95PassDifference": [
+              -46,
+              -13
+            ],
+            "casesWithLowerTotal": 19,
+            "pairedLosses": 98,
+            "pathsWithDifferentNominees": 89,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 8,
+                "losses": 10,
+                "paths": 3
+              },
+              "onlyCpoPromoted": {
+                "gains": 39,
+                "losses": 61,
+                "paths": 15
+              },
+              "onlyGepaPromoted": {
+                "gains": 22,
+                "losses": 27,
+                "paths": 7
+              }
+            }
+          }
+        },
+        "heldoutUsesPerArm": 8000,
+        "pathsPerArm": 320,
+        "proofReadChanges": {
+          "pathsWithFewerReads": 3,
+          "pathsWithMoreReads": 66
+        },
+        "totals": {
+          "certified-validation": {
+            "admissionReads": 941,
+            "holdoutPasses": 4044,
+            "paidReads": 4642,
+            "searchReads": 3701,
+            "traceSha256": "926a0a770c666fed1c4bf76d0b83e3fbf2b2cbead42050b86378d04a34e0196f"
+          },
+          "gepa-batched": {
+            "admissionReads": 592,
+            "holdoutPasses": 4073,
+            "paidReads": 4352,
+            "searchReads": 3760,
+            "traceSha256": "2282a8054f617afa755f1ba6d947dc3d25bc1aa0b1cfe6945bb4a4f454eaed0f"
+          },
+          "gepa-rewrite": {
+            "admissionReads": 372,
+            "holdoutPasses": 4073,
+            "paidReads": 3206,
+            "searchReads": 2834,
+            "traceSha256": "feae3cc6082d986de1aa4345c716b12df47fd587f69ae6bfebd9b8be2a4ab875"
+          },
+          "gepa-sequential": {
+            "admissionReads": 592,
+            "holdoutPasses": 4073,
+            "paidReads": 4322,
+            "searchReads": 3730,
+            "traceSha256": "0d8b7fb4b08f460d9f08cfcc75084e453eb97f7b8e6e59bdbb5a5d9f74dba675"
+          },
+          "opening-dominance": {
+            "admissionReads": 941,
+            "holdoutPasses": 4044,
+            "paidReads": 4757,
+            "searchReads": 3816,
+            "traceSha256": "f7ca3deff996ab7f2803655b87d05791f4afc041fc0d484698bdb6ec59e34db9"
+          }
+        }
+      }
+    },
+    "arc": {
+      "root": {
+        "comparisons": {
+          "gepa-batched": {
+            "addedPasses": 61,
+            "caseResampling95PassDifference": [
+              28,
+              94
+            ],
+            "casesWithLowerTotal": 10,
+            "pairedLosses": 84,
+            "pathsWithDifferentNominees": 18,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 23,
+                "losses": 49,
+                "paths": 11
+              },
+              "onlyCpoPromoted": {
+                "gains": 122,
+                "losses": 1,
+                "paths": 5
+              },
+              "onlyGepaPromoted": {
+                "gains": 0,
+                "losses": 34,
+                "paths": 1
+              }
+            }
+          },
+          "gepa-rewrite": {
+            "addedPasses": 218,
+            "caseResampling95PassDifference": [
+              167,
+              271
+            ],
+            "casesWithLowerTotal": 2,
+            "pairedLosses": 35,
+            "pathsWithDifferentNominees": 14,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 0,
+                "losses": 0,
+                "paths": 1
+              },
+              "onlyCpoPromoted": {
+                "gains": 253,
+                "losses": 1,
+                "paths": 11
+              },
+              "onlyGepaPromoted": {
+                "gains": 0,
+                "losses": 34,
+                "paths": 1
+              }
+            }
+          },
+          "gepa-sequential": {
+            "addedPasses": 67,
+            "caseResampling95PassDifference": [
+              34,
+              100
+            ],
+            "casesWithLowerTotal": 9,
+            "pairedLosses": 74,
+            "pathsWithDifferentNominees": 16,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 19,
+                "losses": 39,
+                "paths": 9
+              },
+              "onlyCpoPromoted": {
+                "gains": 122,
+                "losses": 1,
+                "paths": 5
+              },
+              "onlyGepaPromoted": {
+                "gains": 0,
+                "losses": 34,
+                "paths": 1
+              }
+            }
+          }
+        },
+        "heldoutUsesPerArm": 1920,
+        "pathsPerArm": 40,
+        "proofReadChanges": {
+          "pathsWithFewerReads": 9,
+          "pathsWithMoreReads": 12
+        },
+        "totals": {
+          "certified-validation": {
+            "admissionReads": 338,
+            "historicalCostNanodollars": 82576867500,
+            "historicalErrors": 56,
+            "holdoutPasses": 1462,
+            "paidReads": 847,
+            "searchReads": 509,
+            "traceSha256": "6119b172e9132e07d75aac21c5c82925d312db3bbd8a1690a7519061ebbb190f"
+          },
+          "gepa-batched": {
+            "admissionReads": 294,
+            "historicalCostNanodollars": 109925952400,
+            "historicalErrors": 59,
+            "holdoutPasses": 1401,
+            "paidReads": 1098,
+            "searchReads": 804,
+            "traceSha256": "51261625b2f428d378ef1ee937e0dd8649bf9d149314257ad031de671de9b05a"
+          },
+          "gepa-rewrite": {
+            "admissionReads": 242,
+            "historicalCostNanodollars": 75108962400,
+            "historicalErrors": 45,
+            "holdoutPasses": 1244,
+            "paidReads": 810,
+            "searchReads": 568,
+            "traceSha256": "b11ad40f652d7211c8f270317385dbdb07759d9fdcd8ed53ec37627961a5d240"
+          },
+          "gepa-sequential": {
+            "admissionReads": 292,
+            "historicalCostNanodollars": 95167275800,
+            "historicalErrors": 56,
+            "holdoutPasses": 1395,
+            "paidReads": 982,
+            "searchReads": 690,
+            "traceSha256": "83b1a825ec7b9ec328443614b716da53fd0206cd2951ca42b00661947b426e52"
+          },
+          "opening-dominance": {
+            "admissionReads": 338,
+            "historicalCostNanodollars": 80776902950,
+            "historicalErrors": 57,
+            "holdoutPasses": 1462,
+            "paidReads": 863,
+            "searchReads": 525,
+            "traceSha256": "09fd2d44f291d8c410487780cc5c79ed987b982a974d56bbd712721522720a2c"
+          }
+        }
+      },
+      "rotated": {
+        "comparisons": {
+          "gepa-batched": {
+            "addedPasses": 231,
+            "caseResampling95PassDifference": [
+              166,
+              297
+            ],
+            "casesWithLowerTotal": 8,
+            "pairedLosses": 162,
+            "pathsWithDifferentNominees": 95,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 50,
+                "losses": 37,
+                "paths": 13
+              },
+              "onlyCpoPromoted": {
+                "gains": 328,
+                "losses": 43,
+                "paths": 27
+              },
+              "onlyGepaPromoted": {
+                "gains": 15,
+                "losses": 82,
+                "paths": 11
+              }
+            }
+          },
+          "gepa-rewrite": {
+            "addedPasses": 365,
+            "caseResampling95PassDifference": [
+              269,
+              461
+            ],
+            "casesWithLowerTotal": 7,
+            "pairedLosses": 111,
+            "pathsWithDifferentNominees": 94,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 5,
+                "losses": 9,
+                "paths": 2
+              },
+              "onlyCpoPromoted": {
+                "gains": 466,
+                "losses": 67,
+                "paths": 38
+              },
+              "onlyGepaPromoted": {
+                "gains": 5,
+                "losses": 35,
+                "paths": 3
+              }
+            }
+          },
+          "gepa-sequential": {
+            "addedPasses": 230,
+            "caseResampling95PassDifference": [
+              167,
+              294
+            ],
+            "casesWithLowerTotal": 6,
+            "pairedLosses": 146,
+            "pathsWithDifferentNominees": 90,
+            "selectionDisagreements": {
+              "bothPromotedDifferent": {
+                "gains": 38,
+                "losses": 22,
+                "paths": 9
+              },
+              "onlyCpoPromoted": {
+                "gains": 323,
+                "losses": 42,
+                "paths": 26
+              },
+              "onlyGepaPromoted": {
+                "gains": 15,
+                "losses": 82,
+                "paths": 11
+              }
+            }
+          }
+        },
+        "heldoutUsesPerArm": 17280,
+        "pathsPerArm": 360,
+        "proofReadChanges": {
+          "pathsWithFewerReads": 9,
+          "pathsWithMoreReads": 65
+        },
+        "totals": {
+          "certified-validation": {
+            "admissionReads": 1448,
+            "historicalCostNanodollars": 764746090350,
+            "historicalErrors": 206,
+            "holdoutPasses": 13738,
+            "paidReads": 5987,
+            "searchReads": 4539,
+            "traceSha256": "0c384f81bab85afdbf3decfb514c11d79316c223ad50c44d2aacfe2383e894cb"
+          },
+          "gepa-batched": {
+            "admissionReads": 910,
+            "historicalCostNanodollars": 725137261300,
+            "historicalErrors": 171,
+            "holdoutPasses": 13507,
+            "paidReads": 5722,
+            "searchReads": 4812,
+            "traceSha256": "a9158f252f026ac921e3802d4a7f989ae2272c1467aa97b9d93895ae350458e1"
+          },
+          "gepa-rewrite": {
+            "admissionReads": 515,
+            "historicalCostNanodollars": 555355223750,
+            "historicalErrors": 123,
+            "holdoutPasses": 13373,
+            "paidReads": 4355,
+            "searchReads": 3840,
+            "traceSha256": "bf117fbbf6770a186489f70c319f9a76ebaad689f8368e0d6bd5dc4e0fe11418"
+          },
+          "gepa-sequential": {
+            "admissionReads": 921,
+            "historicalCostNanodollars": 715879446050,
+            "historicalErrors": 170,
+            "holdoutPasses": 13508,
+            "paidReads": 5649,
+            "searchReads": 4728,
+            "traceSha256": "675c8f42372753a2ce1f5e61f67cc7ba01dd267bedf77feb3aeeb2327d81f067"
+          },
+          "opening-dominance": {
+            "admissionReads": 1448,
+            "historicalCostNanodollars": 793401757000,
+            "historicalErrors": 208,
+            "holdoutPasses": 13738,
+            "paidReads": 6212,
+            "searchReads": 4764,
+            "traceSha256": "bcc4ace3d29f556028a6bd6678c21edf96c5a0ad16652b46765a25856a68c724"
+          }
+        }
+      }
+    }
+  }
+}
