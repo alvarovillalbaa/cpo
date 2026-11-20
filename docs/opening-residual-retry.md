@@ -13,6 +13,8 @@ The pilot selected a limit of eight. It used six extra probes on the earlier fai
 
 The retry preserved every baseline pass and every matched critical pass against both GEPA arms. It gained four passes over CPO without retries in each mode and cleared both sequential GEPA gates. It triggered on two panels in each mode and found a usable training failure every time. The retry used four more calls than batched GEPA with original faults and 41 more with shifted faults, so the full confirmation gate failed on cost. [Sealed results](opening-residual-retry-results-v1.json)
 
+A follow-up swept nine GEPA search ceilings on these same input panels. At CPO’s realized cost, CPO led the best per-panel GEPA hindsight allocation by 75 passes with original faults and 76 with shifted faults. [Matched-cost comparison](opening-retry-cost-frontier.md)
+
 ## Reproduce offline
 
 Use GEPA 0.1.4 and a fresh output path.

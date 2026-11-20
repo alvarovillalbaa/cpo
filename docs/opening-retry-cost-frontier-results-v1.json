@@ -1,0 +1,646 @@
+{
+  "design": {
+    "allocationSourceSha256": "4d8f2eafe14bfe38c2af6c30f9177b7077b6a8ad028bf2f14b136ae2ec358ad9",
+    "confirmationDesignSha256": "2b312cbb2df33c662179c0fe5afbfb89899f99e77e650558900f4f8e9ed42750",
+    "gepaCaps": [
+      32,
+      40,
+      48,
+      56,
+      64,
+      80,
+      96,
+      112,
+      128
+    ],
+    "gepaVersion": "0.1.4",
+    "protocol": "cpo-opening-retry-cost-frontier-v1",
+    "referenceCpoCap": 56,
+    "referenceReportSha256": "0cd73511836db8a5ee2dccace2c8222d94a9e1eecf1a3ac2b8b9906f34eee5f9",
+    "scope": "Reuse the scripted confirmation panels. Compare a fixed native GEPA setting and a hindsight per-panel allocation at the actual CPO call cost, including qualification and proposal calls.",
+    "sourceSha256": "86c2e96472cecc755c090440ca10bab506ba41fd2ea0a97e7b49c51544b5707b"
+  },
+  "designSha256": "fe0259ce27de3d9ea880c34a856bf467991d5790632cbb03c46b8d6a32899635",
+  "results": {
+    "held-out": {
+      "bestFixedGepaAtCpoCost": {
+        "cap": 48,
+        "countedCalls": 2201,
+        "holdoutPasses": 546,
+        "method": "gepa-sequential"
+      },
+      "cheapestFixedGepaAtCpoScore": null,
+      "cpo": {
+        "countedCalls": 2286,
+        "holdoutPasses": 648
+      },
+      "fixedGepaPoints": [
+        {
+          "cap": 32,
+          "countedCalls": 468,
+          "holdoutPasses": 0,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 40,
+          "countedCalls": 468,
+          "holdoutPasses": 0,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 48,
+          "countedCalls": 2282,
+          "holdoutPasses": 522,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 56,
+          "countedCalls": 2282,
+          "holdoutPasses": 522,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 64,
+          "countedCalls": 2282,
+          "holdoutPasses": 522,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 80,
+          "countedCalls": 2998,
+          "holdoutPasses": 561,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 96,
+          "countedCalls": 3095,
+          "holdoutPasses": 568,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 112,
+          "countedCalls": 3159,
+          "holdoutPasses": 568,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 128,
+          "countedCalls": 3159,
+          "holdoutPasses": 568,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 32,
+          "countedCalls": 1742,
+          "holdoutPasses": 522,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 40,
+          "countedCalls": 1742,
+          "holdoutPasses": 522,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 48,
+          "countedCalls": 2201,
+          "holdoutPasses": 546,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 56,
+          "countedCalls": 2524,
+          "holdoutPasses": 570,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 64,
+          "countedCalls": 2675,
+          "holdoutPasses": 579,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 80,
+          "countedCalls": 2895,
+          "holdoutPasses": 598,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 96,
+          "countedCalls": 2912,
+          "holdoutPasses": 600,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 112,
+          "countedCalls": 2912,
+          "holdoutPasses": 600,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 128,
+          "countedCalls": 2912,
+          "holdoutPasses": 600,
+          "method": "gepa-sequential"
+        }
+      ],
+      "perPanelGepaHindsightAtCpoCost": {
+        "allocation": [
+          {
+            "cap": 48,
+            "method": "gepa-sequential",
+            "subject": "archive/one-exception/65521"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "archive/one-exception/65537"
+          },
+          {
+            "cap": 48,
+            "method": "gepa-sequential",
+            "subject": "archive/one-exception/65543"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/one-exception/65551"
+          },
+          {
+            "cap": 80,
+            "method": "gepa-sequential",
+            "subject": "archive/overlap/65521"
+          },
+          {
+            "cap": 48,
+            "method": "gepa-sequential",
+            "subject": "archive/overlap/65537"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/overlap/65543"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/overlap/65551"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/three-exceptions/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/three-exceptions/65537"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/three-exceptions/65543"
+          },
+          {
+            "cap": 80,
+            "method": "gepa-sequential",
+            "subject": "archive/three-exceptions/65551"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/one-exception/65521"
+          },
+          {
+            "cap": 48,
+            "method": "gepa-sequential",
+            "subject": "dispatch/one-exception/65537"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "dispatch/one-exception/65543"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "dispatch/one-exception/65551"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "dispatch/overlap/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/overlap/65537"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "dispatch/overlap/65543"
+          },
+          {
+            "cap": 80,
+            "method": "gepa-sequential",
+            "subject": "dispatch/overlap/65551"
+          },
+          {
+            "cap": 64,
+            "method": "gepa-sequential",
+            "subject": "dispatch/three-exceptions/65521"
+          },
+          {
+            "cap": 48,
+            "method": "gepa-sequential",
+            "subject": "dispatch/three-exceptions/65537"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/three-exceptions/65543"
+          },
+          {
+            "cap": 80,
+            "method": "gepa-sequential",
+            "subject": "dispatch/three-exceptions/65551"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/one-exception/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/one-exception/65537"
+          },
+          {
+            "cap": 48,
+            "method": "gepa-sequential",
+            "subject": "venue/one-exception/65543"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "venue/one-exception/65551"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/overlap/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/overlap/65537"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/overlap/65543"
+          },
+          {
+            "cap": 64,
+            "method": "gepa-sequential",
+            "subject": "venue/overlap/65551"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "venue/three-exceptions/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/three-exceptions/65537"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/three-exceptions/65543"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/three-exceptions/65551"
+          }
+        ],
+        "countedCalls": 2281,
+        "holdoutPasses": 573
+      },
+      "traceSha256": "84fad6b2c1a1240c0381ebf72c26d413d9b9bc49a5e62a6a4653229debffb8f8"
+    },
+    "shifted-exceptions": {
+      "bestFixedGepaAtCpoCost": {
+        "cap": 48,
+        "countedCalls": 2209,
+        "holdoutPasses": 539,
+        "method": "gepa-sequential"
+      },
+      "cheapestFixedGepaAtCpoScore": null,
+      "cpo": {
+        "countedCalls": 2324,
+        "holdoutPasses": 648
+      },
+      "fixedGepaPoints": [
+        {
+          "cap": 32,
+          "countedCalls": 468,
+          "holdoutPasses": 0,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 40,
+          "countedCalls": 468,
+          "holdoutPasses": 0,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 48,
+          "countedCalls": 2283,
+          "holdoutPasses": 512,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 56,
+          "countedCalls": 2283,
+          "holdoutPasses": 512,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 64,
+          "countedCalls": 2283,
+          "holdoutPasses": 512,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 80,
+          "countedCalls": 2981,
+          "holdoutPasses": 561,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 96,
+          "countedCalls": 3155,
+          "holdoutPasses": 575,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 112,
+          "countedCalls": 3236,
+          "holdoutPasses": 581,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 128,
+          "countedCalls": 3236,
+          "holdoutPasses": 581,
+          "method": "gepa-batched"
+        },
+        {
+          "cap": 32,
+          "countedCalls": 1743,
+          "holdoutPasses": 512,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 40,
+          "countedCalls": 1743,
+          "holdoutPasses": 512,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 48,
+          "countedCalls": 2209,
+          "holdoutPasses": 539,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 56,
+          "countedCalls": 2499,
+          "holdoutPasses": 563,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 64,
+          "countedCalls": 2678,
+          "holdoutPasses": 583,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 80,
+          "countedCalls": 2790,
+          "holdoutPasses": 589,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 96,
+          "countedCalls": 2790,
+          "holdoutPasses": 589,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 112,
+          "countedCalls": 2790,
+          "holdoutPasses": 589,
+          "method": "gepa-sequential"
+        },
+        {
+          "cap": 128,
+          "countedCalls": 2790,
+          "holdoutPasses": 589,
+          "method": "gepa-sequential"
+        }
+      ],
+      "perPanelGepaHindsightAtCpoCost": {
+        "allocation": [
+          {
+            "cap": 48,
+            "method": "gepa-sequential",
+            "subject": "archive/one-exception/65521"
+          },
+          {
+            "cap": 48,
+            "method": "gepa-sequential",
+            "subject": "archive/one-exception/65537"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/one-exception/65543"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/one-exception/65551"
+          },
+          {
+            "cap": 64,
+            "method": "gepa-sequential",
+            "subject": "archive/overlap/65521"
+          },
+          {
+            "cap": 64,
+            "method": "gepa-sequential",
+            "subject": "archive/overlap/65537"
+          },
+          {
+            "cap": 64,
+            "method": "gepa-sequential",
+            "subject": "archive/overlap/65543"
+          },
+          {
+            "cap": 80,
+            "method": "gepa-sequential",
+            "subject": "archive/overlap/65551"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/three-exceptions/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/three-exceptions/65537"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "archive/three-exceptions/65543"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "archive/three-exceptions/65551"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/one-exception/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/one-exception/65537"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/one-exception/65543"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/one-exception/65551"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/overlap/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/overlap/65537"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/overlap/65543"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/overlap/65551"
+          },
+          {
+            "cap": 64,
+            "method": "gepa-sequential",
+            "subject": "dispatch/three-exceptions/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "dispatch/three-exceptions/65537"
+          },
+          {
+            "cap": 64,
+            "method": "gepa-sequential",
+            "subject": "dispatch/three-exceptions/65543"
+          },
+          {
+            "cap": 64,
+            "method": "gepa-sequential",
+            "subject": "dispatch/three-exceptions/65551"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "venue/one-exception/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/one-exception/65537"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "venue/one-exception/65543"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "venue/one-exception/65551"
+          },
+          {
+            "cap": 48,
+            "method": "gepa-sequential",
+            "subject": "venue/overlap/65521"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/overlap/65537"
+          },
+          {
+            "cap": 80,
+            "method": "gepa-sequential",
+            "subject": "venue/overlap/65543"
+          },
+          {
+            "cap": 32,
+            "method": "gepa-sequential",
+            "subject": "venue/overlap/65551"
+          },
+          {
+            "cap": 56,
+            "method": "gepa-sequential",
+            "subject": "venue/three-exceptions/65521"
+          },
+          {
+            "cap": 80,
+            "method": "gepa-sequential",
+            "subject": "venue/three-exceptions/65537"
+          },
+          {
+            "cap": 64,
+            "method": "gepa-sequential",
+            "subject": "venue/three-exceptions/65543"
+          },
+          {
+            "cap": 48,
+            "method": "gepa-sequential",
+            "subject": "venue/three-exceptions/65551"
+          }
+        ],
+        "countedCalls": 2318,
+        "holdoutPasses": 572
+      },
+      "traceSha256": "4fce5721d9c4139b1d6956d0c5bcb52922c32b26d007367bfc3672d10341d133"
+    }
+  }
+}
