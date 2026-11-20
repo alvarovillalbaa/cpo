@@ -18,6 +18,8 @@ The binary screen gained six passes and saved 458 lookups at cap 48 against unsc
 
 The previous frontier used sequential GEPA at cap 32 as the fixed reference for unscreened CPO at cap 48. GEPA scored 410/660 with 4,016 lookups. Screened CPO at cap 48 gained **108 passes and saved 161 lookups** against that same setting, with zero matched critical losses. At its new lower cost, the strongest affordable measured control was batched GEPA at cap 36, with 406 passes and 3,684 lookups. CPO had one matched critical loss against that setting. The fixed comparison closes the earlier cost gap on the recorded replies. The critical-case gate against every comparison and superiority on fresh replies remain open.
 
+The same window later missed the archived efficiency and quality gate on ARC-AGI and AIME. [Mathematics archive transfer](recorded-window-transfer.md)
+
 ## Reproduce
 
 Use the intact GEPA research and Open Evals archives with pinned GEPA 0.1.4.
