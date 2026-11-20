@@ -32,6 +32,8 @@ Both half-panel checks lost holdout passes and added lookups on the ARC rotation
 
 The follow-up gives the veto one validation-proven backup and measures the cost of an incumbent qualification precheck applied equally to CPO and GEPA. [Training backup replay](recorded-training-backup.md)
 
+A later replay tests whether a stronger qualification gain can substitute for the training check, and measures both proof orders under that rule. [Qualification waiver replay](recorded-margin-corroboration.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and the bundled score snapshot. Preview the seal, then run to a fresh report path.
