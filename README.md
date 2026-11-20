@@ -6,13 +6,14 @@ Continuous Prompt Optimization (CPO) searches for a better prompt under a fixed 
 
 ```sh
 python -m pip install .
-python -m unittest discover -s tests -v
 python -m pip install --require-hashes -r requirements-benchmark.txt
 python -m benchmarks.frontier --protocol cpo-v2 --out cpo-v2.json
 python -m benchmarks.grounded --fixture --out grounded-fixture.json
 python -m benchmarks.grounded --replay grounded-fixture.json
 python -m benchmarks.alternative_controls --out alternative-controls.json
 ```
+
+[Run the complete Python and Node test suites](docs/testing.md).
 
 The optimizer accepts evaluator and proposer callbacks. A proposer can return a `ProposalPair(rewrite=..., repair=...)` to evaluate the complete rewrite first. A finite proposal source can return `ProposalBatch(prompts, exhausted=True)` with its last batch so search can move to a different parent. Use `cpo.search` to inspect a search decision or `cpo.run_cycle` to separately qualify it. Call the next cycle with the returned prompt and a fresh qualification set. The core package does not require a provider SDK. See the benchmark for complete callback examples.
 
