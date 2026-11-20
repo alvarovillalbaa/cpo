@@ -17,6 +17,8 @@ Across the 109 losing comparisons where retaining the start would match GEPA, th
 
 The paid evidence agrees with the decision it helped select. These archives leave no positive head-to-head signal for this rollback rule. A different retention test needs cases reserved from the selection process or needs to change which evidence informs the first promotion. The original selection remains in place.
 
+A follow-up instead moved the existing final-cycle start comparison after fresh search. It gained some held-out passes at greater cost and recovered none of the earlier start-retention losses. [Final-cycle reconciliation replay](final-start-reconciliation.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Two replays in source exports matched byte for byte with sockets and DNS blocked, and reproduced 84 published control traces. The captured ledgers matched original paid costs on every episode. Three focused tests covered missing matches, corroboration, and duplicate observations. The CLI rejected an incorrect seal and preserved an existing output. Storage Guard measured 13.0 GiB free. The 20.1 MB scratch overlay was removed under the standing LAB exception. [Tests](../tests/unit/test_paid_start_retention.py) · [Verification receipt](paid-start-retention-verification-v1.json) · [Storage authorization](../../lab/docs/runbooks/lab-storage-exceptions.md)
