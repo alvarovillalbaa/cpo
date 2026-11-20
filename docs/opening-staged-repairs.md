@@ -17,11 +17,11 @@ The comparison reproduced the prior controls on all 36 development panels and ev
 
 Staged repair cleared the sequential GEPA gate and preserved every matched critical pass against both GEPA controls. The batched comparison missed the cost gate by 28 calls. Staged repair gained 31 passes and saved 206 calls over routed repair, with two matched critical losses on one panel. On development, it scored 633 passes in 2,706 calls and missed the aggregate gates. One or more panels fell below the minimum score and the batched control used 48 fewer calls. [Sealed results](opening-staged-repairs-results-v1.json)
 
-A probe-order pilot stopped each training batch at the first failure. It saved 56 calls on transfer and lost 11 passes relative to staged repair. Stopping only the opening batch saved 34 calls and lost two passes. It cleared both GEPA gates on the observed transfer cohort, while the same rule missed the gates on development. The pilot result informed a separate confirmation.
+A probe-order pilot stopped each training batch at the first failure. It saved 56 calls on transfer and lost 11 passes relative to staged repair. Stopping only the opening batch saved 34 calls and lost two passes. It cleared both GEPA gates on the observed transfer cohort, while the same rule missed the gates on development. The confirmation found a critical-case regression on fresh panels. [Shorter opening confirmation](opening-staged-witness-transfer.md)
 
 ## Reproduce offline
 
-Use GEPA 0.1.4 and a fresh output path.
+Use GEPA 0.1.4, the source at commit `67e61484e8fb5d42afccdae829e356d9e584969b`, and a fresh output path to reproduce the original seal.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.opening_staged_repairs

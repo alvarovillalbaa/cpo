@@ -28,7 +28,7 @@ MAX_REPAIRS = 3
 OPENING_FALLBACK = 12
 
 
-def cycle(features):
+def cycle(features, *, opening_witness_only=False):
     def run(incumbent, train, validation, holdout, evaluate, propose, *, opening_pair, metric_limit, qualify,
             seed, field_credit, repeats, rounds, train_per_round):
         train, validation, holdout = tuple(train), tuple(validation), tuple(holdout)
@@ -77,8 +77,13 @@ def cycle(features):
                 # on these rows can reveal a second interacting rule.
                 candidates = [*witnesses, *available][:min(train_per_round, capacity)]
                 diagnostic_prompt = previous.repair_api.strip_demonstrations(parent)
-                feedback = [(row, observe(diagnostic_prompt, row)) for row in candidates]
-                used.update(row.id for row in candidates)
+                feedback = []
+                for row in candidates:
+                    reply = observe(diagnostic_prompt, row)
+                    feedback.append((row, reply))
+                    used.add(row.id)
+                    if opening_witness_only and step == 0 and not reply.passed:
+                        break
                 if step == 0 and all(reply.passed for _, reply in feedback):
                     remaining = metric_limit - len(ledger) - len(validation)
                     for row in _fallback_probes(training, used, vector, min(OPENING_FALLBACK, remaining)):
