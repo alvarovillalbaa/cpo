@@ -28,6 +28,8 @@ For one partially covered omission, instruction-only repair gained seven passes 
 
 Every holdout loss against sequential GEPA came from the two-omission condition. Instruction-only repair missed 12 aggregate passes and 10 matched critical passes against that control. It saved 167 calls in aggregate, but missed the primary gate, which requires preserved panel totals and critical cases, at least 14 passes in each panel, and either an eight-pass gain without added calls or a 10% call reduction. The one-repair policy recovered a single missing rule reliably in this fixture. The two-omission result supports testing a budgeted second repair when errors remain. [Profile costs, gates, and trace hash](opening-repair-policy-transfer-results-v1.json)
 
+The follow-up allowed a funded second repair when the first left exact validation errors. [Second repair benchmark](opening-second-repair.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.

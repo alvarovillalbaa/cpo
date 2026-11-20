@@ -1,0 +1,617 @@
+{
+  "design": {
+    "gate": "Preserve each panel and its matched critical passes with at least 14 passes on every panel, and gain eight passes at equal or lower cost or save ten percent of calls.",
+    "gepaVersion": "0.1.4",
+    "laterProposalCap": 2,
+    "primary": "second-repair",
+    "probesPerRepair": 2,
+    "protocol": "cpo-opening-second-repair-v1",
+    "referenceReportSha256": "64e41a917886c1448c112137bcca69037182135a0279c0521433483cc982a30c",
+    "scope": "Fund a second repair only after an accepted first repair leaves validation errors. Use other training rows and qualify once against the original incumbent.",
+    "searchCap": 56,
+    "sourceSha256": "d5a4c11c55121566dcf9e1056adc2e8f80d73e2955f2da225fc2492d03911ef6"
+  },
+  "designSha256": "2fe7580631eef678540fa87f66ae313043f5f571c3945a4cff445fcabc0237a7",
+  "results": {
+    "comparisons": {
+      "cpo-adaptive": {
+        "callDelta": -4,
+        "criticalLosses": 9,
+        "panelsWithLoss": 1,
+        "passDelta": 2,
+        "passed": false
+      },
+      "gepa-batched": {
+        "callDelta": -183,
+        "criticalLosses": 0,
+        "panelsWithLoss": 0,
+        "passDelta": 120,
+        "passed": false
+      },
+      "gepa-sequential": {
+        "callDelta": -107,
+        "criticalLosses": 9,
+        "panelsWithLoss": 1,
+        "passDelta": 11,
+        "passed": false
+      }
+    },
+    "profiles": {
+      "complete": {
+        "comparisons": {
+          "cpo-adaptive": {
+            "callDelta": 0,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 0,
+            "passed": false
+          },
+          "gepa-batched": {
+            "callDelta": -99,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 0,
+            "passed": true
+          },
+          "gepa-sequential": {
+            "callDelta": -12,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 0,
+            "passed": false
+          }
+        },
+        "totals": {
+          "cpo-adaptive": {
+            "countedCalls": 328,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 178,
+            "searchLookups": 144
+          },
+          "gepa-batched": {
+            "countedCalls": 427,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 178,
+            "searchLookups": 243
+          },
+          "gepa-sequential": {
+            "countedCalls": 340,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 178,
+            "searchLookups": 156
+          },
+          "instruction-probes": {
+            "countedCalls": 328,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 178,
+            "searchLookups": 144
+          },
+          "opening-screen": {
+            "countedCalls": 328,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 178,
+            "searchLookups": 144
+          },
+          "repair-two": {
+            "countedCalls": 328,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 178,
+            "searchLookups": 144
+          },
+          "retain-start": {
+            "countedCalls": 0,
+            "holdoutPasses": 0,
+            "nominated": 0,
+            "promoted": 0,
+            "proposalCalls": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0
+          },
+          "second-repair": {
+            "countedCalls": 328,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 178,
+            "searchLookups": 144
+          }
+        }
+      },
+      "covered": {
+        "comparisons": {
+          "cpo-adaptive": {
+            "callDelta": 0,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 0,
+            "passed": false
+          },
+          "gepa-batched": {
+            "callDelta": -99,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 0,
+            "passed": true
+          },
+          "gepa-sequential": {
+            "callDelta": -12,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 0,
+            "passed": false
+          }
+        },
+        "totals": {
+          "cpo-adaptive": {
+            "countedCalls": 311,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 161,
+            "searchLookups": 144
+          },
+          "gepa-batched": {
+            "countedCalls": 410,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 161,
+            "searchLookups": 243
+          },
+          "gepa-sequential": {
+            "countedCalls": 323,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 161,
+            "searchLookups": 156
+          },
+          "instruction-probes": {
+            "countedCalls": 311,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 161,
+            "searchLookups": 144
+          },
+          "opening-screen": {
+            "countedCalls": 311,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 161,
+            "searchLookups": 144
+          },
+          "repair-two": {
+            "countedCalls": 311,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 161,
+            "searchLookups": 144
+          },
+          "retain-start": {
+            "countedCalls": 0,
+            "holdoutPasses": 0,
+            "nominated": 0,
+            "promoted": 0,
+            "proposalCalls": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0
+          },
+          "second-repair": {
+            "countedCalls": 311,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 161,
+            "searchLookups": 144
+          }
+        }
+      },
+      "one-missing": {
+        "comparisons": {
+          "cpo-adaptive": {
+            "callDelta": -13,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 0,
+            "passed": false
+          },
+          "gepa-batched": {
+            "callDelta": -12,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 43,
+            "passed": true
+          },
+          "gepa-sequential": {
+            "callDelta": -48,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 0,
+            "passed": true
+          }
+        },
+        "totals": {
+          "cpo-adaptive": {
+            "countedCalls": 424,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 15,
+            "qualificationLookups": 171,
+            "searchLookups": 238
+          },
+          "gepa-batched": {
+            "countedCalls": 423,
+            "holdoutPasses": 65,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 174,
+            "searchLookups": 243
+          },
+          "gepa-sequential": {
+            "countedCalls": 459,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 15,
+            "qualificationLookups": 171,
+            "searchLookups": 273
+          },
+          "instruction-probes": {
+            "countedCalls": 411,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 12,
+            "qualificationLookups": 171,
+            "searchLookups": 228
+          },
+          "opening-screen": {
+            "countedCalls": 324,
+            "holdoutPasses": 65,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 174,
+            "searchLookups": 144
+          },
+          "repair-two": {
+            "countedCalls": 398,
+            "holdoutPasses": 101,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 11,
+            "qualificationLookups": 171,
+            "searchLookups": 216
+          },
+          "retain-start": {
+            "countedCalls": 0,
+            "holdoutPasses": 0,
+            "nominated": 0,
+            "promoted": 0,
+            "proposalCalls": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0
+          },
+          "second-repair": {
+            "countedCalls": 411,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 12,
+            "qualificationLookups": 171,
+            "searchLookups": 228
+          }
+        }
+      },
+      "two-missing": {
+        "comparisons": {
+          "cpo-adaptive": {
+            "callDelta": 9,
+            "criticalLosses": 9,
+            "panelsWithLoss": 1,
+            "passDelta": 2,
+            "passed": false
+          },
+          "gepa-batched": {
+            "callDelta": 40,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 40,
+            "passed": false
+          },
+          "gepa-sequential": {
+            "callDelta": 12,
+            "criticalLosses": 9,
+            "panelsWithLoss": 1,
+            "passDelta": 11,
+            "passed": false
+          }
+        },
+        "totals": {
+          "cpo-adaptive": {
+            "countedCalls": 464,
+            "holdoutPasses": 97,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 17,
+            "qualificationLookups": 173,
+            "searchLookups": 274
+          },
+          "gepa-batched": {
+            "countedCalls": 433,
+            "holdoutPasses": 59,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 184,
+            "searchLookups": 243
+          },
+          "gepa-sequential": {
+            "countedCalls": 461,
+            "holdoutPasses": 88,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 13,
+            "qualificationLookups": 180,
+            "searchLookups": 268
+          },
+          "instruction-probes": {
+            "countedCalls": 413,
+            "holdoutPasses": 76,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 12,
+            "qualificationLookups": 173,
+            "searchLookups": 228
+          },
+          "opening-screen": {
+            "countedCalls": 334,
+            "holdoutPasses": 59,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 184,
+            "searchLookups": 144
+          },
+          "repair-two": {
+            "countedCalls": 407,
+            "holdoutPasses": 83,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 11,
+            "qualificationLookups": 180,
+            "searchLookups": 216
+          },
+          "retain-start": {
+            "countedCalls": 0,
+            "holdoutPasses": 0,
+            "nominated": 0,
+            "promoted": 0,
+            "proposalCalls": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0
+          },
+          "second-repair": {
+            "countedCalls": 473,
+            "holdoutPasses": 99,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 16,
+            "qualificationLookups": 173,
+            "searchLookups": 284
+          }
+        }
+      },
+      "wrong-rule": {
+        "comparisons": {
+          "cpo-adaptive": {
+            "callDelta": 0,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 0,
+            "passed": false
+          },
+          "gepa-batched": {
+            "callDelta": -13,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 37,
+            "passed": true
+          },
+          "gepa-sequential": {
+            "callDelta": -47,
+            "criticalLosses": 0,
+            "panelsWithLoss": 0,
+            "passDelta": 0,
+            "passed": true
+          }
+        },
+        "totals": {
+          "cpo-adaptive": {
+            "countedCalls": 402,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 12,
+            "qualificationLookups": 162,
+            "searchLookups": 228
+          },
+          "gepa-batched": {
+            "countedCalls": 415,
+            "holdoutPasses": 71,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 166,
+            "searchLookups": 243
+          },
+          "gepa-sequential": {
+            "countedCalls": 449,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 15,
+            "qualificationLookups": 162,
+            "searchLookups": 272
+          },
+          "instruction-probes": {
+            "countedCalls": 402,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 12,
+            "qualificationLookups": 162,
+            "searchLookups": 228
+          },
+          "opening-screen": {
+            "countedCalls": 316,
+            "holdoutPasses": 71,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 6,
+            "qualificationLookups": 166,
+            "searchLookups": 144
+          },
+          "repair-two": {
+            "countedCalls": 402,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 12,
+            "qualificationLookups": 162,
+            "searchLookups": 228
+          },
+          "retain-start": {
+            "countedCalls": 0,
+            "holdoutPasses": 0,
+            "nominated": 0,
+            "promoted": 0,
+            "proposalCalls": 0,
+            "qualificationLookups": 0,
+            "searchLookups": 0
+          },
+          "second-repair": {
+            "countedCalls": 402,
+            "holdoutPasses": 108,
+            "nominated": 6,
+            "promoted": 6,
+            "proposalCalls": 12,
+            "qualificationLookups": 162,
+            "searchLookups": 228
+          }
+        }
+      }
+    },
+    "statuses": {
+      "accepted": 4,
+      "first-repair-not-accepted": 13,
+      "validation-complete": 13
+    },
+    "totals": {
+      "cpo-adaptive": {
+        "countedCalls": 1929,
+        "holdoutPasses": 529,
+        "nominated": 30,
+        "promoted": 30,
+        "proposalCalls": 56,
+        "qualificationLookups": 845,
+        "searchLookups": 1028
+      },
+      "gepa-batched": {
+        "countedCalls": 2108,
+        "holdoutPasses": 411,
+        "nominated": 30,
+        "promoted": 30,
+        "proposalCalls": 30,
+        "qualificationLookups": 863,
+        "searchLookups": 1215
+      },
+      "gepa-sequential": {
+        "countedCalls": 2032,
+        "holdoutPasses": 520,
+        "nominated": 30,
+        "promoted": 30,
+        "proposalCalls": 55,
+        "qualificationLookups": 852,
+        "searchLookups": 1125
+      },
+      "instruction-probes": {
+        "countedCalls": 1865,
+        "holdoutPasses": 508,
+        "nominated": 30,
+        "promoted": 30,
+        "proposalCalls": 48,
+        "qualificationLookups": 845,
+        "searchLookups": 972
+      },
+      "opening-screen": {
+        "countedCalls": 1613,
+        "holdoutPasses": 411,
+        "nominated": 30,
+        "promoted": 30,
+        "proposalCalls": 30,
+        "qualificationLookups": 863,
+        "searchLookups": 720
+      },
+      "repair-two": {
+        "countedCalls": 1846,
+        "holdoutPasses": 508,
+        "nominated": 30,
+        "promoted": 30,
+        "proposalCalls": 46,
+        "qualificationLookups": 852,
+        "searchLookups": 948
+      },
+      "retain-start": {
+        "countedCalls": 0,
+        "holdoutPasses": 0,
+        "nominated": 0,
+        "promoted": 0,
+        "proposalCalls": 0,
+        "qualificationLookups": 0,
+        "searchLookups": 0
+      },
+      "second-repair": {
+        "countedCalls": 1925,
+        "holdoutPasses": 531,
+        "nominated": 30,
+        "promoted": 30,
+        "proposalCalls": 52,
+        "qualificationLookups": 845,
+        "searchLookups": 1028
+      }
+    },
+    "traceSha256": "9efbce36f50915742375136a9195871d2ae23296bf63d36444f2fbd3fbb59320"
+  }
+}
