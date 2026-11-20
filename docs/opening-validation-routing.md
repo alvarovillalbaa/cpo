@@ -41,3 +41,5 @@ On the same confirmation panels, a pilot used the existing paired certificate wi
 | Batched GEPA | 527 / 2,437 | 512 / 2,467 |
 
 Under the shared order, CPO cleared both gates with shifted faults and finished 15 calls above batched GEPA with the original faults. This comparison reused the same inputs after the routing experiment. [Paired certificate](../cpo/paired_qualification.py) · [Family-balanced ordering](../cpo/optimizer.py)
+
+The published cycle uses an adaptive family certificate. Sharing it with both GEPA controls closed the batched cost gap on fresh panels in both fault modes. Two shifted critical losses still blocked the full gate. [API and confirmation](opening-family-qualification.md)
