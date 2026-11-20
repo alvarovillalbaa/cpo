@@ -14,7 +14,7 @@ from .routed_repair_cycle import _categorical_features, _fallback_probes, _rank_
 def run_validation_guided_repair_cycle(
     incumbent, train, validation, holdout, evaluate, propose, *, input_features, opening_pair,
     metric_limit, qualify, diagnostic_prompt=None, screen_rows=8, repeats=1, minimum_gain=1,
-    seed=0, field_credit=False, qualification_limit=None,
+    seed=0, field_credit=False, qualification_limit=None, retry_probe_limit=0,
 ):
     """Stage up to three training-supported edits before one full validation.
 
@@ -24,6 +24,10 @@ def run_validation_guided_repair_cycle(
     proposer. The final edit chain needs a strict validation gain and must
     preserve the opening's critical passes and score in every family.
     Qualification independently compares the nominee with the incumbent.
+
+    A positive retry_probe_limit funds additional, less-exposed training rows
+    when a residual miss has no failing routed probe. The cap is shared across
+    the later stages, and the full final validation reserve still applies.
     """
     if not callable(input_features):
         raise ValueError('The input feature extractor must be callable')
@@ -31,6 +35,8 @@ def run_validation_guided_repair_cycle(
         raise ValueError('The diagnostic prompt transform must be callable')
     if qualification_limit is not None and (type(qualification_limit) is not int or qualification_limit < 0):
         raise ValueError('Qualification limit must be a nonnegative integer')
+    if type(retry_probe_limit) is not int or retry_probe_limit < 0:
+        raise ValueError('The retry probe cap must be a nonnegative integer')
 
     train, validation, holdout = tuple(train), tuple(validation), tuple(holdout)
     ledger, vectors = {}, {}
@@ -76,6 +82,7 @@ def run_validation_guided_repair_cycle(
         ranked = _rank_probes(training, validation, opening_passes, vector)
         opening_misses = [row for row, hit in zip(validation, opening_passes, strict=True) if not hit]
         used, witnesses, proposed = set(), [], {anchor, incumbent}
+        retry_remaining = retry_probe_limit
         for step in range(3):
             capacity = metric_limit - len(ledger) - len(validation)
             if capacity <= 0:
@@ -110,17 +117,24 @@ def run_validation_guided_repair_cycle(
                 used.add(row.id)
                 if not reply.passed:
                     break
-            if step == 0 and all(reply.passed for _, reply in feedback):
+            retry_rows = []
+            fallback_limit = 12 if step == 0 else retry_remaining
+            if fallback_limit and all(reply.passed for _, reply in feedback):
                 capacity = metric_limit - len(ledger) - len(validation)
-                for row in _fallback_probes(training, used, vector, min(12, capacity)):
+                for row in _fallback_probes(training, used, vector, min(fallback_limit, capacity)):
                     reply = observe(probe_prompt, row)
                     used.add(row.id)
                     feedback.append((row, reply))
+                    if step > 0:
+                        retry_rows.append(row.id)
                     if not reply.passed:
                         break
+            retry_remaining -= len(retry_rows)
             witnesses = [row for row, reply in feedback if not reply.passed]
-            event['stages'].append({'rows': [row.id for row, _ in feedback],
-                                    'failedRows': [row.id for row in witnesses]})
+            stage = {'rows': [row.id for row, _ in feedback], 'failedRows': [row.id for row in witnesses]}
+            if retry_rows:
+                stage['retryRows'] = retry_rows
+            event['stages'].append(stage)
             if not witnesses:
                 break
             repair = _first_proposal(propose(parent, feedback, [], 1))

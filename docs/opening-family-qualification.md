@@ -38,9 +38,11 @@ CPO and both GEPA controls used the same adaptive qualification schedule. The be
 
 The shared schedule closed the batched cost gap in both modes. CPO cleared three of four GEPA gates. With shifted faults it lost two matched critical cases against sequential GEPA, both on `archive/overlap/64997`. The cycle found a residual validation miss but all four routed training probes passed. It qualified the partially repaired draft and finished with 15 search lookups available. The full confirmation gate failed. The API remains opt-in and live evidence remains pending. [Sealed results](opening-family-qualification-results-v1.json)
 
+The optional retry recovered both losses and preserved every matched critical pass on a separate scripted cohort. [Residual retry results](opening-residual-retry.md)
+
 ## Reproduce offline
 
-Use GEPA 0.1.4 and a fresh output path.
+Use GEPA 0.1.4, the source at commit `48d3121190940f3335b65564d701cadcb00920fa`, and a fresh output path to reproduce this seal.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.opening_family_qualification

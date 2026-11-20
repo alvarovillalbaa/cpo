@@ -43,3 +43,31 @@ class ValidationGuidedRepairTests(TestCase):
         self.assertEqual([parent for parent, _ in feedback], ['opening', 'first', 'second'])
         self.assertTrue(all(case.startswith('t') for _, rows in feedback for case in rows))
         self.assertEqual(result.search.events[-1]['residualChecks'], [(1, 'v2', False), (2, 'v2', False)])
+
+    def test_retries_uncovered_training_when_the_first_routed_probes_pass(self):
+        train = [Row(f't{i}', 'a') for i in range(5)]
+        validation = [Row('v0', 'a', critical=True), Row('v1', 'a'), Row('v2', 'a')]
+        holdout = [Row('q0', 'a')]
+        prompts = {'old': {'v0'}, 'other': set(), 'opening': {'v0', 'v1'},
+                   'first': {'v0', 'v1', 't0', 't1', 't2', 't3'}, 'second': {'v0', 'v1', 'v2'}}
+        same_scope = {'v2', 't0', 't1', 't2', 't3'}
+
+        def cycle(retry, metric_limit=20):
+            edits = iter(('first', 'second'))
+            return run_validation_guided_repair_cycle(
+                'old', train, validation, holdout, lambda prompt, row: Observation(row.id in prompts[prompt], {}),
+                lambda *_: next(edits), input_features=lambda row: {'scope': row.id in same_scope},
+                opening_pair=ProposalPair('opening', 'other'), metric_limit=metric_limit,
+                qualify=lambda prompt, *_: prompt != 'old', retry_probe_limit=retry,
+            )
+
+        without_retry = cycle(0)
+        self.assertEqual(without_retry.search.prompt, 'opening')
+        with_retry = cycle(1)
+        self.assertEqual(with_retry.prompt, 'second')
+        self.assertEqual(with_retry.search.reflections, 2)
+        self.assertEqual(with_retry.search.events[-1]['stages'][1]['retryRows'], ['t4'])
+        self.assertEqual(with_retry.search.events[-1]['stages'][1]['failedRows'], ['t4'])
+        no_spare = cycle(1, metric_limit=without_retry.search.evaluations + 1)
+        self.assertLessEqual(no_spare.search.evaluations, without_retry.search.evaluations + 1)
+        self.assertEqual(no_spare.search.prompt, 'opening')
