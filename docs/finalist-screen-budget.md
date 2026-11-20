@@ -37,3 +37,5 @@ PYTHONHASHSEED=0 python -B -m benchmarks.finalist_screen_budget \
 ```
 
 Two source-export replays per cohort matched byte for byte with sockets and DNS blocked. All 80 original CPO panel traces reproduced. The three exact comparisons preserved the decisions and complete qualification trace across 30,720 paired cycle checks. The focused tests checked both shortlist sizes on all 4,096 binary probe matrices and exercised critical-case protection, lookup accounting, and backup validation. The CLI rejected an incorrect seal. Storage Guard measured 15.8 GiB free. The 12.4 MB scratch overlay was removed under the standing LAB exception. [Focused tests](../tests/unit/test_finalist_screen_budget.py)
+
+The follow-up traces the remaining losses to sequential GEPA and tests a second incumbent-miss probe after a stalled narrow search. [Witness rescue](finalist-witness-rescue.md)
