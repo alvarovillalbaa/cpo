@@ -22,6 +22,8 @@ On eight retrospective transfer panels, Paired changed the opening order in 94 o
 
 Paired scored 29 fewer passes than batched GEPA and used 22,945 fewer lookups. The joint paired 95% range against both GEPA controls was −79 to +17 passes. The range resamples held-out cases within subjects, preserving the paired model and seed results for each sampled case. It describes this archive and leaves accuracy superiority unresolved. [Panel traces, counters, and paired ranges](proposal-opening-duel-results-v1.json)
 
+The follow-up traced the original cap-72 and batched GEPA deployments to find when their holdout gap accumulated. [Deployment path audit](proposal-gap-audit.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.

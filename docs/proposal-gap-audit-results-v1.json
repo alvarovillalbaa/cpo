@@ -1,0 +1,873 @@
+{
+  "design": {
+    "control": "gepa-batched",
+    "protocol": "cpo-proposal-gap-audit-v1",
+    "referenceReportSha256": "a340fc3fc1ea6757a691ad594a54a13f500adf2d22328db65707e48b9c1289e5",
+    "scope": "Classify the published batched GEPA deployments against cap-72 CPO on each cycle. Grade unused archive cells only for attribution after search and qualification.",
+    "searchCap": 72,
+    "sourceSha256": "14f1b6ea0cc8cc75aa394a226ff277978609711f23558a6e3d76482984e6e637"
+  },
+  "designSha256": "e61b51b999c7d8f665ea68e6e2518b7750d363c555bf6548c516dce05eb88ce4",
+  "results": {
+    "development": {
+      "categories": {
+        "below-cpo-incumbent-validation": {
+          "cycles": 4,
+          "negativePassDelta": -5,
+          "netPassDelta": -2,
+          "positivePassDelta": 3,
+          "sharedIncumbentCycles": 4,
+          "sharedIncumbentPassDelta": -2
+        },
+        "fails-cpo-pair-qualification": {
+          "cycles": 2,
+          "negativePassDelta": -3,
+          "netPassDelta": 0,
+          "positivePassDelta": 3,
+          "sharedIncumbentCycles": 0,
+          "sharedIncumbentPassDelta": 0
+        },
+        "gepa-kept-incumbent": {
+          "cycles": 144,
+          "negativePassDelta": -65,
+          "netPassDelta": -11,
+          "positivePassDelta": 54,
+          "sharedIncumbentCycles": 43,
+          "sharedIncumbentPassDelta": 11
+        },
+        "same-deployment": {
+          "cycles": 337,
+          "negativePassDelta": 0,
+          "netPassDelta": 0,
+          "positivePassDelta": 0,
+          "sharedIncumbentCycles": 336,
+          "sharedIncumbentPassDelta": 0
+        },
+        "strict-gain-offered-unopened": {
+          "cycles": 1,
+          "negativePassDelta": 0,
+          "netPassDelta": 4,
+          "positivePassDelta": 4,
+          "sharedIncumbentCycles": 1,
+          "sharedIncumbentPassDelta": 4
+        },
+        "strict-gain-unoffered": {
+          "cycles": 17,
+          "negativePassDelta": -16,
+          "netPassDelta": 16,
+          "positivePassDelta": 32,
+          "sharedIncumbentCycles": 15,
+          "sharedIncumbentPassDelta": 18
+        },
+        "ties-cpo-incumbent-validation": {
+          "cycles": 7,
+          "negativePassDelta": -7,
+          "netPassDelta": 10,
+          "positivePassDelta": 17,
+          "sharedIncumbentCycles": 5,
+          "sharedIncumbentPassDelta": -1
+        }
+      },
+      "panels": {
+        "high_school_european_history/meta_llama_llama_3_8b": {
+          "categories": {
+            "gepa-kept-incumbent": {
+              "cycles": 18,
+              "negativePassDelta": -5,
+              "netPassDelta": -2,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 6,
+              "sharedIncumbentPassDelta": 1
+            },
+            "same-deployment": {
+              "cycles": 104,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 103,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-unoffered": {
+              "cycles": 5,
+              "negativePassDelta": -5,
+              "netPassDelta": -1,
+              "positivePassDelta": 4,
+              "sharedIncumbentCycles": 4,
+              "sharedIncumbentPassDelta": 1
+            },
+            "ties-cpo-incumbent-validation": {
+              "cycles": 1,
+              "negativePassDelta": -1,
+              "netPassDelta": -1,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 1,
+              "sharedIncumbentPassDelta": -1
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 1120,
+            "cpoQualificationLookups": 919,
+            "cpoSearchLookups": 7397,
+            "gepaHoldoutPasses": 1116,
+            "gepaQualificationLookups": 608,
+            "gepaSearchLookups": 10128
+          },
+          "traceSha256": {
+            "cpo-72": "1c1283814d6a5f19ffcf6bdd8628cd7d382a746077cdd508f38bf19095733b84",
+            "gepa-batched": "88049340e0a1e9a9e130a1657d033f356904246ec086e80dfa8ed6998ccb5e2f"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_instruct_v0_2": {
+          "categories": {
+            "gepa-kept-incumbent": {
+              "cycles": 32,
+              "negativePassDelta": -10,
+              "netPassDelta": 14,
+              "positivePassDelta": 24,
+              "sharedIncumbentCycles": 13,
+              "sharedIncumbentPassDelta": 15
+            },
+            "same-deployment": {
+              "cycles": 95,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 95,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-unoffered": {
+              "cycles": 1,
+              "negativePassDelta": -1,
+              "netPassDelta": -1,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 1,
+              "sharedIncumbentPassDelta": -1
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 1131,
+            "cpoQualificationLookups": 958,
+            "cpoSearchLookups": 7147,
+            "gepaHoldoutPasses": 1144,
+            "gepaQualificationLookups": 384,
+            "gepaSearchLookups": 9422
+          },
+          "traceSha256": {
+            "cpo-72": "3b5bdd1dbca9e3e62a5a9c47ce8b85abb7d5779752a329686c9b465009817cba",
+            "gepa-batched": "6aef2e73b5744d9da79d2454c7913ab7c7867c9c5bf84bb853d473e71754b062"
+          }
+        },
+        "high_school_statistics/meta_llama_llama_3_8b": {
+          "categories": {
+            "below-cpo-incumbent-validation": {
+              "cycles": 3,
+              "negativePassDelta": -5,
+              "netPassDelta": -2,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 3,
+              "sharedIncumbentPassDelta": -2
+            },
+            "fails-cpo-pair-qualification": {
+              "cycles": 2,
+              "negativePassDelta": -3,
+              "netPassDelta": 0,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "gepa-kept-incumbent": {
+              "cycles": 59,
+              "negativePassDelta": -36,
+              "netPassDelta": -19,
+              "positivePassDelta": 17,
+              "sharedIncumbentCycles": 15,
+              "sharedIncumbentPassDelta": -9
+            },
+            "same-deployment": {
+              "cycles": 58,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 58,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-unoffered": {
+              "cycles": 4,
+              "negativePassDelta": -5,
+              "netPassDelta": 8,
+              "positivePassDelta": 13,
+              "sharedIncumbentCycles": 4,
+              "sharedIncumbentPassDelta": 8
+            },
+            "ties-cpo-incumbent-validation": {
+              "cycles": 2,
+              "negativePassDelta": -5,
+              "netPassDelta": -4,
+              "positivePassDelta": 1,
+              "sharedIncumbentCycles": 2,
+              "sharedIncumbentPassDelta": -4
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 1133,
+            "cpoQualificationLookups": 810,
+            "cpoSearchLookups": 7591,
+            "gepaHoldoutPasses": 1116,
+            "gepaQualificationLookups": 704,
+            "gepaSearchLookups": 11238
+          },
+          "traceSha256": {
+            "cpo-72": "3816b2848a94a4ace998dfce6397cc521e2334181c85e0a9a240d20a3bb73326",
+            "gepa-batched": "42637e68e6a2581efb7a8e37342b75053931e2bde02eccb7ed85e03fc4e31b06"
+          }
+        },
+        "high_school_statistics/mistralai_mistral_7b_instruct_v0_2": {
+          "categories": {
+            "below-cpo-incumbent-validation": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 1,
+              "sharedIncumbentPassDelta": 0
+            },
+            "gepa-kept-incumbent": {
+              "cycles": 35,
+              "negativePassDelta": -14,
+              "netPassDelta": -4,
+              "positivePassDelta": 10,
+              "sharedIncumbentCycles": 9,
+              "sharedIncumbentPassDelta": 4
+            },
+            "same-deployment": {
+              "cycles": 80,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 80,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-offered-unopened": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 4,
+              "positivePassDelta": 4,
+              "sharedIncumbentCycles": 1,
+              "sharedIncumbentPassDelta": 4
+            },
+            "strict-gain-unoffered": {
+              "cycles": 7,
+              "negativePassDelta": -5,
+              "netPassDelta": 10,
+              "positivePassDelta": 15,
+              "sharedIncumbentCycles": 6,
+              "sharedIncumbentPassDelta": 10
+            },
+            "ties-cpo-incumbent-validation": {
+              "cycles": 4,
+              "negativePassDelta": -1,
+              "netPassDelta": 15,
+              "positivePassDelta": 16,
+              "sharedIncumbentCycles": 2,
+              "sharedIncumbentPassDelta": 4
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 775,
+            "cpoQualificationLookups": 883,
+            "cpoSearchLookups": 7472,
+            "gepaHoldoutPasses": 800,
+            "gepaQualificationLookups": 976,
+            "gepaSearchLookups": 10734
+          },
+          "traceSha256": {
+            "cpo-72": "d9950dd5ede7ddec956b9cfb008060609e3528d7bdaf1a0cbeb0550b91ddc48f",
+            "gepa-batched": "dfdce213c3cb9e8c46712053988be863baaea63bb7406b4ebc433884d730d501"
+          }
+        }
+      },
+      "totals": {
+        "cpoHoldoutPasses": 4159,
+        "cpoQualificationLookups": 3570,
+        "cpoSearchLookups": 29607,
+        "gepaHoldoutPasses": 4176,
+        "gepaQualificationLookups": 2672,
+        "gepaSearchLookups": 41522
+      }
+    },
+    "retrospective-transfer": {
+      "categories": {
+        "below-cpo-incumbent-validation": {
+          "cycles": 6,
+          "negativePassDelta": -5,
+          "netPassDelta": 7,
+          "positivePassDelta": 12,
+          "sharedIncumbentCycles": 3,
+          "sharedIncumbentPassDelta": 1
+        },
+        "fails-cpo-pair-qualification": {
+          "cycles": 15,
+          "negativePassDelta": -5,
+          "netPassDelta": 24,
+          "positivePassDelta": 29,
+          "sharedIncumbentCycles": 0,
+          "sharedIncumbentPassDelta": 0
+        },
+        "gepa-kept-incumbent": {
+          "cycles": 269,
+          "negativePassDelta": -104,
+          "netPassDelta": -1,
+          "positivePassDelta": 103,
+          "sharedIncumbentCycles": 72,
+          "sharedIncumbentPassDelta": 0
+        },
+        "same-deployment": {
+          "cycles": 673,
+          "negativePassDelta": 0,
+          "netPassDelta": 0,
+          "positivePassDelta": 0,
+          "sharedIncumbentCycles": 673,
+          "sharedIncumbentPassDelta": 0
+        },
+        "strict-gain-budget": {
+          "cycles": 1,
+          "negativePassDelta": 0,
+          "netPassDelta": 2,
+          "positivePassDelta": 2,
+          "sharedIncumbentCycles": 1,
+          "sharedIncumbentPassDelta": 2
+        },
+        "strict-gain-offered-unopened": {
+          "cycles": 2,
+          "negativePassDelta": -2,
+          "netPassDelta": -2,
+          "positivePassDelta": 0,
+          "sharedIncumbentCycles": 2,
+          "sharedIncumbentPassDelta": -2
+        },
+        "strict-gain-unoffered": {
+          "cycles": 39,
+          "negativePassDelta": -34,
+          "netPassDelta": 0,
+          "positivePassDelta": 34,
+          "sharedIncumbentCycles": 36,
+          "sharedIncumbentPassDelta": 0
+        },
+        "ties-cpo-incumbent-validation": {
+          "cycles": 19,
+          "negativePassDelta": -27,
+          "netPassDelta": -4,
+          "positivePassDelta": 23,
+          "sharedIncumbentCycles": 15,
+          "sharedIncumbentPassDelta": -10
+        }
+      },
+      "panels": {
+        "business_ethics/meta_llama_llama_3_8b": {
+          "categories": {
+            "below-cpo-incumbent-validation": {
+              "cycles": 2,
+              "negativePassDelta": 0,
+              "netPassDelta": 5,
+              "positivePassDelta": 5,
+              "sharedIncumbentCycles": 2,
+              "sharedIncumbentPassDelta": 5
+            },
+            "fails-cpo-pair-qualification": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 3,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "gepa-kept-incumbent": {
+              "cycles": 44,
+              "negativePassDelta": -16,
+              "netPassDelta": -8,
+              "positivePassDelta": 8,
+              "sharedIncumbentCycles": 10,
+              "sharedIncumbentPassDelta": -10
+            },
+            "same-deployment": {
+              "cycles": 71,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 71,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-budget": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 2,
+              "positivePassDelta": 2,
+              "sharedIncumbentCycles": 1,
+              "sharedIncumbentPassDelta": 2
+            },
+            "strict-gain-offered-unopened": {
+              "cycles": 1,
+              "negativePassDelta": -2,
+              "netPassDelta": -2,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 1,
+              "sharedIncumbentPassDelta": -2
+            },
+            "strict-gain-unoffered": {
+              "cycles": 7,
+              "negativePassDelta": -4,
+              "netPassDelta": 6,
+              "positivePassDelta": 10,
+              "sharedIncumbentCycles": 7,
+              "sharedIncumbentPassDelta": 6
+            },
+            "ties-cpo-incumbent-validation": {
+              "cycles": 1,
+              "negativePassDelta": -3,
+              "netPassDelta": -3,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 520,
+            "cpoQualificationLookups": 874,
+            "cpoSearchLookups": 7443,
+            "gepaHoldoutPasses": 523,
+            "gepaQualificationLookups": 480,
+            "gepaSearchLookups": 10242
+          },
+          "traceSha256": {
+            "cpo-72": "282fa1186e0e0142cb500a795808cc44b3bef40e3045d355bad9e4c7845f018e",
+            "gepa-batched": "1bb6adaf1ef22885beefa1669c87a055f1a524594b0b3222410672f0fecd4b12"
+          }
+        },
+        "business_ethics/mistralai_mistral_7b_instruct_v0_2": {
+          "categories": {
+            "below-cpo-incumbent-validation": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 3,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "fails-cpo-pair-qualification": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 1,
+              "positivePassDelta": 1,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "gepa-kept-incumbent": {
+              "cycles": 28,
+              "negativePassDelta": -11,
+              "netPassDelta": -8,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 8,
+              "sharedIncumbentPassDelta": -8
+            },
+            "same-deployment": {
+              "cycles": 94,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 94,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-unoffered": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 1,
+              "positivePassDelta": 1,
+              "sharedIncumbentCycles": 1,
+              "sharedIncumbentPassDelta": 1
+            },
+            "ties-cpo-incumbent-validation": {
+              "cycles": 3,
+              "negativePassDelta": -1,
+              "netPassDelta": 3,
+              "positivePassDelta": 4,
+              "sharedIncumbentCycles": 3,
+              "sharedIncumbentPassDelta": 3
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 496,
+            "cpoQualificationLookups": 1182,
+            "cpoSearchLookups": 7288,
+            "gepaHoldoutPasses": 496,
+            "gepaQualificationLookups": 624,
+            "gepaSearchLookups": 9720
+          },
+          "traceSha256": {
+            "cpo-72": "d673c607a57d3ae1b1d7bbfa175d8bf9fd06727083e7d060d50a2cc8cffae028",
+            "gepa-batched": "7c0a20d9fadf3b525e6f8a1081648fcd355f77ab7126c991538eade3901e5073"
+          }
+        },
+        "high_school_geography/meta_llama_llama_3_8b": {
+          "categories": {
+            "fails-cpo-pair-qualification": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 4,
+              "positivePassDelta": 4,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "gepa-kept-incumbent": {
+              "cycles": 31,
+              "negativePassDelta": -13,
+              "netPassDelta": 2,
+              "positivePassDelta": 15,
+              "sharedIncumbentCycles": 11,
+              "sharedIncumbentPassDelta": 1
+            },
+            "same-deployment": {
+              "cycles": 92,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 92,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-offered-unopened": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 1,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-unoffered": {
+              "cycles": 2,
+              "negativePassDelta": -3,
+              "netPassDelta": 0,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 2,
+              "sharedIncumbentPassDelta": 0
+            },
+            "ties-cpo-incumbent-validation": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 2,
+              "positivePassDelta": 2,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 1433,
+            "cpoQualificationLookups": 900,
+            "cpoSearchLookups": 7292,
+            "gepaHoldoutPasses": 1441,
+            "gepaQualificationLookups": 560,
+            "gepaSearchLookups": 10122
+          },
+          "traceSha256": {
+            "cpo-72": "f468f0007cf0be9d3554f8f9e38c43b62f9e22540d03d1a9ea2981c5627c2f8d",
+            "gepa-batched": "2287d2a5f3b49d3ae95d583d034c200b5ed930f071b95e9fe168e56c0f386064"
+          }
+        },
+        "high_school_geography/mistralai_mistral_7b_instruct_v0_2": {
+          "categories": {
+            "fails-cpo-pair-qualification": {
+              "cycles": 2,
+              "negativePassDelta": 0,
+              "netPassDelta": 6,
+              "positivePassDelta": 6,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "gepa-kept-incumbent": {
+              "cycles": 44,
+              "negativePassDelta": -26,
+              "netPassDelta": -9,
+              "positivePassDelta": 17,
+              "sharedIncumbentCycles": 14,
+              "sharedIncumbentPassDelta": 0
+            },
+            "same-deployment": {
+              "cycles": 77,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 77,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-unoffered": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 3,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 1,
+              "sharedIncumbentPassDelta": 3
+            },
+            "ties-cpo-incumbent-validation": {
+              "cycles": 4,
+              "negativePassDelta": -2,
+              "netPassDelta": 12,
+              "positivePassDelta": 14,
+              "sharedIncumbentCycles": 3,
+              "sharedIncumbentPassDelta": 6
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 1534,
+            "cpoQualificationLookups": 930,
+            "cpoSearchLookups": 7273,
+            "gepaHoldoutPasses": 1546,
+            "gepaQualificationLookups": 512,
+            "gepaSearchLookups": 10296
+          },
+          "traceSha256": {
+            "cpo-72": "728729c48a9bfd8a932c43c7abe4e8549dbdded7462b76436db066f3a77e6636",
+            "gepa-batched": "eb61ef257920aff214350abdf79eb6a33c63f333987855d81ab6ad72c0db525b"
+          }
+        },
+        "high_school_mathematics/meta_llama_llama_3_8b": {
+          "categories": {
+            "below-cpo-incumbent-validation": {
+              "cycles": 2,
+              "negativePassDelta": -5,
+              "netPassDelta": -5,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 1,
+              "sharedIncumbentPassDelta": -4
+            },
+            "fails-cpo-pair-qualification": {
+              "cycles": 3,
+              "negativePassDelta": -5,
+              "netPassDelta": -4,
+              "positivePassDelta": 1,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "gepa-kept-incumbent": {
+              "cycles": 30,
+              "negativePassDelta": -3,
+              "netPassDelta": 14,
+              "positivePassDelta": 17,
+              "sharedIncumbentCycles": 6,
+              "sharedIncumbentPassDelta": 4
+            },
+            "same-deployment": {
+              "cycles": 79,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 79,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-unoffered": {
+              "cycles": 10,
+              "negativePassDelta": -13,
+              "netPassDelta": -9,
+              "positivePassDelta": 4,
+              "sharedIncumbentCycles": 8,
+              "sharedIncumbentPassDelta": -9
+            },
+            "ties-cpo-incumbent-validation": {
+              "cycles": 4,
+              "negativePassDelta": -3,
+              "netPassDelta": 0,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 3,
+              "sharedIncumbentPassDelta": -1
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 875,
+            "cpoQualificationLookups": 767,
+            "cpoSearchLookups": 7677,
+            "gepaHoldoutPasses": 871,
+            "gepaQualificationLookups": 880,
+            "gepaSearchLookups": 11336
+          },
+          "traceSha256": {
+            "cpo-72": "d49d5f85e73697cb89f8de38410884d57a00205d22f7eee1b554e14c9880acc6",
+            "gepa-batched": "66f46c7ef5f1c9601503bdde9df2d61be1df42ed770bcbef7b38202802f395c1"
+          }
+        },
+        "high_school_mathematics/mistralai_mistral_7b_instruct_v0_2": {
+          "categories": {
+            "below-cpo-incumbent-validation": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 4,
+              "positivePassDelta": 4,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "fails-cpo-pair-qualification": {
+              "cycles": 5,
+              "negativePassDelta": 0,
+              "netPassDelta": 10,
+              "positivePassDelta": 10,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "gepa-kept-incumbent": {
+              "cycles": 27,
+              "negativePassDelta": -12,
+              "netPassDelta": -11,
+              "positivePassDelta": 1,
+              "sharedIncumbentCycles": 4,
+              "sharedIncumbentPassDelta": -3
+            },
+            "same-deployment": {
+              "cycles": 80,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 80,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-unoffered": {
+              "cycles": 11,
+              "negativePassDelta": -10,
+              "netPassDelta": -1,
+              "positivePassDelta": 9,
+              "sharedIncumbentCycles": 10,
+              "sharedIncumbentPassDelta": -1
+            },
+            "ties-cpo-incumbent-validation": {
+              "cycles": 4,
+              "negativePassDelta": -13,
+              "netPassDelta": -13,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 4,
+              "sharedIncumbentPassDelta": -13
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 908,
+            "cpoQualificationLookups": 893,
+            "cpoSearchLookups": 7487,
+            "gepaHoldoutPasses": 897,
+            "gepaQualificationLookups": 944,
+            "gepaSearchLookups": 11324
+          },
+          "traceSha256": {
+            "cpo-72": "a15ce4cb501d48f4d0029f077e8276df84b23cb50514d8c7b0e919da10b817e8",
+            "gepa-batched": "e70f2fbe42c2a0c392a6871c2eb8919dc0f21b52375ec46712929a26b9f5f100"
+          }
+        },
+        "prehistory/meta_llama_llama_3_8b": {
+          "categories": {
+            "fails-cpo-pair-qualification": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 1,
+              "positivePassDelta": 1,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "gepa-kept-incumbent": {
+              "cycles": 41,
+              "negativePassDelta": -6,
+              "netPassDelta": 22,
+              "positivePassDelta": 28,
+              "sharedIncumbentCycles": 12,
+              "sharedIncumbentPassDelta": 16
+            },
+            "same-deployment": {
+              "cycles": 80,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 80,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-unoffered": {
+              "cycles": 4,
+              "negativePassDelta": -1,
+              "netPassDelta": 2,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 4,
+              "sharedIncumbentPassDelta": 2
+            },
+            "ties-cpo-incumbent-validation": {
+              "cycles": 2,
+              "negativePassDelta": -5,
+              "netPassDelta": -5,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 2,
+              "sharedIncumbentPassDelta": -5
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 2304,
+            "cpoQualificationLookups": 1190,
+            "cpoSearchLookups": 7272,
+            "gepaHoldoutPasses": 2324,
+            "gepaQualificationLookups": 512,
+            "gepaSearchLookups": 9886
+          },
+          "traceSha256": {
+            "cpo-72": "4b29183ae789061f83eeac6667402036dbe32aa70176418c7e27e2fcbf00d063",
+            "gepa-batched": "04b2b39a9ad9a7fc2da05ea2ad414cf4e85576c8a7679980496fc6bfe9e9480f"
+          }
+        },
+        "prehistory/mistralai_mistral_7b_instruct_v0_2": {
+          "categories": {
+            "fails-cpo-pair-qualification": {
+              "cycles": 1,
+              "negativePassDelta": 0,
+              "netPassDelta": 3,
+              "positivePassDelta": 3,
+              "sharedIncumbentCycles": 0,
+              "sharedIncumbentPassDelta": 0
+            },
+            "gepa-kept-incumbent": {
+              "cycles": 24,
+              "negativePassDelta": -17,
+              "netPassDelta": -3,
+              "positivePassDelta": 14,
+              "sharedIncumbentCycles": 7,
+              "sharedIncumbentPassDelta": 0
+            },
+            "same-deployment": {
+              "cycles": 100,
+              "negativePassDelta": 0,
+              "netPassDelta": 0,
+              "positivePassDelta": 0,
+              "sharedIncumbentCycles": 100,
+              "sharedIncumbentPassDelta": 0
+            },
+            "strict-gain-unoffered": {
+              "cycles": 3,
+              "negativePassDelta": -3,
+              "netPassDelta": -2,
+              "positivePassDelta": 1,
+              "sharedIncumbentCycles": 3,
+              "sharedIncumbentPassDelta": -2
+            }
+          },
+          "totals": {
+            "cpoHoldoutPasses": 2167,
+            "cpoQualificationLookups": 1056,
+            "cpoSearchLookups": 7307,
+            "gepaHoldoutPasses": 2165,
+            "gepaQualificationLookups": 528,
+            "gepaSearchLookups": 10260
+          },
+          "traceSha256": {
+            "cpo-72": "86f337c98d5793be6dd37ea84b92441cc1527f80fc1bc6479b0328bc2b83d8f1",
+            "gepa-batched": "37c523753eed9775efe93c0463e57505b4368bac66c5e2f98563b849022048c7"
+          }
+        }
+      },
+      "totals": {
+        "cpoHoldoutPasses": 10237,
+        "cpoQualificationLookups": 7792,
+        "cpoSearchLookups": 59039,
+        "gepaHoldoutPasses": 10263,
+        "gepaQualificationLookups": 5040,
+        "gepaSearchLookups": 83186
+      }
+    }
+  }
+}
