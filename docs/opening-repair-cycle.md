@@ -35,6 +35,8 @@ The clean source and a separately installed wheel reproduced all 72 sealed typed
 
 The controlled typed benchmark passed both GEPA gates at cap 56. Its additional seeds reused some earlier fixture inputs. Live proposal quality and provider costs remain unmeasured.
 
+The policy-transfer fixture recovered single omissions and exposed the limit of one repair when two rules were missing. [Transfer benchmark](opening-repair-policy-transfer.md)
+
 ## Reproduce offline
 
 ```sh
