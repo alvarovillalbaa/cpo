@@ -35,4 +35,4 @@ Use pinned GEPA 0.1.4. Preview to obtain the plan seal, then add `--execute PLAN
 PYTHONHASHSEED=0 python -B -m benchmarks.prompteval_qualification_bounds
 ```
 
-[Library API](../cpo/paired_qualification.py) · [Replay runner](../benchmarks/prompteval_qualification_bounds.py) · [Exhaustive tests](../tests/test_paired_qualification.py)
+[Library API](../cpo/paired_qualification.py) · [Replay runner](../benchmarks/prompteval_qualification_bounds.py) · [Exhaustive tests](../tests/test_paired_qualification.py) · [Expected-cost reply order](family-qualification-order.md)
