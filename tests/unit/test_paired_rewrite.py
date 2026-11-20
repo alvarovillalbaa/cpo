@@ -5,7 +5,7 @@ from itertools import product
 import pytest
 
 from cpo import Observation, Row
-from cpo.paired_rewrite import select_paired_rewrite
+from cpo.paired_rewrite import select_paired_rewrite, select_same_parent_rewrites
 
 
 @pytest.mark.parametrize('priced', (False, True))
@@ -80,3 +80,47 @@ def test_minibatch_requires_distinct_known_cases_before_reading():
     for batch in ((), ('unknown',), ('known', 'known')):
         with pytest.raises(ValueError, match='nonempty subset'):
             select_paired_rewrite('start', 'rewrite', validation, batch, lambda *_: pytest.fail('Read a case'))
+
+
+@pytest.mark.parametrize('priced', (False, True))
+def test_same_parent_selection_matches_batched_native_gates(priced):
+    case_ids = ('0', '1', '2', '3')
+    rows = tuple(Row(case, 'archive') for case in case_ids)
+    proposals = (('first', ('2', '0')), ('second', ('1', '2')))
+    prompts = ('start', 'first', 'second')
+    keys = tuple(product(prompts, case_ids))
+    for bits in product((False, True), repeat=len(keys)):
+        outcomes = dict(zip(keys, bits, strict=True))
+        totals = {prompt: sum(outcomes[prompt, case] for case in case_ids) for prompt in prompts}
+        accepted = ['start']
+        complete = {('start', case) for case in case_ids}
+        if totals['start'] < len(rows):
+            for prompt, batch in proposals:
+                complete.update((prompt, case) for case in batch)
+                if sum(outcomes[prompt, case] for case in batch) > sum(outcomes['start', case] for case in batch):
+                    accepted.append(prompt)
+                    complete.update((prompt, case) for case in case_ids)
+        paid = []
+
+        def evaluate(prompt, row):
+            assert row is rows[int(row.id)]
+            paid.append((prompt, row.id))
+            return Observation(outcomes[prompt, row.id], {})
+
+        def price(prompt, row, reply):
+            assert paid[-1] == (prompt, row.id) and reply.passed == outcomes[prompt, row.id]
+            return None if prompt == 'first' and row.id == '2' else 1 + int(row.id) + prompts.index(prompt)
+
+        selected = select_same_parent_rewrites('start', proposals, rows, evaluate,
+                                              observed_charge=price if priced else None)
+        assert selected == max(accepted, key=totals.get)
+        assert len(paid) == len(set(paid))
+        assert set(paid) <= complete
+
+
+def test_same_parent_validates_every_proposal_before_reading():
+    rows = (Row('known', 'family'),)
+    first = ('first', ('known',))
+    for proposals in ((first, first), (first, ('start', ('known',))), (first, ('second', ('unknown',)))):
+        with pytest.raises(ValueError):
+            select_same_parent_rewrites('start', proposals, rows, lambda *_: pytest.fail('Read a case'))

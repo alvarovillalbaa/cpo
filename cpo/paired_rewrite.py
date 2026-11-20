@@ -1,4 +1,6 @@
-"""Select a supplied rewrite with paired bounds on binary correctness."""
+"""Select supplied rewrites with paired bounds on binary correctness."""
+
+from functools import partial
 
 from ._paired_read_order import by_observed_cost, read_charge
 from .opening_validation import certify_opening_validation
@@ -17,20 +19,34 @@ def select_paired_rewrite(incumbent, rewrite, validation, minibatch_ids, evaluat
     cumulative charges use observed gain per read. The callback runs after
     each actual evaluation. Omitting it uses row-paired order.
     """
+    return select_same_parent_rewrites(incumbent, ((rewrite, minibatch_ids),), validation, evaluate,
+                                       observed_charge=observed_charge)
+
+
+def select_same_parent_rewrites(incumbent, proposals, validation, evaluate, *, observed_charge=None):
+    """Select among ordered (rewrite, minibatch IDs) proposals from one parent.
+
+    Each minibatch compares its proposal to the original incumbent. The
+    full binary validation gate selects the best passing proposal in order,
+    keeping the earlier prompt on a tie. All gates share one reply cache.
+    """
     if observed_charge is not None and not callable(observed_charge):
         raise ValueError('Observed charge must be a callback')
     validation = tuple(validation)
     by_id = {row.id: row for row in validation}
-    minibatch_ids = tuple(minibatch_ids)
-    if (not validation or len(by_id) != len(validation) or not minibatch_ids
-            or len(set(minibatch_ids)) != len(minibatch_ids) or not set(minibatch_ids) <= by_id.keys()):
+    proposals = tuple((prompt, tuple(batch)) for prompt, batch in proposals)
+    prompts = {prompt for prompt, _ in proposals}
+    if not proposals or len(prompts) != len(proposals) or (len(prompts) > 1 and incumbent in prompts):
+        raise ValueError('The same-parent search requires distinct supplied rewrites')
+    if not validation or len(by_id) != len(validation) or any(
+            not batch or len(set(batch)) != len(batch) or not set(batch) <= by_id.keys() for _, batch in proposals):
         raise ValueError('The minibatch must be a nonempty subset of distinct validation rows')
-    if incumbent == rewrite:
+    if prompts == {incumbent}:
         return incumbent
 
     # The two gain gates use one family. The evaluator receives original rows.
     rows = {row.id: Row(row.id, 'validation') for row in validation}
-    minibatch = tuple(rows[case] for case in minibatch_ids)
+    full = tuple(rows.values())
     observations, charges = {}, {}
 
     def observe(prompt, row):
@@ -44,18 +60,20 @@ def select_paired_rewrite(incumbent, rewrite, validation, minibatch_ids, evaluat
             observations[key] = reply
         return observations[key]
 
-    if all(observe(incumbent, row).passed for row in minibatch):
-        return incumbent
-    if not certify_opening_validation(incumbent, rewrite, minibatch, observations, observe):
-        return incumbent
-    def order_missing(missing):
-        scores = {key: int(reply.passed) for key, reply in observations.items()}
+    def order_missing(leader, rewrite, missing):
+        scores = {key: int(reply.passed) for key, reply in observations.items() if key[0] in (leader, rewrite)}
         pending = [(prompt, row.id, row) for prompt, row in missing]
-        for prompt, case, row in by_observed_cost(pending, scores, incumbent, rewrite, 1, charges):
+        for prompt, case, row in by_observed_cost(pending, scores, leader, rewrite, 1, charges):
             yield prompt, row
             scores[prompt, case] = int(observations[prompt, case].passed)
 
-    order = order_missing if observed_charge is not None else None
-    if certify_opening_validation(incumbent, rewrite, tuple(rows.values()), observations, observe, order_missing=order):
-        return rewrite
-    return incumbent
+    leader = incumbent
+    for rewrite, batch in proposals:
+        minibatch = tuple(rows[case] for case in batch)
+        if (all(observe(incumbent, row).passed for row in minibatch)
+                or not certify_opening_validation(incumbent, rewrite, minibatch, observations, observe)):
+            continue
+        order = partial(order_missing, leader, rewrite) if observed_charge is not None else None
+        if certify_opening_validation(leader, rewrite, full, observations, observe, order_missing=order):
+            leader = rewrite
+    return leader

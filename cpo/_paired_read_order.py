@@ -17,7 +17,7 @@ def by_observed_cost(missing, scores, incumbent, rewrite, denominator, charges):
         old = [denominator - score for (prompt, _), score in scores.items() if prompt == incumbent]
         new = [score for (prompt, _), score in scores.items() if prompt == rewrite]
         old_weight, new_weight = len(old), len(new)
-        if all(charge is not None for charge in charges.values()):
+        if all(charges[key] is not None for key in scores):
             old_cost, new_cost = (sum(fee for (owner, _), fee in charges.items() if owner == prompt)
                                   for prompt in (incumbent, rewrite))
             if old_cost and new_cost:
