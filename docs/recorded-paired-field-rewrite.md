@@ -94,6 +94,24 @@ The Sol archive held at 382 of 480 passes for both policies. At cap 24, extra re
 PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback --paid-budget
 ```
 
+## Reserve for proposal costs
+
+Pass a `SequentialSearchBudget` as `price_budget` to enforce an advance search quote in integer units. Set a maximum charge per evaluation and supply up-front and settled charges for proposals. The selector holds enough for all unfinished validation, the next round's possible reads, and its proposal before starting the round. It settles each paid reply against the quote. The caller's evaluator and proposer enforce their upper bounds. Prepaid openings and independent admission have separate reserves.
+
+On 240 archived Sol paths, both arms used the same 24-read ceiling, advance charge quotes, and reserves for opening and admission. The quotes used the highest recorded evaluation and reflection charges per task. The three spending levels corresponded to 16, 20, and 24 evaluation quotes plus the common opening. Each policy scored 382 of 480 at every level and stayed within its per-path spending ceiling.
+
+| Evaluation quotes in the ceiling | Sequential GEPA cost | CPO cost | Pooled savings |
+| --- | ---: | ---: | ---: |
+| 16 | $29.00 | $25.56 | 11.9% |
+| 20 | $30.94 | $27.36 | 11.6% |
+| 24 | $31.57 | $28.17 | 10.8% |
+
+At the largest ceiling, CPO funded 15 later reflections and cost more than GEPA on 15 paths. In the deterministic fixture under a shared 48-unit search quote, CPO gained 16 held-out passes and reduced total charge from 2,141 to 1,922 when a later proposal cost one unit. With four- and eight-unit proposals, it preserved the native score and used 1,848 units. These tests use archived or fixture prices. Live use requires provider-enforced upper bounds. [Fixture results](sequential-field-quote-results-v1.json)
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback --quoted-budget
+```
+
 ## Verify
 
 ```sh

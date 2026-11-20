@@ -1,12 +1,40 @@
 """Select sequential typed rewrites using paired bounds and disjoint feedback."""
 
+from collections.abc import Callable
+from dataclasses import dataclass
+
 from ._paired_read_order import read_charge
 from .paired_field_rewrite import _validated_field_score, _wins
 
 
+@dataclass(frozen=True)
+class SequentialSearchBudget:
+    """Search authorization in a consistent integer charge unit.
+
+    The evaluator and proposer must enforce their upper quotes. The caller
+    deducts prepaid openings and reserves independent admission separately.
+    """
+
+    limit: int
+    evaluation_quote: int
+    proposal_quote: Callable[[int, str], int]
+    observed_proposal: Callable[[int, str, str], int]
+
+    def __post_init__(self):
+        if any(type(value) is not int or value < 0 for value in (self.limit, self.evaluation_quote)):
+            raise ValueError('The search limit and evaluation quote must be nonnegative integers')
+        if not callable(self.proposal_quote) or not callable(self.observed_proposal):
+            raise ValueError('The proposal quote and observed charge must be callbacks')
+
+
+def _check_charge(charge, quote):
+    if type(charge) is not int or not 0 <= charge <= quote:
+        raise ValueError('The observed charge must be a nonnegative integer within its quoted maximum')
+
+
 def select_sequential_field_rewrites(
     incumbent, training, validation, evaluate, schedule, propose, *,
-    rounds, minibatch_size, metric_limit, observed_charge=None, reinvest_savings=False,
+    rounds, minibatch_size, metric_limit, observed_charge=None, reinvest_savings=False, price_budget=None,
 ):
     """Match sequential GEPA's field gates, full-round reserve and score order.
 
@@ -19,6 +47,9 @@ def select_sequential_field_rewrites(
     With reinvest_savings, budget charged reads and still-unread validation
     reserved for every tracked prompt. Once the scheduler picks a parent,
     reserve only its missing minibatch reads alongside a full new child.
+
+    With a SequentialSearchBudget, reserve both evaluation and proposal
+    charges before dispatch. observed_charge must settle each evaluation.
     """
     training, validation = tuple(training), tuple(validation)
     train_ids, val_ids = tuple(row.id for row in training), tuple(row.id for row in validation)
@@ -34,6 +65,8 @@ def select_sequential_field_rewrites(
         raise ValueError('The search budget must cover valid rounds and the incumbent validation')
     if observed_charge is not None and not callable(observed_charge):
         raise ValueError('Observed charge must be a callback')
+    if price_budget is not None and (not isinstance(price_budget, SequentialSearchBudget) or observed_charge is None):
+        raise ValueError('A sequential price budget requires observed evaluation charges')
 
     weight = 1 << (max(len(train_ids), len(val_ids)) * fields).bit_length()
     denominator = weight + fields
@@ -45,21 +78,31 @@ def select_sequential_field_rewrites(
     validation_reserve = {(incumbent, case) for case in val_ids}
     accounted = set(validation_reserve)
     child_reserve = minibatch_size + len(val_ids)
+    settled_charge = 0
+    if price_budget is not None and price_budget.evaluation_quote * len(val_ids) > price_budget.limit:
+        return incumbent
 
     def committed_reads():
         return len(scores.keys() | validation_reserve) if reinvest_savings else len(accounted)
 
     def observe(prompt, case):
+        nonlocal settled_charge
         key = prompt, case
         if key not in scores:
             if key not in accounted or len(scores) >= metric_limit:
                 raise ValueError('A field read exceeded the sequential search scope')
+            if price_budget is not None and settled_charge + price_budget.evaluation_quote > price_budget.limit:
+                raise ValueError('An evaluation has no remaining price reserve')
             row = by_id[case]
             reply = evaluate(prompt, row)
             scores[key] = _validated_field_score(reply, fields, weight)
             replies[key] = reply
             if observed_charge is not None:
                 charges[key] = read_charge(observed_charge, prompt, row, reply)
+                if price_budget is not None:
+                    charge = charges[key]
+                    _check_charge(charge, price_budget.evaluation_quote)
+                    settled_charge += charge
         return scores[key]
 
     def grades(prompt):
@@ -85,12 +128,25 @@ def select_sequential_field_rewrites(
         batch = tuple(ids)
         if parent not in pool or len(batch) != minibatch_size or len(set(batch)) != len(batch) or not set(batch) <= train_set:
             raise ValueError('The schedule must select a tracked parent and distinct training rows')
-        if reinvest_savings and child_reserve + sum((parent, case) not in scores for case in batch) > remaining:
+        new_reads = child_reserve + sum((parent, case) not in scores for case in batch)
+        if reinvest_savings and new_reads > remaining:
             break
+        if price_budget is not None:
+            quote = price_budget.proposal_quote(index, parent)
+            if type(quote) is not int or quote < 0:
+                raise ValueError('A proposal needs a nonnegative integer price quote')
+            unread_validation = len(validation_reserve - scores.keys())
+            required = (unread_validation + new_reads) * price_budget.evaluation_quote + quote
+            if settled_charge + required > price_budget.limit:
+                break
         accounted.update((parent, case) for case in batch)
         for case in batch:
             observe(parent, case)
         child = propose(index, parent, tuple((by_id[case], replies[parent, case]) for case in batch))
+        if price_budget is not None:
+            charge = price_budget.observed_proposal(index, parent, child)
+            _check_charge(charge, quote)
+            settled_charge += charge
         latest = None
         if reinvest_savings and all(scores[parent, case] == denominator for case in batch):
             continue

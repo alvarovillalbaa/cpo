@@ -6,15 +6,16 @@ from importlib.metadata import version
 import json
 from unittest.mock import patch
 
-from benchmarks import feedback_budget, gepa_disjoint_cases, opening_screen_typed, typed_policy
-from benchmarks.gepa_sequential_schedule import select_field_rewrites, traced_native_schedule
+from benchmarks import feedback_budget, gepa_disjoint_cases, grounded, opening_screen_typed, typed_policy
+from benchmarks.gepa_sequential_schedule import native_with_price_guard, select_field_rewrites, traced_native_schedule
 from cpo._contract import digest
+from cpo.sequential_field_rewrite import SequentialSearchBudget
 
 
 REPLICATION_SEEDS = (47317, 47347, 47377, 47401, 47423, 47437)
 
 
-def run_arm(task, cohorts, seed, cap, mode):
+def run_arm(task, cohorts, seed, cap, mode, *, reflection_price=None):
     train_ids = {row['id'] for row in cohorts['train']}
     schedule, reads, proposals, nominees = [], [], [], []
 
@@ -36,14 +37,28 @@ def run_arm(task, cohorts, seed, cap, mode):
             return child
 
         def baseline(start, opening, splits, observe, **options):
+            if reflection_price is not None:
+                return native_with_price_guard(gepa_disjoint_cases.select, can_fund_round,
+                                               start, opening, splits, observe, propose, **options)
             return gepa_disjoint_cases.select(start, opening, splits, observe, propose, **options)
+
+        def quote(index, _parent=None):
+            return 0 if index < len(bank) else reflection_price
+
+        def can_fund_round(index):
+            reserve = 2 * grounded.MINIBATCH + len(groups['validation'])
+            return len(reads) + len(proposals) * reflection_price + reserve + quote(index) <= cap
 
         if mode == 'native':
             nominee = traced_native_schedule(baseline, initial, bank, groups, read, schedule,
                                              cap=cap, seed=seed, width=width)
         else:
+            budget = None if reflection_price is None else SequentialSearchBudget(
+                cap, 1, quote, lambda index, *_: quote(index),
+            )
             nominee = select_field_rewrites(initial, bank, groups, read, propose, schedule, cap=cap, seed=seed,
-                                             reinvest_savings=mode == 'reinvest')
+                                             reinvest_savings=mode == 'reinvest', price_budget=budget,
+                                             observed_charge=None if budget is None else lambda *_: 1)
         nominees.append(nominee)
         return nominee
 
@@ -126,10 +141,50 @@ def measure_reinvestment():
     }
 
 
+def measure_quoted_budget():
+    cap = 48
+    results = {}
+    for reflection_price in (1, 4, 8):
+        totals = {mode: Counter() for mode in ('native', 'reinvest')}
+        changes = Counter(paths=0, criticalLosses=0, pathsWithMorePasses=0, pathsWithFewerPasses=0, pathsWithMoreCost=0)
+        traces = []
+        for seed in (*feedback_budget.SEEDS, *REPLICATION_SEEDS):
+            for task, cases in typed_policy.cohorts(seed).items():
+                path, costs, outcomes = [], [], []
+                for mode, total in totals.items():
+                    record = run_arm(task, cases, seed, cap, mode, reflection_price=reflection_price)
+                    row, _, _, proposals, paid = record
+                    search_charge = len(paid) + len(proposals) * reflection_price
+                    if search_charge > cap or len(paid) != len(set(paid)) or len(paid) != row['searchLookups']:
+                        raise ValueError('The charged fixture exceeded its common search quote')
+                    cost = search_charge + 1 + row['qualificationLookups']
+                    scores = row['holdout']
+                    total.update(searchCharge=search_charge, totalCharge=cost, holdoutPasses=sum(scores.values()),
+                                 searchReads=len(paid), laterProposals=len(proposals))
+                    path.append(record)
+                    costs.append(cost)
+                    outcomes.append(scores)
+                before, after = outcomes
+                changes.update(paths=1, pathsWithMorePasses=sum(after.values()) > sum(before.values()),
+                               pathsWithFewerPasses=sum(after.values()) < sum(before.values()),
+                               pathsWithMoreCost=costs[1] > costs[0],
+                               criticalLosses=sum(row['critical'] and before[row['id']] and not after[row['id']]
+                                                  for row in cases['holdout']))
+                traces.append((seed, task, path))
+        results[reflection_price] = {**changes, 'totals': totals, 'traceSha256': digest(traces)}
+    return {'schema': 'sequential-field-quote-fixture-v1', 'newProviderRequests': 0, 'searchQuote': cap, 'points': results}
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--paid-budget', action='store_true', help='Let CPO spend saved reads on more rounds')
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument('--paid-budget', action='store_true', help='Let CPO spend saved reads on more rounds')
+    modes.add_argument('--quoted-budget', action='store_true', help='Charge proposals against the same search quote')
     args = parser.parse_args()
     if version('gepa') != '0.1.4':
         raise SystemExit('Use pinned GEPA 0.1.4')
-    print(json.dumps(measure_reinvestment() if args.paid_budget else measure(), indent=2, sort_keys=True))
+    if args.quoted_budget:
+        report = measure_quoted_budget()
+    else:
+        report = measure_reinvestment() if args.paid_budget else measure()
+    print(json.dumps(report, indent=2, sort_keys=True))

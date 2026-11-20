@@ -3,7 +3,7 @@
 import pytest
 
 from cpo import Observation, Row
-from cpo.sequential_field_rewrite import select_sequential_field_rewrites
+from cpo.sequential_field_rewrite import SequentialSearchBudget, select_sequential_field_rewrites
 
 
 @pytest.mark.parametrize(('limit', 'winner', 'generations'), ((19, 'start', 1), (20, 'repair-second', 2)))
@@ -95,3 +95,55 @@ def test_reinvests_saved_reads_without_dropping_the_validation_reserve(reinvest,
     assert len(proposals) == expected_calls and selected == winner
     assert len(paid) == len(set(paid))
     assert any(prompt == 'rejected' for prompt, _ in paid) != reinvest
+
+
+@pytest.mark.parametrize(('limit', 'expected_calls', 'winner'), ((14, 1, 'start'), (15, 2, 'repair')))
+def test_funds_the_proposal_as_well_as_each_reserved_evaluation(limit, expected_calls, winner):
+    training = tuple(Row(f't{case}', 'task', fields=1) for case in range(4))
+    validation = tuple(Row(f'v{case}', 'task', fields=1) for case in range(4))
+    paid, proposals, settled = [], [], []
+
+    def evaluate(prompt, row):
+        paid.append((prompt, row.id))
+        assert len(paid) + len(settled) <= limit
+        passed = prompt == 'repair' or (prompt == 'start' and row.id in ('t0', 't1'))
+        return Observation(passed, {}, int(passed))
+
+    def schedule(index, pool, _grades):
+        assert pool == ('start',)
+        return 'start', (('t0', 't1'), ('t1', 't2'))[index]
+
+    def propose(index, parent, samples):
+        proposals.append((index, parent))
+        return ('rejected', 'repair')[index]
+
+    def settle(index, parent, _child):
+        assert (index, parent) == proposals[-1]
+        settled.append(index)
+        assert len(paid) + len(settled) <= limit
+        return 1
+
+    budget = SequentialSearchBudget(limit, 1, lambda *_: 1, settle)
+    selected = select_sequential_field_rewrites(
+        'start', training, validation, evaluate, schedule, propose, rounds=2, minibatch_size=2,
+        metric_limit=13, reinvest_savings=True, price_budget=budget, observed_charge=lambda *_: 1,
+    )
+    assert selected == winner and len(proposals) == len(settled) == expected_calls
+
+
+def test_stops_after_a_charge_exceeds_its_quote():
+    training, validation = (Row('train', 'task', fields=1),), (Row('validation', 'task', fields=1),)
+    reads = []
+
+    def evaluate(prompt, row):
+        reads.append((prompt, row.id))
+        return Observation(False, {}, 0)
+
+    budget = SequentialSearchBudget(10, 1, lambda *_: 1, lambda *_: 2)
+    with pytest.raises(ValueError, match='within its quoted maximum'):
+        select_sequential_field_rewrites(
+            'start', training, validation, evaluate, lambda *_: ('start', ('train',)),
+            lambda *_: 'rewrite', rounds=2, minibatch_size=1, metric_limit=8, reinvest_savings=True,
+            observed_charge=lambda *_: 1, price_budget=budget,
+        )
+    assert reads == [('start', 'validation'), ('start', 'train')]

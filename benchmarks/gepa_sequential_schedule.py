@@ -1,12 +1,14 @@
 """Bind a paired replay to GEPA's seeded Pareto selector and minibatches."""
 
+from importlib import import_module
 from random import Random
 from types import SimpleNamespace
 from unittest.mock import patch
 
 
 def select_field_rewrites(
-    initial, bank, groups, evaluate, reflect, trace, *, cap, seed, observed_charge=None, reinvest_savings=False,
+    initial, bank, groups, evaluate, reflect, trace, *,
+    cap, seed, observed_charge=None, reinvest_savings=False, price_budget=None,
 ):
     from benchmarks import grounded
     from cpo import Row
@@ -25,7 +27,7 @@ def select_field_rewrites(
     return select_sequential_field_rewrites(
         initial, training, validation, lambda p, row: evaluate(p, row.id), schedule, propose,
         rounds=grounded.REFLECTION_LIMIT, minibatch_size=grounded.MINIBATCH, metric_limit=cap,
-        observed_charge=observed_charge, reinvest_savings=reinvest_savings,
+        observed_charge=observed_charge, reinvest_savings=reinvest_savings, price_budget=price_budget,
     )
 
 
@@ -82,3 +84,15 @@ def traced_native_schedule(select, incumbent, bank, groups, evaluate, trace, **o
     with (patch.object(ParetoCandidateSelector, 'select_candidate_idx', parent),
           patch.object(EpochShuffledBatchSampler, 'next_minibatch_ids', batch)):
         return select(incumbent, bank, groups, evaluate, **options)
+
+
+def native_with_price_guard(select, can_fund_round, *args, **kwargs):
+    module = import_module('gepa.optimize_anything')
+    optimize = module.optimize_anything
+
+    def guarded(*arguments, config, **options):
+        config.stop_callbacks = [*config.stop_callbacks, lambda state: not can_fund_round(state.i + 1)]
+        return optimize(*arguments, config=config, **options)
+
+    with patch.object(module, 'optimize_anything', guarded):
+        return select(*args, **kwargs)
