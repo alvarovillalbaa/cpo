@@ -20,6 +20,8 @@ At cap 56, the opening screen used 228 fewer calls than sequential GEPA and scor
 
 The opening screen promoted its nominee on all 18 panels. Its seven imperfect panels came from the six outage panels and one warehouse panel. The fixture’s chosen outage prompt omitted the explicit `reason` rule, accounting for 19 missed exact passes. The warehouse prompt omitted the explicit `windowHours` rule, accounting for another eight. The demonstration bundle covered some cases for both fields. Adaptive CPO reached all 324 exact passes and used 76 fewer calls than sequential GEPA and 107 fewer than batched GEPA on this fixture. The result favors retaining a path to later field repairs for typed tasks. [Panel decisions, costs, and journals](opening-screen-typed-results-v1.json)
 
+The follow-up reserved one later repair when the opening’s full validation showed errors. [Staged repair benchmark](opening-screen-repair.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
