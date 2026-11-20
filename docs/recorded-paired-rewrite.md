@@ -26,3 +26,5 @@ python -m pytest -q tests/unit/test_paired_rewrite.py
 ```
 
 The focused test verifies selection and read-set inclusion on all 256 binary outcome matrices for four cases. Two offline replays matched byte for byte with socket and DNS access blocked. Fresh proposal generation and model performance remain unverified.
+
+The same two-gate approach also works with uniform field credit and preserves native rounding on ties. [Typed Sol comparison](recorded-paired-field-rewrite.md)
