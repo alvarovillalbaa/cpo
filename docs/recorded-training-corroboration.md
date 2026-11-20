@@ -30,6 +30,8 @@ The second-half check gained 40 passes over strict CPO, with a range of −15 to
 
 Both half-panel checks lost holdout passes and added lookups on the ARC rotation that strict CPO had already cleared. The first-half setting was selected retrospectively on AIME. The results identify a way to reduce harmful promotions on this archive and show that its effect varies by task and training sample. Fresh-model superiority and actual provider costs remain unverified.
 
+The follow-up gives the veto one validation-proven backup and measures the cost of an incumbent qualification precheck applied equally to CPO and GEPA. [Training backup replay](recorded-training-backup.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and the bundled score snapshot. Preview the seal, then run to a fresh report path.
