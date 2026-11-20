@@ -15,6 +15,8 @@ The development ceiling is 1,272 logical requests. Independent confirmation has 
 
 CPO cleared both scripted gates and preserved every matched critical pass. The fixture starts from a shared rewrite with a scripted error in each task. Two clean source rehearsals and an installed-wheel rehearsal reproduced both archives byte for byte. Nine focused tests passed in each environment, including lost-reply preservation, cohort isolation, rejection of a stale seal, and rejection of model confirmation against a fixture development archive. Storage Guard measured 4.6 GiB free. Scratch exports were removed under the standing LAB exception. [Rehearsal hashes](grounded-staged-rehearsal-v1.json) · [Verification receipt](grounded-staged-verification-v1.json)
 
+The case-level audit groups repeat replies and reports how the comparison margins vary with the mix of holdout cases. The four extra confirmation passes against sequential GEPA came from two outage cases. [Paired case evidence and replay command](grounded-staged-case-evidence.md)
+
 ## Run the offline comparison
 
 Use pinned GEPA 0.1.4 and fresh output paths. The second seal derives from the development archive’s exact bytes.
