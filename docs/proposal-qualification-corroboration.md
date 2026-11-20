@@ -18,6 +18,8 @@ A full reserve was available in 496 of 512 development cycles and 768 of 1,024 t
 
 The extra panel confirmed eight of the 80 one-pass promotions it reviewed on transfer. Enforcing the check gained eight holdout passes and used 691 more lookups than cap-72 CPO. On development it vetoed 59 of the 64 promotions it reviewed and lost 12 holdout passes. The transfer arm finished 18 passes behind batched GEPA and used 20,704 fewer lookups. The joint paired 95% range against both GEPA controls was −70 to +32 passes. The results leave the original promotion rule in place. [Panel outcomes, charges, and paired ranges](proposal-qualification-corroboration-results-v1.json)
 
+The follow-up narrowed the veto to outright losses and tested it on eight additional archived panels. [Loss-only veto replay](proposal-qualification-veto.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
