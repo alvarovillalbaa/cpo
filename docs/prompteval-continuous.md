@@ -28,6 +28,8 @@ The follow-up used incumbent validation to choose a lower search cap. It nearly 
 
 A separate replay qualified earlier contenders on each cycle's fresh cases before paying for search. It saved CPO lookups and still missed the gate against GEPA with the same option. [Archive qualification replay](prompteval-archive-cycles.md)
 
+The proposal-cycle API follow-up used an exact qualification early stop and reproduced the search and deployment at five caps. [Expected-cost proposal cycle](expected-cost-proposal-cycle.md)
+
 ## Reproduce
 
 ```sh

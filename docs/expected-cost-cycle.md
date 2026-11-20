@@ -2,6 +2,8 @@
 
 `cpo.expected_cost_cycle.run_expected_cost_fixed_pool_cycle` searches a supplied prompt pool, then certifies the result on separate qualification rows. It collects pass counts from the distinct validation replies paid for by the existing screen. The counts guide evaluation order. The qualification replies determine promotion. [Package API](../cpo/expected_cost_cycle.py) · [Qualification algorithm](family-qualification-order.md)
 
+CPO also exposes this qualification policy for searches that request proposals during the cycle. [Proposal-driven API](expected-cost-proposal-cycle.md)
+
 ```python
 from cpo.expected_cost_cycle import run_expected_cost_fixed_pool_cycle
 

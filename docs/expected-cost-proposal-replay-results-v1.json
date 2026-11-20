@@ -1,0 +1,1236 @@
+{
+  "design": {
+    "bootstrap": {
+      "draws": 4096,
+      "seed": 20261201
+    },
+    "caps": [
+      72,
+      88,
+      104,
+      128,
+      171
+    ],
+    "continuousPlanSha256": {
+      "development": "1d9700a1bec46e06a40528dbf025beaf9d0a0082894853c22353f4381ab89b58",
+      "retrospective-transfer": "63e380e4436970d59aa194d6c2f823be0c1de9949e95f7ff1188be7f37e36ee3"
+    },
+    "continuousReportSha256": "430e4f3503396963223aeefb1aabeb6c98387da10d8755f8bc810e128833d26c",
+    "controlModes": [
+      "gepa-sequential",
+      "gepa-batched"
+    ],
+    "protocol": "cpo-expected-cost-proposal-replay-v1",
+    "qualificationRules": [
+      "full",
+      "seeded",
+      "expected"
+    ],
+    "scope": "Preserve search and deployment at every proposal search cap. Reproduce the original full-cap CPO and GEPA control totals. Compare the new proposal cycle with a deterministic typed proposer.",
+    "sourceSha256": {
+      "benchmarks/expected_cost_proposal_replay.py": "9b6310ebabebbf799fa58440ea12fce1625f29e3b76540e53ca377cc84defc65",
+      "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+      "benchmarks/grounded_fixture.py": "f42d309d629cafd303f42bc319dc388333398134644597ad274de9d380cf2a31",
+      "benchmarks/prompteval_continuous.py": "239490d7928ed6a439d991a196b18880e6c95d1f7787e30b596ad98449836442",
+      "benchmarks/typed_policy.py": "9fb85272a82c61499ba7b614d233964f9e8c077ad1ca630ac1030737202a0f1f",
+      "cpo/cycle.py": "c392102ce24bfe9986b896746a29f224313aef8d692116c072039e945d85f6e7",
+      "cpo/expected_cost_proposal_cycle.py": "67c24e4b7fce56a1b941762ff8932ceedd64e07e7ff6c034b8ab0e71cc6cd182",
+      "cpo/expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+      "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7"
+    },
+    "typedFixturePlanSha256": "792a069fbca343c66899a927313fd210c361d3f480fc183463f8ebdadefdcbcf"
+  },
+  "designSha256": "aab4b682b5d1a3d0165905f15bb2abbf0e7c9227117abad2b25bc65738ad211a",
+  "results": {
+    "development": {
+      "pairedComparisons": {
+        "cpo-104": {
+          "jointPairedRange95": [
+            -49,
+            20
+          ],
+          "lookupDelta": {
+            "gepa-batched": 8950,
+            "gepa-sequential": 8200
+          },
+          "passDelta": {
+            "gepa-batched": -15,
+            "gepa-sequential": 22
+          }
+        },
+        "cpo-128": {
+          "jointPairedRange95": [
+            -34,
+            36
+          ],
+          "lookupDelta": {
+            "gepa-batched": 20858,
+            "gepa-sequential": 20108
+          },
+          "passDelta": {
+            "gepa-batched": 0,
+            "gepa-sequential": 37
+          }
+        },
+        "cpo-171": {
+          "jointPairedRange95": [
+            -12,
+            47
+          ],
+          "lookupDelta": {
+            "gepa-batched": 42160,
+            "gepa-sequential": 41410
+          },
+          "passDelta": {
+            "gepa-batched": 16,
+            "gepa-sequential": 53
+          }
+        },
+        "cpo-72": {
+          "jointPairedRange95": [
+            -50,
+            18
+          ],
+          "lookupDelta": {
+            "gepa-batched": -11017,
+            "gepa-sequential": -11767
+          },
+          "passDelta": {
+            "gepa-batched": -17,
+            "gepa-sequential": 20
+          }
+        },
+        "cpo-88": {
+          "jointPairedRange95": [
+            -53,
+            16
+          ],
+          "lookupDelta": {
+            "gepa-batched": -1042,
+            "gepa-sequential": -1792
+          },
+          "passDelta": {
+            "gepa-batched": -18,
+            "gepa-sequential": 19
+          }
+        }
+      },
+      "panels": {
+        "high_school_european_history/meta_llama_llama_3_8b": {
+          "cpo-104": {
+            "expected": 1329,
+            "full": 1600,
+            "holdoutPasses": 1116,
+            "paidLookups": 13258,
+            "promotions": 19,
+            "reflections": 177,
+            "searchLookups": 11929,
+            "seeded": 1505,
+            "traceSha256": "c6020d97554c1f461eba9b5a4b2097020f6075368901c17ff95f76b0ee734476"
+          },
+          "cpo-128": {
+            "expected": 1424,
+            "full": 1712,
+            "holdoutPasses": 1122,
+            "paidLookups": 16378,
+            "promotions": 23,
+            "reflections": 280,
+            "searchLookups": 14954,
+            "seeded": 1602,
+            "traceSha256": "5b0386e13d1d4e2479e4a273199b10e09e617d671ee6dd80aaefc251972bff00"
+          },
+          "cpo-171": {
+            "expected": 1466,
+            "full": 1776,
+            "holdoutPasses": 1126,
+            "paidLookups": 21402,
+            "promotions": 19,
+            "reflections": 451,
+            "searchLookups": 19936,
+            "seeded": 1667,
+            "traceSha256": "83e0aaa13bd7f83490bedcf8cef3f8165f94bd818cede38c840b1b4ba43a4021"
+          },
+          "cpo-72": {
+            "expected": 919,
+            "full": 1072,
+            "holdoutPasses": 1120,
+            "paidLookups": 8316,
+            "promotions": 12,
+            "reflections": 19,
+            "searchLookups": 7397,
+            "seeded": 1011,
+            "traceSha256": "1c1283814d6a5f19ffcf6bdd8628cd7d382a746077cdd508f38bf19095733b84"
+          },
+          "cpo-88": {
+            "expected": 1221,
+            "full": 1440,
+            "holdoutPasses": 1122,
+            "paidLookups": 10940,
+            "promotions": 17,
+            "reflections": 90,
+            "searchLookups": 9719,
+            "seeded": 1360,
+            "traceSha256": "0bda59cd2331619b05e3d38033fe70fdaf96aa20f29e524a1b9ac51f0dc3f5db"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1116,
+            "paidLookups": 10736,
+            "promotions": 9,
+            "qualificationLookups": 608,
+            "searchLookups": 10128,
+            "traceSha256": "88049340e0a1e9a9e130a1657d033f356904246ec086e80dfa8ed6998ccb5e2f"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1118,
+            "paidLookups": 10690,
+            "promotions": 5,
+            "qualificationLookups": 480,
+            "searchLookups": 10210,
+            "traceSha256": "c9a47429cfdfdaaf551a0d172b4e144f685dfc5f99708c0d61cd15a07c82d33b"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-104": {
+            "expected": 1191,
+            "full": 1440,
+            "holdoutPasses": 1133,
+            "paidLookups": 13136,
+            "promotions": 18,
+            "reflections": 193,
+            "searchLookups": 11945,
+            "seeded": 1362,
+            "traceSha256": "0a248b2d9536ab24f8a6dddbb9c11b38981eba0549bedd8b161ec5b843299aaa"
+          },
+          "cpo-128": {
+            "expected": 1280,
+            "full": 1552,
+            "holdoutPasses": 1136,
+            "paidLookups": 16066,
+            "promotions": 16,
+            "reflections": 293,
+            "searchLookups": 14786,
+            "seeded": 1459,
+            "traceSha256": "75a1660a5cf221aa89649c927fb644d33cc9a5c952810a8afa5cef2c9f3c2ce4"
+          },
+          "cpo-171": {
+            "expected": 1395,
+            "full": 1696,
+            "holdoutPasses": 1133,
+            "paidLookups": 21046,
+            "promotions": 14,
+            "reflections": 478,
+            "searchLookups": 19651,
+            "seeded": 1593,
+            "traceSha256": "cf0dd167b7700c5901857c4005a0926dca5124433d6e9ad0ddfd43b9ef925971"
+          },
+          "cpo-72": {
+            "expected": 958,
+            "full": 1152,
+            "holdoutPasses": 1131,
+            "paidLookups": 8105,
+            "promotions": 19,
+            "reflections": 21,
+            "searchLookups": 7147,
+            "seeded": 1097,
+            "traceSha256": "3b5bdd1dbca9e3e62a5a9c47ce8b85abb7d5779752a329686c9b465009817cba"
+          },
+          "cpo-88": {
+            "expected": 1013,
+            "full": 1232,
+            "holdoutPasses": 1136,
+            "paidLookups": 10608,
+            "promotions": 22,
+            "reflections": 107,
+            "searchLookups": 9595,
+            "seeded": 1174,
+            "traceSha256": "b39e900052885c31011fc9228a17d44a4283dddc31c2b77d45bc86da0bc2d955"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1144,
+            "paidLookups": 9806,
+            "promotions": 1,
+            "qualificationLookups": 384,
+            "searchLookups": 9422,
+            "traceSha256": "6aef2e73b5744d9da79d2454c7913ab7c7867c9c5bf84bb853d473e71754b062"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1141,
+            "paidLookups": 10099,
+            "promotions": 9,
+            "qualificationLookups": 448,
+            "searchLookups": 9651,
+            "traceSha256": "3c50a5ab73e56302a4ae0e43dbb0f2b46f7a0bae38de8d029a64c7ac7e08e529"
+          }
+        },
+        "high_school_statistics/meta_llama_llama_3_8b": {
+          "cpo-104": {
+            "expected": 1125,
+            "full": 1280,
+            "holdoutPasses": 1126,
+            "paidLookups": 13293,
+            "promotions": 23,
+            "reflections": 147,
+            "searchLookups": 12168,
+            "seeded": 1190,
+            "traceSha256": "0580dcaac3b2d411ab843a2808cf25c6809b20da595ba7917815a77506e5b010"
+          },
+          "cpo-128": {
+            "expected": 1181,
+            "full": 1360,
+            "holdoutPasses": 1127,
+            "paidLookups": 16248,
+            "promotions": 23,
+            "reflections": 208,
+            "searchLookups": 15067,
+            "seeded": 1261,
+            "traceSha256": "376dc0f3eaaf316c0588dceddcbdbcb5f2c6e7597c09ed44d41799e6d61c75e5"
+          },
+          "cpo-171": {
+            "expected": 1407,
+            "full": 1600,
+            "holdoutPasses": 1140,
+            "paidLookups": 21959,
+            "promotions": 32,
+            "reflections": 361,
+            "searchLookups": 20552,
+            "seeded": 1493,
+            "traceSha256": "974f8aa2fdd6e5589bbd97ee898117525d162d9c24fcdd0bbaaa8c6c765893e6"
+          },
+          "cpo-72": {
+            "expected": 810,
+            "full": 912,
+            "holdoutPasses": 1133,
+            "paidLookups": 8401,
+            "promotions": 25,
+            "reflections": 11,
+            "searchLookups": 7591,
+            "seeded": 859,
+            "traceSha256": "3816b2848a94a4ace998dfce6397cc521e2334181c85e0a9a240d20a3bb73326"
+          },
+          "cpo-88": {
+            "expected": 1055,
+            "full": 1184,
+            "holdoutPasses": 1116,
+            "paidLookups": 10741,
+            "promotions": 25,
+            "reflections": 65,
+            "searchLookups": 9686,
+            "seeded": 1107,
+            "traceSha256": "bef679dcd09012bb0faa57404b09c893e9e5781fd69bfae8de52dadfb3fe6b64"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1116,
+            "paidLookups": 11942,
+            "promotions": 11,
+            "qualificationLookups": 704,
+            "searchLookups": 11238,
+            "traceSha256": "42637e68e6a2581efb7a8e37342b75053931e2bde02eccb7ed85e03fc4e31b06"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1109,
+            "paidLookups": 12087,
+            "promotions": 15,
+            "qualificationLookups": 800,
+            "searchLookups": 11287,
+            "traceSha256": "0fedde907031dd9dfde6e9912f51654f0a448a5d028d563c3bded3b3012d6243"
+          }
+        },
+        "high_school_statistics/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-104": {
+            "expected": 1202,
+            "full": 1328,
+            "holdoutPasses": 786,
+            "paidLookups": 13457,
+            "promotions": 23,
+            "reflections": 149,
+            "searchLookups": 12255,
+            "seeded": 1248,
+            "traceSha256": "c5d25ffe16535a4437d2e4d6a0dba42281100b5f3bf126e79e5976285744b97b"
+          },
+          "cpo-128": {
+            "expected": 1358,
+            "full": 1488,
+            "holdoutPasses": 791,
+            "paidLookups": 16360,
+            "promotions": 25,
+            "reflections": 203,
+            "searchLookups": 15002,
+            "seeded": 1393,
+            "traceSha256": "34974cdf2cd0390670af7f26f47814a419f0b25b5365e225b38a42de6be14fb0"
+          },
+          "cpo-171": {
+            "expected": 1502,
+            "full": 1648,
+            "holdoutPasses": 793,
+            "paidLookups": 21947,
+            "promotions": 29,
+            "reflections": 349,
+            "searchLookups": 20445,
+            "seeded": 1529,
+            "traceSha256": "e7ac0a5dbe5cd3724e2187e9b91340c5ed6e60a722957de4b6c04dbf79f9ddbb"
+          },
+          "cpo-72": {
+            "expected": 883,
+            "full": 960,
+            "holdoutPasses": 775,
+            "paidLookups": 8355,
+            "promotions": 21,
+            "reflections": 4,
+            "searchLookups": 7472,
+            "seeded": 907,
+            "traceSha256": "d9950dd5ede7ddec956b9cfb008060609e3528d7bdaf1a0cbeb0550b91ddc48f"
+          },
+          "cpo-88": {
+            "expected": 1161,
+            "full": 1264,
+            "holdoutPasses": 784,
+            "paidLookups": 10863,
+            "promotions": 28,
+            "reflections": 62,
+            "searchLookups": 9702,
+            "seeded": 1190,
+            "traceSha256": "11f72e9eb85876497c8a3ffd3c62c623e401940a46323801acd3fdda63ff0b9e"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 800,
+            "paidLookups": 11710,
+            "promotions": 17,
+            "qualificationLookups": 976,
+            "searchLookups": 10734,
+            "traceSha256": "dfdce213c3cb9e8c46712053988be863baaea63bb7406b4ebc433884d730d501"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 771,
+            "paidLookups": 12068,
+            "promotions": 13,
+            "qualificationLookups": 800,
+            "searchLookups": 11268,
+            "traceSha256": "2e2ab727e5449909444534c2bc029baa1af35c79e1517892c08357865a1fd6bc"
+          }
+        }
+      },
+      "totals": {
+        "cpo-104": {
+          "expected": 4847,
+          "full": 5648,
+          "holdoutPasses": 4161,
+          "paidLookups": 53144,
+          "promotions": 83,
+          "reflections": 666,
+          "searchLookups": 48297,
+          "seeded": 5305
+        },
+        "cpo-128": {
+          "expected": 5243,
+          "full": 6112,
+          "holdoutPasses": 4176,
+          "paidLookups": 65052,
+          "promotions": 87,
+          "reflections": 984,
+          "searchLookups": 59809,
+          "seeded": 5715
+        },
+        "cpo-171": {
+          "expected": 5770,
+          "full": 6720,
+          "holdoutPasses": 4192,
+          "paidLookups": 86354,
+          "promotions": 94,
+          "reflections": 1639,
+          "searchLookups": 80584,
+          "seeded": 6282
+        },
+        "cpo-72": {
+          "expected": 3570,
+          "full": 4096,
+          "holdoutPasses": 4159,
+          "paidLookups": 33177,
+          "promotions": 77,
+          "reflections": 55,
+          "searchLookups": 29607,
+          "seeded": 3874
+        },
+        "cpo-88": {
+          "expected": 4450,
+          "full": 5120,
+          "holdoutPasses": 4158,
+          "paidLookups": 43152,
+          "promotions": 92,
+          "reflections": 324,
+          "searchLookups": 38702,
+          "seeded": 4831
+        },
+        "gepa-batched": {
+          "holdoutPasses": 4176,
+          "paidLookups": 44194,
+          "promotions": 38,
+          "qualificationLookups": 2672,
+          "searchLookups": 41522
+        },
+        "gepa-sequential": {
+          "holdoutPasses": 4139,
+          "paidLookups": 44944,
+          "promotions": 42,
+          "qualificationLookups": 2528,
+          "searchLookups": 42416
+        }
+      }
+    },
+    "retrospective-transfer": {
+      "pairedComparisons": {
+        "cpo-104": {
+          "jointPairedRange95": [
+            -87,
+            33
+          ],
+          "lookupDelta": {
+            "gepa-batched": 18895,
+            "gepa-sequential": 15472
+          },
+          "passDelta": {
+            "gepa-batched": -25,
+            "gepa-sequential": 2
+          }
+        },
+        "cpo-128": {
+          "jointPairedRange95": [
+            -76,
+            50
+          ],
+          "lookupDelta": {
+            "gepa-batched": 42731,
+            "gepa-sequential": 39308
+          },
+          "passDelta": {
+            "gepa-batched": -12,
+            "gepa-sequential": 15
+          }
+        },
+        "cpo-171": {
+          "jointPairedRange95": [
+            -62,
+            73
+          ],
+          "lookupDelta": {
+            "gepa-batched": 84218,
+            "gepa-sequential": 80795
+          },
+          "passDelta": {
+            "gepa-batched": 7,
+            "gepa-sequential": 34
+          }
+        },
+        "cpo-72": {
+          "jointPairedRange95": [
+            -77,
+            21
+          ],
+          "lookupDelta": {
+            "gepa-batched": -21395,
+            "gepa-sequential": -24818
+          },
+          "passDelta": {
+            "gepa-batched": -26,
+            "gepa-sequential": 1
+          }
+        },
+        "cpo-88": {
+          "jointPairedRange95": [
+            -109,
+            -1
+          ],
+          "lookupDelta": {
+            "gepa-batched": -1139,
+            "gepa-sequential": -4562
+          },
+          "passDelta": {
+            "gepa-batched": -53,
+            "gepa-sequential": -26
+          }
+        }
+      },
+      "panels": {
+        "business_ethics/meta_llama_llama_3_8b": {
+          "cpo-104": {
+            "expected": 1156,
+            "full": 1296,
+            "holdoutPasses": 526,
+            "paidLookups": 13263,
+            "promotions": 31,
+            "reflections": 152,
+            "searchLookups": 12107,
+            "seeded": 1216,
+            "traceSha256": "89d6c46e97e5a8d8320102d1ab943700565b3aa06d31451f7868fd23dd027f3e"
+          },
+          "cpo-128": {
+            "expected": 1238,
+            "full": 1392,
+            "holdoutPasses": 521,
+            "paidLookups": 16201,
+            "promotions": 32,
+            "reflections": 224,
+            "searchLookups": 14963,
+            "seeded": 1296,
+            "traceSha256": "145df139eb5629d96402ce7ed524d52c93bc6f4c6bb28250ba2c45e573672c71"
+          },
+          "cpo-171": {
+            "expected": 1300,
+            "full": 1472,
+            "holdoutPasses": 530,
+            "paidLookups": 21784,
+            "promotions": 30,
+            "reflections": 392,
+            "searchLookups": 20484,
+            "seeded": 1366,
+            "traceSha256": "21e8b3f04286a090ba0d13c6ec04e81817d58dfca64e574a87d8235827f8a863"
+          },
+          "cpo-72": {
+            "expected": 874,
+            "full": 976,
+            "holdoutPasses": 520,
+            "paidLookups": 8317,
+            "promotions": 19,
+            "reflections": 4,
+            "searchLookups": 7443,
+            "seeded": 918,
+            "traceSha256": "282fa1186e0e0142cb500a795808cc44b3bef40e3045d355bad9e4c7845f018e"
+          },
+          "cpo-88": {
+            "expected": 1061,
+            "full": 1184,
+            "holdoutPasses": 514,
+            "paidLookups": 10633,
+            "promotions": 25,
+            "reflections": 66,
+            "searchLookups": 9572,
+            "seeded": 1120,
+            "traceSha256": "33cf3efce072702d2987d431c9c3eab0ae5555194184b019ffd265cc7072599d"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 523,
+            "paidLookups": 10722,
+            "promotions": 14,
+            "qualificationLookups": 480,
+            "searchLookups": 10242,
+            "traceSha256": "1bb6adaf1ef22885beefa1669c87a055f1a524594b0b3222410672f0fecd4b12"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 522,
+            "paidLookups": 11150,
+            "promotions": 13,
+            "qualificationLookups": 512,
+            "searchLookups": 10638,
+            "traceSha256": "d8169f91972fe9e9b11e15433ed92e320ed845a850f6cafb0d0982afc597aa40"
+          }
+        },
+        "business_ethics/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-104": {
+            "expected": 1550,
+            "full": 1712,
+            "holdoutPasses": 494,
+            "paidLookups": 13410,
+            "promotions": 20,
+            "reflections": 167,
+            "searchLookups": 11860,
+            "seeded": 1623,
+            "traceSha256": "204560a0668cdd0961410ca33966fc15b0b6018dc14870e6a61539f5463a3b1e"
+          },
+          "cpo-128": {
+            "expected": 1615,
+            "full": 1792,
+            "holdoutPasses": 499,
+            "paidLookups": 16572,
+            "promotions": 20,
+            "reflections": 275,
+            "searchLookups": 14957,
+            "seeded": 1695,
+            "traceSha256": "9fff8dbbc3a8d94aac9c2fd57b0c938518141b69a79bcca0493c058ee60bcfee"
+          },
+          "cpo-171": {
+            "expected": 1686,
+            "full": 1856,
+            "holdoutPasses": 503,
+            "paidLookups": 22027,
+            "promotions": 24,
+            "reflections": 463,
+            "searchLookups": 20341,
+            "seeded": 1760,
+            "traceSha256": "a92b81515bac10bbe693c568a90827f1d4ac88b48633d6b386251312db65b77f"
+          },
+          "cpo-72": {
+            "expected": 1182,
+            "full": 1312,
+            "holdoutPasses": 496,
+            "paidLookups": 8470,
+            "promotions": 12,
+            "reflections": 14,
+            "searchLookups": 7288,
+            "seeded": 1238,
+            "traceSha256": "d673c607a57d3ae1b1d7bbfa175d8bf9fd06727083e7d060d50a2cc8cffae028"
+          },
+          "cpo-88": {
+            "expected": 1436,
+            "full": 1600,
+            "holdoutPasses": 493,
+            "paidLookups": 11244,
+            "promotions": 16,
+            "reflections": 101,
+            "searchLookups": 9808,
+            "seeded": 1514,
+            "traceSha256": "1aa434631f5fd331fbf0db73da8ffdd0ac252e9c5cba9fa0a2deaa1fed14f588"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 496,
+            "paidLookups": 10344,
+            "promotions": 8,
+            "qualificationLookups": 624,
+            "searchLookups": 9720,
+            "traceSha256": "7c0a20d9fadf3b525e6f8a1081648fcd355f77ab7126c991538eade3901e5073"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 493,
+            "paidLookups": 10787,
+            "promotions": 10,
+            "qualificationLookups": 704,
+            "searchLookups": 10083,
+            "traceSha256": "4965c558f52bb43ea000cdc641daf2a4728d92a2e8674d2f49466a120bddbdba"
+          }
+        },
+        "high_school_geography/meta_llama_llama_3_8b": {
+          "cpo-104": {
+            "expected": 1292,
+            "full": 1632,
+            "holdoutPasses": 1439,
+            "paidLookups": 13217,
+            "promotions": 18,
+            "reflections": 219,
+            "searchLookups": 11925,
+            "seeded": 1528,
+            "traceSha256": "31ec8f6f368f124f14daee7b8dbb13b3cafae05284c594d00be96b3981737475"
+          },
+          "cpo-128": {
+            "expected": 1353,
+            "full": 1728,
+            "holdoutPasses": 1433,
+            "paidLookups": 15984,
+            "promotions": 13,
+            "reflections": 311,
+            "searchLookups": 14631,
+            "seeded": 1611,
+            "traceSha256": "c1b7171892d53be62d83e43cb51e8baf1f58b1896630ce2e1e17dbf84d2df8c3"
+          },
+          "cpo-171": {
+            "expected": 1387,
+            "full": 1760,
+            "holdoutPasses": 1431,
+            "paidLookups": 20252,
+            "promotions": 18,
+            "reflections": 471,
+            "searchLookups": 18865,
+            "seeded": 1638,
+            "traceSha256": "50822f90750293de954afa5405738b2e46eb253a2234712e5a2a50387bcc068a"
+          },
+          "cpo-72": {
+            "expected": 900,
+            "full": 1120,
+            "holdoutPasses": 1433,
+            "paidLookups": 8192,
+            "promotions": 14,
+            "reflections": 38,
+            "searchLookups": 7292,
+            "seeded": 1050,
+            "traceSha256": "f468f0007cf0be9d3554f8f9e38c43b62f9e22540d03d1a9ea2981c5627c2f8d"
+          },
+          "cpo-88": {
+            "expected": 1186,
+            "full": 1504,
+            "holdoutPasses": 1433,
+            "paidLookups": 10770,
+            "promotions": 19,
+            "reflections": 128,
+            "searchLookups": 9584,
+            "seeded": 1416,
+            "traceSha256": "382b7ac9f45f82fcf5c38ccc6e5b5d5d3ebb5245accdbcc8eb3446aa14ba1e54"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1441,
+            "paidLookups": 10682,
+            "promotions": 6,
+            "qualificationLookups": 560,
+            "searchLookups": 10122,
+            "traceSha256": "2287d2a5f3b49d3ae95d583d034c200b5ed930f071b95e9fe168e56c0f386064"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1425,
+            "paidLookups": 11064,
+            "promotions": 9,
+            "qualificationLookups": 672,
+            "searchLookups": 10392,
+            "traceSha256": "646c8d10728c088b085e6ffb92de9a041cd53a5dc3481c777f601d197bc80fb9"
+          }
+        },
+        "high_school_geography/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-104": {
+            "expected": 1427,
+            "full": 1696,
+            "holdoutPasses": 1536,
+            "paidLookups": 13303,
+            "promotions": 28,
+            "reflections": 177,
+            "searchLookups": 11876,
+            "seeded": 1592,
+            "traceSha256": "8494217a24ae58e4b4c170f1068d616082b4515f8ccba3b861f69dec9332fd4b"
+          },
+          "cpo-128": {
+            "expected": 1497,
+            "full": 1776,
+            "holdoutPasses": 1541,
+            "paidLookups": 16348,
+            "promotions": 29,
+            "reflections": 276,
+            "searchLookups": 14851,
+            "seeded": 1664,
+            "traceSha256": "ccce29fff93146b48ea46517754e269e56188c6b69e026953c22cac3eba16905"
+          },
+          "cpo-171": {
+            "expected": 1575,
+            "full": 1872,
+            "holdoutPasses": 1523,
+            "paidLookups": 21325,
+            "promotions": 29,
+            "reflections": 449,
+            "searchLookups": 19750,
+            "seeded": 1754,
+            "traceSha256": "ec2ab44ed5bd725e69226621613a3d77c6778126378f9656ba3d8987c6479f90"
+          },
+          "cpo-72": {
+            "expected": 930,
+            "full": 1088,
+            "holdoutPasses": 1534,
+            "paidLookups": 8203,
+            "promotions": 17,
+            "reflections": 13,
+            "searchLookups": 7273,
+            "seeded": 1023,
+            "traceSha256": "728729c48a9bfd8a932c43c7abe4e8549dbdded7462b76436db066f3a77e6636"
+          },
+          "cpo-88": {
+            "expected": 1346,
+            "full": 1584,
+            "holdoutPasses": 1534,
+            "paidLookups": 10965,
+            "promotions": 25,
+            "reflections": 90,
+            "searchLookups": 9619,
+            "seeded": 1494,
+            "traceSha256": "240226fe21b1486e8a33945b7bef603891d68a25d2d6255d5610020ce7ebc31d"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 1546,
+            "paidLookups": 10808,
+            "promotions": 7,
+            "qualificationLookups": 512,
+            "searchLookups": 10296,
+            "traceSha256": "eb61ef257920aff214350abdf79eb6a33c63f333987855d81ab6ad72c0db525b"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 1537,
+            "paidLookups": 11573,
+            "promotions": 10,
+            "qualificationLookups": 624,
+            "searchLookups": 10949,
+            "traceSha256": "0e2d4d1861eefd1e3372574098e3d3ce21571ea9959bd699a2b5e7268e2e1db7"
+          }
+        },
+        "high_school_mathematics/meta_llama_llama_3_8b": {
+          "cpo-104": {
+            "expected": 1335,
+            "full": 1488,
+            "holdoutPasses": 875,
+            "paidLookups": 13647,
+            "promotions": 22,
+            "reflections": 132,
+            "searchLookups": 12312,
+            "seeded": 1363,
+            "traceSha256": "00d2adfec9df5468dd5794406ff532303e4e3bd34908342506b1cff7fa4a302a"
+          },
+          "cpo-128": {
+            "expected": 1391,
+            "full": 1552,
+            "holdoutPasses": 878,
+            "paidLookups": 16471,
+            "promotions": 24,
+            "reflections": 179,
+            "searchLookups": 15080,
+            "seeded": 1420,
+            "traceSha256": "4a9b20a332bba005022553b1fafde91ac3c8da1d0e32d5d650addcdb8cc3b8de"
+          },
+          "cpo-171": {
+            "expected": 1506,
+            "full": 1696,
+            "holdoutPasses": 886,
+            "paidLookups": 21986,
+            "promotions": 34,
+            "reflections": 300,
+            "searchLookups": 20480,
+            "seeded": 1551,
+            "traceSha256": "7fc9d0ebec5673970bef97fdeb2a7c7d8361f448f15ca2bce5b662fd9572fea7"
+          },
+          "cpo-72": {
+            "expected": 767,
+            "full": 832,
+            "holdoutPasses": 875,
+            "paidLookups": 8444,
+            "promotions": 14,
+            "reflections": 2,
+            "searchLookups": 7677,
+            "seeded": 766,
+            "traceSha256": "d49d5f85e73697cb89f8de38410884d57a00205d22f7eee1b554e14c9880acc6"
+          },
+          "cpo-88": {
+            "expected": 1161,
+            "full": 1296,
+            "holdoutPasses": 877,
+            "paidLookups": 10765,
+            "promotions": 21,
+            "reflections": 44,
+            "searchLookups": 9604,
+            "seeded": 1179,
+            "traceSha256": "28b0e9c8a1f842d57f9d00390a2234c53c7ea6fccdb09843dfdfe992496e674e"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 871,
+            "paidLookups": 12216,
+            "promotions": 19,
+            "qualificationLookups": 880,
+            "searchLookups": 11336,
+            "traceSha256": "66f46c7ef5f1c9601503bdde9df2d61be1df42ed770bcbef7b38202802f395c1"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 884,
+            "paidLookups": 12669,
+            "promotions": 12,
+            "qualificationLookups": 848,
+            "searchLookups": 11821,
+            "traceSha256": "f80ebba5fc3d4e15c0eab657eb6be9b4feeb21df604160a3beead8dd224feb0b"
+          }
+        },
+        "high_school_mathematics/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-104": {
+            "expected": 1372,
+            "full": 1552,
+            "holdoutPasses": 910,
+            "paidLookups": 13587,
+            "promotions": 20,
+            "reflections": 129,
+            "searchLookups": 12215,
+            "seeded": 1426,
+            "traceSha256": "401d5355a4564c60382e48336a439d1880ed26eb02647312c51932016120527d"
+          },
+          "cpo-128": {
+            "expected": 1462,
+            "full": 1664,
+            "holdoutPasses": 914,
+            "paidLookups": 16557,
+            "promotions": 29,
+            "reflections": 176,
+            "searchLookups": 15095,
+            "seeded": 1533,
+            "traceSha256": "72027eb7009df4a37a90ebffc74cdf5599ba35082128bd1dad6dc3c94a2286a0"
+          },
+          "cpo-171": {
+            "expected": 1575,
+            "full": 1792,
+            "holdoutPasses": 920,
+            "paidLookups": 22161,
+            "promotions": 33,
+            "reflections": 303,
+            "searchLookups": 20586,
+            "seeded": 1647,
+            "traceSha256": "1c1e9e4172d96ff9a2a325a32e2c5d31c471ab95bc7391d31810ca3ed7b7925c"
+          },
+          "cpo-72": {
+            "expected": 893,
+            "full": 1024,
+            "holdoutPasses": 908,
+            "paidLookups": 8380,
+            "promotions": 13,
+            "reflections": 1,
+            "searchLookups": 7487,
+            "seeded": 937,
+            "traceSha256": "a15ce4cb501d48f4d0029f077e8276df84b23cb50514d8c7b0e919da10b817e8"
+          },
+          "cpo-88": {
+            "expected": 1210,
+            "full": 1376,
+            "holdoutPasses": 893,
+            "paidLookups": 10809,
+            "promotions": 20,
+            "reflections": 48,
+            "searchLookups": 9599,
+            "seeded": 1266,
+            "traceSha256": "e053d8926001ea4c6144b1286a79e48ea44554ebb0c15956de548891068d7a0e"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 897,
+            "paidLookups": 12268,
+            "promotions": 25,
+            "qualificationLookups": 944,
+            "searchLookups": 11324,
+            "traceSha256": "e70f2fbe42c2a0c392a6871c2eb8919dc0f21b52375ec46712929a26b9f5f100"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 893,
+            "paidLookups": 12656,
+            "promotions": 17,
+            "qualificationLookups": 944,
+            "searchLookups": 11712,
+            "traceSha256": "1af94e69dabe2238e7d592a8b7612a978715f8c624b34ee8e3e17544a4681be8"
+          }
+        },
+        "prehistory/meta_llama_llama_3_8b": {
+          "cpo-104": {
+            "expected": 1455,
+            "full": 1664,
+            "holdoutPasses": 2305,
+            "paidLookups": 13423,
+            "promotions": 26,
+            "reflections": 181,
+            "searchLookups": 11968,
+            "seeded": 1571,
+            "traceSha256": "be8fcae098b09bb7bc6b2cf5c7353d2f8945c0e0a0b379cf7c8107127e9c5b30"
+          },
+          "cpo-128": {
+            "expected": 1504,
+            "full": 1728,
+            "holdoutPasses": 2300,
+            "paidLookups": 16444,
+            "promotions": 24,
+            "reflections": 262,
+            "searchLookups": 14940,
+            "seeded": 1637,
+            "traceSha256": "3b2e42eed1f5ccf7f91cc3a8798e237354785b9f61b38210e9defb96a5ee0d11"
+          },
+          "cpo-171": {
+            "expected": 1592,
+            "full": 1840,
+            "holdoutPasses": 2310,
+            "paidLookups": 21550,
+            "promotions": 22,
+            "reflections": 435,
+            "searchLookups": 19958,
+            "seeded": 1744,
+            "traceSha256": "184ddb97fbe675553d70600c493dd1ad584d7c4c4e81d9ee7afb24862b2c44e6"
+          },
+          "cpo-72": {
+            "expected": 1190,
+            "full": 1344,
+            "holdoutPasses": 2304,
+            "paidLookups": 8462,
+            "promotions": 21,
+            "reflections": 19,
+            "searchLookups": 7272,
+            "seeded": 1272,
+            "traceSha256": "4b29183ae789061f83eeac6667402036dbe32aa70176418c7e27e2fcbf00d063"
+          },
+          "cpo-88": {
+            "expected": 1359,
+            "full": 1552,
+            "holdoutPasses": 2308,
+            "paidLookups": 10963,
+            "promotions": 23,
+            "reflections": 97,
+            "searchLookups": 9604,
+            "seeded": 1465,
+            "traceSha256": "41c361b7dfa9347f8d54d63aeda2625021370abaaa2fd9ab18c3a5a88aa293ce"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 2324,
+            "paidLookups": 10398,
+            "promotions": 8,
+            "qualificationLookups": 512,
+            "searchLookups": 9886,
+            "traceSha256": "04b2b39a9ad9a7fc2da05ea2ad414cf4e85576c8a7679980496fc6bfe9e9480f"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 2312,
+            "paidLookups": 11221,
+            "promotions": 7,
+            "qualificationLookups": 624,
+            "searchLookups": 10597,
+            "traceSha256": "f956ef13821db37b209230a3db9eaef85f2a5b2c532a7c992c4a137b364eabea"
+          }
+        },
+        "prehistory/mistralai_mistral_7b_instruct_v0_2": {
+          "cpo-104": {
+            "expected": 1418,
+            "full": 1648,
+            "holdoutPasses": 2153,
+            "paidLookups": 13271,
+            "promotions": 18,
+            "reflections": 173,
+            "searchLookups": 11853,
+            "seeded": 1570,
+            "traceSha256": "1ae742b281c719f7b78801a71cbde8757b68461e96363fcea04ed5cb01d0bf30"
+          },
+          "cpo-128": {
+            "expected": 1442,
+            "full": 1680,
+            "holdoutPasses": 2165,
+            "paidLookups": 16380,
+            "promotions": 16,
+            "reflections": 277,
+            "searchLookups": 14938,
+            "seeded": 1596,
+            "traceSha256": "01599401368b4973566968d7a03e2e834cacc24dfe8d200b1ba48bbc6a374084"
+          },
+          "cpo-171": {
+            "expected": 1554,
+            "full": 1792,
+            "holdoutPasses": 2167,
+            "paidLookups": 21359,
+            "promotions": 21,
+            "reflections": 457,
+            "searchLookups": 19805,
+            "seeded": 1708,
+            "traceSha256": "2d2a762645b4edf6188cad219df6c3735e2364c56b432e48b8c2ce13ad496fb4"
+          },
+          "cpo-72": {
+            "expected": 1056,
+            "full": 1232,
+            "holdoutPasses": 2167,
+            "paidLookups": 8363,
+            "promotions": 12,
+            "reflections": 15,
+            "searchLookups": 7307,
+            "seeded": 1166,
+            "traceSha256": "86f337c98d5793be6dd37ea84b92441cc1527f80fc1bc6479b0328bc2b83d8f1"
+          },
+          "cpo-88": {
+            "expected": 1269,
+            "full": 1488,
+            "holdoutPasses": 2158,
+            "paidLookups": 10938,
+            "promotions": 18,
+            "reflections": 94,
+            "searchLookups": 9669,
+            "seeded": 1411,
+            "traceSha256": "9dd0f8e7f618cb58eaea909f2c57d8ca7a4de31237b46552efa42f67231f362a"
+          },
+          "gepa-batched": {
+            "holdoutPasses": 2165,
+            "paidLookups": 10788,
+            "promotions": 6,
+            "qualificationLookups": 528,
+            "searchLookups": 10260,
+            "traceSha256": "37c523753eed9775efe93c0463e57505b4368bac66c5e2f98563b849022048c7"
+          },
+          "gepa-sequential": {
+            "holdoutPasses": 2170,
+            "paidLookups": 10529,
+            "promotions": 4,
+            "qualificationLookups": 496,
+            "searchLookups": 10033,
+            "traceSha256": "2bfd74b0f4a9c6a76a73af0c19526b3293b0ea717658ff2e5171234264cbfde2"
+          }
+        }
+      },
+      "totals": {
+        "cpo-104": {
+          "expected": 11005,
+          "full": 12688,
+          "holdoutPasses": 10238,
+          "paidLookups": 107121,
+          "promotions": 183,
+          "reflections": 1330,
+          "searchLookups": 96116,
+          "seeded": 11889
+        },
+        "cpo-128": {
+          "expected": 11502,
+          "full": 13312,
+          "holdoutPasses": 10251,
+          "paidLookups": 130957,
+          "promotions": 187,
+          "reflections": 1980,
+          "searchLookups": 119455,
+          "seeded": 12452
+        },
+        "cpo-171": {
+          "expected": 12175,
+          "full": 14080,
+          "holdoutPasses": 10270,
+          "paidLookups": 172444,
+          "promotions": 211,
+          "reflections": 3270,
+          "searchLookups": 160269,
+          "seeded": 13168
+        },
+        "cpo-72": {
+          "expected": 7792,
+          "full": 8928,
+          "holdoutPasses": 10237,
+          "paidLookups": 66831,
+          "promotions": 122,
+          "reflections": 106,
+          "searchLookups": 59039,
+          "seeded": 8370
+        },
+        "cpo-88": {
+          "expected": 10028,
+          "full": 11584,
+          "holdoutPasses": 10210,
+          "paidLookups": 87087,
+          "promotions": 167,
+          "reflections": 668,
+          "searchLookups": 77059,
+          "seeded": 10865
+        },
+        "gepa-batched": {
+          "holdoutPasses": 10263,
+          "paidLookups": 88226,
+          "promotions": 93,
+          "qualificationLookups": 5040,
+          "searchLookups": 83186
+        },
+        "gepa-sequential": {
+          "holdoutPasses": 10236,
+          "paidLookups": 91649,
+          "promotions": 82,
+          "qualificationLookups": 5424,
+          "searchLookups": 86225
+        }
+      }
+    }
+  },
+  "typedFixture": {
+    "outage": {
+      "fullQualification": 72,
+      "orderedQualification": 71,
+      "promoted": true,
+      "reflectionSha256": "6144fd0f7d1d21b99339455f12e3a53a371718c95a9744b3dc211b8be5f0ae8d",
+      "reflections": 2,
+      "searchLookups": 40,
+      "searchSha256": "187bc7976465fcf6ba5cfcfd5360be626a72c6ae5d650e3e846faaf69866aa6f"
+    },
+    "ticket": {
+      "fullQualification": 72,
+      "orderedQualification": 63,
+      "promoted": true,
+      "reflectionSha256": "f5d930f332e6abd72f4ad1666b6eb6ea8afaa3cd8b59d17c06d4a388f0477793",
+      "reflections": 1,
+      "searchLookups": 26,
+      "searchSha256": "46f40b00a4a6526d8bf044bbd0d6d5ec20ad5addd27d36d29afee48b233e1500"
+    },
+    "warehouse": {
+      "fullQualification": 72,
+      "orderedQualification": 71,
+      "promoted": true,
+      "reflectionSha256": "08fdfa5e6f1620f6f21bb736fc571d2ca4f79c455a5d733f5214c99fe532eabd",
+      "reflections": 2,
+      "searchLookups": 40,
+      "searchSha256": "7ad41ce340b920ce7e363b351c13c5f78c367c264e9ce44c4dcadd8244138a93"
+    }
+  }
+}
