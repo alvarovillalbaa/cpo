@@ -22,6 +22,8 @@ The primary gate requires at least 10% lookup savings against both cap-52 GEPA m
 
 Posterior allocation failed the gate. It saved 39.8% of paid lookups against sequential GEPA and 8.8% against batched GEPA at cap 52. The joint paired range was −36 to +58 passes across resamples of 405 holdout cases. The original route had one more pass and used 1,169 fewer lookups. The batched cap-47 control had 27 fewer passes and used 5,057 fewer lookups. The paired range for posterior allocation against that cheaper control was −20 to +75 passes. These comparisons use recorded outcomes for fixed prompt pools. Fresh-model performance remains unverified. [Machine-readable results](posterior-model-transfer-results-v1.json)
 
+A rerun using paid replies to estimate case difficulty gained four passes on this cohort and still missed the gate. [Case-specific forecast](case-difficulty-allocation.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 and the bundled snapshot. The results and capture receipt identify the exact design commit and source hashes. Two replays produced identical bytes with socket connections and DNS disabled. The runner rejected a stale capture seal and refused to overwrite a result. Capture used a hash-verified DuckDB 1.4.3 wheel in a temporary environment. [Snapshot](../benchmarks/data/posterior-model-transfer-v1.json) · [Verification receipt](posterior-model-transfer-verification-v1.json)
