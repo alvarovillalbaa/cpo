@@ -23,6 +23,8 @@ Late substitution lost 12 passes and used 938 more lookups than the original rou
 
 The policy saved 9.6% of lookups against cap-52 batched GEPA and 38.2% against sequential GEPA. The joint accuracy range was −89 to +43 passes. The policy missed the savings threshold, and its paired accuracy evidence remained inconclusive. The original route stays in place. The archive measures selection among supplied prompts. Fresh-model performance remains unverified.
 
+The follow-up kept the original screening case until the first finalist failed and then tested a funded retry on untouched candidates. [Finalist retry replay](funded-finalist-retry.md)
+
 ## Reproduce
 
 Use the published source revision, pinned GEPA 0.1.4, the bundled snapshot, and a fresh output path. The capture validated all 16 pinned objects before decoding their 2,136,897 bytes with the verified DuckDB 1.4.3 wheel in a temporary overlay. Two socket- and DNS-disabled replays matched byte for byte. The runner rejected a wrong seal, a modified source digest, and an existing output path. Storage Guard measured 11.4 GiB free. The 61.1 MB scratch overlay was removed under the standing LAB exception. [Snapshot](../benchmarks/data/late-miss-transfer-v1.json) · [Verification receipt](late-miss-transfer-verification-v1.json) · [Storage authorization](../../lab/docs/runbooks/lab-storage-exceptions.md)
