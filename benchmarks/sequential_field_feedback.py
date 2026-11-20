@@ -102,7 +102,7 @@ def measure(*, parent_bounds=False):
     return {'schema': schema, 'newProviderRequests': 0, 'caps': results}
 
 
-def compare_reinvestment(seeds):
+def compare_reinvestment(seeds, *, parent_bounds=False):
     cohorts = {seed: typed_policy.cohorts(seed) for seed in seeds}
     modes = ('native', 'paired', 'reinvest')
     results = {}
@@ -112,7 +112,7 @@ def compare_reinvestment(seeds):
                            pathsWithMoreProposals=0, pathsWithMoreCalls=0)
         for seed, tasks in cohorts.items():
             for task, cases in tasks.items():
-                traces = [run_arm(task, cases, seed, cap, mode) for mode in modes]
+                traces = [run_arm(task, cases, seed, cap, mode, parent_bounds=parent_bounds) for mode in modes]
                 for mode, (row, _, _, _, paid) in zip(modes, traces, strict=True):
                     if len(paid) > cap or len(paid) != len(set(paid)) or len(paid) != row['searchLookups']:
                         raise ValueError('The fixture run exceeded its paid search cap')
@@ -135,18 +135,18 @@ def compare_reinvestment(seeds):
     return {'seeds': seeds, 'caps': results}
 
 
-def measure_reinvestment():
+def measure_reinvestment(*, parent_bounds=False):
     return {
-        'schema': 'sequential-field-paid-budget-v1',
+        'schema': 'sequential-field-paid-parent-bounds-v1' if parent_bounds else 'sequential-field-paid-budget-v1',
         'newProviderRequests': 0,
         'cohorts': {
-            'published': compare_reinvestment(feedback_budget.SEEDS),
-            'replication': compare_reinvestment(REPLICATION_SEEDS),
+            'published': compare_reinvestment(feedback_budget.SEEDS, parent_bounds=parent_bounds),
+            'replication': compare_reinvestment(REPLICATION_SEEDS, parent_bounds=parent_bounds),
         },
     }
 
 
-def measure_quoted_budget():
+def measure_quoted_budget(*, parent_bounds=False):
     cap = 48
     results = {}
     for reflection_price in (1, 4, 8):
@@ -157,7 +157,8 @@ def measure_quoted_budget():
             for task, cases in typed_policy.cohorts(seed).items():
                 path, costs, outcomes = [], [], []
                 for mode, total in totals.items():
-                    record = run_arm(task, cases, seed, cap, mode, reflection_price=reflection_price)
+                    record = run_arm(task, cases, seed, cap, mode, reflection_price=reflection_price,
+                                     parent_bounds=parent_bounds)
                     row, _, _, proposals, paid = record
                     search_charge = len(paid) + len(proposals) * reflection_price
                     if search_charge > cap or len(paid) != len(set(paid)) or len(paid) != row['searchLookups']:
@@ -177,7 +178,8 @@ def measure_quoted_budget():
                                                   for row in cases['holdout']))
                 traces.append((seed, task, path))
         results[reflection_price] = {**changes, 'totals': totals, 'traceSha256': digest(traces)}
-    return {'schema': 'sequential-field-quote-fixture-v1', 'newProviderRequests': 0, 'searchQuote': cap, 'points': results}
+    schema = 'sequential-field-quote-parent-bounds-v1' if parent_bounds else 'sequential-field-quote-fixture-v1'
+    return {'schema': schema, 'newProviderRequests': 0, 'searchQuote': cap, 'points': results}
 
 
 if __name__ == '__main__':
@@ -185,12 +187,14 @@ if __name__ == '__main__':
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--paid-budget', action='store_true', help='Let CPO spend saved reads on more rounds')
     modes.add_argument('--quoted-budget', action='store_true', help='Charge proposals against the same search quote')
-    modes.add_argument('--parent-bounds', action='store_true', help='Prove the native draw from partial profiles')
+    parser.add_argument('--parent-bounds', action='store_true', help='Prove the native draw from partial profiles')
     args = parser.parse_args()
     if version('gepa') != '0.1.4':
         raise SystemExit('Use pinned GEPA 0.1.4')
     if args.quoted_budget:
-        report = measure_quoted_budget()
+        report = measure_quoted_budget(parent_bounds=args.parent_bounds)
+    elif args.paid_budget:
+        report = measure_reinvestment(parent_bounds=args.parent_bounds)
     else:
-        report = measure_reinvestment() if args.paid_budget else measure(parent_bounds=args.parent_bounds)
+        report = measure(parent_bounds=args.parent_bounds)
     print(json.dumps(report, indent=2, sort_keys=True))
