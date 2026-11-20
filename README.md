@@ -1,5 +1,9 @@
 # CPO
 
+<!-- project-family:start -->
+> **Project family:** [AI Research & Evaluation](https://github.com/alvarovillalbaa#ai-research-and-evaluation) · **Area:** Prompt optimization
+<!-- project-family:end -->
+
 Continuous Prompt Optimization (CPO) searches for a better prompt under a fixed evaluation budget. Each cycle uses training traces to propose edits, races candidates on validation, and qualifies the selected challenger against the incumbent on a separate holdout. The cycle preserves the incumbent when its challenger loses a matched critical case, regresses on a task family, or misses the minimum gain.
 
 ## Run
