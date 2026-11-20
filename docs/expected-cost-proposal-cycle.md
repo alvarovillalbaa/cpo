@@ -39,6 +39,8 @@ The new cycle preserved all 7,680 search journals and deployments across the 12 
 
 At cap 72 CPO saved 21,395 lookups relative to batched GEPA and finished 26 passes lower. At cap 171 it finished seven passes ahead and used 84,218 more lookups. None of the tested budgets matched or exceeded both GEPA scores within both lookup totals. The paired ranges resample held-out cases within subjects with both models and all episodes kept together. [Archived results](expected-cost-proposal-replay-results-v1.json)
 
+The follow-up tested spending a second search window only when the first had yet to find a validated improvement. [Staged search replay](proposal-branch-stop.md)
+
 In the typed fixture, all three tasks preserved their search and reflection journals and promoted the same prompts. Qualification took 205 calls across ticket, warehouse, and outage, down from 216. Those panels use repeated critical-case qualification, so this saving comes from the seeded exact certificate. Real provider proposal quality remains unverified. [Typed fixture](model-backed-validation.md#portable-grounded-fixture)
 
 ## Reproduce offline
