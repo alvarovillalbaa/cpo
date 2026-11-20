@@ -30,6 +30,8 @@ At cap 52 on ARC, posterior allocation matched strict CPO’s score and used 294
 
 At both AIME caps, posterior allocation lost held-out passes to both GEPA controls. Successive Halving also beat it on passes and paid lookups at both caps. At 52 lookups, the posterior policy saved 11.7% against batched GEPA and 19.4% against sequential GEPA while the joint paired range was −116 to −34 passes. The ARC result establishes a useful allocation improvement on the recorded pool. The same rule does not address AIME’s quality gap. [Full ranges and historical ARC costs](recorded-score-allocation-results-v1.json)
 
+The follow-up compared the same allocator with the original wider screen on a four-cycle archived MMLU schedule. [MMLU allocation transfer](routed-score-allocation.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 and the bundled archives.
