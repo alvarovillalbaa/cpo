@@ -1,0 +1,682 @@
+{
+  "design": {
+    "cohorts": [
+      "llama-mistral",
+      "gemma-flan",
+      "mixtral-falcon",
+      "bbh-lmentry"
+    ],
+    "familyReportSha256": "b8edacf20885c09bc79b4aa40841ad0cfa4dd0e527e7df1bca3677f4bce798d8",
+    "protocol": "cpo-expected-cost-cycle-replay-v1",
+    "scope": "Use the public cycle in the recorded CPO route. Verify the complete archived path and realized lookup cost on each panel.",
+    "sourceSha256": {
+      "benchmarks/expected_cost_cycle_replay.py": "bb28247fb07e6694492a162c7eaeafeffa2e8e4282d51fa61ac33d50c657a3a7",
+      "cpo/expected_cost_cycle.py": "5ad0c4aaa39b10b442188db94864c0581c2f30056e445db4d14db4b734752583",
+      "cpo/expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+      "cpo/fixed_pool_cycle.py": "ae7877ace6cd043cbda3929ecc68cb5824b31aa491575029c81ba5a1c0f47649",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7"
+    },
+    "transferDesignSha256": "0c9e1a3f925986b4ef78a7a6de739194149a29479a31e1e0770ca5f18efef720",
+    "transferReportSha256": "e940060d1c392cb8e0233a2d9bf88165fd5a32493cd93d306a8bae0493c18dbb",
+    "transferSnapshotSha256": "dae40ce166fabd49e8e3559db5a342a4047455c023d32dfe8c0efe2ea80bd326"
+  },
+  "designSha256": "4ee7b94813db35c5fd52e99ba97cf7a6baec814d0a3c1c44a3b32522da4e8aca",
+  "results": {
+    "bbh-lmentry": {
+      "panels": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "holdoutPasses": 480,
+          "paidLookups": 3460,
+          "qualificationPaid": 1190,
+          "searchPaid": 2270,
+          "traceSha256": "796e9290569fe697f151f8d9d26ae5a12b1977ce1e5b76e7ca1d429e3707d29c"
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "holdoutPasses": 524,
+          "paidLookups": 3775,
+          "qualificationPaid": 1124,
+          "searchPaid": 2651,
+          "traceSha256": "de821f65519eb00ad87fafb22cc0bacd3f69fb18740b754f41fdd593c1319761"
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "holdoutPasses": 132,
+          "paidLookups": 4840,
+          "qualificationPaid": 324,
+          "searchPaid": 4516,
+          "traceSha256": "fb4000f3acf529a99ea0d81558f275b3e6f011afa7e276034cb022b32c3b3988"
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "holdoutPasses": 423,
+          "paidLookups": 3751,
+          "qualificationPaid": 1132,
+          "searchPaid": 2619,
+          "traceSha256": "41237618eeb725a64ca335b30bf284afbc5e5742a9d1cce4d7a53d0ca84f3278"
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "holdoutPasses": 337,
+          "paidLookups": 3487,
+          "qualificationPaid": 976,
+          "searchPaid": 2511,
+          "traceSha256": "a51a175fa8d4c5700098509baa71c1a9c9b9548b37fab4e6d19feafe9cbc3224"
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "holdoutPasses": 194,
+          "paidLookups": 4059,
+          "qualificationPaid": 1029,
+          "searchPaid": 3030,
+          "traceSha256": "1baba0243a480d83beddfe11778e0da0cf1b9462476dd99836e96b0797aa05d7"
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "holdoutPasses": 510,
+          "paidLookups": 3378,
+          "qualificationPaid": 968,
+          "searchPaid": 2410,
+          "traceSha256": "4bcf67ebbf763bd28c672f233f15faa6ae95c36116468216ba015875d4778417"
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "holdoutPasses": 596,
+          "paidLookups": 3331,
+          "qualificationPaid": 1146,
+          "searchPaid": 2185,
+          "traceSha256": "86fdc6acc08546493efe8bb35bbdf066e023f138221dd3750418f42a977e9f0b"
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "holdoutPasses": 354,
+          "paidLookups": 3766,
+          "qualificationPaid": 1083,
+          "searchPaid": 2683,
+          "traceSha256": "662f3b7033e360c764fca5b82d3e27a75b1a460c1e381290a47f58148283a6fc"
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "holdoutPasses": 288,
+          "paidLookups": 4244,
+          "qualificationPaid": 1042,
+          "searchPaid": 3202,
+          "traceSha256": "344ce2416ffe31990df828b934886f52f7e2a5894e632ddde7cc038d37bb8b1d"
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "holdoutPasses": 256,
+          "paidLookups": 3734,
+          "qualificationPaid": 1027,
+          "searchPaid": 2707,
+          "traceSha256": "40af2a0809eabd6b0eb8abb05730d056b494e9bd94553f2a13314df8e81cc4c7"
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "holdoutPasses": 129,
+          "paidLookups": 5056,
+          "qualificationPaid": 1242,
+          "searchPaid": 3814,
+          "traceSha256": "c48153056e98af7fa3921a3753871d3c780df6b1bd67084fbe975778dcebe077"
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "holdoutPasses": 423,
+          "paidLookups": 3475,
+          "qualificationPaid": 1031,
+          "searchPaid": 2444,
+          "traceSha256": "6142571510d22a7051256186764f91149e1fec84fd314fd95fc42cb468c980b1"
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "holdoutPasses": 382,
+          "paidLookups": 3796,
+          "qualificationPaid": 1142,
+          "searchPaid": 2654,
+          "traceSha256": "3dc4eac39f6462fca879b64532c1a8b63276d0e5095deb49445ea9eda5828063"
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "holdoutPasses": 561,
+          "paidLookups": 3358,
+          "qualificationPaid": 1076,
+          "searchPaid": 2282,
+          "traceSha256": "7cc2e1079128c3309bfeefb371d37380db4bc28dc1b83bead26ea2199a5a2fd5"
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "holdoutPasses": 523,
+          "paidLookups": 3410,
+          "qualificationPaid": 976,
+          "searchPaid": 2434,
+          "traceSha256": "59cef4529d8dd50ec3ad56c6677a336e5763952d91fc011c8c4a283511581334"
+        },
+        "bbh-navigate/airoboros-13b": {
+          "holdoutPasses": 426,
+          "paidLookups": 3663,
+          "qualificationPaid": 1066,
+          "searchPaid": 2597,
+          "traceSha256": "74634e0c257189e453081fda04f69220fe4b3d4c362c78730d0b45041b6c1008"
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "holdoutPasses": 490,
+          "paidLookups": 2899,
+          "qualificationPaid": 621,
+          "searchPaid": 2278,
+          "traceSha256": "5793955dbd60e4baa58dc616e29a25a9401304a816a1f28c818bb20ec3807676"
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "holdoutPasses": 299,
+          "paidLookups": 3761,
+          "qualificationPaid": 947,
+          "searchPaid": 2814,
+          "traceSha256": "b391dec3f788c2034c8ada690275443916ef8d511b9a16b43174659c28bed911"
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "holdoutPasses": 219,
+          "paidLookups": 4207,
+          "qualificationPaid": 1182,
+          "searchPaid": 3025,
+          "traceSha256": "b45e779a078e2ebf5fabc7f9269251bdbf98c1b24e2669709867e3efdcbc666d"
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "holdoutPasses": 301,
+          "paidLookups": 3680,
+          "qualificationPaid": 895,
+          "searchPaid": 2785,
+          "traceSha256": "c0076a7eda0affc9887a1021a9c85d765f11e8187bfca81ef782ce4ad89a5dec"
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "holdoutPasses": 368,
+          "paidLookups": 3374,
+          "qualificationPaid": 972,
+          "searchPaid": 2402,
+          "traceSha256": "73f0e65439b88b8767026e372dbc1280d7b14a073375679e59c54e2a3fd39be5"
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "holdoutPasses": 284,
+          "paidLookups": 3722,
+          "qualificationPaid": 633,
+          "searchPaid": 3089,
+          "traceSha256": "864b9bbcc167fcccda2d8ec76411102734c12c51a1b1bc2e649a4dad01e6592e"
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "holdoutPasses": 260,
+          "paidLookups": 4497,
+          "qualificationPaid": 1253,
+          "searchPaid": 3244,
+          "traceSha256": "15d041bd07629b571d09dc0d1f15e0ba2fdfe1d5af70da9799266b0d0249ee8a"
+        },
+        "bbh-snarks/airoboros-13b": {
+          "holdoutPasses": 500,
+          "paidLookups": 3378,
+          "qualificationPaid": 945,
+          "searchPaid": 2433,
+          "traceSha256": "8fa2cfe643b9bee110490e3ca98bede799f1ae2ba177008a833697a4abf0f852"
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "holdoutPasses": 559,
+          "paidLookups": 3573,
+          "qualificationPaid": 1248,
+          "searchPaid": 2325,
+          "traceSha256": "45c5efad3a5e4e4ccd7b967b0b763c8da3779effc36841ac70203dc5e83ac783"
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "holdoutPasses": 604,
+          "paidLookups": 3492,
+          "qualificationPaid": 1049,
+          "searchPaid": 2443,
+          "traceSha256": "1b4467cada0210afec1bea0e13f7801a8bf2d4056be1f15917dd18467ffa1aae"
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "holdoutPasses": 583,
+          "paidLookups": 3405,
+          "qualificationPaid": 1066,
+          "searchPaid": 2339,
+          "traceSha256": "7387c020a09116bb5839c6a6fd53317bf792bfff8b836a124743edcd2cd0d4f7"
+        },
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "holdoutPasses": 621,
+          "paidLookups": 3353,
+          "qualificationPaid": 941,
+          "searchPaid": 2412,
+          "traceSha256": "9de452c4bef5799226363f2f35b3d30705833cd740cd9a244d4418869a9c2b85"
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "holdoutPasses": 814,
+          "paidLookups": 2616,
+          "qualificationPaid": 837,
+          "searchPaid": 1779,
+          "traceSha256": "eed9fdba60756458df4ea8b5f578b476f92b5fc9dd94d394066e4108897d81a1"
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "holdoutPasses": 550,
+          "paidLookups": 3887,
+          "qualificationPaid": 1259,
+          "searchPaid": 2628,
+          "traceSha256": "3b910c70af236310876a042d7a5c363ff8c697eed9d16bc6caf44320b3f47ba7"
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "holdoutPasses": 573,
+          "paidLookups": 2606,
+          "qualificationPaid": 336,
+          "searchPaid": 2270,
+          "traceSha256": "514f0c31d950862608c937dc124aca4d97e9e5b358d770d88b7f7ca12f4f2661"
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "holdoutPasses": 566,
+          "paidLookups": 3453,
+          "qualificationPaid": 933,
+          "searchPaid": 2520,
+          "traceSha256": "93ef4f23f4db695efd6112376dd0c25bf6829b1efc8af9ff1f5c4a1184f50527"
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "holdoutPasses": 506,
+          "paidLookups": 3913,
+          "qualificationPaid": 1259,
+          "searchPaid": 2654,
+          "traceSha256": "13d8c9c7c2d7e4a38bcfdf7d97d53a25ef58412ea81913248712074d0ac969d9"
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "holdoutPasses": 285,
+          "paidLookups": 3963,
+          "qualificationPaid": 1068,
+          "searchPaid": 2895,
+          "traceSha256": "148372e217899a1b89eb05861bb20f0479d6d86967064e11800f3e7df9356cdc"
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "holdoutPasses": 278,
+          "paidLookups": 4230,
+          "qualificationPaid": 1303,
+          "searchPaid": 2927,
+          "traceSha256": "d4aeb801eddc1f70f7de57afa3564d7785f2f58307ca5251e1f9d5e055a831d8"
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "holdoutPasses": 401,
+          "paidLookups": 3487,
+          "qualificationPaid": 963,
+          "searchPaid": 2524,
+          "traceSha256": "4bb9215ae54799ff30235fcd342983c1f71117b20bb4513660cc8907332eb7cf"
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "holdoutPasses": 568,
+          "paidLookups": 3498,
+          "qualificationPaid": 1120,
+          "searchPaid": 2378,
+          "traceSha256": "8c93e1cb1ed4a2ae5c6b28288676ff959801db2d92e72336dc454666e423a6b6"
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "holdoutPasses": 469,
+          "paidLookups": 3959,
+          "qualificationPaid": 1201,
+          "searchPaid": 2758,
+          "traceSha256": "bd948436e835fecc496cbbeec1eecca643bb3be8ad6fea9ec2768677f074a926"
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "holdoutPasses": 602,
+          "paidLookups": 3756,
+          "qualificationPaid": 1201,
+          "searchPaid": 2555,
+          "traceSha256": "e7e2c593309c3920e9e297ff6c0ebe2006c213c1e81acfd4a2151e9b4d7a3a14"
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "holdoutPasses": 271,
+          "paidLookups": 4218,
+          "qualificationPaid": 1291,
+          "searchPaid": 2927,
+          "traceSha256": "e743e7c61706b1cd3712bd8518df472e616491227a6fb2987635be170a26c9c0"
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "holdoutPasses": 350,
+          "paidLookups": 3771,
+          "qualificationPaid": 1023,
+          "searchPaid": 2748,
+          "traceSha256": "4f91d7cbbe98e7f7424bf78333a2eee140930d0e8245fa62b35c200c0829ecd8"
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "holdoutPasses": 270,
+          "paidLookups": 3896,
+          "qualificationPaid": 1003,
+          "searchPaid": 2893,
+          "traceSha256": "3e289f699d04a25592784b0834203a2bf73d3a437477ace0fbd1daa5d780d271"
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "holdoutPasses": 247,
+          "paidLookups": 4108,
+          "qualificationPaid": 1019,
+          "searchPaid": 3089,
+          "traceSha256": "dccd858677868e6ae6718c70a5000662a7791807eda73b3b098d2a7e8aae47ed"
+        }
+      },
+      "totals": {
+        "holdoutPasses": 18376,
+        "paidLookups": 163285,
+        "qualificationPaid": 45142,
+        "searchPaid": 118143
+      }
+    },
+    "gemma-flan": {
+      "panels": {
+        "high_school_geography/google_flan_t5_xxl": {
+          "holdoutPasses": 1420,
+          "paidLookups": 2731,
+          "qualificationPaid": 517,
+          "searchPaid": 2214,
+          "traceSha256": "9dd9556df13d173acc7d30d01a4c348fc0a73a4c7f8494047f15375e01988713"
+        },
+        "high_school_geography/google_gemma_7b": {
+          "holdoutPasses": 1525,
+          "paidLookups": 3013,
+          "qualificationPaid": 739,
+          "searchPaid": 2274,
+          "traceSha256": "738d8b71a6df4e7f74a435e4ee114132df661e645319545390752b370dc6c315"
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "holdoutPasses": 1402,
+          "paidLookups": 2681,
+          "qualificationPaid": 512,
+          "searchPaid": 2169,
+          "traceSha256": "acb273463fa75b9b34c54cda7fad41d881f4a52b357f3d3e6e10825db526fa02"
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "holdoutPasses": 1652,
+          "paidLookups": 3319,
+          "qualificationPaid": 949,
+          "searchPaid": 2370,
+          "traceSha256": "daca10f1d707432d400c4fc2af2d5e63952055755f40f0405a8ec271dc8d24aa"
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "holdoutPasses": 1462,
+          "paidLookups": 2641,
+          "qualificationPaid": 441,
+          "searchPaid": 2200,
+          "traceSha256": "aad26ebd94e45da8c0b49d200960f0649edb2730923eba405d9b20d112660eb2"
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "holdoutPasses": 1419,
+          "paidLookups": 3293,
+          "qualificationPaid": 839,
+          "searchPaid": 2454,
+          "traceSha256": "0d632f912be6717f3623f768ec1b7484eeff355d96adcf1c2ccca22918c9ee7b"
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "holdoutPasses": 854,
+          "paidLookups": 2765,
+          "qualificationPaid": 396,
+          "searchPaid": 2369,
+          "traceSha256": "3100c2109350d54f5db30e5ad58af5dd6a09b0400674e5df34b63b929a326454"
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "holdoutPasses": 943,
+          "paidLookups": 3543,
+          "qualificationPaid": 976,
+          "searchPaid": 2567,
+          "traceSha256": "4c86deb6eaef79264e92fabf17e62f23aa4c096f39389780564431387d34a188"
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "holdoutPasses": 2161,
+          "paidLookups": 2431,
+          "qualificationPaid": 291,
+          "searchPaid": 2140,
+          "traceSha256": "1cf4a6f0dc40484ce0e9a230a6ca5c948e84f16e2266436c63fbc5edfcbcca6c"
+        },
+        "moral_disputes/google_gemma_7b": {
+          "holdoutPasses": 2215,
+          "paidLookups": 3190,
+          "qualificationPaid": 926,
+          "searchPaid": 2264,
+          "traceSha256": "38ac69751ed357db41478a25440fa0f840e75a3d7c3c8d15fc2015c2d85a5059"
+        },
+        "world_religions/google_flan_t5_xxl": {
+          "holdoutPasses": 1073,
+          "paidLookups": 2429,
+          "qualificationPaid": 273,
+          "searchPaid": 2156,
+          "traceSha256": "4fa999f7b27d2ea3e66f789530d57e534ce0df124454828985b7edba95130fe4"
+        },
+        "world_religions/google_gemma_7b": {
+          "holdoutPasses": 1309,
+          "paidLookups": 3091,
+          "qualificationPaid": 893,
+          "searchPaid": 2198,
+          "traceSha256": "05df52dc67efbe7d1e01eaf0c09a544d8f0a9977a71b8553bc73088d4005c519"
+        }
+      },
+      "totals": {
+        "holdoutPasses": 17435,
+        "paidLookups": 35127,
+        "qualificationPaid": 7752,
+        "searchPaid": 27375
+      }
+    },
+    "llama-mistral": {
+      "panels": {
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "holdoutPasses": 404,
+          "paidLookups": 3326,
+          "qualificationPaid": 836,
+          "searchPaid": 2490,
+          "traceSha256": "4c7187eeead11ee44e4b196145c85b83cfaeaec12572a38dec9e6b9d05ba7f7b"
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "holdoutPasses": 338,
+          "paidLookups": 3195,
+          "qualificationPaid": 873,
+          "searchPaid": 2322,
+          "traceSha256": "099261ca300c4acce0aa15f1a3cbc5ef4dcd57deb009c410fb90879e3caf351c"
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "holdoutPasses": 725,
+          "paidLookups": 2978,
+          "qualificationPaid": 858,
+          "searchPaid": 2120,
+          "traceSha256": "5c8e969645804a74461193d429ee38b9b0c4486883dee81787b6e5e77ac38286"
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "holdoutPasses": 725,
+          "paidLookups": 3088,
+          "qualificationPaid": 917,
+          "searchPaid": 2171,
+          "traceSha256": "5753644759f086d9168fa220bd29619155281bd8ce1edfbd338c2b18df5c4099"
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "holdoutPasses": 753,
+          "paidLookups": 2839,
+          "qualificationPaid": 649,
+          "searchPaid": 2190,
+          "traceSha256": "c1d74468fce44bfe61a7faeb6e2279f653219e3be31361ee98847cf2b8bd07b2"
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "holdoutPasses": 684,
+          "paidLookups": 3179,
+          "qualificationPaid": 844,
+          "searchPaid": 2335,
+          "traceSha256": "e5d7d63be27b0ca23eb6aaa2ff346e0a7f223846a5487609d9ebfc36afdb607c"
+        },
+        "formal_logic/meta_llama_llama_3_8b_instruct": {
+          "holdoutPasses": 541,
+          "paidLookups": 3164,
+          "qualificationPaid": 817,
+          "searchPaid": 2347,
+          "traceSha256": "415497096bed8dc388ace0457132050bf9fa8d294fc8f9a45ccc869812817687"
+        },
+        "formal_logic/mistralai_mistral_7b_v0_1": {
+          "holdoutPasses": 291,
+          "paidLookups": 3370,
+          "qualificationPaid": 994,
+          "searchPaid": 2376,
+          "traceSha256": "ddf3c942c4aaed4301307ebd31519e49eabb53c368ed632b28ee74b59f028b30"
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "holdoutPasses": 1124,
+          "paidLookups": 2468,
+          "qualificationPaid": 400,
+          "searchPaid": 2068,
+          "traceSha256": "dd8ca71c4ab26dbd9a64d0a97c6d988d935042d1072dad2252d690bd34a811a7"
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "holdoutPasses": 1098,
+          "paidLookups": 3027,
+          "qualificationPaid": 800,
+          "searchPaid": 2227,
+          "traceSha256": "034b40fcdca8c8d44e5658d655e98ecad2da0bcb2fec8d803d9b96d82c58679e"
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "holdoutPasses": 4156,
+          "paidLookups": 3105,
+          "qualificationPaid": 711,
+          "searchPaid": 2394,
+          "traceSha256": "0e269a3d93216e09bd537bf218761e273bb38aef141e2f7f33d46bc512244ccb"
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "holdoutPasses": 3784,
+          "paidLookups": 3282,
+          "qualificationPaid": 960,
+          "searchPaid": 2322,
+          "traceSha256": "cd0c4b8d31c8189c05a3b1401f3cbb9ea9a31b7f237382d1a6aa479385732f14"
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "holdoutPasses": 871,
+          "paidLookups": 2859,
+          "qualificationPaid": 689,
+          "searchPaid": 2170,
+          "traceSha256": "dde64ac2d7c995a0b344c60e1270723a1bae23d9b2306ec596fff0f2563b5479"
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "holdoutPasses": 841,
+          "paidLookups": 3294,
+          "qualificationPaid": 1009,
+          "searchPaid": 2285,
+          "traceSha256": "b1211119dd97496d13622965682019c1e642be69bbed510e667750862c8bb717"
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "holdoutPasses": 738,
+          "paidLookups": 2642,
+          "qualificationPaid": 573,
+          "searchPaid": 2069,
+          "traceSha256": "c2d6e30f482284a2e1c4d935777e194bb73b45d916edfff80a04b4b810aef455"
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "holdoutPasses": 651,
+          "paidLookups": 3006,
+          "qualificationPaid": 797,
+          "searchPaid": 2209,
+          "traceSha256": "6d92537fa7c9af5683947926fbba97d39db78ddb24d7d55bb6a90303bc260dee"
+        }
+      },
+      "totals": {
+        "holdoutPasses": 17724,
+        "paidLookups": 48822,
+        "qualificationPaid": 12727,
+        "searchPaid": 36095
+      }
+    },
+    "mixtral-falcon": {
+      "panels": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "holdoutPasses": 852,
+          "paidLookups": 2774,
+          "qualificationPaid": 569,
+          "searchPaid": 2205,
+          "traceSha256": "150487c86fc0fc6ba295c588fcb0b2a611319f4589a65ce04ce6a409916a9dfc"
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "holdoutPasses": 903,
+          "paidLookups": 2863,
+          "qualificationPaid": 616,
+          "searchPaid": 2247,
+          "traceSha256": "a32ab0d3f770b10a7a92a9c784579386ee3ac0b48e08f533b76e129da89896e2"
+        },
+        "college_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "holdoutPasses": 1255,
+          "paidLookups": 3120,
+          "qualificationPaid": 792,
+          "searchPaid": 2328,
+          "traceSha256": "f2ef4f08b1d98dbc7fcd2ac75cb294cba6a7d9dbf37ed4965e9a7e0117cf734e"
+        },
+        "college_biology/tiiuae_falcon_180b": {
+          "holdoutPasses": 1222,
+          "paidLookups": 2973,
+          "qualificationPaid": 734,
+          "searchPaid": 2239,
+          "traceSha256": "d8f987952cd84eb8f97d30715a7e5009d72ca021ff751abc126fd814f9a9367e"
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "holdoutPasses": 1628,
+          "paidLookups": 3034,
+          "qualificationPaid": 651,
+          "searchPaid": 2383,
+          "traceSha256": "679897670013224035f827f52864e09c2764fd2031ebf101c2371f9cb44f8249"
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "holdoutPasses": 1574,
+          "paidLookups": 3208,
+          "qualificationPaid": 798,
+          "searchPaid": 2410,
+          "traceSha256": "fcb9ec49b45e19e37590109f1ed0287e9c5d24a6dccb2d34a812966f00929d8d"
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "holdoutPasses": 2582,
+          "paidLookups": 3204,
+          "qualificationPaid": 827,
+          "searchPaid": 2377,
+          "traceSha256": "13c5de67f3e091c03b600c514ad573ecbff254e5e44dea9c59b60b03c5704125"
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "holdoutPasses": 2782,
+          "paidLookups": 2942,
+          "qualificationPaid": 576,
+          "searchPaid": 2366,
+          "traceSha256": "9c2826dcd3634dcd7f0085ffa09119d8baeedb2caf4aea6669ed5e8e18095f5e"
+        },
+        "human_aging/mistralai_mixtral_8x7b_instruct_v01": {
+          "holdoutPasses": 1442,
+          "paidLookups": 3231,
+          "qualificationPaid": 925,
+          "searchPaid": 2306,
+          "traceSha256": "5e185c43aad912af5015a0743fac5c3e462a8642838c52134c6ffdbbc27a9b72"
+        },
+        "human_aging/tiiuae_falcon_180b": {
+          "holdoutPasses": 1589,
+          "paidLookups": 2759,
+          "qualificationPaid": 602,
+          "searchPaid": 2157,
+          "traceSha256": "4e91ef9e6d686a12ea875a7b6e11037f140cdf43b0cb6a03f3a9f4d735cfe5a8"
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "holdoutPasses": 4391,
+          "paidLookups": 3048,
+          "qualificationPaid": 696,
+          "searchPaid": 2352,
+          "traceSha256": "f4583ab36f1142d932cb0c2d5ff1f94958d2c06efa1d8e57b81d9eb168a60397"
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "holdoutPasses": 4181,
+          "paidLookups": 2958,
+          "qualificationPaid": 628,
+          "searchPaid": 2330,
+          "traceSha256": "56a0e2b9f64ef3f75a260ca2a784bd26287c280be50d2a602ec3699d4dc3e209"
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "holdoutPasses": 1654,
+          "paidLookups": 2399,
+          "qualificationPaid": 306,
+          "searchPaid": 2093,
+          "traceSha256": "8630bba3cb3c7b964201a5a421955516e622d81bfe4b7e8016ccc9f95d9e6411"
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "holdoutPasses": 1785,
+          "paidLookups": 3208,
+          "qualificationPaid": 885,
+          "searchPaid": 2323,
+          "traceSha256": "205d0a8d1ec76df7a7faf012c59526e925f3cf1d5361d50217addbc6c41195a7"
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "holdoutPasses": 843,
+          "paidLookups": 2484,
+          "qualificationPaid": 479,
+          "searchPaid": 2005,
+          "traceSha256": "20b0bbbf0d268a95ce11013d75be218ef7f161510c862978f879e5539edf003a"
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "holdoutPasses": 933,
+          "paidLookups": 2223,
+          "qualificationPaid": 280,
+          "searchPaid": 1943,
+          "traceSha256": "37ea7d9a6cbfdcd7a7ec1f1cbf8b6c31667a9fbe99e3b897d6ddc50944c99b46"
+        }
+      },
+      "totals": {
+        "holdoutPasses": 29616,
+        "paidLookups": 46428,
+        "qualificationPaid": 10364,
+        "searchPaid": 36064
+      }
+    }
+  }
+}

@@ -25,6 +25,8 @@ CPO passed the pooled archive gate on 44 panels and 660 distinct held-out cases.
 
 Every selected GEPA point in the table uses expected-cost qualification. The cheapest swept GEPA setting to reach CPO's pooled score was sequential at cap 46. It scored 18,432 and used 208,160 lookups, 44,875 more than CPO. Expected-cost ordering reduced CPO's own cost by 2,674 lookups and preserved every search and deployment decision. The new evidence covers fixed archived prompt pools on two model splits absent from the local inventory. The two previously unseen tasks were inconclusive, and fresh-model performance remains unverified.
 
+The public fixed-pool cycle reproduced all 44 CPO panel traces from an installed wheel. [Cycle API and installed replay](expected-cost-cycle.md)
+
 ## Reproduce
 
 Use the bundled correctness snapshot, pinned GEPA 0.1.4, and a fresh report path.

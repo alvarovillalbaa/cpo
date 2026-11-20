@@ -34,6 +34,8 @@ decision = certify_expected_qualification(
 
 `evaluate(prompt, row, repeat)` returns an exact boolean. Supply earlier validation counts as `(passed, observed)` for the incumbent and challenger in that order. With no counts, both pass-rate estimates default to one half. The scheduler handles up to eight qualification rows in one or two families. If an evaluation cap interrupts the proof, the return value carries the incumbent and an `undecided` status. [Package implementation](../cpo/expected_qualification.py)
 
+For a supplied prompt pool, the public fixed-pool cycle collects validation counts and applies the scheduler in one call. [Expected-cost cycle](expected-cost-cycle.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4. Preview the frozen inputs to obtain the design seal, then run with that seal and a new output path.
