@@ -26,6 +26,8 @@ The separate original provider holdout covered only two of six distinct directed
 
 A follow-up tested reallocating cases across training, validation, and qualification. It found that all three critical loss observations came from conditions missing from the entire development split. [Critical case allocation replay](recorded-critical-allocation.md)
 
+A budget sweep measured the strongest affordable GEPA control at each CPO cost and applied the same qualification precheck to all optimizers. [Realized-cost comparison](recorded-coverage-frontier.md)
+
 ## Reproduce
 
 Use the intact GEPA research archive, its original Open Evals source study, and the pinned GEPA 0.1.4 wheel. Preview and run from the CPO checkout.
