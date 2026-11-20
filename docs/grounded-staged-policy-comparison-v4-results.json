@@ -1,0 +1,715 @@
+{
+  "plan": {
+    "arms": [
+      "cpo",
+      "gepa-sequential",
+      "gepa-batched",
+      "gepa-cached-opening",
+      "opening-only"
+    ],
+    "cachedGepaOpening": {
+      "evaluationLimitPerTask": 24,
+      "laterProposals": 0,
+      "minibatch": 2,
+      "observations": "reuse validation replies",
+      "proposal": "supplied rewrite"
+    },
+    "certifyFinalDraft": true,
+    "certifyOpening": true,
+    "combinedPlanSha256": "87e8e214f2445f1153a75d2338ae22697a3fe5750f2af7238ad67d9155783df0",
+    "corpusSha256": "a8bc9978274d57cbe0a57638b78bb7c0a8ae0fce075c2567410f653295cf7182",
+    "developmentRequestCeiling": 1920,
+    "familyFields": {
+      "outage": "Plan",
+      "ticket": "Channel",
+      "warehouse": "Tier"
+    },
+    "gate": {
+      "efficiencyPercent": 90,
+      "minimumAddedPasses": 8,
+      "minimumTaskPasses": 27
+    },
+    "gepaVersion": "0.1.4",
+    "laterRetryCap": 8,
+    "logicalLimitsByRole": {
+      "admission": 480,
+      "evaluation": 744,
+      "qualification": 648,
+      "reflection": 48
+    },
+    "nativeGepaCaseIds": "original case IDs, disjoint across train and validation",
+    "openingControl": {
+      "admission": "same exact family certificate",
+      "laterProposals": 0,
+      "nomination": "strict opening dominance with a funded exact fallback",
+      "placement": "after staged and GEPA arms for each task",
+      "sharedOpening": true,
+      "validation": "exact promotion gate from bounded paired validation"
+    },
+    "planSha256": "f354c8f6be4bf658e7ca93bc170beaaade3841f22ee70fd6bf8423cf6a596279",
+    "protocol": "portable-grounded-staged-policy-comparison-v4",
+    "repeats": 2,
+    "scope": "Both CPO policies, two split-safe native GEPA controls and fixed-opening GEPA.",
+    "searchCap": 56,
+    "seed": 66029,
+    "sourceSha256": {
+      "benchmarks/feedback_budget.py": "faa0add092587ee151fc8071027bbd065053daf5d182bd87d903e5608a9e0f25",
+      "benchmarks/gepa_cached_opening.py": "dcc94ad5b20eb5242198c969c6dd524c2ad181a153ec826a974c5271d88b79ff",
+      "benchmarks/gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+      "benchmarks/grounded_fixture.py": "f42d309d629cafd303f42bc319dc388333398134644597ad274de9d380cf2a31",
+      "benchmarks/grounded_staged.py": "53a14c4e1052d80300c76dd3a62960a87fe8321060aa7c840ebf6e831e9dae57",
+      "benchmarks/grounded_staged_case_evidence.py": "15e0bd625681ff7194ad74e282f8da9cfd6e0691af68f1d1abf7de447385cd35",
+      "benchmarks/grounded_staged_certified_opening_comparison.py": "014fc60a7175087224204199716fcf5199dbedcb1be2a4da3fdcc694db435c54",
+      "benchmarks/grounded_staged_combined_fixture.py": "84d3ddf6afdadacbe568acb166d852fa5a60fad53f26a1539dabb7e98f734a29",
+      "benchmarks/grounded_staged_fixture.py": "f51677efd9b8205f273ce2242701d27813cd16c9376f0bb98cb760d0e574c98c",
+      "benchmarks/grounded_staged_opening_ablation.py": "d1f29de0cc48ad247c5b3596f70726a6fbe5c1ff8e9a405a43ba2f4d93046f5b",
+      "benchmarks/grounded_staged_opening_dominance_comparison.py": "e237db32d6a378ea642bae01022b19b1f1619938a2863f35010466655a082393",
+      "benchmarks/grounded_staged_policy_comparison.py": "ec13356c9d8a82e22915d28d6697e4c11fff30d61c6a3e24fddb7cf1677e7c32",
+      "benchmarks/opening_screen_typed.py": "d24df6871f8fc266118faf4ac59b11c641b845a26d5c18accf3ac840821f7da8",
+      "benchmarks/typed_policy.py": "9fb85272a82c61499ba7b614d233964f9e8c077ad1ca630ac1030737202a0f1f",
+      "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+      "cpo/anchored_validation.py": "20d4ae69a2dd763800adc2c5a7b85ce0285510ca957cae4d5f5058c23a376ac0",
+      "cpo/expected_cost_proposal_cycle.py": "67c24e4b7fce56a1b941762ff8932ceedd64e07e7ff6c034b8ab0e71cc6cd182",
+      "cpo/expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+      "cpo/family_qualification.py": "9ca2fd90b8da62743f4d95165af336103ccf2447a0585522a3a5698199eb0f9b",
+      "cpo/opening_certificate.py": "0c33b20108d240656a8f15602e5f5b2a4ceb27b57e1f2e2cf4c2deeb5d455539",
+      "cpo/opening_dominance.py": "86786743ebea794dd1f1fa8de6551fbd35a7b8edeaa969a694c6c1f8d23dc970",
+      "cpo/opening_repair_cycle.py": "842f1bae68bfee3f098156dd13d673a41d3221ee74644a1f5e00b77c0dd60889",
+      "cpo/opening_screen_cycle.py": "d2d60763878b49470c9fd39b25292092f703123a2abf6aff04c91245c583c51e",
+      "cpo/opening_validation.py": "493c74b7c8a3f91b9e167cc331e35d41485510658d0f3a03b273e911eee03929",
+      "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "cpo/routed_repair_cycle.py": "8daa5e6f1f49ffe3b0d49c0ea1842233ecc3f8b119738e891a4b5877b631484a",
+      "cpo/validation_guided_repair.py": "238ffa97895fc7ecd841e7e07c8d49d8b09fd209ec8bb1a2c0b1b7521c4b48c6",
+      "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+    },
+    "splitSizes": {
+      "admission": 8,
+      "confirmation": 8,
+      "holdout": 18,
+      "train": 16,
+      "validation": 12
+    }
+  },
+  "profiles": {
+    "all-rewrites-faulted": {
+      "confirmation": {
+        "admissionSha256": "4506d2cd266cb5cc3dbba041c3a2de63570852a80ec4549520392cdd2b1b5b1e",
+        "archiveSha256": {
+          "plan.json": "ae19c716a95f005e08805626c642c55b4c203e7a11ade21a8d916b1c6dc8cf18",
+          "result.json": "2da98f81d3dc0334c259d96a302ea7169831669d653b7b1cd62355f116508b3d",
+          "wire.jsonl": "522f27412f1c77c2910ca8efdd98617f48544e7f34607c961ad842404391a599"
+        },
+        "heldOutSha256": "0395aae154ab70dc5f3e402ae2ce786dfd602307ad18afcd20e2d14a24641d94",
+        "logicalCallsByRole": {
+          "qualification": 144
+        },
+        "outcome": {
+          "byPolicy": {
+            "cpo": {
+              "comparisons": {
+                "gepa-batched": {
+                  "addedPasses": 14,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-cached-opening": {
+                  "addedPasses": 14,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-sequential": {
+                  "addedPasses": 4,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "initial": {
+                  "addedPasses": 44,
+                  "criticalLosses": 0,
+                  "qualified": true
+                }
+              },
+              "passesByTask": {
+                "cpo": {
+                  "outage": 16,
+                  "ticket": 16,
+                  "warehouse": 16
+                },
+                "gepa-batched": {
+                  "outage": 12,
+                  "ticket": 14,
+                  "warehouse": 8
+                },
+                "gepa-cached-opening": {
+                  "outage": 12,
+                  "ticket": 14,
+                  "warehouse": 8
+                },
+                "gepa-sequential": {
+                  "outage": 12,
+                  "ticket": 16,
+                  "warehouse": 16
+                },
+                "initial": {
+                  "outage": 0,
+                  "ticket": 4,
+                  "warehouse": 0
+                }
+              },
+              "qualified": true
+            },
+            "opening-only": {
+              "comparisons": {
+                "gepa-batched": {
+                  "addedPasses": 0,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-cached-opening": {
+                  "addedPasses": 0,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-sequential": {
+                  "addedPasses": -10,
+                  "criticalLosses": 8,
+                  "qualified": false
+                },
+                "initial": {
+                  "addedPasses": 30,
+                  "criticalLosses": 0,
+                  "qualified": true
+                }
+              },
+              "passesByTask": {
+                "gepa-batched": {
+                  "outage": 12,
+                  "ticket": 14,
+                  "warehouse": 8
+                },
+                "gepa-cached-opening": {
+                  "outage": 12,
+                  "ticket": 14,
+                  "warehouse": 8
+                },
+                "gepa-sequential": {
+                  "outage": 12,
+                  "ticket": 16,
+                  "warehouse": 16
+                },
+                "initial": {
+                  "outage": 0,
+                  "ticket": 4,
+                  "warehouse": 0
+                },
+                "opening-only": {
+                  "outage": 12,
+                  "ticket": 14,
+                  "warehouse": 8
+                }
+              },
+              "qualified": false
+            }
+          },
+          "qualifyingPolicies": [
+            "cpo"
+          ],
+          "stagedVersusOpeningOnly": {
+            "addedPassesByTask": {
+              "outage": 4,
+              "ticket": 2,
+              "warehouse": 8
+            },
+            "addedSearchUses": 55,
+            "caseResampling95PassDifference": [
+              6,
+              22
+            ],
+            "openingOnlyMatchedCriticalLosses": 12,
+            "stagedMatchedCriticalLosses": 0
+          }
+        },
+        "physicalCallsByRole": {
+          "qualification": 144
+        },
+        "planSha256": "df48eb0ac53c6ced7b7cc66a94ab8d790761f1fb941aab6c5f1ff1041f3ace42",
+        "qualifyingInBothStages": [
+          "cpo"
+        ],
+        "searchCallsByArm": {
+          "cpo": 165,
+          "gepa-batched": 179,
+          "gepa-cached-opening": 131,
+          "gepa-sequential": 205,
+          "opening-only": 110
+        },
+        "selectedSha256": "2a4ca266ed303e63f7b57a56b2824569cdce08d7d4f27344888cc1d138ee6260"
+      },
+      "development": {
+        "admissionSha256": "4506d2cd266cb5cc3dbba041c3a2de63570852a80ec4549520392cdd2b1b5b1e",
+        "archiveSha256": {
+          "plan.json": "d87c20900a5d2be3020a7f03a0f363fda23e7618f3c28d6dd78df460d50e29f6",
+          "result.json": "e46a2e96dfc37e90d1dfc3b71046b6aff39b6157679522f50575c2c163d8a23e",
+          "wire.jsonl": "727b366219401e8a4bcc8119ddbef18e19e6c71ed923719cb17fa9cb7340dd0d"
+        },
+        "heldOutSha256": "3c90e1a610ea183f72a13316f337270123a2bcb7c00439ca7caedec78a4688ed",
+        "logicalCallsByRole": {
+          "admission": 271,
+          "evaluation": 495,
+          "qualification": 324,
+          "reflection": 12
+        },
+        "outcome": {
+          "byPolicy": {
+            "cpo": {
+              "comparisons": {
+                "gepa-batched": {
+                  "addedPasses": 28,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-cached-opening": {
+                  "addedPasses": 28,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-sequential": {
+                  "addedPasses": 8,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "initial": {
+                  "addedPasses": 100,
+                  "criticalLosses": 0,
+                  "qualified": true
+                }
+              },
+              "passesByTask": {
+                "cpo": {
+                  "outage": 36,
+                  "ticket": 36,
+                  "warehouse": 36
+                },
+                "gepa-batched": {
+                  "outage": 28,
+                  "ticket": 32,
+                  "warehouse": 20
+                },
+                "gepa-cached-opening": {
+                  "outage": 28,
+                  "ticket": 32,
+                  "warehouse": 20
+                },
+                "gepa-sequential": {
+                  "outage": 28,
+                  "ticket": 36,
+                  "warehouse": 36
+                },
+                "initial": {
+                  "outage": 0,
+                  "ticket": 8,
+                  "warehouse": 0
+                }
+              },
+              "qualified": true
+            },
+            "opening-only": {
+              "comparisons": {
+                "gepa-batched": {
+                  "addedPasses": 0,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-cached-opening": {
+                  "addedPasses": 0,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-sequential": {
+                  "addedPasses": -20,
+                  "criticalLosses": 14,
+                  "qualified": false
+                },
+                "initial": {
+                  "addedPasses": 72,
+                  "criticalLosses": 0,
+                  "qualified": true
+                }
+              },
+              "passesByTask": {
+                "gepa-batched": {
+                  "outage": 28,
+                  "ticket": 32,
+                  "warehouse": 20
+                },
+                "gepa-cached-opening": {
+                  "outage": 28,
+                  "ticket": 32,
+                  "warehouse": 20
+                },
+                "gepa-sequential": {
+                  "outage": 28,
+                  "ticket": 36,
+                  "warehouse": 36
+                },
+                "initial": {
+                  "outage": 0,
+                  "ticket": 8,
+                  "warehouse": 0
+                },
+                "opening-only": {
+                  "outage": 28,
+                  "ticket": 32,
+                  "warehouse": 20
+                }
+              },
+              "qualified": false
+            }
+          },
+          "qualifyingPolicies": [
+            "cpo"
+          ],
+          "stagedVersusOpeningOnly": {
+            "addedPassesByTask": {
+              "outage": 8,
+              "ticket": 4,
+              "warehouse": 16
+            },
+            "addedSearchUses": 55,
+            "caseResampling95PassDifference": [
+              16,
+              40
+            ],
+            "openingOnlyMatchedCriticalLosses": 22,
+            "stagedMatchedCriticalLosses": 0
+          }
+        },
+        "physicalCallsByRole": {
+          "admission": 104,
+          "evaluation": 186,
+          "qualification": 324,
+          "reflection": 12
+        },
+        "planSha256": "f354c8f6be4bf658e7ca93bc170beaaade3841f22ee70fd6bf8423cf6a596279",
+        "searchCallsByArm": {
+          "cpo": 165,
+          "gepa-batched": 179,
+          "gepa-cached-opening": 131,
+          "gepa-sequential": 205,
+          "opening-only": 110
+        },
+        "selectedSha256": "2a4ca266ed303e63f7b57a56b2824569cdce08d7d4f27344888cc1d138ee6260"
+      }
+    },
+    "perfect-ticket-rewrite": {
+      "confirmation": {
+        "admissionSha256": "cc7cbd38bdfa05645f1cd57cdf1e8e3416e1d1f917e5017a73d3b1f11d7e8916",
+        "archiveSha256": {
+          "plan.json": "547652f21fad2059cd2f18d67b6b3bf9af6c82daa25f1ecb1a397e95a715b453",
+          "result.json": "0c1d6dd2bbec104c4ace8190e9af8699645117b622e925c09ae94259ea69d77b",
+          "wire.jsonl": "824d3cc1b6f2f2c076174eea4c29960f2b92f890217b2c6c58bfd6074a4bbe41"
+        },
+        "heldOutSha256": "5f8c1deb06fffeadc8e8ae62235a75662e8fd9087b7c4b7a474f90e9e06a56e4",
+        "logicalCallsByRole": {
+          "qualification": 128
+        },
+        "outcome": {
+          "byPolicy": {
+            "cpo": {
+              "comparisons": {
+                "gepa-batched": {
+                  "addedPasses": 12,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-cached-opening": {
+                  "addedPasses": 12,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-sequential": {
+                  "addedPasses": 4,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "initial": {
+                  "addedPasses": 44,
+                  "criticalLosses": 0,
+                  "qualified": true
+                }
+              },
+              "passesByTask": {
+                "cpo": {
+                  "outage": 16,
+                  "ticket": 16,
+                  "warehouse": 16
+                },
+                "gepa-batched": {
+                  "outage": 12,
+                  "ticket": 16,
+                  "warehouse": 8
+                },
+                "gepa-cached-opening": {
+                  "outage": 12,
+                  "ticket": 16,
+                  "warehouse": 8
+                },
+                "gepa-sequential": {
+                  "outage": 12,
+                  "ticket": 16,
+                  "warehouse": 16
+                },
+                "initial": {
+                  "outage": 0,
+                  "ticket": 4,
+                  "warehouse": 0
+                }
+              },
+              "qualified": true
+            },
+            "opening-only": {
+              "comparisons": {
+                "gepa-batched": {
+                  "addedPasses": 0,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-cached-opening": {
+                  "addedPasses": 0,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-sequential": {
+                  "addedPasses": -8,
+                  "criticalLosses": 6,
+                  "qualified": false
+                },
+                "initial": {
+                  "addedPasses": 32,
+                  "criticalLosses": 0,
+                  "qualified": true
+                }
+              },
+              "passesByTask": {
+                "gepa-batched": {
+                  "outage": 12,
+                  "ticket": 16,
+                  "warehouse": 8
+                },
+                "gepa-cached-opening": {
+                  "outage": 12,
+                  "ticket": 16,
+                  "warehouse": 8
+                },
+                "gepa-sequential": {
+                  "outage": 12,
+                  "ticket": 16,
+                  "warehouse": 16
+                },
+                "initial": {
+                  "outage": 0,
+                  "ticket": 4,
+                  "warehouse": 0
+                },
+                "opening-only": {
+                  "outage": 12,
+                  "ticket": 16,
+                  "warehouse": 8
+                }
+              },
+              "qualified": false
+            }
+          },
+          "qualifyingPolicies": [
+            "cpo"
+          ],
+          "stagedVersusOpeningOnly": {
+            "addedPassesByTask": {
+              "outage": 4,
+              "ticket": 0,
+              "warehouse": 8
+            },
+            "addedSearchUses": 37,
+            "caseResampling95PassDifference": [
+              4,
+              20
+            ],
+            "openingOnlyMatchedCriticalLosses": 10,
+            "stagedMatchedCriticalLosses": 0
+          }
+        },
+        "physicalCallsByRole": {
+          "qualification": 128
+        },
+        "planSha256": "cff9f4f725caa11b36819e84a82db1996f828ee86de56529ae3310e4e5d35781",
+        "qualifyingInBothStages": [
+          "cpo"
+        ],
+        "searchCallsByArm": {
+          "cpo": 143,
+          "gepa-batched": 176,
+          "gepa-cached-opening": 128,
+          "gepa-sequential": 184,
+          "opening-only": 106
+        },
+        "selectedSha256": "9fdbc499e017e3e1368a074de559ce6cf03a6fac05ee3ff12b46c6714d0817fb"
+      },
+      "development": {
+        "admissionSha256": "cc7cbd38bdfa05645f1cd57cdf1e8e3416e1d1f917e5017a73d3b1f11d7e8916",
+        "archiveSha256": {
+          "plan.json": "d87c20900a5d2be3020a7f03a0f363fda23e7618f3c28d6dd78df460d50e29f6",
+          "result.json": "08e620a7c8b21d2a6d01ac64be64e394c58fb34fbfbbe7cb2f51ba897e0eaa48",
+          "wire.jsonl": "1d8f9498c894f063bd89e3ef0ee9215069bc4496a790463a912016410e4a6f9f"
+        },
+        "heldOutSha256": "22214033c3102c6e354c2d3c7124ca942735a34ae336ae1c03ad931ab1ba0dfc",
+        "logicalCallsByRole": {
+          "admission": 262,
+          "evaluation": 453,
+          "qualification": 288,
+          "reflection": 10
+        },
+        "outcome": {
+          "byPolicy": {
+            "cpo": {
+              "comparisons": {
+                "gepa-batched": {
+                  "addedPasses": 24,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-cached-opening": {
+                  "addedPasses": 24,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-sequential": {
+                  "addedPasses": 8,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "initial": {
+                  "addedPasses": 100,
+                  "criticalLosses": 0,
+                  "qualified": true
+                }
+              },
+              "passesByTask": {
+                "cpo": {
+                  "outage": 36,
+                  "ticket": 36,
+                  "warehouse": 36
+                },
+                "gepa-batched": {
+                  "outage": 28,
+                  "ticket": 36,
+                  "warehouse": 20
+                },
+                "gepa-cached-opening": {
+                  "outage": 28,
+                  "ticket": 36,
+                  "warehouse": 20
+                },
+                "gepa-sequential": {
+                  "outage": 28,
+                  "ticket": 36,
+                  "warehouse": 36
+                },
+                "initial": {
+                  "outage": 0,
+                  "ticket": 8,
+                  "warehouse": 0
+                }
+              },
+              "qualified": true
+            },
+            "opening-only": {
+              "comparisons": {
+                "gepa-batched": {
+                  "addedPasses": 0,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-cached-opening": {
+                  "addedPasses": 0,
+                  "criticalLosses": 0,
+                  "qualified": true
+                },
+                "gepa-sequential": {
+                  "addedPasses": -16,
+                  "criticalLosses": 10,
+                  "qualified": false
+                },
+                "initial": {
+                  "addedPasses": 76,
+                  "criticalLosses": 0,
+                  "qualified": true
+                }
+              },
+              "passesByTask": {
+                "gepa-batched": {
+                  "outage": 28,
+                  "ticket": 36,
+                  "warehouse": 20
+                },
+                "gepa-cached-opening": {
+                  "outage": 28,
+                  "ticket": 36,
+                  "warehouse": 20
+                },
+                "gepa-sequential": {
+                  "outage": 28,
+                  "ticket": 36,
+                  "warehouse": 36
+                },
+                "initial": {
+                  "outage": 0,
+                  "ticket": 8,
+                  "warehouse": 0
+                },
+                "opening-only": {
+                  "outage": 28,
+                  "ticket": 36,
+                  "warehouse": 20
+                }
+              },
+              "qualified": false
+            }
+          },
+          "qualifyingPolicies": [
+            "cpo"
+          ],
+          "stagedVersusOpeningOnly": {
+            "addedPassesByTask": {
+              "outage": 8,
+              "ticket": 0,
+              "warehouse": 16
+            },
+            "addedSearchUses": 37,
+            "caseResampling95PassDifference": [
+              14,
+              34
+            ],
+            "openingOnlyMatchedCriticalLosses": 18,
+            "stagedMatchedCriticalLosses": 0
+          }
+        },
+        "physicalCallsByRole": {
+          "admission": 85,
+          "evaluation": 167,
+          "qualification": 288,
+          "reflection": 10
+        },
+        "planSha256": "f354c8f6be4bf658e7ca93bc170beaaade3841f22ee70fd6bf8423cf6a596279",
+        "searchCallsByArm": {
+          "cpo": 143,
+          "gepa-batched": 176,
+          "gepa-cached-opening": 128,
+          "gepa-sequential": 184,
+          "opening-only": 106
+        },
+        "selectedSha256": "9fdbc499e017e3e1368a074de559ce6cf03a6fac05ee3ff12b46c6714d0817fb"
+      }
+    }
+  }
+}
