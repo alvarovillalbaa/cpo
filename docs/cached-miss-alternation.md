@@ -22,6 +22,8 @@ Cached alternation changed 44 final prompts and tied the original route’s pool
 
 Cached alternation saved 12.1% and 10.3% against cap-52 batched GEPA. Its joint paired accuracy ranges against both cap-52 GEPA modes were −61 to +54 and −33 to +67. Both gates remained inconclusive. The original screen stays in place. The comparison uses recorded prompt pools, with fresh-model performance still open.
 
+A follow-up used one tail probe to fund a late incumbent read. It improved both observed point scores over the original route and recovered four of 50 screening losses. [Late miss substitution](late-miss-substitution.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Two source-export replays matched byte for byte with sockets and DNS blocked. They reproduced 140 published panel-control records, and the cache-observed arm matched the original callback trace on every panel. Three focused tests verified witness priority, the original fall-through, and absence of paid incumbent lookahead. The CLI rejected a stale seal and preserved an existing report. Storage Guard measured 12.3 GiB free. The 21.0 MB temporary overlay was removed under the standing LAB exception. [Tests](../tests/unit/test_cached_miss_alternation.py) · [Verification receipt](cached-miss-alternation-verification-v1.json) · [Storage authorization](../../lab/docs/runbooks/lab-storage-exceptions.md)
