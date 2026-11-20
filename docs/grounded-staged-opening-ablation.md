@@ -11,6 +11,8 @@ Both policies selected the same ticket prompt when the ticket rewrite was alread
 
 Opening only met the original gate against batched GEPA in both fixtures through the equal-quality efficiency rule. It lost critical cases to sequential GEPA and failed the overall development gate in both fixtures. Its confirmation scores are diagnostic comparisons on the cases already bound to the staged CPO run. Search uses include the shared proposal, evaluations, and admission calls attributed to each policy. The experiment measures fixed fixture replies. It leaves live repair quality and provider costs open.
 
+A follow-up on recorded model replies found no added passes from staged repair in 240 paths. Opening-only used fewer lookups and matched the staged selections in every path. [Recorded opening ablation](grounded-staged-recorded-opening.md)
+
 ## Reproduce offline
 
 Use the pinned GEPA 0.1.4 dependency and a fresh output path. The ablation verifies all three archive files for each published combined development and confirmation fixture before evaluating the matched control outcomes.
