@@ -20,6 +20,8 @@ The new arm accepted a second repair in four panels and reproduced the one-repai
 
 The nine losses came from dispatch, seed 57143. The first repair tied its parent at 10 of 12 exact validation passes and 46 of 48 matched fields. It preserved every exact pass and field count by row. With no strict gain, it was rejected and the second round stayed closed. This identifies the remaining failure as an eligibility decision before the second repair. [Profile outcomes, counts, and gate results](opening-second-repair-results-v1.json)
 
+The follow-up allowed a row-by-row tie to supply context for the second proposal while preserving the strict qualification path. [Provisional repair benchmark](opening-provisional-repair.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
