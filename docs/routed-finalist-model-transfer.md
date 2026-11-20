@@ -25,6 +25,8 @@ The two-miss candidate gained **42 passes and saved 0.9% of lookups** against pr
 
 The policy widened 420 times across 2,048 scheduled cycles. Compared with seeded CPO, it gained 58 passes, with a paired range of +21 to +95, and spent 11,243 more lookups. It saved 23,401 lookups against always-wide CPO and lost 30 passes. The two lower-cap GEPA arms both spent less than the routed candidate and scored fewer passes. The seeded CPO default remains in place.
 
+A decision-equivalent validation proof saved a further 402 routed lookups without changing the selected prompts. [Finalist score bounds](finalist-bound-replay.md)
+
 ## Capture and replay
 
 The row viewer returned 502s and timeouts. The fallback fetched the same 16 score matrices directly from the dataset revision frozen in the design. It verified each Parquet file against the revision's object metadata and recorded its exact SHA-256 and byte length. The decoder also reproduced a previously captured abstract-algebra viewer matrix byte for byte at the correctness-vector level. The capture reused a temporary, hash-verified DuckDB 1.4.3 wheel and left the frozen experiment and project dependencies unchanged. [Parquet capture helper](../benchmarks/routed_finalist_parquet_capture.py)
