@@ -26,6 +26,8 @@ CPO gained **30 passes with 13.9% fewer lookups** against batched GEPA at cap 52
 
 The candidate led the best affordable fixed setting by 37 passes at the observed totals. The range against the reselected affordable setting was −22 to +88. Dropping high-school psychology removed the 37-pass lead, and the two model splits differed by −1 and +38 passes from that fixed control. The subject-specific comparison could choose a setting or retain the start with hindsight on each subject, and led CPO by 43 passes within its lookup budget. This replay measures transfer to new archived model splits on familiar subjects. Fresh proposal quality and provider charges remain unverified.
 
+A follow-up traced the losing episodes and tested whether exact validation ties could earn independent qualification within the original search cap. [Witnessed validation ties](routed-validation-ties.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4. The reduced correctness snapshot supplies all replay inputs. To reproduce capture from the source objects, use DuckDB 1.4.3 in a temporary environment and run `--capture` with the same seal and a fresh snapshot path.
