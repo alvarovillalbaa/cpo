@@ -6,13 +6,15 @@ from dataclasses import replace
 from .expected_cost_proposal_cycle import ExpectedCostProposalCycleResult
 from .expected_qualification import certify_expected_qualification
 from .opening_certificate import search_with_opening_certificate
+from .opening_validation import certify_opening_validation
 from .optimizer import ProposalPair, search
 from .paired_qualification import certify_paired_qualification
 
 
 def run_opening_screen_cycle(incumbent, train, validation, holdout, evaluate, *, opening_pair,
                              metric_limit, qualify, screen_rows=8, repeats=1, minimum_gain=1,
-                             seed=0, field_credit=False, qualification_limit=None, certify_opening=False):
+                             seed=0, field_credit=False, qualification_limit=None, certify_opening=False,
+                             certify_validation=False):
     """Search only the supplied opening, then require full validation and qualification.
 
     The first screen_rows validation cases drive search. Budget the complete
@@ -21,6 +23,8 @@ def run_opening_screen_cycle(incumbent, train, validation, holdout, evaluate, *,
 
     With a finite qualification cap below a complete panel, certify_opening
     can settle a perfect opening without scoring every incumbent case.
+    In that same mode, certify_validation stops once the full-panel promotion
+    gate is determined from the known replies and additional paired reads.
     """
     if not isinstance(opening_pair, ProposalPair):
         raise ValueError('An opening screen requires a precomputed ProposalPair')
@@ -32,6 +36,8 @@ def run_opening_screen_cycle(incumbent, train, validation, holdout, evaluate, *,
         raise ValueError('Qualification limit must be a nonnegative integer')
     if type(certify_opening) is not bool:
         raise ValueError('Opening certification requires a boolean flag')
+    if type(certify_validation) is not bool:
+        raise ValueError('Validation certification requires a boolean flag')
 
     train, validation, holdout = tuple(train), tuple(validation), tuple(holdout)
     ids = [row.id for row in (*train, *validation, *holdout)]
@@ -80,6 +86,14 @@ def run_opening_screen_cycle(incumbent, train, validation, holdout, evaluate, *,
                  'incumbentMiss': result.events[-1]['incumbentMiss']}
         result = replace(result, evaluations=len(observations), events=[*result.events, event])
         decision = certify_paired_qualification(incumbent, challenger, holdout, qualify, **options)
+        return ExpectedCostProposalCycleResult(result, decision)
+
+    if certify_validation and paired_only:
+        accepted = certify_opening_validation(incumbent, challenger, validation, observations, observe)
+        event = {'kind': 'certified-validation-gate', 'prompt': challenger, 'accepted': accepted}
+        result = replace(result, prompt=challenger if accepted else incumbent, evaluations=len(observations),
+                         events=[*result.events, event])
+        decision = certify_paired_qualification(incumbent, challenger, holdout, qualify, **options) if accepted else None
         return ExpectedCostProposalCycleResult(result, decision)
 
     incumbent_passes, challenger_passes = 0, 0
