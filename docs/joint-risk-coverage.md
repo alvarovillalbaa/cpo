@@ -34,6 +34,8 @@ On the additional cap-72 seeds, the combined rule kept the starting prompt on al
 
 The coverage-only fallback chose the same final programs as the original hybrid in all 72 panels. It recovered accuracy by allowing the verified alternatives that had failed the coverage rule. Its matched critical losses also matched the original hybrid. The fixed fixture pool lacked the combinations needed to make the harder validation rule useful. Fresh proposal generation and live critical-case performance remain unverified.
 
+The follow-up expanded training coverage within the same bundle budget and gave the resulting demonstration pool to both CPO and GEPA. [Stratified demonstration bundles](joint-demo-bundles.md)
+
 ## Reproduce
 
 Use the pinned GEPA 0.1.4 and Optuna 4.5.0 wheels in an isolated environment. The [wheel receipt](joint-risk-coverage-verification-v1.json) records the verified fingerprints. The [sampler environment](joint-sampler-verification-v1.json) records the shared dependency versions.
