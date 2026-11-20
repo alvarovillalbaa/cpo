@@ -25,6 +25,8 @@ Early screening alone saved **14,905** always-wide lookups and **4,071** routed 
 
 On the MMLU pilot, both routed one-finalist policies exceeded both archived GEPA references in holdout passes and used fewer lookups. On the later model splits, the routed backup gained 42 passes and used 3,651 fewer lookups (6.3%) against batched GEPA. It was 30 passes behind sequential GEPA. The always-wide policy with early screening and validation bounds tied sequential GEPA's 12,253 passes and used 10,235 fewer lookups (12.3%), with a higher cost than batched GEPA. On BBH and LMentry the always-wide backup improved on sequential GEPA by 24 passes and saved 6,220 lookups, with a higher cost than batched GEPA. These outcomes support measuring the policies prospectively. Fresh-model superiority and provider spend remain unverified.
 
+The follow-up tested whether a miss shared with the primary finalist could identify a stronger backup. It used more lookups and lost one aggregate pass across two archived MMLU cohorts. [Backup tie-break replay](complementary-backup.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4. Preview each phase for its seal. The other phases are `bbh-lmentry` and `mmlu`.
