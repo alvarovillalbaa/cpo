@@ -23,6 +23,8 @@ Late substitution gained 16 net holdout passes and used 1,087 more lookups than 
 
 The method saved 12.8% and 10.5% against cap-52 batched GEPA. Its joint paired ranges against both cap-52 controls were −45 to +72 and −27 to +60. Both gates remain inconclusive. These two cohorts have already informed screen design, and the test uses fixed recorded prompt pools. CPO retains the original route.
 
+A frozen transfer to 16 unused model and subject pairs missed the savings threshold and lost 12 passes against the original route. [Transfer results](late-miss-transfer.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Two source-export runs matched byte for byte with sockets and DNS blocked and reproduced 140 published panel-control records. Three focused tests verified the tail substitution, alternate witness, and preserved early proof. The CLI rejected a stale seal and preserved an existing report. Storage Guard measured 11.7 GiB free. The 21.1 MB temporary overlay was removed under the standing LAB exception. [Tests](../tests/unit/test_late_miss_substitution.py) · [Verification receipt](late-miss-substitution-verification-v1.json) · [Storage authorization](../../lab/docs/runbooks/lab-storage-exceptions.md)
