@@ -23,6 +23,8 @@ The matched scan preserved all original deployments and increased paid cost by 2
 
 Compared with cap-52 batched GEPA, bounded alternation saved 8.9% on Llama and Mistral and 6.0% on Gemma and Flan. The joint accuracy ranges against both cap-52 GEPA modes were −46 to +66 and −12 to +84 respectively. Neither cohort cleared the 10% savings gate. CPO retains its original deferred screen. The study uses fixed recorded prompts and provides no fresh-model result.
 
+The cache-only follow-up cleared the savings threshold on both cohorts and recovered none of the audited screening losses. [Cached miss alternation](cached-miss-alternation.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Two source-export replays matched byte for byte with sockets and DNS blocked and reproduced 140 published panel-control records. Three focused tests checked the two-read bound, exact certification, and critical-pass preservation. The CLI rejected an incorrect seal and preserved an existing report. Storage Guard measured 12.6 GiB free. The 20.9 MB temporary overlay was removed under the standing LAB exception. [Tests](../tests/unit/test_bounded_miss_alternation.py) · [Verification receipt](bounded-miss-alternation-verification-v1.json) · [Storage authorization](../../lab/docs/runbooks/lab-storage-exceptions.md)
