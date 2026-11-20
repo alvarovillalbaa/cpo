@@ -1,0 +1,297 @@
+diff --git a/benchmarks/gepa_sequential_schedule.py b/benchmarks/gepa_sequential_schedule.py
+index 9d3871f..5a27a65 100644
+--- a/benchmarks/gepa_sequential_schedule.py
++++ b/benchmarks/gepa_sequential_schedule.py
+@@ -10,6 +10,7 @@ from unittest.mock import patch
+ def select_field_rewrites(
+     initial, bank, groups, evaluate, reflect, trace, *,
+     cap, seed, observed_charge=None, reinvest_savings=False, price_budget=None, parent_bounds=False,
++    paired_opening=False,
+ ):
+     from benchmarks import grounded
+     from cpo import Row
+@@ -25,16 +26,18 @@ def select_field_rewrites(
+         return bank[index] if index < len(bank) else reflect(parent, [reply.feedback for _, reply in samples])
+
+     schedule = sequential_schedule(validation, seed, grounded.MINIBATCH, trace, training=training,
+-                                   parent_bounds=parent_bounds)
++                                   parent_bounds=parent_bounds, paired_opening=paired_opening)
+     return select_sequential_field_rewrites(
+         initial, training, validation, lambda p, row: evaluate(p, row.id), schedule, propose,
+         rounds=grounded.REFLECTION_LIMIT, minibatch_size=grounded.MINIBATCH, metric_limit=cap,
+         observed_charge=observed_charge, reinvest_savings=reinvest_savings, price_budget=price_budget,
++        paired_opening=paired_opening,
+     )
+
+
+ def sequential_schedule(
+     validation, seed, minibatch_size, trace, *, training=None, parent_bounds=False, width=1, frontier_bounds=False,
++    paired_opening=False,
+ ):
+     from gepa.core.data_loader import ListDataLoader
+     from gepa.gepa_utils import select_program_candidate_from_pareto_front
+@@ -68,12 +71,13 @@ def sequential_schedule(
+             averages = [sum(profile) / len(validation) for profile in profiles]
+             parent = pool[select_program_candidate_from_pareto_front(fronts, averages, rng)]
+         batches = []
+-        for _ in range(width):
++        count = 2 if paired_opening and index == 0 else width
++        for _ in range(count):
+             ids = sampler.next_minibatch_ids(loader, SimpleNamespace(i=index))
+             batch = tuple(training[case].id for case in ids)
+             batches.append(batch)
+             trace.append((pool, parent, batch))
+-        return parent, batches[0] if width == 1 else tuple(batches)
++        return parent, batches[0] if count == 1 else tuple(batches)
+
+     return schedule
+
+diff --git a/benchmarks/sequential_field_feedback.py b/benchmarks/sequential_field_feedback.py
+index 73e7b5f..02af418 100644
+--- a/benchmarks/sequential_field_feedback.py
++++ b/benchmarks/sequential_field_feedback.py
+@@ -15,7 +15,7 @@ from cpo.sequential_field_rewrite import SequentialSearchBudget
+ REPLICATION_SEEDS = (47317, 47347, 47377, 47401, 47423, 47437)
+
+
+-def run_arm(task, cohorts, seed, cap, mode, *, reflection_price=None, parent_bounds=False):
++def run_arm(task, cohorts, seed, cap, mode, *, reflection_price=None, parent_bounds=False, paired_opening=False):
+     train_ids = {row['id'] for row in cohorts['train']}
+     schedule, reads, proposals, nominees = [], [], [], []
+
+@@ -59,7 +59,7 @@ def run_arm(task, cohorts, seed, cap, mode, *, reflection_price=None, parent_bou
+             nominee = select_field_rewrites(initial, bank, groups, read, propose, schedule, cap=cap, seed=seed,
+                                              reinvest_savings=mode == 'reinvest', price_budget=budget,
+                                              observed_charge=None if budget is None else lambda *_: 1,
+-                                             parent_bounds=parent_bounds)
++                                             parent_bounds=parent_bounds, paired_opening=paired_opening)
+         nominees.append(nominee)
+         return nominee
+
+@@ -146,7 +146,7 @@ def measure_reinvestment(*, parent_bounds=False):
+     }
+
+
+-def measure_quoted_budget(*, parent_bounds=False):
++def measure_quoted_budget(*, parent_bounds=False, paired_opening=False):
+     cap = 48
+     results = {}
+     for reflection_price in (1, 4, 8):
+@@ -158,7 +158,7 @@ def measure_quoted_budget(*, parent_bounds=False):
+                 path, costs, outcomes = [], [], []
+                 for mode, total in totals.items():
+                     record = run_arm(task, cases, seed, cap, mode, reflection_price=reflection_price,
+-                                     parent_bounds=parent_bounds)
++                                     parent_bounds=parent_bounds, paired_opening=paired_opening)
+                     row, _, _, proposals, paid = record
+                     search_charge = len(paid) + len(proposals) * reflection_price
+                     if search_charge > cap or len(paid) != len(set(paid)) or len(paid) != row['searchLookups']:
+@@ -179,6 +179,8 @@ def measure_quoted_budget(*, parent_bounds=False):
+                 traces.append((seed, task, path))
+         results[reflection_price] = {**changes, 'totals': totals, 'traceSha256': digest(traces)}
+     schema = 'sequential-field-quote-parent-bounds-v1' if parent_bounds else 'sequential-field-quote-fixture-v1'
++    if paired_opening:
++        schema = 'sequential-field-quote-paired-opening-v1'
+     return {'schema': schema, 'newProviderRequests': 0, 'searchQuote': cap, 'points': results}
+
+
+@@ -188,11 +190,14 @@ if __name__ == '__main__':
+     modes.add_argument('--paid-budget', action='store_true', help='Let CPO spend saved reads on more rounds')
+     modes.add_argument('--quoted-budget', action='store_true', help='Charge proposals against the same search quote')
+     parser.add_argument('--parent-bounds', action='store_true', help='Prove the native draw from partial profiles')
++    parser.add_argument('--paired-opening', action='store_true', help='Pair the supplied rewrites before reflecting')
+     args = parser.parse_args()
+     if version('gepa') != '0.1.4':
+         raise SystemExit('Use pinned GEPA 0.1.4')
++    if args.paired_opening and not (args.quoted_budget and args.parent_bounds):
++        parser.error('Use --quoted-budget and --parent-bounds with --paired-opening')
+     if args.quoted_budget:
+-        report = measure_quoted_budget(parent_bounds=args.parent_bounds)
++        report = measure_quoted_budget(parent_bounds=args.parent_bounds, paired_opening=args.paired_opening)
+     elif args.paid_budget:
+         report = measure_reinvestment(parent_bounds=args.parent_bounds)
+     else:
+diff --git a/cpo/sequential_field_rewrite.py b/cpo/sequential_field_rewrite.py
+index 2624ea9..2c2c38f 100644
+--- a/cpo/sequential_field_rewrite.py
++++ b/cpo/sequential_field_rewrite.py
+@@ -2,6 +2,7 @@
+
+ from collections.abc import Callable
+ from dataclasses import dataclass
++from itertools import chain
+
+ from ._paired_read_order import read_charge
+ from .paired_field_rewrite import _validated_field_score, _wins
+@@ -47,6 +48,7 @@ def _check_charge(charge, quote):
+ def select_sequential_field_rewrites(
+     incumbent, training, validation, evaluate, schedule, propose, *,
+     rounds, minibatch_size, metric_limit, observed_charge=None, reinvest_savings=False, price_budget=None,
++    paired_opening=False,
+ ):
+     """Match sequential GEPA's field gates, full-round reserve and score order.
+
+@@ -64,6 +66,11 @@ def select_sequential_field_rewrites(
+
+     With a SequentialSearchBudget, reserve both evaluation and proposal
+     charges before dispatch. observed_charge must settle each evaluation.
++
++    With paired_opening, pass two supplied rewrites through proposal slots
++    zero and one. The schedule returns two minibatches at slot zero, both
++    from the incumbent. Later calls resume singly at slot two. A perfect
++    validation score on the first rewrite ends the pair immediately.
+     """
+     training, validation = tuple(training), tuple(validation)
+     train_ids, val_ids = tuple(row.id for row in training), tuple(row.id for row in validation)
+@@ -77,6 +84,8 @@ def select_sequential_field_rewrites(
+     if (type(rounds) is not int or rounds < 0 or type(minibatch_size) is not int
+             or not 1 <= minibatch_size <= len(training) or type(metric_limit) is not int or metric_limit < len(val_ids)):
+         raise ValueError('The search budget must cover valid rounds and the incumbent validation')
++    if type(paired_opening) is not bool or (paired_opening and rounds < 2):
++        raise ValueError('A paired opening requires two available proposal slots')
+     if observed_charge is not None and not callable(observed_charge):
+         raise ValueError('Observed charge must be a callback')
+     if price_budget is not None and (not isinstance(price_budget, SequentialSearchBudget) or observed_charge is None):
+@@ -143,47 +152,58 @@ def select_sequential_field_rewrites(
+             return False
+         return all(observe(prompt, case) == denominator for case in val_ids)
+
+-    latest = incumbent
+-    for index in range(rounds):
+-        min_reserve = child_reserve if reinvest_savings else child_reserve + minibatch_size
++    latest = (incumbent,)
++    starts = chain((0,), range(2, rounds)) if paired_opening else range(rounds)
++    for index in starts:
++        width = 2 if paired_opening and index == 0 else 1
++        min_reserve = width * (child_reserve if reinvest_savings else child_reserve + minibatch_size)
+         remaining = metric_limit - committed_reads()
+         if min_reserve > remaining:
+             break
+-        if latest is not None and perfect(latest):
+-            return latest
++        for prompt in latest:
++            if perfect(prompt):
++                return prompt
+         parent, ids = schedule(index, tuple(pool), validation_grades)
+-        batch = tuple(ids)
+-        if parent not in pool or len(batch) != minibatch_size or len(set(batch)) != len(batch) or not set(batch) <= train_set:
+-            raise ValueError('The schedule must select a tracked parent and distinct training rows')
+-        new_reads = child_reserve + sum((parent, case) not in scores for case in batch)
++        batches = (tuple(ids),) if width == 1 else tuple(tuple(batch) for batch in ids)
++        if parent not in pool or len(batches) != width or any(
++                len(batch) != minibatch_size or not train_set.issuperset(batch)
++                or (not paired_opening and len(set(batch)) != len(batch)) for batch in batches):
++            raise ValueError('The schedule must select a tracked parent and valid training minibatches')
++        parent_reads = {(parent, case) for batch in batches for case in batch} - scores.keys()
++        new_reads = width * child_reserve + len(parent_reads)
+         if reinvest_savings and new_reads > remaining:
+             break
++        slots = range(index, index + width)
+         if price_budget is not None:
+-            quote = price_budget.proposal_quote(index, parent)
+-            if type(quote) is not int or quote < 0:
++            quotes = tuple(price_budget.proposal_quote(slot, parent) for slot in slots)
++            if any(type(quote) is not int or quote < 0 for quote in quotes):
+                 raise ValueError('A proposal needs a nonnegative integer price quote')
+             unread_validation = len(validation_reserve - scores.keys())
+-            required = (unread_validation + new_reads) * price_budget.evaluation_quote + quote
++            required = (unread_validation + new_reads) * price_budget.evaluation_quote + sum(quotes)
+             if settled_charge + required > price_budget.limit:
+                 break
+-        accounted.update((parent, case) for case in batch)
+-        for case in batch:
+-            observe(parent, case)
+-        child = propose(index, parent, tuple((by_id[case], replies[parent, case]) for case in batch))
+-        if price_budget is not None:
+-            charge = price_budget.observed_proposal(index, parent, child)
+-            _check_charge(charge, quote)
+-            settled_charge += charge
+-        latest = None
+-        if reinvest_savings and all(scores[parent, case] == denominator for case in batch):
+-            continue
+-        accounted.update((child, case) for case in batch)
+-        if child != parent and _wins(parent, child, batch, scores, observe, denominator):
+-            latest = child
+-            pool.append(child)
+-            new_reserve = {(child, case) for case in val_ids}
+-            validation_reserve.update(new_reserve)
+-            accounted.update(new_reserve)
++        accepted = {}
++        for offset, (slot, batch) in enumerate(zip(slots, batches, strict=True)):
++            accounted.update((parent, case) for case in batch)
++            for case in batch:
++                observe(parent, case)
++            child = propose(slot, parent, tuple((by_id[case], replies[parent, case]) for case in batch))
++            if price_budget is not None:
++                charge = price_budget.observed_proposal(slot, parent, child)
++                _check_charge(charge, quotes[offset])
++                settled_charge += charge
++            if reinvest_savings and all(scores[parent, case] == denominator for case in batch):
++                continue
++            accounted.update((child, case) for case in batch)
++            if child != parent and _wins(parent, child, batch, scores, observe, denominator):
++                accepted[child] = None
++                new_reserve = {(child, case) for case in val_ids}
++                validation_reserve.update(new_reserve)
++                accounted.update(new_reserve)
++                if width == 2 and slot == 0 and perfect(child):
++                    return child
++        latest = tuple(accepted)
++        pool.extend(latest)
+
+     leader = incumbent
+     for rewrite in dict.fromkeys(pool[1:]):
+diff --git a/tests/unit/test_sequential_field_rewrite.py b/tests/unit/test_sequential_field_rewrite.py
+index 764ba87..be0a87b 100644
+--- a/tests/unit/test_sequential_field_rewrite.py
++++ b/tests/unit/test_sequential_field_rewrite.py
+@@ -147,3 +147,49 @@ def test_stops_after_a_charge_exceeds_its_quote():
+             observed_charge=lambda *_: 1, price_budget=budget,
+         )
+     assert reads == [('start', 'validation'), ('start', 'train')]
++
++
++@pytest.mark.parametrize('first_perfect', (False, True))
++def test_paired_opening_keeps_both_winners_and_resumes_at_the_first_reflection(first_perfect):
++    training = (Row('t1', 'task', fields=1), Row('t2', 'task', fields=1))
++    validation = (Row('v1', 'task', fields=1), Row('v2', 'task', fields=1))
++    paid, proposals, scheduled = set(), [], []
++    grades = {
++        'start': set(),
++        'rewrite': {'t1', 'v1', 'v2'} if first_perfect else {'t1', 'v1'},
++        'repair': {'t2', 'v2'},
++        'winner': {'t2', 'v1', 'v2'},
++    }
++
++    def evaluate(prompt, row):
++        assert (prompt, row.id) not in paid
++        paid.add((prompt, row.id))
++        passed = row.id in grades[prompt]
++        return Observation(passed, {}, int(passed))
++
++    def schedule(index, pool, _grades):
++        scheduled.append((index, pool))
++        return ('start', (('t1',), ('t2',))) if index == 0 else ('rewrite', ('t2',))
++
++    def propose(index, parent, samples):
++        proposals.append((index, parent, samples[0][0].id))
++        return ('rewrite', 'repair', 'winner')[index]
++
++    def charge(index, *_):
++        return int(index >= 2)
++
++    budget = SequentialSearchBudget(20, 1, charge, charge)
++    result = select_sequential_field_rewrites(
++        'start', training, validation, evaluate, schedule, propose, rounds=3, minibatch_size=1,
++        metric_limit=18, observed_charge=lambda *_: 1, price_budget=budget, reinvest_savings=True, paired_opening=True,
++    )
++    assert scheduled[0] == (0, ('start',))
++    assert proposals[0] == (0, 'start', 't1')
++    if first_perfect:
++        assert result == 'rewrite'
++        assert len(scheduled) == len(proposals) == 1
++        assert ('start', 't2') not in paid
++    else:
++        assert result == 'winner'
++        assert scheduled[1:] == [(2, ('start', 'rewrite', 'repair'))]
++        assert proposals[1:] == [(1, 'start', 't2'), (2, 'rewrite', 't2')]

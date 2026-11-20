@@ -171,3 +171,22 @@ At cap 76, the fixture saved another 22 reads, bringing CPO to 1,157 search read
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.batched_field_feedback --frontier-bounds
 ```
+
+### Pair the two supplied opening rewrites
+
+This experiment evaluated the two supplied rewrites against the same incumbent and reserved both slots before entering the pair. A perfect first rewrite could end search immediately. Otherwise, the selector kept successful opening candidates and resumed one reflection at a time.
+
+At a 48-unit search ceiling with one-unit reflections, the paired opening passed 593 of 648 held-out cases and cost 1,971 units. Sequential CPO passed 609 and cost 1,883 units. The paired opening used 100 extra evaluation reads and completed one later reflection versus 14. At four- and eight-unit reflection prices, the two CPO variants both passed 593, with charges of 1,968 and 1,802 units respectively. The sequential opening remains the better-performing policy on these fixtures. [Experimental results](sequential-field-quote-paired-opening-results-v1.json) · [Experiment patch](../benchmarks/experiments/paired-opening-v1.patch)
+
+Run the experiment from a disposable source export with the pinned GEPA 0.1.4 environment.
+
+```sh
+paired_opening_export=$(mktemp -d)
+git archive 129f14268c709c5e14cfe981920c23637608a2a8 | tar -x -C "$paired_opening_export"
+git -C "$paired_opening_export" apply "$PWD/benchmarks/experiments/paired-opening-v1.patch"
+(
+  cd "$paired_opening_export"
+  PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback \
+    --quoted-budget --parent-bounds --paired-opening
+)
+```
