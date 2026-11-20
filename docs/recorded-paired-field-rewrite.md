@@ -122,6 +122,22 @@ At the largest ceiling, CPO funded 15 later reflections and cost more than GEPA 
 PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback --quoted-budget
 ```
 
+### Combine the advance quote with partial parent grades
+
+The recorded Sol replay compared the parent-draw proof under the same three advance quotes. Both arms matched all 1,440 individual held-out outcomes across the quotes. At the highest quote, CPO used 2,366 search reads and cost $26.68, compared with 3,276 reads and $31.57 for sequential GEPA. That is 15.5% lower pooled cost. CPO spent more on three of 240 paths. The replay used archived replies and prices.
+
+Run the public fixture with the same two options. With one-unit reflections, CPO passed 609 of 648 held-out cases at a total charge of 1,883 units. Sequential GEPA passed 593 at 2,141 units. With four- or eight-unit reflections, both passed 593 and CPO used 1,802 units. [Fixture results](sequential-field-quote-parent-bounds-results-v1.json)
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback --quoted-budget --parent-bounds
+```
+
+The same parent option works with the evaluation-only cap. On the Sol archive at cap 24, this mode bought enough extra proposals that CPO cost $37.63 against sequential GEPA's $35.63, with the same number of passes. [Paid-read fixture results](sequential-field-paid-parent-bounds-results-v1.json)
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback --paid-budget --parent-bounds
+```
+
 ## Verify
 
 ```sh
