@@ -37,6 +37,8 @@ The controlled typed benchmark passed both GEPA gates at cap 56. Its additional 
 
 The policy-transfer fixture recovered single omissions and exposed the limit of one repair when two rules were missing. [Transfer benchmark](opening-repair-policy-transfer.md)
 
+The routed cycle supports a second funded repair and selects probes using categorical input features. [Routed repair API](routed-repair-cycle.md)
+
 ## Reproduce offline
 
 ```sh

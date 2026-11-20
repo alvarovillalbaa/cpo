@@ -4,6 +4,8 @@ The provisional repair could still miss an explicitly wrong rule when both train
 
 For each categorical input feature, the router compares how often it occurs in paid validation failures and passes. It prioritizes features that occur disproportionately in failures and retains the seeded training order on ties. Each round reserves enough budget for full validation of the repair, chooses at most two unused training rows, and runs the probes on the instruction alone. A failed probe can trigger a repair. A rejected first repair can supply provisional context only when it preserves the exact passing rows and matched-field counts. Only a strict improvement over the last accepted candidate can replace the final nominee.
 
+The opt-in CPO API accepts a caller-provided input feature extractor. Its source and installed wheel replay the three cohort traces. [Routed repair API](routed-repair-cycle.md)
+
 The search cap is 56 lookups per panel, with at most two later proposals. The comparison replays the two published cohorts and adds 30 panels under new seeds and disjoint inputs. Every cohort uses the same scripted rule generator and five opening conditions. The third cohort is primary.
 
 ## Results
