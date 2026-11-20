@@ -35,3 +35,13 @@ def test_bundle_reproduces_the_observed_costs_and_ten_percent_gate():
         'cpoPasses': 382, 'gepaPasses': 382, 'matchedUses': 480, 'distinctCases': 36,
         'differentSelectedPrompts': 0, 'pairedGains': 0, 'pairedLosses': 0, 'casesWithLowerTotal': 0,
     }
+
+
+def test_dominance_clears_the_gate_at_separate_prices_in_every_scope():
+    data = json.loads(DATA.with_name('opening-dominance-cost-terms-v1.json').read_bytes())
+    result = measure(data)
+    assert result['pooled']['originalCostMicrousd'] == {'cpo': 19_915_032, 'gepa': 23_456_712}
+    scopes = (result['pooled'], *result['byPhase'].values(), *result['byTask'].values())
+    assert all(scope['separateChargesAlwaysSaveAtLeastTenPercent'] for scope in scopes)
+    assert all(scope['pairedScores']['pairedLosses'] == 0 for scope in scopes)
+    assert result['pooled']['pairedScores']['differentSelectedPrompts'] == 0

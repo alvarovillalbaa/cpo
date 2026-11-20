@@ -1,5 +1,6 @@
 """Reproduce cost sensitivity for certified opening validation from archived charges."""
 
+import argparse
 from collections import Counter
 from fractions import Fraction
 import json
@@ -64,4 +65,7 @@ def measure(data):
 
 
 if __name__ == '__main__':
-    print(json.dumps(measure(json.loads(DATA.read_bytes())), indent=2, sort_keys=True))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('data', type=Path, nargs='?', default=DATA)
+    args = parser.parse_args()
+    print(json.dumps(measure(json.loads(args.data.read_bytes())), indent=2, sort_keys=True))

@@ -6,15 +6,16 @@ from dataclasses import replace
 from .expected_cost_proposal_cycle import ExpectedCostProposalCycleResult
 from .expected_qualification import certify_expected_qualification
 from .opening_certificate import search_with_opening_certificate
+from .opening_dominance import certify_opening_dominance
 from .opening_validation import certify_opening_validation
-from .optimizer import ProposalPair, search
+from .optimizer import ProposalPair, Result, search
 from .paired_qualification import certify_paired_qualification
 
 
 def run_opening_screen_cycle(incumbent, train, validation, holdout, evaluate, *, opening_pair,
                              metric_limit, qualify, screen_rows=8, repeats=1, minimum_gain=1,
                              seed=0, field_credit=False, qualification_limit=None, certify_opening=False,
-                             certify_validation=False):
+                             certify_validation=False, certify_dominance=False):
     """Search only the supplied opening, then require full validation and qualification.
 
     The first screen_rows validation cases drive search. Budget the complete
@@ -25,6 +26,9 @@ def run_opening_screen_cycle(incumbent, train, validation, holdout, evaluate, *,
     can settle a perfect opening without scoring every incumbent case.
     In that same mode, certify_validation stops once the full-panel promotion
     gate is determined from the known replies and additional paired reads.
+    The opt-in certify_dominance proof can nominate a rewrite that already
+    dominates the incumbent. It runs only if all three prompts can be funded
+    on the prefix and the usual full-panel validation reserve remains available.
     """
     if not isinstance(opening_pair, ProposalPair):
         raise ValueError('An opening screen requires a precomputed ProposalPair')
@@ -38,6 +42,8 @@ def run_opening_screen_cycle(incumbent, train, validation, holdout, evaluate, *,
         raise ValueError('Opening certification requires a boolean flag')
     if type(certify_validation) is not bool:
         raise ValueError('Validation certification requires a boolean flag')
+    if type(certify_dominance) is not bool:
+        raise ValueError('Dominance certification requires a boolean flag')
 
     train, validation, holdout = tuple(train), tuple(validation), tuple(holdout)
     ids = [row.id for row in (*train, *validation, *holdout)]
@@ -72,9 +78,19 @@ def run_opening_screen_cycle(incumbent, train, validation, holdout, evaluate, *,
     paired_only = qualification_limit is not None and qualification_limit < 2 * repeats * len(holdout)
     use_certificate = certify_opening and paired_only
     select = search_with_opening_certificate if use_certificate else search
-    result = select(incumbent, train, prefix, observe, unused_proposer, opening_pair=opening_pair,
-                    metric_limit=metric_limit - 2 * len(suffix), rounds=1, train_per_round=1,
-                    adaptive=True, seed=seed, field_credit=field_credit)
+    prefix_limit = metric_limit - 2 * len(suffix)
+    rewrite = opening_pair.rewrite
+    proof = None
+    if (certify_dominance and paired_only and prefix_limit >= 3 * len(prefix)
+            and isinstance(rewrite, str) and rewrite.strip() and rewrite != incumbent):
+        proof = certify_opening_dominance(incumbent, rewrite, prefix, observe, field_credit=field_credit)
+    if proof is not None:
+        result = Result(rewrite, len(observations), 0, [proof])
+    else:
+        result = select(incumbent, train, prefix, observe, unused_proposer, opening_pair=opening_pair,
+                        metric_limit=prefix_limit, rounds=1, train_per_round=1,
+                        adaptive=True, seed=seed, field_credit=field_credit)
+        result = replace(result, evaluations=len(observations))
     challenger = result.prompt
     if challenger == incumbent:
         return ExpectedCostProposalCycleResult(result, None)
