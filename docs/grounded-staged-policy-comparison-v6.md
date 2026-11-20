@@ -6,16 +6,16 @@ The staged policy, opening dominance, and all three GEPA controls use the same d
 
 ## Reproduce a fixture
 
-Use GEPA 0.1.4 and fresh output paths. The portable fixture uses gain per read when it has no price. The focused tests also exercise explicit per-reply prices.
+Use the clean source at `949dfe5`, GEPA 0.1.4, and fresh output paths. The portable fixture uses gain per read when it has no price. The focused tests also exercise explicit per-reply prices.
 
 ```sh
 python -B -m benchmarks.grounded_staged_charge_comparison
 python -B -m benchmarks.grounded_staged_charge_comparison \
-  --fixture 2942ecd724f21d16a765b02e43945cbea2514061e360f3b4eb3536200b5da099 \
+  --fixture 1c3fddb7fb18f56d23fee4b8a80a76dd8c1c1eda17044135acc36010efa4f375 \
   --out DEV
 python -B -m benchmarks.grounded_staged_charge_comparison --replay DEV --out DEV_REPLAY
 python -B -m benchmarks.grounded_staged_charge_comparison --development DEV
 python -m pytest -q tests/unit/test_grounded_staged_charge_comparison.py
 ```
 
-The [version 5 protocol](grounded-staged-policy-comparison-v5.md) keeps its original source revision and seal. The prospective version 6 protocol requires its own run and independent confirmation.
+The [version 5 protocol](https://github.com/alvarovillalbaa/cpo/blob/5b4485f1cc0cd0094f9104936ff9c54f8d32b154/docs/grounded-staged-policy-comparison-v5.md) keeps its original source revision and seal. The prospective version 6 protocol requires its own run and independent confirmation.
