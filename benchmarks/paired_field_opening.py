@@ -25,10 +25,10 @@ def first_minibatch(size, seed, width):
     return tuple(reads)
 
 
-def select(initial, bank, groups, evaluate, *, cap, seed, minibatch_size):
+def select(initial, bank, groups, evaluate, *, cap, seed, minibatch_size, observed_charge=None):
     validation = tuple(Row(row['id'], 'validation', fields=len(row['expected'])) for row in groups['validation'])
     if cap < 2 * len(validation):
         raise ValueError('The paired opening requires a fully funded two-prompt validation')
     batch = tuple(validation[index].id for index in first_minibatch(len(validation), seed, minibatch_size))
     return select_paired_field_rewrite(initial, bank[0], validation, batch,
-                                       lambda prompt, row: evaluate(prompt, row.id))
+                                       lambda prompt, row: evaluate(prompt, row.id), observed_charge=observed_charge)

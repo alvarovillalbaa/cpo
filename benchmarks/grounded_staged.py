@@ -3,6 +3,7 @@
 import argparse
 from collections import Counter
 from copy import deepcopy
+from dataclasses import dataclass
 from hashlib import sha256
 from importlib.metadata import version
 from importlib.util import find_spec
@@ -25,6 +26,7 @@ SPLITS = {'train': 16, 'validation': 12, 'admission': 8, 'holdout': 18, 'confirm
 ARMS = ('cpo', 'gepa-sequential', 'gepa-batched')
 CACHED_OPENING = 'gepa-cached-opening'
 PAIRED_FIELD_REWRITE = 'paired-field-rewrite'
+CHARGE_PAIRED_REWRITE = 'charge-aware-paired-rewrite'
 RETRY_LIMIT = 8
 FAMILY = {'ticket': 'Channel', 'warehouse': 'Tier', 'outage': 'Plan'}
 BOUNDARIES = (0, 1, 4, 5, 8, 9, 12, 14)
@@ -115,8 +117,15 @@ def cases(task, rows):
                 row['critical'], len(row['expected'])) for row in rows]
 
 
+@dataclass(frozen=True)
+class PricedReply:
+    text: str
+    charge_microusd: int | None
+
+
 def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening=False,
-           native_gepa_selector=None, cached_opening_selector=None, paired_rewrite_selector=None):
+           native_gepa_selector=None, cached_opening_selector=None, paired_rewrite_selector=None,
+           charge_rewrite_selector=None):
     train, validation, admission = (groups[name] for name in ('train', 'validation', 'admission'))
     training = [{key: row[key] for key in ('id', 'input', 'expected')} for row in train]
     train_ids = {row['id'] for row in train}
@@ -137,17 +146,21 @@ def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening
     decision_log = {}
     order = list(ARMS)
     Random(f'{SEED}:{task}').shuffle(order)
-    if cached_opening_selector is not None:
-        order.append(CACHED_OPENING)
-    if paired_rewrite_selector is not None:
-        order.append(PAIRED_FIELD_REWRITE)
+    fixed_selectors = {arm: select for arm, select in (
+        (CACHED_OPENING, cached_opening_selector), (PAIRED_FIELD_REWRITE, paired_rewrite_selector),
+        (CHARGE_PAIRED_REWRITE, charge_rewrite_selector)) if select is not None}
+    order.extend(fixed_selectors)
     native_select = native_gepa_selector or opening_screen_typed.gepa_select
     for arm in order:
         def evaluate(prompt, row_id):
             row = search_rows[row_id]
-            text = dispatch(arm, 'evaluation', prompt, row['input'])
+            reply = dispatch(arm, 'evaluation', prompt, row['input'])
+            text = reply.text if isinstance(reply, PricedReply) else reply
             passed, fields = grounded.score(text, row['expected'])
-            return Observation(passed, {'id': row_id, 'observed': text}, fields)
+            feedback = {'id': row_id, 'observed': text}
+            if isinstance(reply, PricedReply):
+                feedback['chargeMicrousd'] = reply.charge_microusd
+            return Observation(passed, feedback, fields)
 
         def qualify(prompt, row, repeat):
             record = admission_rows[row.id]
@@ -174,8 +187,8 @@ def choose(task, groups, dispatch, *, certify_final_draft=False, certify_opening
             nominee, selected[arm] = result.search.prompt, result.prompt
             proof = result.qualification
         else:
-            if arm in (CACHED_OPENING, PAIRED_FIELD_REWRITE):
-                select = cached_opening_selector if arm == CACHED_OPENING else paired_rewrite_selector
+            if arm in fixed_selectors:
+                select = fixed_selectors[arm]
                 nominee = select(grounded.BASELINE, bank, groups, evaluate, cap=grounded.METRIC_LIMIT, seed=SEED)
             else:
                 nominee = native_select(grounded.BASELINE, bank, groups, evaluate, reflect,
