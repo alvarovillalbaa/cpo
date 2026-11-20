@@ -27,6 +27,18 @@ class SequentialSearchBudget:
             raise ValueError('The proposal quote and observed charge must be callbacks')
 
 
+@dataclass(frozen=True)
+class SequentialValidationGrades:
+    """Expose full profiles and individual grades in validation order."""
+
+    complete: Callable[[str], tuple[float, ...]]
+    peek: Callable[[str, int], float | None]
+    read: Callable[[str, int], float]
+
+    def __call__(self, prompt):
+        return self.complete(prompt)
+
+
 def _check_charge(charge, quote):
     if type(charge) is not int or not 0 <= charge <= quote:
         raise ValueError('The observed charge must be a nonnegative integer within its quoted maximum')
@@ -40,7 +52,9 @@ def select_sequential_field_rewrites(
 
     schedule(index, pool, grades) returns a tracked parent and training IDs.
     grades(prompt) returns that prompt's complete normalized validation scores
-    in validation order, paying for any missing replies. The proposer receives
+    in validation order, paying for any missing replies. grades.peek and
+    grades.read address one validation position from the same paid cache.
+    The proposer receives
     (index, parent, examples), with only paid training rows and observations.
     It runs for every entered round so stateful proposal sequences stay intact.
 
@@ -110,6 +124,19 @@ def select_sequential_field_rewrites(
             raise ValueError('Full grades are available only for tracked prompts')
         return tuple(observe(prompt, case) / denominator for case in val_ids)
 
+    def peek_grade(prompt, index):
+        if prompt not in pool:
+            raise ValueError('Validation grades are available only for tracked prompts')
+        score = scores.get((prompt, val_ids[index]))
+        return None if score is None else score / denominator
+
+    def read_grade(prompt, index):
+        if prompt not in pool:
+            raise ValueError('Validation grades are available only for tracked prompts')
+        return observe(prompt, val_ids[index]) / denominator
+
+    validation_grades = SequentialValidationGrades(grades, peek_grade, read_grade)
+
     def perfect(prompt):
         if any(owner == prompt and case in val_set and value < denominator
                for (owner, case), value in scores.items()):
@@ -124,7 +151,7 @@ def select_sequential_field_rewrites(
             break
         if latest is not None and perfect(latest):
             return latest
-        parent, ids = schedule(index, tuple(pool), grades)
+        parent, ids = schedule(index, tuple(pool), validation_grades)
         batch = tuple(ids)
         if parent not in pool or len(batch) != minibatch_size or len(set(batch)) != len(batch) or not set(batch) <= train_set:
             raise ValueError('The schedule must select a tracked parent and distinct training rows')

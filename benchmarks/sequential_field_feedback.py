@@ -15,7 +15,7 @@ from cpo.sequential_field_rewrite import SequentialSearchBudget
 REPLICATION_SEEDS = (47317, 47347, 47377, 47401, 47423, 47437)
 
 
-def run_arm(task, cohorts, seed, cap, mode, *, reflection_price=None):
+def run_arm(task, cohorts, seed, cap, mode, *, reflection_price=None, parent_bounds=False):
     train_ids = {row['id'] for row in cohorts['train']}
     schedule, reads, proposals, nominees = [], [], [], []
 
@@ -58,7 +58,8 @@ def run_arm(task, cohorts, seed, cap, mode, *, reflection_price=None):
             )
             nominee = select_field_rewrites(initial, bank, groups, read, propose, schedule, cap=cap, seed=seed,
                                              reinvest_savings=mode == 'reinvest', price_budget=budget,
-                                             observed_charge=None if budget is None else lambda *_: 1)
+                                             observed_charge=None if budget is None else lambda *_: 1,
+                                             parent_bounds=parent_bounds)
         nominees.append(nominee)
         return nominee
 
@@ -67,9 +68,11 @@ def run_arm(task, cohorts, seed, cap, mode, *, reflection_price=None):
     return run['arms']['gepa-sequential'], schedule, nominees, proposals, reads
 
 
-def compare(task, cohorts, seed, cap):
+def compare(task, cohorts, seed, cap, *, parent_bounds=False):
     native, schedule, nominees, proposals, paid = run_arm(task, cohorts, seed, cap, 'native')
-    paired, new_schedule, new_nominees, new_proposals, new_paid = run_arm(task, cohorts, seed, cap, 'paired')
+    paired, new_schedule, new_nominees, new_proposals, new_paid = run_arm(
+        task, cohorts, seed, cap, 'paired', parent_bounds=parent_bounds,
+    )
     if (schedule, nominees, proposals) != (new_schedule, new_nominees, new_proposals):
         raise ValueError('The paired selector changed the native search or proposal trace')
     if any(native[key] != paired[key] for key in ('selectedSha256', 'qualificationLookups', 'holdout')):
@@ -85,16 +88,18 @@ def compare(task, cohorts, seed, cap):
     }
 
 
-def measure():
+def measure(*, parent_bounds=False):
     cohorts = {seed: typed_policy.cohorts(seed) for seed in feedback_budget.SEEDS}
     results = {}
     for cap in feedback_budget.BUDGETS:
-        records = [compare(task, cases, seed, cap) for seed, tasks in cohorts.items() for task, cases in tasks.items()]
+        records = [compare(task, cases, seed, cap, parent_bounds=parent_bounds)
+                   for seed, tasks in cohorts.items() for task, cases in tasks.items()]
         summary = Counter()
         for row in records:
             summary.update({key: value for key, value in row.items() if type(value) is int and key != 'seed'})
         results[cap] = {'paths': len(records), **summary, 'traceSha256': digest(records)}
-    return {'schema': 'sequential-field-feedback-fixture-v1', 'newProviderRequests': 0, 'caps': results}
+    schema = 'sequential-field-parent-bounds-v1' if parent_bounds else 'sequential-field-feedback-fixture-v1'
+    return {'schema': schema, 'newProviderRequests': 0, 'caps': results}
 
 
 def compare_reinvestment(seeds):
@@ -180,11 +185,12 @@ if __name__ == '__main__':
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--paid-budget', action='store_true', help='Let CPO spend saved reads on more rounds')
     modes.add_argument('--quoted-budget', action='store_true', help='Charge proposals against the same search quote')
+    modes.add_argument('--parent-bounds', action='store_true', help='Prove the native draw from partial profiles')
     args = parser.parse_args()
     if version('gepa') != '0.1.4':
         raise SystemExit('Use pinned GEPA 0.1.4')
     if args.quoted_budget:
         report = measure_quoted_budget()
     else:
-        report = measure_reinvestment() if args.paid_budget else measure()
+        report = measure_reinvestment() if args.paid_budget else measure(parent_bounds=args.parent_bounds)
     print(json.dumps(report, indent=2, sort_keys=True))

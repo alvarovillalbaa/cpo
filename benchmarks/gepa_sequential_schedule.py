@@ -1,6 +1,7 @@
 """Bind a paired replay to GEPA's seeded Pareto selector and minibatches."""
 
 from importlib import import_module
+from importlib.metadata import version
 from random import Random
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -8,7 +9,7 @@ from unittest.mock import patch
 
 def select_field_rewrites(
     initial, bank, groups, evaluate, reflect, trace, *,
-    cap, seed, observed_charge=None, reinvest_savings=False, price_budget=None,
+    cap, seed, observed_charge=None, reinvest_savings=False, price_budget=None, parent_bounds=False,
 ):
     from benchmarks import grounded
     from cpo import Row
@@ -23,7 +24,8 @@ def select_field_rewrites(
             raise ValueError('A proposer received a case outside its paid training minibatch')
         return bank[index] if index < len(bank) else reflect(parent, [reply.feedback for _, reply in samples])
 
-    schedule = sequential_schedule(validation, seed, grounded.MINIBATCH, trace, training=training)
+    schedule = sequential_schedule(validation, seed, grounded.MINIBATCH, trace, training=training,
+                                   parent_bounds=parent_bounds)
     return select_sequential_field_rewrites(
         initial, training, validation, lambda p, row: evaluate(p, row.id), schedule, propose,
         rounds=grounded.REFLECTION_LIMIT, minibatch_size=grounded.MINIBATCH, metric_limit=cap,
@@ -31,10 +33,16 @@ def select_field_rewrites(
     )
 
 
-def sequential_schedule(validation, seed, minibatch_size, trace, *, training=None):
+def sequential_schedule(validation, seed, minibatch_size, trace, *, training=None, parent_bounds=False):
     from gepa.core.data_loader import ListDataLoader
     from gepa.gepa_utils import select_program_candidate_from_pareto_front
     from gepa.strategies.batch_sampler import EpochShuffledBatchSampler
+
+    if parent_bounds:
+        from cpo.gepa_parent import select_two_candidate_parent
+
+        if version('gepa') != '0.1.4':
+            raise ValueError('Parent bounds require GEPA 0.1.4')
 
     training = validation if training is None else training
     rng = Random(seed)
@@ -42,10 +50,11 @@ def sequential_schedule(validation, seed, minibatch_size, trace, *, training=Non
     sampler = EpochShuffledBatchSampler(minibatch_size, rng=rng)
 
     def schedule(index, pool, grades):
+        parent = select_two_candidate_parent(pool, len(validation), grades, rng) if parent_bounds else None
         if len(pool) == 1:
             # The only program owns every case without needing its grades.
             parent = rng.choice(pool * len(validation))
-        else:
+        elif parent is None:
             profiles = [grades(prompt) for prompt in pool]
             fronts = {}
             for case, scores in enumerate(zip(*profiles, strict=True)):

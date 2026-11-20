@@ -77,6 +77,16 @@ The public deterministic fixture generates later rewrites from the errors in eac
 PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback
 ```
 
+### Draw a parent from partial validation grades
+
+The replay scheduler accepts `parent_bounds=True` for two distinct candidates and up to 32 validation cases. For each missing grade it considers the possible case winners and ties. It uses the paid grades to skip further reads only when every possible completion gives GEPA 0.1.4 the same parent and advances the random generator to the same state. That state also controls the subsequent training minibatches. The scheduler reads complete profiles for larger pools or validation panels.
+
+At the 56-read cap, the deterministic feedback fixture needed 518 search reads with this option, down from 532 with the complete-profile scheduler and 672 for native sequential GEPA. All three matched the 19 later proposal inputs and outputs, 525 admission reads, and 314 of 324 held-out passes. At cap 40, both CPO variants used 319 search reads and matched all outcomes. The fixture uses generated replies. [Fixture results](sequential-field-parent-bounds-results-v1.json)
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback --parent-bounds
+```
+
 ## Reinvest saved reads
 
 Set `reinvest_savings=True` to budget each additional round against paid evaluation reads. The selector reserves unread validation grades for every eligible parent. It then reserves the selected parent's missing training replies and a complete new child's training and validation replies. The same proposal limit and independent admission gate apply. The default keeps the original native round horizon.
@@ -115,7 +125,9 @@ PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback --quoted-budg
 ## Verify
 
 ```sh
-python -m pytest -q tests/unit/test_paired_field_rewrite.py tests/unit/test_sequential_field_rewrite.py
+python -m pytest -q tests/unit/test_paired_field_rewrite.py tests/unit/test_sequential_field_rewrite.py tests/unit/test_gepa_parent.py
 ```
 
 The tests enumerate all 65,536 field profiles for two prompts on four three-field cases with and without observed-charge ordering. They check the native result and verify that each paid read belongs to the complete native comparison. The Sol replay used the pinned GEPA 0.1.4 first minibatch and exact published control receipts. Two offline runs matched byte for byte. Fresh proposal generation and independent live confirmation remain unverified.
+
+The parent-draw test checks all 729 two-candidate combinations of three grades on three validation cases and eight seeds against GEPA 0.1.4, including the generator state after each draw.
