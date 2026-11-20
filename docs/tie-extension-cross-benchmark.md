@@ -22,6 +22,8 @@ Tie-extension CPO used 29.4% to 51.7% fewer lookups than the four GEPA controls 
 
 Compared with eight-case CPO, the candidate saved 3,157 lookups and scored 22 fewer passes. Its paired range against that CPO control was −54 to +10. Snarks and homophones accounted for 23 lost passes before gains on other tasks. The eight-case default remains in place.
 
+A search follow-up found 110 comparisons where CPO missed a candidate that would have passed both gates on its offered cycle. [Two-finalist validation race](balanced-finalist-race.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. The committed corpus is sufficient for replay.
