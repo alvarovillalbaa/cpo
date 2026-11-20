@@ -11,6 +11,8 @@ Both fixture profiles qualified in development and confirmation. The decisions a
 
 Combined CPO scored 108 of 108 development replies and 48 of 48 confirmation replies in both profiles. The perfect-ticket shortcut removed nine CPO search uses. The shared run still sent the same physical requests because the GEPA arms also used those replies. This measures the two exact shortcuts on fixed replies. Provider cost and quality on fresh model replies remain unverified.
 
+The opening-only ablation measures the additional passes and search uses from the later repairs on the same two profiles. [Opening-only comparison](grounded-staged-opening-ablation.md)
+
 ## Reproduce offline
 
 Use GEPA 0.1.4 and fresh directories. The two-profile comparison is available through `python -B -m benchmarks.grounded_staged_combined_fixture --out NEW_REPORT.json`.
