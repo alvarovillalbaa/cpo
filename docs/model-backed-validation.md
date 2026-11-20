@@ -28,6 +28,8 @@ The later development run gave every arm the same four labeled examples at evalu
 
 Offline replay recovered the completed ticket and warehouse searches. CPO and field-aware GEPA each passed every directly recorded matched validation case, 10 per task. Across those two tasks CPO used 50 attributed search calls and field-aware GEPA used 72, including the shared openings. The interrupted run provides search evidence on those two tasks. The held-out accuracy and independent confirmation remain unmeasured.
 
+A separate portable fixture exercises joint and independent opening requests under recorded-style cap failures, including partial and empty opening sets. [Opening budget comparison](opening-budget.md)
+
 ### Portable grounded fixture
 
 The public `portable-grounded-v1` protocol compares field-aware CPO with the three GEPA 0.1.4 configurations on the released typed-policy cohorts. It uses its own starting instruction and development gate. The efficiency rule counts physical search calls, including the shared opening in each arm’s attributed total. One request samples each distinct selected instruction for a case and repeat. Qualification runs after all selections finish.

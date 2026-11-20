@@ -1,0 +1,1202 @@
+{
+  "delivery": "fixture",
+  "plan": {
+    "gepaVersion": "0.1.4",
+    "instructionBytes": 1600,
+    "modes": [
+      "pair",
+      "split",
+      "fill-missing"
+    ],
+    "openingOutputBudget": 3600,
+    "pairTokens": 1200,
+    "priorPlanSha256": "792a069fbca343c66899a927313fd210c361d3f480fc183463f8ebdadefdcbcf",
+    "profiles": {
+      "all-opening-capped": [
+        "pair",
+        "rewrite",
+        "repair"
+      ],
+      "complete": [],
+      "joint-and-repair-cap": [
+        "pair",
+        "repair"
+      ],
+      "joint-cap": [
+        "pair"
+      ]
+    },
+    "protocol": "cpo-opening-budget-fixture-v1",
+    "singleTokens": 1200,
+    "sourceSha256": {
+      "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+      "benchmarks/grounded_fixture.py": "f42d309d629cafd303f42bc319dc388333398134644597ad274de9d380cf2a31",
+      "benchmarks/opening_budget.py": "ead67b14690cba94404f92f2d00812d0eeb1206221323e0f0297bb2c2f6ad791",
+      "benchmarks/typed_policy.py": "9fb85272a82c61499ba7b614d233964f9e8c077ad1ca630ac1030737202a0f1f",
+      "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+      "cpo/opening.py": "e5ce21274aedadfc72e851340448c36dc9e2eda82301ef666bd3dbeb47a525ba",
+      "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+      "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+    }
+  },
+  "planSha256": "1a07a7c6b2a380947eca057cca5491a07aa57e6ca18d6ea95f1e5fec69f5bba7",
+  "results": {
+    "all-opening-capped": {
+      "fill-missing": {
+        "journalSha256": "1f8abdadf2ddf7899a93a12be4075dd94a8c8b70bfa5322968cd72569281e60c",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "output_limit"
+            },
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "output_limit"
+            },
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "output_limit"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": {
+          "comparisons": {
+            "gepa-batched": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-repair-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-rewrite-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "initial": {
+              "addedPasses": 100,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "passesByTask": {
+            "cpo": {
+              "outage": 36,
+              "ticket": 36,
+              "warehouse": 36
+            },
+            "gepa-batched": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-repair-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-rewrite-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "initial": {
+              "outage": 0,
+              "ticket": 8,
+              "warehouse": 0
+            }
+          },
+          "qualified": true
+        },
+        "physicalQualificationCalls": 216,
+        "physicalSearchCalls": 442,
+        "searchCallsByArm": {
+          "cpo": 129,
+          "gepa-batched": 97,
+          "gepa-repair-first": 117,
+          "gepa-rewrite-first": 114
+        },
+        "selectedSha256": "0585d4e9275dd10b29fe32caee7aab9224d0dbe05438c5b92bed25318a23c19e",
+        "status": "completed"
+      },
+      "pair": {
+        "journalSha256": "84dd1ab73314364edfe85db002a23d4690b3942fe1b76b58ce73761c495ff686",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "output_limit"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": null,
+        "physicalQualificationCalls": 0,
+        "physicalSearchCalls": 265,
+        "searchCallsByArm": {
+          "cpo": 70,
+          "gepa-batched": 61,
+          "gepa-repair-first": 73,
+          "gepa-rewrite-first": 70
+        },
+        "selectedSha256": "2e5ad27d1fab425cab53d21d555516c3fbbea00f6b1bddbbe59f35f71e50fe79",
+        "status": "aborted-at-opening"
+      },
+      "split": {
+        "journalSha256": "04f3574b62829794664c83d483d308aea856b36dad9ff239362773d43ba17ec0",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "output_limit"
+            },
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "output_limit"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": {
+          "comparisons": {
+            "gepa-batched": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-repair-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-rewrite-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "initial": {
+              "addedPasses": 100,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "passesByTask": {
+            "cpo": {
+              "outage": 36,
+              "ticket": 36,
+              "warehouse": 36
+            },
+            "gepa-batched": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-repair-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-rewrite-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "initial": {
+              "outage": 0,
+              "ticket": 8,
+              "warehouse": 0
+            }
+          },
+          "qualified": true
+        },
+        "physicalQualificationCalls": 216,
+        "physicalSearchCalls": 443,
+        "searchCallsByArm": {
+          "cpo": 130,
+          "gepa-batched": 98,
+          "gepa-repair-first": 118,
+          "gepa-rewrite-first": 115
+        },
+        "selectedSha256": "0585d4e9275dd10b29fe32caee7aab9224d0dbe05438c5b92bed25318a23c19e",
+        "status": "completed"
+      }
+    },
+    "complete": {
+      "fill-missing": {
+        "journalSha256": "cb8dafb50f46d54bc91129ab354a3eaf48ddf1c00627e58a1a0def3f4a46d587",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": {
+          "comparisons": {
+            "gepa-batched": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-repair-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-rewrite-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "initial": {
+              "addedPasses": 100,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "passesByTask": {
+            "cpo": {
+              "outage": 36,
+              "ticket": 36,
+              "warehouse": 36
+            },
+            "gepa-batched": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-repair-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-rewrite-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "initial": {
+              "outage": 0,
+              "ticket": 8,
+              "warehouse": 0
+            }
+          },
+          "qualified": true
+        },
+        "physicalQualificationCalls": 216,
+        "physicalSearchCalls": 414,
+        "searchCallsByArm": {
+          "cpo": 111,
+          "gepa-batched": 89,
+          "gepa-repair-first": 113,
+          "gepa-rewrite-first": 110
+        },
+        "selectedSha256": "0585d4e9275dd10b29fe32caee7aab9224d0dbe05438c5b92bed25318a23c19e",
+        "status": "completed"
+      },
+      "pair": {
+        "journalSha256": "cb8dafb50f46d54bc91129ab354a3eaf48ddf1c00627e58a1a0def3f4a46d587",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": {
+          "comparisons": {
+            "gepa-batched": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-repair-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-rewrite-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "initial": {
+              "addedPasses": 100,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "passesByTask": {
+            "cpo": {
+              "outage": 36,
+              "ticket": 36,
+              "warehouse": 36
+            },
+            "gepa-batched": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-repair-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-rewrite-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "initial": {
+              "outage": 0,
+              "ticket": 8,
+              "warehouse": 0
+            }
+          },
+          "qualified": true
+        },
+        "physicalQualificationCalls": 216,
+        "physicalSearchCalls": 414,
+        "searchCallsByArm": {
+          "cpo": 111,
+          "gepa-batched": 89,
+          "gepa-repair-first": 113,
+          "gepa-rewrite-first": 110
+        },
+        "selectedSha256": "0585d4e9275dd10b29fe32caee7aab9224d0dbe05438c5b92bed25318a23c19e",
+        "status": "completed"
+      },
+      "split": {
+        "journalSha256": "78e5665509cb6e4b9b57561a81d5bddc31a730629b471d2971a8d4018ebe514c",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": {
+          "comparisons": {
+            "gepa-batched": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-repair-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-rewrite-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "initial": {
+              "addedPasses": 100,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "passesByTask": {
+            "cpo": {
+              "outage": 36,
+              "ticket": 36,
+              "warehouse": 36
+            },
+            "gepa-batched": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-repair-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-rewrite-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "initial": {
+              "outage": 0,
+              "ticket": 8,
+              "warehouse": 0
+            }
+          },
+          "qualified": true
+        },
+        "physicalQualificationCalls": 216,
+        "physicalSearchCalls": 417,
+        "searchCallsByArm": {
+          "cpo": 114,
+          "gepa-batched": 92,
+          "gepa-repair-first": 116,
+          "gepa-rewrite-first": 113
+        },
+        "selectedSha256": "0585d4e9275dd10b29fe32caee7aab9224d0dbe05438c5b92bed25318a23c19e",
+        "status": "completed"
+      }
+    },
+    "joint-and-repair-cap": {
+      "fill-missing": {
+        "journalSha256": "ea635c6300bfe47fa93aa52c90f88847305f75fce0a2574b87fc915ed8302506",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "output_limit"
+            },
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "output_limit"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": {
+          "comparisons": {
+            "gepa-batched": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-repair-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-rewrite-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "initial": {
+              "addedPasses": 100,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "passesByTask": {
+            "cpo": {
+              "outage": 36,
+              "ticket": 36,
+              "warehouse": 36
+            },
+            "gepa-batched": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-repair-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-rewrite-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "initial": {
+              "outage": 0,
+              "ticket": 8,
+              "warehouse": 0
+            }
+          },
+          "qualified": true
+        },
+        "physicalQualificationCalls": 216,
+        "physicalSearchCalls": 423,
+        "searchCallsByArm": {
+          "cpo": 113,
+          "gepa-batched": 96,
+          "gepa-repair-first": 116,
+          "gepa-rewrite-first": 113
+        },
+        "selectedSha256": "0585d4e9275dd10b29fe32caee7aab9224d0dbe05438c5b92bed25318a23c19e",
+        "status": "completed"
+      },
+      "pair": {
+        "journalSha256": "84dd1ab73314364edfe85db002a23d4690b3942fe1b76b58ce73761c495ff686",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "output_limit"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": null,
+        "physicalQualificationCalls": 0,
+        "physicalSearchCalls": 265,
+        "searchCallsByArm": {
+          "cpo": 70,
+          "gepa-batched": 61,
+          "gepa-repair-first": 73,
+          "gepa-rewrite-first": 70
+        },
+        "selectedSha256": "2e5ad27d1fab425cab53d21d555516c3fbbea00f6b1bddbbe59f35f71e50fe79",
+        "status": "aborted-at-opening"
+      },
+      "split": {
+        "journalSha256": "f0623b032af64eb65c8481ccdc6fc63bbd8339a0579fc1f44d98782ea116d47b",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "output_limit"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": {
+          "comparisons": {
+            "gepa-batched": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-repair-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-rewrite-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "initial": {
+              "addedPasses": 100,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "passesByTask": {
+            "cpo": {
+              "outage": 36,
+              "ticket": 36,
+              "warehouse": 36
+            },
+            "gepa-batched": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-repair-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-rewrite-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "initial": {
+              "outage": 0,
+              "ticket": 8,
+              "warehouse": 0
+            }
+          },
+          "qualified": true
+        },
+        "physicalQualificationCalls": 216,
+        "physicalSearchCalls": 424,
+        "searchCallsByArm": {
+          "cpo": 114,
+          "gepa-batched": 97,
+          "gepa-repair-first": 117,
+          "gepa-rewrite-first": 114
+        },
+        "selectedSha256": "0585d4e9275dd10b29fe32caee7aab9224d0dbe05438c5b92bed25318a23c19e",
+        "status": "completed"
+      }
+    },
+    "joint-cap": {
+      "fill-missing": {
+        "journalSha256": "4cc8ddc09802ef10eadccdc82a5f8b89db48899d4a0ea1f7311f3ae2b7f5fe50",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "output_limit"
+            },
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": {
+          "comparisons": {
+            "gepa-batched": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-repair-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-rewrite-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "initial": {
+              "addedPasses": 100,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "passesByTask": {
+            "cpo": {
+              "outage": 36,
+              "ticket": 36,
+              "warehouse": 36
+            },
+            "gepa-batched": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-repair-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-rewrite-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "initial": {
+              "outage": 0,
+              "ticket": 8,
+              "warehouse": 0
+            }
+          },
+          "qualified": true
+        },
+        "physicalQualificationCalls": 216,
+        "physicalSearchCalls": 416,
+        "searchCallsByArm": {
+          "cpo": 113,
+          "gepa-batched": 91,
+          "gepa-repair-first": 115,
+          "gepa-rewrite-first": 112
+        },
+        "selectedSha256": "0585d4e9275dd10b29fe32caee7aab9224d0dbe05438c5b92bed25318a23c19e",
+        "status": "completed"
+      },
+      "pair": {
+        "journalSha256": "84dd1ab73314364edfe85db002a23d4690b3942fe1b76b58ce73761c495ff686",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "output_limit"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite",
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "pair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": null,
+        "physicalQualificationCalls": 0,
+        "physicalSearchCalls": 265,
+        "searchCallsByArm": {
+          "cpo": 70,
+          "gepa-batched": 61,
+          "gepa-repair-first": 73,
+          "gepa-rewrite-first": 70
+        },
+        "selectedSha256": "2e5ad27d1fab425cab53d21d555516c3fbbea00f6b1bddbbe59f35f71e50fe79",
+        "status": "aborted-at-opening"
+      },
+      "split": {
+        "journalSha256": "78e5665509cb6e4b9b57561a81d5bddc31a730629b471d2971a8d4018ebe514c",
+        "openings": {
+          "outage": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ],
+          "ticket": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ],
+          "warehouse": [
+            {
+              "accepted": [
+                "rewrite"
+              ],
+              "max_output_tokens": 1200,
+              "role": "rewrite",
+              "status": "completed"
+            },
+            {
+              "accepted": [
+                "repair"
+              ],
+              "max_output_tokens": 1200,
+              "role": "repair",
+              "status": "completed"
+            }
+          ]
+        },
+        "outcome": {
+          "comparisons": {
+            "gepa-batched": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-repair-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "gepa-rewrite-first": {
+              "addedPasses": 72,
+              "criticalLosses": 0,
+              "qualified": true
+            },
+            "initial": {
+              "addedPasses": 100,
+              "criticalLosses": 0,
+              "qualified": true
+            }
+          },
+          "passesByTask": {
+            "cpo": {
+              "outage": 36,
+              "ticket": 36,
+              "warehouse": 36
+            },
+            "gepa-batched": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-repair-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "gepa-rewrite-first": {
+              "outage": 0,
+              "ticket": 36,
+              "warehouse": 0
+            },
+            "initial": {
+              "outage": 0,
+              "ticket": 8,
+              "warehouse": 0
+            }
+          },
+          "qualified": true
+        },
+        "physicalQualificationCalls": 216,
+        "physicalSearchCalls": 417,
+        "searchCallsByArm": {
+          "cpo": 114,
+          "gepa-batched": 92,
+          "gepa-repair-first": 116,
+          "gepa-rewrite-first": 113
+        },
+        "selectedSha256": "0585d4e9275dd10b29fe32caee7aab9224d0dbe05438c5b92bed25318a23c19e",
+        "status": "completed"
+      }
+    }
+  }
+}
