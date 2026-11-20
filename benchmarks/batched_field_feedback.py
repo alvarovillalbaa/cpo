@@ -1,5 +1,6 @@
 """Compare multi-round paired field validation with native same-parent GEPA."""
 
+import argparse
 from collections import Counter
 from importlib.metadata import version
 import json
@@ -17,7 +18,7 @@ WIDTH = 2
 CAPS = (32, 56, 76)
 
 
-def compare_search(initial, bank, groups, evaluate, reflect, *, cap, seed, paired):
+def compare_search(initial, bank, groups, evaluate, reflect, *, cap, seed, paired, frontier_bounds=False):
     trace, paid, proposals = [], [], []
     train_ids = {row['id'] for row in groups['train']}
 
@@ -42,7 +43,8 @@ def compare_search(initial, bank, groups, evaluate, reflect, *, cap, seed, paire
             for split in ('train', 'validation')
         )
         schedule = sequential_schedule(validation, seed, grounded.MINIBATCH, trace,
-                                       training=training, parent_bounds=True, width=WIDTH)
+                                       training=training, parent_bounds=True, width=WIDTH,
+                                       frontier_bounds=frontier_bounds)
 
         def propose(index, parent, samples):
             if index < len(bank):
@@ -59,7 +61,7 @@ def compare_search(initial, bank, groups, evaluate, reflect, *, cap, seed, paire
     return nominee, trace, paid, proposals
 
 
-def run_arm(task, groups, seed, cap, *, paired):
+def run_arm(task, groups, seed, cap, *, paired, frontier_bounds=False):
     record = None
 
     def select(initial, bank, splits, evaluate, reflect, *, cap, seed, width):
@@ -67,7 +69,8 @@ def run_arm(task, groups, seed, cap, *, paired):
         if width != WIDTH:
             return gepa_disjoint_cases.select(initial, bank, splits, evaluate, reflect, cap=cap, seed=seed,
                                               width=width)
-        record = compare_search(initial, bank, splits, evaluate, reflect, cap=cap, seed=seed, paired=paired)
+        record = compare_search(initial, bank, splits, evaluate, reflect, cap=cap, seed=seed, paired=paired,
+                                frontier_bounds=frontier_bounds)
         return record[0]
 
     with patch.object(opening_screen_typed, 'gepa_select', select):
@@ -77,9 +80,10 @@ def run_arm(task, groups, seed, cap, *, paired):
     return row, record
 
 
-def compare(task, groups, seed, cap):
+def compare(task, groups, seed, cap, *, frontier_bounds=False):
     native, (old, old_trace, old_paid, old_proposals) = run_arm(task, groups, seed, cap, paired=False)
-    cpo, (selected, trace, paid, proposals) = run_arm(task, groups, seed, cap, paired=True)
+    cpo, (selected, trace, paid, proposals) = run_arm(task, groups, seed, cap, paired=True,
+                                                     frontier_bounds=frontier_bounds)
     if (old, old_trace, old_proposals) != (selected, trace, proposals):
         raise ValueError(f'The batched decision or later proposal changed at {task=} {seed=} {cap=}')
     if any(native[key] != cpo[key] for key in ('selectedSha256', 'qualificationLookups', 'holdout', 'proposalCalls')):
@@ -92,20 +96,25 @@ def compare(task, groups, seed, cap):
             'pathSha256': digest((task, seed, native, cpo, trace, proposals))}
 
 
-def measure():
+def measure(*, frontier_bounds=False):
     reports = {}
     for cap in CAPS:
-        paths = [compare(task, groups, seed, cap) for seed in (*feedback_budget.SEEDS, *REPLICATION_SEEDS)
+        paths = [compare(task, groups, seed, cap, frontier_bounds=frontier_bounds)
+                 for seed in (*feedback_budget.SEEDS, *REPLICATION_SEEDS)
                  for task, groups in typed_policy.cohorts(seed).items()]
         totals = Counter()
         for path in paths:
             totals.update({key: value for key, value in path.items() if type(value) is int})
         reports[cap] = {**totals, 'paths': len(paths), 'traceSha256': digest(paths)}
-    return {'schema': 'batched-field-feedback-fixture-v1', 'gepaVersion': '0.1.4',
+    schema = 'batched-field-frontier-bounds-v1' if frontier_bounds else 'batched-field-feedback-fixture-v1'
+    return {'schema': schema, 'gepaVersion': '0.1.4',
             'newProviderRequests': 0, 'caps': reports}
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--frontier-bounds', action='store_true', help='Prove parent draws for larger pools')
+    args = parser.parse_args()
     if version('gepa') != '0.1.4':
         raise SystemExit('Use pinned GEPA 0.1.4')
-    print(json.dumps(measure(), indent=2, sort_keys=True))
+    print(json.dumps(measure(frontier_bounds=args.frontier_bounds), indent=2, sort_keys=True))

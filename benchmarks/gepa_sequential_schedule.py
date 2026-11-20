@@ -33,16 +33,19 @@ def select_field_rewrites(
     )
 
 
-def sequential_schedule(validation, seed, minibatch_size, trace, *, training=None, parent_bounds=False, width=1):
+def sequential_schedule(
+    validation, seed, minibatch_size, trace, *, training=None, parent_bounds=False, width=1, frontier_bounds=False,
+):
     from gepa.core.data_loader import ListDataLoader
     from gepa.gepa_utils import select_program_candidate_from_pareto_front
     from gepa.strategies.batch_sampler import EpochShuffledBatchSampler
 
     if parent_bounds:
         from cpo.gepa_parent import select_two_candidate_parent
-
-        if version('gepa') != '0.1.4':
-            raise ValueError('Parent bounds require GEPA 0.1.4')
+    if frontier_bounds:
+        from cpo.gepa_frontier import select_frontier_parent
+    if (parent_bounds or frontier_bounds) and version('gepa') != '0.1.4':
+        raise ValueError('Parent bounds require GEPA 0.1.4')
 
     training = validation if training is None else training
     rng = Random(seed)
@@ -51,6 +54,8 @@ def sequential_schedule(validation, seed, minibatch_size, trace, *, training=Non
 
     def schedule(index, pool, grades):
         parent = select_two_candidate_parent(pool, len(validation), grades, rng) if parent_bounds else None
+        if parent is None and frontier_bounds:
+            parent = select_frontier_parent(pool, len(validation), grades, rng)
         if len(pool) == 1:
             # The only program owns every case without needing its grades.
             parent = rng.choice(pool * len(validation))
