@@ -1,0 +1,116 @@
+{
+  "design": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261123,
+    "cpoSettings": {
+      "cpo-always-wide": "balanced-six",
+      "cpo-seeded": "seeded",
+      "cpo-two-miss": "wide-after-two-misses"
+    },
+    "gepaSettings": {
+      "gepa-batched-44": {
+        "batched": true,
+        "cap": 44
+      },
+      "gepa-batched-52": {
+        "batched": true,
+        "cap": 52
+      },
+      "gepa-sequential-31": {
+        "batched": false,
+        "cap": 31
+      },
+      "gepa-sequential-52": {
+        "batched": false,
+        "cap": 52
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "holdout": "Use the existing seeded 30 percent split per subject, shared by both models.",
+    "models": [
+      "codellama_codellama_34b_instruct",
+      "ibm_mistralai_merlinite_7b"
+    ],
+    "parentPlanSha256": "02f7355c818d4f6c2d54bac466dce91c623ff820e934cc6cb758d5dd3e9a846f",
+    "parentReportSha256": "15be9078e23388833f4971a20953924dd69d26b204705de04340a5fe175f5b83",
+    "primaryComparison": {
+      "candidate": "cpo-two-miss",
+      "controls": [
+        "gepa-batched-52",
+        "gepa-sequential-52"
+      ],
+      "minimumLookupSavingPercent": 10,
+      "minimumLowerRangePassDifference": 0
+    },
+    "protocol": "cpo-routed-finalist-model-transfer-v1",
+    "schedule": {
+      "cycles": 4,
+      "minimumQualificationGain": 1,
+      "poolSize": 13,
+      "qualificationRowsPerCycle": 8,
+      "seeds": [
+        47101,
+        47120,
+        47139,
+        47158,
+        47177,
+        47196,
+        47215,
+        47234,
+        47253,
+        47272,
+        47291,
+        47310,
+        47329,
+        47348,
+        47367,
+        47386,
+        47405,
+        47424,
+        47443,
+        47462,
+        47481,
+        47500,
+        47519,
+        47538,
+        47557,
+        47576,
+        47595,
+        47614,
+        47633,
+        47652,
+        47671,
+        47690
+      ],
+      "trainRows": 12,
+      "validationRows": 24
+    },
+    "scope": "Freeze settings before reading these model outcomes. Subjects have archived evidence from other models, and none appeared in the routing pilot. Keep both models and all episodes paired within each resampled case and use the minimum gap against the two primary controls.",
+    "searchCap": 52,
+    "sourceDataset": "PromptEval/PromptEval_MMLU_correctness",
+    "sourceLicense": "MIT",
+    "sourceRevision": "1639d5ea14c362f6964f260ae81bd903af760187",
+    "sourceSha256": {
+      "benchmarks/balanced_finalist_race.py": "ca7d90602090b5d472774ece344f715231b2245c220ade8ff7ba07afa84fc0ed",
+      "benchmarks/four_case_qualification_transfer.py": "62e4186e59292d7f73c5a04877fcbc5804f6c729f0130bcc81756d0b8c437bc6",
+      "benchmarks/gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "benchmarks/independent_mmlu_transfer.py": "fbce1acb98f6f4a8b567b2245822ee00446e0e882ce3fec262ab175c4d46ddc0",
+      "benchmarks/routed_finalist_model_transfer.py": "d9bb8ca8767d8ef7152c59a79eb3724cf107395298840b98fef97737760ca292",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "cpo/pool.py": "5e5e2ca90b0e6839d6c14d6eb9ba3680874092063196fec406f396c765a03ec0"
+    },
+    "subjects": [
+      "abstract_algebra",
+      "business_ethics",
+      "college_mathematics",
+      "conceptual_physics",
+      "human_aging",
+      "jurisprudence",
+      "management",
+      "world_religions"
+    ],
+    "templateCount": 100,
+    "validationRows": 12
+  },
+  "designSha256": "dca8079ca59b5b5865eda282897ebf409d443899424d5d4a63c877a6bf16f155"
+}
