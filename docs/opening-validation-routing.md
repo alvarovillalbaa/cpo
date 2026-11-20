@@ -29,3 +29,15 @@ PYTHONHASHSEED=0 python -B -m benchmarks.opening_validation_routing \
 ```
 
 Two socket- and DNS-blocked replays matched byte for byte. Each covered 72 scripted input panels, 144 panel and mode combinations, and 288 native GEPA paths. Nineteen focused tests passed, including a check that the validation rechecks never reach the proposer. The runner rejected an altered seal and preserved an existing report. Storage Guard measured 4.5 GiB free and the 29.6 MB scratch export was removed under the standing LAB exception. Live qualification remains pending. [Verification receipt](opening-validation-routing-verification-v1.json)
+
+## Qualification order pilot
+
+On the same confirmation panels, a pilot used the existing paired certificate with critical cases first and a seeded family-balanced order within the critical and ordinary groups. It preserved the held-out pass totals. CPO used 209 fewer qualification calls under the original faults and 247 fewer under shifted faults. Changing only CPO’s order cleared both cost gates. Sharing the order with both GEPA controls also reduced their costs.
+
+| Shared qualification schedule | Original faults passes / calls | Shifted faults passes / calls |
+| --- | ---: | ---: |
+| Validation-guided CPO | 648 / 2,452 | 646 / 2,455 |
+| Sequential GEPA | 568 / 2,714 | 564 / 2,734 |
+| Batched GEPA | 527 / 2,437 | 512 / 2,467 |
+
+Under the shared order, CPO cleared both gates with shifted faults and finished 15 calls above batched GEPA with the original faults. This comparison reused the same inputs after the routing experiment. [Paired certificate](../cpo/paired_qualification.py) · [Family-balanced ordering](../cpo/optimizer.py)
