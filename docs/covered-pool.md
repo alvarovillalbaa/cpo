@@ -26,6 +26,8 @@ if selection.prompt != incumbent:
 
 `evaluate(prompt, row)` returns an `Observation`. `qualify(prompt, row, repeat)` returns an exact boolean. Supply independent qualification rows with disjoint IDs and keep their labels and outcomes outside candidate selection. A qualification that rejects or runs out of budget returns the incumbent. To supply demonstration options, build disjoint bundles from training input strata with `cpo.demonstrations.stratified_demo_bundles`. [Demonstration example and evidence](joint-demo-bundles.md) · [Paired qualification](paired-qualification.md)
 
+For a validation panel with a missed case that is the only witness in its critical stratum, the optional required-probe selector checks that case first. [Opt-in API and measured trade-offs](recorded-required-probe.md)
+
 ## Verify the installed selector
 
 From outside the checkout, install the CPO wheel and the pinned GEPA 0.1.4 wheel in an isolated Python environment. Run the verifier with `CPO_SOURCE` pointing to a checkout of this change and `GEPA_RESEARCH` pointing to the intact research directory. The recorded comparison also requires its original Open Evals archive.

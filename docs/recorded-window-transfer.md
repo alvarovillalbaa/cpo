@@ -19,6 +19,8 @@ On ARC at cap 52, the binary window improved on both GEPA controls' observed hol
 
 An exhaustive diagnostic after replay found that passing the shared probe was associated with a higher chance of exact validation improvement. However, **292 of 733** ARC candidates and **440 of 842** AIME candidates with a strict full-panel gain failed that probe. Counts aggregate candidate appearances over admitted search trials. The screen can still confirm these candidates when budget remains. The transfer result supports keeping the window out of the default ordering. [Witness counts](recorded-window-transfer-results-v1.json)
 
+A follow-up limited the probe to cases required by the coverage gate and used the ordered race on the other panels. [Required-probe replay](recorded-required-probe.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and the bundled score archives.
