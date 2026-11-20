@@ -10,6 +10,7 @@ from unittest.mock import patch
 def select_field_rewrites(
     initial, bank, groups, evaluate, reflect, trace, *,
     cap, seed, observed_charge=None, reinvest_savings=False, price_budget=None, parent_bounds=False,
+    certify_boundary_ties=False,
 ):
     from benchmarks import grounded
     from cpo import Row
@@ -30,6 +31,7 @@ def select_field_rewrites(
         initial, training, validation, lambda p, row: evaluate(p, row.id), schedule, propose,
         rounds=grounded.REFLECTION_LIMIT, minibatch_size=grounded.MINIBATCH, metric_limit=cap,
         observed_charge=observed_charge, reinvest_savings=reinvest_savings, price_budget=price_budget,
+        certify_boundary_ties=certify_boundary_ties,
     )
 
 

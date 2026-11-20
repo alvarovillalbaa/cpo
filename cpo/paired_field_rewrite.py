@@ -15,7 +15,21 @@ def _separates_distinct_totals(size, denominator):
     return roundoff < 1 / (denominator * size)
 
 
-def _wins(incumbent, rewrite, cases, scores, observe, denominator, *, charges=None, full_order=None):
+def _wins(
+    incumbent, rewrite, cases, scores, observe, denominator, *,
+    charges=None, full_order=None, certify_boundary_ties=False,
+):
+    def native_wins(score_at):
+        before = sum(score_at((incumbent, case)) / denominator for case in cases)
+        order = cases if full_order is None else full_order
+        after = sum(score_at((rewrite, case)) / denominator for case in order)
+        if full_order is not None:
+            return after / len(cases) > before / len(cases)
+        return after > before
+
+    def endpoint_wins(favored):
+        return native_wins(lambda key: scores.get(key, denominator if key[0] == favored else 0))
+
     lower = upper = 0
     missing = []
     for case in cases:
@@ -36,16 +50,19 @@ def _wins(incumbent, rewrite, cases, scores, observe, denominator, *, charges=No
             return True
         if bounded and upper < 0:
             return False
+        if bounded and certify_boundary_ties:
+            # A tie at an endpoint forces every unknown score to its
+            # corresponding extreme. Any other completion is strictly
+            # separated by the integer-to-float bound.
+            if upper == 0 and not endpoint_wins(rewrite):
+                return False
+            if lower == 0 and endpoint_wins(incumbent):
+                return True
         score = sign * observe(prompt, case)
         lower += score - min(0, sign * denominator)
         upper += score - max(0, sign * denominator)
 
-    before = sum(scores[incumbent, case] / denominator for case in cases)
-    order = cases if full_order is None else full_order
-    after = sum(scores[rewrite, case] / denominator for case in order)
-    if full_order is not None:
-        return after / len(cases) > before / len(cases)
-    return after > before
+    return native_wins(scores.__getitem__)
 
 
 def _validated_field_score(reply, fields, weight):
@@ -56,7 +73,9 @@ def _validated_field_score(reply, fields, weight):
     return weight * reply.passed + matched
 
 
-def select_paired_field_rewrite(incumbent, rewrite, validation, minibatch_ids, evaluate, *, observed_charge=None):
+def select_paired_field_rewrite(
+    incumbent, rewrite, validation, minibatch_ids, evaluate, *, observed_charge=None, certify_boundary_ties=False,
+):
     """Certify the strict minibatch and full-validation gates on uniform fields.
 
     Scores match the fixed-rewrite GEPA 0.1.4 adapter. A decision involving a
@@ -68,6 +87,7 @@ def select_paired_field_rewrite(incumbent, rewrite, validation, minibatch_ids, e
     runs after each actual evaluation and ranks remaining full-validation reads
     by observed gain per charge. Missing or zero cumulative charges use the
     observed gain per read. Omitting the callback uses row-paired order.
+    Set certify_boundary_ties to prove a gate whose integer bound touches zero.
     """
     if observed_charge is not None and not callable(observed_charge):
         raise ValueError('Observed charge must be a callback')
@@ -99,7 +119,8 @@ def select_paired_field_rewrite(incumbent, rewrite, validation, minibatch_ids, e
 
     if all(observe(incumbent, case) == denominator for case in minibatch):
         return incumbent
-    if not _wins(incumbent, rewrite, minibatch, scores, observe, denominator):
+    if not _wins(incumbent, rewrite, minibatch, scores, observe, denominator,
+                 certify_boundary_ties=certify_boundary_ties):
         return incumbent
     cached = set(minibatch)
     # Native GEPA builds the rewrite's validation vector from cached replies
@@ -107,4 +128,5 @@ def select_paired_field_rewrite(incumbent, rewrite, validation, minibatch_ids, e
     rewrite_order = tuple(sorted(rows, key=lambda case: case not in cached))
     priced = charges if observed_charge is not None else None
     return rewrite if _wins(incumbent, rewrite, tuple(rows), scores, observe, denominator,
-                            charges=priced, full_order=rewrite_order) else incumbent
+                            charges=priced, full_order=rewrite_order,
+                            certify_boundary_ties=certify_boundary_ties) else incumbent

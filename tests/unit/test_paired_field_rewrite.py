@@ -6,7 +6,7 @@ import pytest
 
 from benchmarks.gepa_cached_opening import select_opening
 from cpo import Observation, Row
-from cpo.paired_field_rewrite import select_paired_field_rewrite
+from cpo.paired_field_rewrite import _separates_distinct_totals, _wins, select_paired_field_rewrite
 
 
 def compare(rows, batch, old, new):
@@ -31,7 +31,8 @@ def compare(rows, batch, old, new):
 
 
 @pytest.mark.parametrize('priced', (False, True))
-def test_paid_reads_match_complete_gates_across_all_three_field_profiles(priced):
+@pytest.mark.parametrize('certify_ties', (False, True))
+def test_paid_reads_match_complete_gates_across_all_three_field_profiles(priced, certify_ties):
     rows = tuple(Row(str(i), 'archive', fields=3) for i in range(4))
     batch = ('2', '0')
     for values in product(range(4), repeat=8):
@@ -50,7 +51,8 @@ def test_paid_reads_match_complete_gates_across_all_three_field_profiles(priced)
             return 1 + int(row.id) + (prompt == 'rewrite')
 
         assert select_paired_field_rewrite('start', 'rewrite', rows, batch, evaluate,
-                                           observed_charge=charge if priced else None) == expected
+                                           observed_charge=charge if priced else None,
+                                           certify_boundary_ties=certify_ties) == expected
         assert len(paid) == len(set(paid))
         assert set(paid) <= complete
 
@@ -105,6 +107,49 @@ def test_rounded_gain_survives_equal_integer_totals():
     assert sum(matched['start']) == sum(matched['rewrite'])
     assert compare(rows, batch, matched['start'], matched['rewrite'])[0] == 'rewrite'
     assert select_paired_field_rewrite('start', 'rewrite', rows, batch, evaluate) == 'rewrite'
+
+
+def test_endpoint_tie_can_reject_without_paying_for_the_last_grade():
+    scores = {('start', 'a'): 39, ('start', 'b'): 0, ('rewrite', 'a'): 0}
+    reads = []
+
+    def observe(prompt, case):
+        reads.append((prompt, case))
+        scores[prompt, case] = 39
+        return 39
+
+    assert not _wins('start', 'rewrite', ('a', 'b'), scores, observe, 39,
+                     full_order=('b', 'a'), certify_boundary_ties=True)
+    assert reads == ([] if _separates_distinct_totals(2, 39) else [('rewrite', 'b')])
+
+
+@pytest.mark.parametrize('missing_grade', (0, 1))
+def test_endpoint_tie_with_possible_rounded_gain_still_needs_the_last_grade(missing_grade):
+    scores = {('start', 'a'): 5, ('start', 'b'): 1,
+              ('rewrite', 'a'): 6, ('rewrite', 'b'): 0, ('rewrite', 'c'): 0}
+    reads = []
+
+    def observe(prompt, case):
+        reads.append((prompt, case))
+        scores[prompt, case] = missing_grade
+        return missing_grade
+
+    assert _wins('start', 'rewrite', ('a', 'b', 'c'), scores, observe, 39,
+                 certify_boundary_ties=True) == (missing_grade == 0)
+    assert reads == [('start', 'c')]
+
+
+def test_endpoint_tie_can_already_prove_a_native_rounded_gain():
+    scores = {('start', 'a'): 5, ('start', 'b'): 1, ('rewrite', 'a'): 6}
+    reads = []
+
+    def observe(prompt, case):
+        reads.append((prompt, case))
+        scores[prompt, case] = 0
+        return 0
+
+    assert _wins('start', 'rewrite', ('a', 'b'), scores, observe, 39, certify_boundary_ties=True)
+    assert reads == ([] if _separates_distinct_totals(2, 39) else [('rewrite', 'b')])
 
 
 def test_inconsistent_field_grades_fail_closed():
