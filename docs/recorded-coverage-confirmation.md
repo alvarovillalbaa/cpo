@@ -24,6 +24,8 @@ Coverage-first gained three and ten outage passes against late coverage while sa
 
 The separate original provider holdout covered only two of six distinct directed outage comparisons against each GEPA control at cap 36. Across those observed directions, the net pass delta was zero and four critical losses were recorded in each comparison. These are repeated comparisons on the same limited provider case bank. They cannot establish the missing directions or fresh candidate performance. [Sealed totals and holdout coverage](recorded-coverage-confirmation-results-v1.json)
 
+A follow-up tested reallocating cases across training, validation, and qualification. It found that all three critical loss observations came from conditions missing from the entire development split. [Critical case allocation replay](recorded-critical-allocation.md)
+
 ## Reproduce
 
 Use the intact GEPA research archive, its original Open Evals source study, and the pinned GEPA 0.1.4 wheel. Preview and run from the CPO checkout.
