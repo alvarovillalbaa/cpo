@@ -33,3 +33,5 @@ Two clean source replays blocked sockets and DNS and matched byte for byte. Each
 An exploratory run allowed fallback on the first passing batch if two full validation panels and one later training probe could still be funded. It ran on the same 36 panels. CPO with pair features scored 616 passes in 2,909 calls and recovered the matched critical loss against sequential GEPA. The minimum panel score still blocked the sequential gate, and batched GEPA still used 251 fewer calls. [Pilot patch](../benchmarks/patches/interaction-early-fallback.patch)
 
 To reproduce the pilot, apply the patch in a disposable export of `8956f4a95291ffa98cd65b3b186693b3200736a5`. Run the benchmark preview there and use the new seal printed for the patched source.
+
+A follow-up chained training repairs before full validation. It cleared the sequential GEPA gate on fresh panels and finished within 28 calls of batched GEPA. [Staged repair comparison](opening-staged-repairs.md)
