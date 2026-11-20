@@ -10,6 +10,23 @@ The [paired rewrite selector](recorded-paired-rewrite.md) now has a field-scored
 
 Paired field rewrite cost **17.41% less** than native fixed-rewrite GEPA and **2.73% less** than opening dominance in this replay. It reduced the outage search count from 640 to 453 against the native control. The estimates include the common supplied opening and unchanged admission costs. [Opening dominance replay](opening-dominance.md)
 
+## Savings across archived charges
+
+The token charges varied across recorded replies for the same prompt and case. With one charge per case and prompt shared across policies and seed sets, pooled savings range from **17.30% to 17.49%**. Allowing each policy to incur a distinct charge expands the range to **14.85% to 19.86%**. The shared opening retains its original price in both calculations.
+
+| Scope | Savings with separate charges |
+| --- | ---: |
+| Ticket | 17.43–20.46% |
+| Warehouse | 15.02–23.04% |
+| Outage | 13.00–15.86% |
+
+Every task and both seed sets clear the 10% cost gate at the least favorable archived prices. The bounds use the same nominations, admission replies, and 480 matched held-out scores as the replay. Fresh replies can have different charges and scores. The bundled terms are grouped counts and price endpoints. [Grouped cost terms](../benchmarks/data/paired-field-rewrite-cost-terms-v1.json)
+
+```sh
+python -B -m benchmarks.certified_opening_cost_sensitivity \
+  benchmarks/data/paired-field-rewrite-cost-terms-v1.json
+```
+
 ## How the proof handles score ties
 
 Native GEPA compares exact passes before matched fields by giving one exact pass more weight than all possible partial credit. Across the two gates, the proof caches paid replies and bounds the integer score difference from the known credits and remaining field capacities. When the possible integer margin is strictly positive or negative, the proof can stop if the margin exceeds a conservative bound for native float rounding.

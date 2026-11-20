@@ -45,3 +45,16 @@ def test_dominance_clears_the_gate_at_separate_prices_in_every_scope():
     assert all(scope['separateChargesAlwaysSaveAtLeastTenPercent'] for scope in scopes)
     assert all(scope['pairedScores']['pairedLosses'] == 0 for scope in scopes)
     assert result['pooled']['pairedScores']['differentSelectedPrompts'] == 0
+
+
+def test_paired_field_rewrite_reproduces_the_archived_cost_bounds():
+    data = json.loads(DATA.with_name('paired-field-rewrite-cost-terms-v1.json').read_bytes())
+    result = measure(data)
+    pooled = result['pooled']
+    assert pooled['originalCostMicrousd'] == {'cpo': 19_371_768, 'gepa': 23_456_712}
+    assert pooled['sharedChargeSavingsFraction'] == ['42229/244142', '170351/973818']
+    assert pooled['separateChargeSavingsFraction'] == ['47537/320106', '49164/247517']
+    assert pooled['pairedScores']['matchedUses'] == 480
+    assert pooled['pairedScores']['gepaPasses'] == pooled['pairedScores']['cpoPasses'] == 382
+    scopes = (pooled, *result['byPhase'].values(), *result['byTask'].values())
+    assert all(scope['separateChargesAlwaysSaveAtLeastTenPercent'] for scope in scopes)
