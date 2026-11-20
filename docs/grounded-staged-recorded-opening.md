@@ -1,5 +1,7 @@
 # Compare staged and opening-only CPO on recorded model replies
 
+**Historical GEPA controls.** The original native GEPA paths used cached list-loader positions, which can overlap across training and validation. The corrected replay holds both CPO paths fixed and recalculates the GEPA comparison. [Cache correction and rerun](grounded-gepa-cache-controls.md)
+
 A retrospective GPT‑6.2 Sol replay tested whether the [staged fixture gain](grounded-staged-opening-ablation.md) carried over to previously observed model replies. It ran 240 paths across ticket routing, warehouse release and outage credits. Every arm received the same opening pair, search budget, and exact admission rule. Each path reserved two cases for scoring after the search and admission decisions. The 480 scoring uses reuse 36 distinct archived cases. [Sealed comparison and verification](grounded-staged-recorded-opening-results-v1.json)
 
 | Policy | Recorded scoring passes out of 480 | Search and admission lookups | Estimated cost at recorded rates |

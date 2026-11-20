@@ -1,5 +1,7 @@
 # Compare opening-only CPO with GEPA at matched cost
 
+**Historical baseline.** This replay used GEPA 0.1.4 list loaders, whose overlapping positions can reuse training replies during validation. The split-safe replay and the separate fixed-opening control are the current comparison evidence. [Cache correction and rerun](grounded-gepa-cache-controls.md)
+
 This replay evaluates both native GEPA modes at every integer search cap from 4 through 56. All 240 paths keep the original Sol prompts, proposal graph, case splits, admission certificate, and historical token charges. Only the GEPA evaluation cap changes. The comparison allows retaining the starting prompt at zero cost. It picks the highest-scoring affordable control, breaking ties by lower historical cost. A second comparison lets the control choose a different mode and cap for each task from the same pooled budget. These choices use archived scores in hindsight. [Original opening-only replay](grounded-staged-recorded-opening.md) · [Full results and verification](grounded-opening-cost-frontier-results-v1.json)
 
 | Policy or comparison | Passes out of 480 | Estimated cost |

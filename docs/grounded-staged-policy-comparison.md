@@ -1,5 +1,7 @@
 # Compare CPO with and without later repairs in one run
 
+The original seal records the list-loader configuration for the two GEPA controls. A separate replay identified a training and validation cache collision in that configuration. [Cache correction and split-safe adapter](grounded-gepa-cache-controls.md)
+
 This protocol adds opening-only CPO alongside staged CPO, sequential GEPA, batched GEPA, and the starting prompt. The opening-only policy screens the same shared rewrite and repair, applies the same admission rule, and requests no later proposals. For each task it selects after the three original search arms and before holdout scoring. The recorded Sol replay motivated this control because opening-only matched every staged selection with fewer lookups. [Recorded comparison](grounded-staged-recorded-opening.md) · [Runner](../benchmarks/grounded_staged_policy_comparison.py)
 
 The archive records one sample per identical non-reflection request within a repeat and keeps the original shared opening for all four search arms. It records every search and admission use by arm, with the corresponding physical sequence, so shared requests can be counted once for the full run and attributed to each policy that used them. Both CPO policies face the existing quality and efficiency gates against the starting prompt and both GEPA controls. The direct comparison reports task-level differences, matched critical losses in each direction, and a range from paired case resampling.

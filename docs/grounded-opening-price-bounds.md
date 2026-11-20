@@ -1,5 +1,7 @@
 # Bound opening-only CPO savings using recorded Sol charges
 
+**Historical baseline.** These bounds price the original GEPA traces, which used overlapping list-loader IDs in the evaluation cache. The corrected frontier uses stable case IDs for separate splits. [Cache correction and rerun](grounded-gepa-cache-controls.md)
+
 The opening-only comparison originally used one historical token charge for each evaluated prompt and case. This audit replayed all 240 paths and measured the savings over the full range of eligible archived charges for those same cells. Across 852 cells, 25 had different charges. All retained repeats for a cell had identical exact-pass and field grades. The archive therefore supports a cost sensitivity analysis with the selected prompts and grades held fixed. [Original comparison](grounded-staged-recorded-opening.md) · [Result and verification](grounded-opening-price-bounds-results-v1.json)
 
 | Compared with | Minimum opening-only savings | Maximum opening-only savings |
