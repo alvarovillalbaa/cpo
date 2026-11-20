@@ -6,6 +6,8 @@ The check keeps one result per physical request, including all arms sharing that
 
 The replay checks rejection only. A future trial using the rule could stop sending qualification requests after a definitive rejection. Scores for omitted replies would be unknown. The v1 run actually sent all 216 qualification requests, and the sealed v5 recovery has its original protocol. Fresh model quality and any savings in a future run remain unmeasured.
 
+The dispatch API now uses this proof and the archive replay verifies the same recorded cutoff through that entry point. [Development qualification API](development-qualification.md)
+
 ## Reproduce offline
 
 Use the `qualification` subdirectory of the original `live-cpo-luna-typed-v1` archive. The verifier checks the source hashes, aligns response IDs and shared arm grades, and reconciles token usage at the original rates.

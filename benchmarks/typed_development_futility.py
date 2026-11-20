@@ -1,13 +1,13 @@
 """Find when the sealed Luna typed development gate became impossible."""
 
 import argparse
-from collections import Counter, defaultdict
-from dataclasses import dataclass
+from collections import defaultdict
 from hashlib import sha256
 import json
 from pathlib import Path
 
 from cpo._contract import digest, unique_object
+from cpo.development_qualification import INITIAL, Sample, rejection_reasons, run_development_qualification
 
 
 SOURCE_HASHES = {
@@ -16,53 +16,6 @@ SOURCE_HASHES = {
     'summary.json': '77df819c8d5597c921592d5f079a074ff2f7695ee07a2db6b7ff1e4fb1422455',
     'wire.jsonl': 'cfdf8f2e32e579e53067bab32b8b3c79878942b5281699c3be18dfc838dcd4a0',
 }
-CANDIDATE, INITIAL = 'cpo', 'initial'
-
-
-@dataclass(frozen=True)
-class Sample:
-    task: str
-    case: str
-    repeat: int
-    critical: bool
-    arms: tuple[str, ...]
-
-
-def rejection_reasons(schedule, observed, gate, costs):
-    """Test the best completion of the known schedule, with one bit per physical reply.
-
-    The input is a complete schedule with one sample per arm, case and repeat.
-    Observed bits are a prefix. Unobserved samples shared with CPO pass, and
-    all other unobserved samples fail. This maximizes every gate margin at once.
-    """
-    cells = defaultdict(dict)
-    for index, sample in enumerate(schedule):
-        passed = observed[index] if index < len(observed) else CANDIDATE in sample.arms
-        cells[sample.task, sample.case, sample.repeat, sample.critical].update(dict.fromkeys(sample.arms, passed))
-    scores = Counter((task, arm) for (task, _, _, _), row in cells.items() for arm, passed in row.items() if passed)
-    tasks = sorted({task for task, _, _, _ in cells})
-    reasons = [{'gate': 'task-floor', 'task': task, 'maximumPasses': scores[task, CANDIDATE],
-                'requiredPasses': gate['minimumPassesPerTask']}
-               for task in tasks if scores[task, CANDIDATE] < gate['minimumPassesPerTask']]
-
-    for arm in sorted({*costs, INITIAL} - {CANDIDATE}):
-        failed_tasks = [task for task in tasks if scores[task, CANDIDATE] < scores[task, arm]]
-        if failed_tasks:
-            reasons.append({'gate': 'task-regression', 'arm': arm, 'tasks': failed_tasks})
-        if any(critical and row[arm] and not row[CANDIDATE] for (_, _, _, critical), row in cells.items()):
-            reasons.append({'gate': 'critical-regression', 'arm': arm})
-        if arm == INITIAL:
-            continue
-        deltas = Counter()
-        for (task, case, _, _), row in cells.items():
-            deltas[task, case] += row[CANDIDATE] - row[arm]
-        best_gain = sum(deltas.values())
-        efficiency_possible = (costs[arm] > 0 and
-                               100 * costs[CANDIDATE] <= costs[arm] * gate['maxSearchCostPercentForEfficiency'] and
-                               all(delta >= 0 for delta in deltas.values()))
-        if best_gain < gate['minimumAddedPasses'] and not efficiency_possible:
-            reasons.append({'gate': 'quality-or-efficiency', 'arm': arm, 'maximumAddedPasses': best_gain})
-    return reasons
 
 
 def recorded_samples(rows, calls, plan):
@@ -126,13 +79,14 @@ def replay(archive):
     if not full or summary['qualified'] or len(charges) != summary['providerRequests'] or (
             sum(charges) != summary['usageAtPlanRatesMicrousd']):
         raise ValueError('Qualification decision, requests, or measured usage differ from the source summary')
-    for cutoff in range(len(schedule) + 1):
-        reasons = rejection_reasons(schedule, observed[:cutoff], gate, costs)
-        if reasons:
-            break
+    paid = iter(observed)
+    result = run_development_qualification(schedule, lambda sample: next(paid), gate=gate, search_costs=costs)
+    cutoff = len(result.observations)
+    if result.status != 'rejected' or result.observations != tuple(observed[:cutoff]):
+        raise ValueError('The dispatch guard did not reproduce the historical rejection')
     return {'protocol': 'cpo-recorded-typed-development-futility-v1', 'qualificationPlanSha256': seal,
             'sourceSha256': SOURCE_HASHES, 'gate': gate, 'historicalDecision': 'reject',
-            'firstCertainRejection': {'physicalReplies': cutoff, 'reasons': reasons},
+            'firstCertainRejection': {'physicalReplies': cutoff, 'reasons': list(result.reasons)},
             'historicalQualificationRequests': len(schedule), 'historicalLogicalReplies': len(rows),
             'replayOmittedRequests': len(schedule) - cutoff, 'historicalUsageAtPlanRatesMicrousd': sum(charges),
             'replayOmittedUsageAtPlanRatesMicrousd': sum(charges[cutoff:])}
