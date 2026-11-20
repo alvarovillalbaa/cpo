@@ -27,6 +27,8 @@ Scores and costs are shown as holdout passes / paid lookups.
 
 Every CPO point estimate exceeded the strongest affordable fixed control. All 12 paired ranges include zero. Expected-cost qualification ordering preserved the original scores and reduced total lookups on every cohort. The stricter validation rules widened the savings and reduced the point-estimate lead. The cheapest swept GEPA points to match expected-cost CPO's scores used 73,050, 53,293, and 57,619 lookups respectively. These are retrospective comparisons over fixed archived prompt pools and the swept caps. Fresh model quality remains unverified. [Complete sweep and per-mode comparisons](witness-validation-cost-frontier-results-v1.json)
 
+The follow-up froze expected-cost CPO on unused BBH and LMentry model splits and let both GEPA modes use the same qualification ordering. [Cross-benchmark transfer](qualification-order-transfer.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4. The first command prints the design seal. Use a fresh output path for the sweep.
