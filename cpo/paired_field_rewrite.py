@@ -1,5 +1,6 @@
 """Bound the cached GEPA gates for one field-scored rewrite."""
 
+from collections import deque
 from math import ulp
 import sys
 
@@ -13,13 +14,45 @@ def _separates_distinct_totals(size, denominator):
     return roundoff < 1 / (denominator * size)
 
 
-def select_paired_field_rewrite(incumbent, rewrite, validation, minibatch_ids, evaluate):
+def _by_observed_cost(missing, scores, incumbent, rewrite, denominator, charges):
+    pending = {prompt: deque((index, item) for index, item in enumerate(missing) if item[0] == prompt)
+               for prompt in (incumbent, rewrite)}
+    while pending[incumbent] and pending[rewrite]:
+        old = [denominator - score for (prompt, _), score in scores.items() if prompt == incumbent]
+        new = [score for (prompt, _), score in scores.items() if prompt == rewrite]
+        old_weight, new_weight = len(old), len(new)
+        if all(charge is not None for charge in charges.values()):
+            old_cost, new_cost = (sum(fee for (owner, _), fee in charges.items() if owner == prompt)
+                                  for prompt in (incumbent, rewrite))
+            if old_cost and new_cost:
+                old_weight, new_weight = old_cost, new_cost
+
+        # Compare the observed gain per unit without floating-point rounding.
+        old_lift, new_lift = sum(old) * new_weight, sum(new) * old_weight
+        if old_lift == new_lift:
+            prompt = min(pending, key=lambda choice: pending[choice][0][0])
+        else:
+            prompt = rewrite if new_lift > old_lift else incumbent
+        yield pending[prompt].popleft()[1]
+    for queue in pending.values():
+        yield from (item for _, item in queue)
+
+
+def select_paired_field_rewrite(incumbent, rewrite, validation, minibatch_ids, evaluate, *, observed_charge=None):
     """Certify the strict minibatch and full-validation gates on uniform fields.
 
     Scores match the fixed-rewrite GEPA 0.1.4 adapter. A decision involving a
     possible integer tie uses its native float comparison in the native order.
     This is nomination only. The caller can run independent admission.
+
+    Pass an optional `observed_charge(prompt, row, observation)` returning a
+    nonnegative integer in a consistent unit, or None when unavailable. It
+    runs after each actual evaluation and ranks remaining full-validation reads
+    by observed gain per charge. Missing or zero cumulative charges use the
+    observed gain per read. Omitting the callback uses row-paired order.
     """
+    if observed_charge is not None and not callable(observed_charge):
+        raise ValueError('Observed charge must be a callback')
     validation, minibatch = tuple(validation), tuple(minibatch_ids)
     rows = {row.id: row for row in validation}
     if (not validation or len(rows) != len(validation) or not minibatch
@@ -34,7 +67,7 @@ def select_paired_field_rewrite(incumbent, rewrite, validation, minibatch_ids, e
 
     weight = 1 << (len(validation) * fields).bit_length()
     denominator = weight + fields
-    scores = {}
+    scores, charges = {}, {}
 
     def observe(prompt, case):
         key = prompt, case
@@ -44,6 +77,11 @@ def select_paired_field_rewrite(incumbent, rewrite, validation, minibatch_ids, e
             if (type(reply.passed) is not bool or type(matched) is not int or not 0 <= matched <= fields
                     or reply.passed != (matched == fields)):
                 raise ValueError('The exact-pass flag and matched-field count must agree')
+            if observed_charge is not None:
+                fee = observed_charge(prompt, rows[case], reply)
+                if fee is not None and (type(fee) is not int or fee < 0):
+                    raise ValueError('Observed charges must be nonnegative integers or None')
+                charges[key] = fee
             scores[key] = weight * reply.passed + matched
         return scores[key]
 
@@ -61,8 +99,11 @@ def select_paired_field_rewrite(incumbent, rewrite, validation, minibatch_ids, e
                     lower += sign * value
                     upper += sign * value
 
+        pending = missing
+        if rewrite_order is not None and observed_charge is not None:
+            pending = _by_observed_cost(missing, scores, incumbent, rewrite, denominator, charges)
         bounded = _separates_distinct_totals(len(cases), denominator)
-        for prompt, case, sign in missing:
+        for prompt, case, sign in pending:
             if bounded and lower > 0:
                 return True
             if bounded and upper < 0:

@@ -27,6 +27,21 @@ python -B -m benchmarks.certified_opening_cost_sensitivity \
   benchmarks/data/paired-field-rewrite-cost-terms-v1.json
 ```
 
+## Opt in to observed-charge ordering
+
+`select_paired_field_rewrite` accepts an optional `observed_charge` callback. The evaluator can attach usage to each observation and the callback supplies the charge in a consistent integer unit. The selector asks for the charge after evaluation and uses it to prioritize the remaining full-validation reads. A missing charge or a zero cumulative charge for either prompt uses the estimated gain per read. The minibatch gate, native float comparisons, and admission contract retain their existing behavior.
+
+```python
+from cpo.paired_field_rewrite import select_paired_field_rewrite
+
+nominee = select_paired_field_rewrite(
+    incumbent, rewrite, validation_rows, minibatch_ids, evaluate,
+    observed_charge=lambda _prompt, _row, reply: reply.feedback.get("charge_microusd"),
+)
+```
+
+On the 240 Sol paths, this order reproduced every decision and held-out result while reducing search reads from 1,253 to 1,228 and attributed cost from $19.371768 to $18.736560. Both seed sets cost less. Fifteen individual paths cost more. On two complete Luna validation panels, the same rewrite nominations went from 39 to 28 reads and from $0.034427 to $0.024452, including the shared openings. Luna qualification remains unverified. Row-paired ordering is the default.
+
 ## How the proof handles score ties
 
 Native GEPA compares exact passes before matched fields by giving one exact pass more weight than all possible partial credit. Across the two gates, the proof caches paid replies and bounds the integer score difference from the known credits and remaining field capacities. When the possible integer margin is strictly positive or negative, the proof can stop if the margin exceeds a conservative bound for native float rounding.
@@ -39,4 +54,4 @@ An integer tie can still advance under native arithmetic. With seven fields acro
 python -m pytest -q tests/unit/test_paired_field_rewrite.py
 ```
 
-The tests enumerate all 65,536 field profiles for two prompts on four three-field cases. They check the native result and verify that each paid read belongs to the complete native comparison. The Sol replay used the pinned GEPA 0.1.4 first minibatch and exact published control receipts. Two offline runs matched byte for byte. Fresh proposal generation and independent live confirmation remain unverified.
+The tests enumerate all 65,536 field profiles for two prompts on four three-field cases with and without observed-charge ordering. They check the native result and verify that each paid read belongs to the complete native comparison. The Sol replay used the pinned GEPA 0.1.4 first minibatch and exact published control receipts. Two offline runs matched byte for byte. Fresh proposal generation and independent live confirmation remain unverified.

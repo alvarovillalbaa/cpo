@@ -30,7 +30,8 @@ def compare(rows, batch, old, new):
     return selected, paid
 
 
-def test_paid_reads_match_complete_gates_across_all_three_field_profiles():
+@pytest.mark.parametrize('priced', (False, True))
+def test_paid_reads_match_complete_gates_across_all_three_field_profiles(priced):
     rows = tuple(Row(str(i), 'archive', fields=3) for i in range(4))
     batch = ('2', '0')
     for values in product(range(4), repeat=8):
@@ -44,9 +45,53 @@ def test_paid_reads_match_complete_gates_across_all_three_field_profiles():
             return Observation(matched == row.fields, {}, matched)
 
         expected, complete = compare(rows, batch, outcomes['start'], outcomes['rewrite'])
-        assert select_paired_field_rewrite('start', 'rewrite', rows, batch, evaluate) == expected
+        def charge(prompt, row, _reply):
+            assert paid[-1] == (prompt, row.id)
+            return 1 + int(row.id) + (prompt == 'rewrite')
+
+        assert select_paired_field_rewrite('start', 'rewrite', rows, batch, evaluate,
+                                           observed_charge=charge if priced else None) == expected
         assert len(paid) == len(set(paid))
         assert set(paid) <= complete
+
+
+def test_observed_charge_can_change_full_validation_order():
+    rows = tuple(Row(str(i), 'archive', fields=1) for i in range(4))
+    batch = ('2', '0')
+
+    def read(charge):
+        paid = []
+
+        def evaluate(prompt, row):
+            paid.append((prompt, row.id))
+            passed = prompt == 'rewrite'
+            return Observation(passed, {}, int(passed))
+
+        assert select_paired_field_rewrite('start', 'rewrite', rows, batch, evaluate,
+                                           observed_charge=charge) == 'rewrite'
+        return paid
+
+    start_first = read(lambda prompt, *_: 1 if prompt == 'start' else 10)
+    rewrite_first = read(lambda prompt, *_: 1 if prompt == 'rewrite' else 10)
+    assert start_first[:3] == rewrite_first[:3] == [('start', '2'), ('rewrite', '2'), ('start', '0')]
+    assert start_first[3] == ('start', '1')
+    assert rewrite_first[3] == ('rewrite', '0')
+    assert read(lambda *_: None) == read(lambda *_: 0) == read(lambda *_: 1)
+
+
+@pytest.mark.parametrize('invalid', (-1, 0.5, True))
+def test_invalid_observed_charges_stop_before_another_read(invalid):
+    rows = (Row('0', 'archive', fields=1), Row('1', 'archive', fields=1))
+    paid = []
+
+    def evaluate(prompt, row):
+        paid.append((prompt, row.id))
+        return Observation(False, {}, 0)
+
+    with pytest.raises(ValueError, match='nonnegative integers'):
+        select_paired_field_rewrite('start', 'rewrite', rows, ('0',), evaluate,
+                                     observed_charge=lambda *_: invalid)
+    assert paid == [('start', '0')]
 
 
 def test_rounded_gain_survives_equal_integer_totals():
