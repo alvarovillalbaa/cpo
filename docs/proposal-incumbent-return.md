@@ -18,6 +18,8 @@ On the eight transfer panels, Return reserved 92 of 1,024 opening slots. It bega
 
 Return and Vacant tied on total transfer passes, with gains and losses distributed differently across panels. Return used 555 more lookups than Vacant and scored two more passes than the original CPO route. It finished 24 passes behind batched GEPA and used 21,337 fewer lookups. Its paired 95% range against both GEPA controls was −76 to +25 passes. The result leaves accuracy superiority unresolved and CPO’s default remains the original search. [Panel scores, counters, and paired ranges](proposal-incumbent-return-results-v1.json)
 
+The follow-up tested corroboration on two unused cases before accepting a one-pass promotion. [Promotion corroboration replay](proposal-qualification-corroboration.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
