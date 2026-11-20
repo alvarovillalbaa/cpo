@@ -79,7 +79,7 @@ PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback
 
 ### Draw a parent from partial validation grades
 
-The replay scheduler accepts `parent_bounds=True` for two distinct candidates and up to 32 validation cases. For each missing grade it considers the possible case winners and ties. It uses the paid grades to skip further reads only when every possible completion gives GEPA 0.1.4 the same parent and advances the random generator to the same state. That state also controls the subsequent training minibatches. The scheduler reads complete profiles for larger pools or validation panels.
+The replay scheduler accepts `parent_bounds=True` for two distinct candidates and up to 32 validation cases. For each missing grade it considers the possible case winners and ties. It uses the paid grades to skip further reads only when every possible completion gives GEPA 0.1.4 the same parent and advances the random generator to the same state. That state also controls the subsequent training minibatches. The scheduler reads complete profiles outside this scope unless the larger-pool option below can certify a draw.
 
 At the 56-read cap, the deterministic feedback fixture needed 518 search reads with this option, down from 532 with the complete-profile scheduler and 672 for native sequential GEPA. All three matched the 19 later proposal inputs and outputs, 525 admission reads, and 314 of 324 held-out passes. At cap 40, both CPO variants used 319 search reads and matched all outcomes. The fixture uses generated replies. [Fixture results](sequential-field-parent-bounds-results-v1.json)
 
@@ -158,4 +158,14 @@ The recorded Sol replay matched batched GEPA on all 960 paths across four caps, 
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.batched_field_feedback
+```
+
+### Certify a parent draw for larger pools
+
+`--frontier-bounds` extends the width-two benchmark to pools of three to seven distinct candidates on up to 32 validation cases. The proof enumerates the possible sets of highest-scoring candidates on each case. It includes every possible survivor set from GEPA pruning while allowing extra removal orders. The scheduler skips further reads when every considered outcome gives the same parent and the same random generator state. It pays for another grade when the proof is ambiguous and uses the native draw when it needs complete profiles.
+
+At cap 76, the fixture saved another 22 reads, bringing CPO to 1,157 search reads against 1,658 for native batched GEPA. The Sol replay preserved the native schedule and every held-out outcome across 960 paths. At cap 56, the larger-pool proof lowered CPO's search reads from 4,485 to 4,388 and lowered the estimated total from $48.13 to $47.56. Native GEPA cost $53.18 at the same cap, so the pooled savings increased from 9.5% to 10.6% at archived rates. [Fixture results](batched-field-frontier-bounds-results-v1.json)
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.batched_field_feedback --frontier-bounds
 ```
