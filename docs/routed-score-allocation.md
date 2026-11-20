@@ -30,6 +30,8 @@ Applying posterior allocation to all fresh searches gained 45 passes over the or
 
 The next replay reused replies already paid for in the archive comparison to skip final-cycle search when a strict qualification gain was impossible. [Paid qualification reuse](routed-paid-qualification.md)
 
+On 12 additional archived Gemma 7B and Flan-T5 XXL model-by-subject panels, posterior allocation when wide failed the same gate. Lookup savings against cap-52 batched GEPA fell below 10% and the joint paired range included zero. [Model transfer result](posterior-model-transfer.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 and the bundled archives.
