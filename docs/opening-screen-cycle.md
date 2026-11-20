@@ -32,6 +32,8 @@ The exported source and a separately installed wheel reproduced all 30 published
 
 On the recorded transfer panels the screen used 50.9% fewer evaluation lookups than batched GEPA and finished seven passes ahead. The joint paired 95% range was −91 to +90 passes. The replay measures archived evaluation and qualification. Live proposal quality and generation cost remain unmeasured. [Replay artifact](opening-screen-api-replay-v1.json) · [Verification receipt](opening-screen-api-verification-v1.json)
 
+The typed fixture comparison found that later reflection recovered fields missed by the supplied opening. [Typed benchmark](opening-screen-typed.md)
+
 ## Reproduce offline
 
 ```sh
