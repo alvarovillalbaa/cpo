@@ -14,7 +14,7 @@ The experiment reran the same 240 paths over 36 distinct scoring cases used in t
 | CPO with certified opening validation | 382/480 | 0 | 1,398 | $20.842344 |
 | Fixed-opening GEPA, two-case minibatch | 382/480 | 0 | 1,920 | $23.456712 |
 
-CPO cost **11.15% less** than the fixed-opening GEPA control across all paths. The two archived seed sets showed 11.27% and 11.02% savings, respectively. Outage on its own showed 7.17% savings. Both offline runs reproduced the same result. Fresh model quality, savings, and independent qualification remain unverified.
+CPO cost **11.15% less** than the fixed-opening GEPA control across all paths. The two archived seed sets showed 11.27% and 11.02% savings, respectively. Outage on its own showed 7.17% savings. Both offline runs reproduced the same result. Fresh model quality, savings, and independent qualification remain unverified. [Sensitivity to observed price variation](certified-opening-cost-sensitivity.md)
 
 ## Run the decision tests
 
