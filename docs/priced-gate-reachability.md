@@ -34,6 +34,8 @@ Of the 85 full-panel matches beyond retaining the start, 80 could be funded with
 
 The published CPO route still beats retaining the start in aggregate by 107 passes on Llama and Mistral and 31 on Gemma and Flan. The loss audit places most of the observed opportunity in recognizing when to keep an existing prompt or selecting a better fresh finalist using the same allowance. Relaxing the promotion gates would expand the measured ceiling in one losing comparison. The cost of identifying the better choice from paid evidence remains the open question.
 
+The follow-up found that previously paid matched cases favored the final prompt in all 109 losses where retaining the start would have matched GEPA. [Paid-evidence retention replay](paid-start-retention.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Two source-export replays matched byte for byte with sockets and DNS blocked. Both reproduced all 84 published CPO and GEPA panel traces and verified containment of the measured CPO finale under the optimistic priced archive model on all 896 episodes. Three focused tests checked one-move-per-cycle semantics, repeated validation cost, archive admission, and the two-half gate. The CLI rejected a stale seal and preserved an existing report. Storage Guard measured 13.2 GiB free. The 20.3 MB scratch overlay was removed under the standing LAB exception. [Verification receipt](priced-gate-reachability-verification-v1.json) · [Tests](../tests/unit/test_priced_gate_reachability.py) · [Storage authorization](../../lab/docs/runbooks/lab-storage-exceptions.md)
