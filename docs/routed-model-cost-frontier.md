@@ -25,6 +25,8 @@ Widening on a third pass trailed cap-52 sequential GEPA by 52 passes. At compara
 
 The third-pass route lost 81 of the 512 paired episodes against sequential GEPA at cap 35, with a gross deficit of 167 passes before offsetting wins. GEPA kept the starting prompt in 46 of those episodes, accounting for 90 gross lost passes. In nine episodes, its winning prompt was offered to CPO and had a strict gain on both the validation and qualification cases for that cycle, but CPO did not nominate it. Those episodes accounted for 19 gross lost passes. Against cap 52, holding the starting prompt accounted for 75 of 219 gross lost passes. These labels inspect the archived outcomes after selection. They point to preserving strong starts as a separate problem from finding more candidates. Earlier fixed increases in the gain required to leave the start had mixed results on other cohorts. [Loss attribution and remaining causes](routed-model-cost-frontier-results-v1.json) · [Earlier starting-prompt margin study](starting-prompt-margin.md)
 
+The follow-up tests separate qualification groups before leaving the start and measures the value of reserving its archive comparison for the final cycle. [Starting-prompt protection](routed-start-protection.md)
+
 ## Reproduce
 
 Use the hash-pinned GEPA 0.1.4 dependency. Preview the sealed plan, then replay to a fresh output path.
