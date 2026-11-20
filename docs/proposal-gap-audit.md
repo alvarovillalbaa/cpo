@@ -26,6 +26,8 @@ The 802 cycles with a shared incoming prompt favored CPO by nine passes. The 222
 
 On the four development panels, shared-incumbent cycles favored GEPA by 30 passes and divergent cycles favored CPO by 13. The difference across cohorts limits using either subgroup as a predictor. The transfer result directs the next comparison toward incumbent retention after promotion. A trial can carry forward the previous qualified incumbent as a challenger, give both methods the same search and proposal budgets, and require fresh paired evidence before any return. [Panel counts and trace hashes](proposal-gap-audit-results-v1.json)
 
+The follow-up tested one fresh qualification opportunity for the displaced incumbent after each promotion. [Incumbent return replay](proposal-incumbent-return.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.
