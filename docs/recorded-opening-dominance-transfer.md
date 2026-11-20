@@ -11,7 +11,7 @@ The opening dominance proof preserved every CPO selection and held-out score acr
 
 CPO scored higher than all three GEPA controls on ARC. The least expensive control, fixed-rewrite GEPA, cost $75.11 with the original incumbent and $555.36 under rotations. Paired case resampling gave CPO a range of **+269 to +461 passes** against that control on rotated ARC. CPO used more reads and scored lower than fixed-rewrite GEPA on both AIME groups. The rotated AIME range was **−52 to −7 passes**.
 
-On rotated AIME, fixed-rewrite GEPA retained the incumbent on 19 paths where CPO promoted a candidate. Those paths accounted for 73 of CPO's 98 gross paired losses and 55 of its 69 gains against that control. The net difference across all paths was −29 passes. On rotated ARC, CPO-only promotions went the other way, with 466 gains and 67 losses. The disparity points to which promotions to scrutinize when developing a stronger method for binary-scored tasks. [Earlier admission study](recorded-training-corroboration.md)
+On rotated AIME, fixed-rewrite GEPA retained the incumbent on 19 paths where CPO promoted a candidate. Those paths accounted for 73 of CPO's 98 gross paired losses and 55 of its 69 gains against that control. The net difference across all paths was −29 passes. On rotated ARC, CPO-only promotions went the other way, with 466 gains and 67 losses. A follow-up preserved fixed-rewrite GEPA's decisions while cutting paid reads on both archives. [Paired fixed-rewrite proof](recorded-paired-rewrite.md) · [Earlier admission study](recorded-training-corroboration.md)
 
 ## Design
 

@@ -1,0 +1,231 @@
+{
+  "plan": {
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "nativeControl": "gepa-rewrite",
+    "parentPlanSha256": "0a612d1785a7cb4cea3857d5778837e84b271f093687b46902891f018c83d02c",
+    "protocol": "recorded-paired-rewrite-v1",
+    "referenceSha256": "d55d3dccc80b27ec2058e66c54924bfbd61af31c2383955e4d600edc7a1eb24e",
+    "scope": "native first minibatch, strict binary gains, unchanged independent admission",
+    "sourcesSha256": {
+      "benchmarks/recorded_paired_rewrite.py": "ec48784df2a147d7fa89343be0855ad4beedc23b4002fdd2759863d03f8e8cd8",
+      "cpo/paired_rewrite.py": "9b0c5981839c97f6ad891d3df6ad925c6b2704851667ae12bf7443de5c371284"
+    }
+  },
+  "planSha256": "426c96edce347f5fc25fdbaae683aae32b1cec88e56262c6709a3d05135e5975",
+  "results": {
+    "aime": {
+      "root": {
+        "heldoutUsesPerArm": 1000,
+        "pathsPerArm": 40,
+        "savings": {
+          "pathsWithFewerReads": 36,
+          "pathsWithLowerCost": 0
+        },
+        "totals": {
+          "native": {
+            "admissionReads": 54,
+            "holdoutPasses": 497,
+            "paidReads": 414,
+            "searchReads": 360,
+            "traceSha256": "bce67fcbc882793713e3e32f63fcc61254aabed9c50dd27e469dfe65c0be731f"
+          },
+          "paired": {
+            "admissionReads": 54,
+            "holdoutPasses": 497,
+            "paidReads": 256,
+            "searchReads": 202,
+            "traceSha256": "c6ec0706bf3c3a338ba67026c27cc59585f58badac107086a85ad656b03ea224"
+          }
+        }
+      },
+      "rotated": {
+        "heldoutUsesPerArm": 8000,
+        "pathsPerArm": 320,
+        "savings": {
+          "pathsWithFewerReads": 287,
+          "pathsWithLowerCost": 0
+        },
+        "totals": {
+          "native": {
+            "admissionReads": 372,
+            "holdoutPasses": 4073,
+            "paidReads": 3206,
+            "searchReads": 2834,
+            "traceSha256": "feae3cc6082d986de1aa4345c716b12df47fd587f69ae6bfebd9b8be2a4ab875"
+          },
+          "paired": {
+            "admissionReads": 372,
+            "holdoutPasses": 4073,
+            "paidReads": 1904,
+            "searchReads": 1532,
+            "traceSha256": "f976cf69080ba20f16cfbcb767f4e982a3ec56beb7bf92456765127c010a64a4"
+          }
+        }
+      }
+    },
+    "arc": {
+      "root": {
+        "heldoutUsesPerArm": 1920,
+        "pathsPerArm": 40,
+        "savings": {
+          "pathsWithFewerReads": 39,
+          "pathsWithLowerCost": 39
+        },
+        "totals": {
+          "native": {
+            "admissionReads": 242,
+            "historicalCostNanodollars": 75108962400,
+            "historicalErrors": 45,
+            "holdoutPasses": 1244,
+            "paidReads": 810,
+            "searchReads": 568,
+            "traceSha256": "b11ad40f652d7211c8f270317385dbdb07759d9fdcd8ed53ec37627961a5d240"
+          },
+          "paired": {
+            "admissionReads": 242,
+            "historicalCostNanodollars": 58834745450,
+            "historicalErrors": 34,
+            "holdoutPasses": 1244,
+            "paidReads": 615,
+            "searchReads": 373,
+            "traceSha256": "215a4cfcc00a818746b2ab6eb811b71ff5b4c38407f7cd07272e8cf34461c16f"
+          }
+        }
+      },
+      "rotated": {
+        "heldoutUsesPerArm": 17280,
+        "pathsPerArm": 360,
+        "savings": {
+          "pathsWithFewerReads": 344,
+          "pathsWithLowerCost": 344
+        },
+        "totals": {
+          "native": {
+            "admissionReads": 515,
+            "historicalCostNanodollars": 555355223750,
+            "historicalErrors": 123,
+            "holdoutPasses": 13373,
+            "paidReads": 4355,
+            "searchReads": 3840,
+            "traceSha256": "bf117fbbf6770a186489f70c319f9a76ebaad689f8368e0d6bd5dc4e0fe11418"
+          },
+          "paired": {
+            "admissionReads": 515,
+            "historicalCostNanodollars": 271856470050,
+            "historicalErrors": 52,
+            "holdoutPasses": 13373,
+            "paidReads": 2105,
+            "searchReads": 1590,
+            "traceSha256": "a5f697f211bb2c7b39e49034a3388d3185e3ea714f2e3eda0f51d327a193f892"
+          }
+        }
+      }
+    }
+  }
+}
