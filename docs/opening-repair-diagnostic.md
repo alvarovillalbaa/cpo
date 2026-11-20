@@ -20,6 +20,8 @@ On the additional seeds, the diagnostic recovered 32 exact passes over the openi
 
 At cap 40, the diagnostic also scored 324 passes on the additional seeds. It used 29 more calls than sequential GEPA and missed the cost condition. The same deterministic policy generator supplied both cohorts. Of the 324 holdout inputs on the additional seeds, 160 also occurred in some split of a prior seed. The results describe the controlled repair mechanism. Live proposal quality and cost remain unmeasured. [Outcomes, diagnostic receipts, and gate results](opening-repair-diagnostic-results-v1.json)
 
+The opt-in repair API reproduces this diagnostic with a caller-supplied training prompt transform. [Opening-repair cycle API](opening-repair-cycle.md)
+
 ## Reproduce offline
 
 Use pinned GEPA 0.1.4 and a fresh output path.

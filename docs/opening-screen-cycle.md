@@ -34,6 +34,8 @@ On the recorded transfer panels the screen used 50.9% fewer evaluation lookups t
 
 The typed fixture comparison found that later reflection recovered fields missed by the supplied opening. [Typed benchmark](opening-screen-typed.md)
 
+Use the [opening-repair cycle](opening-repair-cycle.md) to fund one later proposal after an incomplete opening.
+
 ## Reproduce offline
 
 ```sh
