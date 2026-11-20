@@ -23,6 +23,8 @@ Both variants deferred 225 starting-prompt checks. Fresh qualification promoted 
 
 Fallback-only saved 12.6% and 10.7% relative to batched GEPA at cap 52. The joint paired ranges against both primary GEPA modes were −49 to +62 and −29 to +67, leaving both gates inconclusive. Neither variant recovered any of the 109 losing comparisons previously identified as recoverable by retaining the start. Moving the check changes fresh search opportunities in the last cycle. The result leaves the original ordering as the default. [Panel costs, counts, and paired ranges](final-start-reconciliation-results-v1.json) · [Priced loss audit](priced-gate-reachability.md)
 
+A separate guard on cases excluded from selection recovered 20 of those comparisons and lost 19 net holdout passes. [Reserved regression check](reserved-regression-guard.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and a fresh output path. Two source-export runs matched byte for byte with sockets and DNS blocked. The replay matched 140 published panel-control records and verified the original decisions and traces on all nondeferred cycles. Three focused tests passed. The CLI rejected a stale seal and preserved an existing report. Storage Guard measured 12.8 GiB free. The 20.3 MB temporary overlay was removed under the standing LAB exception. Fresh-model quality remains unverified. [Tests](../tests/unit/test_final_start_reconciliation.py) · [Verification receipt](final-start-reconciliation-verification-v1.json) · [Storage authorization](../../lab/docs/runbooks/lab-storage-exceptions.md)
