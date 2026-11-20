@@ -27,6 +27,8 @@ The full-pool audit found a coverage-eligible program on **18 of 18** outage pan
 
 On the six additional seeds alone, the guarded hybrid passed 324 of 324 cases, compared with 304 for batched GEPA and 320 for sequential GEPA. It used 894 lookups, compared with 987 and 952. At cap 48, the stratified guarded hybrid passed 954 of 972, used more lookups than both GEPA controls, and still lost 12 critical passes against each. The cap-72 result establishes that training-side bundle coverage can supply usable candidates in this fixture. The fixture uses the same declared input features to apply demonstrations, so fresh-model generalization remains unverified. [Per-panel outcomes and full-pool audit](joint-demo-bundles-results-v1.json)
 
+The follow-up measured whether early rejection of impossible coverage can recover the missed cap-48 warehouse panel. [Coverage during confirmation](joint-coverage-confirmation.md)
+
 ## Reproduce
 
 Use pinned GEPA 0.1.4 and Optuna 4.5.0. The [wheel receipt](joint-demo-bundles-verification-v1.json) gives the verified fingerprints.
