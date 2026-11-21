@@ -35,6 +35,8 @@ On the eight-challenger ARC rotation, the precheck skipped 106 searches and cut 
 
 A follow-up tested whether protecting the same validation replies could recover the gains without a separate training check. It also measured the incumbent precheck on strict CPO. [Validation stability replay](recorded-validation-stability.md)
 
+A separate replay ran qualification first when no paid validation backup was eligible. It preserved every deployment and saved 322 lookups on the eight-challenger AIME rotation. [Conditional proof ordering](recorded-training-proof-order.md)
+
 ## Reproduce
 
 Use GEPA 0.1.4 and the bundled score snapshot. Preview the plan seal, then run to a fresh report path.
