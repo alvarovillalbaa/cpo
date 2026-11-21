@@ -20,6 +20,8 @@ On the additional PromptEval subjects, the capped sequential control used 131 fe
 
 On BBH and LMentry, unrestricted CPO scored 42.462% using 128,456 lookups. The admission limit cut 60,331 lookups and reduced score by 2.483 points. The evidence identifies a cheaper archived operating point and leaves fresh-model performance unverified.
 
+A follow-up added nine native settings with fewer validation anchors. It found a batched GEPA setting within CPO's lookup budget and measured the accuracy gap with the comparator reselected in each paired draw. [Narrower native validation](prompteval-narrow-native-admission.md)
+
 ## Reproduce
 
 Use Python 3.12 and hash-pinned GEPA 0.1.4. The full replay checked 350 explicit capped paths and reproduced the previously recorded unrestricted score, cost, and trace for 130 panel settings. A second clean source export reproduced the first and last panels in each of the three cohorts, including every measured arm. Verification blocked sockets and DNS. Storage Guard measured 6.2 GiB free. The task used temporary sources bounded at 0.2 GiB under the standing LAB exception and made zero provider requests. [Benchmark requirement](../requirements-benchmark.txt) · [Focused tests](../tests/unit/test_prompteval_matched_admission_attempt.py)
