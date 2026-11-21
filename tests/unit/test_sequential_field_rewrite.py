@@ -67,6 +67,36 @@ def test_stateful_proposer_runs_on_a_perfect_training_batch():
     assert selected == 'start' and proposed == [0, 1]
 
 
+def test_exhausted_source_keeps_the_candidate_already_admitted_to_search():
+    training = (Row('train', 'task', fields=1),)
+    validation = tuple(Row(case, 'task', fields=1) for case in ('v0', 'v1'))
+    checks, scheduled, proposed = [], [], []
+
+    def exhausted(index, pool):
+        checks.append((index, pool))
+        return index == 1
+
+    def schedule(index, pool, grades):
+        scheduled.append(index)
+        return 'start', ('train',)
+
+    def propose(index, parent, samples):
+        proposed.append(index)
+        return 'repair'
+
+    def evaluate(prompt, row):
+        passed = prompt == 'repair'
+        return Observation(passed, {}, int(passed))
+
+    selected = select_sequential_field_rewrites(
+        'start', training, validation, evaluate, schedule, propose,
+        rounds=3, minibatch_size=1, metric_limit=12, proposals_exhausted=exhausted,
+    )
+    assert selected == 'repair'
+    assert checks == [(0, ('start',)), (1, ('start', 'repair'))]
+    assert scheduled == proposed == [0]
+
+
 @pytest.mark.parametrize(('limit', 'expected'), ((None, [0, 1, 2]), (0, [0]), (5, [0, 1]), (6, [0, 1, 2])))
 def test_proposal_limit_reserves_the_quote_and_reuses_settled_headroom(limit, expected):
     train, valid = (Row('train', 'task', fields=1),), (Row('validation', 'task', fields=1),)
