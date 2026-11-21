@@ -16,7 +16,9 @@ Both variants reserve training capacity and use the original exact validation, t
 
 On six disjoint LMentry tasks, the two-witness policy added 58 passes for 134 more lookups over fixed halves. The best affordable GEPA was sequential at cap 36, with 5,056 passes and 11,785 lookups. The cheapest GEPA setting reaching the CPO score used 14,488 lookups, 2,560 more than CPO. Buying the second witness for every eligible challenger would have added 1,385 LMentry lookups while producing the same nominees and held-out grades.
 
-Both LMentry comparisons improved. Neither policy established superiority on BBH. These are retrospective policy comparisons on archives already used to choose the screening changes. The paired ranges describe sensitivity to the recorded cases. Independent confirmation of the two-witness policy and fresh model performance remain open.
+Both LMentry comparisons improved. Neither policy established superiority on BBH. These are retrospective policy comparisons on archives already used to choose the screening changes. The paired ranges describe sensitivity to the recorded cases.
+
+A frozen follow-up reproduced the advantage on earlier LMentry tasks with two different model checkpoints and found a positive margin on BBH. One of two additional tasks cleared the paired comparison. [Model and task transfer](recorded-shortlist-model-transfer.md)
 
 ## Reproduce
 
