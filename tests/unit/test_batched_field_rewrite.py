@@ -50,7 +50,7 @@ def test_quote_reserves_both_proposals_and_unread_validation_before_a_batch():
     training = (Row('t1', 'fixture', fields=1), Row('t2', 'fixture', fields=1))
     validation = (Row('v1', 'fixture', fields=1), Row('v2', 'fixture', fields=1))
 
-    def run(limit, *, repeated=False):
+    def run(limit, *, repeated=False, proposal_limit=None):
         settled, proposals = [], []
 
         def evaluate(prompt, _row):
@@ -68,7 +68,7 @@ def test_quote_reserves_both_proposals_and_unread_validation_before_a_batch():
             proposals.append(index)
             return 'first' if index == 0 else 'start'
 
-        budget = SequentialSearchBudget(limit, 5, lambda *_: 7, lambda *_: 7)
+        budget = SequentialSearchBudget(limit, 5, lambda *_: 7, lambda *_: 7, proposal_limit=proposal_limit)
         selected = select_batched_field_rewrites(
             'start', training, validation, evaluate, schedule, propose, rounds=1, width=2,
             minibatch_size=1, metric_limit=10, observed_charge=lambda *_: 5, price_budget=budget,
@@ -79,3 +79,5 @@ def test_quote_reserves_both_proposals_and_unread_validation_before_a_batch():
     assert run(63) == ('start', [], 5)
     assert run(64)[:2] == ('first', [0, 1])
     assert run(59, repeated=True)[:2] == ('first', [0, 1])
+    assert run(100, proposal_limit=13) == ('start', [], 5)
+    assert run(100, proposal_limit=14)[:2] == ('first', [0, 1])
