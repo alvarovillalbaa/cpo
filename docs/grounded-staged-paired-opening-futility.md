@@ -13,6 +13,12 @@ Once prompts are selected, every case and repeat has one physical request per di
 
 The replay matches every physical scoring request and paired grade from the unchanged shared-sample protocol. It applies the existing logical search-use gate to the recorded fixture replies. Tests also require both the call-count gate and a separate fixed search-charge gate on small exhaustive panels. The projected scores at rejection are upper-bound inputs to that verdict. Omitted scores would remain unknown. The full offline fixture runs generated the reference replies, so the omissions are replay estimates. The published SDK plan still uses the original full schedule. Live savings and fresh-model quality have yet to be measured. [Sealed SDK budget and protocol](grounded-staged-paired-opening-budget.md)
 
+## SDK dispatch rehearsal
+
+A fixture-only guard applied the same proof before writing the next scoring request in either journal. The actual OpenAI Python SDK 2.44.0 and HTTPX 0.28.1 routed requests to an in-process mock transport with DNS and sockets blocked. Before scoring, the guard charged logical uses and attributed token costs separately. It grouped identical samples and reconciled the per-arm charges with the completed fixture's independent receipt audit.
+
+The guard sent 328 total mock HTTP requests for the all-rewrites-faulted fixture and 355 for the perfect-ticket-rewrite fixture. It omitted the final 298 and 195 scoring requests respectively. In both cases the provider and comparison journals matched the same complete-reply prefix of the original fixture byte for byte. The qualifying rewrite-only fixture completed all 366 development requests and all 96 confirmation requests, reproducing both archives byte for byte. The existing SDK plan seal reproduced and live inference remains paused. The guarded path is a rehearsal and still needs a separately sealed production runner and terminal rejection archive format. [SDK rehearsal receipt](grounded-staged-paired-opening-futility-sdk-rehearsal-v1.json)
+
 ## Reproduce
 
 Use Python 3.12 and hash-pinned GEPA 0.1.4. Export the sealed v6 controls and overlay the paired-opening, budget, and replay sources. Verification used DNS and socket blocking with task-owned temporary files bounded at 0.2 GiB under the standing LAB exception. Storage Guard measured 7.2 GiB free. [Benchmark requirement](../requirements-benchmark.txt)
