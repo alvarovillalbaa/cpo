@@ -14,6 +14,8 @@ The selector reserves both training checks and the extra validation read under t
 
 Every deployed prompt stayed the same across 1,520 trials. All six newly certified backups in the eight-challenger AIME rotation failed the training check. Its total rose from 12,164 to 12,250 lookups at the same 4,073 holdout passes. An optimistic check ranked every offered one-read option using archived replies, required exact training and qualification gains, and retained the incumbent if all valid options lost holdout passes. It found zero additional passes on the offered trials. This bounds the tested options and trigger. A different trigger or a wider validation allowance can expose other candidates. The replay gives no quality or cost reason to adopt this rule. [All scores, matched GEPA controls, and proof counts](recorded-one-read-backup-results-v1.json)
 
+An audit of every backup in the same roster found at most three additional AIME passes on the eight-challenger rotation, at a minimum of 23 extra lookups. [Backup ceiling](recorded-training-veto-backup-ceiling.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 24 targeted tests passed and two replays matched byte for byte. The CLI rejected a stale seal and the original ordered live plan reproduced. Storage Guard measured 6.0 GiB free. The 39 MiB export and publication worktree fit the standing 0.2 GiB LAB exception. The replay sent zero provider requests. [Probe and reservation tests](../tests/unit/test_recorded_one_read_backup.py)
