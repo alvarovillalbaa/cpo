@@ -1,0 +1,1310 @@
+{
+  "newProviderRequests": 0,
+  "plan": {
+    "controlRevision": "100c8697f6ed3fe3959d7c9cab91b49f9cf277f7",
+    "corpusSha256": "83ea1db450d2113b23066158e8f4d6b6ba02b7dd537f9ae557ab41f331565e1f",
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "exploratoryFollowups": [
+      "paired-opening-cap-2x",
+      "paired-opening-cap-2.5x"
+    ],
+    "gate": "More pooled held-out passes at no greater cost, or equal passes with at least 10 percent savings. Use recorded evaluator charges on ARC and paid reads on AIME. Report paired losses separately.",
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "methods": [
+      "paired-opening",
+      "paired-opening-cap-2x",
+      "paired-opening-cap-2.5x",
+      "certified-validation",
+      "opening-dominance",
+      "gepa-rewrite",
+      "gepa-sequential",
+      "gepa-batched"
+    ],
+    "primary": "paired-opening",
+    "priorPlanSha256": "0a612d1785a7cb4cea3857d5778837e84b271f093687b46902891f018c83d02c",
+    "priorResultSha256": "d55d3dccc80b27ec2058e66c54924bfbd61af31c2383955e4d600edc7a1eb24e",
+    "proofBudgetPerValidationCase": {
+      "paired-opening": [
+        3,
+        1
+      ],
+      "paired-opening-cap-2.5x": [
+        5,
+        2
+      ],
+      "paired-opening-cap-2x": [
+        2,
+        1
+      ]
+    },
+    "protocol": "recorded-paired-opening-transfer-v1",
+    "sourceSha256": {
+      "benchmarks/recorded_paired_opening_transfer.py": "e0a625ad81d2c1e7dca85a1aa0c09418071b3d0a3fc32c9c72230d056af121f1",
+      "cpo/paired_opening/__init__.py": "a06c25b31b5719af0457384b441c66a55cdf6103fc47b5c212cf8250beb7c282"
+    }
+  },
+  "planSha256": "bc89f0f1a7b9b5c1c33d48f33a410f278da8016d933d8d73a4c5da928013727e",
+  "results": {
+    "aime": {
+      "root": {
+        "comparisons": {
+          "paired-opening": {
+            "certified-validation": {
+              "admittedPromptChanges": 1,
+              "caseResampling95PassDifference": [
+                -3,
+                8
+              ],
+              "costDelta": 176,
+              "costMetric": "paidReads",
+              "nomineeChanges": 5,
+              "paidReadDelta": 176,
+              "pairedLosses": 3,
+              "passDelta": 2,
+              "qualifies": false
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 3,
+              "caseResampling95PassDifference": [
+                -20,
+                5
+              ],
+              "costDelta": 159,
+              "costMetric": "paidReads",
+              "nomineeChanges": 12,
+              "paidReadDelta": 159,
+              "pairedLosses": 15,
+              "passDelta": -7,
+              "qualifies": false
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 3,
+              "caseResampling95PassDifference": [
+                -20,
+                5
+              ],
+              "costDelta": 270,
+              "costMetric": "paidReads",
+              "nomineeChanges": 12,
+              "paidReadDelta": 270,
+              "pairedLosses": 15,
+              "passDelta": -7,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 3,
+              "caseResampling95PassDifference": [
+                -20,
+                5
+              ],
+              "costDelta": 148,
+              "costMetric": "paidReads",
+              "nomineeChanges": 11,
+              "paidReadDelta": 148,
+              "pairedLosses": 15,
+              "passDelta": -7,
+              "qualifies": false
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 1,
+              "caseResampling95PassDifference": [
+                -3,
+                8
+              ],
+              "costDelta": 149,
+              "costMetric": "paidReads",
+              "nomineeChanges": 5,
+              "paidReadDelta": 149,
+              "pairedLosses": 3,
+              "passDelta": 2,
+              "qualifies": false
+            }
+          },
+          "paired-opening-cap-2.5x": {
+            "certified-validation": {
+              "admittedPromptChanges": 1,
+              "caseResampling95PassDifference": [
+                -3,
+                8
+              ],
+              "costDelta": 39,
+              "costMetric": "paidReads",
+              "nomineeChanges": 6,
+              "paidReadDelta": 39,
+              "pairedLosses": 3,
+              "passDelta": 2,
+              "qualifies": false
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 3,
+              "caseResampling95PassDifference": [
+                -20,
+                5
+              ],
+              "costDelta": 22,
+              "costMetric": "paidReads",
+              "nomineeChanges": 9,
+              "paidReadDelta": 22,
+              "pairedLosses": 15,
+              "passDelta": -7,
+              "qualifies": false
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 3,
+              "caseResampling95PassDifference": [
+                -20,
+                5
+              ],
+              "costDelta": 133,
+              "costMetric": "paidReads",
+              "nomineeChanges": 9,
+              "paidReadDelta": 133,
+              "pairedLosses": 15,
+              "passDelta": -7,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 3,
+              "caseResampling95PassDifference": [
+                -20,
+                5
+              ],
+              "costDelta": 11,
+              "costMetric": "paidReads",
+              "nomineeChanges": 10,
+              "paidReadDelta": 11,
+              "pairedLosses": 15,
+              "passDelta": -7,
+              "qualifies": false
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 1,
+              "caseResampling95PassDifference": [
+                -3,
+                8
+              ],
+              "costDelta": 12,
+              "costMetric": "paidReads",
+              "nomineeChanges": 6,
+              "paidReadDelta": 12,
+              "pairedLosses": 3,
+              "passDelta": 2,
+              "qualifies": false
+            }
+          },
+          "paired-opening-cap-2x": {
+            "certified-validation": {
+              "admittedPromptChanges": 1,
+              "caseResampling95PassDifference": [
+                -3,
+                8
+              ],
+              "costDelta": 30,
+              "costMetric": "paidReads",
+              "nomineeChanges": 6,
+              "paidReadDelta": 30,
+              "pairedLosses": 3,
+              "passDelta": 2,
+              "qualifies": false
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 3,
+              "caseResampling95PassDifference": [
+                -20,
+                5
+              ],
+              "costDelta": 13,
+              "costMetric": "paidReads",
+              "nomineeChanges": 9,
+              "paidReadDelta": 13,
+              "pairedLosses": 15,
+              "passDelta": -7,
+              "qualifies": false
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 3,
+              "caseResampling95PassDifference": [
+                -20,
+                5
+              ],
+              "costDelta": 124,
+              "costMetric": "paidReads",
+              "nomineeChanges": 9,
+              "paidReadDelta": 124,
+              "pairedLosses": 15,
+              "passDelta": -7,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 3,
+              "caseResampling95PassDifference": [
+                -20,
+                5
+              ],
+              "costDelta": 2,
+              "costMetric": "paidReads",
+              "nomineeChanges": 10,
+              "paidReadDelta": 2,
+              "pairedLosses": 15,
+              "passDelta": -7,
+              "qualifies": false
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 1,
+              "caseResampling95PassDifference": [
+                -3,
+                8
+              ],
+              "costDelta": 3,
+              "costMetric": "paidReads",
+              "nomineeChanges": 6,
+              "paidReadDelta": 3,
+              "pairedLosses": 3,
+              "passDelta": 2,
+              "qualifies": false
+            }
+          }
+        },
+        "heldoutUsesPerArm": 1000,
+        "pathsPerArm": 40,
+        "totals": {
+          "certified-validation": {
+            "admissionReads": 99,
+            "holdoutPasses": 488,
+            "paidReads": 508,
+            "searchReads": 409,
+            "traceSha256": "62e9d8f67919c72daeb239e2bbf5524661b072524c014007caf3fa05571e6200"
+          },
+          "gepa-batched": {
+            "admissionReads": 65,
+            "holdoutPasses": 497,
+            "paidReads": 525,
+            "searchReads": 460,
+            "traceSha256": "2e5cd608454024d29f2fc116762931dddcb84467f0b352a3698d793af5d65b13"
+          },
+          "gepa-rewrite": {
+            "admissionReads": 54,
+            "holdoutPasses": 497,
+            "paidReads": 414,
+            "searchReads": 360,
+            "traceSha256": "bce67fcbc882793713e3e32f63fcc61254aabed9c50dd27e469dfe65c0be731f"
+          },
+          "gepa-sequential": {
+            "admissionReads": 72,
+            "holdoutPasses": 497,
+            "paidReads": 536,
+            "searchReads": 464,
+            "traceSha256": "59d677fd98a5d99d834dbdd1dd54865113ab80fec05ca67a36cbb71afaa3b7d5"
+          },
+          "opening-dominance": {
+            "admissionReads": 99,
+            "holdoutPasses": 488,
+            "paidReads": 535,
+            "searchReads": 436,
+            "traceSha256": "9392f1bd9862e3f8dafb104676ec288dd3a7eb1457871d8a86e7757ba8edbc4e"
+          },
+          "paired-opening": {
+            "admissionReads": 126,
+            "holdoutPasses": 490,
+            "paidReads": 684,
+            "searchReads": 558,
+            "traceSha256": "67ae10a84e539acb0041ef469a8b8e788ff85cdf8b8372921dc3524956844f83"
+          },
+          "paired-opening-cap-2.5x": {
+            "admissionReads": 108,
+            "holdoutPasses": 490,
+            "paidReads": 547,
+            "searchReads": 439,
+            "traceSha256": "4617b2a79307e267aee4806c4476f356f6f3b257fe4df549251820dd96a99e6e"
+          },
+          "paired-opening-cap-2x": {
+            "admissionReads": 108,
+            "holdoutPasses": 490,
+            "paidReads": 538,
+            "searchReads": 430,
+            "traceSha256": "dd03bdd20e194d136104f39e1a98ca72ac3a7698d306d916519a1ee7de1adaba"
+          }
+        }
+      },
+      "rotated": {
+        "comparisons": {
+          "paired-opening": {
+            "certified-validation": {
+              "admittedPromptChanges": 18,
+              "caseResampling95PassDifference": [
+                -5,
+                67
+              ],
+              "costDelta": 955,
+              "costMetric": "paidReads",
+              "nomineeChanges": 42,
+              "paidReadDelta": 955,
+              "pairedLosses": 45,
+              "passDelta": 31,
+              "qualifies": false
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 31,
+              "caseResampling95PassDifference": [
+                -34,
+                38
+              ],
+              "costDelta": 1245,
+              "costMetric": "paidReads",
+              "nomineeChanges": 95,
+              "paidReadDelta": 1245,
+              "pairedLosses": 105,
+              "passDelta": 2,
+              "qualifies": false
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 30,
+              "caseResampling95PassDifference": [
+                -46,
+                50
+              ],
+              "costDelta": 2391,
+              "costMetric": "paidReads",
+              "nomineeChanges": 108,
+              "paidReadDelta": 2391,
+              "pairedLosses": 100,
+              "passDelta": 2,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 31,
+              "caseResampling95PassDifference": [
+                -34,
+                38
+              ],
+              "costDelta": 1275,
+              "costMetric": "paidReads",
+              "nomineeChanges": 94,
+              "paidReadDelta": 1275,
+              "pairedLosses": 105,
+              "passDelta": 2,
+              "qualifies": false
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 18,
+              "caseResampling95PassDifference": [
+                -5,
+                67
+              ],
+              "costDelta": 840,
+              "costMetric": "paidReads",
+              "nomineeChanges": 42,
+              "paidReadDelta": 840,
+              "pairedLosses": 45,
+              "passDelta": 31,
+              "qualifies": false
+            }
+          },
+          "paired-opening-cap-2.5x": {
+            "certified-validation": {
+              "admittedPromptChanges": 23,
+              "caseResampling95PassDifference": [
+                -4,
+                56
+              ],
+              "costDelta": -332,
+              "costMetric": "paidReads",
+              "nomineeChanges": 65,
+              "paidReadDelta": -332,
+              "pairedLosses": 59,
+              "passDelta": 26,
+              "qualifies": true
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 32,
+              "caseResampling95PassDifference": [
+                -34,
+                28
+              ],
+              "costDelta": -42,
+              "costMetric": "paidReads",
+              "nomineeChanges": 92,
+              "paidReadDelta": -42,
+              "pairedLosses": 114,
+              "passDelta": -3,
+              "qualifies": false
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 23,
+              "caseResampling95PassDifference": [
+                -44,
+                38
+              ],
+              "costDelta": 1104,
+              "costMetric": "paidReads",
+              "nomineeChanges": 69,
+              "paidReadDelta": 1104,
+              "pairedLosses": 82,
+              "passDelta": -3,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 32,
+              "caseResampling95PassDifference": [
+                -34,
+                28
+              ],
+              "costDelta": -12,
+              "costMetric": "paidReads",
+              "nomineeChanges": 91,
+              "paidReadDelta": -12,
+              "pairedLosses": 114,
+              "passDelta": -3,
+              "qualifies": false
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 23,
+              "caseResampling95PassDifference": [
+                -4,
+                56
+              ],
+              "costDelta": -447,
+              "costMetric": "paidReads",
+              "nomineeChanges": 65,
+              "paidReadDelta": -447,
+              "pairedLosses": 59,
+              "passDelta": 26,
+              "qualifies": true
+            }
+          },
+          "paired-opening-cap-2x": {
+            "certified-validation": {
+              "admittedPromptChanges": 23,
+              "caseResampling95PassDifference": [
+                -4,
+                56
+              ],
+              "costDelta": -457,
+              "costMetric": "paidReads",
+              "nomineeChanges": 66,
+              "paidReadDelta": -457,
+              "pairedLosses": 59,
+              "passDelta": 26,
+              "qualifies": true
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 32,
+              "caseResampling95PassDifference": [
+                -34,
+                28
+              ],
+              "costDelta": -167,
+              "costMetric": "paidReads",
+              "nomineeChanges": 91,
+              "paidReadDelta": -167,
+              "pairedLosses": 114,
+              "passDelta": -3,
+              "qualifies": false
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 23,
+              "caseResampling95PassDifference": [
+                -44,
+                38
+              ],
+              "costDelta": 979,
+              "costMetric": "paidReads",
+              "nomineeChanges": 66,
+              "paidReadDelta": 979,
+              "pairedLosses": 82,
+              "passDelta": -3,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 32,
+              "caseResampling95PassDifference": [
+                -34,
+                28
+              ],
+              "costDelta": -137,
+              "costMetric": "paidReads",
+              "nomineeChanges": 90,
+              "paidReadDelta": -137,
+              "pairedLosses": 114,
+              "passDelta": -3,
+              "qualifies": false
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 23,
+              "caseResampling95PassDifference": [
+                -4,
+                56
+              ],
+              "costDelta": -572,
+              "costMetric": "paidReads",
+              "nomineeChanges": 66,
+              "paidReadDelta": -572,
+              "pairedLosses": 59,
+              "passDelta": 26,
+              "qualifies": true
+            }
+          }
+        },
+        "heldoutUsesPerArm": 8000,
+        "pathsPerArm": 320,
+        "totals": {
+          "certified-validation": {
+            "admissionReads": 941,
+            "holdoutPasses": 4044,
+            "paidReads": 4642,
+            "searchReads": 3701,
+            "traceSha256": "926a0a770c666fed1c4bf76d0b83e3fbf2b2cbead42050b86378d04a34e0196f"
+          },
+          "gepa-batched": {
+            "admissionReads": 592,
+            "holdoutPasses": 4073,
+            "paidReads": 4352,
+            "searchReads": 3760,
+            "traceSha256": "2282a8054f617afa755f1ba6d947dc3d25bc1aa0b1cfe6945bb4a4f454eaed0f"
+          },
+          "gepa-rewrite": {
+            "admissionReads": 372,
+            "holdoutPasses": 4073,
+            "paidReads": 3206,
+            "searchReads": 2834,
+            "traceSha256": "feae3cc6082d986de1aa4345c716b12df47fd587f69ae6bfebd9b8be2a4ab875"
+          },
+          "gepa-sequential": {
+            "admissionReads": 592,
+            "holdoutPasses": 4073,
+            "paidReads": 4322,
+            "searchReads": 3730,
+            "traceSha256": "0d8b7fb4b08f460d9f08cfcc75084e453eb97f7b8e6e59bdbb5a5d9f74dba675"
+          },
+          "opening-dominance": {
+            "admissionReads": 941,
+            "holdoutPasses": 4044,
+            "paidReads": 4757,
+            "searchReads": 3816,
+            "traceSha256": "f7ca3deff996ab7f2803655b87d05791f4afc041fc0d484698bdb6ec59e34db9"
+          },
+          "paired-opening": {
+            "admissionReads": 1101,
+            "holdoutPasses": 4075,
+            "paidReads": 5597,
+            "searchReads": 4496,
+            "traceSha256": "eb417f77aeaf17c2a3344f630bd75106c3bfb28a2fb5cb9f7d4c186ec2e3056f"
+          },
+          "paired-opening-cap-2.5x": {
+            "admissionReads": 839,
+            "holdoutPasses": 4070,
+            "paidReads": 4310,
+            "searchReads": 3471,
+            "traceSha256": "61ac975b3ce293e365cb5150a13d3016bc7d6a584dc0e0b5ed6a349ac4493627"
+          },
+          "paired-opening-cap-2x": {
+            "admissionReads": 822,
+            "holdoutPasses": 4070,
+            "paidReads": 4185,
+            "searchReads": 3363,
+            "traceSha256": "575323ad7e34361ce1996364a1edc54dcaf41751cf04b5a7b0125821ce70f564"
+          }
+        }
+      }
+    },
+    "arc": {
+      "root": {
+        "comparisons": {
+          "paired-opening": {
+            "certified-validation": {
+              "admittedPromptChanges": 2,
+              "caseResampling95PassDifference": [
+                25,
+                43
+              ],
+              "costDelta": 840992200,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 2,
+              "paidReadDelta": -10,
+              "pairedLosses": 0,
+              "passDelta": 34,
+              "qualifies": false
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 17,
+              "caseResampling95PassDifference": [
+                61,
+                129
+              ],
+              "costDelta": -26508092700,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 18,
+              "paidReadDelta": -261,
+              "pairedLosses": 50,
+              "passDelta": 95,
+              "qualifies": true
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 11,
+              "caseResampling95PassDifference": [
+                196,
+                309
+              ],
+              "costDelta": 8308897300,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 12,
+              "paidReadDelta": 27,
+              "pairedLosses": 1,
+              "passDelta": 252,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 15,
+              "caseResampling95PassDifference": [
+                67,
+                136
+              ],
+              "costDelta": -11749416100,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 16,
+              "paidReadDelta": -145,
+              "pairedLosses": 40,
+              "passDelta": 101,
+              "qualifies": true
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 2,
+              "caseResampling95PassDifference": [
+                25,
+                43
+              ],
+              "costDelta": 2640956750,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 2,
+              "paidReadDelta": -26,
+              "pairedLosses": 0,
+              "passDelta": 34,
+              "qualifies": false
+            }
+          },
+          "paired-opening-cap-2.5x": {
+            "certified-validation": {
+              "admittedPromptChanges": 4,
+              "caseResampling95PassDifference": [
+                -27,
+                -1
+              ],
+              "costDelta": -2379644800,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 4,
+              "paidReadDelta": -47,
+              "pairedLosses": 49,
+              "passDelta": -14,
+              "qualifies": false
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 15,
+              "caseResampling95PassDifference": [
+                21,
+                73
+              ],
+              "costDelta": -29728729700,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 16,
+              "paidReadDelta": -298,
+              "pairedLosses": 49,
+              "passDelta": 47,
+              "qualifies": true
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 9,
+              "caseResampling95PassDifference": [
+                159,
+                250
+              ],
+              "costDelta": 5088260300,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 10,
+              "paidReadDelta": -10,
+              "pairedLosses": 0,
+              "passDelta": 204,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 13,
+              "caseResampling95PassDifference": [
+                26,
+                80
+              ],
+              "costDelta": -14970053100,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 14,
+              "paidReadDelta": -182,
+              "pairedLosses": 39,
+              "passDelta": 53,
+              "qualifies": true
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 4,
+              "caseResampling95PassDifference": [
+                -27,
+                -1
+              ],
+              "costDelta": -579680250,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 4,
+              "paidReadDelta": -63,
+              "pairedLosses": 49,
+              "passDelta": -14,
+              "qualifies": false
+            }
+          },
+          "paired-opening-cap-2x": {
+            "certified-validation": {
+              "admittedPromptChanges": 4,
+              "caseResampling95PassDifference": [
+                -27,
+                -1
+              ],
+              "costDelta": -2379644800,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 4,
+              "paidReadDelta": -47,
+              "pairedLosses": 49,
+              "passDelta": -14,
+              "qualifies": false
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 15,
+              "caseResampling95PassDifference": [
+                21,
+                73
+              ],
+              "costDelta": -29728729700,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 16,
+              "paidReadDelta": -298,
+              "pairedLosses": 49,
+              "passDelta": 47,
+              "qualifies": true
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 9,
+              "caseResampling95PassDifference": [
+                159,
+                250
+              ],
+              "costDelta": 5088260300,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 10,
+              "paidReadDelta": -10,
+              "pairedLosses": 0,
+              "passDelta": 204,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 13,
+              "caseResampling95PassDifference": [
+                26,
+                80
+              ],
+              "costDelta": -14970053100,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 14,
+              "paidReadDelta": -182,
+              "pairedLosses": 39,
+              "passDelta": 53,
+              "qualifies": true
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 4,
+              "caseResampling95PassDifference": [
+                -27,
+                -1
+              ],
+              "costDelta": -579680250,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 4,
+              "paidReadDelta": -63,
+              "pairedLosses": 49,
+              "passDelta": -14,
+              "qualifies": false
+            }
+          }
+        },
+        "heldoutUsesPerArm": 1920,
+        "pathsPerArm": 40,
+        "totals": {
+          "certified-validation": {
+            "admissionReads": 338,
+            "historicalCostNanodollars": 82576867500,
+            "historicalErrors": 56,
+            "holdoutPasses": 1462,
+            "paidReads": 847,
+            "searchReads": 509,
+            "traceSha256": "6119b172e9132e07d75aac21c5c82925d312db3bbd8a1690a7519061ebbb190f"
+          },
+          "gepa-batched": {
+            "admissionReads": 294,
+            "historicalCostNanodollars": 109925952400,
+            "historicalErrors": 59,
+            "holdoutPasses": 1401,
+            "paidReads": 1098,
+            "searchReads": 804,
+            "traceSha256": "51261625b2f428d378ef1ee937e0dd8649bf9d149314257ad031de671de9b05a"
+          },
+          "gepa-rewrite": {
+            "admissionReads": 242,
+            "historicalCostNanodollars": 75108962400,
+            "historicalErrors": 45,
+            "holdoutPasses": 1244,
+            "paidReads": 810,
+            "searchReads": 568,
+            "traceSha256": "b11ad40f652d7211c8f270317385dbdb07759d9fdcd8ed53ec37627961a5d240"
+          },
+          "gepa-sequential": {
+            "admissionReads": 292,
+            "historicalCostNanodollars": 95167275800,
+            "historicalErrors": 56,
+            "holdoutPasses": 1395,
+            "paidReads": 982,
+            "searchReads": 690,
+            "traceSha256": "83b1a825ec7b9ec328443614b716da53fd0206cd2951ca42b00661947b426e52"
+          },
+          "opening-dominance": {
+            "admissionReads": 338,
+            "historicalCostNanodollars": 80776902950,
+            "historicalErrors": 57,
+            "holdoutPasses": 1462,
+            "paidReads": 863,
+            "searchReads": 525,
+            "traceSha256": "09fd2d44f291d8c410487780cc5c79ed987b982a974d56bbd712721522720a2c"
+          },
+          "paired-opening": {
+            "admissionReads": 345,
+            "historicalCostNanodollars": 83417859700,
+            "historicalErrors": 43,
+            "holdoutPasses": 1496,
+            "paidReads": 837,
+            "searchReads": 492,
+            "traceSha256": "f565ee1e16953c1caa1ac89583600b814d217dbf298edd2bf72206c1bd1b4d44"
+          },
+          "paired-opening-cap-2.5x": {
+            "admissionReads": 327,
+            "historicalCostNanodollars": 80197222700,
+            "historicalErrors": 38,
+            "holdoutPasses": 1448,
+            "paidReads": 800,
+            "searchReads": 473,
+            "traceSha256": "a8188bd0f518fd7e2802b0cdbfc0f72b8200ba02eb600d4e9262331f180da2f1"
+          },
+          "paired-opening-cap-2x": {
+            "admissionReads": 327,
+            "historicalCostNanodollars": 80197222700,
+            "historicalErrors": 38,
+            "holdoutPasses": 1448,
+            "paidReads": 800,
+            "searchReads": 473,
+            "traceSha256": "a8188bd0f518fd7e2802b0cdbfc0f72b8200ba02eb600d4e9262331f180da2f1"
+          }
+        }
+      },
+      "rotated": {
+        "comparisons": {
+          "paired-opening": {
+            "certified-validation": {
+              "admittedPromptChanges": 10,
+              "caseResampling95PassDifference": [
+                35,
+                73
+              ],
+              "costDelta": 296943677350,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 24,
+              "paidReadDelta": 2542,
+              "pairedLosses": 17,
+              "passDelta": 53,
+              "qualifies": false
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 51,
+              "caseResampling95PassDifference": [
+                215,
+                354
+              ],
+              "costDelta": 336552506400,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 94,
+              "paidReadDelta": 2807,
+              "pairedLosses": 128,
+              "passDelta": 284,
+              "qualifies": false
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 41,
+              "caseResampling95PassDifference": [
+                318,
+                518
+              ],
+              "costDelta": 506334543950,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 106,
+              "paidReadDelta": 4174,
+              "pairedLosses": 69,
+              "passDelta": 418,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 48,
+              "caseResampling95PassDifference": [
+                216,
+                351
+              ],
+              "costDelta": 345810321650,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 91,
+              "paidReadDelta": 2880,
+              "pairedLosses": 118,
+              "passDelta": 283,
+              "qualifies": false
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 10,
+              "caseResampling95PassDifference": [
+                35,
+                73
+              ],
+              "costDelta": 268288010700,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 24,
+              "paidReadDelta": 2317,
+              "pairedLosses": 17,
+              "passDelta": 53,
+              "qualifies": false
+            }
+          },
+          "paired-opening-cap-2.5x": {
+            "certified-validation": {
+              "admittedPromptChanges": 17,
+              "caseResampling95PassDifference": [
+                -36,
+                21
+              ],
+              "costDelta": 33362370450,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 38,
+              "paidReadDelta": 390,
+              "pairedLosses": 91,
+              "passDelta": -8,
+              "qualifies": false
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 50,
+              "caseResampling95PassDifference": [
+                166,
+                282
+              ],
+              "costDelta": 72971199500,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 94,
+              "paidReadDelta": 655,
+              "pairedLosses": 159,
+              "passDelta": 223,
+              "qualifies": false
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 32,
+              "caseResampling95PassDifference": [
+                274,
+                440
+              ],
+              "costDelta": 242753237050,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 72,
+              "paidReadDelta": 2022,
+              "pairedLosses": 47,
+              "passDelta": 357,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 47,
+              "caseResampling95PassDifference": [
+                167,
+                279
+              ],
+              "costDelta": 82229014750,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 91,
+              "paidReadDelta": 728,
+              "pairedLosses": 149,
+              "passDelta": 222,
+              "qualifies": false
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 17,
+              "caseResampling95PassDifference": [
+                -36,
+                21
+              ],
+              "costDelta": 4706703800,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 38,
+              "paidReadDelta": 165,
+              "pairedLosses": 91,
+              "passDelta": -8,
+              "qualifies": false
+            }
+          },
+          "paired-opening-cap-2x": {
+            "certified-validation": {
+              "admittedPromptChanges": 20,
+              "caseResampling95PassDifference": [
+                -66,
+                -1
+              ],
+              "costDelta": -1365095900,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 42,
+              "paidReadDelta": 121,
+              "pairedLosses": 119,
+              "passDelta": -34,
+              "qualifies": false
+            },
+            "gepa-batched": {
+              "admittedPromptChanges": 49,
+              "caseResampling95PassDifference": [
+                141,
+                255
+              ],
+              "costDelta": 38243733150,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 94,
+              "paidReadDelta": 386,
+              "pairedLosses": 177,
+              "passDelta": 197,
+              "qualifies": false
+            },
+            "gepa-rewrite": {
+              "admittedPromptChanges": 29,
+              "caseResampling95PassDifference": [
+                253,
+                409
+              ],
+              "costDelta": 208025770700,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 68,
+              "paidReadDelta": 1753,
+              "pairedLosses": 45,
+              "passDelta": 331,
+              "qualifies": false
+            },
+            "gepa-sequential": {
+              "admittedPromptChanges": 48,
+              "caseResampling95PassDifference": [
+                142,
+                252
+              ],
+              "costDelta": 47501548400,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 93,
+              "paidReadDelta": 459,
+              "pairedLosses": 173,
+              "passDelta": 196,
+              "qualifies": false
+            },
+            "opening-dominance": {
+              "admittedPromptChanges": 20,
+              "caseResampling95PassDifference": [
+                -66,
+                -1
+              ],
+              "costDelta": -30020762550,
+              "costMetric": "historicalCostNanodollars",
+              "nomineeChanges": 42,
+              "paidReadDelta": -104,
+              "pairedLosses": 119,
+              "passDelta": -34,
+              "qualifies": false
+            }
+          }
+        },
+        "heldoutUsesPerArm": 17280,
+        "pathsPerArm": 360,
+        "totals": {
+          "certified-validation": {
+            "admissionReads": 1448,
+            "historicalCostNanodollars": 764746090350,
+            "historicalErrors": 206,
+            "holdoutPasses": 13738,
+            "paidReads": 5987,
+            "searchReads": 4539,
+            "traceSha256": "0c384f81bab85afdbf3decfb514c11d79316c223ad50c44d2aacfe2383e894cb"
+          },
+          "gepa-batched": {
+            "admissionReads": 910,
+            "historicalCostNanodollars": 725137261300,
+            "historicalErrors": 171,
+            "holdoutPasses": 13507,
+            "paidReads": 5722,
+            "searchReads": 4812,
+            "traceSha256": "a9158f252f026ac921e3802d4a7f989ae2272c1467aa97b9d93895ae350458e1"
+          },
+          "gepa-rewrite": {
+            "admissionReads": 515,
+            "historicalCostNanodollars": 555355223750,
+            "historicalErrors": 123,
+            "holdoutPasses": 13373,
+            "paidReads": 4355,
+            "searchReads": 3840,
+            "traceSha256": "bf117fbbf6770a186489f70c319f9a76ebaad689f8368e0d6bd5dc4e0fe11418"
+          },
+          "gepa-sequential": {
+            "admissionReads": 921,
+            "historicalCostNanodollars": 715879446050,
+            "historicalErrors": 170,
+            "holdoutPasses": 13508,
+            "paidReads": 5649,
+            "searchReads": 4728,
+            "traceSha256": "675c8f42372753a2ce1f5e61f67cc7ba01dd267bedf77feb3aeeb2327d81f067"
+          },
+          "opening-dominance": {
+            "admissionReads": 1448,
+            "historicalCostNanodollars": 793401757000,
+            "historicalErrors": 208,
+            "holdoutPasses": 13738,
+            "paidReads": 6212,
+            "searchReads": 4764,
+            "traceSha256": "bcc4ace3d29f556028a6bd6678c21edf96c5a0ad16652b46765a25856a68c724"
+          },
+          "paired-opening": {
+            "admissionReads": 1666,
+            "historicalCostNanodollars": 1061689767700,
+            "historicalErrors": 284,
+            "holdoutPasses": 13791,
+            "paidReads": 8529,
+            "searchReads": 6863,
+            "traceSha256": "7fc6c3376c2a975640bde861e36d0daa6700d934a9b03299b55a5c93dd403734"
+          },
+          "paired-opening-cap-2.5x": {
+            "admissionReads": 1291,
+            "historicalCostNanodollars": 798108460800,
+            "historicalErrors": 215,
+            "holdoutPasses": 13730,
+            "paidReads": 6377,
+            "searchReads": 5086,
+            "traceSha256": "f722222321ed746bfb94628402704a540f4944c8c29e2f717ee52b4c947c92e0"
+          },
+          "paired-opening-cap-2x": {
+            "admissionReads": 1254,
+            "historicalCostNanodollars": 763380994450,
+            "historicalErrors": 208,
+            "holdoutPasses": 13704,
+            "paidReads": 6108,
+            "searchReads": 4854,
+            "traceSha256": "877740b9503a39ed759a0c06d9451775e90ef80f04605f39066e6fa617393757"
+          }
+        }
+      }
+    }
+  }
+}

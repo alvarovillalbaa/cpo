@@ -8,6 +8,8 @@ For tasks with declared critical strata, the coverage-first selector can abandon
 
 The rotating-witness cycle can screen a supplied roster with a few shared cases before sending a single challenger to independent paired qualification. [Rotating-witness API and verification](rotating-witness-cycle.md)
 
+The paired opening cycle tries a supplied rewrite and repair in order and can certify the first exact validation gain from partial paired evidence. [Paired opening API and transfer results](paired-opening-cycle.md)
+
 ## Protocol
 
 The replay uses recorded correctness matrices for Llama 3 8B on PromptEval’s abstract algebra subset and for candidate pools published with GEPA on AIME and ARC-AGI. Each phase uses 40 seeded splits per dataset, partitions validation and held-out rows, and caps search at 55% of the full validation grid. All arms see the same pool and validation order within each split. The gates require preserved aggregate held-out correctness and no added lookups, with either an accuracy gain or at least 10% savings. [PromptEval paper](https://arxiv.org/abs/2405.17202) · [PromptEval dataset](https://huggingface.co/datasets/PromptEval/PromptEval_MMLU_correctness) · [GEPA artifact](https://github.com/gepa-ai/gepa)
