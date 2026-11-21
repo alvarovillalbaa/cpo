@@ -16,6 +16,8 @@ The task-specific native allocation closed most of the 804-pass gap against the 
 
 The held-out routing rules instead choose from costs and scores of completed training tasks. The target task and both its model panels are excluded from each fit. Each split uses either all other tasks, the other tasks in the same benchmark, or the other benchmark alone. A setting must fit the training tasks' mean relative CPO cost. The best eligible setting is then measured on the omitted task. In all three splits the native menu chose eight-anchor batched GEPA at cap 32 for every task, and every menu that included CPO chose fixed one-admission CPO. These archived folds leave the hindsight savings unexplained by any of the tested routing rules. [Held-out routing method](task-budget-selection.md)
 
+A follow-up tested whether stricter validation could preserve the sole admission attempt for a better challenger. All tested extra-witness rules increased lookups. [Extra witness before admission](prompteval-one-admission-witness-guard.md)
+
 ## Reproduce
 
 Use Python 3.12 and the repository's sealed receipts. The analysis ran with sockets and DNS blocked and made zero provider requests. Storage Guard measured 5.1 GiB free. A disposable source export was bounded at 0.2 GiB under the standing LAB exception. [Exhaustive frontier test](../tests/unit/test_prompteval_admission_task_budget.py)

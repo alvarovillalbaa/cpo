@@ -16,9 +16,13 @@ The replay covers the three archived cohorts from the matched-admission study. I
 
 On BBH and LMentry, the check without fallback saved 4,150 admission reads and added 12,766 paid search reads. It checked 1,167 additional witnesses, 1,007 of which the incumbent had missed. The fallback recovered 66 nominees and improved the holdout score by 180 passes relative to the veto alone. Its accuracy still trailed the original by 1.321 percentage points, with a paired range of −2.311 to −0.374 after resampling subjects and cases. The original rule retains the better archived operating point.
 
+## Check only known incumbent passes
+
+After seeing how often the extra witness was another incumbent miss, a second experiment restricted the check to known incumbent passes. It reproduced every original panel trace and kept the same independent admission gate. The narrower check used 915 more lookups on BBH and LMentry and lost 16 passes, a mean change of −0.038 percentage points. Its paired range was −0.135 to +0.052 points. It gained five passes and used 84 more lookups on the original PromptEval subjects. It tied the score and used 43 more lookups on the additional subjects. The follow-up also favors retaining the original one-attempt rule. [Follow-up sealed results](prompteval-one-admission-witness-guard-results-v2.json)
+
 ## Reproduce the original experiment
 
-Use Python 3.12 and the original sealed source revision and bundled archives. Verification blocked DNS and sockets. Storage Guard measured 5.0 GiB free. The temporary source exports were bounded at 0.2 GiB under the standing LAB exception. [Focused tests](../tests/unit/test_prompteval_one_admission_witness_guard.py)
+Use Python 3.12 and the original sealed source revision `4857a68fa66143c8df1527c2af18bed5bbad3c26`. Verification blocked DNS and sockets. Storage Guard measured 5.0 GiB free. The temporary source exports were bounded at 0.2 GiB under the standing LAB exception. [Focused tests](../tests/unit/test_prompteval_one_admission_witness_guard.py)
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.prompteval_one_admission_witness_guard \
@@ -27,3 +31,13 @@ PYTHONHASHSEED=0 python -B -m benchmarks.prompteval_one_admission_witness_guard 
 ```
 
 The results SHA-256 is `3d305c6ad9b7db5853c55311939e5aee44c67f26f0ae631785b7de1bdd024267`.
+
+## Reproduce the follow-up
+
+```sh
+PYTHONHASHSEED=0 python -B -m benchmarks.prompteval_one_admission_witness_guard \
+  --execute 9fb93559c6a96e8d3462f0304ef95277478821ab57ff2ae974f8805a23c25308 \
+  --out NEW_REPORT.json
+```
+
+The follow-up SHA-256 is `1e58ab7a1f7f1e914eeabb0e962685bd19a96599e5650df7a1cae34aa372c636`. Both versions used recorded outcomes and made zero provider requests. Fresh-model performance remains unverified.
