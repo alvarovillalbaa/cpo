@@ -32,6 +32,8 @@ The source export and a clean target installation of the built wheel produced by
 
 A disjoint MMLU replay found an inconclusive three-pass gain over retaining the starts. The proof gates left 41 additional passes of hindsight headroom. [MMLU transfer and proof analysis](recorded-two-witness-mmlu-transfer.md)
 
+AIME and ARC-AGI transfer favored the retained starts or affordable GEPA on observed scores. The ARC-AGI comparison also checked recorded evaluator prices. [Math transfer and budget comparison](recorded-two-witness-math-transfer.md)
+
 ```sh
 export PYTHONHASHSEED=0
 python -B -m benchmarks.recorded_two_witness_pool_parity
