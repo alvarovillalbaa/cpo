@@ -26,3 +26,5 @@ PYTHONHASHSEED=0 python -B -m benchmarks.recorded_arc_lineage_quotes --match-nat
   --execute 1750ca92f685ed0841c93ef585b28d972f4fed98f9bae571d9072784300da256 \
   --out NEW_REPORT.json
 ```
+
+The same empty-slot policy was also compared against native sequential GEPA on recorded Sol responses with a separate source holdout. [Sol transfer results](recorded-sol-empty-slots.md)
