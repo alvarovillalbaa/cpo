@@ -21,6 +21,8 @@ All three proof ceilings fit within each of the 24 published budgets under the o
 
 On eight-challenger rotated ARC-AGI, the policy without training scored 13,932 on 8,239 lookups. Its gate-matched ceiling was 14,246 at a minimum of 3,614 lookups or $446.40 at recorded prices. Avoiding five harmful moves accounted for 10 passes of the 314-pass gap. Better eligible nominees accounted for the remaining 304 across 75 trials. The larger share of gate-matched headroom on both rotations is in choosing the prompt that reaches qualification. These are archived aggregate scores with repeated case identities across trials.
 
+A follow-up located the missed nominees in the paid evidence and measured a four- or eight-read backup race. [Bounded backup experiment](recorded-bounded-certificate-backup.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Two network-denied runs matched byte for byte. All 54 targeted tests passed from a clean export, including exhaustive check subsets and brute-force comparisons with the pooled cost frontier. The CLI rejected a stale seal. The public selector receipt and ordered live-plan preview reproduced. Storage Guard measured 2.9 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent.
