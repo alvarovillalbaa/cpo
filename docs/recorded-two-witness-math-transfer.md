@@ -19,6 +19,8 @@ On the AIME eight-challenger rotation, keeping every start matched the public se
 
 On the ARC-AGI eight-challenger rotation, sequential GEPA at cap 40 scored 37 more passes and used 127 fewer lookups than the public selector. Its historical evaluation cost was $1,160.72 versus $1,219.22 for CPO. The same control won under both budget measures. On the original ARC start with eight challengers, changing from lookup to historical-cost matching selected a different control and still favored GEPA. Qualification-first CPO remained the strongest tested CPO policy on the rotated eight-challenger ARC setting. Its historical-cost matched margin was +38, with a range of −13 to +86. These comparisons use recorded outcomes for fixed prompt pools.
 
+A follow-up tested price-aware validation in qualification-first CPO. It preserved all 800 validation winners and increased costs in every setting. [Price-aware validation comparison](recorded-arc-qualification-first-cost-order.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and socket connections blocked, 77 targeted tests and five subtests passed. Two full replays matched byte for byte. Direct replay verified 12 reported GEPA settings across 2,600 trials. The original selector parity receipt and live-plan preview reproduced. The CLI rejected a stale seal. Storage Guard measured 4.6 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. The replay sent zero provider requests.
