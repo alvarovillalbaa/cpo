@@ -13,6 +13,8 @@ The replay checked all 800 validation winners against the qualification-first ba
 
 One deployment changed in the eight-challenger rotation and accounted for all six added passes. The rotation as a whole used 145 extra validation lookups and 26 extra training lookups, with one fewer qualification lookup. Sequential GEPA at cap 44 was the best affordable fixed setting under both price and lookup budgets. It scored 13,784 passes with 9,891 lookups. Price-aware CPO led by 44 passes, with a paired historical-cost range of −8 to +92. The order increased costs in every setting and left the best observed ARC comparison inconclusive. All costs are from archived evaluator charges.
 
+A follow-up kept ordinary validation order and reordered the exact training proof. In the eight-challenger rotation, it preserved every deployment and saved 193 lookups. [Expected training cost comparison](recorded-expected-training-order.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and socket connections blocked, 78 targeted tests and five subtests passed. The new test checked exact nomination against all 512 binary outcome grids for three prompts and three cases, including a critical row. Two full replays matched byte for byte. The original selector parity receipt and live-plan preview reproduced. Storage Guard measured 4.6 GiB free. The source export and publication worktree fit the standing 0.2 GiB LAB exception. The replay sent zero provider requests.
