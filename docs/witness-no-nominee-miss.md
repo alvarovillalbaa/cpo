@@ -18,6 +18,8 @@ All 22 supported-rate MMLU candidates had an eligible miss. The two orders chose
 
 On BBH and LMentry, peer ordering saved 853 lookups and lost 54 held-out passes against the matched direct control. The paired range was −0.246 to −0.033 percentage points. Both training families selected an existing control, and the cross-family gate remained unmet. [Full costs and paired comparisons](witness-no-nominee-miss-results-v1.json)
 
+A hard budget for direct proofs recovered ten MMLU passes within seeded cost. The paired interval still included zero. [Budgeted admission queue](witness-admission-credit.md)
+
 ## Reproduce
 
 Use a clean export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 48 targeted tests passed and two replays matched byte for byte. The original no-nominee counts, candidate selection counts, and control costs and scores reproduced. The CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. Storage Guard measured 3.9 GiB free. The export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Probe accounting tests](../tests/unit/test_witness_no_nominee_miss.py)
