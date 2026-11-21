@@ -14,6 +14,8 @@ The new replay uses the separate grounded witness benchmark's 16-example blocks.
 
 The exact cover retained all training labels and policy distinctions across 12 blocks. It reduced the examples from 192 to 80 and serialized reflection input from 37,602 to 16,566 bytes, a **55.9% reduction**. At the same size, the warehouse prefix omitted both `RELEASE` and `REVIEW` in one block. Every outage prefix left the 30-minute exclusion error undetectable. Two development cases and one confirmation case distinguish that error. The byte counts describe serialized inputs. Proposal quality, provider token counts, and CPO's live advantage over GEPA remain unverified. [Full receipt and per-cycle cases](witness-training-discrimination-results-v1.json)
 
+A follow-up found that this compression hid context-specific faults the full training blocks could expose. Preserving complete contexts avoided those added blind spots and saved 4.2% of bytes. [Context stress replay](witness-training-context.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With sockets and DNS blocked, 36 targeted tests passed and two complete replays matched byte for byte. The CLI rejected a stale seal, and the prospective live-plan preview reproduced byte for byte. Storage Guard measured 6.2 GiB free. The 39 MiB export and bounded publication worktree used the standing 0.2 GiB LAB exception. The replay made zero provider requests. [Coverage and isolation tests](../tests/unit/test_witness_training_discrimination.py)
