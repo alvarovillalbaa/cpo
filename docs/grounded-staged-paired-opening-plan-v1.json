@@ -1,0 +1,130 @@
+{
+  "arms": [
+    "cpo",
+    "gepa-sequential",
+    "gepa-batched",
+    "gepa-cached-opening",
+    "opening-only",
+    "paired-field-rewrite",
+    "charge-aware-paired-rewrite",
+    "paired-opening"
+  ],
+  "cachedGepaOpening": {
+    "evaluationLimitPerTask": 24,
+    "laterProposals": 0,
+    "minibatch": 2,
+    "observations": "reuse validation replies",
+    "proposal": "supplied rewrite"
+  },
+  "certifyFinalDraft": true,
+  "certifyOpening": true,
+  "chargeOrdering": {
+    "missing": "gain per read",
+    "payer": "gepa-cached-opening",
+    "scope": "full-validation reads",
+    "source": "charge from each acquired reply in integer microusd"
+  },
+  "combinedPlanSha256": "61dd1b56b203107262b2ec24a184bbadbe9efc4470af6ff72f37904111266314",
+  "corpusSha256": "a8bc9978274d57cbe0a57638b78bb7c0a8ae0fce075c2567410f653295cf7182",
+  "developmentRequestCeiling": 2232,
+  "familyFields": {
+    "outage": "Plan",
+    "ticket": "Channel",
+    "warehouse": "Tier"
+  },
+  "gate": {
+    "efficiencyPercent": 90,
+    "minimumAddedPasses": 8,
+    "minimumTaskPasses": 27
+  },
+  "gepaVersion": "0.1.4",
+  "laterRetryCap": 8,
+  "logicalLimitsByRole": {
+    "admission": 768,
+    "evaluation": 996,
+    "qualification": 756,
+    "reflection": 48
+  },
+  "nativeGepaCaseIds": "original case IDs, disjoint across train and validation",
+  "openingControl": {
+    "admission": "same exact family certificate",
+    "laterProposals": 0,
+    "nomination": "strict opening dominance with a funded exact fallback",
+    "placement": "after staged and GEPA arms for each task",
+    "sharedOpening": true,
+    "validation": "exact promotion gate from bounded paired validation"
+  },
+  "pairedFieldRewrite": {
+    "minibatch": 2,
+    "paidSampleOwner": "gepa-cached-opening",
+    "qualification": "share the same prompt and matched reply"
+  },
+  "pairedOpening": {
+    "confirmationRequires": "paired-opening",
+    "evaluationLimitPerTask": 36,
+    "laterProposals": 0,
+    "proposalOrder": [
+      "shared rewrite",
+      "shared repair"
+    ],
+    "selection": "first exact validated gain with family and critical protection"
+  },
+  "parentPlanSha256": "1c3fddb7fb18f56d23fee4b8a80a76dd8c1c1eda17044135acc36010efa4f375",
+  "physicalLimitsByRole": {
+    "admission": 576,
+    "evaluation": 852,
+    "qualification": 756,
+    "reflection": 48
+  },
+  "planSha256": "3d6dfcaee13796276e6bca057cbe1bf9d087cc388d0ab3bde77ac05b483017f3",
+  "protocol": "portable-grounded-staged-paired-opening-v1",
+  "repeats": 2,
+  "scope": "Original v6 comparison plus the packaged, exact paired opening and independent admission.",
+  "searchCap": 56,
+  "seed": 66029,
+  "sourceSha256": {
+    "benchmarks/feedback_budget.py": "faa0add092587ee151fc8071027bbd065053daf5d182bd87d903e5608a9e0f25",
+    "benchmarks/gepa_cached_opening.py": "dcc94ad5b20eb5242198c969c6dd524c2ad181a153ec826a974c5271d88b79ff",
+    "benchmarks/gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+    "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+    "benchmarks/grounded_fixture.py": "f42d309d629cafd303f42bc319dc388333398134644597ad274de9d380cf2a31",
+    "benchmarks/grounded_staged.py": "c8062bf39dcb806b7b1558f479bc4bc6258893821d8e1a39f569b6307fb1fe9c",
+    "benchmarks/grounded_staged_case_evidence.py": "15e0bd625681ff7194ad74e282f8da9cfd6e0691af68f1d1abf7de447385cd35",
+    "benchmarks/grounded_staged_certified_opening_comparison.py": "014fc60a7175087224204199716fcf5199dbedcb1be2a4da3fdcc694db435c54",
+    "benchmarks/grounded_staged_charge_comparison.py": "250846f2a4b6d96603c0d2c5467909cfd8c32a61a4d1e8436928f6aa564f1b86",
+    "benchmarks/grounded_staged_combined_fixture.py": "84d3ddf6afdadacbe568acb166d852fa5a60fad53f26a1539dabb7e98f734a29",
+    "benchmarks/grounded_staged_fixture.py": "f51677efd9b8205f273ce2242701d27813cd16c9376f0bb98cb760d0e574c98c",
+    "benchmarks/grounded_staged_opening_ablation.py": "d1f29de0cc48ad247c5b3596f70726a6fbe5c1ff8e9a405a43ba2f4d93046f5b",
+    "benchmarks/grounded_staged_opening_dominance_comparison.py": "e237db32d6a378ea642bae01022b19b1f1619938a2863f35010466655a082393",
+    "benchmarks/grounded_staged_paired_opening_comparison.py": "b8619c72c57489e05ce27f591fea34d31d60c4050418f6de5eef7eebbe3f4395",
+    "benchmarks/grounded_staged_paired_rewrite_comparison.py": "2a3a989b37d0b34fa5205b622acabd5e587ee7dc547a902022d1279a755a9fb2",
+    "benchmarks/grounded_staged_policy_comparison.py": "a75e57c37f44a142eb3d53229cd0d1268bc79e8902c457a07292afde95ebcb58",
+    "benchmarks/opening_screen_typed.py": "d24df6871f8fc266118faf4ac59b11c641b845a26d5c18accf3ac840821f7da8",
+    "benchmarks/paired_field_opening.py": "693cfce4ac380056a9aa72d8ffac5e4d42f792cdf77a1724ce1a46a0105bb6f5",
+    "benchmarks/typed_policy.py": "9fb85272a82c61499ba7b614d233964f9e8c077ad1ca630ac1030737202a0f1f",
+    "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+    "cpo/anchored_validation.py": "20d4ae69a2dd763800adc2c5a7b85ce0285510ca957cae4d5f5058c23a376ac0",
+    "cpo/expected_cost_proposal_cycle.py": "67c24e4b7fce56a1b941762ff8932ceedd64e07e7ff6c034b8ab0e71cc6cd182",
+    "cpo/expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+    "cpo/family_qualification.py": "9ca2fd90b8da62743f4d95165af336103ccf2447a0585522a3a5698199eb0f9b",
+    "cpo/opening_certificate.py": "0c33b20108d240656a8f15602e5f5b2a4ceb27b57e1f2e2cf4c2deeb5d455539",
+    "cpo/opening_dominance.py": "86786743ebea794dd1f1fa8de6551fbd35a7b8edeaa969a694c6c1f8d23dc970",
+    "cpo/opening_repair_cycle.py": "842f1bae68bfee3f098156dd13d673a41d3221ee74644a1f5e00b77c0dd60889",
+    "cpo/opening_screen_cycle.py": "d2d60763878b49470c9fd39b25292092f703123a2abf6aff04c91245c583c51e",
+    "cpo/opening_validation.py": "493c74b7c8a3f91b9e167cc331e35d41485510658d0f3a03b273e911eee03929",
+    "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+    "cpo/paired_field_rewrite.py": "c26b8218618a303be55a3945defe19da81729bcc12aef4d3d8ac91565c2cbaee",
+    "cpo/paired_opening/__init__.py": "a06c25b31b5719af0457384b441c66a55cdf6103fc47b5c212cf8250beb7c282",
+    "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+    "cpo/routed_repair_cycle.py": "8daa5e6f1f49ffe3b0d49c0ea1842233ecc3f8b119738e891a4b5877b631484a",
+    "cpo/validation_guided_repair.py": "238ffa97895fc7ecd841e7e07c8d49d8b09fd209ec8bb1a2c0b1b7521c4b48c6",
+    "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+  },
+  "splitSizes": {
+    "admission": 8,
+    "confirmation": 8,
+    "holdout": 18,
+    "train": 16,
+    "validation": 12
+  }
+}
