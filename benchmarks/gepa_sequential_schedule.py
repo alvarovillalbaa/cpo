@@ -12,6 +12,7 @@ def select_field_rewrites(
     cap, seed, observed_charge=None, reinvest_savings=False, price_budget=None, parent_bounds=False,
     certify_boundary_ties=False, skip_perfect_reflections=False, proposals_exhausted=None,
     parent_eligible=None, proposal_unavailable=None,
+    frontier_bounds=False, prioritize_uncertain_cases=False, settle_validation_on_price_limit=False,
 ):
     from benchmarks import grounded
     from cpo import Row
@@ -27,7 +28,8 @@ def select_field_rewrites(
         return bank[index] if index < len(bank) else reflect(parent, [reply.feedback for _, reply in samples])
 
     select_parent = sequential_schedule(validation, seed, grounded.MINIBATCH, trace, training=training,
-                                        parent_bounds=parent_bounds)
+                                        parent_bounds=parent_bounds, frontier_bounds=frontier_bounds,
+                                        prioritize_uncertain_cases=prioritize_uncertain_cases)
 
     def schedule(index, pool, grades):
         if parent_eligible is not None:
@@ -44,11 +46,13 @@ def select_field_rewrites(
         skip_perfect_after=len(bank) if skip_perfect_reflections else None,
         proposals_exhausted=proposals_exhausted,
         proposal_unavailable=proposal_unavailable,
+        settle_validation_on_price_limit=settle_validation_on_price_limit,
     )
 
 
 def sequential_schedule(
     validation, seed, minibatch_size, trace, *, training=None, parent_bounds=False, width=1, frontier_bounds=False,
+    prioritize_uncertain_cases=False,
 ):
     from gepa.core.data_loader import ListDataLoader
     from gepa.gepa_utils import select_program_candidate_from_pareto_front
@@ -60,6 +64,8 @@ def sequential_schedule(
         from cpo.gepa_frontier import select_frontier_parent
     if (parent_bounds or frontier_bounds) and version('gepa') != '0.1.4':
         raise ValueError('Parent bounds require GEPA 0.1.4')
+    if prioritize_uncertain_cases and not frontier_bounds:
+        raise ValueError('Prioritizing uncertain cases requires the larger-pool proof')
 
     training = validation if training is None else training
     rng = Random(seed)
@@ -69,7 +75,8 @@ def sequential_schedule(
     def schedule(index, pool, grades):
         parent = select_two_candidate_parent(pool, len(validation), grades, rng) if parent_bounds else None
         if parent is None and frontier_bounds:
-            parent = select_frontier_parent(pool, len(validation), grades, rng)
+            parent = select_frontier_parent(pool, len(validation), grades, rng,
+                                            prioritize_uncertain_cases=prioritize_uncertain_cases)
         if len(pool) == 1:
             # The only program owns every case without needing its grades.
             parent = rng.choice(pool * len(validation))

@@ -89,7 +89,7 @@ def _certify(options, width, rng):
     return index
 
 
-def select_frontier_parent(pool, size, grades, rng):
+def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_cases=False):
     """Certify a seeded draw for 3–7 distinct candidates and 1–32 cases.
 
     Unknown grades can be any value from zero to one. The search overapproximates
@@ -97,13 +97,20 @@ def select_frontier_parent(pool, size, grades, rng):
     possible per-case winning sets. It accepts only when they all choose the
     same parent and leave the shared RNG in the same state. A None result asks
     the caller to finish using GEPA's complete-score calculation.
+
+    With prioritize_uncertain_cases, check the cases with the most possible
+    winner sets in the existing cache first. Ties keep validation order.
     """
     width = len(pool)
     if not 3 <= width <= 7 or len(set(pool)) != width or not 1 <= size <= 32:
         return None
     rows = [[grades.peek(prompt, case) for prompt in pool] for case in range(size)]
     options = [_possible_fronts(row) for row in rows]
-    for case, row in enumerate(rows):
+    cases = range(size)
+    if prioritize_uncertain_cases:
+        cases = sorted(cases, key=lambda case: -len(options[case]))
+    for case in cases:
+        row = rows[case]
         for index, score in enumerate(row):
             if score is not None:
                 continue

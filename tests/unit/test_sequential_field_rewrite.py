@@ -266,6 +266,41 @@ def test_funds_the_proposal_as_well_as_each_reserved_evaluation(limit, expected_
     assert selected == winner and len(proposals) == len(settled) == expected_calls
 
 
+@pytest.mark.parametrize(('settle', 'proposal_limit', 'winner'), (
+    (False, None, 'repair'), (True, None, 'final'), (True, 0, 'repair'),
+))
+def test_settles_reserved_validation_only_to_fund_a_round(settle, proposal_limit, winner):
+    training = tuple(Row(f't{case}', 'task', fields=1) for case in range(2))
+    validation = tuple(Row(f'v{case}', 'task', fields=1) for case in range(2))
+    paid, proposals = [], []
+
+    def evaluate(prompt, row):
+        paid.append((prompt, row.id))
+        passed = prompt == 'final' or (prompt == 'repair' and row.id in ('t0', 'v1'))
+        return Observation(passed, {}, int(passed))
+
+    def propose(index, _parent, _samples):
+        proposals.append(index)
+        return ('repair', 'final')[index]
+
+    budget = SequentialSearchBudget(30, 5, lambda index, _: index if proposal_limit == 0 else 0,
+                                    lambda *_: 0, proposal_limit=proposal_limit)
+    selected = select_sequential_field_rewrites(
+        'start', training, validation, evaluate, lambda index, pool, _: (pool[-1], (f't{index}',)), propose,
+        rounds=2, minibatch_size=1, metric_limit=10, reinvest_savings=True, price_budget=budget,
+        observed_charge=lambda *_: 1, settle_validation_on_price_limit=settle,
+    )
+    assert selected == winner
+    assert len(paid) == len(set(paid))
+    if winner == 'final':
+        assert proposals == [0, 1]
+        assert paid[4:6] == [('start', 'v1'), ('repair', 't1')]
+    else:
+        assert proposals == [0]
+        assert paid == [('start', 'v0'), ('start', 't0'), ('repair', 't0'), ('repair', 'v0'),
+                        ('start', 'v1'), ('repair', 'v1')]
+
+
 def test_stops_after_a_charge_exceeds_its_quote():
     training, validation = (Row('train', 'task', fields=1),), (Row('validation', 'task', fields=1),)
     reads = []
