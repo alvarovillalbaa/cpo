@@ -18,6 +18,8 @@ Both training families selected expected-read ordering with the full allowance. 
 
 At cap 20, each planner recorded 50 more rejections than seeded order across the three cohorts. Promotion counts and holdout scores stayed the same at that cap. The paired score ranges were zero at every matched cap. The quality transfer gate remains unmet. The efficiency result applies to fixed archived grades, and fresh provider behavior remains unverified.
 
+An independent retry after exact rejection improved the BBH and LMentry cohort within the original spend, but failed to transfer to either MMLU cohort. [Independent retry replay](witness-admission-retry.md)
+
 The opt-in function supports short, noncritical scalar panels from one family. Use `prioritize_promotion=False` for the expected-read policy.
 
 ## Reproduce
