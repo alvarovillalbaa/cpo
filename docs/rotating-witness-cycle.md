@@ -23,6 +23,28 @@ Supply distinct candidate prompts and disjoint `cpo.Row` IDs for validation and 
 
 The witness screen nominates a challenger from sampled evidence. A separate paired qualification checks minimum gain, critical passes, and task-family regressions before promotion. A rejected or unfinished qualification keeps the incumbent. Read the two charges from `result.search.evaluations` and `result.qualification_evaluations`. Use a new seed and fresh qualification rows in the next cycle.
 
+## Limit admission attempts across cycles
+
+Schedule the candidate pools and fresh qualification rows with `WitnessCycle`. The episode stops searching once it has nominated the allowed number of challengers. A failed or undecided qualification consumes an attempt. A cycle that nominates nobody leaves the allowance available. The episode checks all qualification case IDs against every scheduled validation panel before the first callback.
+
+```python
+from cpo.rotating_witness.episode import WitnessCycle, run_rotating_witness_episode
+
+result = run_rotating_witness_episode(
+    incumbent,
+    (
+        WitnessCycle(first_candidates, validation_rows, first_qualification, seed=1),
+        WitnessCycle(later_candidates, validation_rows, later_qualification, seed=2),
+    ),
+    evaluate,
+    qualify=qualify,
+    metric_limit=56,
+    max_admissions=1,
+)
+```
+
+`result.cycles` contains the executed cycle receipts and `result.admission_attempts` counts nominations. The same `evaluate` and `qualify` callbacks serve each cycle. The evaluator controls validation caching. The episode uses the package's standard paired qualification. The recorded comparison uses its existing archived case bank and tie-extension rule. [Budget comparison](prompteval-witness-budget-controls.md) · [Episode tests](../tests/unit/test_rotating_witness_episode.py)
+
 ## Recorded verification
 
 The package's nomination and per-cycle search traces reproduce the published PromptEval transfer result across 576 episodes and 2,304 cycles. The trace comparison uses the transfer protocol's original qualification bank. The package cycle uses its own independent paired cohort on each call. Tests exercise promotion, critical validation and qualification regressions, exact callback accounting, and exhausted caps through the public entry point. [Transfer results](prompteval-rotating-witness-transfer.md) · [Archived trace check](../tests/integration/test_rotating_witness_transfer_parity.py) · [Cycle tests](../tests/unit/test_rotating_witness_cycle.py)

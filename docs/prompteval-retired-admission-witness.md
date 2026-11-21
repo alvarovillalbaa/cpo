@@ -19,6 +19,8 @@ Compared with validation-only reuse, admitting retired cases added 134 and 166 s
 
 The paired case-resampling ranges for the accuracy difference versus the original witness were −0.318 to −0.028 percentage points on the nine original subjects and −0.328 to +0.238 on the additional subjects. When subjects were resampled too, they were −0.445 to +0.032 and −0.385 to +0.245. Against batched GEPA at cap 80, the retired-admission policy gained 0.019 points and saved 5,758 lookups on the original subjects. It lost 0.244 points and saved 4,574 lookups on the additional subjects. This adds a lower-cost archived operating point with a quality tradeoff. The evidence favors retaining the original witness rule as the reference for fresh-model testing.
 
+A follow-up compared the same lookup budget with simpler controls. One admission attempt per episode used fewer lookups and scored slightly higher in both subject sets. [Fixed-budget comparison](prompteval-witness-budget-controls.md)
+
 ## Reproduce
 
 Use Python 3.12 and the repository's recorded archives and receipts. Verification blocked DNS and sockets and used a disposable overlay bounded at 0.2 GiB under the standing LAB exception. Storage Guard measured 6.1 GiB free. The replay made zero new provider requests. [Boundary and reuse tests](../tests/unit/test_prompteval_retired_admission_witness.py)
