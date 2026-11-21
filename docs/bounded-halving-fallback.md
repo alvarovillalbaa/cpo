@@ -17,6 +17,8 @@ Figures are added passes and added lookups relative to the original one-admissio
 
 The full replay uses 32 new validation lookups per eligible episode, enough for all recorded schedules. BBH and LMentry spent the same 1,575 proof lookups in both versions. With tight caps the bound-based selector can fund proofs in additional episodes, so total paid lookups and holdout scores can move in either direction. At cap 16 the certified selector saved 288 lookups and lost three passes against plain Halving on BBH and LMentry. GSM8K still gained zero passes. These experiments use archived binary grades, and fresh-model fallback performance remains open. [Replay runner](../benchmarks/witness_fallback_caps.py)
 
+A separate prospective plan compares the 16-lookup fallback with the original witness and GEPA arms and two Halving-only controls. [Prospective fallback comparison](grounded-witness-halving.md)
+
 ## Use the selector
 
 Use one search object per sequential episode. Supply already observed validation grades keyed by `(prompt, case_id)` and pass candidate prompts in tie-break order. The callback returns an exact `bool` for each new grade. The returned string is the Halving winner. A return value of `None` means search stopped at the cap. On a completed path, independent qualification can evaluate a challenger on separate cases.
