@@ -21,6 +21,8 @@ Both training families selected the original 24-lookup proof-only policy. No tra
 
 The probe switched 32 of 539 MMLU nominees and bought 1,050 new validation grades. At cap 24 it lost one pooled pass and used 830 more total lookups than proof-only. At cap 20 it gained 14 pooled passes over the matching proof-only arm and spent 716 more lookups. The 95% paired ranges for both MMLU cohorts included zero at every cap. On BBH and LMentry, the cap-16 probe lost 857 passes against its proof-only control. Its paired range was −2.590 to −1.446 percentage points. The result records the cost of reserving room for one shared case in this proof policy. Fresh model behavior remains unverified.
 
+Changing proof read order at cap 24 saved 1,799 lookups with the same deployments. [Budgeted admission ordering](witness-budgeted-admission.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel in a clean source export. Sixteen targeted tests passed. Two offline replays produced byte-identical reports and the original plan reproduced. The CLI rejected a stale seal before creating output. Storage Guard measured 5.8 GiB free. The export and wheel overlay used the standing 0.2 GiB LAB exception and were removed.
