@@ -18,6 +18,10 @@ The qualifying and rejected paths keep the original journal format. A qualifying
 
 The outage fixture fails every outage scoring reply and leaves search replies intact. Both development runners selected the same prompts, charged the same search requests, and wrote identical search journal entries. The qualifying ordered run used the same physical scoring request and reply pairs in its new sequence. With DNS and sockets blocked, 41 targeted tests passed and five ordered archives reproduced byte for byte. The rehearsal made zero provider requests. The existing live plan preview reproduced byte for byte. Storage Guard measured 6.2 GiB free. The bounded export, fixture archives, and publication worktree used the standing 0.2 GiB LAB exception. [Journal and confirmation tests](../tests/unit/test_grounded_witness_ordered_futility.py)
 
+## SDK checkpoint rehearsal
+
+The Luna adapter bound this portable seal to the existing 2,712-generation ceiling. Both mock development runs paused during ordered scoring, after 400 settled pairs. The qualifying run sent 260 new pairs after resume and completed the panel. The outage fixture sent 100 new pairs and stopped early. The resumed archives matched all six files from the uninterrupted runs. Mock confirmation completed after 128 calls or rejected at 55 with an outage fault. The rehearsal used OpenAI 2.44.0 and HTTPX 0.28.1 with sockets and DNS blocked. [SDK and checkpoint receipt](grounded-witness-ordered-futility-sdk-rehearsal-v1.json)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. The development seal below also accepts `--profile outage-scoring-failure` or `--profile rejected-admission` in a fresh directory.
