@@ -15,6 +15,8 @@ The control routes by a fixed hash of each eligible episode's identity at rates 
 
 The held-out budget drift blocks adoption. The paid rule beat the affordable blind point on BBH, LMentry, and Promptolution. It exceeded the spending target on each of those families. MMLU stayed within budget and underperformed retention. The result measures archived selection and lookup costs. The prospective model comparison still uses its sealed fixed policy. [Prospective comparison](grounded-witness-halving.md)
 
+A follow-up enforced a shared budget by reserving the complete search and proof before every fallback. BBH beat the equally funded trained blind order, and the other three families missed that transfer gate. [Hard-budget comparison](witness-fallback-reserve.md)
+
 ## Reproduce
 
 Two socket- and DNS-blocked replays produced identical results. The unconditional replay matched the published cap‑16 gains and costs on all five task groups. Nine targeted tests passed, including a withheld-label test that changes a family's outcomes and verifies its fitted rule stays the same. Storage Guard measured 6.0 GiB free. The disposable source and wheel overlay fit within the standing LAB exception's 0.2 GiB scope. [Runner](../benchmarks/witness_fallback_routing.py) · [Tests](../tests/unit/test_witness_fallback_routing.py)
