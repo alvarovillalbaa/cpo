@@ -22,6 +22,8 @@ The outage fixture fails every outage scoring reply and leaves search replies in
 
 The Luna adapter bound this portable seal to the existing 2,712-generation ceiling. Both mock development runs paused during ordered scoring, after 400 settled pairs. The qualifying run sent 260 new pairs after resume and completed the panel. The outage fixture sent 100 new pairs and stopped early. The resumed archives matched all six files from the uninterrupted runs. Mock confirmation completed after 128 calls or rejected at 55 with an outage fault. The rehearsal used OpenAI 2.44.0 and HTTPX 0.28.1 with sockets and DNS blocked. [SDK and checkpoint receipt](grounded-witness-ordered-futility-sdk-rehearsal-v1.json)
 
+A separate rehearsal reordered input fields on half of the confirmation cases and tested a case-level check for errors shared by every arm. [Field-order confirmation study](witness-confirmation-field-order.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. The development seal below also accepts `--profile outage-scoring-failure` or `--profile rejected-admission` in a fresh directory.
