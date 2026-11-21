@@ -30,6 +30,8 @@ The audit freezes every paid search lookup. It measures several choices for the 
 
 The already-evaluated menu adds 599 passes beyond the retention ceiling and 510 beyond the paid paired-win menu. It isolates a question for the next comparison. A selector must choose among already-evaluated nominees with only their paid evidence and a proof allowance available before dispatch. This audit measures the room for such a selector. It used zero provider requests. [Frozen ceilings by subject](witness-mmlu-gap-results-v1.json)
 
+The follow-up tested three rankings on the existing paid evidence. They changed just one of 539 MMLU nominations and produced no net gain. [Paid nominee ranking replay](witness-paid-nominee-ranking.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel from a clean source export. Two full replays produced byte-identical reports, and the earlier CPO scores, costs, native traces, and original live plan reproduced. Twelve targeted tests passed with DNS and sockets blocked. Storage Guard measured 5.9 GiB free. The task-owned export and wheel overlay fit the standing 0.2 GiB LAB exception and were removed. [Proof-budget and attribution tests](../tests/unit/test_witness_mmlu_gap.py)
