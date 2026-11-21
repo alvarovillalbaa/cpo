@@ -32,6 +32,8 @@ The already-evaluated menu adds 599 passes beyond the retention ceiling and 510 
 
 The follow-up tested three rankings on the existing paid evidence. They changed just one of 539 MMLU nominations and produced no net gain. [Paid nominee ranking replay](witness-paid-nominee-ranking.md)
 
+A later fit used exact proof outcomes from the other benchmark family. It changed 555 first nominees on BBH and LMentry and retained all 539 original MMLU nominees. [Cross-family first-proof fit](witness-first-proof-fit.md)
+
 The next coverage audit found that 280 of 293 MMLU episodes without a nominee had a stronger candidate already reached by paid search. A one-read probe of unread alternatives after nomination failed the transfer gate. [Coverage and pre-proof probe](witness-unread-nominee-probe.md)
 
 ## Reproduce
