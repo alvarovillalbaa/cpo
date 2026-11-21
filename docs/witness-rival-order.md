@@ -16,6 +16,8 @@ On MMLU, a perfect side scheduler could make room for at least one improving pai
 
 Promotion-first scheduling changed zero deployments across all 1,066 observed second attempts. It used 156 extra lookups, including 14 on MMLU, and the paired score intervals were zero in all three cohorts. The measured headroom is for reordering cases and considering all paid rivals with hindsight. The tested scheduler changed only which side to read next for the original ranked rival. [Full results](witness-rival-order-results-v1.json)
 
+Chronological peer-model validation grades supported a case reorder in 986 second attempts. The resulting policy added eight pooled MMLU passes and failed the cross-cohort gate. [Peer case-order replay](witness-peer-case-order.md)
+
 ## Reproduce
 
 Use a clean export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 30 targeted tests passed and two replays matched byte for byte. The complete parent audit reproduced, the CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. The replay issued zero provider requests. Storage Guard measured 5.7 GiB free. The export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Certificate tests](../tests/unit/test_witness_rival_order.py)
