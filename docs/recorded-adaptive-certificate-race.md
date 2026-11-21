@@ -19,6 +19,8 @@ On eight-challenger rotated ARC-AGI, the lookup-based race changed 16 deployment
 
 On eight-challenger rotated AIME the adaptive race switched candidates 2,631 times, changed ten deployments, and added 337 lookups while losing nine passes. It did worse at every AIME width and start. The earlier qualification-only ARC-AGI policy scored higher on fewer lookups on both rotations. The evidence favors keeping the adaptive race out of the default policy. [Qualification-only ARC-AGI results](recorded-calibrated-training-route.md#frozen-rule-on-the-math-archives)
 
+A follow-up moved both validation and training into the candidate race before qualifying one nominee. It improved ARC-AGI quality at additional cost and still trailed the original adaptive race on rotated AIME. [Joint candidate race](recorded-joint-candidate-race.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Two network-denied replays matched byte for byte, including all seeded and native cost frontiers. An independent check verified all 3,040 deployments against the complete validation, training, and qualification margins. All 48 targeted tests passed, including exhaustive small-pool certification, protected validation rows, and reserve limits. The CLI rejected the prior seal. The public selector parity receipt and sealed live-plan preview reproduced. Storage Guard measured 2.9 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent.
