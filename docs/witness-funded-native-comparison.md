@@ -17,6 +17,8 @@ The gate requires a positive lower endpoint against the resampled native compara
 
 On BBH and LMentry, funded retry passed the paired native gate and spent 666 fewer lookups than the original seeded CPO proof. Its observed equal-subject score was 1.143 percentage points above the best hindsight subject-by-subject native allocation at the same budget. The single proof also cleared the native quality gate at its own lower budget. Both MMLU intervals crossed zero, and the funded policy exceeded seeded CPO spend in both MMLU cohorts. The all-cohort gate failed. [Complete results and draw-level comparator frequencies](witness-funded-native-comparison-results-v1.json)
 
+The opt-in CPO API reproduced both retry thresholds, including the exact proof callback order, on all 2,240 episodes from an installed wheel. [Package API and replay](funded-admission.md)
+
 ## Reproduce
 
 Use a clean source export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 46 targeted tests passed and two full replays matched byte for byte. The CLI rejected a stale seal and the prospective live manifest reproduced byte for byte. The replay issued zero provider calls. Storage Guard measured 5.4 GiB free. The export, wheel overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Budget reselection tests](../tests/unit/test_witness_funded_native_comparison.py)
