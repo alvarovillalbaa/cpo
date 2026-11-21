@@ -17,7 +17,7 @@ At the tighter ceiling and four-quote price, CPO gained 308 passes over batched 
 
 ## Reproduce offline
 
-Use Python 3.12 and the pinned GEPA 0.1.4 wheel from the repository revision that added this receipt. Storage Guard measured 8.5 GiB free. The standing LAB exception covered the bounded 0.1 GiB temporary source export and wheel expansion. The replay blocked DNS and outbound sockets and removed the temporary files after verification. [Benchmark requirements](../requirements-benchmark.txt)
+Use Python 3.12 and the pinned GEPA 0.1.4 wheel from the [source revision for this receipt](https://github.com/alvarovillalbaa/cpo/tree/d35a970a2cc5cff2bb8c4504f2a7d25d09e5a80e). Storage Guard measured 8.5 GiB free. The standing LAB exception covered the bounded 0.1 GiB temporary source export and wheel expansion. The replay blocked DNS and outbound sockets and removed the temporary files after verification. [Benchmark requirements](../requirements-benchmark.txt)
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.recorded_arc_lineage_quotes --skip-empty-slots
@@ -25,3 +25,5 @@ PYTHONHASHSEED=0 python -B -m benchmarks.recorded_arc_lineage_quotes --skip-empt
   --execute 20a4b07a83a3c973798c1674e57df25a6c8a09a873faba3252a42fbfc09d0f34 \
   --out NEW_REPORT.json
 ```
+
+The follow-up also removed empty slots from GEPA’s native samplers and tested a reserve based on available slots. [Matched GEPA controls](recorded-arc-native-empty-slots.md)

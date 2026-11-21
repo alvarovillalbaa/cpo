@@ -25,7 +25,7 @@ ARMS = ('retain-start', *CPO, *GEPA)
 FAMILY_FIELD = {'ticket': 'Channel', 'warehouse': 'Site', 'outage': 'Plan'}
 
 
-def gepa_select(initial, bank, groups, evaluate, reflect, *, cap, seed, width):
+def gepa_select(initial, bank, groups, evaluate, reflect, *, cap, seed, width, reserve_round_reads=True):
     from gepa.optimize_anything import EngineConfig, GEPAConfig, ReflectionConfig, TrackingConfig, optimize_anything
     from gepa.strategies.proposal_sampling import SameParentSampling
     from gepa.utils.stop_condition import ScoreThresholdStopper
@@ -50,6 +50,9 @@ def gepa_select(initial, bank, groups, evaluate, reflect, *, cap, seed, width):
         return {component: supplied if supplied is not None else reflect(parent, observations)}
 
     probes = grounded.MINIBATCH
+    stop_callbacks = [ScoreThresholdStopper(1.0)]
+    if reserve_round_reads:
+        stop_callbacks.append(lambda _: requests + width * (2 * probes + len(validation)) > cap)
     config = GEPAConfig(
         engine=EngineConfig(seed=seed, parallel=False, use_cloudpickle=False, cache_evaluation=True,
                             max_metric_calls=cap, max_candidate_proposals=grounded.REFLECTION_LIMIT // width,
@@ -57,8 +60,7 @@ def gepa_select(initial, bank, groups, evaluate, reflect, *, cap, seed, width):
         reflection=ReflectionConfig(reflection_lm=None, custom_candidate_proposer=propose,
                                     reflection_minibatch_size=probes),
         tracking=TrackingConfig(logger=grounded.GepaLogger()),
-        stop_callbacks=[ScoreThresholdStopper(1.0),
-                        lambda _: requests + width * (2 * probes + len(validation)) > cap],
+        stop_callbacks=stop_callbacks,
     )
     return optimize_anything(initial, evaluator=metric, dataset=train, valset=validation,
                              config=config).best_candidate
