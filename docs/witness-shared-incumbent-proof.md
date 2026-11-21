@@ -20,6 +20,8 @@ On MMLU, reuse funded 19 retries with 127 cached incumbent replies. Seventeen en
 
 The fit on BBH and LMentry selected reuse for MMLU. The fit on MMLU selected direct-only for BBH and LMentry. The paired lower endpoint against the single proof remained positive only on BBH and LMentry, so the overall gate remained unmet. The replay used archived grades with zero provider requests. [Complete paired results and proof counts](witness-shared-incumbent-proof-results-v1.json)
 
+The follow-up priced the entire paid backup roster on the same panels. The MMLU ceiling gained only three additional passes under the original queue budget. [Backup ranking and hindsight ceilings](witness-shared-rival-ranking.md)
+
 ## Reproduce
 
 Use Python 3.12 with the hash-pinned GEPA 0.1.4 wheel in a clean source export. With outbound sockets and DNS disabled, 43 targeted tests passed and two replays produced identical reports. The direct-only and disjoint retry queues reproduced their funded traces, scores, and costs. The CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. Storage Guard measured 6.4 GiB free. The source export, wheel overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Proof accounting tests](../tests/unit/test_witness_shared_incumbent_proof.py)
