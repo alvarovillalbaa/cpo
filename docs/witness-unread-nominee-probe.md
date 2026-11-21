@@ -18,6 +18,8 @@ Of 539 MMLU episodes with a nominee, 375 had an unread alternative that scored a
 
 Of the 293 MMLU episodes with no nominee, 280 had a stronger candidate with at least one paid grade. No episode in that group had a stronger unread candidate. This points to a gap in the evidence used to nominate among candidates the search already reached. The counts measure held-out quality before pricing a new independent proof. [Coverage counts by cohort](witness-unread-nominee-probe-results-v1.json)
 
+Pricing all paid candidates found an independently qualifying improvement in 205 of those episodes. The four paid-evidence selectors failed the transfer gate. [No-nominee admission replay](witness-no-nominee-admission.md)
+
 ## Reproduce
 
 Use a clean source export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With sockets and DNS blocked, 41 targeted tests passed and two replays matched byte for byte. The original single-proof scores and costs reproduced. The CLI rejected a stale seal and the prospective live plan reproduced byte for byte. Storage Guard measured 5.2 GiB free. The export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Probe tests](../tests/unit/test_witness_unread_nominee_probe.py)
