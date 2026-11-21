@@ -17,6 +17,8 @@ On AIME, expected-cost ordering saved CPO 48 paid lookups. With the same order p
 
 The hindsight floor keeps each original search and precheck. After nomination, it uses the archived pair to count the fewest unread replies that could prove the same qualification decision. Each such reply can tighten the relevant bound by at most one. The floor selects the replies that tighten it, which requires their future outcomes. On the AIME rotation, the two hindsight floors are 11,872 for CPO and 13,144 for batched GEPA, a 9.7% saving. This diagnostic quantifies what qualification scheduling can save on the fixed paths. Held-out scores stay fixed under every exact schedule.
 
+A follow-up reordered validation while preserving the top-scoring prompt. The changed schedule exposed different backups and moved both costs and held-out scores. [Validation race ordering](recorded-validation-race-order.md)
+
 ## Reproduce
 
 Use Python 3.12 with the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 27 targeted tests passed, including every binary reply matrix for a three-case proof, and two replays matched byte for byte. The CLI rejected the earlier seal and the original ordered live plan reproduced. Storage Guard measured 5.8 GiB free. The 39 MiB source export and publication worktree fit the standing 0.2 GiB LAB exception. The replay used zero provider requests. [Proof tests](../tests/unit/test_recorded_paid_qualification_order.py)

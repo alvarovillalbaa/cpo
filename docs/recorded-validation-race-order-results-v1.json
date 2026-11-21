@@ -1,0 +1,1409 @@
+{
+  "plan": {
+    "arms": [
+      "qualification-first-without-backup",
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck",
+      "recent-first",
+      "one-shared-missed-case-probe"
+    ],
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "challengerCounts": [
+      4,
+      8
+    ],
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "minimumLookupSavingPercent": 10,
+    "parentPlanSha256": "1e1a1f694b62dce9be3d609096284563b711ac673c892261a44597981bffc602",
+    "parentReceiptSha256": "a7e0d401c77b4951bc381922b2ae48218f459a856d4d095d7c369fbcac76d677",
+    "protocol": "recorded-validation-race-order-v1",
+    "scope": "Retain seed rosters, exact validation score, seed rank for ties, and protected critical passes. Race newest recorded discovery first or rank by one shared check on an incumbent miss. Use the same training and independent qualification gates and matched GEPA controls. Record changes in paid backup availability and final deployment.",
+    "searchCap": 180,
+    "sourceSha256": "5e5563e2d27e7de97b221fdd34be2504500c36ad88077e0b279b533ccb66e104"
+  },
+  "planSha256": "0d14cbe9144566f88fe3abe599b045007b2e4d0fef74175446de64ebdb988d09",
+  "providerRequests": 0,
+  "results": {
+    "aime": {
+      "root/4": {
+        "comparison": {
+          "one-shared-missed-case-probe": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -17,
+                12
+              ],
+              "gepa-sequential": [
+                -20,
+                13
+              ],
+              "joint": [
+                -21,
+                9
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.02464788732394366,
+              "gepa-sequential": 0.04590163934426229
+            }
+          },
+          "recent-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -17,
+                12
+              ],
+              "gepa-sequential": [
+                -20,
+                13
+              ],
+              "joint": [
+                -21,
+                9
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.0977112676056338,
+              "gepa-sequential": -0.022131147540983605
+            }
+          }
+        },
+        "deploymentChanges": {
+          "one-shared-missed-case-probe": {
+            "awayFromBaseline": 0,
+            "backupChanged": 7,
+            "backupGained": 3,
+            "backupLost": 3,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "improved": 0,
+            "regressed": 0
+          },
+          "recent-first": {
+            "awayFromBaseline": 0,
+            "backupChanged": 13,
+            "backupGained": 8,
+            "backupLost": 2,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "improved": 0,
+            "regressed": 0
+          }
+        },
+        "totals": {
+          "gepa-batched-precheck": {
+            "holdoutPasses": 491,
+            "paidLookups": 1136,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 140,
+            "searchLookups": 996,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "44b65218ad77a18f25df4f0feb00b0f10e2f7cd3d3eed94aee42c6fa4340ebfb"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 493,
+            "paidLookups": 1220,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 157,
+            "searchLookups": 1063,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3bb6dbcde3549356fd2becabb6ece9c51b32c6ea5ea48b8cbd6d4e2b59166370"
+          },
+          "one-shared-missed-case-probe": {
+            "availableBackups": 5,
+            "backupPromotions": 0,
+            "deferredTraining": 18,
+            "holdoutPasses": 489,
+            "paidLookups": 1164,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 178,
+            "searchLookups": 986,
+            "sharedProbeLookups": 160,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "d520f31635c33ed9a88b0c6315c86cd45d6c503d51432d2440a7b75c3d432b50",
+            "trainingChecks": 19,
+            "trainingLookups": 148,
+            "trainingSkippedAfterQualification": 13,
+            "trainingVetoAfterQualification": 2,
+            "trainingVetoes": 12,
+            "validationLookups": 838
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 5,
+            "backupPromotions": 0,
+            "deferredTraining": 18,
+            "holdoutPasses": 489,
+            "paidLookups": 1159,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 178,
+            "searchLookups": 981,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "b0aed07e487884bd61594560e3f660f0db46bbea9c242f00c16254f508efc0c3",
+            "trainingChecks": 19,
+            "trainingLookups": 146,
+            "trainingSkippedAfterQualification": 13,
+            "trainingVetoAfterQualification": 2,
+            "trainingVetoes": 12
+          },
+          "recent-first": {
+            "availableBackups": 9,
+            "backupNominations": 1,
+            "backupPromotions": 0,
+            "deferredTraining": 12,
+            "holdoutPasses": 489,
+            "paidLookups": 1247,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 164,
+            "searchLookups": 1083,
+            "sharedProbeLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e8739f57e3fde22c22907f7b5fcb25921a941fbcd2f8e6a979a3df4d74c50c0a",
+            "trainingChecks": 27,
+            "trainingLookups": 203,
+            "trainingSkippedAfterQualification": 9,
+            "trainingVetoAfterQualification": 1,
+            "trainingVetoes": 18,
+            "validationLookups": 880
+          }
+        },
+        "trialCount": 40
+      },
+      "root/8": {
+        "comparison": {
+          "one-shared-missed-case-probe": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -23,
+                4
+              ],
+              "gepa-sequential": [
+                -27,
+                16
+              ],
+              "joint": [
+                -27,
+                3
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.11886586695747,
+              "gepa-sequential": 0.1339764201500536
+            }
+          },
+          "recent-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -23,
+                4
+              ],
+              "gepa-sequential": [
+                -27,
+                16
+              ],
+              "joint": [
+                -27,
+                3
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.03380588876772083,
+              "gepa-sequential": 0.05037513397642015
+            }
+          }
+        },
+        "deploymentChanges": {
+          "one-shared-missed-case-probe": {
+            "awayFromBaseline": 0,
+            "backupChanged": 9,
+            "backupGained": 2,
+            "backupLost": 4,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "improved": 0,
+            "regressed": 0
+          },
+          "recent-first": {
+            "awayFromBaseline": 0,
+            "backupChanged": 16,
+            "backupGained": 7,
+            "backupLost": 1,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "improved": 0,
+            "regressed": 0
+          }
+        },
+        "totals": {
+          "gepa-batched-precheck": {
+            "holdoutPasses": 494,
+            "paidLookups": 1834,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 176,
+            "searchLookups": 1658,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "34e49f1ca0cee6265d82c0b3dacf7d1415d6eea667890f44e97e615b0ac6271b"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 491,
+            "paidLookups": 1866,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 197,
+            "searchLookups": 1669,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "4df27454ad55bc5fda70102840e4a14e2eeb293b3c4c3422ed240ca3ce070dd2"
+          },
+          "one-shared-missed-case-probe": {
+            "availableBackups": 6,
+            "backupNominations": 1,
+            "backupPromotions": 0,
+            "deferredTraining": 19,
+            "holdoutPasses": 485,
+            "paidLookups": 1616,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 196,
+            "searchLookups": 1420,
+            "sharedProbeLookups": 320,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e758949328e42e87b0b8057d83f7721d475e8e05fe9e58b986425955de71d9ba",
+            "trainingChecks": 25,
+            "trainingLookups": 198,
+            "trainingSkippedAfterQualification": 12,
+            "trainingVetoAfterQualification": 3,
+            "trainingVetoes": 14,
+            "validationLookups": 1222
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 7,
+            "backupNominations": 1,
+            "backupPromotions": 0,
+            "deferredTraining": 17,
+            "holdoutPasses": 485,
+            "paidLookups": 1607,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 191,
+            "searchLookups": 1416,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "4e8d26d97c60a1b339f9f5050af60f01afe9116c13643d9781d80cf521408f16",
+            "trainingChecks": 26,
+            "trainingLookups": 200,
+            "trainingSkippedAfterQualification": 12,
+            "trainingVetoAfterQualification": 2,
+            "trainingVetoes": 15
+          },
+          "recent-first": {
+            "availableBackups": 12,
+            "backupNominations": 3,
+            "backupPromotions": 0,
+            "deferredTraining": 11,
+            "holdoutPasses": 485,
+            "paidLookups": 1772,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 181,
+            "searchLookups": 1591,
+            "sharedProbeLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "abca687461ff1ac20b894c6a63338bd1bbcaa5ccdbd8982748be9a4c0a4269cf",
+            "trainingChecks": 36,
+            "trainingLookups": 264,
+            "trainingSkippedAfterQualification": 7,
+            "trainingVetoAfterQualification": 1,
+            "trainingVetoes": 22,
+            "validationLookups": 1327
+          }
+        },
+        "trialCount": 40
+      },
+      "rotated/4": {
+        "comparison": {
+          "one-shared-missed-case-probe": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                38
+              ],
+              "gepa-sequential": [
+                -27,
+                25
+              ],
+              "joint": [
+                -27,
+                25
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.0049382716049382715,
+              "gepa-sequential": 0.053173811897640415
+            }
+          },
+          "recent-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -17,
+                37
+              ],
+              "gepa-sequential": [
+                -28,
+                24
+              ],
+              "joint": [
+                -28,
+                24
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.04738389182833627,
+              "gepa-sequential": 0.013182674199623353
+            }
+          }
+        },
+        "deploymentChanges": {
+          "one-shared-missed-case-probe": {
+            "awayFromBaseline": 1,
+            "backupChanged": 22,
+            "backupGained": 7,
+            "backupLost": 9,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "improved": 0,
+            "regressed": 0
+          },
+          "recent-first": {
+            "awayFromBaseline": 1,
+            "backupChanged": 64,
+            "backupGained": 41,
+            "backupLost": 11,
+            "grossGain": 0,
+            "grossLoss": 1,
+            "improved": 0,
+            "regressed": 1
+          }
+        },
+        "totals": {
+          "gepa-batched-precheck": {
+            "holdoutPasses": 4067,
+            "paidLookups": 8505,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1161,
+            "searchLookups": 7344,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "156f691d876d0677455e20d194a17e6a12661037565f2912c3d0eaa75adc3691"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 4079,
+            "paidLookups": 9027,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1200,
+            "searchLookups": 7827,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "12da8ef1e742fb59d6f9cac1f42338663be831e862932946bae79b5b01432f1d"
+          },
+          "one-shared-missed-case-probe": {
+            "availableBackups": 34,
+            "backupNominations": 11,
+            "backupPromotions": 4,
+            "deferredTraining": 133,
+            "holdoutPasses": 4078,
+            "paidLookups": 8547,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1426,
+            "searchLookups": 7121,
+            "sharedProbeLookups": 1204,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e51bbbfad7865426a0a64e3532d0c6f590ffe1aa175a9716169a21ed01731fbf",
+            "trainingChecks": 129,
+            "trainingLookups": 994,
+            "trainingSkippedAfterQualification": 94,
+            "trainingVetoAfterQualification": 25,
+            "trainingVetoes": 82,
+            "validationLookups": 6127
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 36,
+            "backupNominations": 12,
+            "backupPromotions": 5,
+            "deferredTraining": 131,
+            "holdoutPasses": 4078,
+            "paidLookups": 8566,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1428,
+            "searchLookups": 7138,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bccfa5f56b72ea81dc67495bafec321327aba24689b18273ed3063f5fb191d11",
+            "trainingChecks": 133,
+            "trainingLookups": 1024,
+            "trainingSkippedAfterQualification": 92,
+            "trainingVetoAfterQualification": 24,
+            "trainingVetoes": 84
+          },
+          "recent-first": {
+            "availableBackups": 57,
+            "backupNominations": 16,
+            "backupPromotions": 4,
+            "deferredTraining": 101,
+            "holdoutPasses": 4077,
+            "paidLookups": 8908,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1320,
+            "searchLookups": 7588,
+            "sharedProbeLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "fbc94df406dcfd64e22e82688baa37643318ed393f975ccf259dc581f456a047",
+            "trainingChecks": 174,
+            "trainingLookups": 1282,
+            "trainingSkippedAfterQualification": 72,
+            "trainingVetoAfterQualification": 18,
+            "trainingVetoes": 116,
+            "validationLookups": 6306
+          }
+        },
+        "trialCount": 320
+      },
+      "rotated/8": {
+        "comparison": {
+          "one-shared-missed-case-probe": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -30,
+                46
+              ],
+              "gepa-sequential": [
+                -39,
+                16
+              ],
+              "joint": [
+                -39,
+                16
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.08412331118907218,
+              "gepa-sequential": 0.10444493102693234
+            }
+          },
+          "recent-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -31,
+                47
+              ],
+              "gepa-sequential": [
+                -41,
+                15
+              ],
+              "joint": [
+                -41,
+                15
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.03754571919086363,
+              "gepa-sequential": 0.058900810159842346
+            }
+          }
+        },
+        "deploymentChanges": {
+          "one-shared-missed-case-probe": {
+            "awayFromBaseline": 4,
+            "backupChanged": 44,
+            "backupGained": 14,
+            "backupLost": 14,
+            "grossGain": 0,
+            "grossLoss": 10,
+            "improved": 0,
+            "regressed": 3
+          },
+          "recent-first": {
+            "awayFromBaseline": 6,
+            "backupChanged": 110,
+            "backupGained": 53,
+            "backupLost": 21,
+            "grossGain": 0,
+            "grossLoss": 11,
+            "improved": 0,
+            "regressed": 4
+          }
+        },
+        "totals": {
+          "gepa-batched-precheck": {
+            "holdoutPasses": 4055,
+            "paidLookups": 13397,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1357,
+            "searchLookups": 12040,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "2687195d8123af5e19834a64d7569558c7f297a3144f43c75ea2846bf332362e"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 4074,
+            "paidLookups": 13701,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1400,
+            "searchLookups": 12301,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "79048a160baaca7098d2f8c5a3c037b799d49e379efce48c4a301af92979bdd4"
+          },
+          "one-shared-missed-case-probe": {
+            "availableBackups": 56,
+            "backupNominations": 12,
+            "backupPromotions": 2,
+            "deferredTraining": 130,
+            "holdoutPasses": 4063,
+            "paidLookups": 12270,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1489,
+            "searchLookups": 10781,
+            "sharedProbeLookups": 2408,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "426f80bed3b4a3a1d235dc5e92cef6dfe2ca0515f9d04f65d2cd78342eba9db7",
+            "trainingChecks": 189,
+            "trainingLookups": 1421,
+            "trainingSkippedAfterQualification": 91,
+            "trainingVetoAfterQualification": 26,
+            "trainingVetoes": 126,
+            "validationLookups": 9360
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 58,
+            "backupNominations": 16,
+            "backupPromotions": 6,
+            "deferredTraining": 130,
+            "holdoutPasses": 4073,
+            "paidLookups": 12164,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1510,
+            "searchLookups": 10654,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "b38f0ec1c55f307df832790f3006f737733ee065e74c7abd3513a1957b64dd23",
+            "trainingChecks": 192,
+            "trainingLookups": 1451,
+            "trainingSkippedAfterQualification": 90,
+            "trainingVetoAfterQualification": 25,
+            "trainingVetoes": 125
+          },
+          "recent-first": {
+            "availableBackups": 84,
+            "backupNominations": 20,
+            "backupPromotions": 0,
+            "deferredTraining": 98,
+            "holdoutPasses": 4062,
+            "paidLookups": 12894,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1390,
+            "searchLookups": 11504,
+            "sharedProbeLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bca9b1f25e79de2fe92e83021bdbfb2a70d14161213a0b71a88b9d5b8cf6bdcb",
+            "trainingChecks": 240,
+            "trainingLookups": 1750,
+            "trainingSkippedAfterQualification": 68,
+            "trainingVetoAfterQualification": 19,
+            "trainingVetoes": 167,
+            "validationLookups": 9754
+          }
+        },
+        "trialCount": 320
+      }
+    },
+    "arc": {
+      "root/4": {
+        "comparison": {
+          "one-shared-missed-case-probe": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                8
+              ],
+              "gepa-sequential": [
+                -7,
+                23
+              ],
+              "joint": [
+                -16,
+                8
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.08215962441314555,
+              "gepa-sequential": -0.15106117353308365
+            }
+          },
+          "recent-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                8
+              ],
+              "gepa-sequential": [
+                -7,
+                23
+              ],
+              "joint": [
+                -16,
+                8
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.15551643192488263,
+              "gepa-sequential": -0.22908863920099876
+            }
+          }
+        },
+        "deploymentChanges": {
+          "one-shared-missed-case-probe": {
+            "awayFromBaseline": 0,
+            "backupChanged": 4,
+            "backupGained": 0,
+            "backupLost": 4,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "improved": 0,
+            "regressed": 0
+          },
+          "recent-first": {
+            "awayFromBaseline": 0,
+            "backupChanged": 28,
+            "backupGained": 16,
+            "backupLost": 4,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "improved": 0,
+            "regressed": 0
+          }
+        },
+        "totals": {
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 170507388200,
+            "historicalErrors": 93,
+            "holdoutPasses": 1565,
+            "paidLookups": 1704,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 355,
+            "searchLookups": 1349,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bc9194452dd6807d0971a183bcf424159d9170d394217f77717abb90822dbbc5"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 160792534550,
+            "historicalErrors": 84,
+            "holdoutPasses": 1553,
+            "paidLookups": 1602,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 358,
+            "searchLookups": 1244,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8c0adf9a18f01ea87b6eba2f1fe993b3c5d03c6fd0816d91a2b39ed3a68ce063"
+          },
+          "one-shared-missed-case-probe": {
+            "backupPromotions": 0,
+            "deferredTraining": 22,
+            "historicalCostNanodollars": 185240163650,
+            "historicalErrors": 109,
+            "holdoutPasses": 1561,
+            "paidLookups": 1844,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 358,
+            "searchLookups": 1486,
+            "sharedProbeLookups": 160,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "83c7fe1b5bd80960ab2ab4e94af9ea2ff60897908594267e8a66c227bf807dd8",
+            "trainingChecks": 40,
+            "trainingLookups": 518,
+            "trainingVetoes": 0,
+            "validationLookups": 968
+          },
+          "qualification-first-without-backup": {
+            "backupPromotions": 0,
+            "deferredTraining": 18,
+            "historicalCostNanodollars": 182080770650,
+            "historicalErrors": 107,
+            "holdoutPasses": 1561,
+            "paidLookups": 1820,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 358,
+            "searchLookups": 1462,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "b6ff4a620278703a0d310358d68418a4ca7cdf314ff49902f405cca69ddd3489",
+            "trainingChecks": 40,
+            "trainingLookups": 518,
+            "trainingVetoes": 0
+          },
+          "recent-first": {
+            "backupPromotions": 0,
+            "deferredTraining": 6,
+            "historicalCostNanodollars": 204194325750,
+            "historicalErrors": 111,
+            "holdoutPasses": 1561,
+            "paidLookups": 1969,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 358,
+            "searchLookups": 1611,
+            "sharedProbeLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "164c8bf973a136538dd8ab56f42869eaddc31a442f87d94c14e73cf2158f740e",
+            "trainingChecks": 40,
+            "trainingLookups": 518,
+            "trainingVetoes": 0,
+            "validationLookups": 1093
+          }
+        },
+        "trialCount": 40
+      },
+      "root/8": {
+        "comparison": {
+          "one-shared-missed-case-probe": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -1,
+                35
+              ],
+              "gepa-sequential": [
+                -6,
+                48
+              ],
+              "joint": [
+                -6,
+                34
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.0262551819438047,
+              "gepa-sequential": 0.05244285073957866
+            }
+          },
+          "recent-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -1,
+                35
+              ],
+              "gepa-sequential": [
+                -6,
+                48
+              ],
+              "joint": [
+                -6,
+                34
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.0391524643021649,
+              "gepa-sequential": -0.011205737337516808
+            }
+          }
+        },
+        "deploymentChanges": {
+          "one-shared-missed-case-probe": {
+            "awayFromBaseline": 0,
+            "backupChanged": 8,
+            "backupGained": 0,
+            "backupLost": 3,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "improved": 0,
+            "regressed": 0
+          },
+          "recent-first": {
+            "awayFromBaseline": 0,
+            "backupChanged": 32,
+            "backupGained": 14,
+            "backupLost": 3,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "improved": 0,
+            "regressed": 0
+          }
+        },
+        "totals": {
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 233813958600,
+            "historicalErrors": 102,
+            "holdoutPasses": 1562,
+            "paidLookups": 2171,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 354,
+            "searchLookups": 1817,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f0d38ab212da3f17fad6a0cd81786fa847681c12a09e254e75f3689ca2a7c05f"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 242198837100,
+            "historicalErrors": 113,
+            "holdoutPasses": 1558,
+            "paidLookups": 2231,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 358,
+            "searchLookups": 1873,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "69d067e540ba6dd0638708f5dbc19a3323f4abce95942fff7b20bf866d658943"
+          },
+          "one-shared-missed-case-probe": {
+            "backupPromotions": 0,
+            "deferredTraining": 19,
+            "historicalCostNanodollars": 230473376900,
+            "historicalErrors": 115,
+            "holdoutPasses": 1578,
+            "paidLookups": 2114,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 355,
+            "searchLookups": 1759,
+            "sharedProbeLookups": 320,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "31d726cbc0085bb1f5ad3c17e17283d0254de154be5289e0bd765cbc4bc156e3",
+            "trainingChecks": 40,
+            "trainingLookups": 518,
+            "trainingVetoes": 0,
+            "validationLookups": 1241
+          },
+          "qualification-first-without-backup": {
+            "backupPromotions": 0,
+            "deferredTraining": 16,
+            "historicalCostNanodollars": 217701481300,
+            "historicalErrors": 114,
+            "holdoutPasses": 1578,
+            "paidLookups": 2020,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 355,
+            "searchLookups": 1665,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bf64fa0081779471178501d12c34c87d4c7349e48c775ed1b89e22714449dd3a",
+            "trainingChecks": 40,
+            "trainingLookups": 518,
+            "trainingVetoes": 0
+          },
+          "recent-first": {
+            "backupPromotions": 0,
+            "deferredTraining": 5,
+            "historicalCostNanodollars": 254294014100,
+            "historicalErrors": 116,
+            "holdoutPasses": 1578,
+            "paidLookups": 2256,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 355,
+            "searchLookups": 1901,
+            "sharedProbeLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0cfc348f314ed10c0845f5ab324f544a9c80d92876c6e6e7705f5d8a2e09ba88",
+            "trainingChecks": 40,
+            "trainingLookups": 518,
+            "trainingVetoes": 0,
+            "validationLookups": 1383
+          }
+        },
+        "trialCount": 40
+      },
+      "rotated/4": {
+        "comparison": {
+          "one-shared-missed-case-probe": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                14,
+                120
+              ],
+              "gepa-sequential": [
+                -39,
+                54
+              ],
+              "joint": [
+                -39,
+                54
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.11615766118506918,
+              "gepa-sequential": -0.06686626746506986
+            }
+          },
+          "recent-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                55,
+                177
+              ],
+              "gepa-sequential": [
+                4,
+                110
+              ],
+              "joint": [
+                4,
+                110
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.195510310623858,
+              "gepa-sequential": -0.14271457085828343
+            }
+          }
+        },
+        "deploymentChanges": {
+          "one-shared-missed-case-probe": {
+            "awayFromBaseline": 1,
+            "backupChanged": 13,
+            "backupGained": 3,
+            "backupLost": 8,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "improved": 0,
+            "regressed": 0
+          },
+          "recent-first": {
+            "awayFromBaseline": 4,
+            "backupChanged": 70,
+            "backupGained": 43,
+            "backupLost": 13,
+            "grossGain": 50,
+            "grossLoss": 0,
+            "improved": 3,
+            "regressed": 0
+          }
+        },
+        "totals": {
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 960165678850,
+            "historicalErrors": 219,
+            "holdoutPasses": 13695,
+            "paidLookups": 7662,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1804,
+            "searchLookups": 5858,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "cfd13973cbad9e679f1873165ed455f17b0271607844753c6586d0d81cafc31f"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 1007711779350,
+            "historicalErrors": 211,
+            "holdoutPasses": 13755,
+            "paidLookups": 8016,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1831,
+            "searchLookups": 6185,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "758ac224f113496fe1f4b9a637e3033e4f637bd18252f8ff7f363dcde9e7d701"
+          },
+          "one-shared-missed-case-probe": {
+            "availableBackups": 9,
+            "backupNominations": 1,
+            "backupPromotions": 1,
+            "deferredTraining": 115,
+            "historicalCostNanodollars": 1120781541800,
+            "historicalErrors": 292,
+            "holdoutPasses": 13761,
+            "paidLookups": 8552,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2282,
+            "searchLookups": 6270,
+            "sharedProbeLookups": 864,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "6a60fa610e937420ffbe6f709acd52db3cbfaefd599f12f32c64cd46c3b3d077",
+            "trainingChecks": 101,
+            "trainingLookups": 1502,
+            "trainingSkippedAfterQualification": 55,
+            "trainingVetoAfterQualification": 23,
+            "trainingVetoes": 40,
+            "validationLookups": 4768
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 10,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "deferredTraining": 110,
+            "historicalCostNanodollars": 1104679883100,
+            "historicalErrors": 290,
+            "holdoutPasses": 13761,
+            "paidLookups": 8439,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2276,
+            "searchLookups": 6163,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "eb6f33514f9c7c15831bea458f05a0535d254129b1b48f594ee97149ede65951",
+            "trainingChecks": 101,
+            "trainingLookups": 1493,
+            "trainingSkippedAfterQualification": 56,
+            "trainingVetoAfterQualification": 21,
+            "trainingVetoes": 39
+          },
+          "recent-first": {
+            "availableBackups": 24,
+            "backupNominations": 6,
+            "backupPromotions": 4,
+            "deferredTraining": 80,
+            "historicalCostNanodollars": 1205930002650,
+            "historicalErrors": 302,
+            "holdoutPasses": 13811,
+            "paidLookups": 9160,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2220,
+            "searchLookups": 6940,
+            "sharedProbeLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "7ff4e0d8c257d4d1b47c734180ec754fcb9f099873f9d4df663956b59eda0002",
+            "trainingChecks": 137,
+            "trainingLookups": 1972,
+            "trainingSkippedAfterQualification": 34,
+            "trainingVetoAfterQualification": 18,
+            "trainingVetoes": 60,
+            "validationLookups": 4968
+          }
+        },
+        "trialCount": 360
+      },
+      "rotated/8": {
+        "comparison": {
+          "one-shared-missed-case-probe": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -5,
+                101
+              ],
+              "gepa-sequential": [
+                -4,
+                94
+              ],
+              "joint": [
+                -8,
+                90
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.034853298448888057,
+              "gepa-sequential": 0.13055555555555556
+            }
+          },
+          "recent-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                17,
+                138
+              ],
+              "gepa-sequential": [
+                20,
+                129
+              ],
+              "joint": [
+                15,
+                126
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.07914408521771632,
+              "gepa-sequential": 0.027861952861952862
+            }
+          }
+        },
+        "deploymentChanges": {
+          "one-shared-missed-case-probe": {
+            "awayFromBaseline": 2,
+            "backupChanged": 19,
+            "backupGained": 5,
+            "backupLost": 11,
+            "grossGain": 6,
+            "grossLoss": 0,
+            "improved": 1,
+            "regressed": 0
+          },
+          "recent-first": {
+            "awayFromBaseline": 5,
+            "backupChanged": 104,
+            "backupGained": 68,
+            "backupLost": 11,
+            "grossGain": 36,
+            "grossLoss": 0,
+            "improved": 4,
+            "regressed": 0
+          }
+        },
+        "totals": {
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 1350234455650,
+            "historicalErrors": 298,
+            "holdoutPasses": 13781,
+            "paidLookups": 10702,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1956,
+            "searchLookups": 8746,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0a33d8f09b6bfef16b8650801428fa8653fabb273b140512c706e6105aa25cb2"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 1510771245500,
+            "historicalErrors": 329,
+            "holdoutPasses": 13785,
+            "paidLookups": 11880,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2022,
+            "searchLookups": 9858,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "62164c225969bde9c935f4599676e2d90f1d825359aaf6b4842f98cd7add8b95"
+          },
+          "one-shared-missed-case-probe": {
+            "availableBackups": 13,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "deferredTraining": 122,
+            "historicalCostNanodollars": 1378262903150,
+            "historicalErrors": 410,
+            "holdoutPasses": 13828,
+            "paidLookups": 10329,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2371,
+            "searchLookups": 7958,
+            "sharedProbeLookups": 1728,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "d7f3ee610e2e69a62543ce5439388baeaaf4fd035a088ff690da46c32e4424d2",
+            "trainingChecks": 119,
+            "trainingLookups": 1778,
+            "trainingSkippedAfterQualification": 58,
+            "trainingVetoAfterQualification": 22,
+            "trainingVetoes": 46,
+            "validationLookups": 6180
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 12,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "deferredTraining": 116,
+            "historicalCostNanodollars": 1319899904350,
+            "historicalErrors": 401,
+            "holdoutPasses": 13822,
+            "paidLookups": 9896,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2371,
+            "searchLookups": 7525,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "49823bc70f984b1d9dbfc05fbb7eb125cdba9d4c4947462795972699de535e23",
+            "trainingChecks": 116,
+            "trainingLookups": 1738,
+            "trainingSkippedAfterQualification": 60,
+            "trainingVetoAfterQualification": 20,
+            "trainingVetoes": 42
+          },
+          "recent-first": {
+            "availableBackups": 39,
+            "backupNominations": 10,
+            "backupPromotions": 5,
+            "deferredTraining": 59,
+            "historicalCostNanodollars": 1553827117300,
+            "historicalErrors": 411,
+            "holdoutPasses": 13858,
+            "paidLookups": 11549,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2272,
+            "searchLookups": 9277,
+            "sharedProbeLookups": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "439310e3379f2e7fbef41eb45362dae0d4b883d77c314eaff7774a8a96514c02",
+            "trainingChecks": 179,
+            "trainingLookups": 2572,
+            "trainingSkippedAfterQualification": 24,
+            "trainingVetoAfterQualification": 16,
+            "trainingVetoes": 84,
+            "validationLookups": 6705
+          }
+        },
+        "trialCount": 360
+      }
+    }
+  }
+}
