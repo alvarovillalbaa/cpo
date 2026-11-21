@@ -24,6 +24,8 @@ Both training families retained the original rule under the proof budget, so nei
 
 On BBH and LMentry, smoothing gained 27 passes and spent four additional lookups. Its paired 95% range was −0.005 to +0.149 percentage points. Case adjustment gained the same number of passes and spent 16 more lookups. The original rule admitted 755 of 1,242 nominees there and 134 of 539 on MMLU. Across the 539 MMLU nominations the rules changed the nominee only once. That switch used one extra proof lookup and preserved the aggregate holdout score. The paid grades supported few alternative selections under these rules. The earlier hindsight ceiling includes alternatives whose independent proof and holdout outcomes the ranking cannot see. [Hindsight menu and limits](witness-mmlu-gap.md)
 
+A matched probe changed 32 MMLU nominations. It spent more under the original allowance and produced no pooled holdout gain. [Probe versus same-cap proof controls](witness-nominee-probe.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel from a clean source export. Fourteen targeted tests passed, and two full offline replays produced byte-identical results. The original live plan and all original archived cohort costs and scores reproduced. Storage Guard measured 5.8 GiB free. The task-owned export and wheel overlay fit within the standing 0.2 GiB LAB exception and were removed. [Tests](../tests/unit/test_witness_paid_nominee_ranking.py)
