@@ -18,6 +18,8 @@ Retaining the start was the strongest affordable setting at each observed CPO bu
 
 The selector deployed a challenger in 10 of 896 trials. An after-the-fact choice using the highest held-out score anywhere in each roster could reach 28,484 passes. Limiting that hindsight choice to challengers with strict gains on validation, the first half of training, and independent qualification lowered the ceiling to 26,669. Only 12 trials contained an eligible challenger with a better held-out score than CPO's deployment. Their combined upside was 41 passes, even with hindsight and no search cost. These diagnostic upper bounds use already recorded held-out replies after the replay.
 
+A follow-up allowed exact training ties. It restored 33 deployments on this cohort and 12 on separate tasks and checkpoints. The paired quality range crossed zero on both cohorts. [Training threshold comparison](recorded-two-witness-training-nonloss.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and socket connections blocked, 73 targeted tests and five subtests passed. Two full replays matched byte for byte. Direct GEPA replay at cap 51 matched the reported score and cost over all 896 trials. The original selector parity receipt and live-plan preview reproduced. Storage Guard measured 4.7 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. The replay sent zero provider requests.
