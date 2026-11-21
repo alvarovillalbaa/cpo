@@ -24,7 +24,9 @@ The exploratory witness arms use only the validation split to nominate. They sca
 | CPO, screen then prove | 136 | 26,054 | 265,290 |
 | Released CPO | 136 | 26,043 | 296,981 |
 
-Against batched GEPA at cap 88, the rotating two-finalist arm improved nine panels, tied one, and regressed on ten. Its pass deltas were −19 in development, −2 in retrospective transfer, and +27 in the episode-budget subjects. Dropping one subject at a time moved the pooled delta from −34 to +25. Professional accounting contributed +40 on its own. The witness arms were developed after examining these same cohorts, and archive cases recur across seeds. An independent quality gain and the cost of live proposal generation remain unmeasured.
+Against batched GEPA at cap 88, the rotating two-finalist arm improved nine panels, tied one, and regressed on ten. Its pass deltas were −19 in development, −2 in retrospective transfer, and +27 in the episode-budget subjects. Dropping one subject at a time moved the pooled delta from −34 to +25. Professional accounting contributed +40 on its own. The witness arms were developed after examining these same cohorts, and archive cases recur across seeds. The discovery run left independent quality gains and live proposal costs unmeasured.
+
+The frozen rule later passed a transfer test on different subject–model panels against batched GEPA at cap 88. The follow-up also measures cheaper and wider native GEPA settings. [Transfer results](prompteval-rotating-witness-transfer.md)
 
 ## Reproduce
 
