@@ -20,6 +20,8 @@ On MMLU, best-score search produced 112 nominees in episodes where the original 
 
 The follow-up kept the original search and used the saved proof lookups to fund a four-case challenge to the nominee. [Funded anchor challenge](witness-funded-anchor-challenge.md)
 
+A separate comparison used score bounds to run the full four-anchor race at lower lookup cost. [Bounded winner search](witness-anchor-bounds.md)
+
 ## Reproduce
 
 Use Python 3.12 with the hash-pinned GEPA 0.1.4 wheel in a clean source export. With sockets and DNS blocked, 78 targeted tests passed and two complete replays matched byte for byte. The original search and both proof control traces, costs, and scores reproduced. The CLI rejected a stale seal and the prospective live plan reproduced byte for byte. Storage Guard measured 6.3 GiB free. The export, wheel overlay, and publication worktree used the standing 0.2 GiB LAB exception. [Matched-score and cap tests](../tests/unit/test_witness_matched_anchors.py)
