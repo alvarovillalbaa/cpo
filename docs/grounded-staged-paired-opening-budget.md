@@ -14,3 +14,5 @@ The fixed arms evaluate only the incumbent and the two shared opening prompts on
 Confirmation counts the actual distinct selected prompts for each task in the replayed development archive and multiplies that count by eight confirmation cases and two repeats. It can require at most 288 requests. The bound includes the selected-prompt and archive hashes. The fixture with two distinct prompts per task quoted and used exactly 96 requests.
 
 Both SDK mock development archives preserved the original provider-wire hashes, attributed search costs, and paired-opening outcomes. Each resumed at request 41 and reproduced its uninterrupted archive byte for byte. The lower ceiling applies to the proposed trial. Live inference and effectiveness remain unverified.
+
+A subsequent fixture replay measured how many scoring requests could be omitted once the paired-opening gate became impossible. [Early rejection replay](grounded-staged-paired-opening-futility.md)
