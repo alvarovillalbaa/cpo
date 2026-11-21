@@ -1,0 +1,720 @@
+{
+  "coldFourPromptBoards": {
+    "boards": 4096,
+    "reads": {
+      "cachedLookahead": 24832,
+      "previousLookahead": 25856,
+      "rounds": 24832
+    }
+  },
+  "differenceVsPreviousLookahead": {
+    "bbh": {
+      "8": {
+        "holdoutPasses": 0,
+        "paidLookups": 1,
+        "proofLookups": 0,
+        "validationLookups": 1
+      },
+      "16": {
+        "holdoutPasses": 0,
+        "paidLookups": 1,
+        "proofLookups": 0,
+        "validationLookups": 1
+      },
+      "32": {
+        "holdoutPasses": 0,
+        "paidLookups": 1,
+        "proofLookups": 0,
+        "validationLookups": 1
+      }
+    },
+    "bbh-lmentry": {
+      "8": {
+        "holdoutPasses": 0,
+        "paidLookups": -2,
+        "proofLookups": 0,
+        "validationLookups": -2
+      },
+      "16": {
+        "holdoutPasses": 0,
+        "paidLookups": -3,
+        "proofLookups": 0,
+        "validationLookups": -3
+      },
+      "32": {
+        "holdoutPasses": 0,
+        "paidLookups": -3,
+        "proofLookups": 0,
+        "validationLookups": -3
+      }
+    },
+    "lmentry": {
+      "8": {
+        "holdoutPasses": 0,
+        "paidLookups": -3,
+        "proofLookups": 0,
+        "validationLookups": -3
+      },
+      "16": {
+        "holdoutPasses": 0,
+        "paidLookups": -4,
+        "proofLookups": 0,
+        "validationLookups": -4
+      },
+      "32": {
+        "holdoutPasses": 0,
+        "paidLookups": -4,
+        "proofLookups": 0,
+        "validationLookups": -4
+      }
+    },
+    "mmlu": {
+      "8": {
+        "holdoutPasses": 0,
+        "paidLookups": 12,
+        "proofLookups": 23,
+        "validationLookups": -11
+      },
+      "16": {
+        "holdoutPasses": 0,
+        "paidLookups": -26,
+        "proofLookups": 0,
+        "validationLookups": -26
+      },
+      "32": {
+        "holdoutPasses": 0,
+        "paidLookups": -26,
+        "proofLookups": 0,
+        "validationLookups": -26
+      }
+    }
+  },
+  "fullCapDeploymentParity": true,
+  "newProviderRequests": 0,
+  "plan": {
+    "archiveReferences": {
+      "docs/prompteval-mmlu-witness-fallback-results-v1.json": "1643f16c3e013f96b995c0668008a114f3b35767c3e682d2cf65948ebbfb704f",
+      "docs/witness-fallback-caps-results-v1.json": "49732022e1f778ca5bdf28dee1fd51f48fe9457d5b49131328527d249c27ba5c"
+    },
+    "candidate": "Use round order on cold four-prompt boards and previous lookahead elsewhere. The route sees only the presence of exact cached grades in the surviving roster and prefix.",
+    "comparison": "Preserve the original witness search, fallback eligibility, independent admission and holdout.",
+    "logicalHalvingLimit": 8,
+    "nativeBBHAndLMentrySha256": "16e1dc37d6a088d2b4d6f1b3cb58e4153460490d10234ddb6c5c53fc49fd7092",
+    "pairedCaseDraws": 4096,
+    "parentPlanSha256": "4a8a2c3189d567b34808ca78ebfd66428ef91cc62c041b99cd16f049308fc7fe",
+    "physicalLookupCaps": [
+      8,
+      16,
+      32
+    ],
+    "previousPlanSha256": "3930d198ea814ddcfb9358571435fc99278725fabbadfc7ac055916a667b0496",
+    "previousReceiptSha256": "ce6c02297c5d350a51d988e9fd21ece87c7775c89049db4e4d35744d3d27dea3",
+    "protocol": "witness-cached-halving-v1",
+    "resamplingSeed": 20261121,
+    "sourceSha256": {
+      "benchmarks/witness_cached_halving.py": "e66364d39e1828598d10c62dac6542b9a1e13a4043653f2b6f34031535c3570f",
+      "benchmarks/witness_halving_lookahead.py": "569f492ede3893f1241c1adafbdb6314b3ce9641f7cfd678b92fd41d0aef5028",
+      "cpo/halving/cached_lookahead.py": "93a7bf2c48e18ce55434f033efd1e0a98329767c9e16f007b6d2925898a42722",
+      "cpo/halving/lookahead.py": "9ae27c526943826fd23690c166e5461584dde2e604ccb5dab795bf1fb731531f"
+    }
+  },
+  "planSha256": "f757fc7abd29f288b5e7d1a97dd8a98105dd900300c4b3523f81e682ed08490a",
+  "scopes": {
+    "bbh": {
+      "points": {
+        "8": {
+          "lookahead": {
+            "addedPasses": 98,
+            "episodes": 191,
+            "exhausted": 139,
+            "holdoutPasses": 10414,
+            "paidLookups": 46061,
+            "proofLookups": 602,
+            "validationLookups": 1360
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 98,
+            "episodes": 191,
+            "exhausted": 142,
+            "holdoutPasses": 10414,
+            "paidLookups": 46100,
+            "proofLookups": 602,
+            "validationLookups": 1399
+          }
+        },
+        "16": {
+          "lookahead": {
+            "addedPasses": 123,
+            "episodes": 191,
+            "exhausted": 85,
+            "holdoutPasses": 10439,
+            "paidLookups": 47441,
+            "proofLookups": 1052,
+            "validationLookups": 2290
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 123,
+            "episodes": 191,
+            "exhausted": 84,
+            "holdoutPasses": 10439,
+            "paidLookups": 47510,
+            "proofLookups": 1076,
+            "validationLookups": 2335
+          }
+        },
+        "32": {
+          "lookahead": {
+            "addedPasses": 129,
+            "episodes": 191,
+            "exhausted": 0,
+            "holdoutPasses": 10445,
+            "paidLookups": 47864,
+            "proofLookups": 1193,
+            "validationLookups": 2572
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 129,
+            "episodes": 191,
+            "exhausted": 0,
+            "holdoutPasses": 10445,
+            "paidLookups": 47908,
+            "proofLookups": 1193,
+            "validationLookups": 2616
+          }
+        }
+      },
+      "witnessBaseline": {
+        "holdoutPasses": 10316,
+        "paidLookups": 44099
+      }
+    },
+    "bbh-lmentry": {
+      "points": {
+        "8": {
+          "lookahead": {
+            "addedPasses": 140,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-8/cap-32/one-admission",
+              "candidatePassDifference": 944,
+              "holdoutPasses": 16083,
+              "macroAccuracy": "5361/14080",
+              "paidLookups": 60211
+            },
+            "episodes": 254,
+            "exhausted": 182,
+            "holdoutPasses": 17027,
+            "paidLookups": 70757,
+            "proofLookups": 826,
+            "validationLookups": 1806
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 140,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-8/cap-32/one-admission",
+              "candidatePassDifference": 944,
+              "holdoutPasses": 16083,
+              "macroAccuracy": "5361/14080",
+              "paidLookups": 60211
+            },
+            "episodes": 254,
+            "exhausted": 185,
+            "holdoutPasses": 17027,
+            "paidLookups": 70809,
+            "proofLookups": 826,
+            "validationLookups": 1858
+          }
+        },
+        "16": {
+          "lookahead": {
+            "addedPasses": 181,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-12/cap-44/one-admission",
+              "candidatePassDifference": 888,
+              "holdoutPasses": 16180,
+              "macroAccuracy": "809/2112",
+              "paidLookups": 71655
+            },
+            "episodes": 254,
+            "exhausted": 104,
+            "holdoutPasses": 17068,
+            "paidLookups": 72534,
+            "proofLookups": 1379,
+            "validationLookups": 3030
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 181,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-12/cap-44/one-admission",
+              "candidatePassDifference": 888,
+              "holdoutPasses": 16180,
+              "macroAccuracy": "809/2112",
+              "paidLookups": 71655
+            },
+            "episodes": 254,
+            "exhausted": 102,
+            "holdoutPasses": 17068,
+            "paidLookups": 72615,
+            "proofLookups": 1403,
+            "validationLookups": 3087
+          }
+        },
+        "32": {
+          "lookahead": {
+            "addedPasses": 189,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-12/cap-44/one-admission",
+              "candidatePassDifference": 896,
+              "holdoutPasses": 16180,
+              "macroAccuracy": "809/2112",
+              "paidLookups": 71655
+            },
+            "episodes": 254,
+            "exhausted": 0,
+            "holdoutPasses": 17076,
+            "paidLookups": 73071,
+            "proofLookups": 1575,
+            "validationLookups": 3371
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 189,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-12/cap-44/one-admission",
+              "candidatePassDifference": 896,
+              "holdoutPasses": 16180,
+              "macroAccuracy": "809/2112",
+              "paidLookups": 71655
+            },
+            "episodes": 254,
+            "exhausted": 0,
+            "holdoutPasses": 17076,
+            "paidLookups": 73126,
+            "proofLookups": 1575,
+            "validationLookups": 3426
+          }
+        }
+      },
+      "witnessBaseline": {
+        "holdoutPasses": 16887,
+        "paidLookups": 68125
+      }
+    },
+    "lmentry": {
+      "points": {
+        "8": {
+          "lookahead": {
+            "addedPasses": 42,
+            "episodes": 63,
+            "exhausted": 43,
+            "holdoutPasses": 6613,
+            "paidLookups": 24696,
+            "proofLookups": 224,
+            "validationLookups": 446
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 42,
+            "episodes": 63,
+            "exhausted": 43,
+            "holdoutPasses": 6613,
+            "paidLookups": 24709,
+            "proofLookups": 224,
+            "validationLookups": 459
+          }
+        },
+        "16": {
+          "lookahead": {
+            "addedPasses": 58,
+            "episodes": 63,
+            "exhausted": 19,
+            "holdoutPasses": 6629,
+            "paidLookups": 25093,
+            "proofLookups": 327,
+            "validationLookups": 740
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 58,
+            "episodes": 63,
+            "exhausted": 18,
+            "holdoutPasses": 6629,
+            "paidLookups": 25105,
+            "proofLookups": 327,
+            "validationLookups": 752
+          }
+        },
+        "32": {
+          "lookahead": {
+            "addedPasses": 60,
+            "episodes": 63,
+            "exhausted": 0,
+            "holdoutPasses": 6631,
+            "paidLookups": 25207,
+            "proofLookups": 382,
+            "validationLookups": 799
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 60,
+            "episodes": 63,
+            "exhausted": 0,
+            "holdoutPasses": 6631,
+            "paidLookups": 25218,
+            "proofLookups": 382,
+            "validationLookups": 810
+          }
+        }
+      },
+      "witnessBaseline": {
+        "holdoutPasses": 6571,
+        "paidLookups": 24026
+      }
+    },
+    "mmlu": {
+      "points": {
+        "8": {
+          "lookahead": {
+            "addedPasses": 7,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-16/cap-56/one-admission",
+              "candidatePassDifference": 32,
+              "holdoutPasses": 30127,
+              "macroAccuracy": "175007793754740481/347454008316455040",
+              "paidLookups": 46190
+            },
+            "episodes": 337,
+            "exhausted": 233,
+            "holdoutPasses": 30159,
+            "paidLookups": 46389,
+            "proofLookups": 429,
+            "validationLookups": 2307
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 105,
+              "drawsHigher": 3954,
+              "drawsLower": 37,
+              "interval95PercentagePoints": [
+                0.0,
+                0.013207946
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 1508,
+              "drawsHigher": 2567,
+              "drawsLower": 21,
+              "interval95PercentagePoints": [
+                0.0,
+                0.025095097
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 2,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-16/cap-56/one-admission",
+              "candidatePassDifference": 27,
+              "holdoutPasses": 30127,
+              "macroAccuracy": "175007793754740481/347454008316455040",
+              "paidLookups": 46190
+            },
+            "episodes": 337,
+            "exhausted": 244,
+            "holdoutPasses": 30154,
+            "paidLookups": 46580,
+            "proofLookups": 415,
+            "validationLookups": 2512
+          }
+        },
+        "16": {
+          "lookahead": {
+            "addedPasses": 4,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-16/cap-56/one-admission",
+              "candidatePassDifference": 29,
+              "holdoutPasses": 30127,
+              "macroAccuracy": "175007793754740481/347454008316455040",
+              "paidLookups": 46190
+            },
+            "episodes": 337,
+            "exhausted": 78,
+            "holdoutPasses": 30156,
+            "paidLookups": 48097,
+            "proofLookups": 759,
+            "validationLookups": 3685
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 4,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-16/cap-56/one-admission",
+              "candidatePassDifference": 29,
+              "holdoutPasses": 30127,
+              "macroAccuracy": "175007793754740481/347454008316455040",
+              "paidLookups": 46190
+            },
+            "episodes": 337,
+            "exhausted": 77,
+            "holdoutPasses": 30156,
+            "paidLookups": 48322,
+            "proofLookups": 759,
+            "validationLookups": 3910
+          }
+        },
+        "32": {
+          "lookahead": {
+            "addedPasses": 14,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-16/cap-56/one-admission",
+              "candidatePassDifference": 39,
+              "holdoutPasses": 30127,
+              "macroAccuracy": "175007793754740481/347454008316455040",
+              "paidLookups": 46190
+            },
+            "episodes": 337,
+            "exhausted": 0,
+            "holdoutPasses": 30166,
+            "paidLookups": 48492,
+            "proofLookups": 889,
+            "validationLookups": 3950
+          },
+          "pairedVsRounds": {
+            "casesWithinFixedSubjects": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            },
+            "subjectsAndCases": {
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "rounds": {
+            "addedPasses": 14,
+            "affordableNative": {
+              "arm": "gepa-batched/validation-16/cap-56/one-admission",
+              "candidatePassDifference": 39,
+              "holdoutPasses": 30127,
+              "macroAccuracy": "175007793754740481/347454008316455040",
+              "paidLookups": 46190
+            },
+            "episodes": 337,
+            "exhausted": 0,
+            "holdoutPasses": 30166,
+            "paidLookups": 48716,
+            "proofLookups": 889,
+            "validationLookups": 4174
+          }
+        }
+      },
+      "witnessBaseline": {
+        "holdoutPasses": 30152,
+        "paidLookups": 43653
+      }
+    }
+  }
+}

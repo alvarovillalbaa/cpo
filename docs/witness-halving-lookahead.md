@@ -19,6 +19,8 @@ At cap 16, both selectors had the same holdout pass totals and zero difference a
 
 On cold binary boards, lookahead used 2,704 grades across all 512 three-prompt boards versus 2,768 for round order. Across all 4,096 four-prompt boards it used 25,856 versus 24,832. It reached the same winner on every board. These tests distinguish archived savings with preexisting grades from uniformly enumerated cold behavior. Fresh model performance remains unverified. [Boundary and parity tests](../tests/unit/test_lookahead_halving.py)
 
+A follow-up uses round order on cold four-prompt boards and keeps lookahead for cached validation. It matched the original cold request paths and saved 29 further lookups at cap 16 on the archived comparison. [Cache-routed lookahead](witness-cached-halving.md)
+
 ## Use
 
 ```python
