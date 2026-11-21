@@ -19,6 +19,8 @@ The matched controls allow only the first proof at the same cap. On the other be
 
 At cap 20, the BBH and LMentry retry gained 54 held-out passes over full expected-read proof at a cost of 641 extra lookups. It still spent 822 fewer lookups than the original seeded proof. On MMLU the cap-20 retry added no promotions. The cap-24 retry exceeded original seeded cost on all three cohorts and its two MMLU promotions yielded no gain in aggregate held-out passes. Both training families selected the single expected-read proof at cap 24. The retry failed the transfer gate and remains an archived experiment. [Full results](witness-admission-retry-results-v1.json)
 
+Reserving part of the cap for a rival increased retry opportunities on MMLU and reduced first-nominee promotions. Both reservation variants exceeded the original seeded spend. [Proof allocation replay](witness-proof-split.md)
+
 ## Reproduce
 
 Use a clean source export, Python 3.12, and the hash-pinned GEPA 0.1.4 wheel. The two replays matched byte for byte with sockets and DNS blocked. Seventeen targeted tests passed, the CLI rejected a stale seal, and the prospective development plan reproduced byte for byte. The replay sent zero provider requests. Storage Guard measured 5.6 GiB free and the export and wheel overlay fit the standing 0.2 GiB LAB exception. [Retry tests](../tests/unit/test_witness_admission_retry.py)
