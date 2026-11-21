@@ -22,6 +22,8 @@ Against retired-admission reuse, one attempt saved 2,888 and 2,716 lookups and i
 
 Sequential GEPA at cap 52 was the highest-scoring fixed native setting within the retired-admission budget on both cohorts. The one-attempt rule used 4,314 more lookups for a 0.140-point gain on the original subjects. On the additional subjects it gained 0.076 points and saved 167 lookups. Batched GEPA at cap 80 scored higher on the additional subjects at a higher cost. These are archived prompt-selection results. Fresh-model superiority remains unverified.
 
+A follow-up gave GEPA the same admission-attempt limit and added 44 BBH and LMentry panels on two other models. [Matched admission-attempt comparison](prompteval-matched-admission-attempt.md)
+
 ## Reproduce
 
 Use Python 3.12 and hash-pinned GEPA 0.1.4. Verification blocked DNS and sockets and used a disposable allocation bounded at 0.2 GiB under the standing LAB exception. Storage Guard measured 6.2 GiB free. [Benchmark wheel](../requirements-benchmark.txt) · [Comparator tests](../tests/unit/test_prompteval_witness_budget_controls.py)
