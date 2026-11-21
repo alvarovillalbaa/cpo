@@ -22,6 +22,8 @@ The pre-capture gate compares CPO at cap 56 with batched GEPA at cap 88. It requ
 
 Relative to the primary control, the witness rule was cheaper on all nine subjects and improved ten panels, tied five, and regressed on three. The largest subject-level accuracy decline was 0.289 percentage points in professional medicine. Batched GEPA at cap 80 used 1,799 fewer lookups than the witness rule and scored 90 fewer passes. Wider GEPA settings and released CPO achieved higher accuracy at higher cost. The rule adds an observed low-cost operating point with this supplied prompt stream.
 
+CPO exposes this selector through an opt-in cycle with independent paired qualification and budgeted critical-row checks. [Package API and trace verification](rotating-witness-cycle.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA wheel. The capture recorded the dataset repository revision before and after fetching, ordered binary labels, viewer response hashes and source URLs. A separate replay seal binds the exact captured snapshot to the pre-capture design. Storage Guard measured 9.2 GiB free. The standing LAB storage exception covered a disposable source and wheel overlay bounded at 0.2 GiB. The capture read 8.6 MB of public labels and retained 550,443 bytes. The replay ran with DNS and outbound socket calls blocked. [Captured corpus](../benchmarks/data/prompteval-rotating-witness-transfer-v1.json) · [Benchmark wheel](../requirements-benchmark.txt) · [Gate tests](../tests/unit/test_prompteval_rotating_witness_transfer.py)
