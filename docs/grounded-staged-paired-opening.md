@@ -27,3 +27,5 @@ cp "$cpo_checkout/benchmarks/grounded_staged_paired_opening_comparison.py" "$rep
 ```
 
 The physical request ceiling is 2,232 for development and 336 for independent confirmation. These are ceilings for this proposed protocol. Live provider evaluation remains paused.
+
+A separately sealed budget proof lowers the physical ceiling using shared samples across these arms. [Shared-sample budget](grounded-staged-paired-opening-budget.md)
