@@ -50,3 +50,17 @@ The fixture passed 108 of 108 development replies with CPO and 36 of 108 with ea
 The opening and qualification comparisons also reproduce from a wheel installed in isolated Python environments. [Installed comparison verification](installed-comparison.md)
 
 The separate staged protocol rehearses the published validation-guided repair cycle with a shared admission certificate and an independent confirmation panel. Both fixture stages replayed exactly. This version has a provider-neutral callback and awaits a separately authorized live launch. [Staged comparison and rehearsal](grounded-staged-comparison.md)
+
+### Matched search samples in the quoted Luna study
+
+A separate sealed study shares a search reply when CPO, sequential GEPA, or width-two GEPA requests the same task, case, prompt, and occurrence. Each arm settles the full sample charge against its own search budget. Admission and held-out samples retain their original rules.
+
+| SDK fixture | Original count-and-generation pairs | Matched search pairs |
+| --- | ---: | ---: |
+| Qualifying | 624 | 492 |
+| Iterative | 768 | 540 |
+| Impossible qualification | 435 | 303 |
+
+All three fixtures preserved the original prompts, per-arm search charges, admissions, and held-out decisions. The adverse fixture replayed 140 checkpointed pairs and sent 163 new fixture pairs, reproducing its uninterrupted archive. A qualifying fixture replayed 96 fresh pairs on the separate confirmation panel. [Aggregate verification receipt](quoted-luna-search-sharing-evidence-v1.json)
+
+An audit of the first live Luna study found 66 groups where multiple optimizer arms sent the same request. Independent replies differed in 33 groups and changed field credit in 15. The new shared-sample protocol changes how such evaluations are sampled. Its model-backed result remains pending. The earlier plans and journals retain their original sampling and seals.
