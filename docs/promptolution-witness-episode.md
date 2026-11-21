@@ -14,6 +14,8 @@ The original comparison used GEPA validation widths of 8, 12, 16, and 24 and Suc
 
 Successive Halving at cap 8 was the strongest affordable control in all three scopes. Pooled, the strongest affordable GEPA setting was sequential with two anchors and cap 14. At wider budgets, native GEPA reached 3,961 pooled passes on 5,115 lookups, and three-admission CPO reached 3,940 on 2,835. On SST‑5, the prospective benchmark's eight-anchor sequential cap-32 GEPA arm gained 102 passes over CPO and used 641 extra lookups. These are recorded selection costs. Original prompt-generation costs and fresh model performance remain open.
 
+A follow-up tested cap‑8 Halving only after the witness screen declined every nominee. It gained 121 passes on SST‑5 and added lookups without gains on GSM8K. [Fallback and transfer evidence](witness-halving-fallback.md)
+
 ## Reproduce
 
 The collector downloads only the pinned public prediction CSVs, verifies each Git blob, and rebuilds the binary archive byte for byte. It retains case hashes and exact-match outcomes. Use Python 3.12 and GEPA 0.1.4 from the hashed requirements. Both sealed replays ran twice with sockets and DNS blocked. Eight targeted tests passed. Storage Guard measured 6.1 GiB free, and the disposable exports and wheel overlay fit within the standing LAB exception's 0.2 GiB verification scope. [Benchmark dependency](../requirements-benchmark.txt) · [Focused tests](../tests/unit/test_promptolution_witness_episode.py)
