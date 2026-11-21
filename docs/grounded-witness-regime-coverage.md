@@ -16,6 +16,8 @@ The eight-row alternative replaces six warehouse rows with synthetic cases from 
 
 A separate confirmation rehearsal binds the eight-row alternative to the original qualifying development archive. It caught a warehouse error shared by all arms at the same 128-request ceiling. [Confirmation rehearsal](grounded-witness-warehouse-confirmation.md)
 
+An independent training audit retained all tested categorical labels and policy distinctions using 80 of the 192 examples across the original training blocks. [Training discrimination and payload comparison](witness-training-discrimination.md)
+
 ## Reproduce
 
 Use a clean source export with the sealed files and hash-pinned GEPA 0.1.4. Two offline runs produced identical receipts. Six targeted tests passed with sockets and DNS blocked. Storage Guard measured 5.9 GiB free. The task-owned overlays used the standing 0.2 GiB LAB exception and were removed.
