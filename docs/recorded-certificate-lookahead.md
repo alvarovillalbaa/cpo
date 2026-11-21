@@ -14,6 +14,8 @@ The stronger certificate is a lower bound against the incumbent. The first candi
 
 The one-panel allowance recovered 22 ARC passes and maintained 19.7% fewer lookups than the cheaper matched GEPA control. Its paired quality interval crossed zero. On LMentry, the two-panel allowance scored 50 more passes than the stronger GEPA point score, but saved just 3.8% against the cheaper control. The one-panel allowance saved 9.2% against that control, 42 lookups short of the 10% threshold. BBH scored the same with either allowance, and AIME lost five or six passes relative to the first certificate despite buying more evidence. The broader result leaves the joint gate unmet. [All cohorts, native controls, and nomination counts](recorded-certificate-lookahead-results-v1.json)
 
+A follow-up skipped some reads of the first certified prompt once those reads could no longer affect the nomination. It preserved every decision and left the LMentry cost threshold unmet. [Exact pruning replay](recorded-certificate-lookahead-pruning.md)
+
 The 2,352 scheduled trials reuse the original AIME and ARC settings and all 26 transfer panels. The earlier results informed this intervention. These are retrospective measurements of prompt selection and carry no evidence about newly generated prompts.
 
 ## Reproduce
