@@ -27,6 +27,8 @@ The same trigger and cap replayed on all 44 archived panels using their original
 
 The 254 fallbacks produced 54 promotions and reused 701 lookups. BBH gained 129 passes and LMentry gained 60. The paired gain against the original witness policy was +0.45 percentage points, with a range of +0.19 to +0.75 when resampling subjects and cases together. The lead against the strongest affordable GEPA was +2.12 percentage points. That lead is a point comparison using the earlier native receipts. These are recorded-prompt selection results. The prospective Luna plan still tests the original policy, and fresh-model fallback performance remains unverified. [Transfer evidence](prompteval-witness-fallback-results-v1.json) · [Prospective plan](grounded-witness-episode.md)
 
+A follow-up capped new validation grades and skipped reads whose outcomes could not change Halving's choice. It reproduced the full fallback's deployments while spending 730 fewer lookups across the recorded archives. [Certified Halving and lookup caps](bounded-halving-fallback.md)
+
 ## Reproduce
 
 Use a clean checkout, Python 3.12, and GEPA 0.1.4 with the repository's pinned hash. Both replays produced byte-identical duplicates with sockets and DNS blocked. Eight targeted tests passed. Storage Guard measured 6.1 GiB free, and the temporary exports and wheel overlay used less than 0.2 GiB under the standing LAB exception. [Dependency pin](../requirements-benchmark.txt) · [Boundary tests](../tests/unit/test_promptolution_witness_fallback.py)
