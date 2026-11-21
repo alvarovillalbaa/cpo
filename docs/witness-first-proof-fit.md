@@ -18,6 +18,8 @@ On BBH and LMentry, the primary ranker changed 555 of 1,242 nominees and 421 dep
 
 Every one of the 539 original MMLU nominations had multiple already-paid candidates. Both fitted rankers and the smoothed rate control retained the original nominee in all 539 episodes and reproduced the original score and cost. The fits used 23,397 candidate qualification labels from BBH and LMentry and 12,546 from MMLU. The primary comparison missed the transfer gate. The trial used archived replies and made zero new provider requests. [Full costs, changed choices, fitted weights, and paired intervals](witness-first-proof-fit-results-v1.json)
 
+The follow-up fit signed held-out gain after the exact proof. It also retained all 539 original MMLU nominees. [Deployed-quality fit](witness-first-proof-gain.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel in a clean source export. With sockets and DNS disabled, 54 targeted tests passed and two replays produced byte-identical reports. The first-proof control traces, costs, and scores reproduced. A stale seal was rejected, and the prospective live plan reproduced byte for byte. Storage Guard measured 6.2 GiB free. The source export, wheel overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Fit and feature tests](../tests/unit/test_witness_first_proof_fit.py)
