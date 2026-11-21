@@ -16,6 +16,8 @@ Both models' search calls are charged to the same archived portfolio, which alre
 
 Peer scores gave the scheduler a way to reorder cases in 986 of 1,066 second attempts. The matched policy changed 39 deployments and added 11 rival promotions. It gained eight pooled MMLU passes and lost seven on BBH and LMentry. Total spend fell by 18 lookups relative to the original case order, while each cohort still exceeded seeded single-proof spend. The paired ranges against the rotated control included zero in every cohort. The policy failed the transfer gate. [All arms and paired ranges](witness-peer-case-order-results-v1.json)
 
+Conditioning the next read on the other prompt's reply in the same proof added 27 passes against a marginal-only scheduler. Its paired ranges included zero and it failed the transfer gate. [Same-case comparison](witness-same-case-order.md)
+
 ## Reproduce
 
 Use a clean source export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 34 targeted tests passed and two full replays matched byte for byte. All original panel traces matched, the CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. Storage Guard measured 5.5 GiB free. The source export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Ledger and proof tests](../tests/unit/test_witness_peer_case_order.py)
