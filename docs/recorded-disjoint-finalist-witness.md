@@ -31,6 +31,8 @@ Both official GEPA modes used the original search cap of 180. Their complete per
 
 Two cases added 15 BBH passes and 230 lookups over the original CPO policy. Its paired 95% range for that gain was −9 to +39. The same rule lost ten passes on LMentry. Both rules added lookups without increasing MMLU scores. The witness does not improve the cost-quality outcome consistently across these archives. [Language paired changes and intervals](recorded-disjoint-finalist-witness-results-v1.json)
 
+A follow-up compared finalists using a reserved portion of the original validation panel. It saved lookups in every tested setting and increased held-out passes on eight-challenger rotated ARC-AGI. [Reserved validation comparison](recorded-validation-tail-finalists.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Two socket- and DNS-blocked runs matched byte for byte. An independent audit checked all 4,704 decisions against complete witness, qualification, and holdout grades. All 61 targeted tests passed from a clean export, including paid-only shortlist eligibility, sufficient funding, reply reuse, and one independent proof. The CLI rejected the prior seal. The public selector receipt and ordered live-plan preview reproduced. Storage Guard measured 2.8 GiB free. The source export and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent.
