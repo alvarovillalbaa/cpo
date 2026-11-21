@@ -52,7 +52,7 @@ def _check_charge(charge, quote):
 def select_sequential_field_rewrites(
     incumbent, training, validation, evaluate, schedule, propose, *,
     rounds, minibatch_size, metric_limit, observed_charge=None, reinvest_savings=False, price_budget=None,
-    certify_boundary_ties=False, skip_perfect_after=None,
+    certify_boundary_ties=False, skip_perfect_after=None, proposals_exhausted=None,
 ):
     """Match sequential GEPA's field gates, full-round reserve and score order.
 
@@ -78,6 +78,11 @@ def select_sequential_field_rewrites(
     supplied opening slots. A later slot with perfect parent feedback uses
     the scheduled round without calling or settling a reflection. Later
     proposals must depend on the slot and feedback rather than call count.
+
+    A finite proposal source can report exhaustion through
+    proposals_exhausted(index, pool). Return True only when no supplied or
+    later proposal remains available from any tracked parent. Selection still
+    finishes validation for already enrolled candidates as needed.
     """
     training, validation = tuple(training), tuple(validation)
     train_ids, val_ids = tuple(row.id for row in training), tuple(row.id for row in validation)
@@ -93,6 +98,8 @@ def select_sequential_field_rewrites(
         raise ValueError('The search budget must cover valid rounds and the incumbent validation')
     if observed_charge is not None and not callable(observed_charge):
         raise ValueError('Observed charge must be a callback')
+    if proposals_exhausted is not None and not callable(proposals_exhausted):
+        raise ValueError('Proposal exhaustion must be a callback')
     if price_budget is not None and (not isinstance(price_budget, SequentialSearchBudget) or observed_charge is None):
         raise ValueError('A sequential price budget requires observed evaluation charges')
     if skip_perfect_after is not None and (type(skip_perfect_after) is not int
@@ -162,6 +169,8 @@ def select_sequential_field_rewrites(
 
     latest = incumbent
     for index in range(rounds):
+        if proposals_exhausted is not None and proposals_exhausted(index, tuple(pool)):
+            break
         min_reserve = child_reserve if reinvest_savings else child_reserve + minibatch_size
         remaining = metric_limit - committed_reads()
         if min_reserve > remaining:

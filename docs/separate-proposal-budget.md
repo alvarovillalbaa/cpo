@@ -18,4 +18,6 @@ The optional limit controls spending, which can change which proposals enter sea
 
 The feedback-driven fixture exposed the quality trade-off. At its lowest reflection price, a shared or one-quote budget passed 619 of 648 held-out cases and cost 1,924 charge units. Excluding paid later reflections passed 593 and cost 1,802. These replay results support keeping the default shared search budget and choosing a separate cap when the application has a firm proposal allowance. Live quality at any cap remains unverified. [Feedback benchmark](recorded-paired-field-rewrite.md#skip-reflections-when-the-parent-minibatch-passes)
 
+The ARC replay prices later rewrites, uses recorded parent-child links and evaluation charges, and compares CPO with both sequential and batched GEPA. [Recorded ARC comparison](recorded-arc-lineage-quotes.md)
+
 The tests cover exact-boundary reservations, zero-quoted supplied proposals, reuse of unused reservation after settlement, invalid limits, and the full quote for a batched round. [Sequential tests](../tests/unit/test_sequential_field_rewrite.py) · [Batched tests](../tests/unit/test_batched_field_rewrite.py)
