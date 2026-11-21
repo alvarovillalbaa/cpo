@@ -34,6 +34,8 @@ The new rule checks the first strict certificate on training before independent 
 
 Four reads bought 15 backup certificates across 151 first-nominee training vetoes on eight-challenger rotated AIME. Five backups reached qualification. Aggregate held-out passes stayed at 4,082, and lookups rose by 977. Eight reads lost two passes at higher cost. On the eight-challenger ARC rotation, four reads certified no backups. Eight reads sent eight replacements into qualification and gained 12 passes for 1,506 additional lookups. Its margin against affordable GEPA was −8 with a paired 95% range of −51 to +32 by lookups, and −17 with a range of −57 to +20 by historical cost. The tested fallback spends more to recover little of the available nomination headroom.
 
+A follow-up tested reranking after full validation using only already-paid strict certificates. The shared-case tie recovered a small AIME gain and regressed on the original ARC-AGI start. [Paid head-to-head comparison](recorded-paid-head-to-head.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Two socket- and DNS-blocked runs matched byte for byte and reproduced the original GEPA frontiers. All 57 targeted tests passed from a clean export. An independent audit checked all 3,040 decisions, including the two exact search gates, the independent proof, and the backup allowance. The CLI rejected the stale seal. The public selector receipt and ordered live-plan preview reproduced. Storage Guard measured 2.8 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent.

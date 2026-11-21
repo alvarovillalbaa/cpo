@@ -1,0 +1,1159 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "challengerCounts": [
+      4,
+      8
+    ],
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "methods": [
+      "paid-head-to-head-tie",
+      "paid-head-to-head-preserve-incumbent"
+    ],
+    "parentPlanSha256": "22f5ac4ca9e4a84596b4f6626b5de1e50fa6b281c152d9205811d2e2ee6dbd20",
+    "parentReceiptSha256": "1bbe3cd66272b46c638b7dfa698361e0257c369b545086394f9a63c1c21d193d",
+    "protocol": "recorded-paid-head-to-head-v1",
+    "scope": "Keep the original strict validation race. Consider only a paid strict certificate against the incumbent. A candidate needs at least one head-to-head win and at least as many wins as losses on cases also paid for the original winner. Compare that rule with preserving every observed incumbent pass. Rank by net gain, fewer losses, certified passes and shared observations, then original roster order. Buy no extra validation and apply one independent proof. Audit a hindsight ceiling over only the offers each paid rule allowed.",
+    "searchCap": 180,
+    "sourceSha256": "559eeccd27a23b23d2f732b38b794d92757bce22c0b2d1259033c62771caedcd"
+  },
+  "planSha256": "9871a61c610e63ff97d5d36b893660076fcb71b400f03a6c75a2b2f9d6bb4022",
+  "providerRequests": 0,
+  "results": {
+    "aime": {
+      "root/4": {
+        "paid-head-to-head-preserve-incumbent": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "retain-start",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -9,
+              "pairedRange95": [
+                -38,
+                10
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/16": 84,
+                "gepa-sequential-precheck/20": 1088,
+                "retain-start": 2924
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 1,
+            "changedNominations": 1,
+            "eligibleAlternatives": 2,
+            "grossGain": 5,
+            "grossLoss": 0,
+            "hindsightGainCeiling": 5,
+            "lookupDelta": 0,
+            "passDelta": 5,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "holdoutPasses": 491,
+            "paidLookups": 1040,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 205,
+            "searchLookups": 835,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "2bffd1de3c56f53a7e7596c1e3692290ca5e3ad3b465ba354e55273d135866df"
+          }
+        },
+        "paid-head-to-head-tie": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "retain-start",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -9,
+              "pairedRange95": [
+                -38,
+                10
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/16": 84,
+                "gepa-sequential-precheck/20": 1088,
+                "retain-start": 2924
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 1,
+            "changedNominations": 2,
+            "eligibleAlternatives": 3,
+            "grossGain": 5,
+            "grossLoss": 0,
+            "hindsightGainCeiling": 5,
+            "lookupDelta": 0,
+            "passDelta": 5,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "holdoutPasses": 491,
+            "paidLookups": 1040,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 205,
+            "searchLookups": 835,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "31c9b6f8cb1e5b5abc8cce857a2c7c9b713c6a041a240ef411423a72720726b6"
+          }
+        }
+      },
+      "root/8": {
+        "paid-head-to-head-preserve-incumbent": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "retain-start",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -21,
+              "pairedRange95": [
+                -58,
+                -6
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/44": 25,
+                "gepa-sequential-precheck/16": 20,
+                "gepa-sequential-precheck/20": 46,
+                "gepa-sequential-precheck/28": 36,
+                "gepa-sequential-precheck/32": 1465,
+                "retain-start": 2504
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 2,
+            "changedNominations": 3,
+            "eligibleAlternatives": 5,
+            "grossGain": 5,
+            "grossLoss": 2,
+            "hindsightGainCeiling": 5,
+            "lookupDelta": 1,
+            "passDelta": 3,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "holdoutPasses": 479,
+            "paidLookups": 1439,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 223,
+            "searchLookups": 1216,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3d0e32f6dba86af239165ef4b72144024033392d096af94569cda833653802e4"
+          }
+        },
+        "paid-head-to-head-tie": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "retain-start",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -21,
+              "pairedRange95": [
+                -58,
+                -6
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/44": 25,
+                "gepa-sequential-precheck/16": 20,
+                "gepa-sequential-precheck/20": 46,
+                "gepa-sequential-precheck/28": 36,
+                "gepa-sequential-precheck/32": 1465,
+                "retain-start": 2504
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 2,
+            "changedNominations": 4,
+            "eligibleAlternatives": 8,
+            "grossGain": 5,
+            "grossLoss": 2,
+            "hindsightGainCeiling": 5,
+            "lookupDelta": 0,
+            "passDelta": 3,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "holdoutPasses": 479,
+            "paidLookups": 1438,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 222,
+            "searchLookups": 1216,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ea3a8e24fc34e70cd49fe9e68227523a8c3ae8e8b7d8656094cfea40a3f034ad"
+          }
+        }
+      },
+      "rotated/4": {
+        "paid-head-to-head-preserve-incumbent": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/24",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 4080,
+                "paidLookups": 6630
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 4056,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -39,
+              "pairedRange95": [
+                -100,
+                2
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/34": 83,
+                "gepa-sequential-precheck/16": 1007,
+                "gepa-sequential-precheck/20": 3,
+                "gepa-sequential-precheck/24": 2522,
+                "gepa-sequential-precheck/25": 2,
+                "retain-start": 479
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 1,
+            "changedNominations": 8,
+            "eligibleAlternatives": 8,
+            "grossGain": 5,
+            "grossLoss": 0,
+            "hindsightGainCeiling": 5,
+            "lookupDelta": -3,
+            "passDelta": 5,
+            "trials": 320
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "holdoutPasses": 4041,
+            "paidLookups": 7640,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1526,
+            "searchLookups": 6114,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ae38139ecfc5091e4e68bb8a56221022e523627c43b007eb44159eeb68c3e807"
+          }
+        },
+        "paid-head-to-head-tie": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/24",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 4080,
+                "paidLookups": 6630
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 4056,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -40,
+              "pairedRange95": [
+                -100,
+                2
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/34": 83,
+                "gepa-sequential-precheck/16": 1007,
+                "gepa-sequential-precheck/20": 3,
+                "gepa-sequential-precheck/24": 2522,
+                "gepa-sequential-precheck/25": 2,
+                "retain-start": 479
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 4,
+            "changedNominations": 18,
+            "eligibleAlternatives": 25,
+            "grossGain": 7,
+            "grossLoss": 3,
+            "hindsightGainCeiling": 10,
+            "lookupDelta": 1,
+            "passDelta": 4,
+            "trials": 320
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "holdoutPasses": 4040,
+            "paidLookups": 7644,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1530,
+            "searchLookups": 6114,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0603700c9af7e4e8601a5456357ab202631bf66bd1e6200447e5bdc02419184d"
+          }
+        }
+      },
+      "rotated/8": {
+        "paid-head-to-head-preserve-incumbent": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/24",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 4080,
+                "paidLookups": 6630
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 4056,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -73,
+              "pairedRange95": [
+                -133,
+                -38
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/39": 85,
+                "gepa-batched-precheck/40": 124,
+                "gepa-batched-precheck/44": 1,
+                "gepa-batched-precheck/45": 9,
+                "gepa-sequential-precheck/16": 780,
+                "gepa-sequential-precheck/20": 2,
+                "gepa-sequential-precheck/24": 1067,
+                "gepa-sequential-precheck/25": 2,
+                "gepa-sequential-precheck/28": 6,
+                "gepa-sequential-precheck/29": 5,
+                "gepa-sequential-precheck/30": 21,
+                "gepa-sequential-precheck/32": 1,
+                "gepa-sequential-precheck/33": 4,
+                "gepa-sequential-precheck/34": 623,
+                "gepa-sequential-precheck/37": 217,
+                "gepa-sequential-precheck/38": 693,
+                "retain-start": 456
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 2,
+            "changedNominations": 13,
+            "eligibleAlternatives": 20,
+            "grossGain": 5,
+            "grossLoss": 0,
+            "hindsightGainCeiling": 7,
+            "lookupDelta": -3,
+            "passDelta": 5,
+            "trials": 320
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "holdoutPasses": 4007,
+            "paidLookups": 10905,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1702,
+            "searchLookups": 9203,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "15d727934d773c9e3d79bc72f775d5515fc40bd1ba4e268d12f7ba9ee80089b4"
+          }
+        },
+        "paid-head-to-head-tie": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/24",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 4080,
+                "paidLookups": 6630
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 4056,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -73,
+              "pairedRange95": [
+                -132,
+                -37
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/39": 85,
+                "gepa-batched-precheck/40": 124,
+                "gepa-batched-precheck/44": 1,
+                "gepa-batched-precheck/45": 9,
+                "gepa-sequential-precheck/16": 780,
+                "gepa-sequential-precheck/20": 2,
+                "gepa-sequential-precheck/24": 1067,
+                "gepa-sequential-precheck/25": 2,
+                "gepa-sequential-precheck/28": 6,
+                "gepa-sequential-precheck/29": 5,
+                "gepa-sequential-precheck/30": 21,
+                "gepa-sequential-precheck/32": 1,
+                "gepa-sequential-precheck/33": 4,
+                "gepa-sequential-precheck/34": 623,
+                "gepa-sequential-precheck/37": 217,
+                "gepa-sequential-precheck/38": 693,
+                "retain-start": 456
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 4,
+            "changedNominations": 25,
+            "eligibleAlternatives": 37,
+            "grossGain": 5,
+            "grossLoss": 0,
+            "hindsightGainCeiling": 7,
+            "lookupDelta": -2,
+            "passDelta": 5,
+            "trials": 320
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "holdoutPasses": 4007,
+            "paidLookups": 10906,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1703,
+            "searchLookups": 9203,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e8ae8c61ccfb0b7fb34a58999158637352d162ce264adcce4941557bdedf0596"
+          }
+        }
+      }
+    },
+    "arc": {
+      "root/4": {
+        "paid-head-to-head-preserve-incumbent": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-sequential-precheck/32",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 123176021850,
+                "holdoutPasses": 1557,
+                "paidLookups": 1295
+              },
+              "cheapestMatching": "gepa-sequential-precheck/32",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 123176021850,
+                "holdoutPasses": 1557,
+                "paidLookups": 1295
+              },
+              "holdoutPassDifference": -1,
+              "pairedRange95": [
+                -20,
+                18
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/32": 4096
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/32",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 123176021850,
+                "holdoutPasses": 1557,
+                "paidLookups": 1295
+              },
+              "cheapestMatching": "gepa-sequential-precheck/32",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 123176021850,
+                "holdoutPasses": 1557,
+                "paidLookups": 1295
+              },
+              "holdoutPassDifference": -1,
+              "pairedRange95": [
+                -20,
+                18
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/32": 4096
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 3,
+            "changedNominations": 3,
+            "eligibleAlternatives": 4,
+            "grossGain": 1,
+            "grossLoss": 6,
+            "hindsightGainCeiling": 1,
+            "historicalCostDeltaNanodollars": 21467000,
+            "lookupDelta": 1,
+            "passDelta": -5,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 134644570750,
+            "historicalErrors": 78,
+            "holdoutPasses": 1556,
+            "paidLookups": 1303,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 359,
+            "searchLookups": 944,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "d7836e6db3f90cc2d28c414baa841d7582d1decca44416bd669f36d3e92418f1"
+          }
+        },
+        "paid-head-to-head-tie": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-sequential-precheck/32",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 123176021850,
+                "holdoutPasses": 1557,
+                "paidLookups": 1295
+              },
+              "cheapestMatching": "gepa-batched-precheck/40",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "holdoutPassDifference": 3,
+              "pairedRange95": [
+                -16,
+                22
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/32": 4096
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/32",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 123176021850,
+                "holdoutPasses": 1557,
+                "paidLookups": 1295
+              },
+              "cheapestMatching": "gepa-batched-precheck/40",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "holdoutPassDifference": 3,
+              "pairedRange95": [
+                -16,
+                22
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/32": 4096
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 4,
+            "changedNominations": 4,
+            "eligibleAlternatives": 5,
+            "grossGain": 5,
+            "grossLoss": 6,
+            "hindsightGainCeiling": 5,
+            "historicalCostDeltaNanodollars": 187074500,
+            "lookupDelta": 1,
+            "passDelta": -1,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 134810178250,
+            "historicalErrors": 77,
+            "holdoutPasses": 1560,
+            "paidLookups": 1303,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 359,
+            "searchLookups": 944,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "de99699b41fa2c93b111c1fb3ff84a3c86612932d7b5396e9e333a94160edfcd"
+          }
+        }
+      },
+      "root/8": {
+        "paid-head-to-head-preserve-incumbent": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-batched-precheck/40",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "cheapestMatching": "gepa-sequential-precheck/32",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 123176021850,
+                "holdoutPasses": 1557,
+                "paidLookups": 1295
+              },
+              "holdoutPassDifference": -18,
+              "pairedRange95": [
+                -40,
+                3
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 3492,
+                "gepa-sequential-precheck/32": 603,
+                "gepa-sequential-precheck/39": 1
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-batched-precheck/40",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "cheapestMatching": "gepa-sequential-precheck/32",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 123176021850,
+                "holdoutPasses": 1557,
+                "paidLookups": 1295
+              },
+              "holdoutPassDifference": -18,
+              "pairedRange95": [
+                -40,
+                3
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 3493,
+                "gepa-sequential-precheck/32": 603
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 2,
+            "changedNominations": 2,
+            "eligibleAlternatives": 4,
+            "grossGain": 0,
+            "grossLoss": 31,
+            "hindsightGainCeiling": 0,
+            "historicalCostDeltaNanodollars": 109624000,
+            "lookupDelta": -1,
+            "passDelta": -31,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 169136204500,
+            "historicalErrors": 85,
+            "holdoutPasses": 1547,
+            "paidLookups": 1501,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 354,
+            "searchLookups": 1147,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "6b904ccb741d741a4662cf8ef703f26a130ecd30c8c0f49a1ef07c0895de9cdf"
+          }
+        },
+        "paid-head-to-head-tie": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-batched-precheck/40",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "cheapestMatching": "gepa-sequential-precheck/32",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 123176021850,
+                "holdoutPasses": 1557,
+                "paidLookups": 1295
+              },
+              "holdoutPassDifference": -18,
+              "pairedRange95": [
+                -40,
+                3
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 3492,
+                "gepa-sequential-precheck/32": 603,
+                "gepa-sequential-precheck/39": 1
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-batched-precheck/40",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "cheapestMatching": "gepa-sequential-precheck/32",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 123176021850,
+                "holdoutPasses": 1557,
+                "paidLookups": 1295
+              },
+              "holdoutPassDifference": -18,
+              "pairedRange95": [
+                -40,
+                3
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 3493,
+                "gepa-sequential-precheck/32": 603
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 2,
+            "changedNominations": 2,
+            "eligibleAlternatives": 4,
+            "grossGain": 0,
+            "grossLoss": 31,
+            "hindsightGainCeiling": 0,
+            "historicalCostDeltaNanodollars": 109624000,
+            "lookupDelta": -1,
+            "passDelta": -31,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 169136204500,
+            "historicalErrors": 85,
+            "holdoutPasses": 1547,
+            "paidLookups": 1501,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 354,
+            "searchLookups": 1147,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "6b904ccb741d741a4662cf8ef703f26a130ecd30c8c0f49a1ef07c0895de9cdf"
+          }
+        }
+      },
+      "rotated/4": {
+        "paid-head-to-head-preserve-incumbent": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-sequential-precheck/28",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 823696192500,
+                "holdoutPasses": 13724,
+                "paidLookups": 6577
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 154,
+              "pairedRange95": [
+                65,
+                245
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 25,
+                "gepa-sequential-precheck/28": 4071
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/28",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 823696192500,
+                "holdoutPasses": 13724,
+                "paidLookups": 6577
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 154,
+              "pairedRange95": [
+                65,
+                245
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/28": 4096
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 0,
+            "changedNominations": 0,
+            "eligibleAlternatives": 0,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "hindsightGainCeiling": 0,
+            "historicalCostDeltaNanodollars": 0,
+            "lookupDelta": 0,
+            "passDelta": 0,
+            "trials": 360
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 922571988850,
+            "historicalErrors": 248,
+            "holdoutPasses": 13878,
+            "paidLookups": 7007,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2337,
+            "searchLookups": 4670,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "a3207e07950ce6bec3f06298623209ed8d5e5d9dcc458daceac6e0b3dc4438de"
+          }
+        },
+        "paid-head-to-head-tie": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-sequential-precheck/28",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 823696192500,
+                "holdoutPasses": 13724,
+                "paidLookups": 6577
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 152,
+              "pairedRange95": [
+                64,
+                241
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 25,
+                "gepa-sequential-precheck/28": 4071
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/28",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 823696192500,
+                "holdoutPasses": 13724,
+                "paidLookups": 6577
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 152,
+              "pairedRange95": [
+                64,
+                241
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/28": 4096
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 2,
+            "changedNominations": 2,
+            "eligibleAlternatives": 2,
+            "grossGain": 3,
+            "grossLoss": 5,
+            "hindsightGainCeiling": 3,
+            "historicalCostDeltaNanodollars": 23975000,
+            "lookupDelta": -2,
+            "passDelta": -2,
+            "trials": 360
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 922595963850,
+            "historicalErrors": 248,
+            "holdoutPasses": 13876,
+            "paidLookups": 7005,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2335,
+            "searchLookups": 4670,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "9d303b8d0b3c70c652fe3bf8b4eb6ab346ed0a35b2660ecc7776a879bfe5234b"
+          }
+        }
+      },
+      "rotated/8": {
+        "paid-head-to-head-preserve-incumbent": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-sequential-precheck/36",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 1056851089300,
+                "holdoutPasses": 13768,
+                "paidLookups": 8318
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 164,
+              "pairedRange95": [
+                58,
+                273
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/28": 1,
+                "gepa-sequential-precheck/36": 3358,
+                "gepa-sequential-precheck/39": 737
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/32",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 931176188100,
+                "holdoutPasses": 13735,
+                "paidLookups": 7427
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 197,
+              "pairedRange95": [
+                79,
+                318
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/46": 27,
+                "gepa-sequential-precheck/28": 195,
+                "gepa-sequential-precheck/32": 3874
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 0,
+            "changedNominations": 0,
+            "eligibleAlternatives": 0,
+            "grossGain": 0,
+            "grossLoss": 0,
+            "hindsightGainCeiling": 0,
+            "historicalCostDeltaNanodollars": 0,
+            "lookupDelta": 0,
+            "passDelta": 0,
+            "trials": 360
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 1112469216400,
+            "historicalErrors": 348,
+            "holdoutPasses": 13932,
+            "paidLookups": 8239,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2452,
+            "searchLookups": 5787,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8ea1d45fe1879bca67c3423412ed3a9a67af0716b8998c85fd290370e6b6a0c9"
+          }
+        },
+        "paid-head-to-head-tie": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-sequential-precheck/36",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 1056851089300,
+                "holdoutPasses": 13768,
+                "paidLookups": 8318
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 163,
+              "pairedRange95": [
+                59,
+                271
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/28": 1,
+                "gepa-sequential-precheck/36": 3358,
+                "gepa-sequential-precheck/39": 737
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/32",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 931176188100,
+                "holdoutPasses": 13735,
+                "paidLookups": 7427
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 196,
+              "pairedRange95": [
+                78,
+                315
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/46": 27,
+                "gepa-sequential-precheck/28": 195,
+                "gepa-sequential-precheck/32": 3874
+              }
+            }
+          },
+          "pairedChanges": {
+            "changedDeployments": 2,
+            "changedNominations": 2,
+            "eligibleAlternatives": 2,
+            "grossGain": 3,
+            "grossLoss": 4,
+            "hindsightGainCeiling": 3,
+            "historicalCostDeltaNanodollars": -367673500,
+            "lookupDelta": -3,
+            "passDelta": -1,
+            "trials": 360
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 1112101542900,
+            "historicalErrors": 349,
+            "holdoutPasses": 13931,
+            "paidLookups": 8236,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2449,
+            "searchLookups": 5787,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e596c8f8490add120c8fd1952c508c25f8797cce0c510342db925b49162e1971"
+          }
+        }
+      }
+    }
+  }
+}
