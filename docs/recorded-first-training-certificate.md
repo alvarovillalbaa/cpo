@@ -23,6 +23,8 @@ On AIME with eight challengers, the first-certificate policy saved 3,973 lookups
 
 On ARC-AGI with eight challengers, the first-certificate policy used 1,550 fewer lookups than seeded CPO and lost 67 passes. The second-certificate policy recovered 58 of those passes at a cost of 2,102 more lookups. The first-certificate policy also lost 82 passes against seeded CPO on the original ARC start in the eight-challenger run. These results support a lower-cost AIME candidate for further testing. The same rule did not transfer its quality to ARC, and the archive supplies no fresh model replies.
 
+A follow-up froze the rule on 26 MMLU, BBH, and LMentry model panels. It saved lookups on all three cohorts and scored fewer held-out passes than both GEPA controls on each. [Cross-cohort transfer](recorded-first-certificate-transfer.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 28 targeted tests passed and two replays matched byte for byte. Tests enumerated all 512 outcome matrices for a three-case validation pool with a protected case. The seeded CPO and both GEPA traces reproduced on all 1,520 trials. The CLI rejected a stale seal, and the ordered live plan reproduced. Storage Guard measured 5.9 GiB free. The 39 MiB source export and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent. [Certificate tests](../tests/unit/test_recorded_first_training_certificate.py)
