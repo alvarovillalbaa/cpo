@@ -1,0 +1,1778 @@
+{
+  "plan": {
+    "arms": [
+      "qualification-first-without-backup",
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck",
+      "first-certificate",
+      "first-certificate-with-training-first",
+      "second-certificate-after-training-veto"
+    ],
+    "backupCeilingReceiptSha256": "4adbbde4f5e6d258c76ff9c689fad6917fde4315acd7afa370c0eb58cd31f9b8",
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "challengerCounts": [
+      4,
+      8
+    ],
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "minimumLookupSavingPercent": 10,
+    "parentPlanSha256": "1e1a1f694b62dce9be3d609096284563b711ac673c892261a44597981bffc602",
+    "parentReceiptSha256": "a7e0d401c77b4951bc381922b2ae48218f459a856d4d095d7c369fbcac76d677",
+    "protocol": "recorded-first-training-certificate-v1",
+    "scope": "Pay for the incumbent validation panel. Race the seeded roster until an observed strict validation gain preserves every protected pass. Compare one certificate with the existing proof order, training first with one certificate, and training first with one additional certificate after a training veto. Keep the original strict training and independent qualification gains and lookups under the same search cap.",
+    "searchCap": 180,
+    "sourceSha256": "9c8d112c2bd954a14042ed29c39831d22c2160075ac4d729caa1074d9d80ee1d"
+  },
+  "planSha256": "c261acb13200b8f297fe37ad08f12a4e98fb1eb21efe81eb62814ad46f12715b",
+  "providerRequests": 0,
+  "results": {
+    "aime": {
+      "root/4": {
+        "comparisons": {
+          "first-certificate": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                14
+              ],
+              "gepa-sequential": [
+                -23,
+                19
+              ],
+              "joint": [
+                -23,
+                12
+              ],
+              "qualification-first-without-backup": [
+                -5,
+                7
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.19718309859154928,
+              "gepa-sequential": 0.25245901639344265
+            }
+          },
+          "first-certificate-with-training-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                14
+              ],
+              "gepa-sequential": [
+                -23,
+                19
+              ],
+              "joint": [
+                -23,
+                12
+              ],
+              "qualification-first-without-backup": [
+                -5,
+                7
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.12764084507042253,
+              "gepa-sequential": 0.18770491803278688
+            }
+          },
+          "second-certificate-after-training-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -16,
+                14
+              ],
+              "gepa-sequential": [
+                -23,
+                19
+              ],
+              "joint": [
+                -23,
+                12
+              ],
+              "qualification-first-without-backup": [
+                -5,
+                7
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.017605633802816902,
+              "gepa-sequential": 0.05245901639344262
+            }
+          }
+        },
+        "deploymentChanges": {
+          "first-certificate": {
+            "changedDeployments": 1,
+            "grossGain": 1,
+            "grossLoss": 0
+          },
+          "first-certificate-with-training-first": {
+            "changedDeployments": 1,
+            "grossGain": 1,
+            "grossLoss": 0
+          },
+          "second-certificate-after-training-veto": {
+            "changedDeployments": 1,
+            "grossGain": 1,
+            "grossLoss": 0
+          }
+        },
+        "totals": {
+          "first-certificate": {
+            "backupPromotions": 0,
+            "deferredTraining": 27,
+            "holdoutPasses": 490,
+            "paidLookups": 912,
+            "partialCertificates": 9,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 206,
+            "searchLookups": 706,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "5f2b3e960555e2850be2472e70475a7f2f037088b4328f066d8f80bfc2933afd",
+            "trainingChecks": 8,
+            "trainingLookups": 72,
+            "trainingSkippedAfterQualification": 19,
+            "trainingVetoAfterQualification": 4,
+            "trainingVetoes": 4,
+            "validationCertificates": 27
+          },
+          "first-certificate-with-training-first": {
+            "backupPromotions": 0,
+            "holdoutPasses": 490,
+            "paidLookups": 991,
+            "partialCertificates": 9,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 118,
+            "searchLookups": 873,
+            "secondCertificateNomination": 0,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "91705736268dbd0f79ae2ae9a3cb10ed235e0a0f560595944d68bd7fda693763",
+            "trainingChecks": 27,
+            "trainingLookups": 239,
+            "trainingVetoes": 17,
+            "validationCertificates": 27
+          },
+          "gepa-batched-precheck": {
+            "holdoutPasses": 491,
+            "paidLookups": 1136,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 140,
+            "searchLookups": 996,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "44b65218ad77a18f25df4f0feb00b0f10e2f7cd3d3eed94aee42c6fa4340ebfb"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 493,
+            "paidLookups": 1220,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 157,
+            "searchLookups": 1063,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3bb6dbcde3549356fd2becabb6ece9c51b32c6ea5ea48b8cbd6d4e2b59166370"
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 5,
+            "backupPromotions": 0,
+            "deferredTraining": 18,
+            "holdoutPasses": 489,
+            "paidLookups": 1159,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 178,
+            "searchLookups": 981,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "b0aed07e487884bd61594560e3f660f0db46bbea9c242f00c16254f508efc0c3",
+            "trainingChecks": 19,
+            "trainingLookups": 146,
+            "trainingSkippedAfterQualification": 13,
+            "trainingVetoAfterQualification": 2,
+            "trainingVetoes": 12
+          },
+          "second-certificate-after-training-veto": {
+            "backupPromotions": 0,
+            "holdoutPasses": 490,
+            "paidLookups": 1156,
+            "partialCertificates": 16,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 122,
+            "searchLookups": 1034,
+            "secondCertificateNomination": 1,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "fef9af82bcf945aaccc139e6eda8da5921926a87ede4c192751b637c7a446ed0",
+            "trainingChecks": 40,
+            "trainingLookups": 295,
+            "trainingVetoes": 29,
+            "validationCertificates": 40
+          }
+        },
+        "trialCount": 40
+      },
+      "root/8": {
+        "comparisons": {
+          "first-certificate": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -23,
+                10
+              ],
+              "gepa-sequential": [
+                -29,
+                23
+              ],
+              "joint": [
+                -30,
+                9
+              ],
+              "qualification-first-without-backup": [
+                -6,
+                10
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.4187568157033806,
+              "gepa-sequential": 0.4287245444801715
+            }
+          },
+          "first-certificate-with-training-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -23,
+                10
+              ],
+              "gepa-sequential": [
+                -29,
+                23
+              ],
+              "joint": [
+                -30,
+                9
+              ],
+              "qualification-first-without-backup": [
+                -6,
+                10
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.371319520174482,
+              "gepa-sequential": 0.3821007502679528
+            }
+          },
+          "second-certificate-after-training-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -23,
+                10
+              ],
+              "gepa-sequential": [
+                -29,
+                23
+              ],
+              "joint": [
+                -30,
+                9
+              ],
+              "qualification-first-without-backup": [
+                -6,
+                10
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.25081788440567065,
+              "gepa-sequential": 0.26366559485530544
+            }
+          }
+        },
+        "deploymentChanges": {
+          "first-certificate": {
+            "changedDeployments": 2,
+            "grossGain": 2,
+            "grossLoss": 0
+          },
+          "first-certificate-with-training-first": {
+            "changedDeployments": 2,
+            "grossGain": 2,
+            "grossLoss": 0
+          },
+          "second-certificate-after-training-veto": {
+            "changedDeployments": 2,
+            "grossGain": 2,
+            "grossLoss": 0
+          }
+        },
+        "totals": {
+          "first-certificate": {
+            "backupPromotions": 0,
+            "deferredTraining": 31,
+            "holdoutPasses": 487,
+            "paidLookups": 1066,
+            "partialCertificates": 12,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 226,
+            "searchLookups": 840,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "760265c62cf5f3960cc94e627853ec8c9b7c32c66c1b246bebe9346e08e05698",
+            "trainingChecks": 10,
+            "trainingLookups": 89,
+            "trainingSkippedAfterQualification": 21,
+            "trainingVetoAfterQualification": 5,
+            "trainingVetoes": 5,
+            "validationCertificates": 31
+          },
+          "first-certificate-with-training-first": {
+            "backupPromotions": 0,
+            "holdoutPasses": 487,
+            "paidLookups": 1153,
+            "partialCertificates": 12,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 129,
+            "searchLookups": 1024,
+            "secondCertificateNomination": 0,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "47c6909551684728210b6fb462bf8fce321ca238e8b1b60843116a587191197f",
+            "trainingChecks": 31,
+            "trainingLookups": 273,
+            "trainingVetoes": 19,
+            "validationCertificates": 31
+          },
+          "gepa-batched-precheck": {
+            "holdoutPasses": 494,
+            "paidLookups": 1834,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 176,
+            "searchLookups": 1658,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "34e49f1ca0cee6265d82c0b3dacf7d1415d6eea667890f44e97e615b0ac6271b"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 491,
+            "paidLookups": 1866,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 197,
+            "searchLookups": 1669,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "4df27454ad55bc5fda70102840e4a14e2eeb293b3c4c3422ed240ca3ce070dd2"
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 7,
+            "backupNominations": 1,
+            "backupPromotions": 0,
+            "deferredTraining": 17,
+            "holdoutPasses": 485,
+            "paidLookups": 1607,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 191,
+            "searchLookups": 1416,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "4e8d26d97c60a1b339f9f5050af60f01afe9116c13643d9781d80cf521408f16",
+            "trainingChecks": 26,
+            "trainingLookups": 200,
+            "trainingSkippedAfterQualification": 12,
+            "trainingVetoAfterQualification": 2,
+            "trainingVetoes": 15
+          },
+          "second-certificate-after-training-veto": {
+            "backupPromotions": 0,
+            "holdoutPasses": 487,
+            "paidLookups": 1374,
+            "partialCertificates": 19,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 133,
+            "searchLookups": 1241,
+            "secondCertificateNomination": 1,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "b549b1c3202a4ea8666c6049da822fa23c1490c572c90cb78d86516b0d667f0e",
+            "trainingChecks": 47,
+            "trainingLookups": 345,
+            "trainingVetoes": 34,
+            "validationCertificates": 47
+          }
+        },
+        "trialCount": 40
+      },
+      "rotated/4": {
+        "comparisons": {
+          "first-certificate": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -21,
+                40
+              ],
+              "gepa-sequential": [
+                -32,
+                27
+              ],
+              "joint": [
+                -32,
+                26
+              ],
+              "qualification-first-without-backup": [
+                -15,
+                13
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.2078777189888301,
+              "gepa-sequential": 0.2536833942616595
+            }
+          },
+          "first-certificate-with-training-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -21,
+                40
+              ],
+              "gepa-sequential": [
+                -32,
+                27
+              ],
+              "joint": [
+                -32,
+                26
+              ],
+              "qualification-first-without-backup": [
+                -15,
+                13
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.14532627865961198,
+              "gepa-sequential": 0.19474908607510802
+            }
+          },
+          "second-certificate-after-training-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -24,
+                35
+              ],
+              "gepa-sequential": [
+                -36,
+                23
+              ],
+              "joint": [
+                -36,
+                23
+              ],
+              "qualification-first-without-backup": [
+                -17,
+                7
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.005526161081716637,
+              "gepa-sequential": 0.052619918023706656
+            }
+          }
+        },
+        "deploymentChanges": {
+          "first-certificate": {
+            "changedDeployments": 6,
+            "grossGain": 8,
+            "grossLoss": 9
+          },
+          "first-certificate-with-training-first": {
+            "changedDeployments": 6,
+            "grossGain": 8,
+            "grossLoss": 9
+          },
+          "second-certificate-after-training-veto": {
+            "changedDeployments": 7,
+            "grossGain": 5,
+            "grossLoss": 10
+          }
+        },
+        "totals": {
+          "first-certificate": {
+            "backupPromotions": 0,
+            "deferredTraining": 189,
+            "holdoutPasses": 4077,
+            "paidLookups": 6737,
+            "partialCertificates": 66,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1542,
+            "searchLookups": 5195,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ab6a5adf36196be4375ab4e9bc6d9887d8056821ba26df51fd090bed978028d0",
+            "trainingChecks": 57,
+            "trainingLookups": 503,
+            "trainingSkippedAfterQualification": 132,
+            "trainingVetoAfterQualification": 35,
+            "trainingVetoes": 35,
+            "validationCertificates": 189
+          },
+          "first-certificate-with-training-first": {
+            "backupPromotions": 0,
+            "holdoutPasses": 4077,
+            "paidLookups": 7269,
+            "partialCertificates": 66,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 926,
+            "searchLookups": 6343,
+            "secondCertificateNomination": 0,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "a5720fcdecc67fc8b3c996f62c57a8af299da95eb8c69f5924a9ed83d4a9e731",
+            "trainingChecks": 189,
+            "trainingLookups": 1651,
+            "trainingVetoes": 128,
+            "validationCertificates": 189
+          },
+          "gepa-batched-precheck": {
+            "holdoutPasses": 4067,
+            "paidLookups": 8505,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1161,
+            "searchLookups": 7344,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "156f691d876d0677455e20d194a17e6a12661037565f2912c3d0eaa75adc3691"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 4079,
+            "paidLookups": 9027,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1200,
+            "searchLookups": 7827,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "12da8ef1e742fb59d6f9cac1f42338663be831e862932946bae79b5b01432f1d"
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 36,
+            "backupNominations": 12,
+            "backupPromotions": 5,
+            "deferredTraining": 131,
+            "holdoutPasses": 4078,
+            "paidLookups": 8566,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1428,
+            "searchLookups": 7138,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bccfa5f56b72ea81dc67495bafec321327aba24689b18273ed3063f5fb191d11",
+            "trainingChecks": 133,
+            "trainingLookups": 1024,
+            "trainingSkippedAfterQualification": 92,
+            "trainingVetoAfterQualification": 24,
+            "trainingVetoes": 84
+          },
+          "second-certificate-after-training-veto": {
+            "backupPromotions": 0,
+            "holdoutPasses": 4073,
+            "paidLookups": 8552,
+            "partialCertificates": 96,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1002,
+            "searchLookups": 7550,
+            "secondCertificateNomination": 16,
+            "secondCertificatePromotion": 4,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "153816fdca986694aa3659d54a42e3c653c826685f94f2d623dab0b3885c0df1",
+            "trainingChecks": 273,
+            "trainingLookups": 2034,
+            "trainingVetoes": 196,
+            "validationCertificates": 273
+          }
+        },
+        "trialCount": 320
+      },
+      "rotated/8": {
+        "comparisons": {
+          "first-certificate": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -7,
+                63
+              ],
+              "gepa-sequential": [
+                -20,
+                38
+              ],
+              "joint": [
+                -20,
+                38
+              ],
+              "qualification-first-without-backup": [
+                -13,
+                29
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.38859446144659254,
+              "gepa-sequential": 0.4021604262462594
+            }
+          },
+          "first-certificate-with-training-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -7,
+                63
+              ],
+              "gepa-sequential": [
+                -20,
+                38
+              ],
+              "joint": [
+                -20,
+                38
+              ],
+              "qualification-first-without-backup": [
+                -13,
+                29
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.342763305217586,
+              "gepa-sequential": 0.3573461791110138
+            }
+          },
+          "second-certificate-after-training-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -14,
+                57
+              ],
+              "gepa-sequential": [
+                -28,
+                33
+              ],
+              "joint": [
+                -28,
+                33
+              ],
+              "qualification-first-without-backup": [
+                -19,
+                25
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.1912368440695678,
+              "gepa-sequential": 0.20918181154660243
+            }
+          }
+        },
+        "deploymentChanges": {
+          "first-certificate": {
+            "changedDeployments": 12,
+            "grossGain": 22,
+            "grossLoss": 13
+          },
+          "first-certificate-with-training-first": {
+            "changedDeployments": 12,
+            "grossGain": 22,
+            "grossLoss": 13
+          },
+          "second-certificate-after-training-veto": {
+            "changedDeployments": 13,
+            "grossGain": 18,
+            "grossLoss": 15
+          }
+        },
+        "totals": {
+          "first-certificate": {
+            "backupPromotions": 0,
+            "deferredTraining": 224,
+            "holdoutPasses": 4082,
+            "paidLookups": 8191,
+            "partialCertificates": 73,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1722,
+            "searchLookups": 6469,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "5db55ebb0b530ae50b026a1c2cea237dd01a3d5c7c05cba0ca2c45e45d2e3e29",
+            "trainingChecks": 69,
+            "trainingLookups": 611,
+            "trainingSkippedAfterQualification": 155,
+            "trainingVetoAfterQualification": 44,
+            "trainingVetoes": 44,
+            "validationCertificates": 224
+          },
+          "first-certificate-with-training-first": {
+            "backupPromotions": 0,
+            "holdoutPasses": 4082,
+            "paidLookups": 8805,
+            "partialCertificates": 73,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 985,
+            "searchLookups": 7820,
+            "secondCertificateNomination": 0,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "6d6601a225742b26f7c4af64b93e21cc26eaf95af2aa318b747ffc53d22d7d60",
+            "trainingChecks": 224,
+            "trainingLookups": 1962,
+            "trainingVetoes": 151,
+            "validationCertificates": 224
+          },
+          "gepa-batched-precheck": {
+            "holdoutPasses": 4055,
+            "paidLookups": 13397,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1357,
+            "searchLookups": 12040,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "2687195d8123af5e19834a64d7569558c7f297a3144f43c75ea2846bf332362e"
+          },
+          "gepa-sequential-precheck": {
+            "holdoutPasses": 4074,
+            "paidLookups": 13701,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1400,
+            "searchLookups": 12301,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "79048a160baaca7098d2f8c5a3c037b799d49e379efce48c4a301af92979bdd4"
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 58,
+            "backupNominations": 16,
+            "backupPromotions": 6,
+            "deferredTraining": 130,
+            "holdoutPasses": 4073,
+            "paidLookups": 12164,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1510,
+            "searchLookups": 10654,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "b38f0ec1c55f307df832790f3006f737733ee065e74c7abd3513a1957b64dd23",
+            "trainingChecks": 192,
+            "trainingLookups": 1451,
+            "trainingSkippedAfterQualification": 90,
+            "trainingVetoAfterQualification": 25,
+            "trainingVetoes": 125
+          },
+          "second-certificate-after-training-veto": {
+            "backupPromotions": 0,
+            "holdoutPasses": 4076,
+            "paidLookups": 10835,
+            "partialCertificates": 113,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1091,
+            "searchLookups": 9744,
+            "secondCertificateNomination": 25,
+            "secondCertificatePromotion": 5,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "d9fbb40a846b1d0e9eae717b066b125cd6630d3f50e1ca7401e0a9a5899a53b7",
+            "trainingChecks": 348,
+            "trainingLookups": 2535,
+            "trainingVetoes": 250,
+            "validationCertificates": 348
+          }
+        },
+        "trialCount": 320
+      }
+    },
+    "arc": {
+      "root/4": {
+        "comparisons": {
+          "first-certificate": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -100,
+                -42
+              ],
+              "gepa-sequential": [
+                -82,
+                -33
+              ],
+              "joint": [
+                -100,
+                -42
+              ],
+              "qualification-first-without-backup": [
+                -93,
+                -40
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.1772300469483568,
+              "gepa-sequential": 0.12484394506866417
+            }
+          },
+          "first-certificate-with-training-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -100,
+                -42
+              ],
+              "gepa-sequential": [
+                -82,
+                -33
+              ],
+              "joint": [
+                -100,
+                -42
+              ],
+              "qualification-first-without-backup": [
+                -93,
+                -40
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.17194835680751175,
+              "gepa-sequential": 0.11922596754057428
+            }
+          },
+          "second-certificate-after-training-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -77,
+                -20
+              ],
+              "gepa-sequential": [
+                -61,
+                -11
+              ],
+              "joint": [
+                -77,
+                -20
+              ],
+              "qualification-first-without-backup": [
+                -72,
+                -17
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.15845070422535212,
+              "gepa-sequential": 0.10486891385767791
+            }
+          }
+        },
+        "deploymentChanges": {
+          "first-certificate": {
+            "changedDeployments": 18,
+            "grossGain": 9,
+            "grossLoss": 74
+          },
+          "first-certificate-with-training-first": {
+            "changedDeployments": 18,
+            "grossGain": 9,
+            "grossLoss": 74
+          },
+          "second-certificate-after-training-veto": {
+            "changedDeployments": 18,
+            "grossGain": 9,
+            "grossLoss": 52
+          }
+        },
+        "totals": {
+          "first-certificate": {
+            "backupPromotions": 0,
+            "deferredTraining": 40,
+            "historicalCostNanodollars": 124662693050,
+            "historicalErrors": 86,
+            "holdoutPasses": 1496,
+            "paidLookups": 1402,
+            "partialCertificates": 37,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 363,
+            "searchLookups": 1039,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f3c5f04ddc7d925e55db09eda5d2b595ec522d7abb8c0bd4d4a7e62e86c9d1d4",
+            "trainingChecks": 39,
+            "trainingLookups": 512,
+            "trainingSkippedAfterQualification": 1,
+            "trainingVetoes": 0,
+            "validationCertificates": 40
+          },
+          "first-certificate-with-training-first": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 125559432550,
+            "historicalErrors": 87,
+            "holdoutPasses": 1496,
+            "paidLookups": 1411,
+            "partialCertificates": 37,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 354,
+            "searchLookups": 1057,
+            "secondCertificateNomination": 0,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "52880e791a8eca05c4ebf6542365be62bc5f89cd3f31752731e2fb09fdf97092",
+            "trainingChecks": 40,
+            "trainingLookups": 530,
+            "trainingVetoes": 1,
+            "validationCertificates": 40
+          },
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 170507388200,
+            "historicalErrors": 93,
+            "holdoutPasses": 1565,
+            "paidLookups": 1704,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 355,
+            "searchLookups": 1349,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bc9194452dd6807d0971a183bcf424159d9170d394217f77717abb90822dbbc5"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 160792534550,
+            "historicalErrors": 84,
+            "holdoutPasses": 1553,
+            "paidLookups": 1602,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 358,
+            "searchLookups": 1244,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8c0adf9a18f01ea87b6eba2f1fe993b3c5d03c6fd0816d91a2b39ed3a68ce063"
+          },
+          "qualification-first-without-backup": {
+            "backupPromotions": 0,
+            "deferredTraining": 18,
+            "historicalCostNanodollars": 182080770650,
+            "historicalErrors": 107,
+            "holdoutPasses": 1561,
+            "paidLookups": 1820,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 358,
+            "searchLookups": 1462,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "b6ff4a620278703a0d310358d68418a4ca7cdf314ff49902f405cca69ddd3489",
+            "trainingChecks": 40,
+            "trainingLookups": 518,
+            "trainingVetoes": 0
+          },
+          "second-certificate-after-training-veto": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 128244870050,
+            "historicalErrors": 88,
+            "holdoutPasses": 1518,
+            "paidLookups": 1434,
+            "partialCertificates": 37,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 363,
+            "searchLookups": 1071,
+            "secondCertificateNomination": 1,
+            "secondCertificatePromotion": 1,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "97d7b91fc9a540534f8afca556786573ead6fa562258440493fc988130d7eb7c",
+            "trainingChecks": 41,
+            "trainingLookups": 536,
+            "trainingVetoes": 1,
+            "validationCertificates": 41
+          }
+        },
+        "trialCount": 40
+      },
+      "root/8": {
+        "comparisons": {
+          "first-certificate": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -98,
+                -36
+              ],
+              "gepa-sequential": [
+                -91,
+                -36
+              ],
+              "joint": [
+                -98,
+                -40
+              ],
+              "qualification-first-without-backup": [
+                -119,
+                -49
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.3542146476278213,
+              "gepa-sequential": 0.37158225011205737
+            }
+          },
+          "first-certificate-with-training-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -98,
+                -36
+              ],
+              "gepa-sequential": [
+                -91,
+                -36
+              ],
+              "joint": [
+                -98,
+                -40
+              ],
+              "qualification-first-without-backup": [
+                -119,
+                -49
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.35006909258406266,
+              "gepa-sequential": 0.36754818467055134
+            }
+          },
+          "second-certificate-after-training-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -76,
+                -14
+              ],
+              "gepa-sequential": [
+                -69,
+                -14
+              ],
+              "joint": [
+                -76,
+                -18
+              ],
+              "qualification-first-without-backup": [
+                -97,
+                -26
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.3394748963611239,
+              "gepa-sequential": 0.35723890632003585
+            }
+          }
+        },
+        "deploymentChanges": {
+          "first-certificate": {
+            "changedDeployments": 23,
+            "grossGain": 13,
+            "grossLoss": 95
+          },
+          "first-certificate-with-training-first": {
+            "changedDeployments": 23,
+            "grossGain": 13,
+            "grossLoss": 95
+          },
+          "second-certificate-after-training-veto": {
+            "changedDeployments": 23,
+            "grossGain": 13,
+            "grossLoss": 73
+          }
+        },
+        "totals": {
+          "first-certificate": {
+            "backupPromotions": 0,
+            "deferredTraining": 40,
+            "historicalCostNanodollars": 124662693050,
+            "historicalErrors": 86,
+            "holdoutPasses": 1496,
+            "paidLookups": 1402,
+            "partialCertificates": 37,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 363,
+            "searchLookups": 1039,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f3c5f04ddc7d925e55db09eda5d2b595ec522d7abb8c0bd4d4a7e62e86c9d1d4",
+            "trainingChecks": 39,
+            "trainingLookups": 512,
+            "trainingSkippedAfterQualification": 1,
+            "trainingVetoes": 0,
+            "validationCertificates": 40
+          },
+          "first-certificate-with-training-first": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 125559432550,
+            "historicalErrors": 87,
+            "holdoutPasses": 1496,
+            "paidLookups": 1411,
+            "partialCertificates": 37,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 354,
+            "searchLookups": 1057,
+            "secondCertificateNomination": 0,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "52880e791a8eca05c4ebf6542365be62bc5f89cd3f31752731e2fb09fdf97092",
+            "trainingChecks": 40,
+            "trainingLookups": 530,
+            "trainingVetoes": 1,
+            "validationCertificates": 40
+          },
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 233813958600,
+            "historicalErrors": 102,
+            "holdoutPasses": 1562,
+            "paidLookups": 2171,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 354,
+            "searchLookups": 1817,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f0d38ab212da3f17fad6a0cd81786fa847681c12a09e254e75f3689ca2a7c05f"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 242198837100,
+            "historicalErrors": 113,
+            "holdoutPasses": 1558,
+            "paidLookups": 2231,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 358,
+            "searchLookups": 1873,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "69d067e540ba6dd0638708f5dbc19a3323f4abce95942fff7b20bf866d658943"
+          },
+          "qualification-first-without-backup": {
+            "backupPromotions": 0,
+            "deferredTraining": 16,
+            "historicalCostNanodollars": 217701481300,
+            "historicalErrors": 114,
+            "holdoutPasses": 1578,
+            "paidLookups": 2020,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 355,
+            "searchLookups": 1665,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "bf64fa0081779471178501d12c34c87d4c7349e48c775ed1b89e22714449dd3a",
+            "trainingChecks": 40,
+            "trainingLookups": 518,
+            "trainingVetoes": 0
+          },
+          "second-certificate-after-training-veto": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 128244870050,
+            "historicalErrors": 88,
+            "holdoutPasses": 1518,
+            "paidLookups": 1434,
+            "partialCertificates": 37,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 363,
+            "searchLookups": 1071,
+            "secondCertificateNomination": 1,
+            "secondCertificatePromotion": 1,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "97d7b91fc9a540534f8afca556786573ead6fa562258440493fc988130d7eb7c",
+            "trainingChecks": 41,
+            "trainingLookups": 536,
+            "trainingVetoes": 1,
+            "validationCertificates": 41
+          }
+        },
+        "trialCount": 40
+      },
+      "rotated/4": {
+        "comparisons": {
+          "first-certificate": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -2,
+                74
+              ],
+              "gepa-sequential": [
+                -58,
+                11
+              ],
+              "joint": [
+                -58,
+                11
+              ],
+              "qualification-first-without-backup": [
+                -64,
+                2
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.010702166536152441,
+              "gepa-sequential": 0.05439121756487026
+            }
+          },
+          "first-certificate-with-training-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -2,
+                74
+              ],
+              "gepa-sequential": [
+                -58,
+                11
+              ],
+              "joint": [
+                -58,
+                11
+              ],
+              "qualification-first-without-backup": [
+                -64,
+                2
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.06186374314800313,
+              "gepa-sequential": -0.014970059880239521
+            }
+          },
+          "second-certificate-after-training-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                39,
+                131
+              ],
+              "gepa-sequential": [
+                -15,
+                64
+              ],
+              "joint": [
+                -15,
+                64
+              ],
+              "qualification-first-without-backup": [
+                -13,
+                48
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": -0.1925084834246933,
+              "gepa-sequential": -0.13984530938123751
+            }
+          }
+        },
+        "deploymentChanges": {
+          "first-certificate": {
+            "changedDeployments": 26,
+            "grossGain": 28,
+            "grossLoss": 58
+          },
+          "first-certificate-with-training-first": {
+            "changedDeployments": 26,
+            "grossGain": 28,
+            "grossLoss": 58
+          },
+          "second-certificate-after-training-veto": {
+            "changedDeployments": 31,
+            "grossGain": 72,
+            "grossLoss": 54
+          }
+        },
+        "totals": {
+          "first-certificate": {
+            "backupPromotions": 0,
+            "deferredTraining": 147,
+            "historicalCostNanodollars": 980338526900,
+            "historicalErrors": 245,
+            "holdoutPasses": 13731,
+            "paidLookups": 7580,
+            "partialCertificates": 70,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2344,
+            "searchLookups": 5236,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "24b4e994e044d57a88734b6563e2ccdfda48238658d09cdb1e28cc105a00f6de",
+            "trainingChecks": 85,
+            "trainingLookups": 1314,
+            "trainingSkippedAfterQualification": 62,
+            "trainingVetoAfterQualification": 27,
+            "trainingVetoes": 27,
+            "validationCertificates": 147
+          },
+          "first-certificate-with-training-first": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 1051202820750,
+            "historicalErrors": 263,
+            "holdoutPasses": 13731,
+            "paidLookups": 8136,
+            "partialCertificates": 70,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1864,
+            "searchLookups": 6272,
+            "secondCertificateNomination": 0,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "4876788f8feb187a4d5b52a749e16e76f060cf1ca0e919da7906a6e3eb8eb6a3",
+            "trainingChecks": 147,
+            "trainingLookups": 2350,
+            "trainingVetoes": 71,
+            "validationCertificates": 147
+          },
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 960165678850,
+            "historicalErrors": 219,
+            "holdoutPasses": 13695,
+            "paidLookups": 7662,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1804,
+            "searchLookups": 5858,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "cfd13973cbad9e679f1873165ed455f17b0271607844753c6586d0d81cafc31f"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 1007711779350,
+            "historicalErrors": 211,
+            "holdoutPasses": 13755,
+            "paidLookups": 8016,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1831,
+            "searchLookups": 6185,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "758ac224f113496fe1f4b9a637e3033e4f637bd18252f8ff7f363dcde9e7d701"
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 10,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "deferredTraining": 110,
+            "historicalCostNanodollars": 1104679883100,
+            "historicalErrors": 290,
+            "holdoutPasses": 13761,
+            "paidLookups": 8439,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2276,
+            "searchLookups": 6163,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "eb6f33514f9c7c15831bea458f05a0535d254129b1b48f594ee97149ede65951",
+            "trainingChecks": 101,
+            "trainingLookups": 1493,
+            "trainingSkippedAfterQualification": 56,
+            "trainingVetoAfterQualification": 21,
+            "trainingVetoes": 39
+          },
+          "second-certificate-after-training-veto": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 1178861672400,
+            "historicalErrors": 308,
+            "holdoutPasses": 13779,
+            "paidLookups": 9137,
+            "partialCertificates": 87,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1940,
+            "searchLookups": 7197,
+            "secondCertificateNomination": 11,
+            "secondCertificatePromotion": 8,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8210ae2bd50aaf25b5c7a89e13babcb0cb11817471606b728042d5f26447aeec",
+            "trainingChecks": 196,
+            "trainingLookups": 2769,
+            "trainingVetoes": 109,
+            "validationCertificates": 196
+          }
+        },
+        "trialCount": 360
+      },
+      "rotated/8": {
+        "comparisons": {
+          "first-certificate": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -62,
+                12
+              ],
+              "gepa-sequential": [
+                -66,
+                9
+              ],
+              "joint": [
+                -67,
+                4
+              ],
+              "qualification-first-without-backup": [
+                -107,
+                -29
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.22014576714632778,
+              "gepa-sequential": 0.29747474747474745
+            }
+          },
+          "first-certificate-with-training-first": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -62,
+                12
+              ],
+              "gepa-sequential": [
+                -66,
+                9
+              ],
+              "joint": [
+                -67,
+                4
+              ],
+              "qualification-first-without-backup": [
+                -107,
+                -29
+              ]
+            },
+            "gate": "inconclusive",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.16015698000373763,
+              "gepa-sequential": 0.24343434343434345
+            }
+          },
+          "second-certificate-after-training-veto": {
+            "caseSensitivityRanges": {
+              "gepa-batched": [
+                -9,
+                76
+              ],
+              "gepa-sequential": [
+                -9,
+                69
+              ],
+              "joint": [
+                -12,
+                67
+              ],
+              "qualification-first-without-backup": [
+                -45,
+                24
+              ]
+            },
+            "gate": "failed",
+            "lookupSavingFractions": {
+              "gepa-batched": 0.023733881517473368,
+              "gepa-sequential": 0.12053872053872054
+            }
+          }
+        },
+        "deploymentChanges": {
+          "first-certificate": {
+            "changedDeployments": 32,
+            "grossGain": 28,
+            "grossLoss": 95
+          },
+          "first-certificate-with-training-first": {
+            "changedDeployments": 32,
+            "grossGain": 28,
+            "grossLoss": 95
+          },
+          "second-certificate-after-training-veto": {
+            "changedDeployments": 38,
+            "grossGain": 59,
+            "grossLoss": 68
+          }
+        },
+        "totals": {
+          "first-certificate": {
+            "backupPromotions": 0,
+            "deferredTraining": 164,
+            "historicalCostNanodollars": 1094165484900,
+            "historicalErrors": 289,
+            "holdoutPasses": 13755,
+            "paidLookups": 8346,
+            "partialCertificates": 75,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2462,
+            "searchLookups": 5884,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "1544200319ad7b9e412cb65511856e80ab0a5c8bfaaa32960569d3f8b2e773e9",
+            "trainingChecks": 94,
+            "trainingLookups": 1471,
+            "trainingSkippedAfterQualification": 70,
+            "trainingVetoAfterQualification": 30,
+            "trainingVetoes": 30,
+            "validationCertificates": 164
+          },
+          "first-certificate-with-training-first": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 1175933831100,
+            "historicalErrors": 310,
+            "holdoutPasses": 13755,
+            "paidLookups": 8988,
+            "partialCertificates": 75,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1935,
+            "searchLookups": 7053,
+            "secondCertificateNomination": 0,
+            "secondCertificatePromotion": 0,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "d6affb0ecc96f0f4878f3fa4313ae4a802c8ecc0b74600fc3e3ea960cbe224e8",
+            "trainingChecks": 164,
+            "trainingLookups": 2640,
+            "trainingVetoes": 78,
+            "validationCertificates": 164
+          },
+          "gepa-batched-precheck": {
+            "historicalCostNanodollars": 1350234455650,
+            "historicalErrors": 298,
+            "holdoutPasses": 13781,
+            "paidLookups": 10702,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 1956,
+            "searchLookups": 8746,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "0a33d8f09b6bfef16b8650801428fa8653fabb273b140512c706e6105aa25cb2"
+          },
+          "gepa-sequential-precheck": {
+            "historicalCostNanodollars": 1510771245500,
+            "historicalErrors": 329,
+            "holdoutPasses": 13785,
+            "paidLookups": 11880,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2022,
+            "searchLookups": 9858,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "62164c225969bde9c935f4599676e2d90f1d825359aaf6b4842f98cd7add8b95"
+          },
+          "qualification-first-without-backup": {
+            "availableBackups": 12,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "deferredTraining": 116,
+            "historicalCostNanodollars": 1319899904350,
+            "historicalErrors": 401,
+            "holdoutPasses": 13822,
+            "paidLookups": 9896,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2371,
+            "searchLookups": 7525,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "49823bc70f984b1d9dbfc05fbb7eb125cdba9d4c4947462795972699de535e23",
+            "trainingChecks": 116,
+            "trainingLookups": 1738,
+            "trainingSkippedAfterQualification": 60,
+            "trainingVetoAfterQualification": 20,
+            "trainingVetoes": 42
+          },
+          "second-certificate-after-training-veto": {
+            "backupPromotions": 0,
+            "historicalCostNanodollars": 1366648303400,
+            "historicalErrors": 367,
+            "holdoutPasses": 13813,
+            "paidLookups": 10448,
+            "partialCertificates": 95,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2041,
+            "searchLookups": 8407,
+            "secondCertificateNomination": 15,
+            "secondCertificatePromotion": 10,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "489db30ed70f47f7f5515787ac1e03d22c6a479a295567af6bf949a83f21e80e",
+            "trainingChecks": 235,
+            "trainingLookups": 3245,
+            "trainingVetoes": 134,
+            "validationCertificates": 235
+          }
+        },
+        "trialCount": 360
+      }
+    }
+  }
+}

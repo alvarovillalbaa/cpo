@@ -16,6 +16,8 @@ The AIME eight-challenger rotation offered helpful backups on two of 88 eligible
 
 On the two eight-challenger rotations, the existing search and qualification cost already exceeds the lookup ceiling. Widening the backup search on top of that paid prefix cannot meet the combined gate. The result leaves open policies that change the earlier acquisition budget or the nomination before those costs are incurred.
 
+A follow-up stopped validation at the first proved gain. It saved 3,973 lookups and added nine passes on the eight-challenger AIME rotation, while losing passes on ARC. [First-certificate replay](recorded-first-training-certificate.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 26 targeted tests passed and two replays matched byte for byte. The seeded path reproduced all eight archived score, cost, and trace totals. The CLI rejected a stale seal, and the ordered live plan reproduced. Storage Guard measured 6.0 GiB free. The 39 MiB export and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent. [Cost and eligibility tests](../tests/unit/test_recorded_training_veto_backup_ceiling.py)
