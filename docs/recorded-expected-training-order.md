@@ -19,6 +19,8 @@ On the eight-challenger ARC-AGI rotation, training lookups fell from 1,738 to 1,
 
 A follow-up tested checking incumbent training headroom before running validation. Both schedules preserved the deployed prompts and used at least as many lookups as this replay. [Incumbent precheck replay](recorded-incumbent-training-precheck.md)
 
+A further replay compared the validation winner with its paid runner-up using exact training gains. It changed 12 deployments and added lookups in all eight settings. [Paired training comparison](recorded-corroborated-nomination.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and socket connections blocked, 80 targeted tests and five subtests passed, including exhaustive training outcomes for a three-case panel with and without paid prefixes. Two full replays matched byte for byte. The replay reproduced the original math frontiers, public-selector parity receipt, and live-plan preview. The CLI rejected a stale seal. Storage Guard measured 4.0 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. The replay sent zero provider requests.
