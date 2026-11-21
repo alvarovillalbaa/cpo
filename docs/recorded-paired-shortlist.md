@@ -17,6 +17,8 @@ On six disjoint LMentry tasks, fixed halves added 195 passes for 749 more lookup
 
 On the two original LMentry tasks with different models, fixed halves added nine passes and saved 202 lookups over the first-certificate policy. It retained the earlier matched-cost advantage there. Both shortlist variants lost to affordable GEPA on the BBH cohorts. These archived results support further testing of the fixed shortlist and leave broader or fresh-model superiority unverified.
 
+Checking both witnesses before the first cut improved the matched-cost margin on disjoint LMentry and gave a positive paired range. BBH remained below GEPA on observed scores. [Screen order comparison](recorded-shortlist-screen-order.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and socket connections blocked, 48 targeted tests passed and two full replays matched byte for byte. The tests covered protected passes, cutoff ties, and the training reserve when a screen cannot fit. The CLI rejected a stale seal, and the ordered live plan preview matched. Storage Guard measured 4.8 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. The replays sent zero provider requests. [Shortlist tests](../tests/unit/test_recorded_paired_shortlist.py)
