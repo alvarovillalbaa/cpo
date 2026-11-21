@@ -21,6 +21,8 @@ On eight-challenger rotated AIME, requiring incumbent-pass preservation changed 
 
 The hindsight diagnostic can keep the original result or choose any admitted alternative after seeing its independent qualification and final holdout. A rejected alternative deploys the incumbent. On the eight-challenger rotations, the tie rule's offer set could add at most seven AIME passes and three ARC-AGI passes. The incumbent-preserving version could add seven and zero respectively. The offer sets cover little of the earlier roster headroom, and the rules stay out of the default policy.
 
+A follow-up compared two certified nominees on disjoint cases before independent qualification and transferred the same rule to 26 language panels. [Separate finalist witness](recorded-disjoint-finalist-witness.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Two socket- and DNS-blocked replays matched byte for byte. The original search-and-proof traces and native GEPA frontiers reproduced. All 59 targeted tests passed from a clean source export, including paid-only selection and protected passes. An independent check verified all 3,040 decisions using the original paid validation ledger and complete independent grades. The CLI rejected the earlier seal. The public selector receipt and ordered live-plan preview reproduced. Storage Guard measured 2.8 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent.
