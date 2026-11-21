@@ -15,6 +15,8 @@ Each cell gives held-out passes and total paid lookups. On the disjoint LMentry 
 
 On the original homophones and word-before tasks, the four-read policy bought 260 extra replies and changed zero nominees on the two different checkpoints. Both CPO policies scored 699. The full four-read policy saved at least 11.8% against either GEPA control, but the joint range crossed zero. The original four-read gain did not replicate. The archive covers fixed prompt pools, and fresh prompt generation and model performance remain unverified.
 
+A follow-up swept GEPA's search cap. GEPA exceeded the four-read score with fewer paid lookups on the disjoint cohorts. The simpler first-certificate policy led at matched cost on the original two LMentry tasks across the different model checkpoints. [Matched-cost comparison](recorded-certificate-cost-frontier.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and socket connections blocked, 40 targeted tests passed and two full replays matched byte for byte. The CLI rejected a stale seal, and the sealed live plan preview matched. Storage Guard measured 4.8 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. The replays sent zero provider requests. [Partition and leakage tests](../tests/unit/test_recorded_certificate_allowance_transfer.py)
