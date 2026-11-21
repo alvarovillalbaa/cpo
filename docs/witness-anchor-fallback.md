@@ -18,6 +18,8 @@ The 16-lookup arm reused 15,591 grades during fallback. It still reached its cap
 
 A follow-up initialized the score bounds from all relevant paid grades and tested nominating a challenger at the cap when those bounds proved a strict gain over the incumbent. The extra nominations recovered the BBH and LMentry loss and increased proof spend. [Paid anchor bounds](witness-paid-anchor-bounds.md)
 
+A separate follow-up kept exact Halving and tested spending the fallback budget in an order derived from paid grades. It found small gains on BBH and LMentry and the prior MMLU subjects. Its paired intervals included zero. [Paid cycle priority](witness-halving-cycle-priority.md)
+
 ## Reproduce
 
 Use Python 3.12 with the pinned GEPA 0.1.4 wheel. With sockets and DNS blocked, 98 targeted tests passed and two complete replays matched byte for byte. The CLI rejected a stale seal, and the prospective live-plan preview reproduced byte for byte. Storage Guard measured 6.2 GiB free. The temporary export, wheel overlay, and publication worktree used the standing 0.2 GiB LAB exception. The replay made zero provider requests. [Lookup cap and cache tests](../tests/unit/test_witness_anchor_fallback.py)
