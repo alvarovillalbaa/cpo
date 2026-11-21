@@ -27,6 +27,8 @@ MMLU had 389 second attempts with at least one improving paid rival. Only 26 had
 
 The best same-spend hindsight choice gains 81 pooled MMLU passes over the full single proof. The remaining-cap choice adds three more. Hindsight spend drops because it can keep the start without paying for a failed second proof. On this schedule, improving MMLU ranking alone has fewer opportunities than improving admission feasibility. The table includes both possible selection gains and the savings from perfect knowledge of when to skip a retry. [Full report and episode trace hashes](witness-rival-capacity-results-v1.json)
 
+The next replay found that changing only the order of incumbent and rival reads could free room for an improving certificate in 11 of the 180 MMLU episodes. Another 155 needed a different case order. [Proof ordering comparison](witness-rival-order.md)
+
 ## Reproduce
 
 Use a clean export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 27 targeted tests passed and two offline audits matched byte for byte. The CLI rejected a stale seal, all five original arms reproduced down to panel traces, and the prospective development plan reproduced byte for byte. The audit made zero provider requests. Storage Guard measured 5.8 GiB free. The export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Audit tests](../tests/unit/test_witness_rival_capacity.py)
