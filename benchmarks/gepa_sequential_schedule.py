@@ -52,7 +52,7 @@ def select_field_rewrites(
 
 def sequential_schedule(
     validation, seed, minibatch_size, trace, *, training=None, parent_bounds=False, width=1, frontier_bounds=False,
-    prioritize_uncertain_cases=False,
+    prioritize_uncertain_cases=False, adaptive_case_order=False,
 ):
     from gepa.core.data_loader import ListDataLoader
     from gepa.gepa_utils import select_program_candidate_from_pareto_front
@@ -64,7 +64,7 @@ def sequential_schedule(
         from cpo.gepa_frontier import select_frontier_parent
     if (parent_bounds or frontier_bounds) and version('gepa') != '0.1.4':
         raise ValueError('Parent bounds require GEPA 0.1.4')
-    if prioritize_uncertain_cases and not frontier_bounds:
+    if (prioritize_uncertain_cases or adaptive_case_order) and not frontier_bounds:
         raise ValueError('Prioritizing uncertain cases requires the larger-pool proof')
 
     training = validation if training is None else training
@@ -76,7 +76,8 @@ def sequential_schedule(
         parent = select_two_candidate_parent(pool, len(validation), grades, rng) if parent_bounds else None
         if parent is None and frontier_bounds:
             parent = select_frontier_parent(pool, len(validation), grades, rng,
-                                            prioritize_uncertain_cases=prioritize_uncertain_cases)
+                                            prioritize_uncertain_cases=prioritize_uncertain_cases,
+                                            adaptive_case_order=adaptive_case_order)
         if len(pool) == 1:
             # The only program owns every case without needing its grades.
             parent = rng.choice(pool * len(validation))

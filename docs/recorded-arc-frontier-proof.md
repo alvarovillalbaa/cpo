@@ -41,3 +41,5 @@ PYTHONHASHSEED=0 python -B -m benchmarks.recorded_arc_frontier_proof \
 ```
 
 The result SHA-256 is `742061eb5c3d341fe1090549aa5aa33fad6bb59e58ae4af7c9288314d8c112d1`.
+
+The follow-up compares reordering after each read and a finite-grade proof. Reproduce this original receipt from the revision that added it. [Adaptive case order](gepa-adaptive-case-order.md) · [Original source revision](https://github.com/alvarovillalbaa/cpo/tree/cf50261b1a953f7077481e77658d2d5a31fb0771)

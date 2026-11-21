@@ -1,0 +1,349 @@
+diff --git a/cpo/gepa_frontier.py b/cpo/gepa_frontier.py
+index 6dc5b5f..b71b873 100644
+--- a/cpo/gepa_frontier.py
++++ b/cpo/gepa_frontier.py
+@@ -2,0 +3 @@
++from bisect import bisect_left, bisect_right
+@@ -4 +5 @@ from itertools import product
+-from math import prod
++from math import fsum, prod, ulp
+@@ -8,0 +10 @@ MAX_FRONTIERS = 128
++MAX_LOOKAHEAD_CELLS = 8
+@@ -34 +36,51 @@ def _possible_fronts(row):
+-def _minimal_covers(fronts):
++def _supported_fronts(row, support):
++    """Bound each grade conditional on one possible set of case winners."""
++    options = {}
++    missing = sum(1 << index for index, score in enumerate(row) if score is None)
++    best_known = max((score for score in row if score is not None), default=-1.0)
++    for front in _possible_fronts(row):
++        missing_loser = missing & ~front
++        if front & ~missing:
++            low = high = bisect_left(support, best_known)
++        else:
++            low = max(int(bool(missing_loser)), bisect_right(support, best_known))
++            high = len(support) - 1
++        if low > high or (missing_loser and not high):
++            continue
++        options[front] = tuple(
++            (score, score) if score is not None else
++            (support[low], support[high]) if front & (1 << index) else
++            (support[0], support[high - 1])
++            for index, score in enumerate(row)
++        )
++    return options
++
++
++def _front_indices(front, width):
++    return {index for index in range(width) if front & (1 << index)}
++
++
++def _precedence(fronts, row_limits, width):
++    """Find candidates GEPA must order earlier for this frontier hypothesis."""
++    order = tuple(dict.fromkeys(index for front in fronts for index in _front_indices(front, width)))
++    size = len(row_limits)
++    # Allow for rounding in both the bounds and GEPA's validation-order sum.
++    padding = 2 * (size + 1) * ulp(1.0)
++    limits = {}
++    for index in order:
++        low, high = zip(*(row[index] for row in row_limits), strict=True)
++        if low == high:
++            exact = sum(low) / size
++            limits[index] = exact, exact
++        else:
++            limits[index] = fsum(low) / size - padding, fsum(high) / size + padding
++
++    ranks = {index: position for position, index in enumerate(order)}
++    earlier = [0] * width
++    for index, (lower, _) in limits.items():
++        earlier[index] = sum(1 << other for other, (_, upper) in limits.items() if other != index and (
++            upper < lower or (upper == lower and ranks[other] < ranks[index])))
++    return earlier
++
++
++def _minimal_covers(fronts, earlier=None):
+@@ -50,2 +102,6 @@ def _minimal_covers(fronts):
+-        while removable:
+-            candidate = removable & -removable
++        eligible = removable
++        while eligible:
++            candidate = eligible & -eligible
++            eligible ^= candidate
++            if earlier is not None and earlier[candidate.bit_length() - 1] & removable:
++                continue
+@@ -56 +111,0 @@ def _minimal_covers(fronts):
+-            removable ^= candidate
+@@ -62 +117 @@ def _sampling_list(fronts, survivors, width):
+-        winners = {index for index in range(width) if front & (1 << index)}
++        winners = _front_indices(front, width)
+@@ -68 +123 @@ def _sampling_list(fronts, survivors, width):
+-def _certify(options, width, rng):
++def _certify(options, width, rng, *, grade_limits=None):
+@@ -76 +131,3 @@ def _certify(options, width, rng):
+-        for survivors in _minimal_covers(fronts):
++        earlier = None if grade_limits is None else _precedence(
++            fronts, [bounds[front] for bounds, front in zip(grade_limits, fronts, strict=True)], width)
++        for survivors in _minimal_covers(fronts, earlier):
+@@ -92 +149,30 @@ def _certify(options, width, rng):
+-def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_cases=False):
++def _single_deciding_grade(rows, options, grade_limits, support, width, rng):
++    """Find one read that resolves the selection for every result it may return."""
++    if prod(map(len, options)) > MAX_FRONTIERS:
++        return None
++    missing = [(case, index) for case, row in enumerate(rows)
++               for index, score in enumerate(row) if score is None]
++    if not 2 <= len(missing) <= MAX_LOOKAHEAD_CELLS or len(support) > 8:
++        return None
++    preview = Random(0)
++    state = rng.getstate()
++    for case, index in missing:
++        row = rows[case].copy()
++        options_at_case, limits_at_case = options[case], grade_limits[case]
++        for score in support:
++            row[index] = score
++            grade_limits[case] = _supported_fronts(row, support)
++            options[case] = tuple(grade_limits[case])
++            preview.setstate(state)
++            if _certify(options, width, preview, grade_limits=grade_limits) is None:
++                settles = False
++                break
++        else:
++            settles = True
++        options[case], grade_limits[case] = options_at_case, limits_at_case
++        if settles:
++            return case, index
++    return None
++
++
++def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_cases=False, grade_support=None):
+@@ -102,0 +189,4 @@ def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_case
++    When the evaluator guarantees a finite normalized grade_support, use it
++    to exclude impossible winner sets and bound GEPA's aggregate-score order.
++    On small unresolved frontiers, try to find a single read that settles the
++    draw for any supported grade it could return.
+@@ -108 +198,11 @@ def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_case
+-    options = [_possible_fronts(row) for row in rows]
++    grade_limits = None
++    if grade_support is None:
++        options = [_possible_fronts(row) for row in rows]
++    else:
++        support = tuple(sorted(set(grade_support)))
++        if not support or support[0] != 0 or support[-1] != 1 or not all(0 <= score <= 1 for score in support):
++            raise ValueError('Finite frontier grades must span zero to one')
++        if any(score not in support for row in rows for score in row if score is not None):
++            return None
++        grade_limits = [_supported_fronts(row, support) for row in rows]
++        options = [tuple(bounds) for bounds in grade_limits]
+@@ -117 +217 @@ def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_case
+-            owner = _certify(options, width, rng)
++            owner = _certify(options, width, rng, grade_limits=grade_limits)
+@@ -119,0 +220,12 @@ def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_case
++            if grade_limits is not None:
++                deciding = _single_deciding_grade(rows, options, grade_limits, support, width, rng)
++                if deciding is not None:
++                    target, candidate = deciding
++                    observed = grades.read(pool[candidate], target)
++                    if observed not in support:
++                        return None
++                    rows[target][candidate] = observed
++                    grade_limits[target] = _supported_fronts(rows[target], support)
++                    options[target] = tuple(grade_limits[target])
++                    owner = _certify(options, width, rng, grade_limits=grade_limits)
++                    return None if owner is None else pool[owner]
+@@ -121 +233,7 @@ def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_case
+-            options[case] = _possible_fronts(row)
++            if grade_limits is None:
++                options[case] = _possible_fronts(row)
++            else:
++                if row[index] not in support:
++                    return None
++                grade_limits[case] = _supported_fronts(row, support)
++                options[case] = tuple(grade_limits[case])
+diff --git a/benchmarks/gepa_sequential_schedule.py b/benchmarks/gepa_sequential_schedule.py
+index 498f66d..9be456c 100644
+--- a/benchmarks/gepa_sequential_schedule.py
++++ b/benchmarks/gepa_sequential_schedule.py
+@@ -55 +55 @@ def sequential_schedule(
+-    prioritize_uncertain_cases=False,
++    prioritize_uncertain_cases=False, finite_grade_bounds=False,
+@@ -68,0 +69,2 @@ def sequential_schedule(
++    if finite_grade_bounds and not frontier_bounds:
++        raise ValueError('Finite grade bounds require the larger-pool proof')
+@@ -70,0 +73,7 @@ def sequential_schedule(
++    support = None
++    if finite_grade_bounds:
++        fields = validation[0].fields
++        if type(fields) is not int or fields < 1 or any(row.fields != fields for row in (*training, *validation)):
++            raise ValueError('Finite grades require a uniform positive field count')
++        weight = 1 << (max(len(training), len(validation)) * fields).bit_length()
++        support = (*(count / (weight + fields) for count in range(fields)), 1.0)
+@@ -79 +88 @@ def sequential_schedule(
+-                                            prioritize_uncertain_cases=prioritize_uncertain_cases)
++                                            prioritize_uncertain_cases=prioritize_uncertain_cases, grade_support=support)
+diff --git a/tests/unit/test_gepa_frontier.py b/tests/unit/test_gepa_frontier.py
+index 21beef9..24d5fad 100644
+--- a/tests/unit/test_gepa_frontier.py
++++ b/tests/unit/test_gepa_frontier.py
+@@ -16 +16 @@ def native_draw(profiles, rng):
+-def check_draw(profiles, seed, prepaid, *, prioritize_uncertain_cases=False):
++def check_draw(profiles, seed, prepaid, *, prioritize_uncertain_cases=False, grade_support=None):
+@@ -32 +32 @@ def check_draw(profiles, seed, prepaid, *, prioritize_uncertain_cases=False):
+-                                    prioritize_uncertain_cases=prioritize_uncertain_cases)
++                                    prioritize_uncertain_cases=prioritize_uncertain_cases, grade_support=grade_support)
+@@ -42 +42 @@ def test_every_small_three_candidate_profile_and_mixed_partial_cache():
+-    saved = 0
++    saved = extra = 0
+@@ -44 +44,2 @@ def test_every_small_three_candidate_profile_and_mixed_partial_cache():
+-    for values in product((0.0, 0.5, 1.0), repeat=6):
++    support = (0.0, 0.5, 1.0)
++    for values in product(support, repeat=6):
+@@ -49,2 +50,6 @@ def test_every_small_three_candidate_profile_and_mixed_partial_cache():
+-            saved += check_draw(profiles, seed, prepaid)
+-    assert saved > 0
++            ordinary = check_draw(profiles, seed, prepaid)
++            refined = check_draw(profiles, seed, prepaid, grade_support=support)
++            assert refined >= ordinary
++            saved += ordinary
++            extra += refined - ordinary
++    assert saved > 0 and extra > 0
+@@ -58 +63,3 @@ def test_mixed_fronts_and_later_pools_match_native():
+-        profiles = tuple(tuple(rng.choice((0.0, 0.25, 0.5, 0.75, 1.0)) for _ in range(size))
++        # Non-dyadic grades exercise the native sum and rounding boundaries.
++        support = (0.0, 1 / 19, 2 / 19, 1.0)
++        profiles = tuple(tuple(rng.choice(support) for _ in range(size))
+@@ -62,0 +70 @@ def test_mixed_fronts_and_later_pools_match_native():
++        check_draw(profiles, seed, prepaid, grade_support=support)
+@@ -71,0 +80,20 @@ def test_draw_can_ignore_uncertain_owner_of_the_other_case():
++def test_finite_proof_reads_the_single_grade_that_can_settle_every_branch():
++    support = (0.0, 0.5, 1.0)
++    pool = ('old', 'repair', 'other')
++    for old, repair in product(support, repeat=2):
++        profiles = ((old, 0.0), (repair, 0.5), (0.0, 0.5))
++        paid = {('old', 1): 0.0, ('repair', 1): 0.5, ('other', 0): 0.0, ('other', 1): 0.5}
++        native_rng, actual_rng = Random(0), Random(0)
++
++        def read(prompt, case):
++            assert (prompt, case) == ('repair', 0)
++            paid[prompt, case] = repair
++            return repair
++
++        grades = SequentialValidationGrades(lambda _: None, lambda prompt, case: paid.get((prompt, case)), read)
++        parent = select_frontier_parent(pool, 2, grades, actual_rng, grade_support=support)
++        assert len(paid) == 5
++        assert parent == pool[native_draw(profiles, native_rng)]
++        assert actual_rng.getstate() == native_rng.getstate()
++
++
+diff --git a/benchmarks/recorded_arc_finite_grade_bounds.py b/benchmarks/recorded_arc_finite_grade_bounds.py
+new file mode 100644
+index 0000000..e80ad8c
+--- /dev/null
++++ b/benchmarks/recorded_arc_finite_grade_bounds.py
+@@ -0,0 +1,107 @@
++"""Measure finite-grade parent certificates against the existing frontier proof."""
++
++import argparse
++from collections import Counter
++from functools import partial
++from hashlib import sha256
++from importlib.metadata import version
++import json
++from pathlib import Path
++from random import Random
++from unittest.mock import patch
++
++from benchmarks import batched_field_feedback as batched, gepa_sequential_schedule as schedule
++from benchmarks import recorded_arc_frontier_proof as prior, recorded_arc_lineage_quotes as arc
++from cpo._contract import digest
++
++
++REFERENCE = 'recorded-arc-frontier-proof-results-v1.json'
++REFERENCE_SHA = '742061eb5c3d341fe1090549aa5aa33fad6bb59e58ae4af7c9288314d8c112d1'
++CONTROL = prior.SETTLE_VALIDATION
++FINITE = 'cpo-frontier-finite-grades'
++
++
++def plan(cases):
++    inherited = prior.plan(cases)
++    return {**inherited, 'protocol': 'cpo-recorded-arc-finite-grade-bounds-v1', 'arms': (CONTROL, FINITE),
++            'parentResultSha256': REFERENCE_SHA, 'sourceSha256': {
++                **inherited['sourceSha256'], 'benchmarks/recorded_arc_finite_grade_bounds.py':
++                sha256((arc.ROOT / 'benchmarks/recorded_arc_finite_grade_bounds.py').read_bytes()).hexdigest(),
++            }, 'proof': 'Bound each candidate grade by the exact scalar score support and case winner set. '
++                        'GEPA must prune a removable candidate that can come first in its aggregate-score order.'}
++
++
++def measure_arc(cases, scores, children, reference):
++    quote = max(charge for rows in scores.values() for _, charge in rows.values())
++    use_finite = partial(schedule.sequential_schedule, finite_grade_bounds=True)
++    results = {}
++    for units in arc.QUOTE_UNITS:
++        results[units] = {}
++        for multiplier in arc.REFLECTION_QUOTES:
++            paths, traces, effects = [], [], Counter()
++            for seed in arc.SEEDS:
++                split = arc.split(cases, seed)
++                for start, available in children.items():
++                    if not available:
++                        continue
++                    rng = Random(f'{seed}/{start}')
++                    orders = {parent: rng.sample(items, len(items)) for parent, items in children.items()}
++                    args = start, split, scores, orders, seed, quote, quote * multiplier, units * quote
++                    traces_before, traces_after = [], []
++                    settings = {'stop_on_exhaustion': True, 'skip_empty_slots': True, 'frontier_bounds': True,
++                                'settle_validation_on_price_limit': True}
++                    before = arc.play('cpo-shared-budget', *args, **settings, schedule_trace=traces_before)
++                    with patch.object(schedule, 'sequential_schedule', use_finite):
++                        after = arc.play('cpo-shared-budget', *args, **settings, schedule_trace=traces_after)
++                    if any(left != right for left, right in zip(traces_before, traces_after)):
++                        raise ValueError('The finite-grade proof changed a shared parent or minibatch')
++                    effects.update(scheduleChanges=traces_before != traces_after,
++                                   changedNominees=before['nominee'] != after['nominee'],
++                                   changedAdmissions=before['selected'] != after['selected'],
++                                   changedHoldouts=before['passes'] != after['passes'],
++                                   fewerReads=after['searchReads'] < before['searchReads'],
++                                   moreReads=after['searchReads'] > before['searchReads'])
++                    paths.append((seed, start, {CONTROL: before, FINITE: after}))
++                    traces.append((seed, start, traces_before, traces_after))
++            summary = arc.summarize(paths, arms=(CONTROL, FINITE), comparisons={FINITE: (CONTROL,)})
++            expected = reference[str(units)][str(multiplier)]
++            if (summary['totals'][CONTROL] != expected['totals'][CONTROL] or any(
++                    row[CONTROL] != expected['byStart'][start][CONTROL] for start, row in summary['byStart'].items())):
++                raise ValueError('The previously published settlement arm changed')
++            results[units][multiplier] = {**summary, 'effects': effects, 'scheduleSha256': digest(traces)}
++    return results
++
++
++def measure_fixture(reference):
++    ordinary = batched.measure(frontier_bounds=True)['caps']
++    if json.loads(json.dumps(ordinary)) != reference['validationOrder']:
++        raise ValueError('The published width-two fixture reference changed')
++    with patch.object(batched, 'sequential_schedule', partial(batched.sequential_schedule, finite_grade_bounds=True)):
++        finite = batched.measure(frontier_bounds=True)['caps']
++    return {'validationOrder': ordinary, 'finiteGrades': finite,
++            'priorUncertainCasesFirst': reference['uncertainCasesFirst']}
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--execute')
++    parser.add_argument('--out', type=Path)
++    args = parser.parse_args()
++    cases, scores, children = arc.load_archive()
++    frozen = plan(cases)
++    seal = digest(frozen)
++    if args.execute is None and args.out is None:
++        print(json.dumps({**frozen, 'planSha256': seal}, indent=2, sort_keys=True))
++        return
++    if args.execute != seal or args.out is None or args.out.exists() or version('gepa') != '0.1.4':
++        parser.error('Use the current seal, pinned GEPA 0.1.4, and a fresh receipt path')
++    reference = prior.load_reference(REFERENCE, REFERENCE_SHA)
++    result = {'plan': frozen, 'planSha256': seal, 'arc': measure_arc(cases, scores, children, reference['arc']),
++              'scripted': measure_fixture(reference['scripted']), 'newProviderRequests': 0}
++    with args.out.open('x') as output:
++        json.dump(result, output, indent=2, sort_keys=True)
++        output.write('\n')
++
++
++if __name__ == '__main__':
++    main()

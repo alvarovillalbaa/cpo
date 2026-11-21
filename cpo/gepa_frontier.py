@@ -89,7 +89,7 @@ def _certify(options, width, rng):
     return index
 
 
-def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_cases=False):
+def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_cases=False, adaptive_case_order=False):
     """Certify a seeded draw for 3–7 distinct candidates and 1–32 cases.
 
     Unknown grades can be any value from zero to one. The search overapproximates
@@ -100,6 +100,7 @@ def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_case
 
     With prioritize_uncertain_cases, check the cases with the most possible
     winner sets in the existing cache first. Ties keep validation order.
+    With adaptive_case_order, recompute that order after each paid grade.
     """
     width = len(pool)
     if not 3 <= width <= 7 or len(set(pool)) != width or not 1 <= size <= 32:
@@ -109,14 +110,18 @@ def select_frontier_parent(pool, size, grades, rng, *, prioritize_uncertain_case
     cases = range(size)
     if prioritize_uncertain_cases:
         cases = sorted(cases, key=lambda case: -len(options[case]))
-    for case in cases:
+    pending = {case: rows[case].count(None) for case in cases if None in rows[case]}
+    while pending:
+        owner = _certify(options, width, rng)
+        if owner is not None:
+            return pool[owner]
+        case = (max(pending, key=lambda case: (len(options[case]), -case))
+                if adaptive_case_order else next(iter(pending)))
         row = rows[case]
-        for index, score in enumerate(row):
-            if score is not None:
-                continue
-            owner = _certify(options, width, rng)
-            if owner is not None:
-                return pool[owner]
-            row[index] = grades.read(pool[index], case)
-            options[case] = _possible_fronts(row)
+        index = row.index(None)
+        row[index] = grades.read(pool[index], case)
+        options[case] = _possible_fronts(row)
+        pending[case] -= 1
+        if pending[case] == 0:
+            del pending[case]
     return None
