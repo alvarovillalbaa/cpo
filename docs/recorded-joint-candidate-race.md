@@ -19,6 +19,8 @@ On eight-challenger rotated ARC-AGI, the adaptive joint race changed 28 deployme
 
 On eight-challenger rotated AIME, adaptive ordering saved 2,535 lookups and lost one pass against validation-first. It still used 2,392 more lookups and scored eight fewer passes than the earlier adaptive validation race. Its paired lookup-matched margin against GEPA was −59 to +7. Reordering the two proofs lowered the cost of joint nomination, but the joint race did not improve the cost-quality tradeoff on both archives.
 
+A hindsight audit priced exact certificates for the full roster. It measured which losses came from the gate requirements and how much headroom remained for better selection. [Fixed-roster ceilings](recorded-math-roster-ceiling.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Two socket- and DNS-blocked replays matched byte for byte and reproduced the original GEPA frontiers. An independent audit checked all 3,040 nominations and deployments against complete panel grades. All 51 targeted tests passed, including 512 exhaustive small boards on each schedule, and the CLI rejected the prior seal. The public selector parity receipt and both live plan previews reproduced. Storage Guard measured 2.9 GiB free. The source, wheel, and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent.
