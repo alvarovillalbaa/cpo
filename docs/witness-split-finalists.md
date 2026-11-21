@@ -18,6 +18,8 @@ The paid-cache rule gained ten pooled MMLU passes for 690 additional lookups. It
 
 The paid-cache rule issued 2,455 alternate MMLU probes and found 33 split finalist pairs. The alternate won none of those witness screens. The changed search ledger and tie case still changed five episode nominees and two deployments. On BBH and LMentry, the alternate won 70 witness screens and the rule changed 86 deployments, with 52 fewer passes and 505 extra lookups. Its paired interval there was −0.485 to +0.208 percentage points. The primary arm missed the transfer gate. All grades were archived and the replay made zero provider requests. [Full counts, traces, and intervals](witness-split-finalists-results-v1.json)
 
+The follow-up replaced the witness screen with exact selection on four shared validation cases. [Matched-anchor comparison](witness-matched-anchors.md)
+
 ## Reproduce
 
 Use Python 3.12 with the hash-pinned GEPA 0.1.4 wheel in a clean source export. With sockets and DNS blocked, 75 targeted tests passed and two replays matched byte for byte. The original scores, charges, and proof control traces reproduced. The CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. Storage Guard measured 6.4 GiB free. The export, wheel overlay, and publication worktree used the standing 0.2 GiB LAB exception. [Screen and lookup tests](../tests/unit/test_witness_split_finalists.py)
