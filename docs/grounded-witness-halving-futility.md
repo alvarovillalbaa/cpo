@@ -2,6 +2,8 @@
 
 The separate futility seal preserves the published fallback comparison's search, admission, scoring order, and acceptance gates. It checks whether the candidate could still qualify before each scoring call. If rejection is permanent, it writes a terminal receipt with the exact paid prefix and the first unsent request hash. A qualifying run completes the whole scoring panel. [Parent comparison](grounded-witness-halving.md) · [Development plan](grounded-witness-halving-futility-development-plan-v1.json) · [Runner](../benchmarks/grounded_witness_halving_futility.py)
 
+An audit of request reuse tightens the development provider ceiling to 2,712 generations under the same portable seal. [Physical request ceiling](grounded-witness-halving-physical-limits.md)
+
 Each physical reply grades one distinct prompt, case, and repeat. When multiple arms share the prompt, they share the grade. The bound assigns every unknown reply that includes the candidate a pass and every other unknown reply a fail. This maximizes the candidate's task totals, paired margins, and critical-case preservation simultaneously. Search costs are fixed before scoring and both original cost measures must qualify. The terminal receipt labels the optimistic verdict as a bound. A complete observed scorecard is written only after the whole panel has run.
 
 | Scripted run | Scored requests | Planned scoring requests | Skipped |
