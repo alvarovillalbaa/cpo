@@ -29,4 +29,6 @@ The package's nomination and per-cycle search traces reproduce the published Pro
 
 The archived rule used 26.4% fewer paid lookups and gained 41 held-out passes against batched GEPA at cap 88. Wider GEPA settings attained higher scores at greater cost. Fresh provider inference and proposal generation cost remain unmeasured for this cycle. The historical design and execution seals reproduce with the new package in place.
 
+On a separate archived typed-policy graph, the witness screen lost held-out passes and the later proposal requests recovered none. An exact paired opening proof preserved the original selection on all 240 paths. [Typed graph comparison](recorded-rotating-witness-graph.md)
+
 A source export and wheel check used network-blocked Python. Storage Guard measured 8.0 GiB free. The standing LAB exception approved on November 17 covered a disposable build and replay allocation bounded at 0.2 GiB.
