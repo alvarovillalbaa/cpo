@@ -18,6 +18,8 @@ Initializing the exact race saved six lookups and preserved every cohort's score
 
 Against original Halving, the proved-gain arm gained three BBH and LMentry passes. The paired 95% interval ran from −0.175 to +0.182 percentage points. It exceeded the seeded ceiling by 667 lookups on the prior MMLU subjects and 206 on the additional subjects. Neither arm passed the transfer gate. The replay uses recorded grades and sends zero provider requests. [Full results, lookup charges, and paired intervals](witness-paid-anchor-bounds-results-v1.json)
 
+A follow-up jointly fitted the fallback cap and the rule for funding proof. Lower caps addressed the MMLU overage. The paid rules never beat the independently fitted blind rule. [Held-out proof fit](witness-paid-anchor-proof-fit.md)
+
 ## Reproduce
 
 Use Python 3.12 with the pinned GEPA 0.1.4 wheel. With sockets and DNS blocked, two complete replays matched byte for byte and 101 targeted tests passed. The small-board test enumerated all binary outcomes and paid subsets under three lookup caps. The CLI rejected a stale seal, and the prospective live-plan preview reproduced byte for byte. Storage Guard measured 6.1 GiB free. The temporary export, wheel overlay, and publication worktree used the standing 0.2 GiB LAB exception. [Bounds and shared-budget tests](../tests/unit/test_witness_paid_anchor_bounds.py)
