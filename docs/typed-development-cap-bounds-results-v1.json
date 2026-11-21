@@ -1,0 +1,183 @@
+{
+  "cappedByArm": {
+    "local-first-batched": 3,
+    "local-first-exact": 2,
+    "rewrite-first-exact": 3
+  },
+  "cappedByTask": {
+    "outage": 8
+  },
+  "cappedSequences": [
+    108,
+    115,
+    152,
+    164,
+    186,
+    201,
+    210,
+    216
+  ],
+  "finalGate": {
+    "reasons": [
+      {
+        "gate": "task-floor",
+        "maximumPasses": 0,
+        "requiredPasses": 27,
+        "task": "outage"
+      },
+      {
+        "gate": "task-floor",
+        "maximumPasses": 0,
+        "requiredPasses": 27,
+        "task": "ticket"
+      },
+      {
+        "gate": "task-floor",
+        "maximumPasses": 0,
+        "requiredPasses": 27,
+        "task": "warehouse"
+      },
+      {
+        "arm": "local-first-batched",
+        "gate": "task-regression",
+        "tasks": [
+          "outage"
+        ]
+      },
+      {
+        "arm": "local-first-batched",
+        "gate": "quality-or-efficiency",
+        "maximumAddedPasses": -1
+      },
+      {
+        "arm": "local-first-exact",
+        "gate": "task-regression",
+        "tasks": [
+          "outage"
+        ]
+      },
+      {
+        "arm": "local-first-exact",
+        "gate": "quality-or-efficiency",
+        "maximumAddedPasses": -1
+      },
+      {
+        "arm": "rewrite-first-exact",
+        "gate": "task-regression",
+        "tasks": [
+          "outage"
+        ]
+      },
+      {
+        "arm": "rewrite-first-exact",
+        "gate": "quality-or-efficiency",
+        "maximumAddedPasses": -1
+      }
+    ],
+    "status": "impossible"
+  },
+  "firstImpossibleWithCapsUnknown": {
+    "capsSeen": 0,
+    "observedSuffixRequests": 206,
+    "observedSuffixUsageAtPlanRatesMicrousd": 274521,
+    "physicalReplies": 10,
+    "reasons": [
+      {
+        "gate": "task-floor",
+        "maximumPasses": 26,
+        "requiredPasses": 27,
+        "task": "ticket"
+      }
+    ]
+  },
+  "historicalFirstCertainRejection": {
+    "physicalReplies": 10,
+    "reasons": [
+      {
+        "gate": "task-floor",
+        "maximumPasses": 26,
+        "requiredPasses": 27,
+        "task": "ticket"
+      }
+    ]
+  },
+  "logicalReplies": 540,
+  "newProviderRequests": 0,
+  "passBoundsByTaskAndArm": {
+    "outage": {
+      "cpo": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      },
+      "initial": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      },
+      "local-first-batched": {
+        "confirmedPasses": 1,
+        "possiblePasses": 4
+      },
+      "local-first-exact": {
+        "confirmedPasses": 1,
+        "possiblePasses": 3
+      },
+      "rewrite-first-exact": {
+        "confirmedPasses": 1,
+        "possiblePasses": 4
+      }
+    },
+    "ticket": {
+      "cpo": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      },
+      "initial": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      },
+      "local-first-batched": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      },
+      "local-first-exact": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      },
+      "rewrite-first-exact": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      }
+    },
+    "warehouse": {
+      "cpo": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      },
+      "initial": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      },
+      "local-first-batched": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      },
+      "local-first-exact": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      },
+      "rewrite-first-exact": {
+        "confirmedPasses": 0,
+        "possiblePasses": 0
+      }
+    }
+  },
+  "physicalReplies": 216,
+  "protocol": "cpo-recorded-typed-development-cap-bounds-v1",
+  "qualificationPlanSha256": "2142f4d68abb423dc1e4d5766646543b6fc8e7047b06ee99bb0f7c9ea561ad37",
+  "sourceSha256": {
+    "plan.json": "f7c0ea81ff54dd15cf6b5bc65b7fa22578595185da34da84d8a90d63ada9d029",
+    "qualification.json": "bef435783b851d5e1b148d855a489563d6b6c34e305e7ca8b492da38b41dfb85",
+    "summary.json": "77df819c8d5597c921592d5f079a074ff2f7695ee07a2db6b7ff1e4fb1422455",
+    "wire.jsonl": "cfdf8f2e32e579e53067bab32b8b3c79878942b5281699c3be18dfc838dcd4a0"
+  }
+}
