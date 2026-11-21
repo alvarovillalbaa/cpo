@@ -17,6 +17,8 @@ Both schedules preserved the exact primary validation winner across 1,520 archiv
 
 On the eight-challenger ARC rotation, newest-first improved the score by 36 passes over seeded CPO. Its paired case sensitivity range against both GEPA controls was +15 to +126. It used 1,653 more lookups than seeded CPO and cost more than batched GEPA in both lookups and the recorded evaluator charges. Neither schedule cleared the joint gate. These experiments change which backup evidence was bought within a fixed archive. Fresh prompt quality and live provider costs remain unverified. [All settings, backup changes, and matched comparisons](recorded-validation-race-order-results-v1.json)
 
+A follow-up kept the seeded race and let one additional validation pass complete a backup's proof after a training veto. It changed no deployments. [One-read backup test](recorded-one-read-backup.md)
+
 ## Reproduce
 
 Use Python 3.12 with the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 21 targeted tests passed and two full runs matched byte for byte. The exact-ranking tests enumerated all 512 binary matrices for both policies on a three-case pool with a protected case. The CLI rejected a stale seal and the ordered live plan reproduced. Storage Guard measured 6.0 GiB free. The 39 MiB export and publication worktree fit the standing 0.2 GiB LAB exception. The replay sent zero provider requests. [Exact ranking tests](../tests/unit/test_recorded_validation_race_order.py)
