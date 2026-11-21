@@ -19,6 +19,8 @@ Each cell gives held-out passes and paid lookups. On LMentry, testing later chal
 
 Across the 11 settings, none of the four new arms met both the quality and cost gates. The eight-challenger rotations of AIME and ARC-AGI still left held-out quality inconclusive. BBH's best new arm gained 12 passes and passed the cost gate, while its case resampling range remained below zero against the two GEPA controls. MMLU held-out totals stayed fixed. The extra comparison proof did not justify adopting either allowance.
 
+Reducing the later-first allowance to four reads cleared both gates on the LMentry archive. The homophones task accounted for that result. [Allowance and deployment attribution](recorded-certificate-allowance.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and socket connections blocked, 33 targeted tests passed and two replays matched byte for byte. The CLI rejected a stale seal, and the sealed ordered live plan preview still matched. The replays sent zero provider requests. Storage Guard measured 4.8 GiB free and the bounded export used the standing LAB storage exception. [Targeted tests](../tests/unit/test_recorded_certificate_head_to_head.py)
