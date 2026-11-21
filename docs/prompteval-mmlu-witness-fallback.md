@@ -20,6 +20,8 @@ The pooled strongest affordable fixed GEPA was batched with 16 anchors and cap 5
 
 The fallback activated in 337 episodes, produced 17 promotions, and hit its validation cap in 77 episodes. It paid for 3,910 validation and 759 proof lookups. On BBH and LMentry, the same cap produced 48 promotions in 254 eligible episodes and gained 181 passes. The MMLU evidence supports retaining the fallback as an opt-in candidate and testing it across task types before choosing a default. Both experiments use recorded grades and fixed supplied prompts. [BBH and LMentry cap sweep](bounded-halving-fallback.md)
 
+A later replay fitted screening rules outside each held-out benchmark family. The rule for MMLU removed 4,459 of the extra lookups and lost one pass against original CPO. [Paid-grade routing](witness-fallback-routing.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Both offline runs reproduced the original witness, retain-start, and wide GEPA scores and costs on every MMLU panel. Eleven targeted tests passed. Storage Guard measured 6.0 GiB free. The disposable export and wheel overlay used the standing LAB exception for a bounded 0.2 GiB operation. The replay made zero provider requests. [GEPA dependency](../requirements-benchmark.txt) · [Boundary tests](../tests/unit/test_prompteval_mmlu_witness_fallback.py)
