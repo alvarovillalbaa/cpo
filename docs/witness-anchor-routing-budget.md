@@ -18,6 +18,8 @@ On BBH and LMentry, the primary fit lowered the earlier fractional rule's overag
 
 The hindsight maxima and their costs are identical under both ceilings, because the minimum-cost mix that maximizes holdout passes fits within each original budget. It supplies 1,397 additional BBH and LMentry passes for 3,729 fewer lookups than the original route. The MMLU maxima add 133 and 36 passes while saving 1,838 and 824 lookups, respectively. The wider route was cheaper in 838 episodes, and it improved holdout passes at the same or lower cost in 156 episodes. These results quantify what episode selection could recover. Tightening the budget for the existing opening rule did little to recover it. [Full receipt, macro maxima, paired intervals, selected rules, and matched-cost native GEPA points](witness-anchor-routing-budget-results-v1.json)
 
+A follow-up ran the four-anchor race only after the witness search found no nominee. With the same fallback cap as Halving, the anchor race exhausted its budget before settling in 461 of 591 eligible episodes and missed the transfer gate. [Cached fallback comparison](witness-anchor-fallback.md)
+
 ## Reproduce
 
 Use Python 3.12 with the pinned GEPA 0.1.4 wheel in a clean source export. With sockets and DNS blocked, 95 targeted tests passed and two complete replays matched byte for byte. The runner reproduced both fixed routes and the previous opening and blind fits. It rejected a stale seal. The prospective live plan reproduced byte for byte. Both replays made zero provider requests. The bounded export and publication worktree used the standing 0.2 GiB LAB storage exception after Storage Guard measured 6.3 GiB free. [Budget and exact-selection tests](../tests/unit/test_witness_anchor_routing_budget.py)
