@@ -16,6 +16,8 @@ The lookup allowance is fixed from the published archive before the replay. The 
 
 Both training families selected schedule order. Every order funded the full queue on BBH and LMentry and the additional MMLU subjects. On the prior MMLU subjects, the validation-margin and certificate-forecast orders each spent 207 lookups for three promotions and ten added passes. Schedule order spent 201 for four promotions and the same ten passes. The positive paired result on BBH and LMentry stayed within the seeded cost. The all-cohort quality gate remained unmet. [All orders and cost receipts](witness-admission-credit-results-v1.json)
 
+Sharing the budget with exact-rejection retries added up to 222 BBH and LMentry passes over the single proof within seeded cost. The shared priority selected for MMLU tied the single proof. [Shared budget benchmark](witness-shared-admission-credit.md)
+
 ## Reproduce
 
 Use a clean export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 55 targeted tests passed and two replays matched byte for byte. The full supported-rate queue and the original controls reproduced their scores and costs. The CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. Storage Guard measured 4.4 GiB free. The source export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Ordering and reservation tests](../tests/unit/test_witness_admission_credit.py)
