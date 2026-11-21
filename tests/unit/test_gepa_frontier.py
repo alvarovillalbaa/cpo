@@ -13,7 +13,7 @@ def native_draw(profiles, rng):
     return select_program_candidate_from_pareto_front(fronts, [sum(p) / len(p) for p in profiles], rng)
 
 
-def check_draw(profiles, seed, prepaid):
+def check_draw(profiles, seed, prepaid, *, prioritize_uncertain_cases=False):
     width, size = len(profiles), len(profiles[0])
     pool = tuple(f'prompt-{i}' for i in range(width))
     paid = {(pool[i], case): profiles[i][case] for i, case in prepaid}
@@ -28,7 +28,8 @@ def check_draw(profiles, seed, prepaid):
         return tuple(paid[prompt, case] if (prompt, case) in paid else read(prompt, case) for case in range(size))
 
     grades = SequentialValidationGrades(complete, lambda prompt, case: paid.get((prompt, case)), read)
-    parent = select_frontier_parent(pool, size, grades, actual_rng)
+    parent = select_frontier_parent(pool, size, grades, actual_rng,
+                                    prioritize_uncertain_cases=prioritize_uncertain_cases)
     if parent is None:
         assert actual_rng.getstate() == expected_rng.getstate()
         parent = pool[native_draw(tuple(grades(prompt) for prompt in pool), actual_rng)]
@@ -58,6 +59,7 @@ def test_mixed_fronts_and_later_pools_match_native():
                          for _ in range(width))
         prepaid = tuple((i, case) for i in range(width) for case in range(size) if rng.randrange(3))
         check_draw(profiles, seed, prepaid)
+        check_draw(profiles, seed, prepaid, prioritize_uncertain_cases=True)
 
 
 def test_draw_can_ignore_uncertain_owner_of_the_other_case():

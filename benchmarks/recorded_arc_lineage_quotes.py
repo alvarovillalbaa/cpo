@@ -109,7 +109,9 @@ class FiniteProposalSampling:
 
 
 def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_quote, ceiling, *,
-         stop_on_exhaustion, available_parents=False, skip_empty_slots=False, native_reserve=None):
+         stop_on_exhaustion, available_parents=False, skip_empty_slots=False, native_reserve=None,
+         frontier_bounds=False, prioritize_uncertain_cases=False, settle_validation_on_price_limit=False,
+         schedule_trace=None):
     from benchmarks import gepa_disjoint_cases as native, grounded
     from benchmarks.gepa_sequential_schedule import native_with_price_guard, select_field_rewrites
     from cpo import Observation, Row
@@ -230,13 +232,16 @@ def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_
             skipped += int(is_empty)
             return is_empty
 
-        nominee = select_field_rewrites(initial, opened, groups, evaluate, reflect, [], cap=READ_LIMIT, seed=seed,
+        trace = [] if schedule_trace is None else schedule_trace
+        nominee = select_field_rewrites(initial, opened, groups, evaluate, reflect, trace, cap=READ_LIMIT, seed=seed,
                                         reinvest_savings=True, price_budget=budget, parent_bounds=True,
                                         certify_boundary_ties=True, skip_perfect_reflections=True,
                                         observed_charge=lambda prompt, row, _: paid[prompt, row.id],
                                         proposals_exhausted=exhausted if stop_on_exhaustion else None,
                                         parent_eligible=eligible if available_parents else None,
-                                        proposal_unavailable=unavailable if skip_empty_slots else None)
+                                        proposal_unavailable=unavailable if skip_empty_slots else None,
+                                        frontier_bounds=frontier_bounds, prioritize_uncertain_cases=prioritize_uncertain_cases,
+                                        settle_validation_on_price_limit=settle_validation_on_price_limit)
 
     def qualify(prompt, row, repeat):
         if row.id not in admission or repeat != 0 or (prompt, row.id) in admitted:

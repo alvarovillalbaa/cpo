@@ -18,7 +18,7 @@ At 32 evaluation quotes and the four-quote proposal price, CPO gained 308 passes
 
 ## Reproduce offline
 
-From the source revision that added this receipt, use Python 3.12 with the pinned GEPA 0.1.4 wheel. The eight previously published arms matched their full path hashes at all four price points. Storage Guard measured 9.2 GiB free. The standing LAB exception covered a temporary source export and wheel expansion bounded at 0.1 GiB. The run blocked sockets and DNS and removed temporary resources after verification. [Benchmark requirements](../requirements-benchmark.txt)
+Use Python 3.12 with the pinned GEPA 0.1.4 wheel and the source revision that added this receipt. The eight previously published arms matched their full path hashes at all four price points. Storage Guard measured 9.2 GiB free. The standing LAB exception covered a temporary source export and wheel expansion bounded at 0.1 GiB. The run blocked sockets and DNS and removed temporary resources after verification. [Receipt source revision](https://github.com/alvarovillalbaa/cpo/tree/7e736803e5f4b6b388b48a6f978635365d8e2bc4) · [Benchmark requirements](../requirements-benchmark.txt)
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.recorded_arc_lineage_quotes --match-native-empty-slots
@@ -28,3 +28,5 @@ PYTHONHASHSEED=0 python -B -m benchmarks.recorded_arc_lineage_quotes --match-nat
 ```
 
 The same empty-slot policy was also compared against native sequential GEPA on recorded Sol responses with a separate source holdout. [Sol transfer results](recorded-sol-empty-slots.md)
+
+The follow-up ARC replay uses the matched native controls to test larger parent pools and settlement of validation reserves. [Parent proof and reserve settlement](recorded-arc-frontier-proof.md)

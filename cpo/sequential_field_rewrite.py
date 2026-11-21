@@ -53,6 +53,7 @@ def select_sequential_field_rewrites(
     incumbent, training, validation, evaluate, schedule, propose, *,
     rounds, minibatch_size, metric_limit, observed_charge=None, reinvest_savings=False, price_budget=None,
     certify_boundary_ties=False, skip_perfect_after=None, proposals_exhausted=None, proposal_unavailable=None,
+    settle_validation_on_price_limit=False,
 ):
     """Match sequential GEPA's field gates, full-round reserve and score order.
 
@@ -72,6 +73,9 @@ def select_sequential_field_rewrites(
     charges before dispatch. observed_charge must settle each evaluation.
     An optional proposal limit is checked against settled proposals and the
     next proposal's full quote. A supplied proposal can have a zero quote.
+    With settle_validation_on_price_limit, use already reserved validation
+    reads to release unused quote when a round would otherwise exceed the
+    price limit. Stop settling as soon as the next round fits.
     Set certify_boundary_ties to use the native comparison at a bound of zero.
 
     With reinvest_savings, skip_perfect_after identifies the number of
@@ -108,6 +112,8 @@ def select_sequential_field_rewrites(
         raise ValueError('Proposal availability must be a callback')
     if price_budget is not None and (not isinstance(price_budget, SequentialSearchBudget) or observed_charge is None):
         raise ValueError('A sequential price budget requires observed evaluation charges')
+    if settle_validation_on_price_limit and price_budget is None:
+        raise ValueError('Settling reserved validation requires a sequential price budget')
     if skip_perfect_after is not None and (type(skip_perfect_after) is not int
             or not 0 <= skip_perfect_after <= rounds or not reinvest_savings):
         raise ValueError('Skipping perfect reflections requires paid-read mode and a valid opening slot count')
@@ -173,6 +179,27 @@ def select_sequential_field_rewrites(
             return False
         return all(observe(prompt, case) == denominator for case in val_ids)
 
+    def fits_price_limit(new_reads, proposal_quote):
+        evaluation_quote = price_budget.evaluation_quote
+        available = price_budget.limit - new_reads * evaluation_quote - proposal_quote
+        unread = validation_reserve - scores.keys()
+        if settled_charge + len(unread) * evaluation_quote <= available:
+            return True
+        if not settle_validation_on_price_limit or settled_charge > available:
+            return False
+        reserved = len(unread) * evaluation_quote
+        for prompt in dict.fromkeys(pool):
+            for case in val_ids:
+                if (prompt, case) not in unread:
+                    continue
+                observe(prompt, case)
+                reserved -= evaluation_quote
+                if settled_charge + reserved <= available:
+                    return True
+                if settled_charge > available:
+                    return False
+        return False
+
     latest = incumbent
     for index in range(rounds):
         if proposals_exhausted is not None and proposals_exhausted(index, tuple(pool)):
@@ -197,11 +224,10 @@ def select_sequential_field_rewrites(
             quote = price_budget.proposal_quote(index, parent)
             if type(quote) is not int or quote < 0:
                 raise ValueError('A proposal needs a nonnegative integer price quote')
-            unread_validation = len(validation_reserve - scores.keys())
-            required = (unread_validation + new_reads) * price_budget.evaluation_quote + quote
             proposal_limit = price_budget.proposal_limit
-            if (settled_charge + required > price_budget.limit or
-                    (proposal_limit is not None and settled_proposal_charge + quote > proposal_limit)):
+            if proposal_limit is not None and settled_proposal_charge + quote > proposal_limit:
+                break
+            if not fits_price_limit(new_reads, quote):
                 break
         accounted.update((parent, case) for case in batch)
         for case in batch:
