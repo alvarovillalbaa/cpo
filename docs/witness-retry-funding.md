@@ -18,6 +18,8 @@ The rule fitted on MMLU passed on BBH and LMentry. It gained 185 held-out passes
 
 Five settings in the published BBH and LMentry native GEPA sweep fit the selected rule's 71,868-lookup budget. The strongest observed setting was batched GEPA with 12 validation rows and cap 44. It recorded 16,180 held-out passes on the same episodes at 71,655 lookups, a difference of 1,073 passes. The paired intervals above compare against CPO's full first proof. [Published native sweep](witness-cached-gepa-evidence-results-v1.json)
 
+The direct paired native replay confirmed a positive lower endpoint on BBH and LMentry. Both MMLU ranges included zero. [Paired native comparison](witness-funded-native-comparison.md)
+
 ## Reproduce
 
 Use a clean source export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 42 targeted tests passed and two full replays matched byte for byte. Original control costs and scores reproduced, the CLI rejected a stale seal, and the prospective live manifest reproduced byte for byte. Storage Guard measured 5.9 GiB free. The source export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Funding gate tests](../tests/unit/test_witness_retry_funding.py)
