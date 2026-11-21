@@ -38,6 +38,8 @@ Each cell gives held-out passes and paid cost. The full-cap paired opening beat 
 
 The prospective staged trial binds this cycle to the existing matched GEPA arms and an independent confirmation panel. [Prospective protocol](grounded-staged-paired-opening.md)
 
+A follow-up tested whether an exact repair could be proved when the remaining cap could fund only some missing grades. It saved reads versus blindly spending the remainder, but added cost against the existing reserve rule on all four archived cohorts at the 2.5× cap. [Repair validation budget replay](recorded-paired-opening-affordability.md)
+
 ## Reproduce the ARC and AIME transfer
 
 Use GEPA 0.1.4 and the historical CPO control source. The two-file overlay adds the new package API and benchmark while preserving the historical control hashes. The packaged selector and all controls use the original seeded opening pair and disjoint admission. ARC costs use recorded evaluator charges and AIME uses paid reads. The archive supplies the proposals to each arm. [Input provenance and controls](recorded-opening-dominance-transfer.md) · [Transfer receipt](recorded-paired-opening-transfer-results-v1.json)
