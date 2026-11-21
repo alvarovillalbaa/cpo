@@ -30,6 +30,8 @@ The replay substitutes the public selector for the earlier benchmark implementat
 
 The source export and a clean target installation of the built wheel produced byte-identical parity reports. All 70 targeted tests and five subtests passed with sockets and DNS blocked. The selector lives in a separate packaged submodule because the historical live plan hashes the top-level CPO modules. The ordered live plan preview still matches its published seal. Storage Guard measured 4.5 GiB free and the bounded wheel and replay used the standing 0.2 GiB LAB exception. The replay sent zero provider requests. [Parity receipt](recorded-two-witness-pool-parity-results-v1.json) · [Selector tests](../tests/test_two_witness_pool.py)
 
+A disjoint MMLU replay found an inconclusive three-pass gain over retaining the starts. The proof gates left 41 additional passes of hindsight headroom. [MMLU transfer and proof analysis](recorded-two-witness-mmlu-transfer.md)
+
 ```sh
 export PYTHONHASHSEED=0
 python -B -m benchmarks.recorded_two_witness_pool_parity
