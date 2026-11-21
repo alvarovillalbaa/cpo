@@ -18,6 +18,8 @@ Score bounds settled all 4,166 races. Three settled while the winning prompt sti
 
 The BBH and LMentry result retained the 280-pass gain against the original first proof. Its paired interval was +0.005 to +1.347 percentage points, and it still exceeded the seeded budget by 8,635 lookups. MMLU remained 36 passes ahead on the prior subjects and 26 behind on the additional subjects, with both cohorts above their seeded totals. The score-bound race missed the transfer gate. The comparison used archived grades and sent zero provider requests. [Full costs, paired intervals, and settlement counts](witness-anchor-bounds-results-v1.json)
 
+The follow-up fitted rules to choose the wider race from the incumbent's first two paid replies. [Opening-based routing](witness-anchor-routing.md)
+
 ## Reproduce
 
 Use Python 3.12 with the hash-pinned GEPA 0.1.4 wheel and a clean source export. With sockets and DNS blocked, 88 targeted tests passed and two full replays matched byte for byte. The original scores and charges, four-anchor best-score control outcomes and paired intervals, and the prospective live plan reproduced. The CLI rejected a stale seal. Storage Guard measured 6.3 GiB free. The source export, wheel overlay, and publication worktree used the standing 0.2 GiB LAB exception. [Exact winner and cap tests](../tests/unit/test_witness_anchor_bounds.py)
