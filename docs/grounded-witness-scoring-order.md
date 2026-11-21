@@ -15,6 +15,8 @@ The replay covers development and independent confirmation. It reproduces the pu
 
 Both reordered schedules rejected every failed scenario at or before the original cutoff. The 88 failed scenarios included 80 matched critical losses. On the all-fail development fixture, the gate-relevant order scored 19 requests against the original 20. On the outage-only development failure, it scored 128 against 209. The outage-only confirmation failure took 55 requests against 93. The qualifying fixtures ran all 288 development and 128 confirmation scoring requests under every order. All decisions matched the fully observed gate. [Request counts and scenario receipts](grounded-witness-scoring-order-results-v1.json)
 
+The separately sealed ordered runner reproduced the earlier cutoffs through the actual development and confirmation journals. [Ordered protocol and rehearsal](grounded-witness-ordered-futility.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Two offline replays matched byte for byte. The runner regenerated the published qualifying development archive and all four original scoring traces. The prospective live-plan preview reproduced byte for byte and the CLI rejected a stale seal. With sockets and DNS blocked, 36 targeted tests passed, including exhaustive gates for a six-reply shared panel. Storage Guard measured 6.1 GiB free. The 38 MiB export and bounded publication worktree used the standing 0.2 GiB LAB exception. [Ordering and gate tests](../tests/unit/test_grounded_witness_scoring_order.py)
