@@ -22,6 +22,8 @@ READ_LIMIT = 64
 QUOTE_UNITS = (32, 60)
 REFLECTION_QUOTES = (1, 4)
 MODES = {'gepa-sequential': 1, 'gepa-batched': 2, 'cpo-shared-budget': 0, 'cpo-supplied-only': 0}
+RESTRICTED = tuple(mode for mode in MODES if mode != 'cpo-supplied-only')
+SKIP_EMPTY = 'cpo-skip-empty-slots'
 
 
 def load_archive():
@@ -57,7 +59,31 @@ def load_archive():
     return cases, scores, children
 
 
-def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_quote, ceiling, *, stop_on_exhaustion):
+def native_available_parents(eligible):
+    from gepa.gepa_utils import select_program_candidate_from_pareto_front
+    from gepa.strategies.candidate_selector import ParetoCandidateSelector
+
+    original = ParetoCandidateSelector.select_candidate_idx
+
+    def select(selector, state):
+        indices = tuple(index for index, candidate in enumerate(state.program_candidates)
+                        if eligible(next(iter(candidate.values()))))
+        if len(indices) == len(state.program_candidates):
+            return original(selector, state)
+        if not indices:
+            raise ValueError('Stop before scheduling a GEPA round with no eligible proposal parent')
+        profiles = state.prog_candidate_val_subscores
+        fronts = {}
+        for case in state.pareto_front_valset:
+            best = max(profiles[index][case] for index in indices)
+            fronts[case] = {index for index in indices if profiles[index][case] == best}
+        return select_program_candidate_from_pareto_front(fronts, state.per_program_tracked_scores, selector.rng)
+
+    return patch.object(ParetoCandidateSelector, 'select_candidate_idx', select)
+
+
+def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_quote, ceiling, *,
+         stop_on_exhaustion, available_parents=False, skip_empty_slots=False):
     from benchmarks import gepa_disjoint_cases as native, grounded
     from benchmarks.gepa_sequential_schedule import native_with_price_guard, select_field_rewrites
     from cpo import Observation, Row
@@ -71,7 +97,7 @@ def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_
     groups = {name: [{'id': case, 'expected': {'solved': True}} for case in cohort]
               for name, cohort in (('train', train), ('validation', validation))}
     paid, proposals, admitted = {}, [], {}
-    used_reflection = supplied = 0
+    used_reflection = supplied = skipped = 0
 
     def evaluate(prompt, case):
         if case not in allowed or (prompt, case) in paid or len(paid) >= READ_LIMIT:
@@ -123,7 +149,9 @@ def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_
             availability, bank = patch.object(module, 'optimize_anything', stopped), observed_opening()
         else:
             availability, bank = nullcontext(), opened
-        with availability:
+        parent_selection = (native_available_parents(lambda parent: supplied < len(opened) or bool(queues[parent]))
+                            if available_parents else nullcontext())
+        with availability, parent_selection:
             nominee = native_with_price_guard(native.select, can_fund_round, initial, bank, groups, evaluate,
                                               reflect, cap=READ_LIMIT, seed=seed, width=width)
     else:
@@ -136,11 +164,22 @@ def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_
         def exhausted(index, pool):
             return index >= len(opened) and not tracked_children(pool)
 
+        def eligible(index, parent):
+            return index < len(opened) or bool(queues[parent])
+
+        def unavailable(index, parent):
+            nonlocal skipped
+            is_empty = not eligible(index, parent)
+            skipped += int(is_empty)
+            return is_empty
+
         nominee = select_field_rewrites(initial, opened, groups, evaluate, reflect, [], cap=READ_LIMIT, seed=seed,
                                         reinvest_savings=True, price_budget=budget, parent_bounds=True,
                                         certify_boundary_ties=True, skip_perfect_reflections=True,
                                         observed_charge=lambda prompt, row, _: paid[prompt, row.id],
-                                        proposals_exhausted=exhausted if stop_on_exhaustion else None)
+                                        proposals_exhausted=exhausted if stop_on_exhaustion else None,
+                                        parent_eligible=eligible if available_parents else None,
+                                        proposal_unavailable=unavailable if skip_empty_slots else None)
 
     def qualify(prompt, row, repeat):
         if row.id not in admission or repeat != 0 or (prompt, row.id) in admitted:
@@ -154,22 +193,27 @@ def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_
     if sum(paid.values()) + used_reflection > ceiling or (mode == 'cpo-supplied-only' and proposals):
         raise ValueError('ARC search exceeded its search or proposal allowance')
     observed = {case: scores[decision.prompt][case][0] for case in heldout}
-    return {'nominee': nominee, 'selected': decision.prompt, 'passes': observed,
-            'recordedEvaluationCostNanodollars': sum(paid.values()) + sum(admitted.values()),
-            'hypotheticalProposalCostNanodollars': used_reflection,
-            'searchReads': len(paid), 'admissionReads': len(admitted),
-            'laterSlots': len(proposals), 'recordedChildren': sum(child is not None for _, child in proposals)}
+    result = {'nominee': nominee, 'selected': decision.prompt, 'passes': observed,
+              'recordedEvaluationCostNanodollars': sum(paid.values()) + sum(admitted.values()),
+              'hypotheticalProposalCostNanodollars': used_reflection,
+              'searchReads': len(paid), 'admissionReads': len(admitted),
+              'laterSlots': len(proposals), 'recordedChildren': sum(child is not None for _, child in proposals)}
+    if skip_empty_slots:
+        result['skippedEmptySlots'] = skipped
+    return result
 
 
-def summarize(paths):
-    totals = {mode: Counter() for mode in MODES}
-    paired = {mode: {control: Counter(gains=0, losses=0, changedPaths=0) for control in list(MODES)[:2]}
-              for mode in list(MODES)[2:]}
-    blocks = {mode: {control: Counter() for control in list(MODES)[:2]} for mode in list(MODES)[2:]}
+def summarize(paths, *, arms=tuple(MODES), comparisons=None):
+    if comparisons is None:
+        comparisons = {mode: arms[:2] for mode in arms[2:]}
+    totals = {mode: Counter() for mode in arms}
+    paired = {mode: {control: Counter(gains=0, losses=0, changedPaths=0) for control in controls}
+              for mode, controls in comparisons.items()}
+    blocks = {mode: {control: Counter() for control in controls} for mode, controls in comparisons.items()}
     starts = {}
 
     for seed, initial, outcomes in paths:
-        by_start = starts.setdefault(initial, {mode: Counter() for mode in MODES})
+        by_start = starts.setdefault(initial, {mode: Counter() for mode in arms})
         for mode, row in outcomes.items():
             sums = {'holdoutPasses': sum(row['passes'].values()), **{name: value for name, value in row.items()
                                                                  if type(value) is int}}
@@ -256,20 +300,82 @@ def measure(cases, scores, children):
             'quoteMultipliers': REFLECTION_QUOTES, 'points': points, 'exhaustionAware': stopped, 'newProviderRequests': 0}
 
 
+def availability_plan(cases, *, skip_empty_slots=False):
+    plan = prepare(cases)
+    protocol = 'cpo-recorded-arc-skip-empty-slots-v1' if skip_empty_slots else 'cpo-recorded-arc-parent-availability-v1'
+    plan = {**plan, 'protocol': protocol,
+            'availableParentArms': RESTRICTED, 'stopOnExhaustion': True,
+            'parentEligibility': 'After supplied openings, give all policies the same remaining-child predicate. '
+                                 'Tracked candidates remain eligible for final selection.'}
+    if skip_empty_slots:
+        plan['skipEmptyArm'] = SKIP_EMPTY
+        plan['skipEmptyPolicy'] = 'Keep the seeded parent draw. Charge no training read or proposal for an empty slot.'
+    return plan
+
+
+def measure_availability(cases, scores, children, *, skip_empty_slots=False):
+    if version('gepa') != '0.1.4':
+        raise ValueError('Use pinned native GEPA 0.1.4')
+    quote = max(charge for rows in scores.values() for _, charge in rows.values())
+    variants = {mode: mode + '-available' for mode in RESTRICTED}
+    comparisons = {variant: [mode] for mode, variant in variants.items()}
+    comparisons[variants['cpo-shared-budget']].extend(variants[mode] for mode in RESTRICTED[:2])
+    arms = (*MODES, *variants.values())
+    if skip_empty_slots:
+        arms = (*arms, SKIP_EMPTY)
+        comparisons[SKIP_EMPTY] = (*RESTRICTED, *variants.values())
+    starts = tuple(parent for parent, child in children.items() if child)
+    results = {}
+    for units in QUOTE_UNITS:
+        results[units] = {}
+        for multiplier in REFLECTION_QUOTES:
+            control, combined = [], []
+            for seed in SEEDS:
+                cohorts = split(cases, seed)
+                for start in starts:
+                    rng = Random(f'{seed}/{start}')
+                    orders = {parent: rng.sample(child, len(child)) for parent, child in children.items()}
+                    args = start, cohorts, scores, orders, seed, quote, quote * multiplier, units * quote
+                    original = {mode: play(mode, *args, stop_on_exhaustion=True) for mode in MODES}
+                    variants_at_start = {arm: play(mode, *args, stop_on_exhaustion=True, available_parents=True)
+                                         for mode, arm in variants.items()}
+                    if skip_empty_slots:
+                        variants_at_start[SKIP_EMPTY] = play('cpo-shared-budget', *args, stop_on_exhaustion=True,
+                                                            skip_empty_slots=True)
+                    control.append((seed, start, original))
+                    combined.append((seed, start, {**original, **variants_at_start}))
+            results[units][multiplier] = {
+                'controlTraceSha256': digest(control),
+                **summarize(combined, arms=arms, comparisons=comparisons),
+            }
+            if skip_empty_slots:
+                old_and_new = [(outcomes['cpo-shared-budget'], outcomes[SKIP_EMPTY]) for _, _, outcomes in combined]
+                changes = {field: sum(old[field] != new[field] for old, new in old_and_new)
+                           for field in ('nominee', 'selected', 'recordedChildren')}
+                results[units][multiplier]['skipEmptyChangedPaths'] = changes
+    return {'evaluationQuoteNanodollars': quote, 'points': results, 'newProviderRequests': 0}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    policies = parser.add_mutually_exclusive_group()
+    policies.add_argument('--available-parents', action='store_true')
+    policies.add_argument('--skip-empty-slots', action='store_true')
     parser.add_argument('--execute', metavar='PLAN_SHA256')
     parser.add_argument('--out', type=Path)
     args = parser.parse_args()
     cases, scores, children = load_archive()
-    plan = prepare(cases)
+    compare_availability = args.available_parents or args.skip_empty_slots
+    plan = (availability_plan(cases, skip_empty_slots=args.skip_empty_slots)
+            if compare_availability else prepare(cases))
     seal = digest(plan)
     if args.execute is None and args.out is None:
         print(json.dumps({**plan, 'planSha256': seal}, indent=2, sort_keys=True))
         return
     if args.execute != seal or args.out is None or args.out.exists():
         parser.error('Use the current seal and a fresh output path')
-    result = measure(cases, scores, children)
+    result = (measure_availability(cases, scores, children, skip_empty_slots=args.skip_empty_slots)
+              if compare_availability else measure(cases, scores, children))
     with args.out.open('x') as out:
         json.dump({'plan': plan, 'planSha256': seal, 'comparison': result}, out, indent=2, sort_keys=True)
         out.write('\n')

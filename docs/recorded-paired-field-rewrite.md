@@ -93,6 +93,8 @@ PYTHONHASHSEED=0 python -B -m benchmarks.sequential_field_feedback --parent-boun
 
 Set `reinvest_savings=True` to budget each additional round against paid evaluation reads. The selector reserves unread validation grades for every eligible parent. It then reserves the selected parent's missing training replies and a complete new child's training and validation replies. The same proposal limit and independent admission gate apply. The default keeps the original native round horizon.
 
+With a finite proposal source, `proposal_unavailable(index, parent)` can skip the training and proposal work for a scheduled empty slot. [Recorded ARC results and callback contract](recorded-arc-skip-empty-slots.md)
+
 At the shared 48-read search cap, the deterministic fixture gained 21 held-out passes across its two seed sets and cut counted calls from 2,224 to 2,021. Every path preserved or improved its holdout pass count and retained all matched critical passes. Seven paths used more calls. Counts include evaluations, proposal generation, and admission. Scores tied at caps 40 and 56. [Fixture results](sequential-field-paid-budget-results-v1.json)
 
 | Fixture seed set at cap 48 | Native → CPO held-out passes | Native → CPO counted calls |

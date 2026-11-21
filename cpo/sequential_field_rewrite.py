@@ -52,7 +52,7 @@ def _check_charge(charge, quote):
 def select_sequential_field_rewrites(
     incumbent, training, validation, evaluate, schedule, propose, *,
     rounds, minibatch_size, metric_limit, observed_charge=None, reinvest_savings=False, price_budget=None,
-    certify_boundary_ties=False, skip_perfect_after=None, proposals_exhausted=None,
+    certify_boundary_ties=False, skip_perfect_after=None, proposals_exhausted=None, proposal_unavailable=None,
 ):
     """Match sequential GEPA's field gates, full-round reserve and score order.
 
@@ -83,6 +83,10 @@ def select_sequential_field_rewrites(
     proposals_exhausted(index, pool). Return True only when no supplied or
     later proposal remains available from any tracked parent. Selection still
     finishes validation for already enrolled candidates as needed.
+
+    Use proposal_unavailable(index, parent) when the selected parent cannot
+    supply a proposal in that slot. The slot still counts against rounds.
+    No training reads or proposal charges are incurred for the skipped slot.
     """
     training, validation = tuple(training), tuple(validation)
     train_ids, val_ids = tuple(row.id for row in training), tuple(row.id for row in validation)
@@ -100,6 +104,8 @@ def select_sequential_field_rewrites(
         raise ValueError('Observed charge must be a callback')
     if proposals_exhausted is not None and not callable(proposals_exhausted):
         raise ValueError('Proposal exhaustion must be a callback')
+    if proposal_unavailable is not None and not callable(proposal_unavailable):
+        raise ValueError('Proposal availability must be a callback')
     if price_budget is not None and (not isinstance(price_budget, SequentialSearchBudget) or observed_charge is None):
         raise ValueError('A sequential price budget requires observed evaluation charges')
     if skip_perfect_after is not None and (type(skip_perfect_after) is not int
@@ -181,6 +187,9 @@ def select_sequential_field_rewrites(
         batch = tuple(ids)
         if parent not in pool or len(batch) != minibatch_size or len(set(batch)) != len(batch) or not set(batch) <= train_set:
             raise ValueError('The schedule must select a tracked parent and distinct training rows')
+        if proposal_unavailable is not None and proposal_unavailable(index, parent):
+            latest = None
+            continue
         new_reads = child_reserve + sum((parent, case) not in scores for case in batch)
         if reinvest_savings and new_reads > remaining:
             break
