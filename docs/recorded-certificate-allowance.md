@@ -17,7 +17,9 @@ The four-read cap saved 570 lookups against batched GEPA and 635 against sequent
 
 The result depends on the homophones task. Across its two model panels, the four-read cap scored 677 passes with 2,138 lookups. Batched GEPA scored 648 passes with 2,803 lookups. On word before, both scored 191 passes and the four-read cap used 95 more lookups. Removing homophones leaves a joint paired range of −7 to +6 and a failed gate. Removing word before leaves a range of +4 to +45 and a passing gate. The per-subject analysis reused the same runs and both GEPA controls.
 
-No other setting cleared both gates. In the eight-challenger rotation, AIME with a one-read cap used 8,191 lookups and reached 4,082 passes, with a joint range of −20 to +38. ARC-AGI with the five-sixths cap used 8,523 lookups and reached 13,783 passes, with a joint range of −37 to +29. BBH still failed the quality gate, and MMLU's paired quality range crossed zero. The LMentry result comes from screening allowances on existing archives. Transfer to a new cohort and superiority on newly generated prompts remain unverified.
+No other setting cleared both gates. In the eight-challenger rotation, AIME with a one-read cap used 8,191 lookups and reached 4,082 passes, with a joint range of −20 to +38. ARC-AGI with the five-sixths cap used 8,523 lookups and reached 13,783 passes, with a joint range of −37 to +29. BBH still failed the quality gate, and MMLU's paired quality range crossed zero. The LMentry result comes from screening allowances on existing archives. Superiority on newly generated prompts remains unverified.
+
+A follow-up froze the four-read cap on two disjoint model checkpoints. It retained lookup savings and failed the quality gate on disjoint LMentry and BBH tasks. [Frozen transfer comparison](recorded-certificate-allowance-transfer.md)
 
 ## Reproduce
 
