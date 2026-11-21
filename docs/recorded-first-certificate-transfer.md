@@ -12,6 +12,8 @@ CPO runs the same incumbent precheck, first strict validation certificate, train
 
 The first-certificate rule saved 25.4% to 26.6% of lookups against native GEPA on MMLU, 24.3% to 26.8% on BBH, and 16.0% to 17.0% on LMentry. All cohorts cleared the 10% cost requirement. Each had a lower observed score than both controls. On BBH the paired range remained below zero. On LMentry, seeded CPO gained 94 passes relative to the first certificate and used 2,332 additional lookups. On MMLU, the first certificate gained three passes over retaining the start, with a paired range of −7 to +13. The transfer gate failed. The outcomes measure selection from fixed recorded pools. [Panel-level results and paired case counts](recorded-first-certificate-transfer-results-v1.json)
 
+A follow-up spent a bounded number of reads looking for a stronger certificate. It recovered LMentry passes and left the BBH score unchanged. [Validation lookahead](recorded-certificate-lookahead.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With sockets and DNS blocked, 30 targeted tests passed and two full runs matched byte for byte. The archive and roster tests checked alignment and separation of the four case roles. The CLI rejected a stale seal and the ordered live plan reproduced. Storage Guard measured 5.9 GiB free. The 39 MiB export and publication worktree fit the standing 0.2 GiB LAB exception. The replay sent zero provider requests. [Transfer tests](../tests/unit/test_recorded_first_certificate_transfer.py)
