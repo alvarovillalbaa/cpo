@@ -13,6 +13,8 @@ The replay binds the prompts, attributed search costs, and shared-response sched
 
 Each injected error changes one output field and is scored by the existing exact grader. On the order-agnostic fixture, the scorecard and gate verdicts reproduced the canonical confirmation. The paired gate could still qualify when every arm shared one persistent error, since the comparison retained its relative margin and absolute task floors. The extra check caught that error and tolerated a single failed repeat. This measures the ability to detect scripted errors under one controlled input change. Fresh model behavior and provider token counts remain unmeasured. [Exact cases, schedule hashes, and results](witness-confirmation-field-order-results-v1.json)
 
+The separate confirmation runner binds these cases to a qualifying development archive and stops when a reordered case can no longer pass. [Sealed runner and rehearsal](grounded-witness-field-order-confirmation.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and outbound sockets blocked, 32 targeted tests passed and two replays matched byte for byte. A stale seal was rejected and the published ordered development manifest reproduced unchanged. Storage Guard measured 5.9 GiB free. The 39 MiB export, fixtures, and publication worktree fit the standing 0.2 GiB LAB exception. The rehearsal made zero provider requests. [Verification tests](../tests/unit/test_witness_confirmation_field_order.py)
