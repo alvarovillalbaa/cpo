@@ -18,6 +18,8 @@ The futility stop freed 1,844 first-proof reads relative to the fixed reservatio
 
 On MMLU the reserved policies tried 459 rivals, up from 175 under exact-rejection retry. With futility, nine rivals promoted. The 15-read allocation lost 54 first-nominee promotions relative to full single proof. Pooled MMLU gained seven held-out passes at 2,908 extra lookups, and both subject-and-case intervals crossed zero. Both training families selected the full single proof. The attempted reservation exceeded the original seeded spend in all three cohorts and failed the transfer gate. [Full report and paired ranges](witness-proof-split-results-v1.json)
 
+A follow-up audit found an improving paid rival in 389 MMLU second attempts. Only 26 could certify one on its independent panel within the remaining budget. [Paid rival and proof capacity audit](witness-rival-capacity.md)
+
 ## Reproduce
 
 Use a clean export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 20 targeted tests passed and two full replays matched byte for byte. The CLI rejected a stale seal, and the prospective development manifest reproduced byte for byte. The replay issued zero provider requests. Storage Guard measured 5.8 GiB free. The export, test overlay, and publication worktree used the standing 0.2 GiB LAB exception. [Budget and independence tests](../tests/unit/test_witness_proof_split.py)
