@@ -16,6 +16,8 @@ The replay preserves the assigned proof panel and bank order even when a fallbac
 
 The cache-only continuation reproduced original scores and lookup totals. Ranking saved 61 validation lookups on BBH and LMentry, used 19 more proof lookups, and kept the number of promotions at 48. It gained six passes on the prior MMLU subjects with six fewer total lookups. On the additional subjects it lost one pass and used 23 more lookups. The ranked policy fit all seeded budgets, and every paired interval included zero. The comparison missed the transfer gate. [Full receipt and matched-cost native GEPA points](witness-halving-cycle-priority-results-v1.json)
 
+A follow-up recalculated cycle priority after each new reply and measured the exact hindsight ceiling for starting one cycle directly. [Interleaved search and direct-cycle ceiling](witness-halving-interleave.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With sockets and DNS blocked, 104 targeted tests passed and two complete replays matched byte for byte. The CLI rejected a stale seal, and the prospective live-plan preview reproduced byte for byte. Storage Guard measured 5.9 GiB free. The 39 MiB export and bounded publication worktree used the standing 0.2 GiB LAB exception. The comparison made zero provider requests. [Priority and shared-budget tests](../tests/unit/test_witness_halving_cycle_priority.py)
