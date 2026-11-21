@@ -13,18 +13,23 @@ class SequentialSearchBudget:
 
     The evaluator and proposer must enforce their upper quotes. The caller
     deducts prepaid openings and reserves independent admission separately.
+    An optional proposal limit caps the portion available to paid proposals.
     """
 
     limit: int
     evaluation_quote: int
     proposal_quote: Callable[[int, str], int]
     observed_proposal: Callable[[int, str, str], int]
+    proposal_limit: int | None = None
 
     def __post_init__(self):
         if any(type(value) is not int or value < 0 for value in (self.limit, self.evaluation_quote)):
             raise ValueError('The search limit and evaluation quote must be nonnegative integers')
         if not callable(self.proposal_quote) or not callable(self.observed_proposal):
             raise ValueError('The proposal quote and observed charge must be callbacks')
+        if self.proposal_limit is not None and (type(self.proposal_limit) is not int
+                or not 0 <= self.proposal_limit <= self.limit):
+            raise ValueError('The proposal limit must be a nonnegative integer within the search limit')
 
 
 @dataclass(frozen=True)
@@ -65,6 +70,8 @@ def select_sequential_field_rewrites(
 
     With a SequentialSearchBudget, reserve both evaluation and proposal
     charges before dispatch. observed_charge must settle each evaluation.
+    An optional proposal limit is checked against settled proposals and the
+    next proposal's full quote. A supplied proposal can have a zero quote.
     Set certify_boundary_ties to use the native comparison at a bound of zero.
 
     With reinvest_savings, skip_perfect_after identifies the number of
@@ -102,7 +109,7 @@ def select_sequential_field_rewrites(
     validation_reserve = {(incumbent, case) for case in val_ids}
     accounted = set(validation_reserve)
     child_reserve = minibatch_size + len(val_ids)
-    settled_charge = 0
+    settled_charge = settled_proposal_charge = 0
     if price_budget is not None and price_budget.evaluation_quote * len(val_ids) > price_budget.limit:
         return incumbent
 
@@ -174,7 +181,9 @@ def select_sequential_field_rewrites(
                 raise ValueError('A proposal needs a nonnegative integer price quote')
             unread_validation = len(validation_reserve - scores.keys())
             required = (unread_validation + new_reads) * price_budget.evaluation_quote + quote
-            if settled_charge + required > price_budget.limit:
+            proposal_limit = price_budget.proposal_limit
+            if (settled_charge + required > price_budget.limit or
+                    (proposal_limit is not None and settled_proposal_charge + quote > proposal_limit)):
                 break
         accounted.update((parent, case) for case in batch)
         for case in batch:
@@ -188,6 +197,7 @@ def select_sequential_field_rewrites(
             charge = price_budget.observed_proposal(index, parent, child)
             _check_charge(charge, quote)
             settled_charge += charge
+            settled_proposal_charge += charge
         if perfect_batch:
             continue
         accounted.update((child, case) for case in batch)

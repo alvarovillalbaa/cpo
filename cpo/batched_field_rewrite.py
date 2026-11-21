@@ -21,6 +21,7 @@ def select_batched_field_rewrites(
     An optional price budget reserves every outstanding validation reply,
     the next batch's possible evaluation calls and all its proposal quotes
     before proposing. Evaluators and proposers enforce their upper quotes.
+    A separate proposal limit must cover every proposal in an entered batch.
     """
     training, validation = tuple(training), tuple(validation)
     train_ids = {row.id for row in training}
@@ -49,7 +50,7 @@ def select_batched_field_rewrites(
     pool = [incumbent]
     newest = (incumbent,)
     round_reserve = width * (2 * minibatch_size + len(val_ids))
-    settled_charge = 0
+    settled_charge = settled_proposal_charge = 0
     if price_budget is not None and price_budget.evaluation_quote * len(val_ids) > price_budget.limit:
         return incumbent
 
@@ -108,7 +109,11 @@ def select_batched_field_rewrites(
             parent_reads = {(parent, case) for batch in batches for case in batch} - scores.keys()
             reserved_reads = len(validation_reserve - scores.keys()) + len(parent_reads)
             reserved_reads += width * (minibatch_size + len(val_ids))
-            if settled_charge + reserved_reads * price_budget.evaluation_quote + sum(quotes) > price_budget.limit:
+            proposal_charge = sum(quotes)
+            proposal_limit = price_budget.proposal_limit
+            required = reserved_reads * price_budget.evaluation_quote + proposal_charge
+            if (settled_charge + required > price_budget.limit or
+                    (proposal_limit is not None and settled_proposal_charge + proposal_charge > proposal_limit)):
                 break
         feedback = []
         for batch in batches:
@@ -123,6 +128,7 @@ def select_batched_field_rewrites(
                 charge = price_budget.observed_proposal(slot, parent, child)
                 _check_charge(charge, quotes[offset])
                 settled_charge += charge
+                settled_proposal_charge += charge
             children.append(child)
         accepted = {}
         for child, batch in zip(children, batches, strict=True):

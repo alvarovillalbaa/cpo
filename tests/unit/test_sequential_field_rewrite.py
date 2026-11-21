@@ -67,6 +67,32 @@ def test_stateful_proposer_runs_on_a_perfect_training_batch():
     assert selected == 'start' and proposed == [0, 1]
 
 
+@pytest.mark.parametrize(('limit', 'expected'), ((None, [0, 1, 2]), (0, [0]), (5, [0, 1]), (6, [0, 1, 2])))
+def test_proposal_limit_reserves_the_quote_and_reuses_settled_headroom(limit, expected):
+    train, valid = (Row('train', 'task', fields=1),), (Row('validation', 'task', fields=1),)
+    proposed = []
+
+    def propose(index, parent, samples):
+        assert samples[0][0] == train[0]
+        proposed.append(index)
+        return parent
+
+    budget = SequentialSearchBudget(20, 1, lambda index, _: 4 if index else 0,
+                                    lambda index, *_: 2 if index else 0, proposal_limit=limit)
+    result = select_sequential_field_rewrites(
+        'start', train, valid, lambda *_: Observation(False, {}, 0), lambda *_: ('start', ('train',)), propose,
+        rounds=3, minibatch_size=1, metric_limit=8, observed_charge=lambda *_: 1,
+        reinvest_savings=True, price_budget=budget,
+    )
+    assert result == 'start' and proposed == expected
+
+
+@pytest.mark.parametrize('limit', (-1, True, 21))
+def test_proposal_limit_must_fit_the_search_limit(limit):
+    with pytest.raises(ValueError, match='proposal limit'):
+        SequentialSearchBudget(20, 1, lambda *_: 1, lambda *_: 1, proposal_limit=limit)
+
+
 @pytest.mark.parametrize(('skip_after', 'winner', 'expected_slots'),
                          ((None, 'start', [0, 1, 2]), (2, 'repair', [0, 1, 3])))
 def test_skip_keeps_supplied_slots_and_can_fund_a_later_reflection(skip_after, winner, expected_slots):
