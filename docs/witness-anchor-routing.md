@@ -18,6 +18,8 @@ On BBH and LMentry, the primary rule gained 130 held-out passes and sent 230 epi
 
 On the prior MMLU subjects, fractional routing gained two passes and exceeded the seeded budget by 72 lookups. On the additional subjects it matched the original score and saved 73 lookups. The MMLU fits used the same one-eighth rule for episodes with two opening passes. The outside-family fit gained six passes on BBH and LMentry within its seeded total, gained three passes over budget on prior MMLU subjects, and lost one pass over budget on the additional subjects. The primary policy missed the transfer gate. Both search routes paid for the exact same opening pair in all 2,240 episodes. The study made zero provider requests. [Full settings, budgets, paired intervals, and selected rules](witness-anchor-routing-results-v1.json)
 
+A follow-up with stricter training ceilings still missed the transfer gate. The exact hindsight maximum shows how much the two fixed routes could improve if each episode's future cost and score were known. [Budget stress test and route-selection ceiling](witness-anchor-routing-budget.md)
+
 ## Reproduce
 
 Use Python 3.12 with the hash-pinned GEPA 0.1.4 wheel in a clean source export. With sockets and DNS blocked, 92 targeted tests passed and two replays matched byte for byte. The fractional replay reproduced the whole-group pilot's selections and totals as well as the sealed original and score-bound controls. The CLI rejected a stale seal and the prospective live plan reproduced byte for byte. Storage Guard measured 6.3 GiB free. The export, wheel overlay, and publication worktree used the standing 0.2 GiB LAB exception. [Subject isolation, cost matching, and route tests](../tests/unit/test_witness_anchor_routing.py)
