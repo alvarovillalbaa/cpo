@@ -17,6 +17,8 @@ Each of 4,096 draws samples the same held-out cases for every arm. A physical ca
 
 BBH and LMentry cleared the paired gate across 660 physical cases. CPO's observed equal-subject score also led the hindsight per-subject GEPA allocation by 0.682 percentage points at the same total lookup ceiling. Both MMLU cohorts continued to cross zero. The pooled MMLU hindsight allocation led CPO by 0.123 percentage points. This leaves the cross-cohort superiority gate unmet. The ranges describe resampling of fixed recorded prompts and grades. Fresh proposal quality remains unverified. [Full paired results and comparator settings](witness-cached-gepa-evidence-results-v1.json)
 
+Episode-level MMLU attribution found the largest native advantage after CPO's witness nominee failed admission. It also priced alternative nominations within each episode's original proof spend. [MMLU gap and proof headroom](witness-mmlu-gap.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel from a clean source export. Eleven targeted tests passed with DNS and sockets blocked. The design preview reproduced byte for byte, the CLI rejected a stale seal before creating output, and the original live plan reproduced byte for byte. Storage Guard measured 5.9 GiB free. The disposable export and wheel overlay fit within the standing 0.2 GiB LAB exception and were removed. [Tests](../tests/unit/test_witness_cached_gepa_evidence.py)
