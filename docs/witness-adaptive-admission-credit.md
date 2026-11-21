@@ -18,6 +18,8 @@ The adaptive queue matched the best observed fixed order on BBH and LMentry. It 
 
 On the prior MMLU subjects, adaptation moved the budget toward direct proofs. It opened 11 direct proofs and three retries, with four promotions from the direct route. It tied the alternating queue on held-out passes. The fixed direct-only queue achieved the same ten-pass gain with 19 fewer lookups. Neither new queue promoted anyone on the additional MMLU subjects. The outside-family fits still selected direct-only for BBH and LMentry and retry-first for MMLU. The all-cohort gate remained unmet. [All queue results and comparison ranges](witness-adaptive-admission-credit-results-v1.json)
 
+Shorter proof reservations funded additional attempts without improving the MMLU scores. [Shortened proof comparison](witness-short-admission-credit.md)
+
 ## Reproduce
 
 Use a clean export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 61 targeted tests passed and two replays matched byte for byte. Every fixed queue reproduced its published scores, costs, and dispatch trace. The CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. Storage Guard measured 6.3 GiB free. The export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Adaptive funding tests](../tests/unit/test_witness_adaptive_admission_credit.py)
