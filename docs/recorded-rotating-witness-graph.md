@@ -23,6 +23,8 @@ The recorded-order proof saved 6.03% against opening-only CPO and 2.28% against 
 
 These estimates apply the recorded evaluator and proposal prices. The two exact proofs were chosen after the direct witness result, and the replay uses recurring cases and recorded edits. Fresh model quality, feedback-dependent proposal generation, and actual provider spend remain unverified.
 
+The exact paired proof is available through an opt-in package cycle. [API and ARC/AIME transfer](paired-opening-cycle.md)
+
 ## Reproduce offline
 
 Use the original local GEPA research and Sol archives and the hash-pinned GEPA wheel. The launcher restores the immutable CPO baseline and adds the released witness module by hash in a disposable overlay. The original plan, source files, journals, and receipts stay available in their original locations. The launcher blocks sockets and DNS. Storage Guard measured 8.3 GiB free, and the bounded overlay uses the standing LAB exception for up to 0.2 GiB.
