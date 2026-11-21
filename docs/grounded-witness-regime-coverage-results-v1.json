@@ -1,0 +1,2141 @@
+{
+  "alternativeWarehouseConfirmation": {
+    "datasetSha256": "a3bbb48a453627619b9101d0c9011a1a8e0cfcad62e72c10c3d1f96c548b26a5",
+    "invisibleInBothScoringPanels": 0,
+    "rows": [
+      {
+        "critical": false,
+        "expected": {
+          "action": "RELEASE",
+          "available": 11,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "witness-warehouse-confirmation-01",
+        "input": "On hand=3521; Reserved=3503; Damaged=7; Inspection=PASS; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 8,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "witness-warehouse-confirmation-03",
+        "input": "On hand=3527; Reserved=3514; Damaged=5; Inspection=FAIL; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-11",
+        "input": "On hand=60065; Reserved=60064; Damaged=1; Inspection=FAIL; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-12",
+        "input": "On hand=60068; Reserved=60063; Damaged=5; Inspection=FAIL; Tier=RUSH; Site=SOUTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "RELEASE",
+          "available": 11,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "witness-regime-stress-warehouse-13",
+        "input": "On hand=60071; Reserved=60055; Damaged=5; Inspection=PASS; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "REVIEW",
+          "available": 4,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-14",
+        "input": "On hand=60074; Reserved=60064; Damaged=6; Inspection=PASS; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 12,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "witness-regime-stress-warehouse-15",
+        "input": "On hand=60077; Reserved=60063; Damaged=2; Inspection=FAIL; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 8,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-16",
+        "input": "On hand=60080; Reserved=60068; Damaged=4; Inspection=FAIL; Tier=RUSH; Site=SOUTH."
+      }
+    ]
+  },
+  "datasetSha256": "af412b0a855c023ea5305f4f8ca1b393e2d3752f8d4cae3c9b587889a949cc03",
+  "portablePlanSha256": "aae517e6c51cf57645d0f788beb8d86fcc90f59a6a91ac6f85e2c3ba64ecaea0",
+  "protocol": "grounded-witness-regime-coverage-v1",
+  "providerRequests": 0,
+  "results": {
+    "outage": {
+      "confirmationMissedByExactControl": 8,
+      "confirmationQualifiedWithSharedError": 16,
+      "invisibleInBothSealedScoringPanels": 0,
+      "regimeCount": 16,
+      "regimesByPanel": {
+        "admission1": 8,
+        "admission2": 8,
+        "admission3": 8,
+        "admission4": 8,
+        "confirmation": 8,
+        "holdout": 16,
+        "nativeValidationAnchors": 8,
+        "stress": 8,
+        "train1": 16,
+        "train2": 16,
+        "train3": 16,
+        "train4": 16,
+        "validation": 16
+      },
+      "tests": [
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 1,
+            "holdout": 2,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 2
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            29,
+            "STANDARD",
+            false,
+            "POSTED"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            30,
+            "STANDARD",
+            false,
+            "POSTED"
+          ],
+          "stressDetects": true
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            29,
+            "PLUS",
+            false,
+            "POSTED"
+          ],
+          "stressDetects": true
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 2
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            30,
+            "PLUS",
+            false,
+            "POSTED"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 2
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            119,
+            "STANDARD",
+            false,
+            "POSTED"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 1,
+            "holdout": 2,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 2
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            120,
+            "STANDARD",
+            false,
+            "POSTED"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            119,
+            "PLUS",
+            false,
+            "POSTED"
+          ],
+          "stressDetects": true
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            120,
+            "PLUS",
+            false,
+            "POSTED"
+          ],
+          "stressDetects": true
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            37,
+            "STANDARD",
+            true,
+            "POSTED"
+          ],
+          "stressDetects": true
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 2
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            41,
+            "PLUS",
+            true,
+            "POSTED"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 2
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            122,
+            "PLUS",
+            true,
+            "POSTED"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            123,
+            "STANDARD",
+            true,
+            "POSTED"
+          ],
+          "stressDetects": true
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            26,
+            "STANDARD",
+            false,
+            "MISSING"
+          ],
+          "stressDetects": true
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            36,
+            "PLUS",
+            false,
+            "MISSING"
+          ],
+          "stressDetects": true
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 2
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            121,
+            "STANDARD",
+            true,
+            "MISSING"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 1,
+            "train4": 1,
+            "validation": 2
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            121,
+            "PLUS",
+            false,
+            "MISSING"
+          ],
+          "stressDetects": false
+        }
+      ]
+    },
+    "ticket": {
+      "confirmationMissedByExactControl": 0,
+      "confirmationQualifiedWithSharedError": 8,
+      "invisibleInBothSealedScoringPanels": 0,
+      "regimeCount": 8,
+      "regimesByPanel": {
+        "admission1": 8,
+        "admission2": 8,
+        "admission3": 8,
+        "admission4": 8,
+        "confirmation": 8,
+        "holdout": 8,
+        "nativeValidationAnchors": 8,
+        "stress": 0,
+        "train1": 8,
+        "train2": 8,
+        "train3": 8,
+        "train4": 8,
+        "validation": 8
+      },
+      "tests": [
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 1,
+            "admission3": 1,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 3,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 2,
+            "train2": 2,
+            "train3": 2,
+            "train4": 2,
+            "validation": 3
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "refund-question"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 1,
+            "admission3": 1,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 3,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 2,
+            "train2": 2,
+            "train3": 2,
+            "train4": 2,
+            "validation": 3
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "invoice-copy"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 1,
+            "admission3": 1,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 2,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 2,
+            "train2": 2,
+            "train3": 2,
+            "train4": 2,
+            "validation": 3
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "delivery-date"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 1,
+            "admission3": 1,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 2,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 2,
+            "train2": 2,
+            "train3": 2,
+            "train4": 2,
+            "validation": 3
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "return-label"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 1,
+            "admission3": 1,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 2,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 2,
+            "train2": 2,
+            "train3": 2,
+            "train4": 2,
+            "validation": 3
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "packaging"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 1,
+            "admission3": 1,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 2,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 2,
+            "train2": 2,
+            "train3": 2,
+            "train4": 2,
+            "validation": 3
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "translation"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 1,
+            "admission3": 1,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 2,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 2,
+            "train2": 2,
+            "train3": 2,
+            "train4": 2,
+            "validation": 3
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "general-inquiry"
+          ],
+          "stressDetects": false
+        },
+        {
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 1,
+            "admission3": 1,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 2,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 2,
+            "train2": 2,
+            "train3": 2,
+            "train4": 2,
+            "validation": 3
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "unlisted-topic"
+          ],
+          "stressDetects": false
+        }
+      ]
+    },
+    "warehouse": {
+      "confirmationMissedByExactControl": 16,
+      "confirmationQualifiedWithSharedError": 24,
+      "invisibleInBothSealedScoringPanels": 6,
+      "regimeCount": 24,
+      "regimesByPanel": {
+        "admission1": 8,
+        "admission2": 8,
+        "admission3": 8,
+        "admission4": 8,
+        "confirmation": 8,
+        "holdout": 18,
+        "nativeValidationAnchors": 8,
+        "stress": 16,
+        "train1": 16,
+        "train2": 16,
+        "train3": 16,
+        "train4": 16,
+        "validation": 24
+      },
+      "tests": [
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": false
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 0,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "positive",
+            "PASS",
+            "NORMAL",
+            "NORTH"
+          ],
+          "stressDetects": false
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 0,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "positive",
+            "PASS",
+            "RUSH",
+            "SOUTH"
+          ],
+          "stressDetects": false
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": false
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 0,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "positive",
+            "FAIL",
+            "NORMAL",
+            "SOUTH"
+          ],
+          "stressDetects": false
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 0,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "positive",
+            "FAIL",
+            "RUSH",
+            "NORTH"
+          ],
+          "stressDetects": false
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 0,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "zero",
+            "PASS",
+            "NORMAL",
+            "SOUTH"
+          ],
+          "stressDetects": false
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 0,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "zero",
+            "PASS",
+            "RUSH",
+            "NORTH"
+          ],
+          "stressDetects": false
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 0,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "depleted",
+            "PASS",
+            "NORMAL",
+            "NORTH"
+          ],
+          "stressDetects": false
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 1,
+            "admission2": 0,
+            "admission3": 0,
+            "admission4": 1,
+            "confirmation": 1,
+            "holdout": 1,
+            "nativeValidationAnchors": 1,
+            "stress": 0,
+            "train1": 1,
+            "train2": 1,
+            "train3": 0,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "depleted",
+            "FAIL",
+            "RUSH",
+            "SOUTH"
+          ],
+          "stressDetects": false
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 0,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "depleted",
+            "PASS",
+            "NORMAL",
+            "SOUTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 0,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "depleted",
+            "PASS",
+            "RUSH",
+            "NORTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 0,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "depleted",
+            "PASS",
+            "RUSH",
+            "SOUTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 0,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "depleted",
+            "FAIL",
+            "NORMAL",
+            "NORTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 0,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "depleted",
+            "FAIL",
+            "NORMAL",
+            "SOUTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 0,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "depleted",
+            "FAIL",
+            "RUSH",
+            "NORTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 0,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "zero",
+            "PASS",
+            "NORMAL",
+            "NORTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 1,
+            "admission3": 0,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 1,
+            "train2": 0,
+            "train3": 1,
+            "train4": 1,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "zero",
+            "PASS",
+            "RUSH",
+            "SOUTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 0,
+            "train2": 1,
+            "train3": 1,
+            "train4": 0,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "zero",
+            "FAIL",
+            "NORMAL",
+            "NORTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": true
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 1,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 0,
+            "train2": 1,
+            "train3": 1,
+            "train4": 0,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": false
+            }
+          },
+          "regime": [
+            "zero",
+            "FAIL",
+            "NORMAL",
+            "SOUTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": false
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 0,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 0,
+            "train2": 1,
+            "train3": 1,
+            "train4": 0,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            }
+          },
+          "regime": [
+            "zero",
+            "FAIL",
+            "RUSH",
+            "NORTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": false
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 0,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 0,
+            "train2": 1,
+            "train3": 1,
+            "train4": 0,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            }
+          },
+          "regime": [
+            "zero",
+            "FAIL",
+            "RUSH",
+            "SOUTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": false
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 0,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 0,
+            "train2": 1,
+            "train3": 1,
+            "train4": 0,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            }
+          },
+          "regime": [
+            "positive",
+            "PASS",
+            "NORMAL",
+            "SOUTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": false
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 0,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 0,
+            "train2": 1,
+            "train3": 1,
+            "train4": 0,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            }
+          },
+          "regime": [
+            "positive",
+            "PASS",
+            "RUSH",
+            "NORTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": false
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 0,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 0,
+            "train2": 1,
+            "train3": 1,
+            "train4": 0,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            }
+          },
+          "regime": [
+            "positive",
+            "FAIL",
+            "NORMAL",
+            "NORTH"
+          ],
+          "stressDetects": true
+        },
+        {
+          "balancedConfirmationQualified": {
+            "errorSharedByControl": true,
+            "exactControl": false
+          },
+          "mismatchedRowsByPanel": {
+            "admission1": 0,
+            "admission2": 0,
+            "admission3": 1,
+            "admission4": 0,
+            "confirmation": 0,
+            "holdout": 0,
+            "nativeValidationAnchors": 0,
+            "stress": 1,
+            "train1": 0,
+            "train2": 1,
+            "train3": 1,
+            "train4": 0,
+            "validation": 1
+          },
+          "qualified": {
+            "confirmation": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            },
+            "holdout": {
+              "errorSharedByControl": true,
+              "exactControl": true
+            }
+          },
+          "regime": [
+            "positive",
+            "FAIL",
+            "RUSH",
+            "SOUTH"
+          ],
+          "stressDetects": true
+        }
+      ]
+    }
+  },
+  "sourceSha256": "b382b284965c8d6467ce6418f45646973901f6f6f4fd8e26f0484b89e6b0a487",
+  "stressDatasetSha256": "45c2c106cd01fdd5e339be2397dbd1ecc020d516529448ba6950d6514c313c6a",
+  "stressRows": {
+    "outage": [
+      {
+        "critical": false,
+        "expected": {
+          "credit": 6,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "witness-regime-stress-outage-01",
+        "input": "Duration minutes=30; Plan=STANDARD; Monthly fee whole USD=260508; Evidence=POSTED."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "credit": 0,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "witness-regime-stress-outage-02",
+        "input": "Duration minutes=29; Plan=PLUS; Monthly fee whole USD=260518; Evidence=POSTED."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "credit": 39,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "witness-regime-stress-outage-03",
+        "input": "Duration minutes=119; Plan=PLUS; Monthly fee whole USD=260527; Evidence=POSTED."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 40,
+          "reason": "LONG",
+          "review": true
+        },
+        "id": "witness-regime-stress-outage-04",
+        "input": "Duration minutes=120; Plan=PLUS; Monthly fee whole USD=260548; Evidence=POSTED."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "credit": 4,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "witness-regime-stress-outage-05",
+        "input": "Duration minutes=37; Plan=STANDARD; Monthly fee whole USD=45; Evidence=POSTED."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 3,
+          "reason": "LONG",
+          "review": true
+        },
+        "id": "witness-regime-stress-outage-06",
+        "input": "Duration minutes=123; Plan=STANDARD; Monthly fee whole USD=38; Evidence=POSTED."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 0,
+          "reason": "NEEDS_DOC",
+          "review": true
+        },
+        "id": "witness-regime-stress-outage-07",
+        "input": "Duration minutes=26; Plan=STANDARD; Monthly fee whole USD=260622; Evidence=MISSING."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 12,
+          "reason": "NEEDS_DOC",
+          "review": true
+        },
+        "id": "witness-regime-stress-outage-08",
+        "input": "Duration minutes=36; Plan=PLUS; Monthly fee whole USD=260630; Evidence=MISSING."
+      }
+    ],
+    "ticket": [],
+    "warehouse": [
+      {
+        "critical": false,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "witness-regime-stress-warehouse-01",
+        "input": "On hand=60035; Reserved=60039; Damaged=2; Inspection=PASS; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-02",
+        "input": "On hand=60038; Reserved=60035; Damaged=8; Inspection=PASS; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-03",
+        "input": "On hand=60041; Reserved=60041; Damaged=1; Inspection=PASS; Tier=RUSH; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "witness-regime-stress-warehouse-04",
+        "input": "On hand=60044; Reserved=60045; Damaged=4; Inspection=FAIL; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "witness-regime-stress-warehouse-05",
+        "input": "On hand=60047; Reserved=60042; Damaged=7; Inspection=FAIL; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-06",
+        "input": "On hand=60050; Reserved=60049; Damaged=4; Inspection=FAIL; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "witness-regime-stress-warehouse-07",
+        "input": "On hand=60053; Reserved=60051; Damaged=2; Inspection=PASS; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-08",
+        "input": "On hand=60056; Reserved=60054; Damaged=2; Inspection=PASS; Tier=RUSH; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "witness-regime-stress-warehouse-09",
+        "input": "On hand=60059; Reserved=60057; Damaged=2; Inspection=FAIL; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "witness-regime-stress-warehouse-10",
+        "input": "On hand=60062; Reserved=60058; Damaged=4; Inspection=FAIL; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-11",
+        "input": "On hand=60065; Reserved=60064; Damaged=1; Inspection=FAIL; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-12",
+        "input": "On hand=60068; Reserved=60063; Damaged=5; Inspection=FAIL; Tier=RUSH; Site=SOUTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "RELEASE",
+          "available": 11,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "witness-regime-stress-warehouse-13",
+        "input": "On hand=60071; Reserved=60055; Damaged=5; Inspection=PASS; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "REVIEW",
+          "available": 4,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-14",
+        "input": "On hand=60074; Reserved=60064; Damaged=6; Inspection=PASS; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 12,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "witness-regime-stress-warehouse-15",
+        "input": "On hand=60077; Reserved=60063; Damaged=2; Inspection=FAIL; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 8,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "witness-regime-stress-warehouse-16",
+        "input": "On hand=60080; Reserved=60068; Damaged=4; Inspection=FAIL; Tier=RUSH; Site=SOUTH."
+      }
+    ]
+  },
+  "stressSeed": 955127
+}
