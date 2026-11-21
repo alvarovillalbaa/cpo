@@ -18,6 +18,8 @@ The held-out routing rules instead choose from costs and scores of completed tra
 
 A follow-up tested whether stricter validation could preserve the sole admission attempt for a better challenger. All tested extra-witness rules increased lookups. [Extra witness before admission](prompteval-one-admission-witness-guard.md)
 
+A prospective protocol compares the original one-admission rule with both native controls and a four-admission CPO arm using shared drafts and fresh typed cases. [Prospective comparison and offline rehearsal](grounded-witness-episode.md)
+
 ## Reproduce
 
 Use Python 3.12 and the repository's sealed receipts. The analysis ran with sockets and DNS blocked and made zero provider requests. Storage Guard measured 5.1 GiB free. A disposable source export was bounded at 0.2 GiB under the standing LAB exception. [Exhaustive frontier test](../tests/unit/test_prompteval_admission_task_budget.py)
