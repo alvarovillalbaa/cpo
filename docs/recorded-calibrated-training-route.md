@@ -30,6 +30,8 @@ On eight-challenger rotated ARC-AGI, the fitted rule gained 197 passes over the 
 
 The effects differed even within the same validation pattern. At eight challengers, requiring training on multiple gains with zero lost validation passes added 43 held-out passes on rotated AIME and lost 62 on rotated ARC-AGI. For one gain with zero validation losses, requiring training added 15 on AIME and lost 52 on ARC-AGI. The two validation cues alone could not distinguish the cases where corroboration helped.
 
+A follow-up allowed exact training ties and tested an equal-weight combination of training and independent qualification gain rates. Both rules lagged strict training on AIME and paid more than skipping training on ARC-AGI. [Joint proof comparison](recorded-joint-training-qualification.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Two full runs matched byte for byte with network sockets and DNS blocked. All 43 targeted tests passed from a clean source export, including family weighting, support requirements, and the independent qualification boundary. The stale seal was rejected, and the public selector parity receipt and sealed live-plan preview reproduced exactly. Storage Guard measured 2.9 GiB free. The source export and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent.
