@@ -18,6 +18,8 @@ Capping proofs at base cost funded three more BBH and LMentry direct proofs, wit
 
 The balance cap consumed one more lookup on each MMLU cohort and preserved all holdout totals. Neither shortened policy improved MMLU. The outside-family fits selected direct-only for BBH and LMentry and the full-quote adaptive queue for MMLU. The all-cohort quality gate remained unmet. [All costs, route counts, and paired ranges](witness-short-admission-credit-results-v1.json)
 
+A follow-up held the proof reservation fixed and tested earlier paid grades as a source of nominees. [Case-disjoint historical nomination](witness-history-admission.md)
+
 ## Reproduce
 
 Use a clean source export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 64 targeted tests passed and two replays matched byte for byte. The full-quote and direct-only controls reproduced their scores, costs, and funded traces. The CLI rejected a stale seal, and the prospective live manifest reproduced byte for byte. Storage Guard measured 6.5 GiB free. The export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Reservation tests](../tests/unit/test_witness_short_admission_credit.py)
