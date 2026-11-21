@@ -97,6 +97,40 @@ def test_exhausted_source_keeps_the_candidate_already_admitted_to_search():
     assert scheduled == proposed == [0]
 
 
+def test_empty_proposal_slot_keeps_the_schedule_without_charging_feedback():
+    training = tuple(Row(case, 'task', fields=1) for case in ('t0', 't1', 't2'))
+    validation = tuple(Row(case, 'task', fields=1) for case in ('v0', 'v1'))
+    scheduled, proposed, quoted = [], [], []
+
+    def schedule(index, pool, grades):
+        parent = 'repair' if index == 2 else 'start'
+        scheduled.append(parent)
+        return parent, (training[index].id,)
+
+    def propose(index, parent, samples):
+        proposed.append(index)
+        return 'repair' if index == 0 else 'final'
+
+    def evaluate(prompt, row):
+        assert row.id != 't1'
+        passed = prompt == 'final' or (prompt == 'repair' and row.id in ('t0', 'v0'))
+        return Observation(passed, {}, int(passed))
+
+    def quote(index, parent):
+        quoted.append(index)
+        return 1
+
+    budget = SequentialSearchBudget(20, 1, quote, lambda *_: 1)
+    selected = select_sequential_field_rewrites(
+        'start', training, validation, evaluate, schedule, propose,
+        rounds=3, minibatch_size=1, metric_limit=12, price_budget=budget, observed_charge=lambda *_: 1,
+        proposal_unavailable=lambda index, parent: index == 1 and parent == 'start',
+    )
+    assert selected == 'final'
+    assert scheduled == ['start', 'start', 'repair']
+    assert proposed == quoted == [0, 2]
+
+
 @pytest.mark.parametrize(('limit', 'expected'), ((None, [0, 1, 2]), (0, [0]), (5, [0, 1]), (6, [0, 1, 2])))
 def test_proposal_limit_reserves_the_quote_and_reuses_settled_headroom(limit, expected):
     train, valid = (Row('train', 'task', fields=1),), (Row('validation', 'task', fields=1),)

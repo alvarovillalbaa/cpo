@@ -10,7 +10,8 @@ from unittest.mock import patch
 def select_field_rewrites(
     initial, bank, groups, evaluate, reflect, trace, *,
     cap, seed, observed_charge=None, reinvest_savings=False, price_budget=None, parent_bounds=False,
-    certify_boundary_ties=False, skip_perfect_reflections=False, proposals_exhausted=None, parent_eligible=None,
+    certify_boundary_ties=False, skip_perfect_reflections=False, proposals_exhausted=None,
+    parent_eligible=None, proposal_unavailable=None,
 ):
     from benchmarks import grounded
     from cpo import Row
@@ -42,6 +43,7 @@ def select_field_rewrites(
         certify_boundary_ties=certify_boundary_ties,
         skip_perfect_after=len(bank) if skip_perfect_reflections else None,
         proposals_exhausted=proposals_exhausted,
+        proposal_unavailable=proposal_unavailable,
     )
 
 

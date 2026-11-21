@@ -13,7 +13,7 @@ Filtering eliminated empty later proposal slots for sequential CPO and GEPA. Bat
 
 ## Reproduce offline
 
-Use Python 3.12 and the pinned GEPA 0.1.4 wheel. The unrestricted arms matched the published ARC exhaustion-aware traces at all four price points. The result counts zero new provider requests. [Benchmark requirements](../requirements-benchmark.txt)
+Use Python 3.12 and the pinned GEPA 0.1.4 wheel from the [source revision for this receipt](https://github.com/alvarovillalbaa/cpo/tree/97b55d1719a056f28a717fc6c945723a0f973f52). The unrestricted arms matched the published ARC exhaustion-aware traces at all four price points. The result counts zero new provider requests. [Benchmark requirements](../requirements-benchmark.txt)
 
 Storage Guard measured 8.5 GiB free. The standing LAB exception covered a bounded 0.1 GiB temporary source export and wheel expansion. The replay blocked DNS and outbound sockets and removed the temporary files after verification.
 
@@ -23,3 +23,5 @@ PYTHONHASHSEED=0 python -B -m benchmarks.recorded_arc_lineage_quotes --available
   --execute dbf425a57b2a39270481e3d4863dc76f7f2e76fef47d7e932d326b1eac52f90f \
   --out NEW_REPORT.json
 ```
+
+The next experiment kept the original draw and skipped training reads for the selected empty slot. [Empty-slot replay](recorded-arc-skip-empty-slots.md)
