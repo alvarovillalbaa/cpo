@@ -10,7 +10,7 @@ from unittest.mock import patch
 def select_field_rewrites(
     initial, bank, groups, evaluate, reflect, trace, *,
     cap, seed, observed_charge=None, reinvest_savings=False, price_budget=None, parent_bounds=False,
-    certify_boundary_ties=False, skip_perfect_reflections=False, proposals_exhausted=None,
+    certify_boundary_ties=False, skip_perfect_reflections=False, proposals_exhausted=None, parent_eligible=None,
 ):
     from benchmarks import grounded
     from cpo import Row
@@ -25,8 +25,16 @@ def select_field_rewrites(
             raise ValueError('A proposer received a case outside its paid training minibatch')
         return bank[index] if index < len(bank) else reflect(parent, [reply.feedback for _, reply in samples])
 
-    schedule = sequential_schedule(validation, seed, grounded.MINIBATCH, trace, training=training,
-                                   parent_bounds=parent_bounds)
+    select_parent = sequential_schedule(validation, seed, grounded.MINIBATCH, trace, training=training,
+                                        parent_bounds=parent_bounds)
+
+    def schedule(index, pool, grades):
+        if parent_eligible is not None:
+            pool = tuple(parent for parent in pool if parent_eligible(index, parent))
+            if not pool:
+                raise ValueError('Stop before scheduling a round with no eligible proposal parent')
+        return select_parent(index, pool, grades)
+
     return select_sequential_field_rewrites(
         initial, training, validation, lambda p, row: evaluate(p, row.id), schedule, propose,
         rounds=grounded.REFLECTION_LIMIT, minibatch_size=grounded.MINIBATCH, metric_limit=cap,

@@ -19,7 +19,7 @@ The same 80 problems recur across splits and starts, and the original architectu
 
 ## Reproduce offline
 
-From the repository root, use Python 3.12 with the GEPA 0.1.4 wheel pinned in [the benchmark requirements](../requirements-benchmark.txt). The preview prints the plan seal. The execution verifies that seal and requires a fresh output path. The reference replay ran with DNS and outbound sockets blocked.
+From the [published source revision](https://github.com/alvarovillalbaa/cpo/tree/5a08ebcc4334441da7193c85b787d7f9c1a118a3), use Python 3.12 with the GEPA 0.1.4 wheel pinned in [the benchmark requirements](../requirements-benchmark.txt). The preview prints the plan seal. The execution verifies that seal and requires a fresh output path. The reference replay ran with DNS and outbound sockets blocked.
 
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.recorded_arc_lineage_quotes
@@ -27,3 +27,5 @@ PYTHONHASHSEED=0 python -B -m benchmarks.recorded_arc_lineage_quotes \
   --execute 5b21be8fae0716d9b44a65f5162ec89d0a3c58ab094e4d71be9628e6512c0ebe \
   --out NEW_REPORT.json
 ```
+
+The follow-up gave all three proposal-generating policies the same parent-availability information. [Parent availability results](recorded-arc-parent-availability.md)
