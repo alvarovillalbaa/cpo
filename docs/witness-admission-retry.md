@@ -21,6 +21,8 @@ At cap 20, the BBH and LMentry retry gained 54 held-out passes over full expecte
 
 Reserving part of the cap for a rival increased retry opportunities on MMLU and reduced first-nominee promotions. Both reservation variants exceeded the original seeded spend. [Proof allocation replay](witness-proof-split.md)
 
+After the full first proof settles, screening retries by remaining reads gained 185 BBH and LMentry passes within seeded spend. It did not transfer to MMLU. [Retry funding replay](witness-retry-funding.md)
+
 ## Reproduce
 
 Use a clean source export, Python 3.12, and the hash-pinned GEPA 0.1.4 wheel. The two replays matched byte for byte with sockets and DNS blocked. Seventeen targeted tests passed, the CLI rejected a stale seal, and the prospective development plan reproduced byte for byte. The replay sent zero provider requests. Storage Guard measured 5.6 GiB free and the export and wheel overlay fit the standing 0.2 GiB LAB exception. [Retry tests](../tests/unit/test_witness_admission_retry.py)
