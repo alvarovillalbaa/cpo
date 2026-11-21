@@ -14,6 +14,8 @@ The audit changes one output field on one regime at a time, scores every reply w
 
 The eight-row alternative replaces six warehouse rows with synthetic cases from the missing regimes. All 24 warehouse errors are then detectable by an exact control in development or confirmation. Separately, the result contains 24 fresh stress cases covering every regime missing from the original confirmation alone. Those cases share no exact facts with the sealed witness or its two predecessor corpora. The sealed experiment retains its original panels. The alternative and the supplemental stress cases are offline evidence with no provider calls.
 
+A separate confirmation rehearsal binds the eight-row alternative to the original qualifying development archive. It caught a warehouse error shared by all arms at the same 128-request ceiling. [Confirmation rehearsal](grounded-witness-warehouse-confirmation.md)
+
 ## Reproduce
 
 Use a clean source export with the sealed files and hash-pinned GEPA 0.1.4. Two offline runs produced identical receipts. Six targeted tests passed with sockets and DNS blocked. Storage Guard measured 5.9 GiB free. The task-owned overlays used the standing 0.2 GiB LAB exception and were removed.
