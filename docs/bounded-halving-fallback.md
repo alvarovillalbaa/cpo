@@ -21,6 +21,8 @@ A separate prospective plan compares the 16-lookup fallback with the original wi
 
 On two archived MMLU cohorts the same cap gained four passes over original CPO and added 4,669 paid lookups. It missed the transfer gate on both cohorts. [MMLU transfer](prompteval-mmlu-witness-fallback.md)
 
+An opt-in selector certifies the final winner across rounds. At cap 16 it matched the recorded holdout pass totals and saved 277 paid lookups across BBH, LMentry, and MMLU. [Lookahead experiment](witness-halving-lookahead.md)
+
 ## Use the selector
 
 Use one search object per sequential episode. Supply already observed validation grades keyed by `(prompt, case_id)` and pass candidate prompts in tie-break order. The callback returns an exact `bool` for each new grade. The returned string is the Halving winner. A return value of `None` means search stopped at the cap. On a completed path, independent qualification can evaluate a challenger on separate cases.
