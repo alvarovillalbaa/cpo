@@ -18,6 +18,8 @@ Promotion-first scheduling changed zero deployments across all 1,066 observed se
 
 Chronological peer-model validation grades supported a case reorder in 986 second attempts. The resulting policy added eight pooled MMLU passes and failed the cross-cohort gate. [Peer case-order replay](witness-peer-case-order.md)
 
+A follow-up used the first proof's cases for the preselected backup and reused the incumbent replies already paid there. [Shared-panel proof comparison](witness-shared-incumbent-proof.md)
+
 ## Reproduce
 
 Use a clean export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 30 targeted tests passed and two replays matched byte for byte. The complete parent audit reproduced, the CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. The replay issued zero provider requests. Storage Guard measured 5.7 GiB free. The export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Certificate tests](../tests/unit/test_witness_rival_order.py)
