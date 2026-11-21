@@ -16,6 +16,8 @@ Each physical reply grades one distinct prompt, case, and repeat. When multiple 
 
 The rejected-admission fixture had shared deployments that made the quality gain unreachable at its fixed search costs. Its rejection required zero scoring calls. The faulted fixtures reached an impossible task floor. Their request journals matched the original development schedule through the last paid response. Both qualifying fixtures retained their full scoring panels. Every futility archive replayed byte for byte with sockets and DNS blocked. A tampered terminal receipt failed replay. Seventeen targeted tests passed, including exhaustive completions on a small paired panel. These savings are from scripted outcomes. [Rehearsal receipt](grounded-witness-halving-futility-rehearsal-v1.json) · [Boundary tests](../tests/unit/test_grounded_witness_halving_futility.py)
 
+An offline ordering study reached the same gate decisions and rejected 86 of 88 scripted failures earlier by prioritizing contested critical comparisons and deferring descriptive replies. [Scoring-order replay](grounded-witness-scoring-order.md)
+
 ## Reproduce
 
 Use Python 3.12 and GEPA 0.1.4 from the hashed requirements. The positive development fixture can bind a disjoint confirmation. The same command supports `--profile rejected-admission` and `--profile faulted-scoring`. [GEPA pin](../requirements-benchmark.txt)
