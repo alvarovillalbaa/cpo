@@ -18,6 +18,8 @@ On BBH and LMentry, the best observed shared order tried retries first. It funde
 
 The outside-family selection picked direct-only for BBH and LMentry, with a paired 95% range of +0.057 to +0.327 percentage points. It picked retry-first for both MMLU cohorts. That order spent 325 lookups on MMLU and promoted no candidate, so both paired ranges were exactly zero. The shared queue met every cost cap and failed the all-cohort quality gate. [Full results and route-level receipts](witness-shared-admission-credit-results-v1.json)
 
+A queue that learns from settled proofs matched the best observed fixed BBH and LMentry result and recovered ten passes on prior MMLU subjects. The all-cohort gate stayed unmet. [Adaptive queue replay](witness-adaptive-admission-credit.md)
+
 ## Reproduce
 
 Use a clean export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 58 targeted tests passed and two full replays matched byte for byte. The standalone direct queue, the complete unbudgeted retry offers, and the original proofs reproduced their published scores and costs. The CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. Storage Guard measured 6.4 GiB free. The export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Budget tests](../tests/unit/test_witness_shared_admission_credit.py)
