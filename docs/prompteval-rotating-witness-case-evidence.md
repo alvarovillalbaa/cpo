@@ -14,6 +14,8 @@ At the observed scores, batched GEPA at cap 80 is the strongest fixed native poi
 
 An exact retrospective allocation could spend **40,476 lookups** and score **48.314%** mean accuracy, versus **48.214%** for CPO. It assigns deeper native search to clinical knowledge, high-school biology, and professional medicine and keeps the starting prompt for the remaining subjects. This allocation selects arms using held-out scores and describes what a perfectly informed budget allocator could do on these panels. The analysis still leaves fresh proposal generation and live-model effectiveness unverified.
 
+A follow-up measured extra validation reads when the two witness finalists tie. The rule spent more on both archived subject sets, with a small score gain on the original subjects and a loss on the additional subjects. [Tied-finalist replay](prompteval-witness-tie-budget.md)
+
 ## Reproduce
 
 Use Python 3.12, the checked-in archive, and the hash-pinned GEPA 0.1.4 wheel. Verification used DNS and socket blocking and a disposable overlay bounded at 0.2 GiB under the standing LAB exception. Storage Guard measured 3.3 GiB free. [Benchmark wheel](../requirements-benchmark.txt) · [Pairing and allocation tests](../tests/unit/test_prompteval_rotating_witness_case_evidence.py)
