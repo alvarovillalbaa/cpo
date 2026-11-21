@@ -18,6 +18,8 @@ On MMLU, 205 of 293 no-nominee episodes had a stronger paid candidate that could
 
 BBH and LMentry training selected the supported-rate rule for MMLU. It ran 22 proofs and added 23 pooled passes for 370 lookups. It exceeded the original seeded cost on the prior MMLU subjects by 96 lookups, and its paired interval ranged from −0.002 to +0.080 percentage points there. The additional subjects produced an exact tie. MMLU training selected the full single proof for BBH and LMentry. The cross-family gate failed. [All routes, costs, and paired ranges](witness-no-nominee-admission-results-v1.json)
 
+Screening those same candidates on an unanswered known incumbent miss failed on all 22 MMLU attempts under both case orders. [Matched one-read probe replay](witness-no-nominee-miss.md)
+
 ## Reproduce
 
 Use a clean export with Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 44 targeted tests passed and two full replays matched byte for byte. The original no-nominee counts, paid reachability, single-proof costs, and scores reproduced. The CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. Storage Guard measured 4.9 GiB free. The source export, overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Ranking and budget tests](../tests/unit/test_witness_no_nominee_admission.py)
