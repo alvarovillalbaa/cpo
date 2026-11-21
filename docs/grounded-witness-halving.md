@@ -12,6 +12,8 @@ The development ceiling is **3,612** responder calls. That includes 12 shared dr
 
 The qualifying fixture made 660 responder calls and recovered the scripted ticket task using two validation grades beyond those already used by the witness path. A separate 128-call fixture confirmation qualified. The rejected development fixture spent the witness admission, skipped fallback, and failed confirmation binding. All three archives replayed byte for byte with sockets and DNS blocked. The original arms matched their earlier runner on the same fixture inputs. These scripted outcomes exercise the protocol. Fresh-model performance remains open. [Fixture receipt](grounded-witness-halving-rehearsal-v1.json) · [Boundary tests](../tests/unit/test_grounded_witness_halving.py)
 
+A separate seal stops scoring before the next request once the existing acceptance gate has become impossible. [Exact early rejection](grounded-witness-halving-futility.md)
+
 ## Reproduce
 
 Use a clean checkout, Python 3.12, and GEPA 0.1.4 from the hashed requirements. The CLI previews and replays the protocol or invokes scripted replies. A provider responder can use the Python entry point. [GEPA requirement](../requirements-benchmark.txt)
