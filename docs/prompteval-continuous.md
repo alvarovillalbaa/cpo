@@ -30,6 +30,8 @@ A separate replay qualified earlier contenders on each cycle's fresh cases befor
 
 The proposal-cycle API follow-up used an exact qualification early stop and reproduced the search and deployment at five caps. [Expected-cost proposal cycle](expected-cost-proposal-cycle.md)
 
+A matched replay gave all three optimizers the same search ceiling, split-safe case IDs, and the option to return unread qualification cases to later cycles. Recycling produced mixed gains and kept CPO behind the wider GEPA controls on the pooled quality and cost comparison. [Qualification case reuse](prompteval-qualification-case-reuse.md)
+
 ## Reproduce
 
 ```sh
