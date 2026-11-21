@@ -21,6 +21,8 @@ Each cell gives pooled held-out passes and paid lookups across the same 20 panel
 
 Recycling returned 296 previously assigned cases to CPO's bank at cap 88 and 377 at cap 136. It added 260 and 376 paid lookups respectively. The CPO score gained nine passes at cap 88 and lost ten at cap 136. At the wider ceiling, each GEPA mode achieved more pooled passes at lower paid cost than every tested CPO setting. This archive gives no basis for making recycling the default. It also shows that matching hard ceilings leaves different amounts of work available to each search policy. [Per-panel results and journal digests](prompteval-qualification-case-reuse-results-v1.json)
 
+A follow-up uses the retire-assigned policy and the same case schedule to compare cheaper CPO challenger screens. [Rotating validation witnesses](prompteval-first-proof-budget.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. The runner uses the tracked correctness matrices and a fresh output path. Each episode reads the final holdout only after all four optimization cycles. The same archive cases recur across seeds. Live generation cost and generalization to fresh model outputs remain unmeasured. [Benchmark wheel](../requirements-benchmark.txt)
