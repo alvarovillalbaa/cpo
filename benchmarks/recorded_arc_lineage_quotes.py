@@ -24,6 +24,7 @@ REFLECTION_QUOTES = (1, 4)
 MODES = {'gepa-sequential': 1, 'gepa-batched': 2, 'cpo-shared-budget': 0, 'cpo-supplied-only': 0}
 RESTRICTED = tuple(mode for mode in MODES if mode != 'cpo-supplied-only')
 SKIP_EMPTY = 'cpo-skip-empty-slots'
+NATIVE_RESERVES = ('full-round', 'available-slots')
 
 
 def load_archive():
@@ -82,8 +83,33 @@ def native_available_parents(eligible):
     return patch.object(ParetoCandidateSelector, 'select_candidate_idx', select)
 
 
+class FiniteProposalSampling:
+    """Draw the native schedule before pruning slots without a proposal."""
+
+    def __init__(self, native_sampling, capacity, admit):
+        self.native_sampling = native_sampling
+        self.capacity = capacity
+        self.admit = admit
+        self.skipped = 0
+        self.denied = False
+
+    def sample_tasks(self, state, candidate_selector, batch_sampler, trainset):
+        tasks = self.native_sampling.sample_tasks(state, candidate_selector, batch_sampler, trainset)
+        if not tasks:
+            return tasks
+        parent = next(iter(tasks[0].parent_candidate.values()))
+        if any(task.parent_idx != tasks[0].parent_idx for task in tasks):
+            raise ValueError('Finite proposal sampling requires a single parent per round')
+        funded = tasks[:self.capacity(parent)]
+        self.skipped += len(tasks) - len(funded)
+        if funded and self.admit is not None and not self.admit(parent, funded):
+            self.denied = True
+            return []
+        return funded
+
+
 def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_quote, ceiling, *,
-         stop_on_exhaustion, available_parents=False, skip_empty_slots=False):
+         stop_on_exhaustion, available_parents=False, skip_empty_slots=False, native_reserve=None):
     from benchmarks import gepa_disjoint_cases as native, grounded
     from benchmarks.gepa_sequential_schedule import native_with_price_guard, select_field_rewrites
     from cpo import Observation, Row
@@ -123,11 +149,23 @@ def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_
 
     width = MODES[mode]
     if width:
+        if native_reserve is not None and (not stop_on_exhaustion or native_reserve not in NATIVE_RESERVES):
+            raise ValueError('Native finite sampling requires a known reserve and exhaustion stopping')
+
+        def can_fund_tasks(parent, tasks):
+            cached = {(parent, case) for task in tasks for case in task.minibatch_ids}
+            reads = len(cached - paid.keys()) + sum(len(task.minibatch_ids) + len(validation) for task in tasks)
+            later = max(0, len(tasks) - (len(opened) - supplied))
+            return (len(paid) + reads <= READ_LIMIT
+                    and sum(paid.values()) + used_reflection + reads * evaluate_quote + later * proposal_quote <= ceiling)
+
         def can_fund_round(index):
             reserved_reads = width * (2 * grounded.MINIBATCH + len(validation))
             reserved_proposals = sum(quote(slot) for slot in range(index * width, (index + 1) * width))
             return sum(paid.values()) + used_reflection + reserved_reads * evaluate_quote + reserved_proposals <= ceiling
 
+        sampling = None
+        requote = native_reserve == 'available-slots'
         if stop_on_exhaustion:
             def observed_opening():
                 nonlocal supplied
@@ -143,7 +181,18 @@ def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_
             optimize = module.optimize_anything
 
             def stopped(*args, config, **kwargs):
+                nonlocal sampling
                 config.stop_callbacks = [*config.stop_callbacks, exhausted]
+                if native_reserve is not None:
+                    from gepa.strategies.proposal_sampling import SingleMutationSampling
+
+                    if config.reflection.skip_perfect_score:
+                        raise ValueError('Prefix pruning requires one proposal per sampled native task')
+                    base = config.engine.sampling_strategy or SingleMutationSampling()
+                    sampling = FiniteProposalSampling(base, lambda p: len(opened) - supplied + len(queues[p]),
+                                                      can_fund_tasks if requote else None)
+                    config.engine.sampling_strategy = sampling
+                    config.stop_callbacks.append(lambda _: sampling.denied)
                 return optimize(*args, config=config, **kwargs)
 
             availability, bank = patch.object(module, 'optimize_anything', stopped), observed_opening()
@@ -152,8 +201,16 @@ def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_
         parent_selection = (native_available_parents(lambda parent: supplied < len(opened) or bool(queues[parent]))
                             if available_parents else nullcontext())
         with availability, parent_selection:
-            nominee = native_with_price_guard(native.select, can_fund_round, initial, bank, groups, evaluate,
-                                              reflect, cap=READ_LIMIT, seed=seed, width=width)
+            options = dict(cap=READ_LIMIT, seed=seed, width=width)
+            if requote:
+                nominee = native.select(initial, bank, groups, evaluate, reflect, **options, reserve_round_reads=False)
+            else:
+                nominee = native_with_price_guard(native.select, can_fund_round, initial, bank, groups, evaluate,
+                                                  reflect, **options)
+        if sampling is not None:
+            skipped = sampling.skipped
+            if any(child is None for _, child in proposals):
+                raise ValueError('Native finite sampling dispatched an empty proposal slot')
     else:
         def settle(index, parent, child):
             return 0 if index < len(opened) or child == parent else proposal_quote
@@ -198,7 +255,7 @@ def play(mode, initial, cohorts, scores, orders, seed, evaluate_quote, proposal_
               'hypotheticalProposalCostNanodollars': used_reflection,
               'searchReads': len(paid), 'admissionReads': len(admitted),
               'laterSlots': len(proposals), 'recordedChildren': sum(child is not None for _, child in proposals)}
-    if skip_empty_slots:
+    if skip_empty_slots or native_reserve is not None:
         result['skippedEmptySlots'] = skipped
     return result
 
@@ -300,7 +357,7 @@ def measure(cases, scores, children):
             'quoteMultipliers': REFLECTION_QUOTES, 'points': points, 'exhaustionAware': stopped, 'newProviderRequests': 0}
 
 
-def availability_plan(cases, *, skip_empty_slots=False):
+def availability_plan(cases, *, skip_empty_slots=False, matched_native=False):
     plan = prepare(cases)
     protocol = 'cpo-recorded-arc-skip-empty-slots-v1' if skip_empty_slots else 'cpo-recorded-arc-parent-availability-v1'
     plan = {**plan, 'protocol': protocol,
@@ -310,10 +367,18 @@ def availability_plan(cases, *, skip_empty_slots=False):
     if skip_empty_slots:
         plan['skipEmptyArm'] = SKIP_EMPTY
         plan['skipEmptyPolicy'] = 'Keep the seeded parent draw. Charge no training read or proposal for an empty slot.'
+    if matched_native:
+        plan['protocol'] = 'cpo-recorded-arc-native-empty-slots-v1'
+        plan['nativeReserves'] = NATIVE_RESERVES
+        plan['nativeEmptyPolicy'] = (
+            'Draw the native parent and all minibatches, then keep only tasks backed by supplied openings or children '
+            'of that parent. Full-round keeps the published GEPA reserves. Available-slots reserves after sampling '
+            'for uncached parent reads, a full child evaluation for each retained task, and remaining proposal quotes.'
+        )
     return plan
 
 
-def measure_availability(cases, scores, children, *, skip_empty_slots=False):
+def measure_availability(cases, scores, children, *, skip_empty_slots=False, matched_native=False):
     if version('gepa') != '0.1.4':
         raise ValueError('Use pinned native GEPA 0.1.4')
     quote = max(charge for rows in scores.values() for _, charge in rows.values())
@@ -324,12 +389,19 @@ def measure_availability(cases, scores, children, *, skip_empty_slots=False):
     if skip_empty_slots:
         arms = (*arms, SKIP_EMPTY)
         comparisons[SKIP_EMPTY] = (*RESTRICTED, *variants.values())
+    native_arms = {}
+    if matched_native:
+        native_arms = {f'{mode}-{reserve}': (mode, reserve)
+                       for mode in RESTRICTED[:2] for reserve in NATIVE_RESERVES}
+        arms = (*arms, *native_arms)
+        comparisons.update({name: (mode,) for name, (mode, _) in native_arms.items()})
+        comparisons[SKIP_EMPTY] = (*comparisons[SKIP_EMPTY], *native_arms)
     starts = tuple(parent for parent, child in children.items() if child)
     results = {}
     for units in QUOTE_UNITS:
         results[units] = {}
         for multiplier in REFLECTION_QUOTES:
-            control, combined = [], []
+            control, previous, combined = [], [], []
             for seed in SEEDS:
                 cohorts = split(cases, seed)
                 for start in starts:
@@ -343,7 +415,12 @@ def measure_availability(cases, scores, children, *, skip_empty_slots=False):
                         variants_at_start[SKIP_EMPTY] = play('cpo-shared-budget', *args, stop_on_exhaustion=True,
                                                             skip_empty_slots=True)
                     control.append((seed, start, original))
-                    combined.append((seed, start, {**original, **variants_at_start}))
+                    outcomes = {**original, **variants_at_start}
+                    if matched_native:
+                        previous.append((seed, start, outcomes))
+                        outcomes = {**outcomes, **{name: play(mode, *args, stop_on_exhaustion=True, native_reserve=reserve)
+                                                  for name, (mode, reserve) in native_arms.items()}}
+                    combined.append((seed, start, outcomes))
             results[units][multiplier] = {
                 'controlTraceSha256': digest(control),
                 **summarize(combined, arms=arms, comparisons=comparisons),
@@ -353,6 +430,8 @@ def measure_availability(cases, scores, children, *, skip_empty_slots=False):
                 changes = {field: sum(old[field] != new[field] for old, new in old_and_new)
                            for field in ('nominee', 'selected', 'recordedChildren')}
                 results[units][multiplier]['skipEmptyChangedPaths'] = changes
+            if matched_native:
+                results[units][multiplier]['previousTraceSha256'] = digest(previous)
     return {'evaluationQuoteNanodollars': quote, 'points': results, 'newProviderRequests': 0}
 
 
@@ -361,12 +440,14 @@ def main():
     policies = parser.add_mutually_exclusive_group()
     policies.add_argument('--available-parents', action='store_true')
     policies.add_argument('--skip-empty-slots', action='store_true')
+    policies.add_argument('--match-native-empty-slots', action='store_true')
     parser.add_argument('--execute', metavar='PLAN_SHA256')
     parser.add_argument('--out', type=Path)
     args = parser.parse_args()
     cases, scores, children = load_archive()
-    compare_availability = args.available_parents or args.skip_empty_slots
-    plan = (availability_plan(cases, skip_empty_slots=args.skip_empty_slots)
+    skip_empty_slots = args.skip_empty_slots or args.match_native_empty_slots
+    compare_availability = args.available_parents or skip_empty_slots
+    plan = (availability_plan(cases, skip_empty_slots=skip_empty_slots, matched_native=args.match_native_empty_slots)
             if compare_availability else prepare(cases))
     seal = digest(plan)
     if args.execute is None and args.out is None:
@@ -374,7 +455,8 @@ def main():
         return
     if args.execute != seal or args.out is None or args.out.exists():
         parser.error('Use the current seal and a fresh output path')
-    result = (measure_availability(cases, scores, children, skip_empty_slots=args.skip_empty_slots)
+    result = (measure_availability(cases, scores, children, skip_empty_slots=skip_empty_slots,
+                                   matched_native=args.match_native_empty_slots)
               if compare_availability else measure(cases, scores, children))
     with args.out.open('x') as out:
         json.dump({'plan': plan, 'planSha256': seal, 'comparison': result}, out, indent=2, sort_keys=True)
