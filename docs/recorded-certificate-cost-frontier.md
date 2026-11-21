@@ -19,6 +19,8 @@ On six disjoint LMentry tasks, sequential GEPA at cap 28 exceeded the four-read 
 
 On the original homophones and word-before tasks with different model checkpoints, no swept GEPA setting reached 699 passes at any cost. The first-certificate policy retained those 699 passes while spending 260 fewer lookups than the four-read policy. This advantage is specific to the two archived tasks. Broader task transfer and fresh prompt generation remain unverified.
 
+A follow-up screened all challengers before spending on exact validation. It reversed the observed matched-cost deficit on disjoint LMentry, with a paired range that crossed zero. [Paired shortlist replay](recorded-paired-shortlist.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and socket connections blocked, 45 targeted tests passed and two full replays matched byte for byte. The boundary tests checked every integer cap on a fixed nine-prompt pool for both GEPA modes. Direct replay reproduced the 13 reported best-affordable and least-cost matching GEPA settings over 4,736 archived trials. The CLI rejected a stale seal, and the ordered live plan preview matched. Storage Guard measured 4.8 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. The sweeps sent zero provider requests. [Round boundary tests](../tests/unit/test_recorded_certificate_cost_frontier.py)
