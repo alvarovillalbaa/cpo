@@ -1,0 +1,249 @@
+{
+  "decisionsPerCaseBySubject": {
+    "astronomy": 64,
+    "clinical_knowledge": 64,
+    "electrical_engineering": 64,
+    "high_school_biology": 64,
+    "high_school_chemistry": 64,
+    "human_aging": 64,
+    "human_sexuality": 64,
+    "moral_scenarios": 64,
+    "professional_medicine": 64
+  },
+  "distinctHeldoutCasesBySubject": {
+    "astronomy": 45,
+    "clinical_knowledge": 79,
+    "electrical_engineering": 43,
+    "high_school_biology": 93,
+    "high_school_chemistry": 60,
+    "human_aging": 66,
+    "human_sexuality": 39,
+    "moral_scenarios": 268,
+    "professional_medicine": 81
+  },
+  "fixedSubjects": {
+    "affordableSelections": {
+      "gepa-batched/80": 4067,
+      "gepa-sequential/52": 8,
+      "retain-start": 21
+    },
+    "comparisons": {
+      "best-affordable-gepa": {
+        "drawsEqual": 0,
+        "drawsHigher": 4068,
+        "drawsLower": 28,
+        "interval95PercentagePoints": [
+          0.036939872,
+          0.358744186
+        ]
+      },
+      "gepa-batched/136": {
+        "drawsEqual": 0,
+        "drawsHigher": 382,
+        "drawsLower": 3714,
+        "interval95PercentagePoints": [
+          -0.347589954,
+          0.077450608
+        ]
+      },
+      "gepa-batched/80": {
+        "drawsEqual": 0,
+        "drawsHigher": 4068,
+        "drawsLower": 28,
+        "interval95PercentagePoints": [
+          0.036939872,
+          0.358744186
+        ]
+      },
+      "gepa-batched/88": {
+        "drawsEqual": 0,
+        "drawsHigher": 3273,
+        "drawsLower": 823,
+        "interval95PercentagePoints": [
+          -0.08659131,
+          0.256928654
+        ]
+      },
+      "gepa-sequential/136": {
+        "drawsEqual": 0,
+        "drawsHigher": 305,
+        "drawsLower": 3791,
+        "interval95PercentagePoints": [
+          -0.417339015,
+          0.067791835
+        ]
+      },
+      "gepa-sequential/52": {
+        "drawsEqual": 0,
+        "drawsHigher": 4095,
+        "drawsLower": 1,
+        "interval95PercentagePoints": [
+          0.126797028,
+          0.481096362
+        ]
+      },
+      "gepa-sequential/88": {
+        "drawsEqual": 0,
+        "drawsHigher": 563,
+        "drawsLower": 3533,
+        "interval95PercentagePoints": [
+          -0.346083664,
+          0.102300939
+        ]
+      },
+      "retain-start": {
+        "drawsEqual": 0,
+        "drawsHigher": 4096,
+        "drawsLower": 0,
+        "interval95PercentagePoints": [
+          0.14815583,
+          0.502386778
+        ]
+      }
+    }
+  },
+  "macroAccuracyByArm": {
+    "gepa-batched/136": "455252494859153/941468033975040",
+    "gepa-batched/80": "8372397504209/17434593221760",
+    "gepa-batched/88": "453210145164809/941468033975040",
+    "gepa-sequential/136": "20707724315731/42794001544320",
+    "gepa-sequential/52": "451100646088127/941468033975040",
+    "gepa-sequential/88": "227542811503817/470734016987520",
+    "retain-start": "450878781376123/941468033975040",
+    "rotating-witness-two-finalists": "226962007433659/470734016987520"
+  },
+  "newProviderRequests": 0,
+  "observedBestAffordableFixedNative": "gepa-batched/80",
+  "oracleNativeAllocation": {
+    "cpoMacroAccuracyDelta": "-6050705491/6073987315968",
+    "macroAccuracy": "454861874218423/941468033975040",
+    "nativeArmsBySubject": {
+      "astronomy": "retain-start",
+      "clinical_knowledge": "gepa-sequential/136",
+      "electrical_engineering": "retain-start",
+      "high_school_biology": "gepa-batched/136",
+      "high_school_chemistry": "retain-start",
+      "human_aging": "retain-start",
+      "human_sexuality": "retain-start",
+      "moral_scenarios": "retain-start",
+      "professional_medicine": "gepa-sequential/88"
+    },
+    "paidLookups": 40476
+  },
+  "paidLookupsByArm": {
+    "gepa-batched/136": 125720,
+    "gepa-batched/80": 39560,
+    "gepa-batched/88": 56164,
+    "gepa-sequential/136": 133028,
+    "gepa-sequential/52": 26600,
+    "gepa-sequential/88": 107981,
+    "rotating-witness-two-finalists": 41359
+  },
+  "pairedCaseVotesSha256": "e10f0f09a218f7c57cbd13bc8253e469c9780c1f6713cbefd60573bf994b9a1f",
+  "plan": {
+    "affordability": "Use original costs for fixed subjects and resample subject costs with each subject. Select the highest-scoring funded fixed native point on every draw.",
+    "analysisSourceSha256": "bfea50a3ee12fa7dbea98f5583803568f9a60855ae2c2e4caec590d241676860",
+    "averaging": "Give each subject equal weight and retain its two model panels and all seeds per case.",
+    "draws": 4096,
+    "nativeBudgetPoints": [
+      "retain-start",
+      "gepa-sequential/52",
+      "gepa-sequential/88",
+      "gepa-sequential/136",
+      "gepa-batched/80",
+      "gepa-batched/88",
+      "gepa-batched/136"
+    ],
+    "primaryControl": "gepa-batched/88",
+    "protocol": "prompteval-rotating-witness-case-evidence-v1",
+    "resampling": [
+      "Resample original holdout cases within each fixed subject.",
+      "Resample subjects, then their original holdout cases, with replacement."
+    ],
+    "seed": 20261121,
+    "transferExecutionSha256": "a3b656d7b5dc053d8b73320416e1ce11e03fcde4d84b0a12e062379f4d80b37d",
+    "transferReceiptSha256": "e234c20ec178745ca55ff2e01aabf9f75e69377997690302fc615d7d8b6cc5ac"
+  },
+  "planSha256": "c0f4a3df64269a1a82b97846472717cc0229ff915061ebfbcdfe7dbdad625bb2",
+  "resampledSubjects": {
+    "affordableSelections": {
+      "gepa-batched/80": 3699,
+      "gepa-sequential/52": 167,
+      "retain-start": 230
+    },
+    "comparisons": {
+      "best-affordable-gepa": {
+        "drawsEqual": 0,
+        "drawsHigher": 3976,
+        "drawsLower": 120,
+        "interval95PercentagePoints": [
+          -0.007213879,
+          0.405071895
+        ]
+      },
+      "gepa-batched/136": {
+        "drawsEqual": 0,
+        "drawsHigher": 794,
+        "drawsLower": 3302,
+        "interval95PercentagePoints": [
+          -0.463163791,
+          0.15603453
+        ]
+      },
+      "gepa-batched/80": {
+        "drawsEqual": 0,
+        "drawsHigher": 3982,
+        "drawsLower": 114,
+        "interval95PercentagePoints": [
+          -0.005484167,
+          0.404779127
+        ]
+      },
+      "gepa-batched/88": {
+        "drawsEqual": 0,
+        "drawsHigher": 3188,
+        "drawsLower": 908,
+        "interval95PercentagePoints": [
+          -0.139815125,
+          0.273123953
+        ]
+      },
+      "gepa-sequential/136": {
+        "drawsEqual": 0,
+        "drawsHigher": 610,
+        "drawsLower": 3486,
+        "interval95PercentagePoints": [
+          -0.54125837,
+          0.120927081
+        ]
+      },
+      "gepa-sequential/52": {
+        "drawsEqual": 0,
+        "drawsHigher": 4068,
+        "drawsLower": 28,
+        "interval95PercentagePoints": [
+          0.057171017,
+          0.610281424
+        ]
+      },
+      "gepa-sequential/88": {
+        "drawsEqual": 0,
+        "drawsHigher": 994,
+        "drawsLower": 3102,
+        "interval95PercentagePoints": [
+          -0.48235201,
+          0.167717946
+        ]
+      },
+      "retain-start": {
+        "drawsEqual": 0,
+        "drawsHigher": 4071,
+        "drawsLower": 25,
+        "interval95PercentagePoints": [
+          0.063589036,
+          0.659872202
+        ]
+      }
+    }
+  }
+}
