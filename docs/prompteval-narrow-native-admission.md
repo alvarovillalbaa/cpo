@@ -25,6 +25,8 @@ The result covers the measured width and cap grid with supplied archived prompts
 
 A follow-up let the native comparison choose a different setting for each task under the same aggregate lookup budget. [Task-specific allocation audit](prompteval-admission-task-budget.md)
 
+The one-admission policy also led affordable GEPA on recorded GSM8K and SST‑5 predictions. The SST‑5 comparison against Successive Halving fell short of the transfer gate. [GSM8K and SST‑5 transfer](promptolution-witness-episode.md)
+
 ## Reproduce
 
 Use Python 3.12 and hash-pinned GEPA 0.1.4. The run reproduced 176 earlier panel-level score and cost records. Four panels, covering both models on the first and last archive tasks, replayed from a separate clean export with matching counts and traces for every arm. Verification blocked DNS and sockets. Storage Guard measured 4.1 GiB free, and the standing LAB exception allowed up to 0.2 GiB for disposable sources. The replay made zero new provider requests. [Benchmark requirement](../requirements-benchmark.txt) · [Focused tests](../tests/unit/test_prompteval_narrow_native_admission.py)
