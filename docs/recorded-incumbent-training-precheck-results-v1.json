@@ -1,0 +1,1308 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "challengerCounts": [
+      4,
+      8
+    ],
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "methods": [
+      "incumbent-training-precheck",
+      "incumbent-validation-then-training-precheck",
+      "qualification-first-expected-training-order"
+    ],
+    "parentPlanSha256": "ed68c8db5557ccad0ef3c509dfcecc1b2a9b970b856323c60401ead35c199ae5",
+    "parentReceiptSha256": "49a761d5acc0b549855e9a51b8ee47243ab4e9ec2767a7875e65b0adc3e91329",
+    "protocol": "recorded-incumbent-training-precheck-v1",
+    "scope": "After the original qualification precheck, stop before the candidate race if the incumbent is perfect on its existing training half. Compare training first with checking validation headroom before training. Buy each reply once and preserve the original cap, deployment and held-out grades. Reuse the pinned GEPA frontiers.",
+    "searchCap": 180,
+    "sourceSha256": "459a4ff619ad8a95d17b2e6a0089af7c30cbb2e615ff109361bb25b1993b0224"
+  },
+  "planSha256": "1c30893e7860a6497b4220a576d5af30af72aee4419a1645ea7cf4afcc96a635",
+  "providerRequests": 0,
+  "results": {
+    "aime": {
+      "root/4": {
+        "incumbent-training-precheck": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "retain-start",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -11,
+              "pairedRange95": [
+                -30,
+                -3
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/100": 37,
+                "gepa-sequential-precheck/16": 40,
+                "gepa-sequential-precheck/20": 226,
+                "gepa-sequential-precheck/28": 1072,
+                "retain-start": 2721
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 0,
+            "dearer": 26,
+            "savedLookups": -51,
+            "trials": 40
+          },
+          "totals": {
+            "availableBackups": 5,
+            "backupPromotions": 0,
+            "deferredTraining": 18,
+            "holdoutPasses": 489,
+            "paidLookups": 1211,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 178,
+            "searchLookups": 1033,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "3dbc0cf7539a92e3cb0d5e7217b12b1d393fa1628580a34b22b45c349d9c92a4",
+            "trainingChecks": 19,
+            "trainingLookups": 121,
+            "trainingPrecheckLookups": 77,
+            "trainingPrecheckStops": 0,
+            "trainingSkippedAfterQualification": 13,
+            "trainingVetoAfterQualification": 2,
+            "trainingVetoes": 12
+          }
+        },
+        "incumbent-validation-then-training-precheck": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "retain-start",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -11,
+              "pairedRange95": [
+                -30,
+                -3
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/100": 37,
+                "gepa-sequential-precheck/16": 40,
+                "gepa-sequential-precheck/20": 226,
+                "gepa-sequential-precheck/28": 1072,
+                "retain-start": 2721
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 0,
+            "dearer": 26,
+            "savedLookups": -51,
+            "trials": 40
+          },
+          "totals": {
+            "availableBackups": 5,
+            "backupPromotions": 0,
+            "deferredTraining": 18,
+            "holdoutPasses": 489,
+            "paidLookups": 1211,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 178,
+            "searchLookups": 1033,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "b2e895aae7c5da0757c2c38192538b741207e3123c12902eddfd6fe5a08a443d",
+            "trainingChecks": 19,
+            "trainingLookups": 121,
+            "trainingPrecheckLookups": 77,
+            "trainingPrecheckStops": 0,
+            "trainingSkippedAfterQualification": 13,
+            "trainingVetoAfterQualification": 2,
+            "trainingVetoes": 12,
+            "validationPrecheckLookups": 77,
+            "validationPrecheckStops": 0
+          }
+        }
+      },
+      "root/8": {
+        "incumbent-training-precheck": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "retain-start",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -15,
+              "pairedRange95": [
+                -38,
+                -8
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/44": 11,
+                "gepa-batched-precheck/46": 52,
+                "gepa-sequential-precheck/16": 20,
+                "gepa-sequential-precheck/20": 33,
+                "gepa-sequential-precheck/28": 24,
+                "gepa-sequential-precheck/32": 1041,
+                "gepa-sequential-precheck/38": 264,
+                "gepa-sequential-precheck/45": 164,
+                "retain-start": 2487
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 0,
+            "dearer": 21,
+            "savedLookups": -43,
+            "trials": 40
+          },
+          "totals": {
+            "availableBackups": 7,
+            "backupNominations": 1,
+            "backupPromotions": 0,
+            "deferredTraining": 17,
+            "holdoutPasses": 485,
+            "paidLookups": 1647,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 191,
+            "searchLookups": 1456,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "077f35a8bfde85a35bb595941e6dd58c20a71bf2aac8b13fd5cffecb37725c53",
+            "trainingChecks": 26,
+            "trainingLookups": 163,
+            "trainingPrecheckLookups": 77,
+            "trainingPrecheckStops": 0,
+            "trainingSkippedAfterQualification": 12,
+            "trainingVetoAfterQualification": 2,
+            "trainingVetoes": 15
+          }
+        },
+        "incumbent-validation-then-training-precheck": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "retain-start",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0
+              },
+              "holdoutPassDifference": -15,
+              "pairedRange95": [
+                -38,
+                -8
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/44": 11,
+                "gepa-batched-precheck/46": 52,
+                "gepa-sequential-precheck/16": 20,
+                "gepa-sequential-precheck/20": 33,
+                "gepa-sequential-precheck/28": 24,
+                "gepa-sequential-precheck/32": 1041,
+                "gepa-sequential-precheck/38": 264,
+                "gepa-sequential-precheck/45": 164,
+                "retain-start": 2487
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 0,
+            "dearer": 21,
+            "savedLookups": -43,
+            "trials": 40
+          },
+          "totals": {
+            "availableBackups": 7,
+            "backupNominations": 1,
+            "backupPromotions": 0,
+            "deferredTraining": 17,
+            "holdoutPasses": 485,
+            "paidLookups": 1647,
+            "precheckLookups": 70,
+            "precheckStops": 0,
+            "qualificationLookups": 191,
+            "searchLookups": 1456,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "9d374a6c63d64e1a8dd0ded815ddff08e89d5efad01cf5eb58c24fca2f56c194",
+            "trainingChecks": 26,
+            "trainingLookups": 163,
+            "trainingPrecheckLookups": 77,
+            "trainingPrecheckStops": 0,
+            "trainingSkippedAfterQualification": 12,
+            "trainingVetoAfterQualification": 2,
+            "trainingVetoes": 15,
+            "validationPrecheckLookups": 77,
+            "validationPrecheckStops": 0
+          }
+        }
+      },
+      "rotated/4": {
+        "incumbent-training-precheck": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/24",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 4080,
+                "paidLookups": 6630
+              },
+              "cheapestMatching": "gepa-sequential-precheck/24",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 4080,
+                "paidLookups": 6630
+              },
+              "holdoutPassDifference": -2,
+              "pairedRange95": [
+                -36,
+                18
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/38": 4,
+                "gepa-batched-precheck/39": 300,
+                "gepa-batched-precheck/43": 4,
+                "gepa-sequential-precheck/16": 910,
+                "gepa-sequential-precheck/20": 2,
+                "gepa-sequential-precheck/24": 1749,
+                "gepa-sequential-precheck/25": 2,
+                "gepa-sequential-precheck/28": 15,
+                "gepa-sequential-precheck/29": 8,
+                "gepa-sequential-precheck/30": 90,
+                "gepa-sequential-precheck/32": 3,
+                "gepa-sequential-precheck/33": 543,
+                "retain-start": 466
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 6,
+            "dearer": 204,
+            "savedLookups": -270,
+            "trials": 320
+          },
+          "totals": {
+            "availableBackups": 36,
+            "backupNominations": 12,
+            "backupPromotions": 5,
+            "deferredTraining": 126,
+            "holdoutPasses": 4078,
+            "paidLookups": 8806,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1403,
+            "searchLookups": 7403,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "8ad496df15dcea39e4f4453347641bd037e7b1342dd4aea2d2ba1376a1fbeded",
+            "trainingChecks": 131,
+            "trainingLookups": 810,
+            "trainingPrecheckLookups": 588,
+            "trainingPrecheckStops": 6,
+            "trainingSkippedAfterQualification": 89,
+            "trainingVetoAfterQualification": 22,
+            "trainingVetoes": 82
+          }
+        },
+        "incumbent-validation-then-training-precheck": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/24",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 4080,
+                "paidLookups": 6630
+              },
+              "cheapestMatching": "gepa-sequential-precheck/24",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 4080,
+                "paidLookups": 6630
+              },
+              "holdoutPassDifference": -2,
+              "pairedRange95": [
+                -36,
+                18
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/38": 4,
+                "gepa-batched-precheck/39": 300,
+                "gepa-batched-precheck/43": 4,
+                "gepa-sequential-precheck/16": 910,
+                "gepa-sequential-precheck/20": 2,
+                "gepa-sequential-precheck/24": 1749,
+                "gepa-sequential-precheck/25": 2,
+                "gepa-sequential-precheck/28": 15,
+                "gepa-sequential-precheck/29": 8,
+                "gepa-sequential-precheck/30": 90,
+                "gepa-sequential-precheck/32": 3,
+                "gepa-sequential-precheck/33": 543,
+                "retain-start": 466
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 6,
+            "dearer": 200,
+            "savedLookups": -272,
+            "trials": 320
+          },
+          "totals": {
+            "availableBackups": 36,
+            "backupNominations": 12,
+            "backupPromotions": 5,
+            "deferredTraining": 126,
+            "holdoutPasses": 4078,
+            "paidLookups": 8808,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1403,
+            "searchLookups": 7405,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "1d1cd33927f8843d0b55a2296a6097a90acf679bc959e919aaddc78c4de3e7a7",
+            "trainingChecks": 131,
+            "trainingLookups": 810,
+            "trainingPrecheckLookups": 578,
+            "trainingPrecheckStops": 6,
+            "trainingSkippedAfterQualification": 89,
+            "trainingVetoAfterQualification": 22,
+            "trainingVetoes": 82,
+            "validationPrecheckLookups": 583,
+            "validationPrecheckStops": 4
+          }
+        }
+      },
+      "rotated/8": {
+        "incumbent-training-precheck": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/24",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 4080,
+                "paidLookups": 6630
+              },
+              "cheapestMatching": "gepa-sequential-precheck/16",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 4073,
+                "paidLookups": 4160
+              },
+              "holdoutPassDifference": -7,
+              "pairedRange95": [
+                -48,
+                10
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/39": 48,
+                "gepa-batched-precheck/40": 35,
+                "gepa-batched-precheck/47": 19,
+                "gepa-batched-precheck/51": 25,
+                "gepa-batched-precheck/52": 63,
+                "gepa-sequential-precheck/16": 733,
+                "gepa-sequential-precheck/20": 2,
+                "gepa-sequential-precheck/24": 848,
+                "gepa-sequential-precheck/25": 2,
+                "gepa-sequential-precheck/28": 1,
+                "gepa-sequential-precheck/30": 7,
+                "gepa-sequential-precheck/32": 1,
+                "gepa-sequential-precheck/33": 3,
+                "gepa-sequential-precheck/34": 482,
+                "gepa-sequential-precheck/37": 140,
+                "gepa-sequential-precheck/38": 241,
+                "gepa-sequential-precheck/40": 978,
+                "gepa-sequential-precheck/43": 34,
+                "retain-start": 434
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 6,
+            "dearer": 167,
+            "savedLookups": -153,
+            "trials": 320
+          },
+          "totals": {
+            "availableBackups": 57,
+            "backupNominations": 16,
+            "backupPromotions": 6,
+            "deferredTraining": 126,
+            "holdoutPasses": 4073,
+            "paidLookups": 12268,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1492,
+            "searchLookups": 10776,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "285cfe13065f716600ea1fee27d23b0d74c33af899999de1b79f6306641df7fc",
+            "trainingChecks": 189,
+            "trainingLookups": 1140,
+            "trainingPrecheckLookups": 588,
+            "trainingPrecheckStops": 6,
+            "trainingSkippedAfterQualification": 87,
+            "trainingVetoAfterQualification": 24,
+            "trainingVetoes": 122
+          }
+        },
+        "incumbent-validation-then-training-precheck": {
+          "comparisons": {
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/24",
+              "bestWithinCostPoint": {
+                "holdoutPasses": 4080,
+                "paidLookups": 6630
+              },
+              "cheapestMatching": "gepa-sequential-precheck/16",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 4073,
+                "paidLookups": 4160
+              },
+              "holdoutPassDifference": -7,
+              "pairedRange95": [
+                -48,
+                10
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/39": 48,
+                "gepa-batched-precheck/40": 35,
+                "gepa-batched-precheck/47": 19,
+                "gepa-batched-precheck/51": 25,
+                "gepa-batched-precheck/52": 63,
+                "gepa-sequential-precheck/16": 733,
+                "gepa-sequential-precheck/20": 2,
+                "gepa-sequential-precheck/24": 848,
+                "gepa-sequential-precheck/25": 2,
+                "gepa-sequential-precheck/28": 1,
+                "gepa-sequential-precheck/30": 7,
+                "gepa-sequential-precheck/32": 1,
+                "gepa-sequential-precheck/33": 3,
+                "gepa-sequential-precheck/34": 482,
+                "gepa-sequential-precheck/37": 140,
+                "gepa-sequential-precheck/38": 241,
+                "gepa-sequential-precheck/40": 978,
+                "gepa-sequential-precheck/43": 34,
+                "retain-start": 434
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 6,
+            "dearer": 163,
+            "savedLookups": -155,
+            "trials": 320
+          },
+          "totals": {
+            "availableBackups": 57,
+            "backupNominations": 16,
+            "backupPromotions": 6,
+            "deferredTraining": 126,
+            "holdoutPasses": 4073,
+            "paidLookups": 12270,
+            "precheckLookups": 606,
+            "precheckStops": 15,
+            "qualificationLookups": 1492,
+            "searchLookups": 10778,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "f3c863b320d6a53bcf7db573fcb84dfdf23c9c4a210e56513668b2118cb67b73",
+            "trainingChecks": 189,
+            "trainingLookups": 1140,
+            "trainingPrecheckLookups": 578,
+            "trainingPrecheckStops": 6,
+            "trainingSkippedAfterQualification": 87,
+            "trainingVetoAfterQualification": 24,
+            "trainingVetoes": 122,
+            "validationPrecheckLookups": 583,
+            "validationPrecheckStops": 4
+          }
+        }
+      }
+    },
+    "arc": {
+      "root/4": {
+        "incumbent-training-precheck": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-batched-precheck/40",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "cheapestMatching": "gepa-batched-precheck/40",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "holdoutPassDifference": -4,
+              "pairedRange95": [
+                -17,
+                8
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 3487,
+                "gepa-sequential-precheck/32": 595,
+                "gepa-sequential-precheck/39": 1,
+                "gepa-sequential-precheck/43": 13
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-batched-precheck/40",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "cheapestMatching": "gepa-batched-precheck/40",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "holdoutPassDifference": -4,
+              "pairedRange95": [
+                -17,
+                8
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 3487,
+                "gepa-sequential-precheck/32": 595,
+                "gepa-sequential-precheck/39": 1,
+                "gepa-sequential-precheck/43": 13
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 0,
+            "dearer": 0,
+            "savedHistoricalCostNanodollars": 0,
+            "savedLookups": 0,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "deferredTraining": 18,
+            "historicalCostNanodollars": 178316772350,
+            "historicalErrors": 107,
+            "holdoutPasses": 1561,
+            "paidLookups": 1844,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 358,
+            "searchLookups": 1486,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "9b0d862dc4a52179576b13a86c08969b259d6a5ede8529606c04d3c5a3edf3a8",
+            "trainingChecks": 40,
+            "trainingLookups": 491,
+            "trainingPrecheckLookups": 51,
+            "trainingPrecheckStops": 0,
+            "trainingVetoes": 0
+          }
+        },
+        "incumbent-validation-then-training-precheck": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-batched-precheck/40",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "cheapestMatching": "gepa-batched-precheck/40",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "holdoutPassDifference": -4,
+              "pairedRange95": [
+                -17,
+                8
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 3487,
+                "gepa-sequential-precheck/32": 595,
+                "gepa-sequential-precheck/39": 1,
+                "gepa-sequential-precheck/43": 13
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-batched-precheck/40",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "cheapestMatching": "gepa-batched-precheck/40",
+              "cheapestMatchingPoint": {
+                "historicalCostNanodollars": 140668379900,
+                "holdoutPasses": 1565,
+                "paidLookups": 1472
+              },
+              "holdoutPassDifference": -4,
+              "pairedRange95": [
+                -17,
+                8
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 3487,
+                "gepa-sequential-precheck/32": 595,
+                "gepa-sequential-precheck/39": 1,
+                "gepa-sequential-precheck/43": 13
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 0,
+            "dearer": 0,
+            "savedHistoricalCostNanodollars": 0,
+            "savedLookups": 0,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "deferredTraining": 18,
+            "historicalCostNanodollars": 178316772350,
+            "historicalErrors": 107,
+            "holdoutPasses": 1561,
+            "paidLookups": 1844,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 358,
+            "searchLookups": 1486,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "e7bdab222fcb62ecb458c2c4dcda26c11c95868f4610236b3f97384e2b85326b",
+            "trainingChecks": 40,
+            "trainingLookups": 491,
+            "trainingPrecheckLookups": 51,
+            "trainingPrecheckStops": 0,
+            "trainingVetoes": 0,
+            "validationPrecheckLookups": 53,
+            "validationPrecheckStops": 0
+          }
+        }
+      },
+      "root/8": {
+        "incumbent-training-precheck": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-batched-precheck/61",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 201512948850,
+                "holdoutPasses": 1568,
+                "paidLookups": 1928
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 10,
+              "pairedRange95": [
+                -11,
+                31
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 686,
+                "gepa-batched-precheck/61": 2964,
+                "gepa-batched-precheck/62": 90,
+                "gepa-sequential-precheck/32": 329,
+                "gepa-sequential-precheck/39": 1,
+                "gepa-sequential-precheck/43": 1,
+                "gepa-sequential-precheck/44": 4,
+                "gepa-sequential-precheck/51": 16,
+                "gepa-sequential-precheck/53": 5
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-batched-precheck/61",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 201512948850,
+                "holdoutPasses": 1568,
+                "paidLookups": 1928
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 10,
+              "pairedRange95": [
+                -11,
+                31
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 686,
+                "gepa-batched-precheck/61": 2964,
+                "gepa-batched-precheck/62": 90,
+                "gepa-sequential-precheck/32": 329,
+                "gepa-sequential-precheck/39": 1,
+                "gepa-sequential-precheck/43": 1,
+                "gepa-sequential-precheck/44": 4,
+                "gepa-sequential-precheck/51": 16,
+                "gepa-sequential-precheck/53": 5
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 0,
+            "dearer": 0,
+            "savedHistoricalCostNanodollars": 0,
+            "savedLookups": 0,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "deferredTraining": 16,
+            "historicalCostNanodollars": 213406317450,
+            "historicalErrors": 114,
+            "holdoutPasses": 1578,
+            "paidLookups": 2041,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 355,
+            "searchLookups": 1686,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "b8f0e1a6827707eb624ec491f1bf950f678a124735ec93bc0388571bf744b628",
+            "trainingChecks": 40,
+            "trainingLookups": 488,
+            "trainingPrecheckLookups": 51,
+            "trainingPrecheckStops": 0,
+            "trainingVetoes": 0
+          }
+        },
+        "incumbent-validation-then-training-precheck": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-batched-precheck/61",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 201512948850,
+                "holdoutPasses": 1568,
+                "paidLookups": 1928
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 10,
+              "pairedRange95": [
+                -11,
+                31
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 686,
+                "gepa-batched-precheck/61": 2964,
+                "gepa-batched-precheck/62": 90,
+                "gepa-sequential-precheck/32": 329,
+                "gepa-sequential-precheck/39": 1,
+                "gepa-sequential-precheck/43": 1,
+                "gepa-sequential-precheck/44": 4,
+                "gepa-sequential-precheck/51": 16,
+                "gepa-sequential-precheck/53": 5
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-batched-precheck/61",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 201512948850,
+                "holdoutPasses": 1568,
+                "paidLookups": 1928
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 10,
+              "pairedRange95": [
+                -11,
+                31
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/40": 686,
+                "gepa-batched-precheck/61": 2964,
+                "gepa-batched-precheck/62": 90,
+                "gepa-sequential-precheck/32": 329,
+                "gepa-sequential-precheck/39": 1,
+                "gepa-sequential-precheck/43": 1,
+                "gepa-sequential-precheck/44": 4,
+                "gepa-sequential-precheck/51": 16,
+                "gepa-sequential-precheck/53": 5
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 0,
+            "dearer": 0,
+            "savedHistoricalCostNanodollars": 0,
+            "savedLookups": 0,
+            "trials": 40
+          },
+          "totals": {
+            "backupPromotions": 0,
+            "deferredTraining": 16,
+            "historicalCostNanodollars": 213406317450,
+            "historicalErrors": 114,
+            "holdoutPasses": 1578,
+            "paidLookups": 2041,
+            "precheckLookups": 60,
+            "precheckStops": 0,
+            "qualificationLookups": 355,
+            "searchLookups": 1686,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "ca723b0c6f60eec616e85fc2e0741f2957f237a2d58f5bcfb1d56c8b8c8f3cae",
+            "trainingChecks": 40,
+            "trainingLookups": 488,
+            "trainingPrecheckLookups": 51,
+            "trainingPrecheckStops": 0,
+            "trainingVetoes": 0,
+            "validationPrecheckLookups": 53,
+            "validationPrecheckStops": 0
+          }
+        }
+      },
+      "rotated/4": {
+        "incumbent-training-precheck": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-sequential-precheck/36",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 966353859350,
+                "holdoutPasses": 13757,
+                "paidLookups": 7683
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 4,
+              "pairedRange95": [
+                -44,
+                52
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/28": 1,
+                "gepa-sequential-precheck/36": 3358,
+                "gepa-sequential-precheck/39": 737
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/36",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 966353859350,
+                "holdoutPasses": 13757,
+                "paidLookups": 7683
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 4,
+              "pairedRange95": [
+                -44,
+                52
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/28": 1,
+                "gepa-sequential-precheck/36": 3358,
+                "gepa-sequential-precheck/39": 737
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 12,
+            "dearer": 155,
+            "savedHistoricalCostNanodollars": -45492760050,
+            "savedLookups": -351,
+            "trials": 360
+          },
+          "totals": {
+            "availableBackups": 9,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "deferredTraining": 105,
+            "historicalCostNanodollars": 1129403189900,
+            "historicalErrors": 301,
+            "holdoutPasses": 13761,
+            "paidLookups": 8628,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2240,
+            "searchLookups": 6388,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "fe0149df15b82d38e828fb4c5f7bd8c0e25fbd14d1095db1dd74e94d0fda897f",
+            "trainingChecks": 96,
+            "trainingLookups": 1079,
+            "trainingPrecheckLookups": 893,
+            "trainingPrecheckStops": 17,
+            "trainingSkippedAfterQualification": 54,
+            "trainingVetoAfterQualification": 18,
+            "trainingVetoes": 34
+          }
+        },
+        "incumbent-validation-then-training-precheck": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-sequential-precheck/36",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 966353859350,
+                "holdoutPasses": 13757,
+                "paidLookups": 7683
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 4,
+              "pairedRange95": [
+                -44,
+                52
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/28": 1,
+                "gepa-sequential-precheck/36": 3358,
+                "gepa-sequential-precheck/39": 737
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/36",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 966353859350,
+                "holdoutPasses": 13757,
+                "paidLookups": 7683
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 4,
+              "pairedRange95": [
+                -44,
+                52
+              ],
+              "resampledChoices": {
+                "gepa-sequential-precheck/28": 1,
+                "gepa-sequential-precheck/36": 3358,
+                "gepa-sequential-precheck/39": 737
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 11,
+            "dearer": 118,
+            "savedHistoricalCostNanodollars": -33364090900,
+            "savedLookups": -262,
+            "trials": 360
+          },
+          "totals": {
+            "availableBackups": 9,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "deferredTraining": 105,
+            "historicalCostNanodollars": 1117274520750,
+            "historicalErrors": 298,
+            "holdoutPasses": 13761,
+            "paidLookups": 8539,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2240,
+            "searchLookups": 6299,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "254747250d9bbcc4c0f82bd9c2ea81cf0843b5d4834de94528df7ecaa7920d1e",
+            "trainingChecks": 96,
+            "trainingLookups": 1079,
+            "trainingPrecheckLookups": 733,
+            "trainingPrecheckStops": 12,
+            "trainingSkippedAfterQualification": 54,
+            "trainingVetoAfterQualification": 18,
+            "trainingVetoes": 34,
+            "validationPrecheckLookups": 877,
+            "validationPrecheckStops": 38
+          }
+        }
+      },
+      "rotated/8": {
+        "incumbent-training-precheck": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-sequential-precheck/44",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 1261863920000,
+                "holdoutPasses": 13784,
+                "paidLookups": 9891
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 38,
+              "pairedRange95": [
+                -13,
+                86
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/54": 4,
+                "gepa-batched-precheck/59": 208,
+                "gepa-batched-precheck/60": 87,
+                "gepa-batched-precheck/62": 77,
+                "gepa-batched-precheck/63": 529,
+                "gepa-sequential-precheck/36": 85,
+                "gepa-sequential-precheck/39": 4,
+                "gepa-sequential-precheck/40": 38,
+                "gepa-sequential-precheck/44": 3064
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/44",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 1261863920000,
+                "holdoutPasses": 13784,
+                "paidLookups": 9891
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 38,
+              "pairedRange95": [
+                -12,
+                87
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/54": 303,
+                "gepa-sequential-precheck/36": 123,
+                "gepa-sequential-precheck/39": 8,
+                "gepa-sequential-precheck/40": 49,
+                "gepa-sequential-precheck/44": 3613
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 12,
+            "dearer": 142,
+            "savedHistoricalCostNanodollars": -27365933350,
+            "savedLookups": -221,
+            "trials": 360
+          },
+          "totals": {
+            "availableBackups": 10,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "deferredTraining": 109,
+            "historicalCostNanodollars": 1322972093350,
+            "historicalErrors": 409,
+            "holdoutPasses": 13822,
+            "paidLookups": 9924,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2327,
+            "searchLookups": 7597,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "03c9aabcdfce0a2a69e9d66b39905462ed2d1e853c93ff471c9ece97e797523e",
+            "trainingChecks": 110,
+            "trainingLookups": 1251,
+            "trainingPrecheckLookups": 893,
+            "trainingPrecheckStops": 17,
+            "trainingSkippedAfterQualification": 55,
+            "trainingVetoAfterQualification": 18,
+            "trainingVetoes": 36
+          }
+        },
+        "incumbent-validation-then-training-precheck": {
+          "comparisons": {
+            "historicalCostNanodollars": {
+              "bestWithinCost": "gepa-sequential-precheck/44",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 1261863920000,
+                "holdoutPasses": 13784,
+                "paidLookups": 9891
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 38,
+              "pairedRange95": [
+                -13,
+                87
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/54": 4,
+                "gepa-batched-precheck/59": 261,
+                "gepa-batched-precheck/60": 104,
+                "gepa-batched-precheck/62": 363,
+                "gepa-sequential-precheck/36": 87,
+                "gepa-sequential-precheck/39": 4,
+                "gepa-sequential-precheck/40": 39,
+                "gepa-sequential-precheck/44": 3234
+              }
+            },
+            "paidLookups": {
+              "bestWithinCost": "gepa-sequential-precheck/40",
+              "bestWithinCostPoint": {
+                "historicalCostNanodollars": 1160718584650,
+                "holdoutPasses": 13775,
+                "paidLookups": 9137
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 47,
+              "pairedRange95": [
+                -8,
+                101
+              ],
+              "resampledChoices": {
+                "gepa-batched-precheck/54": 623,
+                "gepa-sequential-precheck/36": 433,
+                "gepa-sequential-precheck/39": 24,
+                "gepa-sequential-precheck/40": 3016
+              }
+            }
+          },
+          "pairedChanges": {
+            "cheaper": 11,
+            "dearer": 104,
+            "savedHistoricalCostNanodollars": -15237264200,
+            "savedLookups": -132,
+            "trials": 360
+          },
+          "totals": {
+            "availableBackups": 10,
+            "backupNominations": 2,
+            "backupPromotions": 2,
+            "deferredTraining": 109,
+            "historicalCostNanodollars": 1310843424200,
+            "historicalErrors": 406,
+            "holdoutPasses": 13822,
+            "paidLookups": 9835,
+            "precheckLookups": 1291,
+            "precheckStops": 106,
+            "qualificationLookups": 2327,
+            "searchLookups": 7508,
+            "tieNominations": 0,
+            "tiePromotions": 0,
+            "traceSha256": "70a7a41718e1686f06d66739c23fbc3dd435d153eb7fa1d4057f674b94c05d0f",
+            "trainingChecks": 110,
+            "trainingLookups": 1251,
+            "trainingPrecheckLookups": 733,
+            "trainingPrecheckStops": 12,
+            "trainingSkippedAfterQualification": 55,
+            "trainingVetoAfterQualification": 18,
+            "trainingVetoes": 36,
+            "validationPrecheckLookups": 877,
+            "validationPrecheckStops": 38
+          }
+        }
+      }
+    }
+  }
+}
