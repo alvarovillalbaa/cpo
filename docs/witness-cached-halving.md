@@ -15,6 +15,8 @@ At a cap of 16 new validation lookups per fallback, the cache route saved 306 pa
 
 At cap eight, MMLU again scored 30,159, five passes above round order. Relative to the earlier lookahead, the cache route saved 11 validation reads and spent 23 more on independent admission. The earlier and new selectors tied on holdout pass totals at every reported cap. Costs include the witness phase, fallback validation, and proof. The comparison uses fixed archived grades.
 
+Paired resampling against the full affordable native GEPA grid confirmed the cap-16 lead on BBH and LMentry. Both MMLU cohorts still crossed zero. [Paired native comparison](witness-cached-gepa-evidence.md)
+
 ## Use
 
 ```python
