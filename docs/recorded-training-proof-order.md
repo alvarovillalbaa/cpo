@@ -17,6 +17,8 @@ The replay keeps the same incumbents, rosters, training and qualification panels
 
 On the eight-challenger AIME rotation, the revised policy skipped 90 training proofs after qualification rejected the nominee. It also paid for qualification on 25 trials where training later vetoed the nominee. The net saving moved CPO to 11.0% fewer lookups than sequential GEPA and 8.9% fewer than batched GEPA. CPO remained one pass behind sequential GEPA and 18 ahead of batched GEPA. The joint paired 95% case sensitivity range was −23 to +22 passes, and the saving against batched GEPA fell below the 10% requirement. On the eight-challenger ARC rotation the revised policy saved 6.6% against batched GEPA and 15.8% against sequential GEPA. Its joint range was −12 to +81. These replays reuse stored replies. The new order reduces cost on the tested backup policies while preserving their archived quality gaps. [Full results and paid lookup accounting](recorded-training-proof-order-results-v1.json)
 
+A follow-up credited the paid incumbent replies before starting the certificate and applied expected-cost ordering to CPO and both GEPA controls. [Paid qualification scheduling](recorded-paid-qualification-order.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With DNS and sockets blocked, 17 targeted tests passed and two replays matched byte for byte. A stale seal was rejected, and the prospective ordered live plan matched its manifest. Storage Guard measured 5.8 GiB free. The 39 MiB export and bounded publication worktree fit the standing 0.2 GiB LAB exception. The replay sent zero provider requests. [Proof-order tests](../tests/unit/test_recorded_training_proof_order.py)
