@@ -19,3 +19,7 @@ PYTHONHASHSEED=0 python -B -m benchmarks.grounded_policy_regimes
 ```
 
 The stress cases have a separate fingerprint. The original development and confirmation seals retain their published datasets.
+
+### SDK confirmation rehearsal
+
+A separate execution plan binds the stress cases to the prompts from a replayed, qualifying development archive. The iterative fixture needed 96 distinct count-and-generation pairs for 192 matched replies and reserved $0.499988 at plan rates. The quote used each request's serialized byte length, input headroom, and output cap. The SDK rehearsal accepted every request at its ceiling and refused altered bytes before token counting. A checkpoint resumed after 17 pairs and reproduced the uninterrupted journal. The linked receipt covers fixture execution and the plan's upper bound. A model quote depends on the future development archive and inference remains paused. [Checkpoint and reservation receipt](quoted-luna-stress-confirmation-sdk-v1.json)
