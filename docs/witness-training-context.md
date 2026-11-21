@@ -17,6 +17,8 @@ Each miss counts a scoring case and training-block combination for which the ful
 
 These are synthetic errors and serialized input bytes. The original live protocol keeps its full blocks. The replay leaves provider token counts and proposal quality unverified. [Exact cases, policy choices, and stress hashes](witness-training-context-results-v1.json)
 
+A follow-up spread the full set of training examples across proposal calls to reduce blind spots at the same total input size. [Training block reassignment](witness-training-repartition.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. With sockets and DNS blocked, 39 targeted tests passed and two replays matched byte for byte. The CLI rejected a stale seal, and the prospective live plan preview reproduced byte for byte. Storage Guard measured 6.1 GiB free. The 39 MiB export and bounded publication worktree used the standing 0.2 GiB LAB exception. The replay made zero provider requests. [Coverage and disjointness tests](../tests/unit/test_witness_training_context.py)
