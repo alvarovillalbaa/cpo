@@ -23,3 +23,7 @@ Run the derivation from the repository root with Python 3.12 and the pinned benc
 ```sh
 PYTHONHASHSEED=0 python -B -m benchmarks.witness_halving_physical_limits
 ```
+
+## SDK checkpoint rehearsal
+
+The SDK launcher uses the same lower-budget plan when pausing before a token count. On resume it first recreates the SDK and benchmark journals from settled replies, then sends the withheld count and generation. The original provider and benchmark results matched their uninterrupted versions byte for byte. The qualifying fixture resumed after 40 settled pairs and sent 620 new pairs. The faulted-scoring fixture resumed after 385 and sent seven before the original futility gate stopped it. A dispatch with an unresolved reply could not resume. The qualifying archive bound the separate confirmation panel. The fixture exercises restart and accounting with zero provider requests. [Verification receipt](grounded-witness-halving-checkpoint-sdk-rehearsal-v1.json)
