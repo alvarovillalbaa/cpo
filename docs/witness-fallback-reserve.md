@@ -15,6 +15,8 @@ When a benchmark family is held out, only other families choose the paid orderin
 
 At the primary rate, paid ordering added 203 passes with 3,904 lookups across the four families. Blind ordering added 108 with 3,937. These are pooled counts across different tasks. The paired gate uses equal task weights within each held-out family. No task exceeded its issued budget. A task with insufficient credit for its first complete reservation made no fallback calls. The single eligible GSM8K episode had eight lookups available against a 32-lookup reservation. The comparisons use archived grades and do not establish model-backed performance. [Per-task settlements and sensitivity](witness-fallback-reserve-results-v1.json)
 
+An alternative reserved the full proof and shrank search when credit ran low. It spent 239 more lookups at the primary rate and lost three passes. [Proof-first comparison](witness-fallback-proof-reserve.md)
+
 ## Reproduce
 
 Two offline runs produced byte-identical reports. The replay verified the original unconditional cap‑16 costs and gains before fitting any ordering. Eleven targeted tests passed. Tests exercised the full reservation, credit recycling, and outcome-independent ordering. Storage Guard measured 6.0 GiB free, and the disposable export and pinned wheel overlay fit within the standing LAB exception's 0.2 GiB scope. [Tests](../tests/unit/test_witness_fallback_reserve.py)
