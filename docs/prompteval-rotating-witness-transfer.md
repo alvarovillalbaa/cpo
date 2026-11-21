@@ -26,6 +26,8 @@ CPO exposes this selector through an opt-in cycle with independent paired qualif
 
 A later audit kept repeats and both models together by physical case. The quality interval against cap-88 batched GEPA included zero. The cheaper cap-80 comparator had a positive case-resampling range on fixed subjects, with a range that included zero when subjects were also resampled. [Case-level evidence](prompteval-rotating-witness-case-evidence.md)
 
+A follow-up reused earlier paid validation and retired admission grades as witnesses. The retired-admission variant reduced total lookups in both archived subject sets and gave up some held-out accuracy. [Admission-grade reuse](prompteval-retired-admission-witness.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA wheel. The capture recorded the dataset repository revision before and after fetching, ordered binary labels, viewer response hashes and source URLs. A separate replay seal binds the exact captured snapshot to the pre-capture design. Storage Guard measured 9.2 GiB free. The standing LAB storage exception covered a disposable source and wheel overlay bounded at 0.2 GiB. The capture read 8.6 MB of public labels and retained 550,443 bytes. The replay ran with DNS and outbound socket calls blocked. [Captured corpus](../benchmarks/data/prompteval-rotating-witness-transfer-v1.json) · [Benchmark wheel](../requirements-benchmark.txt) · [Gate tests](../tests/unit/test_prompteval_rotating_witness_transfer.py)
