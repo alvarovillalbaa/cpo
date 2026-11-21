@@ -32,6 +32,8 @@ The already-evaluated menu adds 599 passes beyond the retention ceiling and 510 
 
 The follow-up tested three rankings on the existing paid evidence. They changed just one of 539 MMLU nominations and produced no net gain. [Paid nominee ranking replay](witness-paid-nominee-ranking.md)
 
+The next coverage audit found that 280 of 293 MMLU episodes without a nominee had a stronger candidate already reached by paid search. A one-read probe of unread alternatives after nomination failed the transfer gate. [Coverage and pre-proof probe](witness-unread-nominee-probe.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel from a clean source export. Two full replays produced byte-identical reports, and the earlier CPO scores, costs, native traces, and original live plan reproduced. Twelve targeted tests passed with DNS and sockets blocked. Storage Guard measured 5.9 GiB free. The task-owned export and wheel overlay fit the standing 0.2 GiB LAB exception and were removed. [Proof-budget and attribution tests](../tests/unit/test_witness_mmlu_gap.py)
