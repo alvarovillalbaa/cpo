@@ -36,6 +36,8 @@ On ARC-AGI and AIME, the paired cycle used the same candidates and admission as 
 
 Each cell gives held-out passes and paid cost. The full-cap paired opening beat sequential and batched GEPA on original-incumbent ARC at lower estimated cost. It needed substantially more cost than both controls on rotated ARC. Neither smaller cap preserved the full-cap ARC score gains. On rotated AIME, the 2× cap gained 26 passes and saved 457 reads against certified CPO. Fixed-rewrite GEPA still led it by three passes and 979 fewer reads. The new cycle has mixed archived transfer results. Fresh proposal quality, live performance, and actual provider spend remain unverified.
 
+The prospective staged trial binds this cycle to the existing matched GEPA arms and an independent confirmation panel. [Prospective protocol](grounded-staged-paired-opening.md)
+
 ## Reproduce the ARC and AIME transfer
 
 Use GEPA 0.1.4 and the historical CPO control source. The two-file overlay adds the new package API and benchmark while preserving the historical control hashes. The packaged selector and all controls use the original seeded opening pair and disjoint admission. ARC costs use recorded evaluator charges and AIME uses paid reads. The archive supplies the proposals to each arm. [Input provenance and controls](recorded-opening-dominance-transfer.md) · [Transfer receipt](recorded-paired-opening-transfer-results-v1.json)
