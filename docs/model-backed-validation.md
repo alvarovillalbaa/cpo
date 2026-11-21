@@ -64,3 +64,5 @@ A separate sealed study shares a search reply when CPO, sequential GEPA, or widt
 All three fixtures preserved the original prompts, per-arm search charges, admissions, and held-out decisions. The adverse fixture replayed 140 checkpointed pairs and sent 163 new fixture pairs, reproducing its uninterrupted archive. A qualifying fixture replayed 96 fresh pairs on the separate confirmation panel. [Aggregate verification receipt](quoted-luna-search-sharing-evidence-v1.json)
 
 An audit of the first live Luna study found 66 groups where multiple optimizer arms sent the same request. Independent replies differed in 33 groups and changed field credit in 15. The new shared-sample protocol changes how such evaluations are sampled. Its model-backed result remains pending. The earlier plans and journals retain their original sampling and seals.
+
+The independent panel reports the sealed operational verdict and case-level quality evidence. The qualifying SDK fixture tied every case and passed the efficiency branch. [How to read the paired panel](quoted-luna-panel-evidence.md)
