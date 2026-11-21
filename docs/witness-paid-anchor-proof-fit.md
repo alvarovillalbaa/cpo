@@ -20,6 +20,8 @@ No paid filter won a training fold. On BBH and LMentry, both fits selected the 1
 
 On MMLU, both fits selected 12 lookups on 12 subjects and eight on one. The learned rule proved every eligible challenger. The blind rule used the three-quarters rate, saved 59 proof lookups across both cohorts, and matched the learned scores. The learned rule fit all three seeded budgets and missed the paired quality gate. As a fixed-rule diagnostic, eight lookups with all eligible proofs added four and ten MMLU passes while saving 1,208 and 290 lookups against original Halving. The same setting lost 22 BBH and LMentry passes. [Full receipt, selected rules, paired intervals, and matched-cost native GEPA points](witness-paid-anchor-proof-fit-results-v1.json)
 
+The fixed eight-lookup rule later beat affordable GEPA on both Promptolution tasks and missed the gate against matched-cap Halving. [GSM8K and SST‑5 transfer](promptolution-paid-anchor-transfer.md)
+
 ## Reproduce
 
 Use Python 3.12 with the pinned GEPA 0.1.4 wheel. With sockets and DNS blocked, 104 targeted tests passed and two complete replays matched byte for byte. The CLI rejected a stale seal, and the prospective live-plan preview reproduced byte for byte. Storage Guard measured 6.1 GiB free. The temporary export, wheel overlay, and publication worktree used the standing 0.2 GiB LAB exception. The replay sent zero provider requests. [Proof, accounting, and subject exclusion tests](../tests/unit/test_witness_paid_anchor_proof_fit.py)
