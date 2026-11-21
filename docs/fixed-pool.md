@@ -4,6 +4,8 @@ CPO 0.4.0 adds a selector for a finite set of prompts. It evaluates the incumben
 
 The opt-in `adaptive_rejection=True` setting uses paid screen outcomes and skips unaffordable challenges. Its lookup order reduced validation cost across 18 recorded panels while preserving all selections under a fully funded four-challenger schedule. [Adaptive rejection](prompteval-rejection.md)
 
+The two-witness selector checks an incumbent miss and pass before narrowing the exact race to two finalists. [Public API and archived parity](two-witness-pool.md)
+
 For tasks with declared critical strata, the coverage-first selector can abandon an impossible coverage check before completing the validation panel. [Coverage-aware fixed-pool API and qualification example](covered-pool.md)
 
 The rotating-witness cycle can screen a supplied roster with a few shared cases before sending a single challenger to independent paired qualification. [Rotating-witness API and verification](rotating-witness-cycle.md)
