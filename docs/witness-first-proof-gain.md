@@ -18,6 +18,8 @@ On BBH and LMentry, the primary rule changed 13 nominees, gained six held-out pa
 
 Both gain-trained rankers retained all 539 MMLU nominees. The two development fits observed 4,068 qualifying or retained deployments that scored above their originals on BBH and LMentry and 1,762 in MMLU. Fitting that downstream outcome left the MMLU decisions unchanged. The primary ranker missed the transfer gate. The comparison made zero provider requests. [Full outcomes, paired intervals, and fitted weights](witness-first-proof-gain-results-v1.json)
 
+The follow-up changed the evidence gathered by witness search. It sought the second finalist on a different already-paid incumbent miss. [Split-finalist screen](witness-split-finalists.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel from a clean source export. With sockets and DNS disabled, 57 targeted tests passed and two complete replays matched byte for byte. The published qualification-trained scores, costs, and paired intervals reproduced. The CLI rejected a stale seal, and the prospective live plan reproduced byte for byte. Storage Guard measured 6.4 GiB free. The export, wheel overlay, and publication worktree fit the standing 0.2 GiB LAB exception. [Split isolation and lookup guard tests](../tests/unit/test_witness_first_proof_gain.py)
