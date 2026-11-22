@@ -1,0 +1,622 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "cohort": "earlier-screen-cohort",
+    "cohorts": [
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "extraCases": 2,
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "0ad2e85adbdfc8dded925a7ab1fb0f1a7b24aed0188df86e5e08fe5f9f55244f",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "qualification-precheck-extension-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Freeze two extra cases outside training, validation, original proof, and final holdout. Only activate them when the original incumbent precheck proves the requested gain impossible. Reuse the paid prefix and preserve the original required net gain on the enlarged panel. Compare two-sided CPO to both native GEPA modes given the same extension. Sweep every integer GEPA search cap in the original range. Keep the previous six qualification wrappers in the native menu at the same realized lookup budget.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "recorded_certificate_cost_frontier.py": "d85a2a61a4744000661a0ba4f2df571b37310089551b16864dbc8de5ef3ade9a"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "3c3a1fad15d624551a2d4a36f45db77f88e8d15f5ad4eb4a0696a0dd68ba2c3c",
+  "providerRequests": 0,
+  "results": {
+    "comparisons": {
+      "cap-19/gain-1": {
+        "attainingSubjectPoints": {
+          "abstract_algebra": {
+            "holdoutPasses": 594,
+            "paidLookups": 1531
+          },
+          "business_ethics": {
+            "holdoutPasses": 922,
+            "paidLookups": 0
+          },
+          "college_mathematics": {
+            "holdoutPasses": 511,
+            "paidLookups": 1255
+          },
+          "college_physics": {
+            "holdoutPasses": 731,
+            "paidLookups": 2238
+          },
+          "computer_security": {
+            "holdoutPasses": 1443,
+            "paidLookups": 0
+          },
+          "conceptual_physics": {
+            "holdoutPasses": 2356,
+            "paidLookups": 1001
+          },
+          "electrical_engineering": {
+            "holdoutPasses": 1456,
+            "paidLookups": 0
+          },
+          "high_school_european_history": {
+            "holdoutPasses": 2223,
+            "paidLookups": 1305
+          },
+          "high_school_psychology": {
+            "holdoutPasses": 7957,
+            "paidLookups": 0
+          },
+          "human_aging": {
+            "holdoutPasses": 2500,
+            "paidLookups": 1861
+          },
+          "international_law": {
+            "holdoutPasses": 1706,
+            "paidLookups": 1611
+          },
+          "jurisprudence": {
+            "holdoutPasses": 1581,
+            "paidLookups": 0
+          },
+          "management": {
+            "holdoutPasses": 1295,
+            "paidLookups": 0
+          },
+          "public_relations": {
+            "holdoutPasses": 1379,
+            "paidLookups": 0
+          }
+        },
+        "cpo": {
+          "baselineLookups": 13363,
+          "baselinePasses": 26619,
+          "holdoutPasses": 26617,
+          "newNominees": 29,
+          "newPromotions": 3,
+          "opened": 168,
+          "paidLookups": 14763
+        },
+        "expandedMenu": {
+          "holdoutPasses": 26654,
+          "paidLookups": 10802,
+          "settingsBySubject": {
+            "abstract_algebra": "gepa-sequential-precheck/28/paired-extension-gain-1",
+            "business_ethics": "retain-start",
+            "college_mathematics": "gepa-sequential-precheck/24/paired-gain-2-threshold-precheck",
+            "college_physics": "gepa-batched-precheck/46/paired-gain-1",
+            "computer_security": "retain-start",
+            "conceptual_physics": "gepa-sequential-precheck/20/paired-gain-1",
+            "electrical_engineering": "retain-start",
+            "high_school_european_history": "gepa-sequential-precheck/32/paired-gain-1",
+            "high_school_psychology": "retain-start",
+            "human_aging": "gepa-batched-precheck/46/paired-gain-1",
+            "international_law": "gepa-batched-precheck/51/paired-gain-1",
+            "jurisprudence": "retain-start",
+            "management": "retain-start",
+            "public_relations": "retain-start"
+          }
+        },
+        "matchedGate": {
+          "holdoutPasses": 26653,
+          "paidLookups": 11648,
+          "settingsBySubject": {
+            "abstract_algebra": "gepa-sequential-precheck/28/paired-extension-gain-1",
+            "business_ethics": "retain-start",
+            "college_mathematics": "gepa-sequential-precheck/24/paired-extension-gain-1",
+            "college_physics": "gepa-batched-precheck/46/paired-extension-gain-1",
+            "computer_security": "retain-start",
+            "conceptual_physics": "gepa-sequential-precheck/20/paired-extension-gain-1",
+            "electrical_engineering": "retain-start",
+            "high_school_european_history": "gepa-sequential-precheck/32/paired-extension-gain-1",
+            "high_school_psychology": "retain-start",
+            "human_aging": "gepa-batched-precheck/46/paired-extension-gain-1",
+            "international_law": "gepa-batched-precheck/51/paired-extension-gain-1",
+            "jurisprudence": "retain-start",
+            "management": "retain-start",
+            "public_relations": "retain-start"
+          }
+        },
+        "originalMenu": {
+          "holdoutPasses": 26654,
+          "paidLookups": 10802,
+          "settingsBySubject": {
+            "abstract_algebra": "gepa-sequential-precheck/28/paired-gain-1",
+            "business_ethics": "retain-start",
+            "college_mathematics": "gepa-sequential-precheck/24/paired-gain-2-threshold-precheck",
+            "college_physics": "gepa-batched-precheck/46/paired-gain-1",
+            "computer_security": "retain-start",
+            "conceptual_physics": "gepa-sequential-precheck/20/paired-gain-1",
+            "electrical_engineering": "retain-start",
+            "high_school_european_history": "gepa-sequential-precheck/32/paired-gain-1",
+            "high_school_psychology": "retain-start",
+            "human_aging": "gepa-batched-precheck/46/paired-gain-1",
+            "international_law": "gepa-batched-precheck/51/paired-gain-1",
+            "jurisprudence": "retain-start",
+            "management": "retain-start",
+            "public_relations": "retain-start"
+          }
+        }
+      },
+      "cap-19/gain-2": {
+        "attainingSubjectPoints": {
+          "abstract_algebra": {
+            "holdoutPasses": 594,
+            "paidLookups": 1531
+          },
+          "business_ethics": {
+            "holdoutPasses": 922,
+            "paidLookups": 0
+          },
+          "college_mathematics": {
+            "holdoutPasses": 511,
+            "paidLookups": 1255
+          },
+          "college_physics": {
+            "holdoutPasses": 731,
+            "paidLookups": 2238
+          },
+          "computer_security": {
+            "holdoutPasses": 1443,
+            "paidLookups": 0
+          },
+          "conceptual_physics": {
+            "holdoutPasses": 2356,
+            "paidLookups": 1001
+          },
+          "electrical_engineering": {
+            "holdoutPasses": 1456,
+            "paidLookups": 0
+          },
+          "high_school_european_history": {
+            "holdoutPasses": 2223,
+            "paidLookups": 1305
+          },
+          "high_school_psychology": {
+            "holdoutPasses": 7957,
+            "paidLookups": 0
+          },
+          "human_aging": {
+            "holdoutPasses": 2500,
+            "paidLookups": 1861
+          },
+          "international_law": {
+            "holdoutPasses": 1706,
+            "paidLookups": 1611
+          },
+          "jurisprudence": {
+            "holdoutPasses": 1581,
+            "paidLookups": 0
+          },
+          "management": {
+            "holdoutPasses": 1295,
+            "paidLookups": 0
+          },
+          "public_relations": {
+            "holdoutPasses": 1379,
+            "paidLookups": 0
+          }
+        },
+        "cpo": {
+          "baselineLookups": 9571,
+          "baselinePasses": 26630,
+          "holdoutPasses": 26632,
+          "newNominees": 48,
+          "newPromotions": 1,
+          "opened": 460,
+          "paidLookups": 13052
+        },
+        "expandedMenu": {
+          "holdoutPasses": 26654,
+          "paidLookups": 10802,
+          "settingsBySubject": {
+            "abstract_algebra": "gepa-sequential-precheck/28/paired-extension-gain-1",
+            "business_ethics": "retain-start",
+            "college_mathematics": "gepa-sequential-precheck/24/paired-gain-2-threshold-precheck",
+            "college_physics": "gepa-batched-precheck/46/paired-gain-1",
+            "computer_security": "retain-start",
+            "conceptual_physics": "gepa-sequential-precheck/20/paired-gain-1",
+            "electrical_engineering": "retain-start",
+            "high_school_european_history": "gepa-sequential-precheck/32/paired-gain-1",
+            "high_school_psychology": "retain-start",
+            "human_aging": "gepa-batched-precheck/46/paired-gain-1",
+            "international_law": "gepa-batched-precheck/51/paired-gain-1",
+            "jurisprudence": "retain-start",
+            "management": "retain-start",
+            "public_relations": "retain-start"
+          }
+        },
+        "matchedGate": {
+          "holdoutPasses": 26631,
+          "paidLookups": 5952,
+          "settingsBySubject": {
+            "abstract_algebra": "retain-start",
+            "business_ethics": "retain-start",
+            "college_mathematics": "gepa-sequential-precheck/24/paired-extension-gain-2",
+            "college_physics": "gepa-batched-precheck/34/paired-extension-gain-2",
+            "computer_security": "retain-start",
+            "conceptual_physics": "gepa-batched-precheck/46/paired-extension-gain-2",
+            "electrical_engineering": "retain-start",
+            "high_school_european_history": "gepa-sequential-precheck/28/paired-extension-gain-2",
+            "high_school_psychology": "retain-start",
+            "human_aging": "retain-start",
+            "international_law": "retain-start",
+            "jurisprudence": "retain-start",
+            "management": "retain-start",
+            "public_relations": "retain-start"
+          }
+        },
+        "originalMenu": {
+          "holdoutPasses": 26654,
+          "paidLookups": 10802,
+          "settingsBySubject": {
+            "abstract_algebra": "gepa-sequential-precheck/28/paired-gain-1",
+            "business_ethics": "retain-start",
+            "college_mathematics": "gepa-sequential-precheck/24/paired-gain-2-threshold-precheck",
+            "college_physics": "gepa-batched-precheck/46/paired-gain-1",
+            "computer_security": "retain-start",
+            "conceptual_physics": "gepa-sequential-precheck/20/paired-gain-1",
+            "electrical_engineering": "retain-start",
+            "high_school_european_history": "gepa-sequential-precheck/32/paired-gain-1",
+            "high_school_psychology": "retain-start",
+            "human_aging": "gepa-batched-precheck/46/paired-gain-1",
+            "international_law": "gepa-batched-precheck/51/paired-gain-1",
+            "jurisprudence": "retain-start",
+            "management": "retain-start",
+            "public_relations": "retain-start"
+          }
+        }
+      }
+    },
+    "extensionSettings": 700,
+    "nativeSubjectTotalsSha256": "2f202cd54a3f2e41d4ea6a5ab0c1bee755dc445c836ada69904d489743e03c7b",
+    "originalPanelPathHashes": {
+      "abstract_algebra/codellama_codellama_34b_instruct": {
+        "cap-19/gain-1": "870548a0e6d6267dbb1dd65d255d30968681f3f5414af22025ab81d638022f3a",
+        "cap-19/gain-2": "4b0e796494b9395504de19bf5e3f5b17af62648169e818ef91fac67dc128ac2d"
+      },
+      "abstract_algebra/ibm_mistralai_merlinite_7b": {
+        "cap-19/gain-1": "904b79dfc6d3fb1ce79467f0b8b894427ebd13d18a182385847e1771b7b7b68c",
+        "cap-19/gain-2": "35f08ba133f56437ffe36f7ba4b97e6e50d12b902cf744e0da97af65d3c62840"
+      },
+      "business_ethics/codellama_codellama_34b_instruct": {
+        "cap-19/gain-1": "5b06020c08ccee0dcc269bd582d2e5a9e031daab4fff63739df5f439d24a38ac",
+        "cap-19/gain-2": "f4c6a013f2bd04d1eac112a2cbd69df94b3d29a266f3e5626f39ff51877662ee"
+      },
+      "business_ethics/ibm_mistralai_merlinite_7b": {
+        "cap-19/gain-1": "31d0b1f1a5772bc5ef2b159ebb46b528356928a5ebd4da4473103bf5ddfbbeeb",
+        "cap-19/gain-2": "985d8c3a71e92f7fcc0fd328a51c0f934640e1de777965dcf1680ab3eb328df2"
+      },
+      "college_mathematics/codellama_codellama_34b_instruct": {
+        "cap-19/gain-1": "44fb33d66925a8f6fb262ce34bdbc7cc145d658b1fbc1d360ec654640e3e5f2f",
+        "cap-19/gain-2": "480475023ca569fbb1b515b7380c9d27e0e93d3a543a2517d3166bbbb7b1540d"
+      },
+      "college_mathematics/ibm_mistralai_merlinite_7b": {
+        "cap-19/gain-1": "d037d34fd4636d27eff29e0342656270e0e51ffece12647f88b5368f3ff556a3",
+        "cap-19/gain-2": "62406c42740b9219055280f7b7aa7ac4a005fe0bef05dc330dfe386406845149"
+      },
+      "college_physics/meta_llama_llama_3_8b_instruct": {
+        "cap-19/gain-1": "20bf95bfe41ee972ea87df0277ff4a0a0c9a097215fd755d0923a2add212aa18",
+        "cap-19/gain-2": "61e1858cf9448d839e43045fffb5d274d6f40b520bf67504513de38daa0c6615"
+      },
+      "college_physics/mistralai_mistral_7b_v0_1": {
+        "cap-19/gain-1": "90bc071f0e92666a4306772cdcb40fa7030b405413331ae69868ed57b5d66407",
+        "cap-19/gain-2": "c955f8a2defeff3b11a02d6bf876bb463dc2b2bea784eeed3e51f249ad0108db"
+      },
+      "computer_security/meta_llama_llama_3_8b_instruct": {
+        "cap-19/gain-1": "89b13414abf682094bdd7b08ffd4130cbe298ef70a1c4cb13c004df442b21648",
+        "cap-19/gain-2": "a3cb6851c2296853d75a15a6edda331240842dc4c6ff0cd6095450e3efe2a0a0"
+      },
+      "computer_security/mistralai_mistral_7b_v0_1": {
+        "cap-19/gain-1": "f888f56c33e02f7f9533c74790f389a9c2a0339edfd0cd1a23d470b5da0e2d14",
+        "cap-19/gain-2": "35d638523d45c574cb4fea9ad218e5c6be42ef00aca04955ca191f4b5a3f55b3"
+      },
+      "conceptual_physics/codellama_codellama_34b_instruct": {
+        "cap-19/gain-1": "4407e07f48f287cda66cf4c93cc32d256e0b19c0955219ec09f1b8c65449659e",
+        "cap-19/gain-2": "08d9857d773be82b8660478c7a9d941990cc097fbfdd85caf6ae5ecbc45752a2"
+      },
+      "conceptual_physics/ibm_mistralai_merlinite_7b": {
+        "cap-19/gain-1": "4efcde7fcb0132ff3487db91899a587466655808fc39823b2576bde4c0239889",
+        "cap-19/gain-2": "2d56bd4cb86d149ddd324e2f46570d1fbf398a46d9e11812ea39528756902b2d"
+      },
+      "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+        "cap-19/gain-1": "a1addf9116f9dd67df38934919ebdb53be138f8478a4207eb8684f32ec501732",
+        "cap-19/gain-2": "119aa1c30a4e13d593b902ae8ceb34fadbe8482dbf28132e2d2271bbf580e6c4"
+      },
+      "electrical_engineering/mistralai_mistral_7b_v0_1": {
+        "cap-19/gain-1": "2461f15c0ba27624074e0700e1ca77688b0825c2c585b7445bf1ca08956fdc5d",
+        "cap-19/gain-2": "481e24d71fd672105a647a36e18a20c3dfa30ca8d9413f9afba277f1902c970d"
+      },
+      "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+        "cap-19/gain-1": "4b134d75d634df663909d91ced3d9a846038bd3153e4878277549bb9360e97d3",
+        "cap-19/gain-2": "76f9859221c810825b56898420710e5ad2253fc1811766ca965b0aa176daf6e3"
+      },
+      "high_school_european_history/mistralai_mistral_7b_v0_1": {
+        "cap-19/gain-1": "130831cb3d07e313a043439e5500fda26a4fb90e3b1af6c09639afdc07b0b60e",
+        "cap-19/gain-2": "821d31082692279ba43359526c1a51491c4120143b6a7d82716751bef880e60a"
+      },
+      "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+        "cap-19/gain-1": "b57fc1e8d35d25e5431167e72f68181eebb814ceb58f054cde6845701abecc2b",
+        "cap-19/gain-2": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51"
+      },
+      "high_school_psychology/mistralai_mistral_7b_v0_1": {
+        "cap-19/gain-1": "63157f79fc13c9acbcf0dd96d29a4056aeea4f2e979e1ae4309285c1f6ecb228",
+        "cap-19/gain-2": "38b61de5a34ff923d885f5696437238e73d36930a2c813af2c7ae9f40e4e5b91"
+      },
+      "human_aging/codellama_codellama_34b_instruct": {
+        "cap-19/gain-1": "409e83d37d4a7d5da464a05b700b6ba3a3de8b5b1393c83b0d2d8583d9a1a07f",
+        "cap-19/gain-2": "de1dbc78e6bfe499c5fe6d023c83b443754c22fb50104230d495d498a1c09388"
+      },
+      "human_aging/ibm_mistralai_merlinite_7b": {
+        "cap-19/gain-1": "84a7be1edade3e9420ed245cc2f05394d4e9a4a658dd8d1a9ff0b3d3729c5fd6",
+        "cap-19/gain-2": "68621c10cff590272a9cfca353e98a104bcd72f930c6b82ccb618466d54e8a8f"
+      },
+      "international_law/meta_llama_llama_3_8b_instruct": {
+        "cap-19/gain-1": "7c8d187162695f1f1967494484bd7b08881c5108039ed6a7b47e1f35e1b36217",
+        "cap-19/gain-2": "c1add280e9876a176420355fcf2aebcc8e4d2ced715f35a6b64144dd9d5e8013"
+      },
+      "international_law/mistralai_mistral_7b_v0_1": {
+        "cap-19/gain-1": "35a7a043571fda5636b64869d8aecada67d889bf5b7cdeabae901add3e58e5ee",
+        "cap-19/gain-2": "1260fad410b33565fa3eea2b4c5403d6ea66c9fb5b5e8b3355260c5e945c8c46"
+      },
+      "jurisprudence/codellama_codellama_34b_instruct": {
+        "cap-19/gain-1": "c28258723ef631f96b93b507c3e2672522efb4f85acf7b4c00c18665388bfcfa",
+        "cap-19/gain-2": "27eb2b9383c65354733eb88ee737b886bd06d30a8ca62e24f91939ddd773aa71"
+      },
+      "jurisprudence/ibm_mistralai_merlinite_7b": {
+        "cap-19/gain-1": "6167e18936ef98e4ead431354d664c8f9a2d39f530f4f725ab713da5b5973f0d",
+        "cap-19/gain-2": "0661bbd6a9aea86a692a2b4d6b1c32840ef5171634432f2bdd92b8f1fc2359b6"
+      },
+      "management/codellama_codellama_34b_instruct": {
+        "cap-19/gain-1": "226fb6d3d5797f58ef3cdc31c78e4f28362da005e1e7ec74822d77eadfea14c7",
+        "cap-19/gain-2": "02575d81c9e36f85421a9d7b868cae7838808a74328f912d335f174986fdc290"
+      },
+      "management/ibm_mistralai_merlinite_7b": {
+        "cap-19/gain-1": "3de295b3db2b1954736f787f7b89cf0bf266a6a0f1f3fd1a4e5fc85623d29b57",
+        "cap-19/gain-2": "5774d0c9550ca5a9fb4b228ed306ac2eed69a5c35a80c06f072b092e62219efa"
+      },
+      "public_relations/meta_llama_llama_3_8b_instruct": {
+        "cap-19/gain-1": "eaa83d911a8fd6ee815f382533d83036c0fc7e803b5b7ca6528557b4c35a6689",
+        "cap-19/gain-2": "241d3d6e468232ba0b4e1ac8138e38ead9f41ddf74ad914757f0714a082d78f9"
+      },
+      "public_relations/mistralai_mistral_7b_v0_1": {
+        "cap-19/gain-1": "bef3c1859dfa0d4b615f7348b31d767b647fc290c1b2c9315504f243fb868a5a",
+        "cap-19/gain-2": "2994d77ef475b6d06469a24df0c40c328d277af6a8c24dcb99c97bf1db70e98a"
+      }
+    },
+    "originalSettings": 2100
+  }
+}

@@ -1,0 +1,644 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "cohort": "disjoint-transfer-cohort",
+    "cohorts": [
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "extraCases": 2,
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "0ad2e85adbdfc8dded925a7ab1fb0f1a7b24aed0188df86e5e08fe5f9f55244f",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "qualification-precheck-extension-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Freeze two extra cases outside training, validation, original proof, and final holdout. Only activate them when the original incumbent precheck proves the requested gain impossible. Reuse the paid prefix and preserve the original required net gain on the enlarged panel. Compare two-sided CPO to both native GEPA modes given the same extension. Sweep every integer GEPA search cap in the original range. Keep the previous six qualification wrappers in the native menu at the same realized lookup budget.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "recorded_certificate_cost_frontier.py": "d85a2a61a4744000661a0ba4f2df571b37310089551b16864dbc8de5ef3ade9a"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "c3c4a85bb7c71c81bba3c844a4a0ffad8db46d0be6f89b7ee75115c54438729b",
+  "providerRequests": 0,
+  "results": {
+    "comparisons": {
+      "cap-19/gain-1": {
+        "attainingSubjectPoints": {
+          "anatomy": {
+            "holdoutPasses": 1772,
+            "paidLookups": 1000
+          },
+          "clinical_knowledge": {
+            "holdoutPasses": 3317,
+            "paidLookups": 0
+          },
+          "elementary_mathematics": {
+            "holdoutPasses": 3218,
+            "paidLookups": 2275
+          },
+          "high_school_biology": {
+            "holdoutPasses": 4603,
+            "paidLookups": 0
+          },
+          "high_school_geography": {
+            "holdoutPasses": 2930,
+            "paidLookups": 0
+          },
+          "high_school_government_and_politics": {
+            "holdoutPasses": 3044,
+            "paidLookups": 0
+          },
+          "high_school_macroeconomics": {
+            "holdoutPasses": 5372,
+            "paidLookups": 904
+          },
+          "high_school_microeconomics": {
+            "holdoutPasses": 2900,
+            "paidLookups": 1583
+          },
+          "high_school_statistics": {
+            "holdoutPasses": 1812,
+            "paidLookups": 1426
+          },
+          "moral_disputes": {
+            "holdoutPasses": 4373,
+            "paidLookups": 1293
+          },
+          "moral_scenarios": {
+            "holdoutPasses": 5786,
+            "paidLookups": 2109
+          },
+          "professional_medicine": {
+            "holdoutPasses": 3197,
+            "paidLookups": 1260
+          },
+          "professional_psychology": {
+            "holdoutPasses": 8567,
+            "paidLookups": 944
+          },
+          "sociology": {
+            "holdoutPasses": 3458,
+            "paidLookups": 0
+          },
+          "us_foreign_policy": {
+            "holdoutPasses": 1768,
+            "paidLookups": 0
+          }
+        },
+        "cpo": {
+          "baselineLookups": 12701,
+          "baselinePasses": 56094,
+          "holdoutPasses": 56096,
+          "newNominees": 21,
+          "newPromotions": 2,
+          "opened": 265,
+          "paidLookups": 14575
+        },
+        "expandedMenu": {
+          "holdoutPasses": 56117,
+          "paidLookups": 12794,
+          "settingsBySubject": {
+            "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+            "clinical_knowledge": "retain-start",
+            "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+            "high_school_biology": "retain-start",
+            "high_school_geography": "retain-start",
+            "high_school_government_and_politics": "retain-start",
+            "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-gain-2-threshold-precheck",
+            "high_school_microeconomics": "gepa-batched-precheck/40/paired-gain-1",
+            "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+            "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+            "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+            "professional_medicine": "gepa-sequential-precheck/28/paired-extension-gain-1",
+            "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+            "sociology": "retain-start",
+            "us_foreign_policy": "retain-start"
+          }
+        },
+        "matchedGate": {
+          "holdoutPasses": 56116,
+          "paidLookups": 13658,
+          "settingsBySubject": {
+            "anatomy": "gepa-sequential-precheck/32/paired-extension-gain-1",
+            "clinical_knowledge": "retain-start",
+            "elementary_mathematics": "gepa-batched-precheck/100/paired-extension-gain-1",
+            "high_school_biology": "retain-start",
+            "high_school_geography": "retain-start",
+            "high_school_government_and_politics": "retain-start",
+            "high_school_macroeconomics": "retain-start",
+            "high_school_microeconomics": "gepa-batched-precheck/40/paired-extension-gain-1",
+            "high_school_statistics": "gepa-batched-precheck/40/paired-extension-gain-1",
+            "moral_disputes": "gepa-batched-precheck/44/paired-extension-gain-1",
+            "moral_scenarios": "gepa-batched-precheck/46/paired-extension-gain-1",
+            "professional_medicine": "gepa-sequential-precheck/28/paired-extension-gain-1",
+            "professional_psychology": "gepa-sequential-precheck/24/paired-extension-gain-1",
+            "sociology": "retain-start",
+            "us_foreign_policy": "retain-start"
+          }
+        },
+        "originalMenu": {
+          "holdoutPasses": 56116,
+          "paidLookups": 11534,
+          "settingsBySubject": {
+            "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+            "clinical_knowledge": "retain-start",
+            "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+            "high_school_biology": "retain-start",
+            "high_school_geography": "retain-start",
+            "high_school_government_and_politics": "retain-start",
+            "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-gain-2-threshold-precheck",
+            "high_school_microeconomics": "gepa-batched-precheck/40/paired-gain-1",
+            "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+            "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+            "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+            "professional_medicine": "retain-start",
+            "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+            "sociology": "retain-start",
+            "us_foreign_policy": "retain-start"
+          }
+        }
+      },
+      "cap-19/gain-2": {
+        "attainingSubjectPoints": {
+          "anatomy": {
+            "holdoutPasses": 1772,
+            "paidLookups": 1000
+          },
+          "clinical_knowledge": {
+            "holdoutPasses": 3317,
+            "paidLookups": 0
+          },
+          "elementary_mathematics": {
+            "holdoutPasses": 3218,
+            "paidLookups": 2275
+          },
+          "high_school_biology": {
+            "holdoutPasses": 4603,
+            "paidLookups": 0
+          },
+          "high_school_geography": {
+            "holdoutPasses": 2930,
+            "paidLookups": 0
+          },
+          "high_school_government_and_politics": {
+            "holdoutPasses": 3044,
+            "paidLookups": 0
+          },
+          "high_school_macroeconomics": {
+            "holdoutPasses": 5372,
+            "paidLookups": 904
+          },
+          "high_school_microeconomics": {
+            "holdoutPasses": 2900,
+            "paidLookups": 1583
+          },
+          "high_school_statistics": {
+            "holdoutPasses": 1812,
+            "paidLookups": 1426
+          },
+          "moral_disputes": {
+            "holdoutPasses": 4373,
+            "paidLookups": 1293
+          },
+          "moral_scenarios": {
+            "holdoutPasses": 5786,
+            "paidLookups": 2109
+          },
+          "professional_medicine": {
+            "holdoutPasses": 3196,
+            "paidLookups": 0
+          },
+          "professional_psychology": {
+            "holdoutPasses": 8567,
+            "paidLookups": 944
+          },
+          "sociology": {
+            "holdoutPasses": 3458,
+            "paidLookups": 0
+          },
+          "us_foreign_policy": {
+            "holdoutPasses": 1768,
+            "paidLookups": 0
+          }
+        },
+        "cpo": {
+          "baselineLookups": 8893,
+          "baselinePasses": 56094,
+          "holdoutPasses": 56094,
+          "newNominees": 31,
+          "newPromotions": 0,
+          "opened": 578,
+          "paidLookups": 12461
+        },
+        "expandedMenu": {
+          "holdoutPasses": 56116,
+          "paidLookups": 11534,
+          "settingsBySubject": {
+            "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+            "clinical_knowledge": "retain-start",
+            "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+            "high_school_biology": "retain-start",
+            "high_school_geography": "retain-start",
+            "high_school_government_and_politics": "retain-start",
+            "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-gain-2-threshold-precheck",
+            "high_school_microeconomics": "gepa-batched-precheck/40/paired-gain-1",
+            "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+            "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+            "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+            "professional_medicine": "retain-start",
+            "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+            "sociology": "retain-start",
+            "us_foreign_policy": "retain-start"
+          }
+        },
+        "matchedGate": {
+          "holdoutPasses": 56074,
+          "paidLookups": 4512,
+          "settingsBySubject": {
+            "anatomy": "gepa-sequential-precheck/32/paired-extension-gain-2",
+            "clinical_knowledge": "retain-start",
+            "elementary_mathematics": "retain-start",
+            "high_school_biology": "retain-start",
+            "high_school_geography": "retain-start",
+            "high_school_government_and_politics": "retain-start",
+            "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-extension-gain-2",
+            "high_school_microeconomics": "retain-start",
+            "high_school_statistics": "gepa-batched-precheck/40/paired-extension-gain-2",
+            "moral_disputes": "retain-start",
+            "moral_scenarios": "retain-start",
+            "professional_medicine": "retain-start",
+            "professional_psychology": "retain-start",
+            "sociology": "retain-start",
+            "us_foreign_policy": "retain-start"
+          }
+        },
+        "originalMenu": {
+          "holdoutPasses": 56116,
+          "paidLookups": 11534,
+          "settingsBySubject": {
+            "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+            "clinical_knowledge": "retain-start",
+            "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+            "high_school_biology": "retain-start",
+            "high_school_geography": "retain-start",
+            "high_school_government_and_politics": "retain-start",
+            "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-gain-2-threshold-precheck",
+            "high_school_microeconomics": "gepa-batched-precheck/40/paired-gain-1",
+            "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+            "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+            "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+            "professional_medicine": "retain-start",
+            "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+            "sociology": "retain-start",
+            "us_foreign_policy": "retain-start"
+          }
+        }
+      }
+    },
+    "extensionSettings": 700,
+    "nativeSubjectTotalsSha256": "8e0199697a3a62faf44e1c2642da46f007e8fa58a70195799b3aa0627b650257",
+    "originalPanelPathHashes": {
+      "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": "e29cf5908ed9046445222c935343f24bec9f88d219cb7e95a5253f9c147d7cb9",
+        "cap-19/gain-2": "39fc5ba51d72192c468a0029198de1fe120e92033b115d195a2ea2ee015ee836"
+      },
+      "anatomy/tiiuae_falcon_180b": {
+        "cap-19/gain-1": "19df9c801477ec6eb55b4ec60118906fb9dfd4df8742f8b30c10508fd99f5077",
+        "cap-19/gain-2": "d0c18e2b7c290465cb83021d0183dcaec96d71c24ffdffbdc269d144c4fd9dec"
+      },
+      "clinical_knowledge/google_flan_ul2": {
+        "cap-19/gain-1": "57ad99803d586fab85a0a9f04de496ef26d6e9dfa58a666b9215f0bec10426fd",
+        "cap-19/gain-2": "9929e053255af4c1fd1647e45b54c174311754704acd2f330da344dec059c95a"
+      },
+      "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": "fb36f6cca5d4b7ce449400abeb0f40e3889a8551d3d53ac5cc591d7fc10816dc",
+        "cap-19/gain-2": "03d1744f917fd7fe14bdbbb16381c193048d666c0641ccea1a492c8596885541"
+      },
+      "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": "e0aa4eae0641d9b4c420886651624be667d95cec9237ac186d87953fc8e2c379",
+        "cap-19/gain-2": "7f9d5e7c8a8da3b3a5ec91798828ebae2e384fd5ef19551bd13e7985b5572709"
+      },
+      "elementary_mathematics/tiiuae_falcon_180b": {
+        "cap-19/gain-1": "17a4c7b51244b4d60a60928180a27ea1597c9ab603fe0c544c30c749701a4cb6",
+        "cap-19/gain-2": "cb2e0f78dcc0cfc918763ab0aac6dee5c1b7b872e64f096c10aa56c0524316ee"
+      },
+      "high_school_biology/google_flan_ul2": {
+        "cap-19/gain-1": "2b9dfa6acdc04ca0ccc697f817182e5238d717a48cdda9806018e6fb709200f8",
+        "cap-19/gain-2": "170e429b928cd21a04b395b120dc7fa9114e465ef0d696b1e9b64bd39445f55a"
+      },
+      "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": "69feae822b1cb669ba83424829fc69b5294455d8da7a326256d2e8a0cfd12830",
+        "cap-19/gain-2": "879a0ed75466f05706aa459dd63c78e48c4ed05b306fc9b2c6a0c29ce3460980"
+      },
+      "high_school_geography/google_flan_t5_xxl": {
+        "cap-19/gain-1": "97bd2282387477f53b04403216ee102113082f40db023b43920edd3b59d4e658",
+        "cap-19/gain-2": "4a38ff67e7c897580e953695bc2cea27107c5105f5af13ffcf0ea3387d7a4960"
+      },
+      "high_school_geography/google_gemma_7b": {
+        "cap-19/gain-1": "18d10fffb70c5aac2f8c54b7bfda11550d245a67a07a932d154fd1a555a58e56",
+        "cap-19/gain-2": "5222199e21d8e6f4cf4c9d9e844817e7ab75567ebb9f6ee89b70754308b7ff66"
+      },
+      "high_school_government_and_politics/google_flan_t5_xxl": {
+        "cap-19/gain-1": "c2cecdfe030daa95cf16b1c22f942621a5b8ed3e9f990b6f367abeea6f6cf795",
+        "cap-19/gain-2": "6fc906c739f8dc18cf8a0729382499075b0128ca93eddff2df079e127034b77e"
+      },
+      "high_school_government_and_politics/google_gemma_7b": {
+        "cap-19/gain-1": "5808799e50a061119c362d62a09341ff6cb53645b0f9bfd1ac7657f17ce1bb83",
+        "cap-19/gain-2": "23e3521f2ce90946ec8136ba556bdff25167a7bc886dd379296153eb9de482ee"
+      },
+      "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": "c9ce9f4f8dff15ca6974e0c2b13b76bfe1b9f50093cf59fe020f153329851da7",
+        "cap-19/gain-2": "d2ffab830a082fff318dac0969ca926394712459ed5cb543eb63ca2a5d0926fc"
+      },
+      "high_school_macroeconomics/tiiuae_falcon_180b": {
+        "cap-19/gain-1": "fe8eb1c35829680e3224cf7a40684ab72de3382be7b832c81a3c71a6c29189ff",
+        "cap-19/gain-2": "ed81cf154fdd5051bfa7d184f737eed4e62af0ef0fcf55f65e21d7562cc010e4"
+      },
+      "high_school_microeconomics/google_flan_t5_xxl": {
+        "cap-19/gain-1": "0c20288684fba7e1badd600da7881fe12e250260eba08e3f31ef820b317f4162",
+        "cap-19/gain-2": "65e79b9671917d052c4ad12db85fb39261703431e273550d103391a1d916418d"
+      },
+      "high_school_microeconomics/google_gemma_7b": {
+        "cap-19/gain-1": "b2caff54a7d16936689a37851531c970f4b6847bc938122f35442c919fb12de0",
+        "cap-19/gain-2": "85baa167273da74899bc86d9509b6593012fcafb51f71984dc6e3b4936255081"
+      },
+      "high_school_statistics/google_flan_t5_xxl": {
+        "cap-19/gain-1": "3d9583f2a1d8aa335e166c7976bf6cbb010e774eb8b501ea9293be67d2520483",
+        "cap-19/gain-2": "1e97352a3ec26b204fb26b947f9376d29c86b1a79d8c5dd67ff797d55a01bbea"
+      },
+      "high_school_statistics/google_gemma_7b": {
+        "cap-19/gain-1": "4ebea4033d35a2dc39cc8ffe4c68dc371d75a63ab92fd5863efcd73e28ce8f7b",
+        "cap-19/gain-2": "6a757bffc651306b5c9cab3a7b4e6e82ddd2f955238a00c55fda21a38695b756"
+      },
+      "moral_disputes/google_flan_t5_xxl": {
+        "cap-19/gain-1": "daa9a1831428065e5c2d26c7f75f02298243998f0fb83449acc9b56f212127ca",
+        "cap-19/gain-2": "74d56dff63a8f6bd598803027404ceb5d6c307a0e3203b51614aff3cbaf35892"
+      },
+      "moral_disputes/google_gemma_7b": {
+        "cap-19/gain-1": "e7ad966347d762b289a23ad677d7aac76a69e0f4785658e806fdbad112fa3541",
+        "cap-19/gain-2": "82252bf7df9639fecaab47f343ea226ac4a2ae095b8be4179b38125b8b293952"
+      },
+      "moral_scenarios/google_flan_ul2": {
+        "cap-19/gain-1": "d6448c923f032a2de325876258f965d9138b0163d6e4a16ad5f6ea7a7f3da301",
+        "cap-19/gain-2": "d8269eaa386d38f249344d9971fcec44244c157f84b1d8fe11d661279025dd26"
+      },
+      "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": "1ae6ae1a83a8a37032f1234c9836963520707cd754aa1ec146fb7764157c9ea7",
+        "cap-19/gain-2": "64db8a42588db858be878678a0634b8f36c5d0a8e63ba23e6dd41cd97f9a0860"
+      },
+      "professional_medicine/google_flan_ul2": {
+        "cap-19/gain-1": "05443cc48ab55a6f5b4ff90a7ea4a29d1fa16aa835471322a6def66dbec3cdb5",
+        "cap-19/gain-2": "f69d793370ab6209bc3f73e2b959dfa345daad912eca82950374b12b821ab339"
+      },
+      "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": "2ab702c370233bfc6f037dcb31edd0cd67af7350ae1eb43130a18202e2f94608",
+        "cap-19/gain-2": "03f279afca26569e616b73fe29ece18659232bee01be45a969b6043a2b3fac22"
+      },
+      "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": "4467dd2a1cda1813ae580a7352286c44f0ff65a3028be48ae92a979120e3b4e6",
+        "cap-19/gain-2": "718e7235231e90b078c5cb89e759f69490eb6a1e226c77d907a02c481011e321"
+      },
+      "professional_psychology/tiiuae_falcon_180b": {
+        "cap-19/gain-1": "85cb23762e4bf609a34b3791b5da2be54831a1d18cb8761777560122977ed3c5",
+        "cap-19/gain-2": "22d2664cd0f599ce667da572aeaab2658a014c9b9a6cf17d451d31267ce26f44"
+      },
+      "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": "f77e76fea6adff293ed8562086bc039fce05bf26f598629b3ebbb3a9531aa21d",
+        "cap-19/gain-2": "0a3ac385350d9c153f32f5f16772aa55a0b905599bb4bcd50963dc5ecd901c88"
+      },
+      "sociology/tiiuae_falcon_180b": {
+        "cap-19/gain-1": "d2e7951cf480baac8a3ed550b5c6ffba7426270249c4343ad1bcdd8e1a65d941",
+        "cap-19/gain-2": "622e195daa3923409f2e59e9a81755cf38e74987cecb01603a142b44ab93773f"
+      },
+      "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": "55e3fa604f6382f16b00a0a94d84b21bfb52aa90824bee8db0018ee557df5ae1",
+        "cap-19/gain-2": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+      },
+      "us_foreign_policy/tiiuae_falcon_180b": {
+        "cap-19/gain-1": "6e59d97b9434c2c02b7686afb301c6bca0a001c5a78394bffb7399b26b9e0021",
+        "cap-19/gain-2": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2"
+      }
+    },
+    "originalSettings": 2100
+  }
+}
