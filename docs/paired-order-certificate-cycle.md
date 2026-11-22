@@ -35,7 +35,7 @@ The cap-19 replay covers 134 model panels, 32 schedules per panel, and two quali
 | Earlier MMLU | 156 | 80 |
 | Total | 459 | 326 |
 
-Across both margins, total lookup spend fell from 127,590 to 126,805. Individual paths varied. The replay spent less on 721 paths and more on 175. The comparison uses the existing GEPA controls, and it measures a cost improvement within CPO on archived prompts. Fresh-model results remain unverified.
+Across both margins, total lookup spend fell from 127,590 to 126,805. Individual paths varied. The replay spent less on 721 paths and more on 175. A separate replay gives GEPA the same scheduler and prices the expanded menu at the new CPO budgets. [Matched qualification-order comparison](paired-order-gepa-comparison.md)
 
 ## Reproduce
 
