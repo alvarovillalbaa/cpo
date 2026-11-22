@@ -16,6 +16,8 @@ Both sides can use one setting across a whole cohort or keep the starts at zero 
 
 At the lowest MMLU budget, a cap of 13 on the strict CPO race led the common comparison. When both suites could choose a separate setting per subject with hindsight, CPO reached 13,460 passes at 5,362 lookups and GEPA reached 13,455 at 5,714. At the 11,814 budget, the one-case tail at cap 28 gained four passes and saved 1,935 lookups versus that policy’s original cap. The common comparison at that budget remained inconclusive. Cap 13 is a candidate for transfer to disjoint archived subjects and model checkpoints. Fresh-prompt performance remains unverified. [All budgets, fixed caps, and attaining subject schedules](recorded-validation-tail-matched-caps-results-v1.json)
 
+The frozen cap-13 policy subsequently missed the transfer gate on 28 disjoint MMLU panels. [Transfer and deployment attribution](recorded-low-cap-mmlu-transfer.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.
