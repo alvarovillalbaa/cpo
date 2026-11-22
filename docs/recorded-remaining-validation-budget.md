@@ -22,6 +22,8 @@ The diagnostic fixes the original search prefix and gives the chooser perfect kn
 
 Cap 13 had room for a different read order or candidate choice, even though the tested order found zero certificates. At cap 32, perfect knowledge of the remaining replies could recover only three passes on these trials. A substantial gain at that cap would require changing the earlier search or the candidate pool. Fresh-model performance remains unverified.
 
+An early-screen replay reached more challengers under cap 13 and improved on the original exact race. It still missed the gate against retaining the starts. [Early certificate screen](recorded-early-certificate-screen.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.
