@@ -13,6 +13,8 @@ The stronger qualification vetoed 90 of the 144 BBH promotions and 50 of the 115
 
 The MMLU improvement did not carry over to these families. The archived results favor one-gain qualification for the BBH and LMentry screen at this cap. The experiments reuse recorded replies, and fresh-model performance remains unverified. [Complete cost curves, paired comparisons, and panel results](recorded-qualification-margin-language-transfer-results-v1.json)
 
+Two follow-up rules used paid validation grades to choose the margin. Neither selected the stronger fixed margin across the MMLU and language cohorts. [Paid qualification margin selection](recorded-paid-qualification-margin-route.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.

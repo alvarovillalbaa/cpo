@@ -1,0 +1,2457 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "gepaVersion": "0.1.4",
+    "languageReceiptSha256": "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be",
+    "minimumSearchCap": 6,
+    "mmluReceiptSha256": "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+    "policies": [
+      "complete-panel/13",
+      "two-net-qualification-gains",
+      "two-gains-after-paid-regression",
+      "two-gains-after-four-incumbent-passes"
+    ],
+    "protocol": "recorded-paid-qualification-margin-route-v1",
+    "scope": "Keep every original cap-13 validation nominee and vary only the independent qualification margin. Require two gains after an observed regression, or after the incumbent scores at least four on its six paid validation cases. Compare each rule with fixed margins using paired held-out case resampling. Report the strongest measured affordable native point descriptively from the sealed curves. Both rules reuse these previously scored archive cohorts.",
+    "screenCap": 13,
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "recorded_paid_qualification_margin_route.py": "5e284f3361158a4c001df47d8118d6a7b50c1a6469e1d1eed19b127f456f6db1",
+      "recorded_qualification_margin.py": "211857f26bea7d43e7a2a94a9edc72afcd61b9715d6619c5746918f146288200",
+      "recorded_qualification_margin_language_transfer.py": "0f78fc52b8921952049057d2beb9c0df8a8b658edad14642daee186da06a84ac"
+    }
+  },
+  "planSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "caseVectorsSha256": "b5d6a5dd793de1b9123a8f40f9b90231308032744455c9157b27a1334ac9d86c",
+      "comparisons": {
+        "two-gains-after-four-incumbent-passes": {
+          "affordableNativePoint": {
+            "holdoutPasses": 8913,
+            "paidLookups": 11371,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "fixedMarginComparisons": {
+            "complete-panel/13": {
+              "lookupDifference": -16,
+              "pairedRange95": [
+                -24,
+                -4
+              ],
+              "passDifference": -14
+            },
+            "two-net-qualification-gains": {
+              "lookupDifference": 149,
+              "pairedRange95": [
+                340,
+                454
+              ],
+              "passDifference": 396
+            }
+          }
+        },
+        "two-gains-after-paid-regression": {
+          "affordableNativePoint": {
+            "holdoutPasses": 8913,
+            "paidLookups": 11371,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "fixedMarginComparisons": {
+            "complete-panel/13": {
+              "lookupDifference": -20,
+              "pairedRange95": [
+                -44,
+                -6
+              ],
+              "passDifference": -25
+            },
+            "two-net-qualification-gains": {
+              "lookupDifference": 145,
+              "pairedRange95": [
+                330,
+                440
+              ],
+              "passDifference": 385
+            }
+          }
+        }
+      },
+      "panels": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "6185c250a118e3647e6935fb9473505fe7f1c6d0ae585469c66411c2b5210ca3",
+            "two-gains-after-four-incumbent-passes": "6185c250a118e3647e6935fb9473505fe7f1c6d0ae585469c66411c2b5210ca3",
+            "two-gains-after-paid-regression": "6185c250a118e3647e6935fb9473505fe7f1c6d0ae585469c66411c2b5210ca3",
+            "two-net-qualification-gains": "8cc2e74725420925ceac88465ee9d36008f6c41c2081bed66ebab25385ac7a81"
+          }
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 8
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "8e8f09bacccba6b08e1f8a61ccf1ca49236b62435322e3f8f5d709d7f59cab12",
+            "two-gains-after-four-incumbent-passes": "7c34f7414135b7c408885d700ea35e48e7012820fe58343d7961a39c4ca3f0f5",
+            "two-gains-after-paid-regression": "8e8f09bacccba6b08e1f8a61ccf1ca49236b62435322e3f8f5d709d7f59cab12",
+            "two-net-qualification-gains": "0dcefb486e61c96357af9429c9bd00f82724e23422cbe44823a80bb9bd85b2ab"
+          }
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "f6b35cd3ba856c6d9b8f7f1369990ce013c61a329864d0b6dfb0a4ba968482b1",
+            "two-gains-after-four-incumbent-passes": "f6b35cd3ba856c6d9b8f7f1369990ce013c61a329864d0b6dfb0a4ba968482b1",
+            "two-gains-after-paid-regression": "f6b35cd3ba856c6d9b8f7f1369990ce013c61a329864d0b6dfb0a4ba968482b1",
+            "two-net-qualification-gains": "1bc3e2ab3b22f65bf4926420f81691028bd13b96b614cd3514c852450b1a9ae2"
+          }
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "2a78e1ca6923593145d1c88b6973658d10e83523f97ff3e1457e958cbccf6b8a",
+            "two-gains-after-four-incumbent-passes": "2a78e1ca6923593145d1c88b6973658d10e83523f97ff3e1457e958cbccf6b8a",
+            "two-gains-after-paid-regression": "2a78e1ca6923593145d1c88b6973658d10e83523f97ff3e1457e958cbccf6b8a",
+            "two-net-qualification-gains": "f278465662dbecf40392b77c3303f9543ff30e04079e205bfe6c63c7c487db4e"
+          }
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "0ae647645bddc985f0b77d39c71ba048563e0217286dd85fe0d6ae86dc091b0e",
+            "two-gains-after-four-incumbent-passes": "0ae647645bddc985f0b77d39c71ba048563e0217286dd85fe0d6ae86dc091b0e",
+            "two-gains-after-paid-regression": "0ae647645bddc985f0b77d39c71ba048563e0217286dd85fe0d6ae86dc091b0e",
+            "two-net-qualification-gains": "77e41feaeb5003aa842afed407648bfc7ae83bcbd9761963c1ac154963cec50e"
+          }
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "e6f1d6dc44d25273dd2075b1f6ecb2f17e087621c8eb9e4e6ab866a19c073635",
+            "two-gains-after-four-incumbent-passes": "e6f1d6dc44d25273dd2075b1f6ecb2f17e087621c8eb9e4e6ab866a19c073635",
+            "two-gains-after-paid-regression": "e6f1d6dc44d25273dd2075b1f6ecb2f17e087621c8eb9e4e6ab866a19c073635",
+            "two-net-qualification-gains": "c08a9d550cd499689164b07fa039e791d2724ff265f5fc33062a3b7456f74aa8"
+          }
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 4
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 3
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "9a3bbe958dc771582b7e065c173bccb391bbc2008e32f683cf9cdfbf0bb74e4e",
+            "two-gains-after-four-incumbent-passes": "1b32cf300d2fff523626f53f9af8b2b4e201a30cda26bafd2c1181ec6c2f8778",
+            "two-gains-after-paid-regression": "2d87d3aaa1414e03b5628af2d7ee5f8ff60570997cd923ce0e8f5117238b91ca",
+            "two-net-qualification-gains": "dacc608a734f29d449994995e0fe5364b46d6cf6797e70b27684f1037d39b850"
+          }
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 11
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 3,
+              "nominationsUsingTwo": 4,
+              "promotions": 9
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "250eff1b8b6f573383dfa2e0126534b5a4eb3a522b59a1675b925c978e64c98b",
+            "two-gains-after-four-incumbent-passes": "d24e1eeb9614be07f4fc5dca4eb315da90d7b0dd04ae61d8106b1ced2b28b2f2",
+            "two-gains-after-paid-regression": "aad372ca817f7725d78f161117074ac4d7194e0435dbe759a04379e7bbe47310",
+            "two-net-qualification-gains": "c2603c9ec668962d9a009da4ec121dfeefb60bcde48cf44ee3c93b0e2d10ec51"
+          }
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "0cf6877b68ee8abe5e20de00fa4f3f06345119d8e4ae26f91c4550fa842f4607",
+            "two-gains-after-four-incumbent-passes": "0cf6877b68ee8abe5e20de00fa4f3f06345119d8e4ae26f91c4550fa842f4607",
+            "two-gains-after-paid-regression": "0cf6877b68ee8abe5e20de00fa4f3f06345119d8e4ae26f91c4550fa842f4607",
+            "two-net-qualification-gains": "a27b6761c0be5a65ccf79fe3cc08176133db183e91f9c84472cf952c30125a0f"
+          }
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 4
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "63c9912e226aa00ff3fd6243e33ee8e8236a1acec75cf0ea292814fc6bcf213c",
+            "two-gains-after-four-incumbent-passes": "63c9912e226aa00ff3fd6243e33ee8e8236a1acec75cf0ea292814fc6bcf213c",
+            "two-gains-after-paid-regression": "a4823773f19540637a5673967e9c57fa5588b0f21f9e1b89c08eb28d0b7ba24c",
+            "two-net-qualification-gains": "18956b3f9c91a1f418a34ee95235ee1b13dd4dbe5d2012b0d6a3d62dfbfc4791"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 5
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 5
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "71aafb15432487748dc442c534eb557625aeb9ade86e1cdbe4f2675932c2e8ae",
+            "two-gains-after-four-incumbent-passes": "71aafb15432487748dc442c534eb557625aeb9ade86e1cdbe4f2675932c2e8ae",
+            "two-gains-after-paid-regression": "71aafb15432487748dc442c534eb557625aeb9ade86e1cdbe4f2675932c2e8ae",
+            "two-net-qualification-gains": "dcf5e8d35dd2438778dad909716eca226fd919ab62039e717747b9bf874cb928"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "025e8e8e1622db7befdfe34e9a376a233a5f957da244ab9a8e0fe81413b6dd4a",
+            "two-gains-after-four-incumbent-passes": "025e8e8e1622db7befdfe34e9a376a233a5f957da244ab9a8e0fe81413b6dd4a",
+            "two-gains-after-paid-regression": "025e8e8e1622db7befdfe34e9a376a233a5f957da244ab9a8e0fe81413b6dd4a",
+            "two-net-qualification-gains": "1d21c69bfa868ff55e7c6dffee8b3d335303f231903fe980ed0701ee0ffd1b39"
+          }
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "a2610e900f91165fc01785e9ceb37beea1d611e1e20cbb3e80ce6029bcc134b2",
+            "two-gains-after-four-incumbent-passes": "a2610e900f91165fc01785e9ceb37beea1d611e1e20cbb3e80ce6029bcc134b2",
+            "two-gains-after-paid-regression": "a2610e900f91165fc01785e9ceb37beea1d611e1e20cbb3e80ce6029bcc134b2",
+            "two-net-qualification-gains": "111c4610c6b72de4bd6fc5c765618ad8de89efea8db626effa221df0161b2a4a"
+          }
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 11
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 11
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "47bc44e538c186f1f2ed9626e5edc9cd7f36914108a017bdf73cdb54bc2e181d",
+            "two-gains-after-four-incumbent-passes": "47bc44e538c186f1f2ed9626e5edc9cd7f36914108a017bdf73cdb54bc2e181d",
+            "two-gains-after-paid-regression": "47bc44e538c186f1f2ed9626e5edc9cd7f36914108a017bdf73cdb54bc2e181d",
+            "two-net-qualification-gains": "0b8e4596403bdc4c2410a7d8fea2073b10dffe87aeeca9687271ad3691baa076"
+          }
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 9
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 2,
+              "promotions": 8
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "1b687db08e09fb1be06d4c70675610a3f0f0eceed3890da231c3558f896d97e0",
+            "two-gains-after-four-incumbent-passes": "70593f04f2a73c9958abb34f616fff0814217cbfb7703fb954814771dcef30b3",
+            "two-gains-after-paid-regression": "dc8394ede90a39ef703bc1b4ae0ce2a6621f4698cce62af23ec6b8094fe7a8ab",
+            "two-net-qualification-gains": "094a5405a87eca463dc951abd97eff1a586972d38d329b5c82226fd1527a3aef"
+          }
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 9
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 2,
+              "promotions": 8
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "4277c4eaaec5a0fb29748de13e10ed53f06cd4bc9f9a0c3d099459e0251d28c3",
+            "two-gains-after-four-incumbent-passes": "4277c4eaaec5a0fb29748de13e10ed53f06cd4bc9f9a0c3d099459e0251d28c3",
+            "two-gains-after-paid-regression": "baf2e3023da9b165e6e6d642da6ca8f53a490118b60c0db5491d8f1b8f05d1db",
+            "two-net-qualification-gains": "44696998170c9c245cb0581d9d5fed44ec4c65c9ac4d3c4a456bf1d9add7bf33"
+          }
+        },
+        "bbh-navigate/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 5
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 5
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "26fe12c6bcd21984874221d3497e3e93c1de07e059cabf545e509fbf16403cb3",
+            "two-gains-after-four-incumbent-passes": "26fe12c6bcd21984874221d3497e3e93c1de07e059cabf545e509fbf16403cb3",
+            "two-gains-after-paid-regression": "26fe12c6bcd21984874221d3497e3e93c1de07e059cabf545e509fbf16403cb3",
+            "two-net-qualification-gains": "7a797fdba723c92582686fc9d5d06d542df6e10dbc231257a21f705eda8c28b8"
+          }
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "f87f69d3a082f9c6c08795a2d35b6eb31507e0c9f50e1afdac5e11c4798f29d2",
+            "two-gains-after-four-incumbent-passes": "f87f69d3a082f9c6c08795a2d35b6eb31507e0c9f50e1afdac5e11c4798f29d2",
+            "two-gains-after-paid-regression": "6188f1e846d4aa64f2383d4a22c894a066bb1ab93d97f122d05f892993bda86c",
+            "two-net-qualification-gains": "bb392dd1a6c7fc5e1a72dc56d192aa436d7b59c39d87445fbb85df18e207bc29"
+          }
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 4
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "7a19b6fe694a4a7e085ccb45a364f05b2428359d8dc62c090e768cc762844e01",
+            "two-gains-after-four-incumbent-passes": "7a19b6fe694a4a7e085ccb45a364f05b2428359d8dc62c090e768cc762844e01",
+            "two-gains-after-paid-regression": "1e66cdbedcf6b9a0957175267bd603838b51ce39a0db3e272a95c8b8439b6c2b",
+            "two-net-qualification-gains": "ce0df124a9c207dfda233affda6a112a3ed7fbbddce4fbae3a8e884e5aa5891f"
+          }
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "c7e78ec280e6f5660ae6a037c158ca8c817580904b009557cd761fa50f53cf56",
+            "two-gains-after-four-incumbent-passes": "c7e78ec280e6f5660ae6a037c158ca8c817580904b009557cd761fa50f53cf56",
+            "two-gains-after-paid-regression": "c7e78ec280e6f5660ae6a037c158ca8c817580904b009557cd761fa50f53cf56",
+            "two-net-qualification-gains": "7526b61984bdac80ac32c773dad65778c3594f8dbb13dfb06d10ed1ca57ae8c5"
+          }
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "65d26da2638a6443224cf0286a3da45c95d663968ce079019fac01e92188150e",
+            "two-gains-after-four-incumbent-passes": "65d26da2638a6443224cf0286a3da45c95d663968ce079019fac01e92188150e",
+            "two-gains-after-paid-regression": "65d26da2638a6443224cf0286a3da45c95d663968ce079019fac01e92188150e",
+            "two-net-qualification-gains": "5514021fb4cd4f0612708f40f7280a02cd681f53f710dcc62e4c37a06636e0a0"
+          }
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "a1fb67fd1345a60ce91ae7b1268693823cc4ed079d30953a3e4fd6b7e9093bfc",
+            "two-gains-after-four-incumbent-passes": "a1fb67fd1345a60ce91ae7b1268693823cc4ed079d30953a3e4fd6b7e9093bfc",
+            "two-gains-after-paid-regression": "a1fb67fd1345a60ce91ae7b1268693823cc4ed079d30953a3e4fd6b7e9093bfc",
+            "two-net-qualification-gains": "0a0abe45c2dfa7bd8a97f1a2d1cd445a099fc36d30c963fbd60859213995c402"
+          }
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "b70c809692e36d6382f070c8cf3aab100997f4708a0082db0c413078ef319d86",
+            "two-gains-after-four-incumbent-passes": "b70c809692e36d6382f070c8cf3aab100997f4708a0082db0c413078ef319d86",
+            "two-gains-after-paid-regression": "b70c809692e36d6382f070c8cf3aab100997f4708a0082db0c413078ef319d86",
+            "two-net-qualification-gains": "414560174b5a1936904a777acfd9e0e500ddb413dc7329a7ca22e32f7c980b39"
+          }
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 7
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 7
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "55458db75d6fab7695f1de72028a177ae053418733e19b6f936e3ba025988c60",
+            "two-gains-after-four-incumbent-passes": "55458db75d6fab7695f1de72028a177ae053418733e19b6f936e3ba025988c60",
+            "two-gains-after-paid-regression": "55458db75d6fab7695f1de72028a177ae053418733e19b6f936e3ba025988c60",
+            "two-net-qualification-gains": "4e0d586f3da3eb7daad812d9ab429b489eeb98ed7327059d0155c40a38ede854"
+          }
+        },
+        "bbh-snarks/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 2
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "a40fa9796e45a8cef513d2c7895ab87ea2d3f0db61e7af84dd0d921636d12139",
+            "two-gains-after-four-incumbent-passes": "d46f3f06fec979596b75a17eedce9a2fa143bbf6c09a42abad16680fd28b8bd2",
+            "two-gains-after-paid-regression": "a40fa9796e45a8cef513d2c7895ab87ea2d3f0db61e7af84dd0d921636d12139",
+            "two-net-qualification-gains": "96068fb0275e3add7eb88f4052d32865e27b1ae002c995dfdc797ea58c46e2ea"
+          }
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 2,
+              "promotions": 7
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 4,
+              "promotions": 7
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "83f1f9090c2522efc2d7eee6ab8a7476a30ab2281bee98aefc58577f4301f185",
+            "two-gains-after-four-incumbent-passes": "e5a9dbe54b10d2917d85ce4bdc701701520f022be07a2931b73c44906ec1b705",
+            "two-gains-after-paid-regression": "553125ce35ad56e07b117565d87760d85e8002b8ac480e41e46213051d274fb9",
+            "two-net-qualification-gains": "65516e4821b12d16de42e4c873c1f1943929dc58b2db219fbf55870cf966a445"
+          }
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 3,
+              "promotions": 10
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 10
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "d5df896278be3cc5a96875292e8ce5a1c957505acd9b7563d8b53bd4ad6140e6",
+            "two-gains-after-four-incumbent-passes": "e3495fcead46277dedae24d9b0ae14c99184e17ab508bd3a8ded5f61c082acde",
+            "two-gains-after-paid-regression": "18936584ec33e81e3064067a6e252fd7f56405839ef5985401687e8ed6d3a3e9",
+            "two-net-qualification-gains": "9d56abd4f2cdcf41296230e56ef7ee787b4fe37d65250919b89111ae26cb3923"
+          }
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "22e9b8c4fbedad56168d0d61caa9b1fabe049871f8536db5fa7f6dff22111b8d",
+            "two-gains-after-four-incumbent-passes": "22e9b8c4fbedad56168d0d61caa9b1fabe049871f8536db5fa7f6dff22111b8d",
+            "two-gains-after-paid-regression": "22e9b8c4fbedad56168d0d61caa9b1fabe049871f8536db5fa7f6dff22111b8d",
+            "two-net-qualification-gains": "51cc72ef54a1561b7826fc3224f59cd764dab9214bc6a3c75d012c6780632730"
+          }
+        }
+      },
+      "routes": {
+        "two-gains-after-four-incumbent-passes": {
+          "changedDeployments": 3,
+          "nominationsUsingTwo": 12,
+          "promotions": 141
+        },
+        "two-gains-after-paid-regression": {
+          "changedDeployments": 8,
+          "nominationsUsingTwo": 18,
+          "promotions": 136
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 9363,
+          "paidLookups": 12567
+        },
+        "two-gains-after-four-incumbent-passes": {
+          "holdoutPasses": 9349,
+          "paidLookups": 12551
+        },
+        "two-gains-after-paid-regression": {
+          "holdoutPasses": 9338,
+          "paidLookups": 12547
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 8953,
+          "paidLookups": 12402
+        }
+      }
+    },
+    "LMentry": {
+      "caseVectorsSha256": "464cf3098500f883857b345c6999c1687256db12b7321d1cdcf5bde588e99f9f",
+      "comparisons": {
+        "two-gains-after-four-incumbent-passes": {
+          "affordableNativePoint": {
+            "holdoutPasses": 4583,
+            "paidLookups": 6349,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "fixedMarginComparisons": {
+            "complete-panel/13": {
+              "lookupDifference": -7,
+              "pairedRange95": [
+                -15,
+                -1
+              ],
+              "passDifference": -8
+            },
+            "two-net-qualification-gains": {
+              "lookupDifference": 47,
+              "pairedRange95": [
+                292,
+                373
+              ],
+              "passDifference": 332
+            }
+          }
+        },
+        "two-gains-after-paid-regression": {
+          "affordableNativePoint": {
+            "holdoutPasses": 4583,
+            "paidLookups": 6349,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "fixedMarginComparisons": {
+            "complete-panel/13": {
+              "lookupDifference": -8,
+              "pairedRange95": [
+                -7,
+                10
+              ],
+              "passDifference": 1
+            },
+            "two-net-qualification-gains": {
+              "lookupDifference": 46,
+              "pairedRange95": [
+                302,
+                382
+              ],
+              "passDifference": 341
+            }
+          }
+        }
+      },
+      "panels": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 6
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 6
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "13ce1632c90be27f0c4b426f2a0815084af491d5eb462dbadf77984f06d98df6",
+            "two-gains-after-four-incumbent-passes": "eaf179fb746d0cda695b1c54be15ac089e426ef70f40373de35eb7512e3727c5",
+            "two-gains-after-paid-regression": "80c88373e7ff31fe18808d5ff5e4e50c973ffb305c4dccdfc9207018797347a8",
+            "two-net-qualification-gains": "ef9352b2bb44615ea2806cf7760f320e9c5f8bfa2d5f2573e6337bb8d432f928"
+          }
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 6,
+              "promotions": 9
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 3,
+              "promotions": 10
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "bfff8030edd89ddd2cc8265b5051416a89471a4e3922f56991cd49db15c18583",
+            "two-gains-after-four-incumbent-passes": "47f330cc66fa3657d74b699a0f62f6af47d06c1d4bd780f17adf18c9dbc814ee",
+            "two-gains-after-paid-regression": "ddd9871879f3825075165dcab8f059211cb745c9be5c4a9a704d6c692479bdd5",
+            "two-net-qualification-gains": "05b7f8389f485bac011c36db125299d3969c1e62e9048c6b75f077d5016750ef"
+          }
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "e5fc2310c340d9bd233cb7378abdb251d0dda458fbf6f229d16994ff9fc2776d",
+            "two-gains-after-four-incumbent-passes": "e5fc2310c340d9bd233cb7378abdb251d0dda458fbf6f229d16994ff9fc2776d",
+            "two-gains-after-paid-regression": "e5fc2310c340d9bd233cb7378abdb251d0dda458fbf6f229d16994ff9fc2776d",
+            "two-net-qualification-gains": "167706912bb2624a51bf52f9df7d77e1c98a61d599b1e4a8b63c40609c013dc7"
+          }
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "86d0ea7144050a3cc4a9d86eb2661da19004f44f61f22b1ce7d42a1139802237",
+            "two-gains-after-four-incumbent-passes": "86d0ea7144050a3cc4a9d86eb2661da19004f44f61f22b1ce7d42a1139802237",
+            "two-gains-after-paid-regression": "86d0ea7144050a3cc4a9d86eb2661da19004f44f61f22b1ce7d42a1139802237",
+            "two-net-qualification-gains": "79f8b16723a25319d4661298dc4d0583cdd4896c6861052cd9abc75c7537f784"
+          }
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 12
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 12
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "51fb0cf4723646b5e3baad501e691d9ca350f5fce2bb9f3f1940580594edb104",
+            "two-gains-after-four-incumbent-passes": "51fb0cf4723646b5e3baad501e691d9ca350f5fce2bb9f3f1940580594edb104",
+            "two-gains-after-paid-regression": "51fb0cf4723646b5e3baad501e691d9ca350f5fce2bb9f3f1940580594edb104",
+            "two-net-qualification-gains": "e3814cc851370ca73a68be750f28657976621fe3c24d332e201ef3eb3febb567"
+          }
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 9
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 9
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "d9caf5e99e5601498d5b645a7be5a8c9181e85f1ea5905cafeb0dc3f58435444",
+            "two-gains-after-four-incumbent-passes": "01552239303379dbf0c2a2f049d48a4b8ea6950d885c2948c44d5269705b0fbc",
+            "two-gains-after-paid-regression": "d9caf5e99e5601498d5b645a7be5a8c9181e85f1ea5905cafeb0dc3f58435444",
+            "two-net-qualification-gains": "a1cd0b62120c5af1c94d8429423bc0f37de1963fb99ee56cf49ad923beea3469"
+          }
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "bfa102b0c103dd60959b35bd9c8599ed48b59e933f765ccd55da657c4a3410a8",
+            "two-gains-after-four-incumbent-passes": "bfa102b0c103dd60959b35bd9c8599ed48b59e933f765ccd55da657c4a3410a8",
+            "two-gains-after-paid-regression": "bfa102b0c103dd60959b35bd9c8599ed48b59e933f765ccd55da657c4a3410a8",
+            "two-net-qualification-gains": "82383d6eac5d4b40c658d04edca7ad5b77981ed8940d3e0f33d8e6f1e658747f"
+          }
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "7e19668684f59b2ebb769536ca1b7999d1d3b51b30cf0a9fc43f0490e2f640b9",
+            "two-gains-after-four-incumbent-passes": "7e19668684f59b2ebb769536ca1b7999d1d3b51b30cf0a9fc43f0490e2f640b9",
+            "two-gains-after-paid-regression": "7e19668684f59b2ebb769536ca1b7999d1d3b51b30cf0a9fc43f0490e2f640b9",
+            "two-net-qualification-gains": "ded791d17f87a9d3416e15bd2237b3f21df5d092552bc1e6d8981bb89f45ab20"
+          }
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 7
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 7
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "a089ab85f30eeeec63535f6a6bd2f54342be3cc37aeff87034cc841a56a00256",
+            "two-gains-after-four-incumbent-passes": "0c7297f5f51f4c55570fd13a17662400ba3dd2db44ac4a2133ec5d7ae23aaa9c",
+            "two-gains-after-paid-regression": "a089ab85f30eeeec63535f6a6bd2f54342be3cc37aeff87034cc841a56a00256",
+            "two-net-qualification-gains": "d8acc26a2dd8f4da7f37514e7c5455048263f085c84eec9dfcb1961102c7234a"
+          }
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 10
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 10
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "7611eafc01d9b13cbe6b647255c58d1a9b4e79a15c5d68128f3c9faf676dfd38",
+            "two-gains-after-four-incumbent-passes": "7611eafc01d9b13cbe6b647255c58d1a9b4e79a15c5d68128f3c9faf676dfd38",
+            "two-gains-after-paid-regression": "7611eafc01d9b13cbe6b647255c58d1a9b4e79a15c5d68128f3c9faf676dfd38",
+            "two-net-qualification-gains": "b9c5bdb4f4459aff0468abe260e915d595e6a9b29d1faf44ad2f961ba7cb19ae"
+          }
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 7
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 6
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "872718b665f8066b575e8f1cafdb4dc23cda02ee8895da1f4606963454e36ede",
+            "two-gains-after-four-incumbent-passes": "872718b665f8066b575e8f1cafdb4dc23cda02ee8895da1f4606963454e36ede",
+            "two-gains-after-paid-regression": "e53c7c53501fd738f7bed46def58d85393300a2916897a9adcea3ac15fa5eebd",
+            "two-net-qualification-gains": "31c930ff9ead6b4b73d4d90d391036c519c1ce9b333041f7e91c67268d4c2d79"
+          }
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 12
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 12
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "1980760b23a652144729062200f809424384a63c3d73325ec1067c74c3d5b661",
+            "two-gains-after-four-incumbent-passes": "08ddccb2a83fdab290fe77b7c5cb0175e6e06fbb85877e4a559f64371bf107b6",
+            "two-gains-after-paid-regression": "08ddccb2a83fdab290fe77b7c5cb0175e6e06fbb85877e4a559f64371bf107b6",
+            "two-net-qualification-gains": "fa99c82ba64533b66759777630d391037e20ce7d777ac41dcd99bf5c1a2258df"
+          }
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 8
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "f89905c2e0a53ee9ffeb7a0cd98a37ecfda36a86498c71da67be61abd2077121",
+            "two-gains-after-four-incumbent-passes": "f89905c2e0a53ee9ffeb7a0cd98a37ecfda36a86498c71da67be61abd2077121",
+            "two-gains-after-paid-regression": "f89905c2e0a53ee9ffeb7a0cd98a37ecfda36a86498c71da67be61abd2077121",
+            "two-net-qualification-gains": "19f8e2603995b8f8354ad67cafbef4aec7ef16ab3b1e17babcb4e47096c00601"
+          }
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "f09ba3adbce3784b402459628251f6d23ed4708af7fb16de1ab7d67860e18fca",
+            "two-gains-after-four-incumbent-passes": "f09ba3adbce3784b402459628251f6d23ed4708af7fb16de1ab7d67860e18fca",
+            "two-gains-after-paid-regression": "f09ba3adbce3784b402459628251f6d23ed4708af7fb16de1ab7d67860e18fca",
+            "two-net-qualification-gains": "85a5d1787c591c290bc17e385c7ba188eb2b9d9cc97b4bc5bd5f6e297d62befb"
+          }
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "c5efb859c41e8154891d3d8cbc9561be6ec0fc4c45f17eaf3970c94a29d71a82",
+            "two-gains-after-four-incumbent-passes": "c5efb859c41e8154891d3d8cbc9561be6ec0fc4c45f17eaf3970c94a29d71a82",
+            "two-gains-after-paid-regression": "d0f8f2da9801c7eb158956b271aa7b6ec5f2a19f64e9c7b33deb5b65c65b8f1d",
+            "two-net-qualification-gains": "b9023a3f0f156ee083f30352800f138611e3365d0978a9fed4f6e2235707ee5d"
+          }
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 5
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 5
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "25c6525388d9b07e87eb8099ae0abcd7312fa9ef75217bb3265c55bcc3dc592f",
+            "two-gains-after-four-incumbent-passes": "25c6525388d9b07e87eb8099ae0abcd7312fa9ef75217bb3265c55bcc3dc592f",
+            "two-gains-after-paid-regression": "25c6525388d9b07e87eb8099ae0abcd7312fa9ef75217bb3265c55bcc3dc592f",
+            "two-net-qualification-gains": "1c9decb256dc493cb60401a15e184183e48156dfd35746093dd6037b74c9a9b4"
+          }
+        }
+      },
+      "routes": {
+        "two-gains-after-four-incumbent-passes": {
+          "changedDeployments": 2,
+          "nominationsUsingTwo": 11,
+          "promotions": 113
+        },
+        "two-gains-after-paid-regression": {
+          "changedDeployments": 3,
+          "nominationsUsingTwo": 8,
+          "promotions": 112
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 5166,
+          "paidLookups": 7105
+        },
+        "two-gains-after-four-incumbent-passes": {
+          "holdoutPasses": 5158,
+          "paidLookups": 7098
+        },
+        "two-gains-after-paid-regression": {
+          "holdoutPasses": 5167,
+          "paidLookups": 7097
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 4826,
+          "paidLookups": 7051
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "caseVectorsSha256": "260939f618e57fa0877e2db64380f57b713a532e036ee81571ed6db13c2dc539",
+      "comparisons": {
+        "two-gains-after-four-incumbent-passes": {
+          "affordableNativePoint": {
+            "holdoutPasses": 56068,
+            "paidLookups": 9320,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "fixedMarginComparisons": {
+            "complete-panel/13": {
+              "lookupDifference": -104,
+              "pairedRange95": [
+                -9,
+                26
+              ],
+              "passDifference": 9
+            },
+            "two-net-qualification-gains": {
+              "lookupDifference": 97,
+              "pairedRange95": [
+                -27,
+                14
+              ],
+              "passDifference": -6
+            }
+          }
+        },
+        "two-gains-after-paid-regression": {
+          "affordableNativePoint": {
+            "holdoutPasses": 56068,
+            "paidLookups": 9320,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "fixedMarginComparisons": {
+            "complete-panel/13": {
+              "lookupDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ],
+              "passDifference": 0
+            },
+            "two-net-qualification-gains": {
+              "lookupDifference": 201,
+              "pairedRange95": [
+                -45,
+                15
+              ],
+              "passDifference": -15
+            }
+          }
+        }
+      },
+      "panels": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "546820b377f3cce078460d0f83d2efdca34d5955b44978c0a068b6886c53cc43",
+            "two-gains-after-four-incumbent-passes": "20c454e2be92da36fcdcfd2747acb4169da7b015d2ca23f4457cf178c3339430",
+            "two-gains-after-paid-regression": "546820b377f3cce078460d0f83d2efdca34d5955b44978c0a068b6886c53cc43",
+            "two-net-qualification-gains": "e9191a9d41132dba0935079e5d48ce06ac7f8b3329f25faf78ba221c0b6c0819"
+          }
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "07b58365dd0e581b4a70c4de7bdf0bcc1653c8782b3a1b30542634d0d11025e7",
+            "two-gains-after-four-incumbent-passes": "5e0e24bc78b585f3373b8bedf9c9c7b624e079f172fd3bf39a8b21456158a742",
+            "two-gains-after-paid-regression": "07b58365dd0e581b4a70c4de7bdf0bcc1653c8782b3a1b30542634d0d11025e7",
+            "two-net-qualification-gains": "94184adac1937a1475ccd630ee2d1d56ad6c6b77efca15a4be46173c21b05669"
+          }
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "b95055460ae05fe7769e910d8abe36f2907f50b0d0f18c66767e9a80287dfce6",
+            "two-gains-after-four-incumbent-passes": "b95055460ae05fe7769e910d8abe36f2907f50b0d0f18c66767e9a80287dfce6",
+            "two-gains-after-paid-regression": "b95055460ae05fe7769e910d8abe36f2907f50b0d0f18c66767e9a80287dfce6",
+            "two-net-qualification-gains": "b95055460ae05fe7769e910d8abe36f2907f50b0d0f18c66767e9a80287dfce6"
+          }
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 5,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "141ebe20776a98c07cdb4eb379f35df8e3e9c48535a51a7bdd4e463d948e0fa8",
+            "two-gains-after-four-incumbent-passes": "e74817978ec3b3742c1d95a59fc9af5a19defc7bc1d34d3bea48253fd061259c",
+            "two-gains-after-paid-regression": "141ebe20776a98c07cdb4eb379f35df8e3e9c48535a51a7bdd4e463d948e0fa8",
+            "two-net-qualification-gains": "e74817978ec3b3742c1d95a59fc9af5a19defc7bc1d34d3bea48253fd061259c"
+          }
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "2c7896c5f81fedbeb8ff65a2b286c7e701c5f0024defea2e84f5d0e9bf047ac8",
+            "two-gains-after-four-incumbent-passes": "04f44459a841fa498ec0dcda2d0068cd08b0ad5b4604f6774b6d7cf96dab7dd7",
+            "two-gains-after-paid-regression": "2c7896c5f81fedbeb8ff65a2b286c7e701c5f0024defea2e84f5d0e9bf047ac8",
+            "two-net-qualification-gains": "d9d5b973e8f769c36e492203f665753ea1591f529d769111f6e8f22c63ca7c97"
+          }
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 2
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 3
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "c342eb8020a9c41e97c2ae1f5733273625c70c6f943a7a6df77dfff5e41179ba",
+            "two-gains-after-four-incumbent-passes": "2d6a69016215bbf12adae88ba24e4aa6d0b990cbecd2de072aad030492206e34",
+            "two-gains-after-paid-regression": "c342eb8020a9c41e97c2ae1f5733273625c70c6f943a7a6df77dfff5e41179ba",
+            "two-net-qualification-gains": "2bb2014a0faa58b7e89aa87a3426fd29f944a69c596b5f3682a81c956c939518"
+          }
+        },
+        "high_school_biology/google_flan_ul2": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "1b3e30752992162c3eac0a994c7912a5ac4ab6e16c6c0cdc5fcfa3e58c00a889",
+            "two-gains-after-four-incumbent-passes": "1b3e30752992162c3eac0a994c7912a5ac4ab6e16c6c0cdc5fcfa3e58c00a889",
+            "two-gains-after-paid-regression": "1b3e30752992162c3eac0a994c7912a5ac4ab6e16c6c0cdc5fcfa3e58c00a889",
+            "two-net-qualification-gains": "f250cd126fa0efd12d36c1d84da85be846b2926e05136a11098784a07d38c7b1"
+          }
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 3,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "4824d144028ca658496b8c02bdec6ca7917601c8ab289d050f243026d2abbb9e",
+            "two-gains-after-four-incumbent-passes": "5f2b90aadcede3ee4ca324df434dace2f8b82aac56d14bd6e570cba61b767adc",
+            "two-gains-after-paid-regression": "4824d144028ca658496b8c02bdec6ca7917601c8ab289d050f243026d2abbb9e",
+            "two-net-qualification-gains": "58513761706cb34c1cbbfbf105adbe876cd737fa808864d9e0fcb7beb4f11b83"
+          }
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "f4be5ab55c8484e65d4c6b50798fe294c2747e06e102e6104bb7456df0ba6684",
+            "two-gains-after-four-incumbent-passes": "24623be5df1c1a4c72f753e0a0f4773354135bee11bdab94e15a007719a8c892",
+            "two-gains-after-paid-regression": "f4be5ab55c8484e65d4c6b50798fe294c2747e06e102e6104bb7456df0ba6684",
+            "two-net-qualification-gains": "83fe14a6803d226b3c36270452453b93b9691c05abc604102f532d142d865fc1"
+          }
+        },
+        "high_school_geography/google_gemma_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 3,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "5320e644a3c1cdd2cb357110fc45056865926db6f68cba5946f8a3d79fd5b618",
+            "two-gains-after-four-incumbent-passes": "2f7613a0b31354b4d43ef459bc29a77b37e0261833e5bdea26e7da1ad296d355",
+            "two-gains-after-paid-regression": "5320e644a3c1cdd2cb357110fc45056865926db6f68cba5946f8a3d79fd5b618",
+            "two-net-qualification-gains": "e83fe8dcef23842c49933b639e55c298fa9b9fcb6e8b5cba3c02b09a7e5c975c"
+          }
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "af5a6cb0a6a8cf9fc63222cbc113d18223be0556a58a850a4c1c8ce6597eb79e",
+            "two-gains-after-four-incumbent-passes": "6745e1ebeb2e9cb0e1b5e58a02ad8bc5d59321a2273019ffb125e65f70b9b992",
+            "two-gains-after-paid-regression": "af5a6cb0a6a8cf9fc63222cbc113d18223be0556a58a850a4c1c8ce6597eb79e",
+            "two-net-qualification-gains": "6745e1ebeb2e9cb0e1b5e58a02ad8bc5d59321a2273019ffb125e65f70b9b992"
+          }
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 2,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "7732a8699900ef7a65b08cba29141640b634c6aa823cb924625e491406ea5979",
+            "two-gains-after-four-incumbent-passes": "f8a1065fc46acb0df7bda17964945cd76a065a8b2a89dd6fb978fc08efec4a46",
+            "two-gains-after-paid-regression": "7732a8699900ef7a65b08cba29141640b634c6aa823cb924625e491406ea5979",
+            "two-net-qualification-gains": "f8a1065fc46acb0df7bda17964945cd76a065a8b2a89dd6fb978fc08efec4a46"
+          }
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "61e54bf92d34a479f1c75ee60e9222dcf1483e4c341a33cc0a74d3f280515a56",
+            "two-gains-after-four-incumbent-passes": "ba95aa565e94158460b8902067607e412637a35e6c64199231487df533e6c206",
+            "two-gains-after-paid-regression": "61e54bf92d34a479f1c75ee60e9222dcf1483e4c341a33cc0a74d3f280515a56",
+            "two-net-qualification-gains": "938e44adb2f88a46cabb925b8d49de7503c558d9fe5e04c710ba3bbbd36fce0c"
+          }
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "596a67a9be450ab9b7ab414b6a7009defed07d5871e137ee6d885525a866ccaa",
+            "two-gains-after-four-incumbent-passes": "b7f3ea5e4e92962052acdd7605bdc8e97d2d47da6e2e908eefe2205ab4e7af81",
+            "two-gains-after-paid-regression": "596a67a9be450ab9b7ab414b6a7009defed07d5871e137ee6d885525a866ccaa",
+            "two-net-qualification-gains": "b7f3ea5e4e92962052acdd7605bdc8e97d2d47da6e2e908eefe2205ab4e7af81"
+          }
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "1804b760d348729cb7b96698fab57faef032dfe26a4000f5a598f780cc9038b5",
+            "two-gains-after-four-incumbent-passes": "1804b760d348729cb7b96698fab57faef032dfe26a4000f5a598f780cc9038b5",
+            "two-gains-after-paid-regression": "1804b760d348729cb7b96698fab57faef032dfe26a4000f5a598f780cc9038b5",
+            "two-net-qualification-gains": "7e5f60bea9ead04ff80ad5f272e104ae2e8f00af61cb12b0fd5d14772a0f284b"
+          }
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "5491453a52eb5d0b605680136dc3710169908a51e3d3ff2dc3ebeb40fac3305b",
+            "two-gains-after-four-incumbent-passes": "0d183f88a3bb8f7f381de6afd2c7d2b64b824fca576cec7aff587d5829741c70",
+            "two-gains-after-paid-regression": "5491453a52eb5d0b605680136dc3710169908a51e3d3ff2dc3ebeb40fac3305b",
+            "two-net-qualification-gains": "6927945b3e17de0eef7c2338d537dfe9d1fbb0103825731bfdfbe03d9272cb8a"
+          }
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "772ebbd840657d0e971f36179eeaf18bb272f0a2f2d74bea9f5e653700241375",
+            "two-gains-after-four-incumbent-passes": "772ebbd840657d0e971f36179eeaf18bb272f0a2f2d74bea9f5e653700241375",
+            "two-gains-after-paid-regression": "772ebbd840657d0e971f36179eeaf18bb272f0a2f2d74bea9f5e653700241375",
+            "two-net-qualification-gains": "9885d52e157c77b9f8648ed46609be87105636c1e17d6af19110954a56bc6456"
+          }
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 3,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "6d50e4567d41469b1f46326ded17b236af8713b4be68f33c28b736a2e8fe5526",
+            "two-gains-after-four-incumbent-passes": "ffd9f8eb9ca21e3be26b454568d811e1db3b59f6f08e4992ab2374c5f5244450",
+            "two-gains-after-paid-regression": "6d50e4567d41469b1f46326ded17b236af8713b4be68f33c28b736a2e8fe5526",
+            "two-net-qualification-gains": "4b3b89922c25802a32739fa726865decf5372ac2673b69daf4d5baf72f661cfc"
+          }
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "a8946434213b76978daf89a10b21aac80427eb4cb370dac3478f431b78f979d4",
+            "two-gains-after-four-incumbent-passes": "50827909402302143c09cf7ec2865438485e471f2da177989ece5ef439dd8afe",
+            "two-gains-after-paid-regression": "a8946434213b76978daf89a10b21aac80427eb4cb370dac3478f431b78f979d4",
+            "two-net-qualification-gains": "50827909402302143c09cf7ec2865438485e471f2da177989ece5ef439dd8afe"
+          }
+        },
+        "moral_disputes/google_gemma_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 3,
+              "promotions": 2
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "e030b93144a6fc59ab5fb446abdfb0b01631c9c62e00b327c0228ea8c1b2501a",
+            "two-gains-after-four-incumbent-passes": "f4f8ead49d01c1b06f3aeeefed012e032cfd00b5eab1c693a957349dc8cc8e0c",
+            "two-gains-after-paid-regression": "e030b93144a6fc59ab5fb446abdfb0b01631c9c62e00b327c0228ea8c1b2501a",
+            "two-net-qualification-gains": "b00ccde81d7a26cc7993461dff9d7a79bc4ae966fe66c58815cdf481bd7b9bfb"
+          }
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "964763044c8939fbd00287326e28e59a7f3dd727077d30a1bdc5bc806b2e7733",
+            "two-gains-after-four-incumbent-passes": "964763044c8939fbd00287326e28e59a7f3dd727077d30a1bdc5bc806b2e7733",
+            "two-gains-after-paid-regression": "964763044c8939fbd00287326e28e59a7f3dd727077d30a1bdc5bc806b2e7733",
+            "two-net-qualification-gains": "964763044c8939fbd00287326e28e59a7f3dd727077d30a1bdc5bc806b2e7733"
+          }
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "4d6513bdba308f09da324f756a3f10a008af66189e902daa2ea320d6254f28d8",
+            "two-gains-after-four-incumbent-passes": "4d6513bdba308f09da324f756a3f10a008af66189e902daa2ea320d6254f28d8",
+            "two-gains-after-paid-regression": "4d6513bdba308f09da324f756a3f10a008af66189e902daa2ea320d6254f28d8",
+            "two-net-qualification-gains": "ad883bdc972963499b99b9485255045b5f8f2d57a9cd59d360d93665e6b65ace"
+          }
+        },
+        "professional_medicine/google_flan_ul2": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "8a4f9f17737b5d80aa44ee2937ff66ed265813646445e733c2d5ee647b54a275",
+            "two-gains-after-four-incumbent-passes": "8be13cf97776996b9f5315a265e77a2d15780b8646a5d724d3fe9e555697144e",
+            "two-gains-after-paid-regression": "8a4f9f17737b5d80aa44ee2937ff66ed265813646445e733c2d5ee647b54a275",
+            "two-net-qualification-gains": "e2a41a155d99b4bce7baaecf40e574bb6451abeffce9964c9adc9ef805b2f192"
+          }
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 3,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "57bb5f21bb9846b84ca3a7afa095994ec594b46b3b427f7edc819855d46dc04c",
+            "two-gains-after-four-incumbent-passes": "07e6d334af40d6935011d171dd9c207a08d15ec1fd741b94d0cc56fd0fe803d1",
+            "two-gains-after-paid-regression": "57bb5f21bb9846b84ca3a7afa095994ec594b46b3b427f7edc819855d46dc04c",
+            "two-net-qualification-gains": "07e6d334af40d6935011d171dd9c207a08d15ec1fd741b94d0cc56fd0fe803d1"
+          }
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 4,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "15706aa3b7484425d5525f329ac8090ee65a45a946635e3ac02acc3f9adc1edc",
+            "two-gains-after-four-incumbent-passes": "07b2a28a9938d4d297c645b71e49ed5ec114d7e830fe0cbf4beec86f10730def",
+            "two-gains-after-paid-regression": "15706aa3b7484425d5525f329ac8090ee65a45a946635e3ac02acc3f9adc1edc",
+            "two-net-qualification-gains": "7612a2cee8aa7b2991203789c716dd45c4cc52461560493eb67755e206d6a8ec"
+          }
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 3,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "8f4083894156d1d0a1643cb17c15a044bb4eb3ab6e0c2a51e6de45b5eb1b69cb",
+            "two-gains-after-four-incumbent-passes": "13c1ce30bda4aed9b63d184ee0ba4eefeb6492460a6e209db7f095b804116dd9",
+            "two-gains-after-paid-regression": "8f4083894156d1d0a1643cb17c15a044bb4eb3ab6e0c2a51e6de45b5eb1b69cb",
+            "two-net-qualification-gains": "b6e99cec05d7e8304602705768906e0d261a77f0d14903a77e8b20bc6b70af7d"
+          }
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "3aba4cbab0f9743edbe9365e1819766552f04ea6b3649cd042eeb1dbebd38b32",
+            "two-gains-after-four-incumbent-passes": "3aba4cbab0f9743edbe9365e1819766552f04ea6b3649cd042eeb1dbebd38b32",
+            "two-gains-after-paid-regression": "3aba4cbab0f9743edbe9365e1819766552f04ea6b3649cd042eeb1dbebd38b32",
+            "two-net-qualification-gains": "3aba4cbab0f9743edbe9365e1819766552f04ea6b3649cd042eeb1dbebd38b32"
+          }
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "03548cc35551d38726f420fb3693997438aebf395654a083ad25fe633e50598d",
+            "two-gains-after-four-incumbent-passes": "cd145e96390d4963f4dd8a040dfe0036bc62be19d2d7f5825747d443b58dacb5",
+            "two-gains-after-paid-regression": "03548cc35551d38726f420fb3693997438aebf395654a083ad25fe633e50598d",
+            "two-net-qualification-gains": "cd145e96390d4963f4dd8a040dfe0036bc62be19d2d7f5825747d443b58dacb5"
+          }
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "a18e873bf6b755cf232e0975c3821f1a8e25f168d0c79dcbe3d810e64516fa3d",
+            "two-gains-after-four-incumbent-passes": "0164593477f462adc6a74631bee6b80979c05a3ed8dcf7445c4476c8655e82c5",
+            "two-gains-after-paid-regression": "a18e873bf6b755cf232e0975c3821f1a8e25f168d0c79dcbe3d810e64516fa3d",
+            "two-net-qualification-gains": "0164593477f462adc6a74631bee6b80979c05a3ed8dcf7445c4476c8655e82c5"
+          }
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "319cbccf6b8f26c12622e57be784006cfdfa42b55adf8f77f7c0ab29b699055c",
+            "two-gains-after-four-incumbent-passes": "2de25af9508e286019162e5600a7694aff74d6a69f7d2b1bed513d7ada388d3d",
+            "two-gains-after-paid-regression": "319cbccf6b8f26c12622e57be784006cfdfa42b55adf8f77f7c0ab29b699055c",
+            "two-net-qualification-gains": "2de25af9508e286019162e5600a7694aff74d6a69f7d2b1bed513d7ada388d3d"
+          }
+        }
+      },
+      "routes": {
+        "two-gains-after-four-incumbent-passes": {
+          "changedDeployments": 8,
+          "nominationsUsingTwo": 49,
+          "promotions": 11
+        },
+        "two-gains-after-paid-regression": {
+          "changedDeployments": 0,
+          "nominationsUsingTwo": 0,
+          "promotions": 19
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 56079,
+          "paidLookups": 9596
+        },
+        "two-gains-after-four-incumbent-passes": {
+          "holdoutPasses": 56088,
+          "paidLookups": 9492
+        },
+        "two-gains-after-paid-regression": {
+          "holdoutPasses": 56079,
+          "paidLookups": 9596
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 56094,
+          "paidLookups": 9395
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "caseVectorsSha256": "f8c7c99d57fd76cbd7523587a062f2b8e4a5938c3169cb73c39e7e2fb0d5287f",
+      "comparisons": {
+        "two-gains-after-four-incumbent-passes": {
+          "affordableNativePoint": {
+            "holdoutPasses": 26625,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "fixedMarginComparisons": {
+            "complete-panel/13": {
+              "lookupDifference": -99,
+              "pairedRange95": [
+                -12,
+                19
+              ],
+              "passDifference": 4
+            },
+            "two-net-qualification-gains": {
+              "lookupDifference": 153,
+              "pairedRange95": [
+                -27,
+                5
+              ],
+              "passDifference": -11
+            }
+          }
+        },
+        "two-gains-after-paid-regression": {
+          "affordableNativePoint": {
+            "holdoutPasses": 26625,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "fixedMarginComparisons": {
+            "complete-panel/13": {
+              "lookupDifference": -2,
+              "pairedRange95": [
+                0,
+                6
+              ],
+              "passDifference": 3
+            },
+            "two-net-qualification-gains": {
+              "lookupDifference": 250,
+              "pairedRange95": [
+                -35,
+                10
+              ],
+              "passDifference": -12
+            }
+          }
+        }
+      },
+      "panels": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "5e36f0a087a30e1cd7841fa3779ca1991058c33bd5632a48caa8cc97c6840d2b",
+            "two-gains-after-four-incumbent-passes": "5e36f0a087a30e1cd7841fa3779ca1991058c33bd5632a48caa8cc97c6840d2b",
+            "two-gains-after-paid-regression": "5e36f0a087a30e1cd7841fa3779ca1991058c33bd5632a48caa8cc97c6840d2b",
+            "two-net-qualification-gains": "97ec2f3ddc0761b44a0614cd5f243437e696fa1ba9542864e5f959f1e002b885"
+          }
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "db74e003da9d3872aada0d6e88cc3d3cf0aa6e6b45e7d5822d3c631aa2506ba4",
+            "two-gains-after-four-incumbent-passes": "db74e003da9d3872aada0d6e88cc3d3cf0aa6e6b45e7d5822d3c631aa2506ba4",
+            "two-gains-after-paid-regression": "db74e003da9d3872aada0d6e88cc3d3cf0aa6e6b45e7d5822d3c631aa2506ba4",
+            "two-net-qualification-gains": "ec017c1a8caf787e7db90433a74d94b4f8073f648bf9185790f8d4c26d2547f6"
+          }
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 2,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "9254f9470cf1f40c9c99e3c7ebb6b69aa9582c3979c1ce5b784e86651d3222c8",
+            "two-gains-after-four-incumbent-passes": "273eee88cffa5259b2d69438a2141416b736033767729bd56625ed4e8b92c218",
+            "two-gains-after-paid-regression": "9254f9470cf1f40c9c99e3c7ebb6b69aa9582c3979c1ce5b784e86651d3222c8",
+            "two-net-qualification-gains": "004f89743303043a15963d2fd19c63753c3703cdf0d247ca9d4b12ec5865251e"
+          }
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 2,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "bf81959ce88ea54374be19edbbd993d97fb83f2e43885d6aa90a6b6773b485e1",
+            "two-gains-after-four-incumbent-passes": "aec5b6979e2c0f1726b9ae81592ee083bbd9a47638da63ddbfb27a8d7c900ef6",
+            "two-gains-after-paid-regression": "e604050b46e686f96329d11e5937358a64762e2215a38be314be50577f96ad55",
+            "two-net-qualification-gains": "907d9c5440bd8179f80622bb5fde92247e455b288ea1be7ef5c79e134b3884fc"
+          }
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "23a9a46b4ae871feceb8fe37389756e60d3473ae6667cb6a2e1b93fdbdd724cb",
+            "two-gains-after-four-incumbent-passes": "23a9a46b4ae871feceb8fe37389756e60d3473ae6667cb6a2e1b93fdbdd724cb",
+            "two-gains-after-paid-regression": "23a9a46b4ae871feceb8fe37389756e60d3473ae6667cb6a2e1b93fdbdd724cb",
+            "two-net-qualification-gains": "4e42853b719c2308139d22d72756f057581f630eacad835227e38111f9fdba01"
+          }
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 5
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 5
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "f1d65d01292c6eee8444b059e6813be85715ab6a2fd6965f0dafcc9ae1b6845f",
+            "two-gains-after-four-incumbent-passes": "f1d65d01292c6eee8444b059e6813be85715ab6a2fd6965f0dafcc9ae1b6845f",
+            "two-gains-after-paid-regression": "f1d65d01292c6eee8444b059e6813be85715ab6a2fd6965f0dafcc9ae1b6845f",
+            "two-net-qualification-gains": "454a8a81e681d7aa745f0085fa7021f8a93773a78b14c8b0fe960b8a870ee5c1"
+          }
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "c9eb833e533037316523c21a997b8dea6e4d57b30b5991b98b5d9105daa7b4e8",
+            "two-gains-after-four-incumbent-passes": "ee4a672f5ecbca3bf6459c73ce2948292d777249b07c11f973cc7ccf1acb7ff1",
+            "two-gains-after-paid-regression": "c9eb833e533037316523c21a997b8dea6e4d57b30b5991b98b5d9105daa7b4e8",
+            "two-net-qualification-gains": "a180b8d9e0a1ffb73fd0dd6b3597f74e3e6da6a4784389e46d6d754537a1068b"
+          }
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "3ac79735f2805e33309ba85f18df4b6dd27bef265eecd6195df869de61dd6437",
+            "two-gains-after-four-incumbent-passes": "3ac79735f2805e33309ba85f18df4b6dd27bef265eecd6195df869de61dd6437",
+            "two-gains-after-paid-regression": "3ac79735f2805e33309ba85f18df4b6dd27bef265eecd6195df869de61dd6437",
+            "two-net-qualification-gains": "7f462ec3f3f31e0de1c9d143c96f81c21543ecdc752f8b0f3eded086c2b61a37"
+          }
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "2d4de7625cadf77131b5ed971d85170c08895f1b38a5d2d7cbb7f00589612771",
+            "two-gains-after-four-incumbent-passes": "548a5fad6f76e13134ffae036912b209f9d9d83c2346f9ce966e2750ee0e282c",
+            "two-gains-after-paid-regression": "2d4de7625cadf77131b5ed971d85170c08895f1b38a5d2d7cbb7f00589612771",
+            "two-net-qualification-gains": "548a5fad6f76e13134ffae036912b209f9d9d83c2346f9ce966e2750ee0e282c"
+          }
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 3,
+              "nominationsUsingTwo": 6,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "6e1ca8776c0a864c48e725ccfaaed54a505ca42d39e51308fb03e9e4489da47e",
+            "two-gains-after-four-incumbent-passes": "b9f4de35e95f2920e69654e198c0ba0a0846ecf02c1a4eb784a5b2d6d04ac9b7",
+            "two-gains-after-paid-regression": "6e1ca8776c0a864c48e725ccfaaed54a505ca42d39e51308fb03e9e4489da47e",
+            "two-net-qualification-gains": "73cad8a2cdeacf89ea27eab39895ea1fe1e1b37170279451107403479415872b"
+          }
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "fbae62222cbb77d6e7eeccd589b8b7b717b0690fcd212b8d131e9a484ddca000",
+            "two-gains-after-four-incumbent-passes": "fbae62222cbb77d6e7eeccd589b8b7b717b0690fcd212b8d131e9a484ddca000",
+            "two-gains-after-paid-regression": "fbae62222cbb77d6e7eeccd589b8b7b717b0690fcd212b8d131e9a484ddca000",
+            "two-net-qualification-gains": "44c4042e73bc66ab2c14f70993e622fea04f59c850112fee893fcc78c004bede"
+          }
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "27d5d4d891e32b3987720790ef9a5b12702e1478a13aa44cc177a6d7db6f5365",
+            "two-gains-after-four-incumbent-passes": "5234ad745d37509133b9dd0a4f07b08c753d0efc599b3dc27f3318ca79613387",
+            "two-gains-after-paid-regression": "27d5d4d891e32b3987720790ef9a5b12702e1478a13aa44cc177a6d7db6f5365",
+            "two-net-qualification-gains": "e1799cea063eb286ecc108b68b21b44ff4d9f3885f6ca5d6b5dda5cbdb753c28"
+          }
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 4,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "7986cceac2963a1ab81b896920c4b63b5fa2776747a9b3d6b80da10733ed4000",
+            "two-gains-after-four-incumbent-passes": "619e45e162d58b14c0bb7e9904062dfa05cd7ee494f6d7f8f6ee7d9c8835fe3c",
+            "two-gains-after-paid-regression": "7986cceac2963a1ab81b896920c4b63b5fa2776747a9b3d6b80da10733ed4000",
+            "two-net-qualification-gains": "3ad8b02a44b9e47ba7b61f79a93cf4f77ac47fd12dae4033fe0df62fba1a2fdd"
+          }
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 3,
+              "promotions": 3
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 3
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "717a390cbe0126d5d5aded578ac0acd5a6c36151ef763ef1d030071e342ab65c",
+            "two-gains-after-four-incumbent-passes": "74e57c8a1fafb916dfd953770593b72f0b156676fcdd030de39626aa3d511c24",
+            "two-gains-after-paid-regression": "e49230bef89214ce48d1d9938fdc7b663968fa68f16b97ebeb336760dc2f82e6",
+            "two-net-qualification-gains": "847be1f7f417f88873a4635c31e548fe51af83fba5012bf67315f9b088aa5833"
+          }
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "4b40600634acbb631b7b7cbdff65b535cb10b5685e16db1732a7a808d56d20d6",
+            "two-gains-after-four-incumbent-passes": "4b40600634acbb631b7b7cbdff65b535cb10b5685e16db1732a7a808d56d20d6",
+            "two-gains-after-paid-regression": "4b40600634acbb631b7b7cbdff65b535cb10b5685e16db1732a7a808d56d20d6",
+            "two-net-qualification-gains": "4b40600634acbb631b7b7cbdff65b535cb10b5685e16db1732a7a808d56d20d6"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 3,
+              "nominationsUsingTwo": 4,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 4
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "f97a06901f1db15bd8c208f23b49d6bcdd75373b02088289fd640b6973d6d9d2",
+            "two-gains-after-four-incumbent-passes": "2a1063f273de1c2e2d9708cb0756dea1a0f44dd8da9bb9d6c3cb900258174cf5",
+            "two-gains-after-paid-regression": "f97a06901f1db15bd8c208f23b49d6bcdd75373b02088289fd640b6973d6d9d2",
+            "two-net-qualification-gains": "9d31914a9fd0de03f666c0cb5f3d95b01671bae731c97b1445b8a67ec99e0219"
+          }
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 2,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "42f708ba2f13b0199fee64d3a9d02c14d91ff3907d84452f08a317c1e4ed44ce",
+            "two-gains-after-four-incumbent-passes": "7400917c1c6564f427a5df79d6ad8295f3827d1416b267ef7f15f22364018368",
+            "two-gains-after-paid-regression": "42f708ba2f13b0199fee64d3a9d02c14d91ff3907d84452f08a317c1e4ed44ce",
+            "two-net-qualification-gains": "7400917c1c6564f427a5df79d6ad8295f3827d1416b267ef7f15f22364018368"
+          }
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 3,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "a52d60c881918288839237a4a0a50233f1ca878fd9537acfba097a899029d885",
+            "two-gains-after-four-incumbent-passes": "e04c5a4f00e451381eafb41d5c06bdceae5a7ce3009cf308d71d5f6a242640ab",
+            "two-gains-after-paid-regression": "a52d60c881918288839237a4a0a50233f1ca878fd9537acfba097a899029d885",
+            "two-net-qualification-gains": "d9a3fe93b27f0bf5c73f73de4ac2e3349ca13b877ef8b18a6024cf6a9bf83cb8"
+          }
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 1,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "8c5294a0ed41098441bea175cc283aad83f2aa3ac0971e77f2178c8e7e97c843",
+            "two-gains-after-four-incumbent-passes": "abfb48d364eced1504afc18171bded4a820bab5bdf01578b763035915a983e2b",
+            "two-gains-after-paid-regression": "8c5294a0ed41098441bea175cc283aad83f2aa3ac0971e77f2178c8e7e97c843",
+            "two-net-qualification-gains": "707eade5ae7c6c6b54fcfdd952cd7238ddeca94b9b7169e61d735042e1483400"
+          }
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "c9a7cd6be530813ee74bfb86aaaabf4974ea2d98c3e29f0b9cc040be67010f5a",
+            "two-gains-after-four-incumbent-passes": "c9a7cd6be530813ee74bfb86aaaabf4974ea2d98c3e29f0b9cc040be67010f5a",
+            "two-gains-after-paid-regression": "c9a7cd6be530813ee74bfb86aaaabf4974ea2d98c3e29f0b9cc040be67010f5a",
+            "two-net-qualification-gains": "42be22f6b8e6db1fdfa35b9bf53327ed3cbec9a71dd30537f43d4591fee7823f"
+          }
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 3,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "5dcd6363a751d155609c4c6af1f1dabaa486b74f522fe7893bc0c7576d813c06",
+            "two-gains-after-four-incumbent-passes": "d07dddfb4aa6c70371f78bfcc5eea095e82b07628f4618a1d7f45e9a678e326f",
+            "two-gains-after-paid-regression": "5dcd6363a751d155609c4c6af1f1dabaa486b74f522fe7893bc0c7576d813c06",
+            "two-net-qualification-gains": "ebaef249f3f26e0f47763623a9cdf42154e2a75e14cdbff78cf8bba20cb1bca9"
+          }
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 4,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "2b1c3d6d4ebefd6cd73087d3cbf99a61bafed01b46d1835ef4ae8a72ae4a65a7",
+            "two-gains-after-four-incumbent-passes": "dbb0d585a3667d682044329fa8f18d166a3fb9fd41548a8cea2529b604814bb1",
+            "two-gains-after-paid-regression": "2b1c3d6d4ebefd6cd73087d3cbf99a61bafed01b46d1835ef4ae8a72ae4a65a7",
+            "two-net-qualification-gains": "6cd50b2f4453181f7ebb43d55e53245f80b3c3409293c3165b2a4d1d161ef620"
+          }
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 4,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "3e6670ed2df71668c2e3cfa012321154ca547ad79459652821e557d95b84bec1",
+            "two-gains-after-four-incumbent-passes": "85a48face49bd2bdfe19a81a936cc03875ff756fedc8ccf04078386253f62913",
+            "two-gains-after-paid-regression": "3e6670ed2df71668c2e3cfa012321154ca547ad79459652821e557d95b84bec1",
+            "two-net-qualification-gains": "5a015e082c7479615cd2271a7d9ffde701fa1bdefa83a29c7858a637dc42e261"
+          }
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 3,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "b4e10fa414a76a557e6987f02d723898543116895d25d3a8613fd409e3e1adc0",
+            "two-gains-after-four-incumbent-passes": "66d93c2b99264b759573ccf59841bfa3a1c61de1c3c20fdfc33f855617d83e2c",
+            "two-gains-after-paid-regression": "b4e10fa414a76a557e6987f02d723898543116895d25d3a8613fd409e3e1adc0",
+            "two-net-qualification-gains": "6352aa386cb80002eb5cdfc2765bf72893624221df5775bbad2a4707718633b4"
+          }
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 1,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 1
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "1dac336109f5cf15c4cdfa31800cbaa0a10ed553b5405ede903c34a7c53d300b",
+            "two-gains-after-four-incumbent-passes": "c4e28e7d301a0b56935505f1ff571ea2553be30990e04ded1ff00b2020cc9c15",
+            "two-gains-after-paid-regression": "1dac336109f5cf15c4cdfa31800cbaa0a10ed553b5405ede903c34a7c53d300b",
+            "two-net-qualification-gains": "11ef237cccb9e1276759a727f3379e56e8cd7f1bfb2823447bd04ff7361eb32f"
+          }
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 2,
+              "nominationsUsingTwo": 4,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "4c5b9c6a9c0ccff0e530f7ef37775fa278ad57e84a9376d4826d11977141d10c",
+            "two-gains-after-four-incumbent-passes": "deec3897f1b6e963fb36b4e5c12983b0d898dcc496be226c6bcfb7d117a76792",
+            "two-gains-after-paid-regression": "4c5b9c6a9c0ccff0e530f7ef37775fa278ad57e84a9376d4826d11977141d10c",
+            "two-net-qualification-gains": "deec3897f1b6e963fb36b4e5c12983b0d898dcc496be226c6bcfb7d117a76792"
+          }
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 3,
+              "promotions": 0
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 0
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "d39273afcceb12725d68bf0490f7782f7ef5cd36b9f0f2d2453f0e86383494c0",
+            "two-gains-after-four-incumbent-passes": "5926e01c12f45d50cb35ee6b668dccec62068a1b392a03c5b0d1f96e11289935",
+            "two-gains-after-paid-regression": "d39273afcceb12725d68bf0490f7782f7ef5cd36b9f0f2d2453f0e86383494c0",
+            "two-net-qualification-gains": "ccba0eb3e309689504e8b151409e2b6641314c23da0d9dcd4ffa2c4109ae5bb3"
+          }
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "routeCounts": {
+            "two-gains-after-four-incumbent-passes": {
+              "changedDeployments": 1,
+              "nominationsUsingTwo": 5,
+              "promotions": 1
+            },
+            "two-gains-after-paid-regression": {
+              "changedDeployments": 0,
+              "nominationsUsingTwo": 0,
+              "promotions": 2
+            }
+          },
+          "traceSha256": {
+            "complete-panel/13": "a53b3736d1c1e0aac04d021e426248a4b0a3e68da7399d46169b4089c97a37b9",
+            "two-gains-after-four-incumbent-passes": "0074de10803d10ed44d6c44eda38cebab60d9d0467eb92d8974c19aff83e1a09",
+            "two-gains-after-paid-regression": "a53b3736d1c1e0aac04d021e426248a4b0a3e68da7399d46169b4089c97a37b9",
+            "two-net-qualification-gains": "d3cfc0d04937406b4d60718e5988896b763dde06be47e6d0a87ffe63b569e40b"
+          }
+        }
+      },
+      "routes": {
+        "two-gains-after-four-incumbent-passes": {
+          "changedDeployments": 14,
+          "nominationsUsingTwo": 58,
+          "promotions": 22
+        },
+        "two-gains-after-paid-regression": {
+          "changedDeployments": 1,
+          "nominationsUsingTwo": 2,
+          "promotions": 35
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 26613,
+          "paidLookups": 10253
+        },
+        "two-gains-after-four-incumbent-passes": {
+          "holdoutPasses": 26617,
+          "paidLookups": 10154
+        },
+        "two-gains-after-paid-regression": {
+          "holdoutPasses": 26616,
+          "paidLookups": 10251
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 26628,
+          "paidLookups": 10001
+        }
+      }
+    }
+  }
+}
