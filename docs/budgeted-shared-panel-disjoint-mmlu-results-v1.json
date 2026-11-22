@@ -1,0 +1,1588 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "cohort": "disjoint-transfer-cohort",
+    "cohorts": [
+      "BBH",
+      "LMentry",
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "0ad2e85adbdfc8dded925a7ab1fb0f1a7b24aed0188df86e5e08fe5f9f55244f",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "policies": {
+      "deep/gain": [
+        "deep",
+        1
+      ],
+      "deep/nonloss": [
+        "deep",
+        0
+      ],
+      "wide/gain": [
+        "wide",
+        1
+      ],
+      "wide/nonloss": [
+        "wide",
+        0
+      ]
+    },
+    "protocol": "budgeted-shared-panel-search-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Use the original independent precheck and qualification. Spend the same cap on shared validation rounds that narrow eight candidates over three cases or four candidates over five cases. Rank by the paid score on common cases, with seeded order breaking ties. Compare nomination at observed nonloss and observed gain. Keep strict validation on critical panels and compare the four policies to the full seeded native GEPA menu at realized cost. Replay the native schedule attaining the wide nonloss ceiling at one qualification gain and resample the paired case differences.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "budgeted_shared_panel_search.py": "75fa87af6359da13c2ebbb0a54ffc7c8eb0f79e2c68930b5dfb57e7e6dacfdea",
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "recorded_sequential_certificate_screen.py": "347abf82cce3284d18678293f91853933c1e3fe919e1e20d5284fab294406c2a",
+      "shared_validation_cycle.py": "737b4961eb30cd18759bd42a767f3a66591230464c0413ded86aa7104538e070",
+      "two_sided_certificate_cycle.py": "627d48aa21ebae7011e9c69bb28fb37f607079920af2304b13b6e8fa9180eb5a"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "f492164461083793ec8083f9a53b6cafa91662158319bc78a9d48a021ee61315",
+  "providerRequests": 0,
+  "results": {
+    "comparisons": {
+      "cap-19/gain-1": {
+        "deep/gain": {
+          "attainingSubjectPoints": {
+            "anatomy": {
+              "holdoutPasses": 1772,
+              "paidLookups": 1000
+            },
+            "clinical_knowledge": {
+              "holdoutPasses": 3317,
+              "paidLookups": 0
+            },
+            "elementary_mathematics": {
+              "holdoutPasses": 3218,
+              "paidLookups": 2275
+            },
+            "high_school_biology": {
+              "holdoutPasses": 4603,
+              "paidLookups": 0
+            },
+            "high_school_geography": {
+              "holdoutPasses": 2930,
+              "paidLookups": 0
+            },
+            "high_school_government_and_politics": {
+              "holdoutPasses": 3044,
+              "paidLookups": 0
+            },
+            "high_school_macroeconomics": {
+              "holdoutPasses": 5372,
+              "paidLookups": 904
+            },
+            "high_school_microeconomics": {
+              "holdoutPasses": 2900,
+              "paidLookups": 1583
+            },
+            "high_school_statistics": {
+              "holdoutPasses": 1812,
+              "paidLookups": 1426
+            },
+            "moral_disputes": {
+              "holdoutPasses": 4373,
+              "paidLookups": 1293
+            },
+            "moral_scenarios": {
+              "holdoutPasses": 5786,
+              "paidLookups": 2109
+            },
+            "professional_medicine": {
+              "holdoutPasses": 3196,
+              "paidLookups": 0
+            },
+            "professional_psychology": {
+              "holdoutPasses": 8567,
+              "paidLookups": 944
+            },
+            "sociology": {
+              "holdoutPasses": 3458,
+              "paidLookups": 0
+            },
+            "us_foreign_policy": {
+              "holdoutPasses": 1768,
+              "paidLookups": 0
+            }
+          },
+          "cpo": {
+            "changedDeployments": 18,
+            "changedNominees": 87,
+            "holdoutPasses": 56070,
+            "lookupDifference": 2657,
+            "nominated": 140,
+            "nominationCases": 700,
+            "paidLookups": 15358,
+            "passDifference": -24,
+            "promoted": 26
+          },
+          "gepa": {
+            "holdoutPasses": 56116,
+            "paidLookups": 11534,
+            "settingsBySubject": {
+              "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+              "clinical_knowledge": "retain-start",
+              "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+              "high_school_biology": "retain-start",
+              "high_school_geography": "retain-start",
+              "high_school_government_and_politics": "retain-start",
+              "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-gain-2-threshold-precheck",
+              "high_school_microeconomics": "gepa-batched-precheck/40/paired-gain-1",
+              "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+              "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+              "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+              "professional_medicine": "retain-start",
+              "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+              "sociology": "retain-start",
+              "us_foreign_policy": "retain-start"
+            }
+          },
+          "pairedAgainstBaseline": {
+            "holdoutPassDifference": -24,
+            "pairedRange95": [
+              -46,
+              -2
+            ]
+          }
+        },
+        "deep/nonloss": {
+          "attainingSubjectPoints": {
+            "anatomy": {
+              "holdoutPasses": 1772,
+              "paidLookups": 1000
+            },
+            "clinical_knowledge": {
+              "holdoutPasses": 3317,
+              "paidLookups": 0
+            },
+            "elementary_mathematics": {
+              "holdoutPasses": 3218,
+              "paidLookups": 2275
+            },
+            "high_school_biology": {
+              "holdoutPasses": 4603,
+              "paidLookups": 0
+            },
+            "high_school_geography": {
+              "holdoutPasses": 2930,
+              "paidLookups": 0
+            },
+            "high_school_government_and_politics": {
+              "holdoutPasses": 3044,
+              "paidLookups": 0
+            },
+            "high_school_macroeconomics": {
+              "holdoutPasses": 5372,
+              "paidLookups": 904
+            },
+            "high_school_microeconomics": {
+              "holdoutPasses": 2900,
+              "paidLookups": 1583
+            },
+            "high_school_statistics": {
+              "holdoutPasses": 1812,
+              "paidLookups": 1426
+            },
+            "moral_disputes": {
+              "holdoutPasses": 4373,
+              "paidLookups": 1293
+            },
+            "moral_scenarios": {
+              "holdoutPasses": 5786,
+              "paidLookups": 2109
+            },
+            "professional_medicine": {
+              "holdoutPasses": 3196,
+              "paidLookups": 0
+            },
+            "professional_psychology": {
+              "holdoutPasses": 8567,
+              "paidLookups": 944
+            },
+            "sociology": {
+              "holdoutPasses": 3458,
+              "paidLookups": 0
+            },
+            "us_foreign_policy": {
+              "holdoutPasses": 1768,
+              "paidLookups": 0
+            }
+          },
+          "cpo": {
+            "changedDeployments": 85,
+            "changedNominees": 536,
+            "holdoutPasses": 56047,
+            "lookupDifference": 4849,
+            "nominated": 645,
+            "nominationCases": 3225,
+            "paidLookups": 17550,
+            "passDifference": -47,
+            "promoted": 96
+          },
+          "gepa": {
+            "holdoutPasses": 56116,
+            "paidLookups": 11534,
+            "settingsBySubject": {
+              "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+              "clinical_knowledge": "retain-start",
+              "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+              "high_school_biology": "retain-start",
+              "high_school_geography": "retain-start",
+              "high_school_government_and_politics": "retain-start",
+              "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-gain-2-threshold-precheck",
+              "high_school_microeconomics": "gepa-batched-precheck/40/paired-gain-1",
+              "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+              "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+              "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+              "professional_medicine": "retain-start",
+              "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+              "sociology": "retain-start",
+              "us_foreign_policy": "retain-start"
+            }
+          },
+          "pairedAgainstBaseline": {
+            "holdoutPassDifference": -47,
+            "pairedRange95": [
+              -106,
+              11
+            ]
+          }
+        },
+        "wide/gain": {
+          "attainingSubjectPoints": {
+            "anatomy": {
+              "holdoutPasses": 1772,
+              "paidLookups": 1000
+            },
+            "clinical_knowledge": {
+              "holdoutPasses": 3317,
+              "paidLookups": 0
+            },
+            "elementary_mathematics": {
+              "holdoutPasses": 3218,
+              "paidLookups": 2275
+            },
+            "high_school_biology": {
+              "holdoutPasses": 4603,
+              "paidLookups": 0
+            },
+            "high_school_geography": {
+              "holdoutPasses": 2930,
+              "paidLookups": 0
+            },
+            "high_school_government_and_politics": {
+              "holdoutPasses": 3044,
+              "paidLookups": 0
+            },
+            "high_school_macroeconomics": {
+              "holdoutPasses": 5372,
+              "paidLookups": 904
+            },
+            "high_school_microeconomics": {
+              "holdoutPasses": 2900,
+              "paidLookups": 1583
+            },
+            "high_school_statistics": {
+              "holdoutPasses": 1812,
+              "paidLookups": 1426
+            },
+            "moral_disputes": {
+              "holdoutPasses": 4373,
+              "paidLookups": 1293
+            },
+            "moral_scenarios": {
+              "holdoutPasses": 5786,
+              "paidLookups": 2109
+            },
+            "professional_medicine": {
+              "holdoutPasses": 3196,
+              "paidLookups": 0
+            },
+            "professional_psychology": {
+              "holdoutPasses": 8567,
+              "paidLookups": 944
+            },
+            "sociology": {
+              "holdoutPasses": 3458,
+              "paidLookups": 0
+            },
+            "us_foreign_policy": {
+              "holdoutPasses": 1768,
+              "paidLookups": 0
+            }
+          },
+          "cpo": {
+            "changedDeployments": 19,
+            "changedNominees": 92,
+            "holdoutPasses": 56095,
+            "lookupDifference": 2057,
+            "nominated": 127,
+            "nominationCases": 381,
+            "paidLookups": 14758,
+            "passDifference": 1,
+            "promoted": 30
+          },
+          "gepa": {
+            "holdoutPasses": 56116,
+            "paidLookups": 11534,
+            "settingsBySubject": {
+              "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+              "clinical_knowledge": "retain-start",
+              "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+              "high_school_biology": "retain-start",
+              "high_school_geography": "retain-start",
+              "high_school_government_and_politics": "retain-start",
+              "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-gain-2-threshold-precheck",
+              "high_school_microeconomics": "gepa-batched-precheck/40/paired-gain-1",
+              "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+              "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+              "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+              "professional_medicine": "retain-start",
+              "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+              "sociology": "retain-start",
+              "us_foreign_policy": "retain-start"
+            }
+          },
+          "pairedAgainstBaseline": {
+            "holdoutPassDifference": 1,
+            "pairedRange95": [
+              -24,
+              27
+            ]
+          }
+        },
+        "wide/nonloss": {
+          "attainingSubjectPoints": {
+            "anatomy": {
+              "holdoutPasses": 1772,
+              "paidLookups": 1000
+            },
+            "clinical_knowledge": {
+              "holdoutPasses": 3317,
+              "paidLookups": 0
+            },
+            "elementary_mathematics": {
+              "holdoutPasses": 3218,
+              "paidLookups": 2275
+            },
+            "high_school_biology": {
+              "holdoutPasses": 4603,
+              "paidLookups": 0
+            },
+            "high_school_geography": {
+              "holdoutPasses": 2930,
+              "paidLookups": 0
+            },
+            "high_school_government_and_politics": {
+              "holdoutPasses": 3044,
+              "paidLookups": 0
+            },
+            "high_school_macroeconomics": {
+              "holdoutPasses": 5372,
+              "paidLookups": 904
+            },
+            "high_school_microeconomics": {
+              "holdoutPasses": 2900,
+              "paidLookups": 1583
+            },
+            "high_school_statistics": {
+              "holdoutPasses": 1812,
+              "paidLookups": 1426
+            },
+            "moral_disputes": {
+              "holdoutPasses": 4373,
+              "paidLookups": 1293
+            },
+            "moral_scenarios": {
+              "holdoutPasses": 5786,
+              "paidLookups": 2109
+            },
+            "professional_medicine": {
+              "holdoutPasses": 3196,
+              "paidLookups": 0
+            },
+            "professional_psychology": {
+              "holdoutPasses": 8567,
+              "paidLookups": 944
+            },
+            "sociology": {
+              "holdoutPasses": 3458,
+              "paidLookups": 0
+            },
+            "us_foreign_policy": {
+              "holdoutPasses": 1768,
+              "paidLookups": 0
+            }
+          },
+          "cpo": {
+            "changedDeployments": 81,
+            "changedNominees": 555,
+            "holdoutPasses": 56034,
+            "lookupDifference": 4304,
+            "nominated": 679,
+            "nominationCases": 2037,
+            "paidLookups": 17005,
+            "passDifference": -60,
+            "promoted": 102
+          },
+          "gepa": {
+            "holdoutPasses": 56116,
+            "paidLookups": 11534,
+            "settingsBySubject": {
+              "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+              "clinical_knowledge": "retain-start",
+              "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+              "high_school_biology": "retain-start",
+              "high_school_geography": "retain-start",
+              "high_school_government_and_politics": "retain-start",
+              "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-gain-2-threshold-precheck",
+              "high_school_microeconomics": "gepa-batched-precheck/40/paired-gain-1",
+              "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+              "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+              "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+              "professional_medicine": "retain-start",
+              "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+              "sociology": "retain-start",
+              "us_foreign_policy": "retain-start"
+            }
+          },
+          "pairedAgainstAttainingGepa": {
+            "holdoutPassDifference": -82,
+            "pairedRange95": [
+              -153,
+              -12
+            ]
+          },
+          "pairedAgainstBaseline": {
+            "holdoutPassDifference": -60,
+            "pairedRange95": [
+              -116,
+              -3
+            ]
+          }
+        }
+      },
+      "cap-19/gain-2": {
+        "deep/gain": {
+          "attainingSubjectPoints": {
+            "anatomy": {
+              "holdoutPasses": 1772,
+              "paidLookups": 1000
+            },
+            "clinical_knowledge": {
+              "holdoutPasses": 3317,
+              "paidLookups": 0
+            },
+            "elementary_mathematics": {
+              "holdoutPasses": 3218,
+              "paidLookups": 2275
+            },
+            "high_school_biology": {
+              "holdoutPasses": 4603,
+              "paidLookups": 0
+            },
+            "high_school_geography": {
+              "holdoutPasses": 2930,
+              "paidLookups": 0
+            },
+            "high_school_government_and_politics": {
+              "holdoutPasses": 3044,
+              "paidLookups": 0
+            },
+            "high_school_macroeconomics": {
+              "holdoutPasses": 5372,
+              "paidLookups": 904
+            },
+            "high_school_microeconomics": {
+              "holdoutPasses": 2898,
+              "paidLookups": 0
+            },
+            "high_school_statistics": {
+              "holdoutPasses": 1812,
+              "paidLookups": 1426
+            },
+            "moral_disputes": {
+              "holdoutPasses": 4373,
+              "paidLookups": 1293
+            },
+            "moral_scenarios": {
+              "holdoutPasses": 5786,
+              "paidLookups": 2109
+            },
+            "professional_medicine": {
+              "holdoutPasses": 3196,
+              "paidLookups": 0
+            },
+            "professional_psychology": {
+              "holdoutPasses": 8567,
+              "paidLookups": 944
+            },
+            "sociology": {
+              "holdoutPasses": 3458,
+              "paidLookups": 0
+            },
+            "us_foreign_policy": {
+              "holdoutPasses": 1768,
+              "paidLookups": 0
+            }
+          },
+          "cpo": {
+            "changedDeployments": 1,
+            "changedNominees": 49,
+            "holdoutPasses": 56090,
+            "lookupDifference": 1193,
+            "nominated": 77,
+            "nominationCases": 385,
+            "paidLookups": 10086,
+            "passDifference": -4,
+            "promoted": 4
+          },
+          "gepa": {
+            "holdoutPasses": 56114,
+            "paidLookups": 9951,
+            "settingsBySubject": {
+              "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+              "clinical_knowledge": "retain-start",
+              "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+              "high_school_biology": "retain-start",
+              "high_school_geography": "retain-start",
+              "high_school_government_and_politics": "retain-start",
+              "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-gain-2-threshold-precheck",
+              "high_school_microeconomics": "retain-start",
+              "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+              "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+              "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+              "professional_medicine": "retain-start",
+              "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+              "sociology": "retain-start",
+              "us_foreign_policy": "retain-start"
+            }
+          },
+          "pairedAgainstBaseline": {
+            "holdoutPassDifference": -4,
+            "pairedRange95": [
+              -10,
+              1
+            ]
+          }
+        },
+        "deep/nonloss": {
+          "attainingSubjectPoints": {
+            "anatomy": {
+              "holdoutPasses": 1772,
+              "paidLookups": 1000
+            },
+            "clinical_knowledge": {
+              "holdoutPasses": 3317,
+              "paidLookups": 0
+            },
+            "elementary_mathematics": {
+              "holdoutPasses": 3218,
+              "paidLookups": 2275
+            },
+            "high_school_biology": {
+              "holdoutPasses": 4603,
+              "paidLookups": 0
+            },
+            "high_school_geography": {
+              "holdoutPasses": 2930,
+              "paidLookups": 0
+            },
+            "high_school_government_and_politics": {
+              "holdoutPasses": 3044,
+              "paidLookups": 0
+            },
+            "high_school_macroeconomics": {
+              "holdoutPasses": 5371,
+              "paidLookups": 0
+            },
+            "high_school_microeconomics": {
+              "holdoutPasses": 2900,
+              "paidLookups": 1583
+            },
+            "high_school_statistics": {
+              "holdoutPasses": 1812,
+              "paidLookups": 1426
+            },
+            "moral_disputes": {
+              "holdoutPasses": 4373,
+              "paidLookups": 1293
+            },
+            "moral_scenarios": {
+              "holdoutPasses": 5786,
+              "paidLookups": 2109
+            },
+            "professional_medicine": {
+              "holdoutPasses": 3196,
+              "paidLookups": 0
+            },
+            "professional_psychology": {
+              "holdoutPasses": 8567,
+              "paidLookups": 944
+            },
+            "sociology": {
+              "holdoutPasses": 3458,
+              "paidLookups": 0
+            },
+            "us_foreign_policy": {
+              "holdoutPasses": 1768,
+              "paidLookups": 0
+            }
+          },
+          "cpo": {
+            "changedDeployments": 5,
+            "changedNominees": 291,
+            "holdoutPasses": 56084,
+            "lookupDifference": 1941,
+            "nominated": 352,
+            "nominationCases": 1760,
+            "paidLookups": 10834,
+            "passDifference": -10,
+            "promoted": 8
+          },
+          "gepa": {
+            "holdoutPasses": 56115,
+            "paidLookups": 10630,
+            "settingsBySubject": {
+              "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+              "clinical_knowledge": "retain-start",
+              "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+              "high_school_biology": "retain-start",
+              "high_school_geography": "retain-start",
+              "high_school_government_and_politics": "retain-start",
+              "high_school_macroeconomics": "retain-start",
+              "high_school_microeconomics": "gepa-batched-precheck/40/paired-gain-1",
+              "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+              "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+              "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+              "professional_medicine": "retain-start",
+              "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+              "sociology": "retain-start",
+              "us_foreign_policy": "retain-start"
+            }
+          },
+          "pairedAgainstBaseline": {
+            "holdoutPassDifference": -10,
+            "pairedRange95": [
+              -24,
+              4
+            ]
+          }
+        },
+        "wide/gain": {
+          "attainingSubjectPoints": {
+            "anatomy": {
+              "holdoutPasses": 1772,
+              "paidLookups": 1000
+            },
+            "clinical_knowledge": {
+              "holdoutPasses": 3317,
+              "paidLookups": 0
+            },
+            "elementary_mathematics": {
+              "holdoutPasses": 3218,
+              "paidLookups": 2275
+            },
+            "high_school_biology": {
+              "holdoutPasses": 4603,
+              "paidLookups": 0
+            },
+            "high_school_geography": {
+              "holdoutPasses": 2930,
+              "paidLookups": 0
+            },
+            "high_school_government_and_politics": {
+              "holdoutPasses": 3044,
+              "paidLookups": 0
+            },
+            "high_school_macroeconomics": {
+              "holdoutPasses": 5371,
+              "paidLookups": 0
+            },
+            "high_school_microeconomics": {
+              "holdoutPasses": 2898,
+              "paidLookups": 0
+            },
+            "high_school_statistics": {
+              "holdoutPasses": 1812,
+              "paidLookups": 1426
+            },
+            "moral_disputes": {
+              "holdoutPasses": 4373,
+              "paidLookups": 1293
+            },
+            "moral_scenarios": {
+              "holdoutPasses": 5786,
+              "paidLookups": 2109
+            },
+            "professional_medicine": {
+              "holdoutPasses": 3196,
+              "paidLookups": 0
+            },
+            "professional_psychology": {
+              "holdoutPasses": 8567,
+              "paidLookups": 944
+            },
+            "sociology": {
+              "holdoutPasses": 3458,
+              "paidLookups": 0
+            },
+            "us_foreign_policy": {
+              "holdoutPasses": 1768,
+              "paidLookups": 0
+            }
+          },
+          "cpo": {
+            "changedDeployments": 3,
+            "changedNominees": 50,
+            "holdoutPasses": 56090,
+            "lookupDifference": 893,
+            "nominated": 80,
+            "nominationCases": 240,
+            "paidLookups": 9786,
+            "passDifference": -4,
+            "promoted": 4
+          },
+          "gepa": {
+            "holdoutPasses": 56113,
+            "paidLookups": 9047,
+            "settingsBySubject": {
+              "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+              "clinical_knowledge": "retain-start",
+              "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+              "high_school_biology": "retain-start",
+              "high_school_geography": "retain-start",
+              "high_school_government_and_politics": "retain-start",
+              "high_school_macroeconomics": "retain-start",
+              "high_school_microeconomics": "retain-start",
+              "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+              "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+              "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+              "professional_medicine": "retain-start",
+              "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+              "sociology": "retain-start",
+              "us_foreign_policy": "retain-start"
+            }
+          },
+          "pairedAgainstBaseline": {
+            "holdoutPassDifference": -4,
+            "pairedRange95": [
+              -11,
+              3
+            ]
+          }
+        },
+        "wide/nonloss": {
+          "attainingSubjectPoints": {
+            "anatomy": {
+              "holdoutPasses": 1772,
+              "paidLookups": 1000
+            },
+            "clinical_knowledge": {
+              "holdoutPasses": 3317,
+              "paidLookups": 0
+            },
+            "elementary_mathematics": {
+              "holdoutPasses": 3218,
+              "paidLookups": 2275
+            },
+            "high_school_biology": {
+              "holdoutPasses": 4603,
+              "paidLookups": 0
+            },
+            "high_school_geography": {
+              "holdoutPasses": 2930,
+              "paidLookups": 0
+            },
+            "high_school_government_and_politics": {
+              "holdoutPasses": 3044,
+              "paidLookups": 0
+            },
+            "high_school_macroeconomics": {
+              "holdoutPasses": 5372,
+              "paidLookups": 904
+            },
+            "high_school_microeconomics": {
+              "holdoutPasses": 2898,
+              "paidLookups": 0
+            },
+            "high_school_statistics": {
+              "holdoutPasses": 1812,
+              "paidLookups": 1426
+            },
+            "moral_disputes": {
+              "holdoutPasses": 4373,
+              "paidLookups": 1293
+            },
+            "moral_scenarios": {
+              "holdoutPasses": 5786,
+              "paidLookups": 2109
+            },
+            "professional_medicine": {
+              "holdoutPasses": 3196,
+              "paidLookups": 0
+            },
+            "professional_psychology": {
+              "holdoutPasses": 8567,
+              "paidLookups": 944
+            },
+            "sociology": {
+              "holdoutPasses": 3458,
+              "paidLookups": 0
+            },
+            "us_foreign_policy": {
+              "holdoutPasses": 1768,
+              "paidLookups": 0
+            }
+          },
+          "cpo": {
+            "changedDeployments": 4,
+            "changedNominees": 297,
+            "holdoutPasses": 56084,
+            "lookupDifference": 1607,
+            "nominated": 370,
+            "nominationCases": 1110,
+            "paidLookups": 10500,
+            "passDifference": -10,
+            "promoted": 7
+          },
+          "gepa": {
+            "holdoutPasses": 56114,
+            "paidLookups": 9951,
+            "settingsBySubject": {
+              "anatomy": "gepa-sequential-precheck/32/paired-gain-2-threshold-precheck",
+              "clinical_knowledge": "retain-start",
+              "elementary_mathematics": "gepa-batched-precheck/100/paired-gain-1",
+              "high_school_biology": "retain-start",
+              "high_school_geography": "retain-start",
+              "high_school_government_and_politics": "retain-start",
+              "high_school_macroeconomics": "gepa-sequential-precheck/38/paired-gain-2-threshold-precheck",
+              "high_school_microeconomics": "retain-start",
+              "high_school_statistics": "gepa-batched-precheck/40/paired-gain-2-threshold-precheck",
+              "moral_disputes": "gepa-batched-precheck/44/paired-gain-1",
+              "moral_scenarios": "gepa-batched-precheck/46/paired-gain-1",
+              "professional_medicine": "retain-start",
+              "professional_psychology": "gepa-sequential-precheck/24/paired-gain-1",
+              "sociology": "retain-start",
+              "us_foreign_policy": "retain-start"
+            }
+          },
+          "pairedAgainstBaseline": {
+            "holdoutPassDifference": -10,
+            "pairedRange95": [
+              -21,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "nativeSettings": 2100,
+    "nativeSubjectTotalsSha256": "451cbf286445de43551fce01260dab3448213980a056ded17966e81ae25b21c5",
+    "panelPathHashes": {
+      "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": {
+          "deep/gain": "ebfe8a8561023b2aa53aea50aa05c2d67170ddd73a125825024b30b19051edef",
+          "deep/nonloss": "f499bb62e730803a881fb1d29094e7402c908137604b593ea920232c40302454",
+          "paired-expected-order": "e29cf5908ed9046445222c935343f24bec9f88d219cb7e95a5253f9c147d7cb9",
+          "wide/gain": "59df9b4303b1a266124fef75091f06e7d6de82220daa731cf232069281fe06f2",
+          "wide/nonloss": "de66e7e3749fbd3ab50ea1b8c38f4b06e97dbc17518811270ee3f9d918efe4c3"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "a9095ec1778ce03837b9560e97d7dfdc76503c46840896e75f29d74c11ba5bbd",
+          "deep/nonloss": "a8146efb0fd50aeba982d625b8d6429a2b94617fb984402235d5f43caa5af09f",
+          "paired-expected-order": "39fc5ba51d72192c468a0029198de1fe120e92033b115d195a2ea2ee015ee836",
+          "wide/gain": "cd69c2de969e5160f0a7b4c78490bd6b1e33679aaa0bcf8bf0d3cccc61bc3176",
+          "wide/nonloss": "bd06f5e529da03e153ad9f93f76ef70e90c057449a3b6ae447ac4b5473702031"
+        }
+      },
+      "anatomy/tiiuae_falcon_180b": {
+        "cap-19/gain-1": {
+          "deep/gain": "913618d913fcf3ad899e924db4a1d839a2961fc150cd816f7a106504870b41dc",
+          "deep/nonloss": "b520586e995f85c3f1f8aa78ae38f829854ed2348685b4f9d24dc6ca42fe76e8",
+          "paired-expected-order": "19df9c801477ec6eb55b4ec60118906fb9dfd4df8742f8b30c10508fd99f5077",
+          "wide/gain": "97a166aa57bc664bc3e005fa934e0be4465502c7edda7826cfb4f5dfc105e0d0",
+          "wide/nonloss": "4ca9f3a75b5400a6f6e6fd922aa334c019464db83da5e914cceeacfb4506da03"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "369b6457737cc7f4b0231192b628ac93dacd23620a3bdd0c4d0bb8b7cc422d53",
+          "deep/nonloss": "75b8a0fa2dbd37418710de22b9fab356694346b2a8c304f8d35bc8e80cfde048",
+          "paired-expected-order": "d0c18e2b7c290465cb83021d0183dcaec96d71c24ffdffbdc269d144c4fd9dec",
+          "wide/gain": "b124a69a4b610a3ac2af90e8a4b8b22498c1cc016e2a5aa60048b5cb31444dae",
+          "wide/nonloss": "826b7682b5a9a7e1e804b3d80f28d204770fd4cb67a3a582ec10bafa74c16e8b"
+        }
+      },
+      "clinical_knowledge/google_flan_ul2": {
+        "cap-19/gain-1": {
+          "deep/gain": "cf29a593c5118d4f4ae2ad478e49199c02a5ede0c0b0de89ab8a5d864f931194",
+          "deep/nonloss": "50b8bf0ae65ee7c32fb38359acaf8cf33b0fd21cb4ef9767f81df6d55d0e1f29",
+          "paired-expected-order": "57ad99803d586fab85a0a9f04de496ef26d6e9dfa58a666b9215f0bec10426fd",
+          "wide/gain": "70df1982b3adb8ac3e3f7d2f7623197c04d8218fb703f8b628aff7181224c0e6",
+          "wide/nonloss": "1aabb3e2c020fedfa1f072397735fe291a0aee9943004095cc989f372efca30d"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "1690ff5dd99a451ee6775ed5ec263e886dd3f1ffa1a8b1a3af86b4fc96e314dd",
+          "deep/nonloss": "6407d81993765633d2f43f482c1bb40f23262d3d742f3a4d3bac10a37f9292b5",
+          "paired-expected-order": "9929e053255af4c1fd1647e45b54c174311754704acd2f330da344dec059c95a",
+          "wide/gain": "f3b1ec7534356d23601d99d6c72021291506adb9b47ba32d1eb08ef2a523d546",
+          "wide/nonloss": "1e62d62c112b3170eb944b6488229fb055921949f8ccf8d38f6c8b9d4c6d7ea6"
+        }
+      },
+      "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": {
+          "deep/gain": "acd00479b6299636c90e5a638117ca97017b2d3bc0aa695d1bb38060d808f947",
+          "deep/nonloss": "747f6a3f98d37c40c27ddee3797ccb83b4284d61d452e9e77f853df2e07668c0",
+          "paired-expected-order": "fb36f6cca5d4b7ce449400abeb0f40e3889a8551d3d53ac5cc591d7fc10816dc",
+          "wide/gain": "11b26bc816cf2da5ed5783d523d513bbe950196d51f6ef3fbd719b42b4f6cf0a",
+          "wide/nonloss": "00c5216da0bcaaa90064d17b094060c9fe491b2d48a51e78adfeeac0c8fb8ef7"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "913add82c4dd87edce78ab7d4488aa03209c9a9aead602c2bc02d4651cd4190c",
+          "deep/nonloss": "e6b41342c498a004bff3de46595473e22f8122321d842d6523d32204080ff215",
+          "paired-expected-order": "03d1744f917fd7fe14bdbbb16381c193048d666c0641ccea1a492c8596885541",
+          "wide/gain": "bdc8b7e0b2f136adb61a8bb7399686a233193e362c9ca455aee06a0739efa1de",
+          "wide/nonloss": "5b84220d6850ccb2dff31211e0460b8c2d132109d6827ac3470d2515d73cfd1e"
+        }
+      },
+      "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": {
+          "deep/gain": "6a9f69a240b4c4237c61f81a6cc3b0eeb43e4305895b69c6f6378744e6f48e4e",
+          "deep/nonloss": "d4eddd192932346873387414f5cf0e4c2a96de06d767e7baaeb1f3ccaf24c20f",
+          "paired-expected-order": "e0aa4eae0641d9b4c420886651624be667d95cec9237ac186d87953fc8e2c379",
+          "wide/gain": "ed73592040e236b108cf984d954eeb4e101cce5944fe5fae0b710ec3d87bd79d",
+          "wide/nonloss": "86fb0733e1a07c327661c1c2e64af80aba6294e8f39f7293b7b675bb6378ae4a"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "cf904aa4441c60e0a2004b678972f84f7294c51a83f94a5cefb1bc480709c570",
+          "deep/nonloss": "d8bb0542973d470ae723fa0e3ab22fc25738709055e74d9785bb0b648d678024",
+          "paired-expected-order": "7f9d5e7c8a8da3b3a5ec91798828ebae2e384fd5ef19551bd13e7985b5572709",
+          "wide/gain": "b3fb37c7d6f200116d57e4f7f523df3f480bd3ea12894998e022104563dd5a58",
+          "wide/nonloss": "4fca5443779706c272adc06748383fd19aae046f2461d06b2dd04cb995dddbb9"
+        }
+      },
+      "elementary_mathematics/tiiuae_falcon_180b": {
+        "cap-19/gain-1": {
+          "deep/gain": "a5110882aa900e8b93bf1d358401bfe1babf295a371683d4ca1f0523375622e7",
+          "deep/nonloss": "e13617c41388dc50bc4428478de2acafac7a1b5256a161951ff2a4819dd2e7fe",
+          "paired-expected-order": "17a4c7b51244b4d60a60928180a27ea1597c9ab603fe0c544c30c749701a4cb6",
+          "wide/gain": "4a75590b20fd1b6659a51ad46be04de6271495fc4f61b9fb724bcab87407fa65",
+          "wide/nonloss": "08525de68b7dab0835d0135e767b68b98d5d286c59a3c4056a41cab3cefa47da"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "c7a8e078404cbbd410dae5019fb3be82c6f8fef32795655ddc899ff5550e09db",
+          "deep/nonloss": "48642bdc3e61d6575dad71fe067aac5cfa45d48cd6ae2eb3d30b1bb5981b2729",
+          "paired-expected-order": "cb2e0f78dcc0cfc918763ab0aac6dee5c1b7b872e64f096c10aa56c0524316ee",
+          "wide/gain": "4e337c9082f81e15a18c87525241f3b89a133d74b569068034da0cef40ec85bc",
+          "wide/nonloss": "578247746f5d6272d2f3d17a7198404372f0cb0436b3e8051024a364702ccd66"
+        }
+      },
+      "high_school_biology/google_flan_ul2": {
+        "cap-19/gain-1": {
+          "deep/gain": "6e8c3f601354647537bc94637b7fce0c932aaf364bc328a813217bcf2a7eb1f8",
+          "deep/nonloss": "cede5a2fb4ef54d80166e2fb1bdd9838b2c73d5ba1a27b183b3eb771d1e4b3ce",
+          "paired-expected-order": "2b9dfa6acdc04ca0ccc697f817182e5238d717a48cdda9806018e6fb709200f8",
+          "wide/gain": "59603bd7da99a728fd96cb0ebe0b8e24dded43a1b3d2fad098077e6e74728398",
+          "wide/nonloss": "67c96b2ea5f593bb056c3a7d63a67d5dbc39f7b163aa52d13b3c550fa52f574f"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "35a5d61a951c15a343d675253a0e5e67ece7eec05e926ab191ce80f263b7b88e",
+          "deep/nonloss": "f2b6e6f3a898a27ac4c592c29882424feeaa469efb82939ae34c70dd0112f639",
+          "paired-expected-order": "170e429b928cd21a04b395b120dc7fa9114e465ef0d696b1e9b64bd39445f55a",
+          "wide/gain": "e0fb67fa5206255e52e33f031f2511d8d478580c1c5e09d694a6a295484aa9df",
+          "wide/nonloss": "fa48b25e4d57eaa052b9328452c58032b0de548bf2e5391f0cfdb659124eaf4a"
+        }
+      },
+      "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": {
+          "deep/gain": "c7879524a7af3cb4fb67306b3329f08743d67f0b7f56a5fe088846fef128eed0",
+          "deep/nonloss": "1220142497bbefaa6ab4a171c450187888376281a1177683ff2452ce2a976b71",
+          "paired-expected-order": "69feae822b1cb669ba83424829fc69b5294455d8da7a326256d2e8a0cfd12830",
+          "wide/gain": "b040015ce6e5e1eaa561cb83290e8d4e0b60ea17174c382e47ad842dd8249322",
+          "wide/nonloss": "8933cc2dbf03e3f017c8897e4faa2ef2f75c36caf7fee19c2e5b0e416dd78bd8"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "251a69b5ff0ce8a2ef9aef04b50c7b368061c62de50b91526a794ad5d629d86d",
+          "deep/nonloss": "f7826e5a523cdf1fc80ee426731eb27b8e1853b54c72e2b6412946b784265ba4",
+          "paired-expected-order": "879a0ed75466f05706aa459dd63c78e48c4ed05b306fc9b2c6a0c29ce3460980",
+          "wide/gain": "527a3a581d106bdc46b34408507014a74e3a42cd52438a79b5bd0bb12977ce9c",
+          "wide/nonloss": "6ed3397449f1ffb9be6c4de5cd0c33aa115695661f2cf8c6a7f7ea34e5287ba2"
+        }
+      },
+      "high_school_geography/google_flan_t5_xxl": {
+        "cap-19/gain-1": {
+          "deep/gain": "0ca6c2be02e9c55effc010dd0211d0340a9ba209a723fd86c71747a64b8daf35",
+          "deep/nonloss": "0c79d9b890f737f96ac4879e71a27652d627f7936ca25ea73064c93c3fdb5496",
+          "paired-expected-order": "97bd2282387477f53b04403216ee102113082f40db023b43920edd3b59d4e658",
+          "wide/gain": "70ba76126cb4710c952d345fa01597e4fa0a97a3d45cc6a217112f14f0bdf166",
+          "wide/nonloss": "385cafc57972c0e2d9addc334193dfe8f2c93a9b8bf0e5b5c2769c83c82bbd07"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "2580ce870150a4d68221e235ee540a08e34c26677a9bcd54cc91f6f9603c4eef",
+          "deep/nonloss": "bac67af906232fff2cc3010dc2aaf88fce736aa55e1912eb1dd6724a6d075c17",
+          "paired-expected-order": "4a38ff67e7c897580e953695bc2cea27107c5105f5af13ffcf0ea3387d7a4960",
+          "wide/gain": "d04bf6a18f0ef4a4b19ab76e76e12a28e226162b2f9a2d15e6e357f6744189f8",
+          "wide/nonloss": "dffc20b334f36135e0af10cee4b26cf1565f2e0dd1852b67c34e8810bb57ca4c"
+        }
+      },
+      "high_school_geography/google_gemma_7b": {
+        "cap-19/gain-1": {
+          "deep/gain": "7456a7c8b1f4576840a5cedb33504109d0aed49338749268e8154aacb7769fa0",
+          "deep/nonloss": "bf26db2e203dce06d87e5dd9f2ca5a5f4ca2eba0b7ae0a00c3542af24c6bc47d",
+          "paired-expected-order": "18d10fffb70c5aac2f8c54b7bfda11550d245a67a07a932d154fd1a555a58e56",
+          "wide/gain": "1652b11825cfcd5c5fb4dd483026cde2363589a1c2f973a42a0956101a38c3fe",
+          "wide/nonloss": "a4a326a16064f9f993a059cfedb1deecf6170bcf57187fd5297c5a40ef47541d"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "1a4c5b6949acde8a8f17c87e15c9dcbdcbfe8e512d9a68e209bf1b20af4a185e",
+          "deep/nonloss": "c8ce8e6869a1cb678c78c682ae835d08a588808564890f871be74b927e0a6516",
+          "paired-expected-order": "5222199e21d8e6f4cf4c9d9e844817e7ab75567ebb9f6ee89b70754308b7ff66",
+          "wide/gain": "07013ca6cfc533bba2e8a47d37c14b29036213439ff91a51719d6c91ab756355",
+          "wide/nonloss": "9dadaa5eb548af231f1033dbf1156b9baee35b2b25ee061003bd55c57cd59997"
+        }
+      },
+      "high_school_government_and_politics/google_flan_t5_xxl": {
+        "cap-19/gain-1": {
+          "deep/gain": "18ee282e3ab4d668cc67a71e84c48f89b3de8e8fe503fc1f8e3f609ac4c905dd",
+          "deep/nonloss": "9c6d98f4d2c092a62cca01c723de652008eeca080b3432a8e170809371a4383d",
+          "paired-expected-order": "c2cecdfe030daa95cf16b1c22f942621a5b8ed3e9f990b6f367abeea6f6cf795",
+          "wide/gain": "a5ce43f0bb69708b1b8de502dda83f0f3e37d1d8ea41b4465a67211b4c6e0550",
+          "wide/nonloss": "72d88fbca66ba253f46710afd937e04be235c65663f3433bb8a3801f21169829"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "1f177e9e44c059725af3934026ff598a91e0f26b0c88107ccfdee3b11e0171be",
+          "deep/nonloss": "ff2bbd0d78d4fc345e75e91fd2e292f0dcdab96149e5b56dfefd452404e78c60",
+          "paired-expected-order": "6fc906c739f8dc18cf8a0729382499075b0128ca93eddff2df079e127034b77e",
+          "wide/gain": "e8e6e2bb366f1439b3b43894bae381283e5b437c3b10ba72a5eaefbfb360721e",
+          "wide/nonloss": "4a03567af9ab671f02ecffadf6f17ff1b1a639ad29f71eae5b652157baa31d72"
+        }
+      },
+      "high_school_government_and_politics/google_gemma_7b": {
+        "cap-19/gain-1": {
+          "deep/gain": "3c5bf20c80a4a6ce9a8d8bc74203cd4cfd8dfd048f64576e6d624cfdd3d309a6",
+          "deep/nonloss": "7f5e12f416d137980c5afac882adf1bdd9613de9e3d2cc6435a13f77958ffd7a",
+          "paired-expected-order": "5808799e50a061119c362d62a09341ff6cb53645b0f9bfd1ac7657f17ce1bb83",
+          "wide/gain": "bd61cb8d98dd42c8b8f16bbf9d3f1c58589a9c87c8181e8f0f8d307e90b64e47",
+          "wide/nonloss": "72c36b0a892e0d9d88320f40b3208a862ad3dc7416101350a25eb7b9fba34464"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "c92ce19089add5cc255759daa35201beaeaebae2737f01c9824bea4d40d17696",
+          "deep/nonloss": "f93ef0bd5e414c5f45f98466027af5f09b67505defb3814236cbb16dc4890617",
+          "paired-expected-order": "23e3521f2ce90946ec8136ba556bdff25167a7bc886dd379296153eb9de482ee",
+          "wide/gain": "11feff5b96a638e1fd17dc3f2772a6e1c25475f63d17a3d570e28446708c98d1",
+          "wide/nonloss": "58a9c06976586094d209a66560aceee7900d375c51dab4827f6bd01cccb8f031"
+        }
+      },
+      "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": {
+          "deep/gain": "376734a739f18d72fe1336d32ae5b71b66889039c02ab9fe94cc58335da3c234",
+          "deep/nonloss": "6f7a8209ec2357d5b8c4046e6f6d604ee4ba4fad67f1a49a2e44a926a5e8e029",
+          "paired-expected-order": "c9ce9f4f8dff15ca6974e0c2b13b76bfe1b9f50093cf59fe020f153329851da7",
+          "wide/gain": "05bc9554ba16ff7e1c960475fa29f409e60c76d16239683d699b5d5652a2ba8e",
+          "wide/nonloss": "0d17ca770ad11efb2e6bda23550752cd516a0a21fa87136360f0cb2b0d306e5e"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "e8212543ac514bf5ed622a6d4b5ece07efa6bdfcc30fcca676cf61688c5820f5",
+          "deep/nonloss": "ab4c60b2a7821a53c0683d3cf2f2354fafdfb13643252b01e3e2c3cadc20347e",
+          "paired-expected-order": "d2ffab830a082fff318dac0969ca926394712459ed5cb543eb63ca2a5d0926fc",
+          "wide/gain": "b77696670809bcfe8897c8373bde527f0d4797978518a03dff991173279068da",
+          "wide/nonloss": "b3860d46944adfe4733232c6befed443afbee87b4b538f986664e44b64144a27"
+        }
+      },
+      "high_school_macroeconomics/tiiuae_falcon_180b": {
+        "cap-19/gain-1": {
+          "deep/gain": "50a603283b7021090e817010d1e9f9a4965836ff6e4fde573b1c2ad7969112e7",
+          "deep/nonloss": "ffb45b3d6aac7db2d38524c1c4e522e294d0d361c310ef2d9a2804b4be6a3009",
+          "paired-expected-order": "fe8eb1c35829680e3224cf7a40684ab72de3382be7b832c81a3c71a6c29189ff",
+          "wide/gain": "7a4660f5226910a6c3be270c8918f958d3560af80e970e219c6a20884fefaf1b",
+          "wide/nonloss": "fe3cf32a1b85f058693e1de3fc6dfda917238649493b6bc7727963e84bdda7e6"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "8e7e6449466d5d5c8b9715596aea9b953631c71306967afd0d4568c7c33f2c3f",
+          "deep/nonloss": "32ff92c36a26a1cceee6099623d6d050ed567add1cc7340d9a182a17d2ce8687",
+          "paired-expected-order": "ed81cf154fdd5051bfa7d184f737eed4e62af0ef0fcf55f65e21d7562cc010e4",
+          "wide/gain": "cb06c18272a6e30723cfc4bd4ed2a8d0826c9c244f4994ef90bb0c39fe092620",
+          "wide/nonloss": "913996541dcee49a66e8ae8a0635bef0f6809f6000132a148af61c9f279dab52"
+        }
+      },
+      "high_school_microeconomics/google_flan_t5_xxl": {
+        "cap-19/gain-1": {
+          "deep/gain": "08ab3bca703b405be2dbdfd103b00cd8451ef6a35123aeb5f79a3d26f45e77e4",
+          "deep/nonloss": "e644a0399c23983e4ce3b14f7acf08d97a512d8a2dc5ce45e5e648d9a50c6898",
+          "paired-expected-order": "0c20288684fba7e1badd600da7881fe12e250260eba08e3f31ef820b317f4162",
+          "wide/gain": "74f7e6aaba06434595867760fbd627a1d15de62af13699df4720da3db0ae3242",
+          "wide/nonloss": "415a51c717405bf3b57d592559169c9571bf9389b9e0a85c4347908e6a9c7f0a"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "e78d6beb60e8c26d5d75bdee15b2b10d8847b8827b8d7bee1c433ee7f861af6e",
+          "deep/nonloss": "1cc1d7094257c01d9c0282e0fda8909830a8bd3ecbdd1d22250daae5e59996c0",
+          "paired-expected-order": "65e79b9671917d052c4ad12db85fb39261703431e273550d103391a1d916418d",
+          "wide/gain": "a0b9951dc27dc06d8201a3108c72c1923a55e0189cdb67956c92c0503409c284",
+          "wide/nonloss": "8167fec5c5cf21644a0d68ed620428db043076fadeabc8adcd2da75b816f7edb"
+        }
+      },
+      "high_school_microeconomics/google_gemma_7b": {
+        "cap-19/gain-1": {
+          "deep/gain": "66716178bd2879d58039ec7040bd6bb66c7cc88b5906e5f0d650dc3adff710ad",
+          "deep/nonloss": "9e0519c0d2b30d9d12cc4c7d4097d9a622e33f417c97136f57988f6202ee2b1a",
+          "paired-expected-order": "b2caff54a7d16936689a37851531c970f4b6847bc938122f35442c919fb12de0",
+          "wide/gain": "8dc4cd91694cc576758dbd7095d7646b5ec93deec42a4d0182dcbd470b3f0920",
+          "wide/nonloss": "d24cd1f70378e1de209c38694af430c8472d83d9131c67a3d909d5ca475232b4"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "8d1f142795e674f803fdbc87e4f8a905642da595f166a27e5fbc44b5e4345bd4",
+          "deep/nonloss": "f9ca0ec54225f14576cf29186e45070b0eb553ef6e41a6ca38310fa78aab95bc",
+          "paired-expected-order": "85baa167273da74899bc86d9509b6593012fcafb51f71984dc6e3b4936255081",
+          "wide/gain": "f04caf7929e4d4d0db5ddac42580eb82b62bc753d8e549b2cb3233f3d38a859b",
+          "wide/nonloss": "80e61944a5cb70190ac8328fc15d7e783b213650dd3cdae064e86c1b55ab6e7f"
+        }
+      },
+      "high_school_statistics/google_flan_t5_xxl": {
+        "cap-19/gain-1": {
+          "deep/gain": "fb2fc346e34791b4ebd12450aa1cfb2b40849b366a9f2ed364c3a72c31a80971",
+          "deep/nonloss": "b6b87dd8daf95527aae108693bd56dd269a0f3211ceb93a464d3a9c98c05d932",
+          "paired-expected-order": "3d9583f2a1d8aa335e166c7976bf6cbb010e774eb8b501ea9293be67d2520483",
+          "wide/gain": "7d9189de292cb83ed708cffd9c65f3cd98cd304aa27fa7e3a4f6efbe9fc1617d",
+          "wide/nonloss": "34781df5d030b0357c66d193e4118feca6e01710a28463c9f8d4f0fb301100c7"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "43ed0df54fb1bba26e3ad5ab8ca8f026024547e1d3a74d51cd5e413816a57789",
+          "deep/nonloss": "577b34214d6f5292f86be0cda0d89d0fb140cb7c975f71e007e734c9368f15e1",
+          "paired-expected-order": "1e97352a3ec26b204fb26b947f9376d29c86b1a79d8c5dd67ff797d55a01bbea",
+          "wide/gain": "663e6c7af5218697d7a60d3f98cbab596376f79132f8d937f4dc7adac8cc70e0",
+          "wide/nonloss": "0dc65d96df25d0f4074f2e05475f3fe80931e0a666d38b94817a9b152b515717"
+        }
+      },
+      "high_school_statistics/google_gemma_7b": {
+        "cap-19/gain-1": {
+          "deep/gain": "b04f83f32f86ee8b3b7d961278eb47ca27a533e9341706deaeb0430450ed5f33",
+          "deep/nonloss": "2d24acc06baa97b705c0fe2975b7798f62f0002abe05e457b2a79523e8c73a72",
+          "paired-expected-order": "4ebea4033d35a2dc39cc8ffe4c68dc371d75a63ab92fd5863efcd73e28ce8f7b",
+          "wide/gain": "5f845b9a1045d330ddabf158baa813728fca357384b672e06aa8d241c87f80c4",
+          "wide/nonloss": "9659475f044a1bafdf54eb9decdbfea03c80e59ba009e6ed5a6b5eb11091f88b"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "0649b3a55ff1380ac79e09deca85bf786df45614c9adb0dcbcd6964195db4dc5",
+          "deep/nonloss": "a76c9aa164af5c127b07e071c68fbd16ed3454461f830168b533e583fd187394",
+          "paired-expected-order": "6a757bffc651306b5c9cab3a7b4e6e82ddd2f955238a00c55fda21a38695b756",
+          "wide/gain": "330664b44c530c4b2dc67f2ca2a91da98f1024bcab6ece97d2c8228151d7537d",
+          "wide/nonloss": "4f7be422f387ac4bd66882432066481a7a645c962843bcfc7affa2e57655ca35"
+        }
+      },
+      "moral_disputes/google_flan_t5_xxl": {
+        "cap-19/gain-1": {
+          "deep/gain": "3d045f6e85ec8eb96016b28b8483fa4c6340264abce2ee6b9bddc92efe4ce2f2",
+          "deep/nonloss": "62d45fd120c1edfed824d5c7869389fd037ea02921ed8b20de6f4545cef3feef",
+          "paired-expected-order": "daa9a1831428065e5c2d26c7f75f02298243998f0fb83449acc9b56f212127ca",
+          "wide/gain": "68f02413a673ae37b17e840483ee0f4693ab38af6ff04500fe4fca8457dadb92",
+          "wide/nonloss": "e4093c8054b763f462ba65aa399bbc383001c98e130fbffe2044835655ae2b84"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "5a5c04d8305607dd18f4001b085b9eebc16cc4ccb0d4a1a0313aa5f431e7c218",
+          "deep/nonloss": "6ae75453d865d624ee2452aec3114b4c4a83e403844fce07ba46d2e3c6f7b835",
+          "paired-expected-order": "74d56dff63a8f6bd598803027404ceb5d6c307a0e3203b51614aff3cbaf35892",
+          "wide/gain": "82cf0ec45af7ff1fafa2ee8058dc5da2872efe078039f1afbb9a2c343c7359a9",
+          "wide/nonloss": "1a392b1ebf322ec4e9c13e68f2694bae760d4886915c249b79c553942d4d3f90"
+        }
+      },
+      "moral_disputes/google_gemma_7b": {
+        "cap-19/gain-1": {
+          "deep/gain": "7359da49cd2af3fbd62018da6479b46944842dbf318119e41412002d070dcd4a",
+          "deep/nonloss": "df5e672a7c7d29948c1b94176e7d166465000524a078097778cbbb02922f6a7f",
+          "paired-expected-order": "e7ad966347d762b289a23ad677d7aac76a69e0f4785658e806fdbad112fa3541",
+          "wide/gain": "002a27f77817f106d341847acaa9257f844fda977dc805b6e3d202ded5df31e2",
+          "wide/nonloss": "63e4428365fb873ca654662bcce13d44b0527d7e2725aa085013cfd361bc7e24"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "a9f7080c3af097524da884e79d2d732bfee5cc4298a559482c2bffa9c44b2daf",
+          "deep/nonloss": "c4177b1f77b6bfb8bc86744be8376ea9661a6f84d134e2f68d76c2b15cd01732",
+          "paired-expected-order": "82252bf7df9639fecaab47f343ea226ac4a2ae095b8be4179b38125b8b293952",
+          "wide/gain": "332faab3219cb386aa6f6b2dfbc2020e1083348f65d6ab3f406d097c63a19d83",
+          "wide/nonloss": "6e2a49d203068f0ec457ecaf69844daa56cc29cd3f6d696e15f88993a1070563"
+        }
+      },
+      "moral_scenarios/google_flan_ul2": {
+        "cap-19/gain-1": {
+          "deep/gain": "26fbd279b518f24ec532dd10a1450a57bccf8e2d5a4b9b3acd2bb0f1ca2af5cf",
+          "deep/nonloss": "26e5cce7b5e370c8512a33646b4176fdf7210647c9544cd16f9dd29e6328e6da",
+          "paired-expected-order": "d6448c923f032a2de325876258f965d9138b0163d6e4a16ad5f6ea7a7f3da301",
+          "wide/gain": "2718abe2943f4e294685d590af5481515c7b6b63b489580f7a5caf7ecb3ddae5",
+          "wide/nonloss": "e275c14c16668acc586b00822cf94334fa7ad9a170aba041822513be4cad6705"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "ec1cf0fdd53814b042e983a2d4b527d8d251003083cd2959414bafee6b5d3d8b",
+          "deep/nonloss": "ceca2d38dad368b70c287983301f2055a0aa9add140ec6b75180533592d3715e",
+          "paired-expected-order": "d8269eaa386d38f249344d9971fcec44244c157f84b1d8fe11d661279025dd26",
+          "wide/gain": "5fd0db7eb8166be86bcad509e6a8dc4c4ae701dea951e4118712905a5737b594",
+          "wide/nonloss": "9e2ccc97bad53c053ed0545475ca62bba3d258bc5bc0f353dc24e8168f82aa20"
+        }
+      },
+      "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": {
+          "deep/gain": "9e9bb19d119d9ea5a106a62cb2b7dd19b8952f144814c7e10c71b80ffdc57892",
+          "deep/nonloss": "c39f6232a974f010f56e183dbdc7b7d0030462a9f03ef03561db15b35fcd4c69",
+          "paired-expected-order": "1ae6ae1a83a8a37032f1234c9836963520707cd754aa1ec146fb7764157c9ea7",
+          "wide/gain": "c35bcd45e303cdd5fd3388ebf7a39e68c90ca29210e003dae4991557ead66e5d",
+          "wide/nonloss": "b37631ffc79da5cc2203daae9b7848f8e1759136fd9dd127f47f1cd4202074b1"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "a163647c463c17ba618933232495d469388c2744a4313723d5a15f091d28dff2",
+          "deep/nonloss": "637b2dcbacac9a816962e2d9dc7b374f6eb56ded246318b3e5b1ca3995644f02",
+          "paired-expected-order": "64db8a42588db858be878678a0634b8f36c5d0a8e63ba23e6dd41cd97f9a0860",
+          "wide/gain": "30be6466dcd526ec0d73595ecdb45818b618cd2a0c9343a6d4a5b5e9432d5323",
+          "wide/nonloss": "d78b8727f7603ef4e612243f931cda30e16397d14ac7ea4db0e35c50aef9097b"
+        }
+      },
+      "professional_medicine/google_flan_ul2": {
+        "cap-19/gain-1": {
+          "deep/gain": "4a874424bb103c1b0e007a08edc3e8da6ae694c2cdaec9ba2a3ab0302d512430",
+          "deep/nonloss": "cf2d68d5ed628a0abbc89e0939234d2c6cd668779668449ca339359b03377cec",
+          "paired-expected-order": "05443cc48ab55a6f5b4ff90a7ea4a29d1fa16aa835471322a6def66dbec3cdb5",
+          "wide/gain": "8c66ba0cafeeb2626e1e21db7ab50337c8543a66177befe797231bbb9f95df38",
+          "wide/nonloss": "e2b98b5461412effc486a7ee090936303510104eaa2bb9f5b04708fac770d4f2"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "d73c61024e32159cdd5ea5d7f3085588276b7833eae45658ff6e2c684fed754a",
+          "deep/nonloss": "c3b6bfcb7c5457f08e99b3133cb19c4bbc1096d0cad431f012f11d2d0551cd60",
+          "paired-expected-order": "f69d793370ab6209bc3f73e2b959dfa345daad912eca82950374b12b821ab339",
+          "wide/gain": "f02768e8e56a02389ed3693e925977b6fb205d1ab63555ca34c5bb18ca7f38a0",
+          "wide/nonloss": "29f3404fa0acb5ffeee3a25fee1ef74aad8f2825978a573787184cd0205f7112"
+        }
+      },
+      "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": {
+          "deep/gain": "491b5bf469a3eaa82b9d561b12d9028d1a525387af71f9cc323b10d2f6232a3f",
+          "deep/nonloss": "89ef48aa326fa8da82537a2f95f46eeaec37b490a74aa61e8cc55b8acda5002e",
+          "paired-expected-order": "2ab702c370233bfc6f037dcb31edd0cd67af7350ae1eb43130a18202e2f94608",
+          "wide/gain": "3252ab16bbaa7a4a126923f4012f6e0583795de2dd3ae237ce6edbc24cf07f68",
+          "wide/nonloss": "d2ef192dafc4d503b8b5444288630eb42d3e8a69bf5ffa9d1a7951e8fd158db0"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "ce36e21e1a06f46810e16a33e73de91fe7b1f1716011b9314a2e242a4d81c625",
+          "deep/nonloss": "01bfcb9e74e576c1653e736c55ff6748c973ddddebee5cf0a03542fefdc35978",
+          "paired-expected-order": "03f279afca26569e616b73fe29ece18659232bee01be45a969b6043a2b3fac22",
+          "wide/gain": "b600f8d54ecb9b337432df14bdfe56028069ac9ec68f370f138fa7cfc473483d",
+          "wide/nonloss": "04283dcb8339c1d65b122be9fa72c647128e0c07891145a82d3b6efbf88c5f70"
+        }
+      },
+      "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": {
+          "deep/gain": "5dab3cc64433632e300d376e5dd05269fea0658a2a22c66f7fb95e58590eca2b",
+          "deep/nonloss": "cf134f3aed1bcb30bc01708d9d92f003d87225790a5f5ca659eb0fb4b274f5f4",
+          "paired-expected-order": "4467dd2a1cda1813ae580a7352286c44f0ff65a3028be48ae92a979120e3b4e6",
+          "wide/gain": "da808b40d5e3b2d4d63185792758fa89b9b2d5996b3a055d1cfd2d7f6403c052",
+          "wide/nonloss": "dcd085a4615de29ff71067c267ac5f80507bc0e969b5bf6c3fd311f0bf26d2a4"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "3025c41e78f848cf859193e4df9ae833278b5232811019d490ac8b9dfe5f7d26",
+          "deep/nonloss": "05e7c6791788d7040cf037f2b69e489bf63251a915485190610f0400c8157a8f",
+          "paired-expected-order": "718e7235231e90b078c5cb89e759f69490eb6a1e226c77d907a02c481011e321",
+          "wide/gain": "c745359aff44b1bccf4fe41f429bcaf45d343b1c561482a34238c702d277f506",
+          "wide/nonloss": "a4de128790a52a54196205776df36f6d632bb564576c53fe2db829a56dd3bad4"
+        }
+      },
+      "professional_psychology/tiiuae_falcon_180b": {
+        "cap-19/gain-1": {
+          "deep/gain": "fda09e73735acdf0af8d273bc613ed6f06a3c9fb8d0f1a2a33d8a20b596c24de",
+          "deep/nonloss": "26b97876df9a1a86afc681995c1331baaf7ef78d8734ff1ee64a301db187fe67",
+          "paired-expected-order": "85cb23762e4bf609a34b3791b5da2be54831a1d18cb8761777560122977ed3c5",
+          "wide/gain": "8f9837ad2eef739cf1af8e84b5f0f56761718e022e88e33da97e93f8bac0045d",
+          "wide/nonloss": "cc8a008bd8944c7d590c10bb8bd38536254e3603b1e436c4c7cac7f1df63c73c"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "7ac688c0ba73f536d6cc5049b61eacae061e72dece4dea43a8f63a6765da4548",
+          "deep/nonloss": "32cbb57c4a901d715e2e95cd0f6360cf628ca7be05df0280cd4fd5372b752715",
+          "paired-expected-order": "22d2664cd0f599ce667da572aeaab2658a014c9b9a6cf17d451d31267ce26f44",
+          "wide/gain": "ce1ee6c74577a02ee1ef9222c95602dbd3ef1c6258900db93bddd56f259a1d3a",
+          "wide/nonloss": "081ab4ad1311b969ebf24a4257c18b5885022f1af0ddf2c20d654ca9de09cc3c"
+        }
+      },
+      "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": {
+          "deep/gain": "eb464f0ea31ad1171816639352ad9924f1827677ac537fe9660d544860936c46",
+          "deep/nonloss": "f4fbf55d0820d10096969f58df961a8dad25e38c8d8a43b735832692097195fc",
+          "paired-expected-order": "f77e76fea6adff293ed8562086bc039fce05bf26f598629b3ebbb3a9531aa21d",
+          "wide/gain": "4a8920988139ae8b10c672f95494de4a03f5ff9e918c08e358aef3fd3b215dcb",
+          "wide/nonloss": "39927a77a85220f542d1dd01610eaf4134c3093568e71d9034ce5735f7a59fe1"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "eb7cb155986d86c01f413d822f4726b02b509f4b158a221d584360315983c7ee",
+          "deep/nonloss": "afe4ccdce2514ee74cd9da094968ec734c2656dab41572e12a5ba472f1a45c21",
+          "paired-expected-order": "0a3ac385350d9c153f32f5f16772aa55a0b905599bb4bcd50963dc5ecd901c88",
+          "wide/gain": "371b2457553428fe6a84b0d932d81991cf060554c15fe2835eebaf4a004f766d",
+          "wide/nonloss": "ea54c446d15f33b43958bc001f742dbd086a3b3d01b4d32f8803d3655f77d82f"
+        }
+      },
+      "sociology/tiiuae_falcon_180b": {
+        "cap-19/gain-1": {
+          "deep/gain": "e7e4d957578d391f01916880970318794f2e4f338d842dee85ba246f62a160dc",
+          "deep/nonloss": "19265ad5a69a0ab66c0b15072b1099c3987cc545d9a5b8123acd78bf900e9d3e",
+          "paired-expected-order": "d2e7951cf480baac8a3ed550b5c6ffba7426270249c4343ad1bcdd8e1a65d941",
+          "wide/gain": "da16270e91d25856478db7d554c3a649e7fcacff3fa9028f2424a2571f2c412c",
+          "wide/nonloss": "ec877b5a7fd973fd13d4cc4a1c16070947641b60bc3f1d3e451c14398bb4b8f3"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "61e4bc951ec4fe2d9b48d66e197b7dd544b1ac11208314aadbde7e4575f26479",
+          "deep/nonloss": "d8a5cc4079ead92fa7881e4151b070b545fa86cd6f235782e065f80c0a8d95c4",
+          "paired-expected-order": "622e195daa3923409f2e59e9a81755cf38e74987cecb01603a142b44ab93773f",
+          "wide/gain": "6bbb89025ad4496bccd1ef7821c860c9d0eec1c346730e400c500b305ecdead1",
+          "wide/nonloss": "18d5a3b0275c1348d55659c113fb17a21b1df8b373fb972201ed48d819243f53"
+        }
+      },
+      "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+        "cap-19/gain-1": {
+          "deep/gain": "f38bb9f790b3c25847bf58b622bc4675acf7495d87c1fe489a9f9baf61c800f0",
+          "deep/nonloss": "227a1122c91e2e558371b3964ea61cb53fafd16f20616efbc534f1e24818c999",
+          "paired-expected-order": "55e3fa604f6382f16b00a0a94d84b21bfb52aa90824bee8db0018ee557df5ae1",
+          "wide/gain": "98df4ab6db7ccf0b19322d843c92c7f7a3b6f6936d3a6103e2af50d0b646567e",
+          "wide/nonloss": "9bcaec79ab16838a5c97942cc86e5d2492fd20e85c7890578d09d533a91b7840"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+          "deep/nonloss": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+          "paired-expected-order": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+          "wide/gain": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+          "wide/nonloss": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+        }
+      },
+      "us_foreign_policy/tiiuae_falcon_180b": {
+        "cap-19/gain-1": {
+          "deep/gain": "00f4d3419a0bae4f433061264f3bfdc43ba1f22b4151208c0a076e4ae486a10e",
+          "deep/nonloss": "ef07ff159ef979c9fcd89e6874bc5517f679f1a14c66b960fba1ba92fd935749",
+          "paired-expected-order": "6e59d97b9434c2c02b7686afb301c6bca0a001c5a78394bffb7399b26b9e0021",
+          "wide/gain": "1faf3616467910cf44aea3a094d0ffad4be4aa7c852759bc057b5eb6a7a77f0e",
+          "wide/nonloss": "0364134ba1fb2e548676242e93ac33820406f4f72f3f5bc27caa0b4a1f8f1220"
+        },
+        "cap-19/gain-2": {
+          "deep/gain": "263651dc4262eab6c310a94094782c8410ff27b2af58bd90352d608112cda259",
+          "deep/nonloss": "fb76e46012b1bceb9b154f5136311cbce99f25bbdc016e91df589734b77c1fdf",
+          "paired-expected-order": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+          "wide/gain": "cf1e1f57689a05e6c07115f03620976727005b0b2576679d0d4f237c24fa616d",
+          "wide/nonloss": "6626c9568619bc456d52c81253c8293f5f632c328c5883da7ffec89a45dbc91b"
+        }
+      }
+    }
+  }
+}
