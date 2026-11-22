@@ -27,6 +27,8 @@ Read `result.prompt` for deployment, `result.search.prompt` for the validation n
 
 The archived BBH and LMentry comparisons favored one gain. The stronger two-gain variant helped the two archived MMLU cohorts relative to the same screen. The API uses the caller’s explicit `minimum_gain` setting. Fresh-model performance remains unverified. [BBH and LMentry evidence](recorded-qualification-margin-language-transfer.md) · [MMLU evidence](recorded-matched-qualification-margin.md)
 
+The opt-in threshold precheck can skip validation when the incumbent’s recorded qualification passes make the requested gain impossible. [Threshold precheck and replay results](threshold-prechecked-cycle.md)
+
 ## Reproduce the archived paths
 
 ```sh
