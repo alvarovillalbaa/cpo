@@ -14,6 +14,8 @@ The gate requires a positive observed advantage and a nonnegative lower paired b
 
 The one-failure reserve missed the gate. It changed four deployments relative to the minimum reserve and lost 14 passes overall while spending 287 more lookups. The complete-panel reserve had the highest observed CPO score at cap 13, with an inconclusive paired range against the strongest affordable control. The original unscreened cap-13 race scored 56,063 at 9,010 lookups. These comparisons concern selection among archived prompts. Fresh-model performance remains unverified. [Full results and panel traces](recorded-one-failure-screen-transfer-results-v1.json)
 
+A follow-up measured how much improvement remained after the strict gates and the paid probes. [Coverage and funding ceilings](recorded-screen-coverage-ceiling.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.
