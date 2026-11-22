@@ -1,0 +1,2631 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "9348cf4b424da11c65e1c144332f86089418f9ffd307e9709da76d8d96b47ad0",
+    "parentReceiptSha256": "476e3eb08541a1dd4a078794d5aab90fa5a8a844d7d5124fb283382fdc9f44e1",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "deferred-two-sided-certificate-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Read the incumbent through its first validation miss. Reserve one shared probe for each unvisited challenger. Use the remaining flexible balance to certify each positive probe from known challenger passes and incumbent misses, including incumbent replies accumulated by earlier certificates. Use paired row order or expected-cost order with same-case evidence. Revisit shared-probe misses after positive probes. Keep the exact disjoint qualification rule and roster.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "deferred_two_sided_certificate.py": "2bd603b55646a4ae51d4990423ee5fb251714bb6ca0729054168d583b2d4c339",
+      "expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+      "two_sided_certificate_cycle.py": "627d48aa21ebae7011e9c69bb28fb37f607079920af2304b13b6e8fa9180eb5a"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "0ad2e85adbdfc8dded925a7ab1fb0f1a7b24aed0188df86e5e08fe5f9f55244f",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "lowerPasses": 9601,
+            "upperPasses": 9601
+          },
+          "paired-row-order": {
+            "lowerPasses": 9646,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "lowerPasses": null,
+            "upperPasses": 9601
+          },
+          "paired-row-order": {
+            "lowerPasses": 9601,
+            "upperPasses": 9646
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "07535d10cb0356e7a794aa73872a141c67ebda0600774639841b16c2344ad563",
+            "paired-row-order": "820c7cc3e3671a0f2cf3abd82cbac8cf0055fb34d2a7079d3da8ac4dc550827c",
+            "shared-probe": "5e0f47e07a9cd8269b75f0db979a4f494f228d822bf1fb198d4a6140e3f88d74"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "dcacfbd65048001b9a6f17bdb007a5a88ca2a1cd0698235d5a1618e72356ada9",
+            "paired-row-order": "c5d0ad1729fd2a2c0c269e3244f059fe987414610469ad26f1fa07172a3eef5d",
+            "shared-probe": "44d2b9c0a658f794504886589fdfa7f962663a467a88bb0ba2050913a14b9a5d"
+          }
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "a72e7b1fdea52d378c9a0bf1e017ddd6cf1979662f62c7dcd055e35ca3406ed3",
+            "paired-row-order": "e098d366e7b18304f3925e741a405e099da0ed977265f3702074215ff519a698",
+            "shared-probe": "763e4b40e299a39d81ff6a62dd92bbc33345ecacf06c2dccbf16a647a4d971a0"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "5c7740ad6ce16cd8060ade919f10b474db890da66391a1d184f8da4594ba8b00",
+            "paired-row-order": "31ddd4a3eb5cb4f418065c2b16dc041d3c2072522451012ba5458daad57b393b",
+            "shared-probe": "0d3e3cbb63b8e5fbbb52d8c0edb7ea31da448630aef6455723c3049bfc345dd0"
+          }
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "e15d5f8540e13abd2da29d03f32e31eca2252a4f5e5dc53c6ee4e922be4d9fcb",
+            "paired-row-order": "602fb96d6698a95b2938ffec0ad2e726317981ff06607d2b789418d795db7c89",
+            "shared-probe": "95efd8b7aa37826ddf9175c1a050395a2ef02fbd13263504dfb1d9b138625faa"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "14eb20617e0629101f3b50ed0c609eed00d0f22367b132222ccca67df32fe168",
+            "paired-row-order": "190942f199cf819b1382c074188dc49b481f1f393f21b9861a2e9e3a3122be45",
+            "shared-probe": "8b68f6b1f05290e7a518767d0141faeb200502d0f4f187df0793c9d79ac338bd"
+          }
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "e15648defc0151dde4cff05acb51f71f43108aa53fcaeec545b9c94923685e8e",
+            "paired-row-order": "89434bf2b7c6a0f50a4aa7ad42441fa34cde949cd2e9012e4acb0b25aa429afb",
+            "shared-probe": "6282edfa25579cf72896f597dabddc9e7c719a0b297b5d9ca6da2c1aa8e48a10"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "45c058fc125b509d929a19e79fced45d713a2f059c127136e8a9665ccb4690cc",
+            "paired-row-order": "eb7c955a6659be3c638871d18d4609884ff1f01b563f68fbbb481fb921aea906",
+            "shared-probe": "18526456103010d32ecb3194f33ad389c0174cb9d9c3bdd04f8df14d13f21a64"
+          }
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "576f5e0ba919b873a3b64d82c7e130591ab5e4d1796f5a9c354ed30a64c7ee97",
+            "paired-row-order": "c42dd8e00ff0866079e0c0328296e13059e916139ae619014bbc77444eac87d0",
+            "shared-probe": "74f24aa5f6d629a67be59830b944098fe0326051a4263944e3d5e0fcd7b23336"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "0c504a02c97d61009380716810a521386398ade38f0ca05d1c5d4a0e85699b45",
+            "paired-row-order": "7feffb8da8d6cdbe4e730e664b6729f00a8cf9fb877ffa34ab15474659e39583",
+            "shared-probe": "4d8be6e55738c955c92f3fbd22841c7c0662624a6fb43bf3d6678258607471dc"
+          }
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "8227d2e177491e9616b2829f410638e6e3b23c3af44e0b3627b64afdb548bb50",
+            "paired-row-order": "d93777599a575ef46aa52dcfc654fd080a99349ec6e0304063a3531a34587f56",
+            "shared-probe": "c2e9c6954ea5b39a3f19ccf9f89284e92410a77cc87cdd25a4a17663d8795722"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "c4acb17d249c9ccc141c5dc5633ef65b5db90930e085dfebc248e711e4007907",
+            "paired-row-order": "ab9915a1d644512b5d850fe7a468efb7c37830a0bf9fbff5931b1ec6dae4444c",
+            "shared-probe": "ca12933226ede915a8657c78a95450381cebe42d081d47cd547c0a5e258ce77c"
+          }
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "4641785f91189559562b43b28fcef9b4dd7dbc7a08801c0ff4ebe99a18abb97c",
+            "paired-row-order": "fcdd424bd19ec8d84713e46fa0668fc5886cac4035c0d35b25262ad668beb0ad",
+            "shared-probe": "afa3db6b4a6d5995dfdbd50ffa026f27da92c403e12d5a409d309a1e2c123595"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "ce71223e6dc7a77bdadbfb025a2f6739a40372b5c18f192ef371b240522a5093",
+            "paired-row-order": "2f2a6fb43d46bb1a8dad352833e677b5f8936e90630f7e1ed65f8b5a934031a9",
+            "shared-probe": "ebf2109605360c2ace8cff75f6e86f87ed11438673813c30d4d5eeecdd6d52bc"
+          }
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "b91b5ad2424edcb153b8148d1a2c9c60f61b2222a5c3575d60dbaf2ffa26645e",
+            "paired-row-order": "82a5d1043a0ae4c5f9bd282b495cb4c0ec57320c82332a09b4bb5c79ecde026e",
+            "shared-probe": "1a2d0b66ad0083da11d4dcdb910d46145efde6904fd859c67ee88dca7b573bc6"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "2aee789dd66d41c2386c2a0affe41b781d80f214cde0edd6a9f4402794b2f4c2",
+            "paired-row-order": "3956be3f0b7f13d4907328e2d7c9ea41b1af7e7c190b25da9146eee8c63c4d6d",
+            "shared-probe": "566abb0a132db3983bf8e5999bb8364edab4c371d9a8461ec4d6162bde6c95ce"
+          }
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "06e287342bb38d9f2f2d7a9842501d7950a42440cef3fddee0908c53dad7f1da",
+            "paired-row-order": "17c1db51cd1423df06ff58d37d06ef019bc4cc134d0c214c1297ee920ecf0dc1",
+            "shared-probe": "c3b249ef3feae32d385d925368ccf162e044fa93a1e9680a7ae4abbaa6e67ee1"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "2df05baa9ce3795ea992a5052131ec4e00dc2857a41975297c9593cc69ca635a",
+            "paired-row-order": "d700c79dc65cd8ee67668fcac5637bf8df7cfa63c4fc9b5e31e627305ee1d199",
+            "shared-probe": "61179a4432ac1f40f9d5a03c77623a7f0f66446e3e270a1c73695b9c5acb6c27"
+          }
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "148d3bdd42a7c6a0d35a71f68a68c14b48a7633fb5a879bbb95dfd65da869b11",
+            "paired-row-order": "4e9a30b61f2fa61f1ee200db35b95eec3f326efade497eb8d54bb8ea620d3dbd",
+            "shared-probe": "43988786e7732cb817e43370774ea6328ca0f1039809f4e3369bb5306708ad3f"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "b7640103c0f4c15264c7e615d79de10da8194103a0b4d0fddfb1b327d5a36542",
+            "paired-row-order": "3bf100b2cc6f57a4a1b2f82a5f1f4a8b965bc257e02d60d358196453924374ae",
+            "shared-probe": "81a17443a5cae274d2263ee711fb4b67a568c6794918ccec366bee3be5553bd2"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "17cf2efd71c33ed5266ee2bf8c135bf8b83a8df2b6cee37f8909863a871fcbeb",
+            "paired-row-order": "e07c9c7ba9e40b7e80a4a4595f97ed16e213ee6a2de1f1b1e1a665158730821e",
+            "shared-probe": "05da453dc0cf186c6a5d165cb938a5b552d4eda7f2b0439dbe32846270777839"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "ad13283e37c5b5adcc4f5de6974fc40acdd0631eeefd13417daf1ce3147fece7",
+            "paired-row-order": "dfda4fbce12de371b6cb7d1eeab349c01d5b196c3ce5bd4e43d6416f94d1010e",
+            "shared-probe": "a424b86176d0eb3516a09dadba2cb59c65f96b7c8ea32abc478c1a60979dd794"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "46c225778e6e1cd7071a187a96c8d5ceda4cd4ca7a2a56615cb763cc853a44b5",
+            "paired-row-order": "56a038a2e3c9f78baa78bcf408093cb3a3b09c75fc8b8dc9dbd2bcca57cb82b4",
+            "shared-probe": "719c95dd85cdfeaadf718e021f5272c743fe7314216858d5061c68a238be1fdb"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "37b64e5ccef186dacbed6ba9713a8058392d5b86efff67522be27bd1d588c24b",
+            "paired-row-order": "c4a1add891afeeb6eb0ba6568d72380c6e3024844d3792385d35bfd5b110668a",
+            "shared-probe": "35fc2b0fd748da21d57423b690776be965bd9ffddcb667150fa0f547dc4327b8"
+          }
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "a1709bd5ed48dda47f193d5fc14782e5ce9f2c2677094a4920c1d15bff22349c",
+            "paired-row-order": "df34e69613eb67bc073f7b29609ef284ea02cb73d2c0b8a075e9f7570e613fbe",
+            "shared-probe": "dd6a660f0b94668419b48bc2c1fe97aaa8b204bec6687ba62f31efe6aecb2848"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "50f1ddc547602fb83edd08137d223fc6196df785de26e1057aa9c4e26e24b1ff",
+            "paired-row-order": "c169271bcae546b870a99ef1e52be70dce49edcb7c121b9291a30377863257bd",
+            "shared-probe": "42339d53320356fef9b8a8351083ea2c904ddcd1807714617e675e4c0a405c3c"
+          }
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "c8db934212d534a601b0b64084e4cfc00fac0b6ff43150d92e87d367637b24ad",
+            "paired-row-order": "9cdf671dbbac3ceadd58c0354c8595973fc3d98e30785d578d8d120f11e1fed6",
+            "shared-probe": "155bd969b367f629a2b6bb61ae3713efae6f91c7dddbaafa63dd93d867cfbc09"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "538901f225411a9ad8e78cd32c127055044fa7e7f5fdbe4c7d8494447be5083d",
+            "paired-row-order": "eb43808255ff390d4bfe56fa5c50b86d6a60b6be54d561c83b70f2a42705f4c9",
+            "shared-probe": "fce5089b8f6289ab4b9fd5317e042c83ede9c730f407506013bdc15c7d8df42b"
+          }
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "d1130ca2c43dd3b175e5952a228832f647470b50cde9288dc321b94cc55f3c50",
+            "paired-row-order": "ccf28c61a1537e351794cf853c7ead85f2fbbb035151c07d46296ec81469f73e",
+            "shared-probe": "5cd5f5a528108a0a6ef7387e934a07bf9ae08b606732853cdc380e7f97af5eb0"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "3735f75dd150e4af0c761a3db92ac722eb826c55fba9281c66388f03e9676ed1",
+            "paired-row-order": "79b5ecc031f3c1026d29a471ea3b197ab27da0ab3400d749331e35383710c4b8",
+            "shared-probe": "6658595b0cd480763f0325181f06d1eba316e936233f241fcc115cb66739ae22"
+          }
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "faa39c7325c58a76bb0622f797acee030221be3e835ce332dc01b26a9cb34fb1",
+            "paired-row-order": "7f934b12ee35c09011bb7769e834ee1089389cd457dc40b43bb41b068979e972",
+            "shared-probe": "aa215cc16c296ca89b25a3541588b125cb6621860151145fc3d49340f622fcca"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "22a0ad8bb663224c4837ccae0f7bce3e070dd17026811b251169dec9df453b52",
+            "paired-row-order": "032da9b334ed0ec7700308899923c8780d09b025db5d8dc87ebadea4385dd7b8",
+            "shared-probe": "e83996f76f67f2970e13bc61a47e3e1a8ef221d64b2d88cad243f04b46f5f5bd"
+          }
+        },
+        "bbh-navigate/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "f33d027f557f3db1fa97bbe0f5db0257c468cc7ef1a6434b6e64e5b2d8f22269",
+            "paired-row-order": "37c2fd3d3fcbc017b73933663d9ddd63fed7eceaaffa321dbf18d58fcb068682",
+            "shared-probe": "86fffa313ba085819979e27dbb475b6effafc7c6b20fbf53bcf8de195c91e3d0"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "bcddb796f819dfbc015e285cb6e0163453833db1a1a258346be9b721ec981f28",
+            "paired-row-order": "b78a4b0a51d66c9a2d2c3f519b2ac6cf703eb115dee414facc973de07bc9733c",
+            "shared-probe": "df1a3f59bcd8cd4425a89e2acb34e92c0bd33588a22825e2053297eb4c097de1"
+          }
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "f6b16141b8d05048cee99937cf2f24d2a9edc30e0bc33c72921ce7ff62e60ed6",
+            "paired-row-order": "688d3ce4f83b7419b84735c97d17c53094ed3aa49c8220cc98aa085eac6ae8a2",
+            "shared-probe": "8ca65cf684dfad30e711cd0b79f01327656838148b971e1c0b2fe99ee74df427"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "470b8efd72e508afd31186efc069eee4821e23218c1d6415d7acc14c90d1cfe0",
+            "paired-row-order": "27a428e64df1d5d0d6549f670770f355c674ec195c29fa86225af0e20f93e536",
+            "shared-probe": "3502bb5d7b15de83e9f51cd0b85d4f016fbe6712e368123933937718fbd8e5eb"
+          }
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "ee66c25e812758d6e3b7674bd3d5e6131dcb30a2c0d63fd305bbb73858248351",
+            "paired-row-order": "4c076142e7c7d4fb6420c0e65284df303ea3a0255a65ec0e57e53874ee306f0c",
+            "shared-probe": "235700ce5b4d6556c76d884f4aac90dcab871d961d8657733732fceed37abd31"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "cc86d39ca2750bad71132751a3c8640df677341528fbe5625d7a2483f13ebc12",
+            "paired-row-order": "c7f94f63f5352c41d9330d4cf6add5909eb519000716bf90bd2faec4f9a4ee6a",
+            "shared-probe": "63a7b708409186eb472896352f031924383dc4613344e5cd4d3f5f4922b9fa78"
+          }
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "ccd279ec91b1c5903be91ebb2ff6d35ebd322e40ea9c3ae8f5b21752eac4c86f",
+            "paired-row-order": "6973646ee92df4c81e89f64e1a14e08974ed076de0908eddce74da9b6e7578c3",
+            "shared-probe": "1127c449aff908546c987e9632e1837b1a9a229ce32f6f475a4c5e6371fe8cfb"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "988239ea7cc2f9ee220d8ff5c69942d116a0531db1fd843670dc3e7a8dd2ffd0",
+            "paired-row-order": "4bc8c3cd5b3b07ad48382993fcedba9b7ae56f2d9f894fed8efcdfe63bfba6ff",
+            "shared-probe": "6e86b2f23d4afc61e2e5e8a15dadf45be050c57f6911c5aeb98dcd44fdbbd0f6"
+          }
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "050e6aa47e241d06c51efc2bfc796b36e8cc973f9f02309b563c8b0a484a3f84",
+            "paired-row-order": "571dc1ad12e7161304f3271188e5be7a2933453a8fbb3d8114acbead4d2793ba",
+            "shared-probe": "634f8df386c1f1c3ca87e0acb1dc9256474dea6c900e0a9b78dfdf72f94dab6d"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "41150465e515ae009c46b28829991d7d515023a63ab4c584eda0db7e4de4b465",
+            "paired-row-order": "a7c3db44e87dd5c98ae40f699678d8c5fc8217082be510c7b86f581de0220724",
+            "shared-probe": "b0c40e3b8f452eeadd74889657b2d76be8ecc2df4907e35a759d0841c41b18d6"
+          }
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "9daacd0b84a62f5cc8865add7fb402d0b9de7ac2adf90da4406ba75e4c0d65e8",
+            "paired-row-order": "0a39322b0a58f6c37d25c9977a1b1aeb353cf500e190e2b199e977a2f7f1ea1b",
+            "shared-probe": "048d76dcf0c4cf7bf14cbdf77b32a8f4b8f887ae0ba8e7c0a2ecfe648ca4c117"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "31ecdf5951589d7edfeaee2835e306a685ac8e20f388c91e6d428aec0780b491",
+            "paired-row-order": "392255fe85cfef06678f8a13d52f85b2c69bed7e28fa4c97bd70869939ec1c92",
+            "shared-probe": "95dab4e6ba757b9c32604c75099fbf6e8bc9fb2d4bbb37f492a333c1feef3c5a"
+          }
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "0eaf9ddc3193d63bc6d75a32e59d16a4c47991f5cf7f7c2d8620f5d9676471b3",
+            "paired-row-order": "7e1bf627030b94c2679b408a8145ec9e7ee26fac1c3f70bb800f0c36d89eece6",
+            "shared-probe": "c51505a18c2f786301f1e269ce104045dd401301e5e24043bee568e1f7c7d85b"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "7a19676824e36cb54068712c777128ea1eed2c6e725a8d4cfafa410b4a3b866e",
+            "paired-row-order": "411b1b8e73262fd8e9edd9b8d2146449b3db97d02aac5af8702d348e94a4a8b3",
+            "shared-probe": "42eafbe6cbd373575ae4da5530da32cb60c59c1ca7004ef55d75e3ddc9b0935e"
+          }
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "2029d0f63ea39dafe59360cdbd06ba688dedc736b2e145396bdc6df3ec0d6cf9",
+            "paired-row-order": "ef93ffd98ce0bfcf2b8df6d46be435c5862f417ae7c5bfc967f99388e4cfa276",
+            "shared-probe": "301d27aa2288d028cbcd467bd05adaff177d4312a05a78da5399236624793c55"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "f3128f6edd6e346768e02837aa0dee5b8c56c2d063944726893a98ca1b6c195d",
+            "paired-row-order": "d57f2ce03a001f4a74ce78039834c249c217e0e09cfd6142b08aea66b819a94c",
+            "shared-probe": "618c62cda77cea1cef023bd9c6d896799affbdb52dad6509c5933f1cbd64fdb4"
+          }
+        },
+        "bbh-snarks/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "160d851cb18827024629a36f3d10cc786f120e5e813f2618f118a02e2ee8ad01",
+            "paired-row-order": "bd262d2f6708e691646c65b8b29c259e80e1d5d6cb4887cb1b59d0b92843c124",
+            "shared-probe": "758831d4e58eccd7403afb8ce7d68451e41d06722839975e319865780bfbe939"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "bbdd2dcfafe53e967973d92e1828f9a32037486bbb7071234ac6b53064f64ebe",
+            "paired-row-order": "5567b9b6314248d8f81fe59a607b8b8f924bbd553952e2040f119eb0629598a5",
+            "shared-probe": "d262887b6ee324934ebeeb4df2f737f6fb8c983faeb5b6e259854a580982c65d"
+          }
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "e9b4f7c73d4fb6f70819eeb19e3f785c0680322090fafb4a488b5b9d4c8c2da9",
+            "paired-row-order": "97be3ec39d28c2281fc8f76ee61cc6cccec256c3c61358ca0711d4d1cd51da3d",
+            "shared-probe": "411abfeafe7f5e7fdb886b78d3a396d94475f8f44083a4098ba1479e983d8261"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "144536ad028ff5315bff96613c34d968a8b7536b8f4e10a73a9d8fbc921834db",
+            "paired-row-order": "6891a68605eb18fb0f5c004ee881212950cee90c1bc7ac2127124703a8fd7f69",
+            "shared-probe": "cf6ed0a011858cacfe04bef67395e189382c45b3346594ad4efac62f663b8d9c"
+          }
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "fcd5ebccb15b898965711c6f96149e388c092dee1802773b5230d1d074b4f382",
+            "paired-row-order": "3192f9c5848d3d6b064ccaf32da04da7c1b18c0c2bb4e9fe5ecf8ad0917acfd5",
+            "shared-probe": "44d12b4b1ff92b2a8d5dc5cff9f6e1bef4a197ab0b8d33e5819ffec742c1d17c"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "0e735425b223ba0d7cb5e2c3d5f67da290d122779b515428df504b473a10a41e",
+            "paired-row-order": "ba103b04beca5f67d1c92304669fb7fcd2650a62da6446435d996f7b24517640",
+            "shared-probe": "f5495a4fa5e6f8122e22dc6b9beea121fa7c97f20dd5982a206ed4c05efa701b"
+          }
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "6c852050498163283954f1b1725b7356260ecb8939668f22fca2b97c7ea98d9c",
+            "paired-row-order": "f5a07590fe832c03e2ec069e0fa251f7eca731d93efbe7377cc74d4596bdd77e",
+            "shared-probe": "0f1de5109038ceb7fdecb35fe741398dda742103cdc6c6f221aeb3e5a754b4db"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "f353503bb292ef4ececdf27db05ba6afbe7c5ba4a917799ab53629bfd0ddb66c",
+            "paired-row-order": "effa02114d37001ee0675040b08664cdc47dcdbb4b9f9f815bcdd4939da65995",
+            "shared-probe": "caab82f938157cf3a27495635a37de5c0a3ee06a14ee85a6e42ad817dedf1471"
+          }
+        }
+      },
+      "proofAudit": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "certified": 358,
+            "incumbentLookups": 3888,
+            "partialIncumbentCertificates": 80
+          },
+          "paired-row-order": {
+            "certified": 358,
+            "incumbentLookups": 4840,
+            "partialIncumbentCertificates": 157
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "certified": 322,
+            "incumbentLookups": 3376,
+            "partialIncumbentCertificates": 62
+          },
+          "paired-row-order": {
+            "certified": 322,
+            "incumbentLookups": 4260,
+            "partialIncumbentCertificates": 145
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 9548,
+            "incumbentLookupDifference": -1350,
+            "lookupDifference": -1024,
+            "paidLookups": 15059,
+            "searchLookups": 11877
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 9548,
+            "incumbentLookupDifference": -398,
+            "lookupDifference": 321,
+            "paidLookups": 16404,
+            "searchLookups": 13290
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 8998,
+            "incumbentLookupDifference": -1238,
+            "lookupDifference": -990,
+            "paidLookups": 14072,
+            "searchLookups": 10426
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 8998,
+            "incumbentLookupDifference": -354,
+            "lookupDifference": 246,
+            "paidLookups": 15308,
+            "searchLookups": 11730
+          }
+        }
+      }
+    },
+    "BBH/new-task": {
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "lowerPasses": 590,
+            "upperPasses": 590
+          },
+          "paired-row-order": {
+            "lowerPasses": 590,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "lowerPasses": null,
+            "upperPasses": 590
+          },
+          "paired-row-order": {
+            "lowerPasses": 590,
+            "upperPasses": 590
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-causal_judgement/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "7a83d132b50a9030178279598d68dc1ab148e6898c041712c87d03e625abf4d8",
+            "paired-row-order": "99e173fcba819db901bc128ccb62037b484b4e31f38bff5addbefc286638ad9b",
+            "shared-probe": "55bd15f868cf0dbb3cac51deb16b254ef59ed39c0859b6ab16c8fade4521b312"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "20302b5a6d15dca657d90db96b16f4b7c772b1b0a3e23995f52390fb7828d8a5",
+            "paired-row-order": "028fd1df3d562c37c03a69a04af5f7301e075f4d3ac7bd7cd879e3cecf158202",
+            "shared-probe": "0d0ebc793fa1a1bf5e2d0df54c99a695a34478249cbcb5955513e48bf905e5bd"
+          }
+        },
+        "bbh-causal_judgement/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "b8396ac7df8f38c3b1ec8e91d776be80ddd59a909f36922149ba11fc392ceede",
+            "paired-row-order": "c0ddb25325508d7841122b4fa196afb0fe6e3aa777b26e422ed6cc5ed70fc1fe",
+            "shared-probe": "edb4589b39b75bd9be7d93ec2b7256d913221d4ef58b28dae94e0d86710571c0"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "ecad537d24257394e417b63f6c087b72fbdfe4561658803a65be152eaaaa05aa",
+            "paired-row-order": "f95accce9d865cea82641ba59ec107ea28d480714463fe995c080e2af98a33f0",
+            "shared-probe": "8b378298d948ea1be3bbdb1c8454c953ed9d1f2ce1bf964a306e665183fd60b2"
+          }
+        }
+      },
+      "proofAudit": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "certified": 22,
+            "incumbentLookups": 226,
+            "partialIncumbentCertificates": 6
+          },
+          "paired-row-order": {
+            "certified": 22,
+            "incumbentLookups": 337,
+            "partialIncumbentCertificates": 3
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "certified": 19,
+            "incumbentLookups": 187,
+            "partialIncumbentCertificates": 5
+          },
+          "paired-row-order": {
+            "certified": 19,
+            "incumbentLookups": 292,
+            "partialIncumbentCertificates": 3
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 591,
+            "incumbentLookupDifference": -122,
+            "lookupDifference": -112,
+            "paidLookups": 1006,
+            "searchLookups": 793
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 591,
+            "incumbentLookupDifference": -11,
+            "lookupDifference": 25,
+            "paidLookups": 1143,
+            "searchLookups": 931
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 569,
+            "incumbentLookupDifference": -113,
+            "lookupDifference": -105,
+            "paidLookups": 902,
+            "searchLookups": 670
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 569,
+            "incumbentLookupDifference": -8,
+            "lookupDifference": 21,
+            "paidLookups": 1028,
+            "searchLookups": 798
+          }
+        }
+      }
+    },
+    "BBH/seen-task": {
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "lowerPasses": null,
+            "upperPasses": 4906
+          },
+          "paired-row-order": {
+            "lowerPasses": 4917,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "lowerPasses": null,
+            "upperPasses": 4906
+          },
+          "paired-row-order": {
+            "lowerPasses": 4906,
+            "upperPasses": 4917
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "b7823222dd337a97e6b7c9583430efc134396a02e998c2646e896856e44bf44b",
+            "paired-row-order": "36830f043024cf217f5af5313f5dbfde2ae103d5ac8a23d67d95b630ba5daa5a",
+            "shared-probe": "2fc14d6e50349bc6a1d5434a2c276cdee79045fa570106cf1d5d83cf514ca7bc"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "e5aa276c8c5dadb07a955cc7c972775aa6610ff63033358355629b4ab4edd692",
+            "paired-row-order": "438b86f08216121895fad338bbf5b32a4937ba9101a53a6237b09de46dda9ee6",
+            "shared-probe": "4d1dbd644c0a51eb4c87bc4064af9b99ffa434c10ac93b63727a0a6556e44d82"
+          }
+        },
+        "bbh-disambiguation_qa/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "5d536a633ebc2b2760ee879d2a1224f2a32885ff992d779759e70a80aa7f2dc7",
+            "paired-row-order": "304cdbc9acc2987fc811e2d3790e3cc04f51d1c1be1f8f4f3b7a2d9342719497",
+            "shared-probe": "7dfc8ea45b16e192f173917b6fd56885c2681135f86ce61c6cf269be9a93e419"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "7dc43c30aa7620e2d4223f552dcddb08e5b4c3582cb0dfe83ba84235c357412c",
+            "paired-row-order": "92d5df1b919734b093c77c461bf0946699cda9c30d5a44e879f550cabd85cb09",
+            "shared-probe": "cf12c19c3b8d2068296a6f4582c3e9d7c005ae5da5a62ae2102256142625e348"
+          }
+        },
+        "bbh-formal_fallacies/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "41322586770ad18fbf1396626fa5afe3c366561ee9913f33fbd69b2c157b0cb0",
+            "paired-row-order": "8d3efdd068eba55881ffdb7b2d82d653e91f4c8f78a8d42cdfaa6383278c902c",
+            "shared-probe": "40af03392f23849efb1149a3844c38928077e5e79e1cdee4889510e01cd3bc04"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "fa6d0044b8ad345f0d54c4d7e1f2b48be3c800fd98ff1e518527f13f9da61ce2",
+            "paired-row-order": "06b90b088b5c9731753b8c1c05163b132480218238bdd0ef5e6c8ae0aec1939f",
+            "shared-probe": "18d56c5de9d43a63829116736f72e1c7077e9f803c99134d2ff2e30c87a25a7d"
+          }
+        },
+        "bbh-formal_fallacies/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "f675c41526937e3081f4d844770f8295efdedd259c8fe6f3877b28b3de926de5",
+            "paired-row-order": "bffe7261d8c24ce2ab366c4bbf46ec26abb949ce0a05318ad04c3a661e8cda76",
+            "shared-probe": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "55686d4ed1d36734ec14ddc23b60adff797999bcc3a76dae0d428c21ba1cacb8",
+            "paired-row-order": "af2ccfa76dcfb3943ae054233c645766868dc3b31a86e923d373f71fd2ee9833",
+            "shared-probe": "2ba47179383644b7554fddb8a01d0e3c1d34f64bbf2d88bc3535af44af4c4026"
+          }
+        },
+        "bbh-geometric_shapes/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "e8cbfabbcb89e89bf87067319533a291ec49484d6280bc3428ac4124017af6e0",
+            "paired-row-order": "5ca9925f5ac4d2ff2fccfc30ed6d168b660bbdf98c6d79aba961ce7012509228",
+            "shared-probe": "ae118b2ba72b3cdacd6f627466383a8d660ccc168492c6e2b535798493f46cfb"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "309554772b951829c2f29f4770d80c534c16f23252579e1550d72cabcd905681",
+            "paired-row-order": "08fbe0572e23aac165bf440fb206a3872a33a092bbfba7ae1d592137a2b898a8",
+            "shared-probe": "133fbca5624082860832bdb9894c0f385e8f4a36764cef978b4fa318b4c20b91"
+          }
+        },
+        "bbh-geometric_shapes/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "b07fa9fcecb6ad64f6fc1519ef12b8b5c3893432542924ce758151630eeb6204",
+            "paired-row-order": "b3d4697b8e25df521b6f635e2e5387103b1d5656e2a4fdafc39b97d327f0a631",
+            "shared-probe": "7338ee8c6065afb00bce4598b88a780555cd0cd7f9a0fd0c9671b69fb96737a9"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "60370871bb0fcb019596bb5cb1e92118f66e67e85d63b95f3158a856bdd9e49d",
+            "paired-row-order": "d8e5eed3ad5493423376d44521cec37c82968c28c7cf5aa8f7019cb4c2f94472",
+            "shared-probe": "a2b18aa5ee5ca25c5be7b34ac6fd076e60357ec3751b74e0529af6a85da7a5a5"
+          }
+        },
+        "bbh-hyperbaton/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "3f824581c8a6aa33a11813201740c8f9cc1fb5668adc31b083f2ebc9cc1a7f47",
+            "paired-row-order": "75a447793c1a01d422da7e869efecb9851518bc28447c8202b7fa15ff519a861",
+            "shared-probe": "45a2b715cbed703b5452f59346c0047a6a26a2b9b67f27caa3389d708f5378f6"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "5d4838631319e283b6772627ffd529fc0744d4ecde95199bfc07d0425c5d195b",
+            "paired-row-order": "cce62603dadf92dbfb6623c80394de085b374d06073b45b12244e9d66a0bc4e6",
+            "shared-probe": "a04268552eb8f7b33b230d6ccd2e264aeefcbcac30dd83ee365e044731d0bd29"
+          }
+        },
+        "bbh-hyperbaton/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "575b2e15549d09a8ae4191522b52b5433d41139fddc1aff6986edc593ccfa395",
+            "paired-row-order": "a4418cdc46af3debefd7dc4352030c37a13263955390557927c79ad666561b7d",
+            "shared-probe": "3df90cd4f9ad229f6db5c1203787db116fd524e48d69c322cbdba30de3939426"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "b95521ae8471805238eb67b22aa9d282f9c9e256fcff234f785b1f8b997addd1",
+            "paired-row-order": "cd3beee66001ccefbc17d4add37fb1c13c69df9d3f2221c1bef4cae4a323417e",
+            "shared-probe": "edcdf37285662a8ee27ab1936bd38010a8c1d2b4421b308a6ed64b3bae041bc0"
+          }
+        },
+        "bbh-logical_deduction_five_objects/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "bd3650d06960de648332cdd8422a5c29ccc7368551210779a091d4469561ca87",
+            "paired-row-order": "e9df1a6959ef3898b34f5d011893e23d57ef19e9da3c2f32e316b353c0270f7a",
+            "shared-probe": "da451c17d3c6d7dbf0abb3bbe755c8408bf39f18e4bbf3a487fe37719307de7c"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "3d4d90a8a08ac59c6dc2783bd1219eb9351c309626e55d33b23c8627fb629e1c",
+            "paired-row-order": "87164ae80cb02f980137a4f649b11c13ddc2e3b5c12f2dbf213d38a37af388c6",
+            "shared-probe": "3dab9b0c6ca41b0e2062f0de03ecf1405ba57db8e2dfb1510e297ebe8edfd3be"
+          }
+        },
+        "bbh-logical_deduction_five_objects/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "09d2de1a00b211dbfa89e632fb530b3663d43d19946089cda7b56186d3336a08",
+            "paired-row-order": "2f3912d59b903d45b0f16df88215b3e4a2d02f8fe2cbe1654630b29ef7d17c62",
+            "shared-probe": "3b7511b79db89523d6a003fc450abf8009ad570048125f8ab23f9c28dfbf90ff"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "b7802ee7c15fb593bd4361c4c409345621543c5ce57467f76b44019b0d273150",
+            "paired-row-order": "3880df2860456ea9c9b20224160cb32e5a3dba5c2fd765394e3fa6a2e6900596",
+            "shared-probe": "b998232ad50f93aeeca3b4d96e0fce1cb83b970fe1934a79ae6059f9785abc46"
+          }
+        },
+        "bbh-navigate/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "04d80e4885144b0b408fc7c60d59655ca2ca7afc6fe12f5e36aadecaef8dc10c",
+            "paired-row-order": "0af9a548e11ef47c839c26f4ddb18eacb20251f18f3ed6c8b0e174fea2a06cc9",
+            "shared-probe": "43689fec74f23c98f0cd27407993590d9916383c6f75d5a39989bec3a4bc2007"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "30b3bae2f32edf83fce7dac6d2f3eec3e9aa7362b9624ab027191b8d951e6573",
+            "paired-row-order": "30098ecd317556011d85c9779f93d2d86fe967399cdf3addc1c966525b03cc01",
+            "shared-probe": "4439d99c06697a57177e0832a64b25ec594fb7dc08feffc88d163d3e97f9937e"
+          }
+        },
+        "bbh-navigate/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "232ed06a7f63028f432cfa41644c3dc0f9e782f6e58df9477a939daca27e9577",
+            "paired-row-order": "d4c81b4b6d8245e89d2681e0b1c56becc0308bbc4da5a6c0d8eac8e5e568409c",
+            "shared-probe": "5099bc1b458f1048f5f30deca7a52a8ed2320e5d7dc81d90377b4dbc979a28a4"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "259de5c8d4bfe6edf8c6a691700276074a3bf95e3d3acbae074beba693512c59",
+            "paired-row-order": "6b8ce400fe3feb8f284ff35347f97dd44943ffba22e68e613b210902768fed75",
+            "shared-probe": "92f8a75ce50e704f21eb565c649b708896957b0aca776ec38f447f0b8fb88775"
+          }
+        },
+        "bbh-penguins_in_a_table/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "db1f7c7bb9257aa4d7a3f2f395e8efa1325a8e7fa8e752b52088c7e8f60afe40",
+            "paired-row-order": "2b1921d7b77420e54167f2b53091dab9226100d2a1b4e3d2757ab0cdcdcd7990",
+            "shared-probe": "1d8e0d43209767f9dd8aa158d31a4acbef24489654c6f187df2e2710481ec539"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "e85f5cd799d38948f58f6f38b1bbcab54e61efa0b1468992c5631f3a8461e712",
+            "paired-row-order": "2fd52ee9a2a8c30dda81074dd6e32ed4359fcc9c2b256fcf5e696f4ae28285b7",
+            "shared-probe": "ae8981e0bb3b6404ef3c932cfb8e2df3611e9031a2957185a623e80f96c9506a"
+          }
+        },
+        "bbh-penguins_in_a_table/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "4f26e6e2e9a3a87fba220577095a6456b60c517dd766c0b838609b01d245453f",
+            "paired-row-order": "6f5e29a63635b21404ee0360713d494f91d9fd30f0c93f57006eb1015bfe314d",
+            "shared-probe": "68577a91350c269b8cd8e9a8e78b2ae2fe3152097dbb325b4621f2f5d8eff63f"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "68137b91b80d8e6a14df2be6c7bb0c0ec6841683e2c670b70210fa9d5b299bbd",
+            "paired-row-order": "c939ab5f63fd6eead8a25f90eab84211be56ea612d6ddca89600c9ae7ad008e5",
+            "shared-probe": "2967c7965b145dfb01defe5d228a48f2b0f20e04e86928aec85c46b7332cdbac"
+          }
+        },
+        "bbh-sports_understanding/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "749871c0cdf0d4894b583ce7148c5c59477d192795b2f0aa178b067aae85d76b",
+            "paired-row-order": "036e2edfb1e965ac92e3c22ae21dfac84bfa51cb8cc1b64dd9cc96553569fa2b",
+            "shared-probe": "b263a61ce95c12eca4a1d0176b14e3d4f7f1d5a74bb972dff8b285aecdcc8d09"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "bad2c9584f30b051761e53c93ef16e92bb04cdc5afbbc60370653cf124cb24fd",
+            "paired-row-order": "9b58f12322775bc144ad79c47192be84b4cf0288002b862321881f4aedd3b582",
+            "shared-probe": "7777234ae83cef3951a57301a0bdaa4222b507a46099904565864d5ae3a9d4a0"
+          }
+        },
+        "bbh-sports_understanding/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "8453926503b8bf4a0f963e96fbb767587b5aa449061c06ef48dbacfa760a5b6f",
+            "paired-row-order": "671c44d64ce8d8db39b157b1e7ba3ba881b11930166dc104e8bf73468d15f281",
+            "shared-probe": "55456e31e27510c0dfd6dc479bc0eb09bcd8e702a576fc5e8a6e64ab5081e3c8"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "e8f2e0bd9ad9d04736b8b6e73fea051e6ea85d793605a2798767a113ad6bcc57",
+            "paired-row-order": "ea76b7170a12f8fcec06952e4b64ea8d673c41a949689b3145c93ea94eb4638e",
+            "shared-probe": "bd60ebda2eb3d928bf7bf81dd2590ac4a6dd8c8b34b33a1915dfc81faba92a45"
+          }
+        }
+      },
+      "proofAudit": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "certified": 164,
+            "incumbentLookups": 1844,
+            "partialIncumbentCertificates": 40
+          },
+          "paired-row-order": {
+            "certified": 164,
+            "incumbentLookups": 2747,
+            "partialIncumbentCertificates": 56
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "certified": 135,
+            "incumbentLookups": 1493,
+            "partialIncumbentCertificates": 27
+          },
+          "paired-row-order": {
+            "certified": 135,
+            "incumbentLookups": 2366,
+            "partialIncumbentCertificates": 47
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 4843,
+            "incumbentLookupDifference": -1048,
+            "lookupDifference": -892,
+            "paidLookups": 8167,
+            "searchLookups": 6594
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 4843,
+            "incumbentLookupDifference": -145,
+            "lookupDifference": 177,
+            "paidLookups": 9236,
+            "searchLookups": 7707
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 4790,
+            "incumbentLookupDifference": -991,
+            "lookupDifference": -874,
+            "paidLookups": 7529,
+            "searchLookups": 5722
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 4790,
+            "incumbentLookupDifference": -118,
+            "lookupDifference": 128,
+            "paidLookups": 8531,
+            "searchLookups": 6758
+          }
+        }
+      }
+    },
+    "LMentry": {
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "lowerPasses": null,
+            "upperPasses": 5388
+          },
+          "paired-row-order": {
+            "lowerPasses": 5417,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "lowerPasses": null,
+            "upperPasses": 5388
+          },
+          "paired-row-order": {
+            "lowerPasses": 5388,
+            "upperPasses": 5417
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "4543be428c26484568ee437ca380119d0b9d0c3a25fc59cbf456ae86a4cf793b",
+            "paired-row-order": "ac4c7f9230b084e63dcef99157f6a5e0a6d462f13013f9d3bbdd1f9d4596a195",
+            "shared-probe": "52ec3dfd4b658bab2685895ae77632c490f830da02f5140a3922ec9fe56f6223"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "093ee580a8bd4e536aa771ec8d14600f662b9255e3da17080f72af911b0e65e0",
+            "paired-row-order": "ea080b759efea194f4ef08deab891002756e3c072f1cac125fd967b4925a3675",
+            "shared-probe": "531b6cd28bb50c6c5c4364a094a29ecc1fac25ff6fc460e006f6ac02b0598788"
+          }
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "9ba2c122a70ef609bab41224d7da5f5e5f2ad98566e3bf0625de4e54a848ce10",
+            "paired-row-order": "167d28398e8d19a52d64381adc58ec4273ebec390f4fe9ef485a2682bdf9126c",
+            "shared-probe": "97e1d96f46e5ba6deaeef657a3d2c6edad195d6eb536ad841db7ab467a73a6c6"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "13ef847013f956ad91f786f8dcc5cf61df77edc85addf70d41c0839f4498b680",
+            "paired-row-order": "1e2a8bddeb84d401adf19ad618f938dd61ae472f33e08025aa1f67f4e06a6dd5",
+            "shared-probe": "6d1a10b86a2c0b62d4e705f5b5511666bba7d834b7707f9cfec87a115faf05b6"
+          }
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "0dd21f7e31c9a5f1e408264e94c7a772bad8ee6c23fb6e26f2df4cf40df4c5cc",
+            "paired-row-order": "ba480c2f049d24e87c3527b7b83f0cb752922f2e8cf08a22397bdb9f41a60ea1",
+            "shared-probe": "459308a830baea0eafaeda1e28b7d585d0a2567892e0703253a50a13d0b7572b"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "a72952d49952835ca39f66a0e3f3564e3f61951c8146f45e03203c8242b5f3bf",
+            "paired-row-order": "1ab613ded36484d4e3e6fad985393dd1e675f519db153f584691cbf8a6037944",
+            "shared-probe": "171559804b3b35a14cf3cad0fdd7f31d429a19e3676a8ea3f4851026836321a0"
+          }
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "cc9d05d186512bc12c6296abcca2c21b73716205d076c9b7252bce6d763989e6",
+            "paired-row-order": "063f9b85edcccae95f0c2bdf2e5e351ea9237cdfeab106fef6ef32a03dc032a1",
+            "shared-probe": "d36a4b25968d60a6884a277aa9c663b01dc436ffb06a6aa7fbba44a7b3d15e70"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "288be76d8552034805e98ecf13e1f60477bd942f8e0c48dee58f683d413e1fd8",
+            "paired-row-order": "cf7c97d4c87d228144e55c610469c45e166210bfe3eea884280ea9ec9a72db9c",
+            "shared-probe": "e6a6eec086e21a132db45bcd52753258b0a525cf6245592d7f51990b4ffa32b0"
+          }
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "da1553c63a89f1520ee1b45b7204902db39f8c065f2799f2dec79d1e1e77f011",
+            "paired-row-order": "dc2b9fbc1051378c302879c1b63d9668371723cc71286b0771836ed4952f93d4",
+            "shared-probe": "d36154764916cf66167b39e27119dbbd17199384fdda3bc4e65482a88604a127"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "037926c2d16d93f5532612b3ebc8083e9a7bba0f39c6a7d5fab5756e93cd33f3",
+            "paired-row-order": "60df590b8fcc0cbeba8fcd9ccffc50d71444c7e52c019fb05212bcc0c21dc929",
+            "shared-probe": "56a87fe162b1c4efa99672fcd0eb06d232cb2662cc76e7ed4d64c6d3384126cc"
+          }
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "65279263f09ab29bfca1bf89016697bfcd92c2609d6c5b547d2fc44e81cb830a",
+            "paired-row-order": "1a16e4bc5b1db2d46803b7cd4f5ec8576f117b781631d1d5d5f7d0a7579a4515",
+            "shared-probe": "9c824a2920f7c86925a9ca1ededf2f45a2a364b6ec6c35cb0cea82f498cd7ab3"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "bdcaa8334743640fb1322c02f33c9a92b56bc64e8110980f7e2542133c7abf08",
+            "paired-row-order": "e3b6fb1c583c02b1c86391da1d2c358a0e19ae3009298200bc9903266eaba635",
+            "shared-probe": "8fac369bbe45389ec0bcc3f7484afd03da9fe2f8cdc0ce76d347d77126a11ca6"
+          }
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "a4fc9fb9b6d6d8eac6ffd4a8ca93c8f4cf054bd0094e3fcb771b066f5382f4ca",
+            "paired-row-order": "2610b9f31ba4d090286e40e8344f4bd98014a036aed17757425e6c7ccc5d17d8",
+            "shared-probe": "e4c90bcd60a739d007adcaf2e5b24cf31a2d950ef42f716deca3770b47c4beaf"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "912434dcbfefacfb6458901339c466359e44179bfb61fe582c991b58f31a81d9",
+            "paired-row-order": "d762d4694207494014f044e3001b99172fa09bbbe036d1e49e14a1d8b546db2e",
+            "shared-probe": "21b853acac24552995154bccd0f2680329c7e810d8a0f8162e74291b65715bc6"
+          }
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "dbefbd72fbf06fa28c0171935e4abdeaaabcc46a4d008a4d256a414ddb4e9654",
+            "paired-row-order": "d02032455183f5adfcd4f23ce27cee636e5c4eb7d12b096309a0b11933f2a117",
+            "shared-probe": "b029a65674c0eb068dbc25ed5e05842103ffc605623e995086c254fd5de24a69"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "d9559092b80fed565dd6f785ff258370baeea813b84f1dd5cadfd740a5ff3f6c",
+            "paired-row-order": "25c8db42c69446aec1c220b4032471b6b5571f3610148cd240cd7c576fe8f6d9",
+            "shared-probe": "d15d782090fbdf95483aa0140aa0a068beebfb7da2b5cad319066b8f4b39a7ae"
+          }
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "71a97848c8f56c3bd18b614f7040a234910b6fa03d129c66d66d52212bc81a5a",
+            "paired-row-order": "c3c48d4cd4bfcd12fe1db117e7f32c642931377e921e338aad3e7d7c7379eac1",
+            "shared-probe": "e4e79bbd06d9a2b6df5207b981e64e427cd9584b85cce786d71740237e3cb453"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "7986a2ac465ee78222a2719e666b95f266e23d5d576aab40b3d6681c57034aab",
+            "paired-row-order": "fb443fbc1bd1bcce3071e6f2d15480e99af0e4fe0a96e56c029d560d39608748",
+            "shared-probe": "16cc91801d0f7483c8727131abe4b5ece24ffbfcf9c96b202c4f62c0b6e3efd0"
+          }
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "ae07fd9b329422c7d99d5095a3cc2c61dd736d99d5bfcf8cdec433309f03eaf9",
+            "paired-row-order": "1ad78067269c0a47ea404dec1b05a017d1a214d5cbb006f430dae2d2909af71e",
+            "shared-probe": "523b59406cad42762817405193ee603fc95e52a45bd80808083b434455140741"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "71acfdfa8860b0b0862897ee4b6885e4aa5093abe610132853ef94dbadf3a37a",
+            "paired-row-order": "fcff80610331da226177a3b4f070cb1760322318459645fcf3241b9f98c9aa1c",
+            "shared-probe": "307fe3ee4d3bcb41253ed86d3b656f1baeee4f475fa49ce32a3fb48b5fbeaa9c"
+          }
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "127c1d6f8a422689006e413937becf2c61c5a2d56ad4f6127c15e43c61391019",
+            "paired-row-order": "ac7495415b389614164fb6bc87ca529f64fd8258c755017b0f53221560be709f",
+            "shared-probe": "7efe1f66f8b7c2b16ac693e2db45984a462fe11750548ed5f9be4cc1a0cf0e03"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "a559ceaa4146488d988d74db83484d9508d3c0db645d2769fed87957d0804259",
+            "paired-row-order": "96e8b31e10ece01e7eb1c70ab30d10aa91a7438548df5d78466501ac2b15c0a2",
+            "shared-probe": "6070f7f751bc6cdfbd4bcc4bdc7df38b18805d2df7581264d178a3a7539b6b2c"
+          }
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "14ba69e45c673abeb1d32b4d657f40e18bc1fa88254f7d8b193461f9fc3a13db",
+            "paired-row-order": "4290b53b02f1551a44289ed8bce428e965c38d9ff8ec69f7e067e782180861fc",
+            "shared-probe": "ed4433db48fb166824c76b95270552460c06ba0794ac301d51cd9925305af41f"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "ae5bb17ed7b8571771800ceaf9d86e29ce995893f08502cad7aec273d6515a95",
+            "paired-row-order": "abf9185c60c47a9953af5c64a55a86339815a90e452b220112d7dd680e0aea06",
+            "shared-probe": "c279f88f75dbd380bc1e0f4fca35821699246a6d344890d3bbf20c15c0e594b3"
+          }
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "5e8efccd688a72f8d28119d379eec6ef9b7811ce7ab71181eb495e3c123e99c2",
+            "paired-row-order": "f3a59c1ba8e370796b82c61f052c05436f6ee99fadaeecadce3ff6f50667d9b0",
+            "shared-probe": "8420c77f5adb2b81e6f37dd626c7aa73489739c797b663484d3e36a4dc77941d"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "e6224ffbdc117a44ef7bcab2ce20ec7c7987b07dd5a43201ecbc0a78eb404c16",
+            "paired-row-order": "5e1effd84dd7f27f20e36b558657e9745f1c313296a43e3ec3f3d7fc32c31cc9",
+            "shared-probe": "edf7ef14dccebc2b605b320beaa50793dac804cbd6d05910e3dcf4adb2a02ff4"
+          }
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "ac4c906fec2c78e232a3264804f63de07524ce424431b7442957bde3b300bb24",
+            "paired-row-order": "33f84daf2705bdb4f9d99c6a24723cb1282494de824df8f051e5f72e28f70f56",
+            "shared-probe": "d5e6898999dd3a5a217d9c3812b11a07d151e1f09b49630aef440fce06e14f66"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "373b014ace61276525388f339550d4c7bb9319ab4e1109d12b1934d3e1630bb5",
+            "paired-row-order": "aef73fda1022592dadbc3450dc892a92e051014751a8a7c8344f7ec93d4e3863",
+            "shared-probe": "9f7889eb295681d40a36de28eff04d40604b189768d60a53504d9d19bb95cd5e"
+          }
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "de30f3f0e3aa3411a9dd3d8436c12b0954925f0874fce653a58a4f90462f1c0a",
+            "paired-row-order": "f8ed19486c71d831f4f7d2e3ba4b4417109e146ee9af6a0924fc3c40eab7f459",
+            "shared-probe": "0b6fef8bc8ecf39e69b0471a379bd55898babe8be215e3721b2b5667dddf55fd"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "4d48d078dbaf9e19f6269c2c20aadc69935e21bd94c276105b952a7cc2f9fed7",
+            "paired-row-order": "f472928b76cd86105f6fabde4bfdccf180910e76ee3624e415148b086a1a152d",
+            "shared-probe": "e1ac970f33aeafb84781ee2f5feed372826ce7a3a83d0920b74cf3a0d492d835"
+          }
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "8c16d6517ad7bc10f3e3654facc9609d7e9dd503efa1c527b49aa307729b42d7",
+            "paired-row-order": "b0950dfa2f135bc22abd9d2298e64b161e3575f54ded36aaf7d59655e10df496",
+            "shared-probe": "4e6ef2fc7015da758766c408b4eb510c3d9375a52be47048c7142e827dc8c478"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "ccda4bac85cc57735151d02309b1c1d29ea2f79f5691cf5ea48e9015fd084be3",
+            "paired-row-order": "d1622b77917ec2d71b7dbb043854684d754c415d3e0a9e1c0fb14916f347ccd9",
+            "shared-probe": "c1fca0ef040bef47c162610d05287b6738918dc212fde4381ef18d34968024a6"
+          }
+        }
+      },
+      "proofAudit": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "certified": 265,
+            "incumbentLookups": 2274,
+            "partialIncumbentCertificates": 49
+          },
+          "paired-row-order": {
+            "certified": 265,
+            "incumbentLookups": 2630,
+            "partialIncumbentCertificates": 161
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "certified": 247,
+            "incumbentLookups": 2031,
+            "partialIncumbentCertificates": 40
+          },
+          "paired-row-order": {
+            "certified": 247,
+            "incumbentLookups": 2347,
+            "partialIncumbentCertificates": 149
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 5650,
+            "incumbentLookupDifference": -684,
+            "lookupDifference": -475,
+            "paidLookups": 8276,
+            "searchLookups": 6191
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 5650,
+            "incumbentLookupDifference": -328,
+            "lookupDifference": 252,
+            "paidLookups": 9003,
+            "searchLookups": 6982
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 5192,
+            "incumbentLookupDifference": -615,
+            "lookupDifference": -435,
+            "paidLookups": 7933,
+            "searchLookups": 5559
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 5192,
+            "incumbentLookupDifference": -299,
+            "lookupDifference": 217,
+            "paidLookups": 8585,
+            "searchLookups": 6294
+          }
+        }
+      }
+    },
+    "LMentry/new-task": {
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "lowerPasses": 233,
+            "upperPasses": 233
+          },
+          "paired-row-order": {
+            "lowerPasses": 233,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "lowerPasses": 233,
+            "upperPasses": 233
+          },
+          "paired-row-order": {
+            "lowerPasses": 233,
+            "upperPasses": null
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "d24005fb9722456a127ecb9532689c8a743c91fca2b2f10e79b1ee99c53458fb",
+            "paired-row-order": "4949c1bda2e5a16b4391d7acffac3b284b539f15a23c0e68078052d76f7de3b5",
+            "shared-probe": "7f19593930a14caf8007b6c8362beba956d7aee2fc45efa7cb6bc7e51be303d1"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "bf19fb246d4f4aa5b0ace6ab3947914ab2d2f38de3e54e048491fce4d439fc05",
+            "paired-row-order": "78f658a5c262d7ea1fd8f452ed884f3cab3db483672dc445b98a3f14b1195724",
+            "shared-probe": "6a3a8125ebada9b097f007f99a376755e8b11e553cc800ca3e4060c043d80d3f"
+          }
+        },
+        "lmentry-ends_with_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "1454d33d4df9d90ba2a768b2086d464f9a54c087abe15a243992d19b0cd1a8ff",
+            "paired-row-order": "773276699d21b7bd7b92927a9d2095750b2b2e5c7fb2d212a228c0379b34b820",
+            "shared-probe": "299c1d349d8776d3ca83b2c4bf0d02db433ebcac0301264da8ae4e6afd1824fc"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "77e0e0c117b961a16bc65a967570b621a677c5001d46573c3871c71c3a3eb39c",
+            "paired-row-order": "efb367ba5f3c5ca5138444c832709a52e49635aa45e65d68c3943bf735237198",
+            "shared-probe": "a8707c997bfd35098db55193cf44127e3d0582a22a934c08005df470207df81f"
+          }
+        }
+      },
+      "proofAudit": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "certified": 42,
+            "incumbentLookups": 300,
+            "partialIncumbentCertificates": 3
+          },
+          "paired-row-order": {
+            "certified": 42,
+            "incumbentLookups": 359,
+            "partialIncumbentCertificates": 14
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "certified": 42,
+            "incumbentLookups": 300,
+            "partialIncumbentCertificates": 3
+          },
+          "paired-row-order": {
+            "certified": 42,
+            "incumbentLookups": 359,
+            "partialIncumbentCertificates": 14
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 263,
+            "incumbentLookupDifference": -84,
+            "lookupDifference": -62,
+            "paidLookups": 1106,
+            "searchLookups": 812
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 263,
+            "incumbentLookupDifference": -25,
+            "lookupDifference": 40,
+            "paidLookups": 1208,
+            "searchLookups": 947
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 256,
+            "incumbentLookupDifference": -84,
+            "lookupDifference": -63,
+            "paidLookups": 1121,
+            "searchLookups": 812
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 256,
+            "incumbentLookupDifference": -25,
+            "lookupDifference": 49,
+            "paidLookups": 1233,
+            "searchLookups": 947
+          }
+        }
+      }
+    },
+    "LMentry/seen-task": {
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "lowerPasses": 5016,
+            "upperPasses": 5117
+          },
+          "paired-row-order": {
+            "lowerPasses": 5117,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "lowerPasses": null,
+            "upperPasses": 5016
+          },
+          "paired-row-order": {
+            "lowerPasses": 5016,
+            "upperPasses": 5117
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "2d495b8ff416a9e747523482aaf828cc37380e461090abff72f7d5a22a676f5d",
+            "paired-row-order": "53f89a1c872a7985d3c21955916e03eaddfb7fed453d96af0e9e4ebae6a2f733",
+            "shared-probe": "d22f8a5d5884575e4a66abe0104c67927b8d4b492fff1d2d48f13b454c358f44"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "267ddc6aa009548a1ae2e053849a39b96c80aefb04bea1db1373598b291ac285",
+            "paired-row-order": "037fbf4edb12d28a19eb99c628b518b73893ef39d4c8fa13fdb098f3ad5919a8",
+            "shared-probe": "710fc0d2ea025486622b6b83a1a0a2f120e3ed41184620b7ac7816ea9248b28a"
+          }
+        },
+        "lmentry-all_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "98d4f6691e346479a4a42d5053040f0ef3ed0ae3630288cc5b7257cbdebd74a0",
+            "paired-row-order": "1a04843c1744c091d36f78949d592caac44569a07d72c336ca25b74e7fbd1d19",
+            "shared-probe": "deb470fa74c5c70169bd8687ef5610976346688834af227581135077f09424ea"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "293ce7c55be412b2f0a843316896c1c703643b41e688a245458de1bf8a658fe4",
+            "paired-row-order": "a4dd01c909530a01c2a9c819ec5cc1b74be6d16a0963c9204b4fd3b6bc932982",
+            "shared-probe": "02871d094f3ac3a2bb004b67fa2a1aebc663b7b117a16006092dfb26f71859b8"
+          }
+        },
+        "lmentry-any_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "aa18f29991071f0d9d6cb0a59292122d32c4f994040173fbde8fb80b35ff34bd",
+            "paired-row-order": "63a8a7e86dbc06e3a6baff33027fbeaea8d8577769c21c9520c0413f05c24fc6",
+            "shared-probe": "4977a800d46b1ed1326568657aab8045939a485d9d18084d20ab6841e28c1833"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "c5e4c7870a2fb01eced2d56e8a604e268ea09a6615155f5f4c53345f84e2f5f9",
+            "paired-row-order": "788eed2d61ac3a46dbab9b69ec96221227de3ceb83ad0752a1e0675217921ac9",
+            "shared-probe": "9e5040de3b2fd763c2ae9550190d9322d0d1914b13fbe2316542e9a439f9ead3"
+          }
+        },
+        "lmentry-any_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "942887a8eeab282ca5a9f6dcb95a357ef3a1202208ffbc472b0d356ce34f639f",
+            "paired-row-order": "72587192a6e99928864c8db7e91f4414f324cafff86fc53f5e0c25ce288fa380",
+            "shared-probe": "511c0308dbc9d9978bfdb6847c683e51a1eed8dd54bd1a3ad51f9d177f36fc33"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "2e8d759a077e292b554b253444bfa542cfde226593539a453cebcabe14ed0b6b",
+            "paired-row-order": "964091e12215b831c9757bfbeec80d84689c6f2c480ff42d7bc81e7a48d69a7d",
+            "shared-probe": "3c90cd601fd8e84bced41d154997c9ccbf10b6b66b62a512923c0691eb3281d3"
+          }
+        },
+        "lmentry-first_alphabetically/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "10721269877423f7f5417e075ee9a7733553d06eb8154dcf5d21fa1b7aef9df3",
+            "paired-row-order": "0ec6f9cb9f9323e212fa8064c3e7db3322b7eb557117a747cc3e768a20fd808c",
+            "shared-probe": "330931298ea92374d3826186b2ea9bbad5490d4cf6f4e7497c21b990717eed1e"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "54b1125f52787e3c9978e55245e519ae26ef0374e69be69c05155fecc69f7c46",
+            "paired-row-order": "1db8c05dc8116208dc18848e19a94567e283f2b3ef2d7ead2ec2415449710745",
+            "shared-probe": "22deaf5fc47dad04e113732c5c8ca8e47569e5904f39a8355e47968ade0d5539"
+          }
+        },
+        "lmentry-first_alphabetically/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "2833961cd68773a823714023beee84d71a607c7e8147ec845723dd1cc8dde61e",
+            "paired-row-order": "babe70f416e203490166cb779c06116b5527a3461e67db94bbee4e720c9afeb4",
+            "shared-probe": "5bfe3057f6d3a266b1bb193bab429e2a5337f65705af432569cbbfead3f48a03"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "18cdea1a5170c7cda2b377f583cc8e479a87d01b64ef84fdd82a653800050905",
+            "paired-row-order": "e87ee9ea94bc5848fce25b4ab8650221d515fd5132305ecb9490c33fcba587bf",
+            "shared-probe": "36a56f53f0647671c8be69613195b72731234db87a9b1ba66368a5486dea9426"
+          }
+        },
+        "lmentry-less_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "b1bb3056ae66f7d5a74498d65cd4d0328d23f78b87ce5ad5bf35384af57b61e5",
+            "paired-row-order": "e38a65ab1e21aefd7e10f3995b8d157a3140d16c5c6c871ebd341705cc336713",
+            "shared-probe": "bf45ff9937f43fd62d2861063bbc37b8d7592b6521ec534cc369b7be55d9cbff"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "536ba1080a717c31dd2835c76113668736b5f4336426c9cf992f94f7e4a2115d",
+            "paired-row-order": "9b242cc615ca790a97ab701fff536ce23eb4a8e19b3e4d7241cd6db3e1db6931",
+            "shared-probe": "d52e7b2707bd9d08a1a9c8102ec1cff08e986996b7c41c2077b3453e6a151d90"
+          }
+        },
+        "lmentry-less_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "615175149850bd0e7d3107c8cf81fb60038efe7c28e50dc2c4b27b04e865f392",
+            "paired-row-order": "824082a4c2f974a7278eb0c9d8b35ccee08477abe5588c6056859c67f6c31c0c",
+            "shared-probe": "142ae863885ddef87ec6a16a4b8ce2c3279ba2da360d20b6a8b322d1d0858d44"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "a35cd4e5286a1e7c3dfbfe0541ba8b0e206b80677f09800f41ba413401ca7694",
+            "paired-row-order": "f0e13995c0923e937559da5025e33fb78f70bcbc03d9b34af4250e370deb50e7",
+            "shared-probe": "064bb82de7be3571edb43bae7c2ae1ba5e850b1a56ef4bbc7ca5a7895d8cbc10"
+          }
+        },
+        "lmentry-more_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "9f062099eaa20e37e8569f9fe3f888bb88344b3928fd91ec6c8a6c814cd36256",
+            "paired-row-order": "6858afbea7c3e2ce0d7fc9b084932b2c229cd3d47a4dcb81624b1aa07aed3239",
+            "shared-probe": "ef01f5a414639408cfeb04857e7befdef477f68471ad5cc5cf3404b9dbde8f9d"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "7ed806bb6b027fca86d8f9552275fdba30cdc3d4177d22786d4885f0f820a3ea",
+            "paired-row-order": "578479668c336f94a8c0e3adb75a7471a61b7da4aa5ab981e42c35d09cdeecd6",
+            "shared-probe": "4c83cd9d35667ec1cddc54e6f64fe940001170afa166e3ea08db4551be1f8c80"
+          }
+        },
+        "lmentry-more_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "b7f5e66d8ac03d0591e0b6a4b6bd36fb8752fe388b271786d5e8e1fde4072af2",
+            "paired-row-order": "cc560c614e56c845dcfe85536a57ba24b0b4f93bc43ebee3262228113a8b1bb6",
+            "shared-probe": "e17d86d6cd059bbd69cccc1ac2dc2ee7fe4021112f387d8cb82509fc724c4eac"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "11a3a8e5e2a67a4e66d435cee1c3126972251f7ef9931fdf6355e4738723b4eb",
+            "paired-row-order": "5cc322c217d2563a4372f250ae2cf4889ee53cec77ccbbcbeaf9ec6a1da8ac9e",
+            "shared-probe": "44cbf37c242f227da04945c4affb8ae839b5d2b1dde8fa623b0843361150ec69"
+          }
+        },
+        "lmentry-rhyming_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "1197fed6e52a496de4b9b1b5bc2b0513822f5e17ca55cb8acbaae9b4c497222a",
+            "paired-row-order": "2594826d1bd277b16a9a6cd3d003a5872a9f4a22dd26de34f5cb6beea968e00a",
+            "shared-probe": "3e1c5b65d1e6c25dd1fccb062f7195353cc8869f9cb6a07a45b48dcc2ed5e82c"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "e76b755e157d1df6a6fc66e568a2996a08d88207269e64cb0eb51f3b8109d44e",
+            "paired-row-order": "e9593119c5a051750ac175f2311c7e44ece9ab841c72ad27b6fb6c9d3aeecb33",
+            "shared-probe": "fa1f7260b5d0991a6d4a56c9f7ba12df091dc6b98399615e76aa4bafa777a38f"
+          }
+        },
+        "lmentry-rhyming_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "33bf36781f06433e5963ab47179f46c45e749fec1ec7e4404448ad9b1ac27680",
+            "paired-row-order": "637c2071a40d377bf08d58b10ecc01b7504ee0eeb34e81ae16fd1aa43bfdf129",
+            "shared-probe": "13e888fae481474a6869e0d1ea9567a155b84978f3814f2b3321535fb4037bdd"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "27832df4984faa42d93396f891d39116f76049ee136aba04b50dc38433e35bf3",
+            "paired-row-order": "84d723df655a0b0b92293ef014f7c0526a7b6b4533098df5eec2d850b3bfbfc9",
+            "shared-probe": "50c42f0ddd16e9c9d87c7c6e86f6757b286eb54ef91e4bb1f680af1c3ad6c5e1"
+          }
+        }
+      },
+      "proofAudit": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "certified": 176,
+            "incumbentLookups": 1589,
+            "partialIncumbentCertificates": 59
+          },
+          "paired-row-order": {
+            "certified": 176,
+            "incumbentLookups": 1828,
+            "partialIncumbentCertificates": 116
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "certified": 147,
+            "incumbentLookups": 1216,
+            "partialIncumbentCertificates": 44
+          },
+          "paired-row-order": {
+            "certified": 147,
+            "incumbentLookups": 1440,
+            "partialIncumbentCertificates": 96
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 5307,
+            "incumbentLookupDifference": -463,
+            "lookupDifference": -357,
+            "paidLookups": 5794,
+            "searchLookups": 4228
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 5307,
+            "incumbentLookupDifference": -224,
+            "lookupDifference": 93,
+            "paidLookups": 6244,
+            "searchLookups": 4694
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 4963,
+            "incumbentLookupDifference": -410,
+            "lookupDifference": -328,
+            "paidLookups": 5035,
+            "searchLookups": 3373
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 4963,
+            "incumbentLookupDifference": -186,
+            "lookupDifference": 70,
+            "paidLookups": 5433,
+            "searchLookups": 3793
+          }
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "lowerPasses": 56116,
+            "upperPasses": 56116
+          },
+          "paired-row-order": {
+            "lowerPasses": 56116,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "lowerPasses": null,
+            "upperPasses": 56112
+          },
+          "paired-row-order": {
+            "lowerPasses": 56112,
+            "upperPasses": 56116
+          }
+        }
+      },
+      "panelPathHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "e29cf5908ed9046445222c935343f24bec9f88d219cb7e95a5253f9c147d7cb9",
+            "paired-row-order": "acf260f655e155879f687061951ea53fc3ab7f3be0f81526278f7f193fd635ba",
+            "shared-probe": "aa3fba2017d5f96f478502125a34543686e3d4ddbe8c106906fcda69a95e704b"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "39fc5ba51d72192c468a0029198de1fe120e92033b115d195a2ea2ee015ee836",
+            "paired-row-order": "33988968e127d49572666e1b80f25a09395e537139ce2349cfbbac428be68790",
+            "shared-probe": "9baadca30f65709c8c76b5ce34cafec61910e68610019c78a260945077826fcc"
+          }
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "19df9c801477ec6eb55b4ec60118906fb9dfd4df8742f8b30c10508fd99f5077",
+            "paired-row-order": "893b3ada387a91baca4d05e3c2da08b90d79fba173c23aa7ba6351c94faf25d4",
+            "shared-probe": "2cf49334ac21cf9b30650b43a424f65cdefc4b1cc9ee653b373e822f6358bc18"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "d0c18e2b7c290465cb83021d0183dcaec96d71c24ffdffbdc269d144c4fd9dec",
+            "paired-row-order": "cadf3a1d7f87f90ffb64c7568dc8399498a3f97a0960808b1f5360a843625103",
+            "shared-probe": "3d335374a64ee385d63cba818b5615336299d9256577b311f3b2fce621594dad"
+          }
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "57ad99803d586fab85a0a9f04de496ef26d6e9dfa58a666b9215f0bec10426fd",
+            "paired-row-order": "f149766be0ee5577a39615f3c517cbb16e72b8a7919c8ffc574685b572045d65",
+            "shared-probe": "c8dc08d8be77425bf46e46a37eb558df7767ac46ad1bab26e16d4dc6db46cb85"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "9929e053255af4c1fd1647e45b54c174311754704acd2f330da344dec059c95a",
+            "paired-row-order": "435d03757d7644552bde5b6150227b14208344e89ccb4732a91bb2b8a97099ae",
+            "shared-probe": "5bd526c4879fbe8f0b34e2cafcbb9793579e11ad881246d48baeb26cb62607a5"
+          }
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "fb36f6cca5d4b7ce449400abeb0f40e3889a8551d3d53ac5cc591d7fc10816dc",
+            "paired-row-order": "0cfb02922aa0be6d07a8aade09af0ca31174f806d36c23e6d6f38d6e54d087bc",
+            "shared-probe": "c40333be56007629cd0f385a5ce4c55e728038504c56a7eb3024c252d3ad92f8"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "03d1744f917fd7fe14bdbbb16381c193048d666c0641ccea1a492c8596885541",
+            "paired-row-order": "a3a92ef1eed436004caf9c25098948e0300df1cc07fe0f641076aaa7c2f86ec6",
+            "shared-probe": "f68921674f7b6bd3523f9da8a05f73b4f13e5af5051707b3240b0a39e182b3ed"
+          }
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "e0aa4eae0641d9b4c420886651624be667d95cec9237ac186d87953fc8e2c379",
+            "paired-row-order": "0516d203ac2a1346fb5bd636c387c5d26a4624e9f03cbae92c268214620b80d5",
+            "shared-probe": "2c08b02a5be2e63084a49c6020175d7fef8082ebecd55914585e0745d497c070"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "7f9d5e7c8a8da3b3a5ec91798828ebae2e384fd5ef19551bd13e7985b5572709",
+            "paired-row-order": "7bc827876641d16499f1d44ba970099ff78b72db2f2e81ef7a33a35ea18c6785",
+            "shared-probe": "b95d439c4c630c9cad300e6e797f4adef393a5a16a99aa4883fefa3ec33e34c1"
+          }
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "17a4c7b51244b4d60a60928180a27ea1597c9ab603fe0c544c30c749701a4cb6",
+            "paired-row-order": "236d9461b3f3285b6bf9a374461bc265aa60e19b306b54e547c7a41dff514e8e",
+            "shared-probe": "ee04742d25801d967988f9e30c34fc94085208b87237829043d90e6e0a6f729e"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "cb2e0f78dcc0cfc918763ab0aac6dee5c1b7b872e64f096c10aa56c0524316ee",
+            "paired-row-order": "d0ac3e77fb8862c25d4aff446a3774b469a177c87baf248484e1865b7917de81",
+            "shared-probe": "045263442e20deb1c5a88c305a4af21d6e645ff75cae93e81b4ee00783d05d5a"
+          }
+        },
+        "high_school_biology/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "2b9dfa6acdc04ca0ccc697f817182e5238d717a48cdda9806018e6fb709200f8",
+            "paired-row-order": "848660458ddf1ff50a7ef0711ff8969d4539fcf3fa22726c40f3fa0a306d71a5",
+            "shared-probe": "e09238b61d95f72b90e1336a87070206607efe27f92f7c882b626e2f15344c65"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "170e429b928cd21a04b395b120dc7fa9114e465ef0d696b1e9b64bd39445f55a",
+            "paired-row-order": "9511588664cbe6d99fd437bdbb38cb34e4ee6ff19a3551c62836c7e3701ef904",
+            "shared-probe": "29e351fba2f33db81277811fd0ba1fe0075d1bd4900a69ec945d7ed1428c238e"
+          }
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "69feae822b1cb669ba83424829fc69b5294455d8da7a326256d2e8a0cfd12830",
+            "paired-row-order": "3fac2d79e755aabacc713577f70b852b7f283959a308ebfc14652f1391b89eb8",
+            "shared-probe": "b6c162a48d1c4ddde2ba880eb9c19cecf0397b2f0c067fa8fabf673b0f195116"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "879a0ed75466f05706aa459dd63c78e48c4ed05b306fc9b2c6a0c29ce3460980",
+            "paired-row-order": "06a90597b1d16e920110a47ceaef9cf760463477d1ef070b8e2d545fa054ffbb",
+            "shared-probe": "e4859c579d15d163be8b0b13a1549324c3de61d03360dbd0ea4a2f3a8b74aa94"
+          }
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "97bd2282387477f53b04403216ee102113082f40db023b43920edd3b59d4e658",
+            "paired-row-order": "c38c3faf110f22ca3c01c5690cc4028bb3ecac851b82a49e929fd24256ace6e1",
+            "shared-probe": "6d562cbf79a13e9f6fdfe3fdd0b9a4901e81b8d33f6f4bae24d8822e0d6c803b"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "4a38ff67e7c897580e953695bc2cea27107c5105f5af13ffcf0ea3387d7a4960",
+            "paired-row-order": "c6c52652c1072bf5f53687175e677dab7cd3db8261169179d91e0ae58cada788",
+            "shared-probe": "4f14ecc7937182d8a1c7462857120ab7f928c30002b2059e13bb99ce07684faf"
+          }
+        },
+        "high_school_geography/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "18d10fffb70c5aac2f8c54b7bfda11550d245a67a07a932d154fd1a555a58e56",
+            "paired-row-order": "8157ac4d32c33e404a32712b5ddffae9f29ea1c64a19533b9225ccf2c0995418",
+            "shared-probe": "5db3a6d4c9b97faf3ebce0a84b1c9936051ca4d9254f9eac11fa9abaed086bc6"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "5222199e21d8e6f4cf4c9d9e844817e7ab75567ebb9f6ee89b70754308b7ff66",
+            "paired-row-order": "d02aa835cd94e333519c56f387457574272beded60a4afa5f7912069b0a4abfd",
+            "shared-probe": "2c3353004956713e1cb729a6519bfe048a2f7349dcfa3fa1c1cc6365348cbfc2"
+          }
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "c2cecdfe030daa95cf16b1c22f942621a5b8ed3e9f990b6f367abeea6f6cf795",
+            "paired-row-order": "3ae4fbf13270276b8dc20e9634abe5d0c1567a9b3e80b09bd492bcdd2fe706f6",
+            "shared-probe": "c3c3bca19607490b589e54e764729d9cbf3d8269cb16831963d6cd420780b855"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "6fc906c739f8dc18cf8a0729382499075b0128ca93eddff2df079e127034b77e",
+            "paired-row-order": "d09f8ca76d7d1e833c56cac8ab29f7ef404ec8a51a68d29ee2775d933a9d8927",
+            "shared-probe": "d051c053d70ecf68335c072a650061facf676912e7196d76771efe1a91e2b2d8"
+          }
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "5808799e50a061119c362d62a09341ff6cb53645b0f9bfd1ac7657f17ce1bb83",
+            "paired-row-order": "b4a8611260aed4352b816f6e24da8d0a69cdd837740281b419322e3ba9dcec85",
+            "shared-probe": "1c9f53f2004807e2b79c0596cd520bf65b0465b1782364cb55b34e12742d378f"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "23e3521f2ce90946ec8136ba556bdff25167a7bc886dd379296153eb9de482ee",
+            "paired-row-order": "1b0050b4146f29659060c2e4ef356fe49bbf2eb139070c14d5266b6e8f362a47",
+            "shared-probe": "29b14bf0ec8e161b9b155f3e30a6286c0343b36eb6956fcae83b33d52739f9e2"
+          }
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "c9ce9f4f8dff15ca6974e0c2b13b76bfe1b9f50093cf59fe020f153329851da7",
+            "paired-row-order": "b29adf0d9b85ec91f229a25d6f1845a877603c7909ac323390d33ec45a7bd55b",
+            "shared-probe": "9d1a77e903408034cc72954fae145416bf1f997181f8efa061a5f09107ae88a4"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "d2ffab830a082fff318dac0969ca926394712459ed5cb543eb63ca2a5d0926fc",
+            "paired-row-order": "72484e96c9f4cffda5a4e0d62708b26a6043e2b29ef0ab1fa54995f11ffc5eb5",
+            "shared-probe": "70276613f59fc29ca1730f73714e6047e57a048ecc79767a02522e46570d5f53"
+          }
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "fe8eb1c35829680e3224cf7a40684ab72de3382be7b832c81a3c71a6c29189ff",
+            "paired-row-order": "d9476d49c2d2597d873ce5ea7a526e12776a9576fb47bb6558647609fd21e3c5",
+            "shared-probe": "1d58ad9a4da071411c12bfe5a106bea453f86049e10b64649dd6a47895f498f3"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "ed81cf154fdd5051bfa7d184f737eed4e62af0ef0fcf55f65e21d7562cc010e4",
+            "paired-row-order": "b79ed4d36680bd75631ec3d7ddb59eb0eb78b6c733d4e7ed54acb7e9386d501a",
+            "shared-probe": "69838f159f430193ca5e405257159639ddbc6da66fa6db22da13cdbf91bd159a"
+          }
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "0c20288684fba7e1badd600da7881fe12e250260eba08e3f31ef820b317f4162",
+            "paired-row-order": "19a48485b30113544255381e202b6297886eea8701dd7bfdd9a0339a23a1d76f",
+            "shared-probe": "92c3832c1a0cdbe5e356f58151d5550841619642a3f4f6abf133ed795c63f128"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "65e79b9671917d052c4ad12db85fb39261703431e273550d103391a1d916418d",
+            "paired-row-order": "54ff03e1647c99efa39fe4f455d233b2356f8df4572948fac0c6f6a730c7c5e3",
+            "shared-probe": "26fc45b6ce542261e2addfaf359234a7680f1dd87ac166e0edc7c524ff56b987"
+          }
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "b2caff54a7d16936689a37851531c970f4b6847bc938122f35442c919fb12de0",
+            "paired-row-order": "50f9adc5ade1ca25a80071629de322a2cd3e13d1576b8b085dbf6c6f9d92ca07",
+            "shared-probe": "72b221eddd3b9d6553b77a9045e12ff6c8dd77249d74969b2148769c8c277620"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "85baa167273da74899bc86d9509b6593012fcafb51f71984dc6e3b4936255081",
+            "paired-row-order": "31b707840f03381e25cfb91b2f77ad92d5fa70ae4350deb216726d0905cbc0cc",
+            "shared-probe": "561c39219aa0c13ca4f711f8a10931d0262a8feb9795e7e9d6c6078544580707"
+          }
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "3d9583f2a1d8aa335e166c7976bf6cbb010e774eb8b501ea9293be67d2520483",
+            "paired-row-order": "b9b0f180b59bb82a2244009aa3a0a2736d809f643f64f7bfba176f0d5600e505",
+            "shared-probe": "c0b3048a7cd82bb204d3709611c258aa93b1984b13674aed997f94698c02d47b"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "1e97352a3ec26b204fb26b947f9376d29c86b1a79d8c5dd67ff797d55a01bbea",
+            "paired-row-order": "8eadeb5f80609cc1fd0f540850426ef538a4e2fa916fb457a7f3d47e85158837",
+            "shared-probe": "739b3d2da0bbdbef453a213f48320b4629d4de5ddc0f8b5edafbb5284fbf833e"
+          }
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "4ebea4033d35a2dc39cc8ffe4c68dc371d75a63ab92fd5863efcd73e28ce8f7b",
+            "paired-row-order": "1a8490e53c8f580499e5acda1dfe2194c0d809e6ecdb537ea7ac84f79f91732b",
+            "shared-probe": "0ced5bf29946a5a112320730a78d2ca09c3e26f768c880585f257fbe2300b8c5"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "6a757bffc651306b5c9cab3a7b4e6e82ddd2f955238a00c55fda21a38695b756",
+            "paired-row-order": "8f468d695f75e1876f78d9f8d9ed625eb8feec5efa798245a1ab8f1debb8350a",
+            "shared-probe": "8f14786be77cdf95ed1a26a3f90c95fe65accff102b7d5d8bd6ee862e70c5191"
+          }
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "daa9a1831428065e5c2d26c7f75f02298243998f0fb83449acc9b56f212127ca",
+            "paired-row-order": "7d4ce7fe9473f9fe7dfab99470e8ddd1aedcda3904a202b28e72df6222e631dc",
+            "shared-probe": "64f51c2bd5a75a7c445db07e56a1d45900b575a6b730f874833029d4a9cf1beb"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "74d56dff63a8f6bd598803027404ceb5d6c307a0e3203b51614aff3cbaf35892",
+            "paired-row-order": "1c13ede3af5e7931116b4fe59977e4c3de4411829f39c16188743bfdc492432c",
+            "shared-probe": "2036ba9d425d34f8d4432e6b5ccd7bbc8fb53932589001ac45b34f712f599caf"
+          }
+        },
+        "moral_disputes/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "e7ad966347d762b289a23ad677d7aac76a69e0f4785658e806fdbad112fa3541",
+            "paired-row-order": "ac7706487472f80dcefa401ec0fc41afe4aa36a070e3309c3dd88258f71a840a",
+            "shared-probe": "72ecc9fdc59a4005c48e3be0b13f525535312f1f5e0de0e68e23627cd300bb48"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "82252bf7df9639fecaab47f343ea226ac4a2ae095b8be4179b38125b8b293952",
+            "paired-row-order": "9baeb1187ddad24b091166c0b829fff5830217f6f29daeac55a2cd5e596ccf3a",
+            "shared-probe": "514ac4a07b43c03bbedc46f5a04c12ff142edcd8347ed871ab253c0dcfd7ba82"
+          }
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "d6448c923f032a2de325876258f965d9138b0163d6e4a16ad5f6ea7a7f3da301",
+            "paired-row-order": "0aca569ac8463c5ce013160d8405c9a5ea1b59671cf411e133474a99d8ed950a",
+            "shared-probe": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "d8269eaa386d38f249344d9971fcec44244c157f84b1d8fe11d661279025dd26",
+            "paired-row-order": "9aa4d2d5b549ca44932c3086d944a3007b27e54880df7769e40d363543dae7f5",
+            "shared-probe": "84a1e6095809396d902984b8bd2af6a2fe9146eebfd5b1eb117f9541a375ee39"
+          }
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "1ae6ae1a83a8a37032f1234c9836963520707cd754aa1ec146fb7764157c9ea7",
+            "paired-row-order": "233c8c8c62374476666497c8ad2dcc4a525eedb5dee54185844f8c86df78ffa2",
+            "shared-probe": "04590f13f870727801b61cf12b5a532d8cb8b186c52430a4fa623c9064f86a9d"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "64db8a42588db858be878678a0634b8f36c5d0a8e63ba23e6dd41cd97f9a0860",
+            "paired-row-order": "091df7a67debd050e28fdb0c04419dda8cc4dacd3f7cd9141c4a45502f95ca9e",
+            "shared-probe": "651849a4a766d38659c76f9e298e205f49775363b5964a557ab1afc5e5893fd5"
+          }
+        },
+        "professional_medicine/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "05443cc48ab55a6f5b4ff90a7ea4a29d1fa16aa835471322a6def66dbec3cdb5",
+            "paired-row-order": "d06292d022d1edce5f81862046a04c2bfd404a2e16820d74013cb549d8dab373",
+            "shared-probe": "5f7818af26d067e5cd23a1ba1434b37f3f93d3b72138ebfb0ca7da657f073239"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "f69d793370ab6209bc3f73e2b959dfa345daad912eca82950374b12b821ab339",
+            "paired-row-order": "ad6f259ac9a9d11fbd706135163506c01a283fd29007aa077039f67aaa60ec8f",
+            "shared-probe": "6c8486d7a15bfc98e530e7c6a6306abfd76a436d42b8c5c53bc214390bfa83c6"
+          }
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "2ab702c370233bfc6f037dcb31edd0cd67af7350ae1eb43130a18202e2f94608",
+            "paired-row-order": "f5a81ebf339ecec77f055f3fd63bfc228552e9c0a327e2c58521de4bd911d030",
+            "shared-probe": "758ded29a6278fba8076854fd2038875facb5f91fb07248b133917db9b0eed1c"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "03f279afca26569e616b73fe29ece18659232bee01be45a969b6043a2b3fac22",
+            "paired-row-order": "498508341908d23170683a20e7518ecb815db4ea1c0a64642680da2eab35104d",
+            "shared-probe": "1d5a947a42c0add1451499ee0dc7f52296fe7464887b9d1887fced6d470b005b"
+          }
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "4467dd2a1cda1813ae580a7352286c44f0ff65a3028be48ae92a979120e3b4e6",
+            "paired-row-order": "80beb1c74732bd7b786fb39aa0d05e949f3e452ac7712d1eb413c547e7e89681",
+            "shared-probe": "51334fb229a6b76ab9dbb02d8085bfe688d858fc0482cad869cbfb55214fe9e2"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "718e7235231e90b078c5cb89e759f69490eb6a1e226c77d907a02c481011e321",
+            "paired-row-order": "00534945813542b7eda641b6b6b94e3c8dc2a45f3d08bd834396c799fbb2b07f",
+            "shared-probe": "752951fee4d090bd0853ac0b0c18e558dae7c91b240bb12b01d1527a3ece8f45"
+          }
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "85cb23762e4bf609a34b3791b5da2be54831a1d18cb8761777560122977ed3c5",
+            "paired-row-order": "0b84bd2f0bb6e46c5a1a3025ee91f3f22d09f6bff772e725efe1f301c1071d38",
+            "shared-probe": "ed8f737900efd19f21d2d852846a194b7ccc6d642e1c55255e2a1ca52080444b"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "22d2664cd0f599ce667da572aeaab2658a014c9b9a6cf17d451d31267ce26f44",
+            "paired-row-order": "c66d9b615636af548641b1eed1dad3afdc651b0797978e7903d283f68c6a0117",
+            "shared-probe": "7b99dc07b34c0a7d340dccc9cda7b3af635733414ea59a311f86fe649dfd08c9"
+          }
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "f77e76fea6adff293ed8562086bc039fce05bf26f598629b3ebbb3a9531aa21d",
+            "paired-row-order": "3bc02845d82709c43acda3c1f9d4420812d27f33ff478499ec8b31f2383f904c",
+            "shared-probe": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "0a3ac385350d9c153f32f5f16772aa55a0b905599bb4bcd50963dc5ecd901c88",
+            "paired-row-order": "074bacb51368950276f56d8ea6a56508e38e550fe65b22d18e55f709d014a5b4",
+            "shared-probe": "b63ee97021060bdd1d5f8375524c77c39c7c0c9ea8a4c2156254b3639bb23494"
+          }
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "d2e7951cf480baac8a3ed550b5c6ffba7426270249c4343ad1bcdd8e1a65d941",
+            "paired-row-order": "ff6ce7706b84918f659f4799cb071dac29226cb8c0da251c3a14ad3a51151207",
+            "shared-probe": "f346f1ea30a4e9d1da52c2d0247785926cbf51f5d91252032f673b0e817703f8"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "622e195daa3923409f2e59e9a81755cf38e74987cecb01603a142b44ab93773f",
+            "paired-row-order": "5b2c6d0ab8d0ef69cd625a81e9125709b3f74b5fdb1b60678c042a0f78be86b5",
+            "shared-probe": "25d4cecd9c066f050a86f1a14b02d3e3d419ca6336b1f14f9e73253343cca13d"
+          }
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "55e3fa604f6382f16b00a0a94d84b21bfb52aa90824bee8db0018ee557df5ae1",
+            "paired-row-order": "912deb296ac9668dc520e71ffd5cab0edcba40ee46ecfbcc12d74bfbf4a16738",
+            "shared-probe": "f51a606a988566fb136afa331b0292a2739d1d38984af7faff2462cbcf6776d3"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "paired-row-order": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "shared-probe": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+          }
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "6e59d97b9434c2c02b7686afb301c6bca0a001c5a78394bffb7399b26b9e0021",
+            "paired-row-order": "45026684f42b5fd3526967b16757ae93cd77fd4cebf552ea1556a48bd40e3d7c",
+            "shared-probe": "796603d672b107897982fb3e51c2fb59738548a589b8b4b600e115fd360c7b33"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "paired-row-order": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "shared-probe": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2"
+          }
+        }
+      },
+      "proofAudit": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "certified": 153,
+            "incumbentLookups": 3713,
+            "partialIncumbentCertificates": 82
+          },
+          "paired-row-order": {
+            "certified": 153,
+            "incumbentLookups": 4092,
+            "partialIncumbentCertificates": 16
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "certified": 88,
+            "incumbentLookups": 2013,
+            "partialIncumbentCertificates": 45
+          },
+          "paired-row-order": {
+            "certified": 88,
+            "incumbentLookups": 2239,
+            "partialIncumbentCertificates": 12
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 56094,
+            "incumbentLookupDifference": -457,
+            "lookupDifference": -91,
+            "paidLookups": 12701,
+            "searchLookups": 9669
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 56094,
+            "incumbentLookupDifference": -78,
+            "lookupDifference": 987,
+            "paidLookups": 13779,
+            "searchLookups": 10742
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 56094,
+            "incumbentLookupDifference": -279,
+            "lookupDifference": -69,
+            "paidLookups": 8893,
+            "searchLookups": 5561
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 56094,
+            "incumbentLookupDifference": -53,
+            "lookupDifference": 509,
+            "paidLookups": 9471,
+            "searchLookups": 6140
+          }
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "lowerPasses": 26654,
+            "upperPasses": 26654
+          },
+          "paired-row-order": {
+            "lowerPasses": 26654,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "lowerPasses": 26653,
+            "upperPasses": 26653
+          },
+          "paired-row-order": {
+            "lowerPasses": 26653,
+            "upperPasses": 26654
+          }
+        }
+      },
+      "panelPathHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "870548a0e6d6267dbb1dd65d255d30968681f3f5414af22025ab81d638022f3a",
+            "paired-row-order": "80aa4d625edac637a7af6b15072f222fede331c2dec725c195bb46c983962497",
+            "shared-probe": "08a6facc97b0fda2e1551df16d8c76566ed77b01de7f8d516b2e30473b83c44b"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "4b0e796494b9395504de19bf5e3f5b17af62648169e818ef91fac67dc128ac2d",
+            "paired-row-order": "0808b4136da47cf965d3c4e2fdde03b3d125bf23555eed14da44d91d0e4d0451",
+            "shared-probe": "c8f23e74f284d6f155874bbea8a436a6242c05a129ac6b2c7e5bc9ba3e1824a9"
+          }
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "904b79dfc6d3fb1ce79467f0b8b894427ebd13d18a182385847e1771b7b7b68c",
+            "paired-row-order": "9e8aaf34e476209a380a4342e40f82b885509fe92dd1535bc1bb496582002454",
+            "shared-probe": "e1c70777d64cc2e002598024ca0e878940d912b044dd1938ad6c110b3a945871"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "35f08ba133f56437ffe36f7ba4b97e6e50d12b902cf744e0da97af65d3c62840",
+            "paired-row-order": "a2cce0536da4b35660bc1bbe4d5b242763fdaa936d33eb053379705d8529dc7f",
+            "shared-probe": "c5a3b33ece55ba14654b0e9b79718d88d63324286a8a8617a7dec195671f92ef"
+          }
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "5b06020c08ccee0dcc269bd582d2e5a9e031daab4fff63739df5f439d24a38ac",
+            "paired-row-order": "8f3d5fa15198662a3e9368d3261a0aa26657b6d035663d6cc94e30b35bf0da8a",
+            "shared-probe": "1ab872eade75aef53f81afaa62a6cc5920d1342bc36bd3bbae03fbf118420a39"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "f4c6a013f2bd04d1eac112a2cbd69df94b3d29a266f3e5626f39ff51877662ee",
+            "paired-row-order": "95589ab91fdc1dcac03ee15ab31ee60d2fca57a20daeb6ea34f10b7d663dd310",
+            "shared-probe": "87831af5a26ac907434feac32b72d6eb232f6c08a6bcc0d8da4f0a6fc84e4bde"
+          }
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "31d0b1f1a5772bc5ef2b159ebb46b528356928a5ebd4da4473103bf5ddfbbeeb",
+            "paired-row-order": "9de2d329f0e97e2ec0d90fa4df28b02904bda0297799d469eb62e00992c0b52f",
+            "shared-probe": "0c5accc4e21a113f91414ea3789e8aa3b94b4626c6c452c3bff05ced2f5fcd43"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "985d8c3a71e92f7fcc0fd328a51c0f934640e1de777965dcf1680ab3eb328df2",
+            "paired-row-order": "60cfb839756cc71b328285eadd50abc3e7744acf4802c53eced005e050dc6f10",
+            "shared-probe": "3dd8a33b38f8be84467590ef96744bd64cb2e449184aa1e1c7dba73511d81413"
+          }
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "44fb33d66925a8f6fb262ce34bdbc7cc145d658b1fbc1d360ec654640e3e5f2f",
+            "paired-row-order": "c382ac36cd2eee099d538e665328362652383f2556c2e075a0d58634c114a7e8",
+            "shared-probe": "d614a18a13a2c8906113f22458e26e5820a1b7dbcab5bbb32a83eda18004d0ad"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "480475023ca569fbb1b515b7380c9d27e0e93d3a543a2517d3166bbbb7b1540d",
+            "paired-row-order": "617fd70441b845f65b3dc180f001b704e7a21c10c80fd3b23bdeb0be5c150981",
+            "shared-probe": "ad0f6395a32029246b874014f5439dfd76bc4044996f6c1be1a54f23e71b2553"
+          }
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "d037d34fd4636d27eff29e0342656270e0e51ffece12647f88b5368f3ff556a3",
+            "paired-row-order": "63369a1f07378f676afc30643a61b58da1b385bce34301dc3a37460a585ddc7d",
+            "shared-probe": "4d35423008ec1c3b6e89150696beb77b244c16bf35583cb4ef2acc1246f9ad04"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "62406c42740b9219055280f7b7aa7ac4a005fe0bef05dc330dfe386406845149",
+            "paired-row-order": "c22404acbd5ffb4c9e329d2798a527724232db1352602791b2c7736b13a7feb1",
+            "shared-probe": "d7f13ae20521592e40616c5b5621fd2ea2a96477d865cc5faa5fb4a0f1ebacec"
+          }
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "20bf95bfe41ee972ea87df0277ff4a0a0c9a097215fd755d0923a2add212aa18",
+            "paired-row-order": "152dee7f907a6d4a15bb29b9ff80acbc00aac99f595f4c3e5aaf2a5f0ca7021f",
+            "shared-probe": "953206fe3aaf725eda7f688c68c940130bf102a9a5ce0066a3d66313e4af9043"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "61e1858cf9448d839e43045fffb5d274d6f40b520bf67504513de38daa0c6615",
+            "paired-row-order": "64929dd9cb8c10e3ecee900b30f989484c564d4007e7c30625c3e44e7212983d",
+            "shared-probe": "ca980c59269b95f198eae0c25bf367f52efff09ac725d44bd43ef6ed1bd4c32e"
+          }
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "90bc071f0e92666a4306772cdcb40fa7030b405413331ae69868ed57b5d66407",
+            "paired-row-order": "0a068d754a6d308c0676dc9392d4c78da5978ae13da41487103786ee12b1371d",
+            "shared-probe": "58971baa7c0e64cb7a61729866919173933fb2437830af0a5e8177d83af42b67"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "c955f8a2defeff3b11a02d6bf876bb463dc2b2bea784eeed3e51f249ad0108db",
+            "paired-row-order": "e85b00f8277f448325aa160964f2d292d0a4d5eb10032af447c57416aff0423f",
+            "shared-probe": "090f602e20714c497ff97a964afd50a23f2942e816f9a89ac98255910d2090cf"
+          }
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "89b13414abf682094bdd7b08ffd4130cbe298ef70a1c4cb13c004df442b21648",
+            "paired-row-order": "a30832083d3e336b2a47286075e73bcf09c31767c6aa7c80e2d46757128eb5cb",
+            "shared-probe": "4f88bcefa287859becb1295608fce40c99be8c5337fcd7c3b737b256bb2b0e69"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "a3cb6851c2296853d75a15a6edda331240842dc4c6ff0cd6095450e3efe2a0a0",
+            "paired-row-order": "73eb39b8e41d0cc30976eaccf2b5c4551465e33d7e3a1bf246e914273b01da38",
+            "shared-probe": "7dc426d06548f78ad3301575b97b57453bd0de805d2c3cc33f3459e0d302ebeb"
+          }
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "f888f56c33e02f7f9533c74790f389a9c2a0339edfd0cd1a23d470b5da0e2d14",
+            "paired-row-order": "bc8f139f80c97298e71cd34997846727d062b884e2785e87d7cb7729f898b35d",
+            "shared-probe": "bae0272b60b6a0206068692cccab5e1453be9f6a40bc05a09e2ce8294960ae0e"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "35d638523d45c574cb4fea9ad218e5c6be42ef00aca04955ca191f4b5a3f55b3",
+            "paired-row-order": "69273e977a77f2a234e350e8b8b0538e897a2afdd021a0987a1a4610641219b2",
+            "shared-probe": "d5390746e4188d6108e8aae0ee369a642d18db714790f73b5130e0242b623705"
+          }
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "4407e07f48f287cda66cf4c93cc32d256e0b19c0955219ec09f1b8c65449659e",
+            "paired-row-order": "8d37d6bc1143f0c95c9f7f9ae9707b5d0027a3bb8c7326143e64cb086c9954f8",
+            "shared-probe": "8a423fa51e1edfd5f79c5d9f04e50676b7c0ecb5720b3ba3f2a5f00d3573878a"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "08d9857d773be82b8660478c7a9d941990cc097fbfdd85caf6ae5ecbc45752a2",
+            "paired-row-order": "740d8703cb18ff71f1521f632bd2f0c898de608b2887164537b475b534a1c7f3",
+            "shared-probe": "bd8bbf9b7e4e0b3bf47ade443d6a477c33e681130ea6bee2dc22edc8316c9e46"
+          }
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "4efcde7fcb0132ff3487db91899a587466655808fc39823b2576bde4c0239889",
+            "paired-row-order": "13dc243a53d7499d76962b80d7d6df9423dc4805eda3986edf5142b9afd3f4e8",
+            "shared-probe": "a03811d3f8ccaa8cd971d5dd3dd6036ffdb673c933bdc58e98fca7068b600a8c"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "2d56bd4cb86d149ddd324e2f46570d1fbf398a46d9e11812ea39528756902b2d",
+            "paired-row-order": "79f9e1be19cdab019b05f1a029a4195841b8565246bd5ceddc655c4564b00a1f",
+            "shared-probe": "bbfcafb66eef6719e2fcc904e3fbce6a7fd32bd48634d8a1254c324da4162fe0"
+          }
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "a1addf9116f9dd67df38934919ebdb53be138f8478a4207eb8684f32ec501732",
+            "paired-row-order": "551ba42e260873ac7cf76ada8e03687d980496ba3e3e5ecf9b9fc788697a3ba6",
+            "shared-probe": "cb74d497a9b79958c0955b4b2bc0667a0f1112d57206e6ac17003da597888a90"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "119aa1c30a4e13d593b902ae8ceb34fadbe8482dbf28132e2d2271bbf580e6c4",
+            "paired-row-order": "076b75d69ac93b571206a6e2e4ca072fafeade8fb9f53d31cd7c91afa04138a3",
+            "shared-probe": "602a049226d7b6adeb5311591f6cffc98963b9252bb24abb56a040154d476cc5"
+          }
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "2461f15c0ba27624074e0700e1ca77688b0825c2c585b7445bf1ca08956fdc5d",
+            "paired-row-order": "7c4ecfec6ff2bfc9a8cdeb6f4ea0793882d68d2db517b404f8bf8a281c8f0f2a",
+            "shared-probe": "cddcdf11ebcfc2b4cf5d34ecf3dd4523c8acce79d6ffb85b87715f9f62dc8187"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "481e24d71fd672105a647a36e18a20c3dfa30ca8d9413f9afba277f1902c970d",
+            "paired-row-order": "814cca22e47a6c0c0b4f825a4bcd23b5386e051151b1cf0fe65b10fee901213c",
+            "shared-probe": "637925974062da5d1634aabfca5c39bbdd97fad0c9aaf8259554e353dad890a5"
+          }
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "4b134d75d634df663909d91ced3d9a846038bd3153e4878277549bb9360e97d3",
+            "paired-row-order": "876516bf3960f87ec3afbf1aee0033a1a43223a6129b2b82cc2c988e00a7fa2c",
+            "shared-probe": "b427092b1aad0012625e986005c5db3eee74f6f499a35a1e7ba6b842d461aecf"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "76f9859221c810825b56898420710e5ad2253fc1811766ca965b0aa176daf6e3",
+            "paired-row-order": "8f4b860590bdf8b2eb64ba437c6d9e04d4941ef6ac909976320fb2de08dcec10",
+            "shared-probe": "27c25cfbadc993b3d3c4396d3b00f24bfe23a33da5c4968397abf205dee8e21d"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "130831cb3d07e313a043439e5500fda26a4fb90e3b1af6c09639afdc07b0b60e",
+            "paired-row-order": "65d56eadd426d82b51c1f71fb2ad924c3fe0007fd8cba2ddc2dfc3d1822696ca",
+            "shared-probe": "38622cb92cca408c411dec924b4a15b70cfb0071685a5086c2629ab35b25f77e"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "821d31082692279ba43359526c1a51491c4120143b6a7d82716751bef880e60a",
+            "paired-row-order": "516c296245fdde4290cfb8d9a02ab4d7bb2d6bd82e23737c71e0024e4cd407b0",
+            "shared-probe": "6bc6d6be7f707cb193c14a6b8d9470f7dbb19ee01b37c1173ebd36f108496626"
+          }
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "b57fc1e8d35d25e5431167e72f68181eebb814ceb58f054cde6845701abecc2b",
+            "paired-row-order": "3b101ab3022f7ee7c082e9415a412ef806263b9b0642f2389f4fbbc208e3bfe5",
+            "shared-probe": "0d296f2ed541ccf7037405979e88c4d11525ec60575e373fb967ea47cfd35646"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "paired-row-order": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "shared-probe": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51"
+          }
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "63157f79fc13c9acbcf0dd96d29a4056aeea4f2e979e1ae4309285c1f6ecb228",
+            "paired-row-order": "cd72f6b503944183cb723368d715e8cab54e72538fbfbb09e3716e53a14937ec",
+            "shared-probe": "c3a057bf66417e8c1751f320fbe7b62df214776f6c6f0af78516f3ff6a299a67"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "38b61de5a34ff923d885f5696437238e73d36930a2c813af2c7ae9f40e4e5b91",
+            "paired-row-order": "ee74ef5444cf38f27acbbd4515611b50e81e8daf12516ed51e639564925ebe4a",
+            "shared-probe": "e5a820c8b314be61a23eaf31c80a16c5e97f91c7f1d243e65c4c8f2f41eb4c3b"
+          }
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "409e83d37d4a7d5da464a05b700b6ba3a3de8b5b1393c83b0d2d8583d9a1a07f",
+            "paired-row-order": "ddc2b1bb7d4c5678a22b8c32210f9fbc93651324e913dcc57c44cf53a143a75d",
+            "shared-probe": "bdc3525e9d1112a982ef153fe923b04c188a272a45f1f72c37d913810167f5c0"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "de1dbc78e6bfe499c5fe6d023c83b443754c22fb50104230d495d498a1c09388",
+            "paired-row-order": "6a517df67be55fa81630a4af399454a7bfa5ce6628463c7a146c5a934baa0af8",
+            "shared-probe": "42dc517d5fe41f6dfc903bfe7e2035923a3376d638c898409322e0cf9ec52826"
+          }
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "84a7be1edade3e9420ed245cc2f05394d4e9a4a658dd8d1a9ff0b3d3729c5fd6",
+            "paired-row-order": "d6d51b954f302bff04323f994b13c1c2081b9a066e1337054f3bf0cd7354fc8f",
+            "shared-probe": "adb8eb72299141b8eab809c34cc297c995e28d31541851553bd8f077189ac27b"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "68621c10cff590272a9cfca353e98a104bcd72f930c6b82ccb618466d54e8a8f",
+            "paired-row-order": "f106397aed18a9aeb2c5ee405157a055119bfdb805f77860de14fd5eee341ca3",
+            "shared-probe": "8a8e031a33fd3f6098156f5019295c2290428e164df925df8a1af211b6ebd43a"
+          }
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "7c8d187162695f1f1967494484bd7b08881c5108039ed6a7b47e1f35e1b36217",
+            "paired-row-order": "7f78043859cb1f65691f62cf774723a4f4b53c6fdaf71ed8eb25c050d07243a1",
+            "shared-probe": "04ef40d4079850795ba80f6634fefd257b138e411385f104f9fa705b04f9c02b"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "c1add280e9876a176420355fcf2aebcc8e4d2ced715f35a6b64144dd9d5e8013",
+            "paired-row-order": "16f1e0615375effc471fdd330fdb9f7ca16cf21ee7dfa3bad69feed5ddf2653e",
+            "shared-probe": "1515e497c74c50377b23ccc3316bf819feb33405a7bc16a8cc6b5877b4e227ff"
+          }
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "35a7a043571fda5636b64869d8aecada67d889bf5b7cdeabae901add3e58e5ee",
+            "paired-row-order": "8cb033a3dbdff174e3972056bb21d20ce8b7e48c3dea3a569dcd025d30a4c7f7",
+            "shared-probe": "3614b1bbf78c98a800aae68bc3be3b5896e5f768f51e9b8357e05352848a2923"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "1260fad410b33565fa3eea2b4c5403d6ea66c9fb5b5e8b3355260c5e945c8c46",
+            "paired-row-order": "e8f774fb65e4cd5a74670d45b0d2c4eb5ebc561554897dbdbcd4f82871d0aff4",
+            "shared-probe": "6d84aa1eca2f2343cb02ede8a2146406f2ec962f2687156c7a55ec58f9911153"
+          }
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "c28258723ef631f96b93b507c3e2672522efb4f85acf7b4c00c18665388bfcfa",
+            "paired-row-order": "607a4daca9f0e6b57dfe399fe890082e5b85dcba370b443db02378427aceebba",
+            "shared-probe": "c82d7abbdd6c8a26459ccfcd56718a4851aa3700dca6b9458ddce82fa163139f"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "27eb2b9383c65354733eb88ee737b886bd06d30a8ca62e24f91939ddd773aa71",
+            "paired-row-order": "76f6aed4480a3a8b1171cd1767237d6c175c70c24fe027b40eefcc4767c0d5f4",
+            "shared-probe": "7da649f06603a38b0899a60bba0f9facd878bbf98e7fc2d56c00cc6c0e8c324b"
+          }
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "6167e18936ef98e4ead431354d664c8f9a2d39f530f4f725ab713da5b5973f0d",
+            "paired-row-order": "84fe04d923d9c377fc71b7be8c46b65f09e31c88d896155fc5d9bc806ce64c38",
+            "shared-probe": "b63fa5221455031182ee083ad0249a60b2b045964fca6eaf06fd88a91884b09d"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "0661bbd6a9aea86a692a2b4d6b1c32840ef5171634432f2bdd92b8f1fc2359b6",
+            "paired-row-order": "d97888a57e44178aa590110a2f58ca48ff09d283307d85e44d3820873e0ed78f",
+            "shared-probe": "5fdfffc74b66fa373eed5cad8e12c4af96209e4ed6118a3d3cc151881e1ac09f"
+          }
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "226fb6d3d5797f58ef3cdc31c78e4f28362da005e1e7ec74822d77eadfea14c7",
+            "paired-row-order": "652e33dcd4d3b3f3cbe8abdebe3f9311a48913cbdc22016d509dd4fc1233a078",
+            "shared-probe": "d1e4e5be6d047f071cbfd62b6f0dc11161266a68062ee09e300e2c30b366315c"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "02575d81c9e36f85421a9d7b868cae7838808a74328f912d335f174986fdc290",
+            "paired-row-order": "f1732b41990f34baa3a5e04fa4f6a90d736a9444cbe3ab1c7109c30251a92a94",
+            "shared-probe": "175a920a0d94ac3bff4d1e24db5ae886751cf4d39ee52ec2a3eed48419b725b8"
+          }
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "3de295b3db2b1954736f787f7b89cf0bf266a6a0f1f3fd1a4e5fc85623d29b57",
+            "paired-row-order": "6f1ac82df1b72593758cbe025ddf40159f6b924ef555b5280f55d27b687a2627",
+            "shared-probe": "4b5e9aae2971be858e58db85a0e50dcd83bb13024be0fcd06984c01e14ee5675"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "5774d0c9550ca5a9fb4b228ed306ac2eed69a5c35a80c06f072b092e62219efa",
+            "paired-row-order": "ea75b41cd68448c833c3a8753e49da0cf754a0b0efa159e0d939fd77eee22697",
+            "shared-probe": "76e26d68ae941a2ebe1192a500102669a73a7f589e93b9adfda529acb130aec7"
+          }
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "eaa83d911a8fd6ee815f382533d83036c0fc7e803b5b7ca6528557b4c35a6689",
+            "paired-row-order": "44d0aebaa9544ac32a1d2dd5b934a1e535c75a6ce8ee27476539f9002375646a",
+            "shared-probe": "48bbaaa88e18b3fb36cafdd838566408f791e0dcf16b57d81cc1cfbe744b5269"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "241d3d6e468232ba0b4e1ac8138e38ead9f41ddf74ad914757f0714a082d78f9",
+            "paired-row-order": "04900bb62bdfe1852070c913be3781aaf8cd96ab9c2ef5831fb51d8d910c02a3",
+            "shared-probe": "5e24e38cdce7686a60d660bbc5602a64a1d827fe9deea4262883e3454e23671c"
+          }
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "paired-expected-order": "bef3c1859dfa0d4b615f7348b31d767b647fc290c1b2c9315504f243fb868a5a",
+            "paired-row-order": "96880356ce0fed5fd41f1d357284eb02498064c188a77481c48a054bea0dbb6d",
+            "shared-probe": "4f0374ba6f397599e36adffcfeed43ff2de588d1f4f629e634bd83426a6532b4"
+          },
+          "cap-19/gain-2": {
+            "paired-expected-order": "2994d77ef475b6d06469a24df0c40c328d277af6a8c24dcb99c97bf1db70e98a",
+            "paired-row-order": "eb441c83dd558c497897aea5fb505fa707f573209818dc512c80ef0fe4ed8ab5",
+            "shared-probe": "04a16ce2139a60d70cb1b892498ae60b7a8af548152c48c9638edfbc041be78d"
+          }
+        }
+      },
+      "proofAudit": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "certified": 218,
+            "incumbentLookups": 3757,
+            "partialIncumbentCertificates": 108
+          },
+          "paired-row-order": {
+            "certified": 218,
+            "incumbentLookups": 4250,
+            "partialIncumbentCertificates": 22
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "certified": 132,
+            "incumbentLookups": 2207,
+            "partialIncumbentCertificates": 60
+          },
+          "paired-row-order": {
+            "certified": 132,
+            "incumbentLookups": 2534,
+            "partialIncumbentCertificates": 17
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 26619,
+            "incumbentLookupDifference": -611,
+            "lookupDifference": -220,
+            "paidLookups": 13363,
+            "searchLookups": 10368
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 26619,
+            "incumbentLookupDifference": -118,
+            "lookupDifference": 818,
+            "paidLookups": 14401,
+            "searchLookups": 11417
+          }
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 26630,
+            "incumbentLookupDifference": -409,
+            "lookupDifference": -180,
+            "paidLookups": 9571,
+            "searchLookups": 6346
+          },
+          "paired-row-order": {
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 26630,
+            "incumbentLookupDifference": -82,
+            "lookupDifference": 441,
+            "paidLookups": 10192,
+            "searchLookups": 6963
+          }
+        }
+      }
+    }
+  }
+}
