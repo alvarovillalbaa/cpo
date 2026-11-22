@@ -29,6 +29,8 @@ On eight-challenger rotated ARC-AGI, two reserved cases gained six passes and sa
 
 One reserved case gained four BBH passes and saved 689 lookups from full-race CPO, with a paired range of −9 to +17. It gained seven MMLU passes and saved 505 lookups, with a range of zero to +14. It lost 13 LMentry passes while saving 471 lookups. Both widths saved lookups in every math and language setting, and some settings lost held-out passes. The language GEPA comparison reports measured spending for both native modes at their original common cap. [Language comparisons](recorded-validation-tail-finalists-results-v1.json)
 
+A follow-up matched the language policies to 350 realized GEPA cost settings per cohort and tested an optimistic subject-specific cap schedule. [Matched language cost frontier](recorded-validation-tail-language-frontier.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Two socket- and DNS-blocked runs matched byte for byte. The original math frontiers and all 26 language control receipts reproduced. An independent audit checked all 4,704 decisions for funded paid validation, independent qualification, and held-out scoring. All 64 targeted tests passed, including 512 exhaustive small validation boards at both widths and three budgets. The stale seal was rejected. The public selector receipt and ordered live-plan preview reproduced. Storage Guard measured 2.6 GiB free. The source export and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent.
