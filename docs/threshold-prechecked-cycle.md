@@ -35,6 +35,8 @@ The precheck saved 7,362 validation lookups and added 2,387 qualification lookup
 
 The same precheck also reduced search cost on many native GEPA settings. The matched study compares both CPO margins against the expanded GEPA frontier at their realized lookup budgets. [Matched GEPA results](threshold-precheck-gepa-frontier.md)
 
+The opt-in sequential certificate cycle also changes when the validation proof begins. It improved the archived LMentry and disjoint MMLU one-gain results, with losses on BBH. [Sequential certificate cycle](sequential-certificate-cycle.md)
+
 ## Reproduce the archived paths
 
 ```sh
