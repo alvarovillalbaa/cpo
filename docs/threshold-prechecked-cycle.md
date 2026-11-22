@@ -33,6 +33,8 @@ Across 102 model panels and 32 schedules per panel, the threshold precheck prese
 
 The precheck saved 7,362 validation lookups and added 2,387 qualification lookups, for a net reduction of 4,975 lookups (12.8%). Its cost depends on how often the incumbent rules out the requested gain early and on the relative price of the two callbacks. These are recorded lookups from fixed candidate pools. Fresh-model performance and dollar savings remain unverified.
 
+The same precheck also reduced search cost on many native GEPA settings. The matched study compares both CPO margins against the expanded GEPA frontier at their realized lookup budgets. [Matched GEPA results](threshold-precheck-gepa-frontier.md)
+
 ## Reproduce the archived paths
 
 ```sh
