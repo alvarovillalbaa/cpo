@@ -1,0 +1,1010 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "parentPlanSha256": "2e3b2c4e8717b0b2ce822140b05f2f7d8327f384378486ee66fca6e58f42a2c7",
+    "parentReceiptSha256": "3c92e05d85a303d96393c994610a434ceaf32487fef4437ff1351603235875b9",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "deferred-certificate-paired-order-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Keep fixed one- and two-gain qualification thresholds, paid precheck, search, and exact decisions. For the next qualification reply, shrink the estimated pass probability halfway toward the already-observed partner grade, when available. Use the original remaining-cost calculation from the resulting state. Compare paid order, costs and exact qualification decisions on the full-roster archive.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "deferred_certificate_cycle.py": "1ae3346815495b85c57ff0db6b196f61cb29cbd5bcc77ff8cf0c033adcc613e8",
+      "deferred_certificate_paired_order.py": "9e0737b1a1acdd3289d6fef0f7a3162a59b5c3fea415eabac27d6dbcb9ae5df4",
+      "expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+      "paired_order_certificate_cycle.py": "a43caeae8788129acb4eb5d8c8036d85277beac70f8a3514d09c7209d24747c8"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "nativeSubjectHindsightBounds": {
+        "cap-19/gain-1": {
+          "lowerPasses": 9605,
+          "upperPasses": 9650
+        },
+        "cap-19/gain-2": {
+          "lowerPasses": 9486,
+          "upperPasses": 9605
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "cap-19/gain-1": "5e0f47e07a9cd8269b75f0db979a4f494f228d822bf1fb198d4a6140e3f88d74",
+          "cap-19/gain-2": "44d2b9c0a658f794504886589fdfa7f962663a467a88bb0ba2050913a14b9a5d"
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "cap-19/gain-1": "763e4b40e299a39d81ff6a62dd92bbc33345ecacf06c2dccbf16a647a4d971a0",
+          "cap-19/gain-2": "0d3e3cbb63b8e5fbbb52d8c0edb7ea31da448630aef6455723c3049bfc345dd0"
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "cap-19/gain-1": "95efd8b7aa37826ddf9175c1a050395a2ef02fbd13263504dfb1d9b138625faa",
+          "cap-19/gain-2": "8b68f6b1f05290e7a518767d0141faeb200502d0f4f187df0793c9d79ac338bd"
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "cap-19/gain-1": "6282edfa25579cf72896f597dabddc9e7c719a0b297b5d9ca6da2c1aa8e48a10",
+          "cap-19/gain-2": "18526456103010d32ecb3194f33ad389c0174cb9d9c3bdd04f8df14d13f21a64"
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "cap-19/gain-1": "74f24aa5f6d629a67be59830b944098fe0326051a4263944e3d5e0fcd7b23336",
+          "cap-19/gain-2": "4d8be6e55738c955c92f3fbd22841c7c0662624a6fb43bf3d6678258607471dc"
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "cap-19/gain-1": "c2e9c6954ea5b39a3f19ccf9f89284e92410a77cc87cdd25a4a17663d8795722",
+          "cap-19/gain-2": "ca12933226ede915a8657c78a95450381cebe42d081d47cd547c0a5e258ce77c"
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "cap-19/gain-1": "afa3db6b4a6d5995dfdbd50ffa026f27da92c403e12d5a409d309a1e2c123595",
+          "cap-19/gain-2": "ebf2109605360c2ace8cff75f6e86f87ed11438673813c30d4d5eeecdd6d52bc"
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "cap-19/gain-1": "1a2d0b66ad0083da11d4dcdb910d46145efde6904fd859c67ee88dca7b573bc6",
+          "cap-19/gain-2": "566abb0a132db3983bf8e5999bb8364edab4c371d9a8461ec4d6162bde6c95ce"
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "cap-19/gain-1": "c3b249ef3feae32d385d925368ccf162e044fa93a1e9680a7ae4abbaa6e67ee1",
+          "cap-19/gain-2": "61179a4432ac1f40f9d5a03c77623a7f0f66446e3e270a1c73695b9c5acb6c27"
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "cap-19/gain-1": "43988786e7732cb817e43370774ea6328ca0f1039809f4e3369bb5306708ad3f",
+          "cap-19/gain-2": "81a17443a5cae274d2263ee711fb4b67a568c6794918ccec366bee3be5553bd2"
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "cap-19/gain-1": "05da453dc0cf186c6a5d165cb938a5b552d4eda7f2b0439dbe32846270777839",
+          "cap-19/gain-2": "a424b86176d0eb3516a09dadba2cb59c65f96b7c8ea32abc478c1a60979dd794"
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "cap-19/gain-1": "719c95dd85cdfeaadf718e021f5272c743fe7314216858d5061c68a238be1fdb",
+          "cap-19/gain-2": "35fc2b0fd748da21d57423b690776be965bd9ffddcb667150fa0f547dc4327b8"
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "cap-19/gain-1": "dd6a660f0b94668419b48bc2c1fe97aaa8b204bec6687ba62f31efe6aecb2848",
+          "cap-19/gain-2": "42339d53320356fef9b8a8351083ea2c904ddcd1807714617e675e4c0a405c3c"
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "cap-19/gain-1": "155bd969b367f629a2b6bb61ae3713efae6f91c7dddbaafa63dd93d867cfbc09",
+          "cap-19/gain-2": "fce5089b8f6289ab4b9fd5317e042c83ede9c730f407506013bdc15c7d8df42b"
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "cap-19/gain-1": "5cd5f5a528108a0a6ef7387e934a07bf9ae08b606732853cdc380e7f97af5eb0",
+          "cap-19/gain-2": "6658595b0cd480763f0325181f06d1eba316e936233f241fcc115cb66739ae22"
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "cap-19/gain-1": "aa215cc16c296ca89b25a3541588b125cb6621860151145fc3d49340f622fcca",
+          "cap-19/gain-2": "e83996f76f67f2970e13bc61a47e3e1a8ef221d64b2d88cad243f04b46f5f5bd"
+        },
+        "bbh-navigate/airoboros-13b": {
+          "cap-19/gain-1": "86fffa313ba085819979e27dbb475b6effafc7c6b20fbf53bcf8de195c91e3d0",
+          "cap-19/gain-2": "df1a3f59bcd8cd4425a89e2acb34e92c0bd33588a22825e2053297eb4c097de1"
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "cap-19/gain-1": "8ca65cf684dfad30e711cd0b79f01327656838148b971e1c0b2fe99ee74df427",
+          "cap-19/gain-2": "3502bb5d7b15de83e9f51cd0b85d4f016fbe6712e368123933937718fbd8e5eb"
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "cap-19/gain-1": "235700ce5b4d6556c76d884f4aac90dcab871d961d8657733732fceed37abd31",
+          "cap-19/gain-2": "63a7b708409186eb472896352f031924383dc4613344e5cd4d3f5f4922b9fa78"
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "cap-19/gain-1": "1127c449aff908546c987e9632e1837b1a9a229ce32f6f475a4c5e6371fe8cfb",
+          "cap-19/gain-2": "6e86b2f23d4afc61e2e5e8a15dadf45be050c57f6911c5aeb98dcd44fdbbd0f6"
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "cap-19/gain-1": "634f8df386c1f1c3ca87e0acb1dc9256474dea6c900e0a9b78dfdf72f94dab6d",
+          "cap-19/gain-2": "b0c40e3b8f452eeadd74889657b2d76be8ecc2df4907e35a759d0841c41b18d6"
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "cap-19/gain-1": "048d76dcf0c4cf7bf14cbdf77b32a8f4b8f887ae0ba8e7c0a2ecfe648ca4c117",
+          "cap-19/gain-2": "95dab4e6ba757b9c32604c75099fbf6e8bc9fb2d4bbb37f492a333c1feef3c5a"
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "cap-19/gain-1": "c51505a18c2f786301f1e269ce104045dd401301e5e24043bee568e1f7c7d85b",
+          "cap-19/gain-2": "42eafbe6cbd373575ae4da5530da32cb60c59c1ca7004ef55d75e3ddc9b0935e"
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "cap-19/gain-1": "301d27aa2288d028cbcd467bd05adaff177d4312a05a78da5399236624793c55",
+          "cap-19/gain-2": "618c62cda77cea1cef023bd9c6d896799affbdb52dad6509c5933f1cbd64fdb4"
+        },
+        "bbh-snarks/airoboros-13b": {
+          "cap-19/gain-1": "758831d4e58eccd7403afb8ce7d68451e41d06722839975e319865780bfbe939",
+          "cap-19/gain-2": "d262887b6ee324934ebeeb4df2f737f6fb8c983faeb5b6e259854a580982c65d"
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "cap-19/gain-1": "411abfeafe7f5e7fdb886b78d3a396d94475f8f44083a4098ba1479e983d8261",
+          "cap-19/gain-2": "cf6ed0a011858cacfe04bef67395e189382c45b3346594ad4efac62f663b8d9c"
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "cap-19/gain-1": "44d12b4b1ff92b2a8d5dc5cff9f6e1bef4a197ab0b8d33e5819ffec742c1d17c",
+          "cap-19/gain-2": "f5495a4fa5e6f8122e22dc6b9beea121fa7c97f20dd5982a206ed4c05efa701b"
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "cap-19/gain-1": "0f1de5109038ceb7fdecb35fe741398dda742103cdc6c6f221aeb3e5a754b4db",
+          "cap-19/gain-2": "caab82f938157cf3a27495635a37de5c0a3ee06a14ee85a6e42ad817dedf1471"
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "cheaperPaths": 78,
+          "dearerPaths": 33,
+          "holdoutPasses": 9548,
+          "originalLookups": 16146,
+          "pairedLookups": 16083
+        },
+        "cap-19/gain-2": {
+          "cheaperPaths": 91,
+          "dearerPaths": 22,
+          "holdoutPasses": 8998,
+          "originalLookups": 15149,
+          "pairedLookups": 15062
+        }
+      }
+    },
+    "BBH/new-task": {
+      "nativeSubjectHindsightBounds": {
+        "cap-19/gain-1": {
+          "lowerPasses": 590,
+          "upperPasses": 590
+        },
+        "cap-19/gain-2": {
+          "lowerPasses": 590,
+          "upperPasses": 590
+        }
+      },
+      "panelPathHashes": {
+        "bbh-causal_judgement/flan-t5-xl": {
+          "cap-19/gain-1": "55bd15f868cf0dbb3cac51deb16b254ef59ed39c0859b6ab16c8fade4521b312",
+          "cap-19/gain-2": "0d0ebc793fa1a1bf5e2d0df54c99a695a34478249cbcb5955513e48bf905e5bd"
+        },
+        "bbh-causal_judgement/minotaur-15b": {
+          "cap-19/gain-1": "edb4589b39b75bd9be7d93ec2b7256d913221d4ef58b28dae94e0d86710571c0",
+          "cap-19/gain-2": "8b378298d948ea1be3bbdb1c8454c953ed9d1f2ce1bf964a306e665183fd60b2"
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "cheaperPaths": 6,
+          "dearerPaths": 2,
+          "holdoutPasses": 591,
+          "originalLookups": 1123,
+          "pairedLookups": 1118
+        },
+        "cap-19/gain-2": {
+          "cheaperPaths": 6,
+          "dearerPaths": 0,
+          "holdoutPasses": 569,
+          "originalLookups": 1016,
+          "pairedLookups": 1007
+        }
+      }
+    },
+    "BBH/seen-task": {
+      "nativeSubjectHindsightBounds": {
+        "cap-19/gain-1": {
+          "lowerPasses": 4917,
+          "upperPasses": 4917
+        },
+        "cap-19/gain-2": {
+          "lowerPasses": 4891,
+          "upperPasses": 4907
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": {
+          "cap-19/gain-1": "2fc14d6e50349bc6a1d5434a2c276cdee79045fa570106cf1d5d83cf514ca7bc",
+          "cap-19/gain-2": "4d1dbd644c0a51eb4c87bc4064af9b99ffa434c10ac93b63727a0a6556e44d82"
+        },
+        "bbh-disambiguation_qa/minotaur-15b": {
+          "cap-19/gain-1": "7dfc8ea45b16e192f173917b6fd56885c2681135f86ce61c6cf269be9a93e419",
+          "cap-19/gain-2": "cf12c19c3b8d2068296a6f4582c3e9d7c005ae5da5a62ae2102256142625e348"
+        },
+        "bbh-formal_fallacies/flan-t5-xl": {
+          "cap-19/gain-1": "40af03392f23849efb1149a3844c38928077e5e79e1cdee4889510e01cd3bc04",
+          "cap-19/gain-2": "18d56c5de9d43a63829116736f72e1c7077e9f803c99134d2ff2e30c87a25a7d"
+        },
+        "bbh-formal_fallacies/minotaur-15b": {
+          "cap-19/gain-1": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0",
+          "cap-19/gain-2": "2ba47179383644b7554fddb8a01d0e3c1d34f64bbf2d88bc3535af44af4c4026"
+        },
+        "bbh-geometric_shapes/flan-t5-xl": {
+          "cap-19/gain-1": "ae118b2ba72b3cdacd6f627466383a8d660ccc168492c6e2b535798493f46cfb",
+          "cap-19/gain-2": "133fbca5624082860832bdb9894c0f385e8f4a36764cef978b4fa318b4c20b91"
+        },
+        "bbh-geometric_shapes/minotaur-15b": {
+          "cap-19/gain-1": "7338ee8c6065afb00bce4598b88a780555cd0cd7f9a0fd0c9671b69fb96737a9",
+          "cap-19/gain-2": "a2b18aa5ee5ca25c5be7b34ac6fd076e60357ec3751b74e0529af6a85da7a5a5"
+        },
+        "bbh-hyperbaton/flan-t5-xl": {
+          "cap-19/gain-1": "45a2b715cbed703b5452f59346c0047a6a26a2b9b67f27caa3389d708f5378f6",
+          "cap-19/gain-2": "a04268552eb8f7b33b230d6ccd2e264aeefcbcac30dd83ee365e044731d0bd29"
+        },
+        "bbh-hyperbaton/minotaur-15b": {
+          "cap-19/gain-1": "3df90cd4f9ad229f6db5c1203787db116fd524e48d69c322cbdba30de3939426",
+          "cap-19/gain-2": "edcdf37285662a8ee27ab1936bd38010a8c1d2b4421b308a6ed64b3bae041bc0"
+        },
+        "bbh-logical_deduction_five_objects/flan-t5-xl": {
+          "cap-19/gain-1": "da451c17d3c6d7dbf0abb3bbe755c8408bf39f18e4bbf3a487fe37719307de7c",
+          "cap-19/gain-2": "3dab9b0c6ca41b0e2062f0de03ecf1405ba57db8e2dfb1510e297ebe8edfd3be"
+        },
+        "bbh-logical_deduction_five_objects/minotaur-15b": {
+          "cap-19/gain-1": "3b7511b79db89523d6a003fc450abf8009ad570048125f8ab23f9c28dfbf90ff",
+          "cap-19/gain-2": "b998232ad50f93aeeca3b4d96e0fce1cb83b970fe1934a79ae6059f9785abc46"
+        },
+        "bbh-navigate/flan-t5-xl": {
+          "cap-19/gain-1": "43689fec74f23c98f0cd27407993590d9916383c6f75d5a39989bec3a4bc2007",
+          "cap-19/gain-2": "4439d99c06697a57177e0832a64b25ec594fb7dc08feffc88d163d3e97f9937e"
+        },
+        "bbh-navigate/minotaur-15b": {
+          "cap-19/gain-1": "5099bc1b458f1048f5f30deca7a52a8ed2320e5d7dc81d90377b4dbc979a28a4",
+          "cap-19/gain-2": "92f8a75ce50e704f21eb565c649b708896957b0aca776ec38f447f0b8fb88775"
+        },
+        "bbh-penguins_in_a_table/flan-t5-xl": {
+          "cap-19/gain-1": "1d8e0d43209767f9dd8aa158d31a4acbef24489654c6f187df2e2710481ec539",
+          "cap-19/gain-2": "ae8981e0bb3b6404ef3c932cfb8e2df3611e9031a2957185a623e80f96c9506a"
+        },
+        "bbh-penguins_in_a_table/minotaur-15b": {
+          "cap-19/gain-1": "68577a91350c269b8cd8e9a8e78b2ae2fe3152097dbb325b4621f2f5d8eff63f",
+          "cap-19/gain-2": "2967c7965b145dfb01defe5d228a48f2b0f20e04e86928aec85c46b7332cdbac"
+        },
+        "bbh-sports_understanding/flan-t5-xl": {
+          "cap-19/gain-1": "b263a61ce95c12eca4a1d0176b14e3d4f7f1d5a74bb972dff8b285aecdcc8d09",
+          "cap-19/gain-2": "7777234ae83cef3951a57301a0bdaa4222b507a46099904565864d5ae3a9d4a0"
+        },
+        "bbh-sports_understanding/minotaur-15b": {
+          "cap-19/gain-1": "55456e31e27510c0dfd6dc479bc0eb09bcd8e702a576fc5e8a6e64ab5081e3c8",
+          "cap-19/gain-2": "bd60ebda2eb3d928bf7bf81dd2590ac4a6dd8c8b34b33a1915dfc81faba92a45"
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "cheaperPaths": 42,
+          "dearerPaths": 16,
+          "holdoutPasses": 4843,
+          "originalLookups": 9098,
+          "pairedLookups": 9059
+        },
+        "cap-19/gain-2": {
+          "cheaperPaths": 36,
+          "dearerPaths": 8,
+          "holdoutPasses": 4790,
+          "originalLookups": 8439,
+          "pairedLookups": 8403
+        }
+      }
+    },
+    "LMentry": {
+      "nativeSubjectHindsightBounds": {
+        "cap-19/gain-1": {
+          "lowerPasses": 5388,
+          "upperPasses": 5424
+        },
+        "cap-19/gain-2": {
+          "lowerPasses": 5388,
+          "upperPasses": 5388
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": "52ec3dfd4b658bab2685895ae77632c490f830da02f5140a3922ec9fe56f6223",
+          "cap-19/gain-2": "531b6cd28bb50c6c5c4364a094a29ecc1fac25ff6fc460e006f6ac02b0598788"
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": "97e1d96f46e5ba6deaeef657a3d2c6edad195d6eb536ad841db7ab467a73a6c6",
+          "cap-19/gain-2": "6d1a10b86a2c0b62d4e705f5b5511666bba7d834b7707f9cfec87a115faf05b6"
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": "459308a830baea0eafaeda1e28b7d585d0a2567892e0703253a50a13d0b7572b",
+          "cap-19/gain-2": "171559804b3b35a14cf3cad0fdd7f31d429a19e3676a8ea3f4851026836321a0"
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": "d36a4b25968d60a6884a277aa9c663b01dc436ffb06a6aa7fbba44a7b3d15e70",
+          "cap-19/gain-2": "e6a6eec086e21a132db45bcd52753258b0a525cf6245592d7f51990b4ffa32b0"
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "cap-19/gain-1": "d36154764916cf66167b39e27119dbbd17199384fdda3bc4e65482a88604a127",
+          "cap-19/gain-2": "56a87fe162b1c4efa99672fcd0eb06d232cb2662cc76e7ed4d64c6d3384126cc"
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "cap-19/gain-1": "9c824a2920f7c86925a9ca1ededf2f45a2a364b6ec6c35cb0cea82f498cd7ab3",
+          "cap-19/gain-2": "8fac369bbe45389ec0bcc3f7484afd03da9fe2f8cdc0ce76d347d77126a11ca6"
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "cap-19/gain-1": "e4c90bcd60a739d007adcaf2e5b24cf31a2d950ef42f716deca3770b47c4beaf",
+          "cap-19/gain-2": "21b853acac24552995154bccd0f2680329c7e810d8a0f8162e74291b65715bc6"
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "cap-19/gain-1": "b029a65674c0eb068dbc25ed5e05842103ffc605623e995086c254fd5de24a69",
+          "cap-19/gain-2": "d15d782090fbdf95483aa0140aa0a068beebfb7da2b5cad319066b8f4b39a7ae"
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "cap-19/gain-1": "e4e79bbd06d9a2b6df5207b981e64e427cd9584b85cce786d71740237e3cb453",
+          "cap-19/gain-2": "16cc91801d0f7483c8727131abe4b5ece24ffbfcf9c96b202c4f62c0b6e3efd0"
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "cap-19/gain-1": "523b59406cad42762817405193ee603fc95e52a45bd80808083b434455140741",
+          "cap-19/gain-2": "307fe3ee4d3bcb41253ed86d3b656f1baeee4f475fa49ce32a3fb48b5fbeaa9c"
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "cap-19/gain-1": "7efe1f66f8b7c2b16ac693e2db45984a462fe11750548ed5f9be4cc1a0cf0e03",
+          "cap-19/gain-2": "6070f7f751bc6cdfbd4bcc4bdc7df38b18805d2df7581264d178a3a7539b6b2c"
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "cap-19/gain-1": "ed4433db48fb166824c76b95270552460c06ba0794ac301d51cd9925305af41f",
+          "cap-19/gain-2": "c279f88f75dbd380bc1e0f4fca35821699246a6d344890d3bbf20c15c0e594b3"
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "cap-19/gain-1": "8420c77f5adb2b81e6f37dd626c7aa73489739c797b663484d3e36a4dc77941d",
+          "cap-19/gain-2": "edf7ef14dccebc2b605b320beaa50793dac804cbd6d05910e3dcf4adb2a02ff4"
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "cap-19/gain-1": "d5e6898999dd3a5a217d9c3812b11a07d151e1f09b49630aef440fce06e14f66",
+          "cap-19/gain-2": "9f7889eb295681d40a36de28eff04d40604b189768d60a53504d9d19bb95cd5e"
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "cap-19/gain-1": "0b6fef8bc8ecf39e69b0471a379bd55898babe8be215e3721b2b5667dddf55fd",
+          "cap-19/gain-2": "e1ac970f33aeafb84781ee2f5feed372826ce7a3a83d0920b74cf3a0d492d835"
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "cap-19/gain-1": "4e6ef2fc7015da758766c408b4eb510c3d9375a52be47048c7142e827dc8c478",
+          "cap-19/gain-2": "c1fca0ef040bef47c162610d05287b6738918dc212fde4381ef18d34968024a6"
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "cheaperPaths": 36,
+          "dearerPaths": 11,
+          "holdoutPasses": 5650,
+          "originalLookups": 8781,
+          "pairedLookups": 8751
+        },
+        "cap-19/gain-2": {
+          "cheaperPaths": 33,
+          "dearerPaths": 17,
+          "holdoutPasses": 5192,
+          "originalLookups": 8386,
+          "pairedLookups": 8368
+        }
+      }
+    },
+    "LMentry/new-task": {
+      "nativeSubjectHindsightBounds": {
+        "cap-19/gain-1": {
+          "lowerPasses": 233,
+          "upperPasses": 233
+        },
+        "cap-19/gain-2": {
+          "lowerPasses": 233,
+          "upperPasses": 233
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": {
+          "cap-19/gain-1": "7f19593930a14caf8007b6c8362beba956d7aee2fc45efa7cb6bc7e51be303d1",
+          "cap-19/gain-2": "6a3a8125ebada9b097f007f99a376755e8b11e553cc800ca3e4060c043d80d3f"
+        },
+        "lmentry-ends_with_word/minotaur-15b": {
+          "cap-19/gain-1": "299c1d349d8776d3ca83b2c4bf0d02db433ebcac0301264da8ae4e6afd1824fc",
+          "cap-19/gain-2": "a8707c997bfd35098db55193cf44127e3d0582a22a934c08005df470207df81f"
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "cheaperPaths": 4,
+          "dearerPaths": 2,
+          "holdoutPasses": 263,
+          "originalLookups": 1170,
+          "pairedLookups": 1168
+        },
+        "cap-19/gain-2": {
+          "cheaperPaths": 2,
+          "dearerPaths": 1,
+          "holdoutPasses": 256,
+          "originalLookups": 1186,
+          "pairedLookups": 1184
+        }
+      }
+    },
+    "LMentry/seen-task": {
+      "nativeSubjectHindsightBounds": {
+        "cap-19/gain-1": {
+          "lowerPasses": 5117,
+          "upperPasses": 5117
+        },
+        "cap-19/gain-2": {
+          "lowerPasses": 4971,
+          "upperPasses": 5018
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": "d22f8a5d5884575e4a66abe0104c67927b8d4b492fff1d2d48f13b454c358f44",
+          "cap-19/gain-2": "710fc0d2ea025486622b6b83a1a0a2f120e3ed41184620b7ac7816ea9248b28a"
+        },
+        "lmentry-all_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": "deb470fa74c5c70169bd8687ef5610976346688834af227581135077f09424ea",
+          "cap-19/gain-2": "02871d094f3ac3a2bb004b67fa2a1aebc663b7b117a16006092dfb26f71859b8"
+        },
+        "lmentry-any_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": "4977a800d46b1ed1326568657aab8045939a485d9d18084d20ab6841e28c1833",
+          "cap-19/gain-2": "9e5040de3b2fd763c2ae9550190d9322d0d1914b13fbe2316542e9a439f9ead3"
+        },
+        "lmentry-any_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": "511c0308dbc9d9978bfdb6847c683e51a1eed8dd54bd1a3ad51f9d177f36fc33",
+          "cap-19/gain-2": "3c90cd601fd8e84bced41d154997c9ccbf10b6b66b62a512923c0691eb3281d3"
+        },
+        "lmentry-first_alphabetically/flan-t5-xl": {
+          "cap-19/gain-1": "330931298ea92374d3826186b2ea9bbad5490d4cf6f4e7497c21b990717eed1e",
+          "cap-19/gain-2": "22deaf5fc47dad04e113732c5c8ca8e47569e5904f39a8355e47968ade0d5539"
+        },
+        "lmentry-first_alphabetically/minotaur-15b": {
+          "cap-19/gain-1": "5bfe3057f6d3a266b1bb193bab429e2a5337f65705af432569cbbfead3f48a03",
+          "cap-19/gain-2": "36a56f53f0647671c8be69613195b72731234db87a9b1ba66368a5486dea9426"
+        },
+        "lmentry-less_letters/flan-t5-xl": {
+          "cap-19/gain-1": "bf45ff9937f43fd62d2861063bbc37b8d7592b6521ec534cc369b7be55d9cbff",
+          "cap-19/gain-2": "d52e7b2707bd9d08a1a9c8102ec1cff08e986996b7c41c2077b3453e6a151d90"
+        },
+        "lmentry-less_letters/minotaur-15b": {
+          "cap-19/gain-1": "142ae863885ddef87ec6a16a4b8ce2c3279ba2da360d20b6a8b322d1d0858d44",
+          "cap-19/gain-2": "064bb82de7be3571edb43bae7c2ae1ba5e850b1a56ef4bbc7ca5a7895d8cbc10"
+        },
+        "lmentry-more_letters/flan-t5-xl": {
+          "cap-19/gain-1": "ef01f5a414639408cfeb04857e7befdef477f68471ad5cc5cf3404b9dbde8f9d",
+          "cap-19/gain-2": "4c83cd9d35667ec1cddc54e6f64fe940001170afa166e3ea08db4551be1f8c80"
+        },
+        "lmentry-more_letters/minotaur-15b": {
+          "cap-19/gain-1": "e17d86d6cd059bbd69cccc1ac2dc2ee7fe4021112f387d8cb82509fc724c4eac",
+          "cap-19/gain-2": "44cbf37c242f227da04945c4affb8ae839b5d2b1dde8fa623b0843361150ec69"
+        },
+        "lmentry-rhyming_word/flan-t5-xl": {
+          "cap-19/gain-1": "3e1c5b65d1e6c25dd1fccb062f7195353cc8869f9cb6a07a45b48dcc2ed5e82c",
+          "cap-19/gain-2": "fa1f7260b5d0991a6d4a56c9f7ba12df091dc6b98399615e76aa4bafa777a38f"
+        },
+        "lmentry-rhyming_word/minotaur-15b": {
+          "cap-19/gain-1": "13e888fae481474a6869e0d1ea9567a155b84978f3814f2b3321535fb4037bdd",
+          "cap-19/gain-2": "50c42f0ddd16e9c9d87c7c6e86f6757b286eb54ef91e4bb1f680af1c3ad6c5e1"
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "cheaperPaths": 32,
+          "dearerPaths": 16,
+          "holdoutPasses": 5307,
+          "originalLookups": 6174,
+          "pairedLookups": 6151
+        },
+        "cap-19/gain-2": {
+          "cheaperPaths": 38,
+          "dearerPaths": 7,
+          "holdoutPasses": 4963,
+          "originalLookups": 5402,
+          "pairedLookups": 5363
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "nativeSubjectHindsightBounds": {
+        "cap-19/gain-1": {
+          "lowerPasses": 56116,
+          "upperPasses": 56116
+        },
+        "cap-19/gain-2": {
+          "lowerPasses": 56112,
+          "upperPasses": 56112
+        }
+      },
+      "panelPathHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "aa3fba2017d5f96f478502125a34543686e3d4ddbe8c106906fcda69a95e704b",
+          "cap-19/gain-2": "9baadca30f65709c8c76b5ce34cafec61910e68610019c78a260945077826fcc"
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "2cf49334ac21cf9b30650b43a424f65cdefc4b1cc9ee653b373e822f6358bc18",
+          "cap-19/gain-2": "3d335374a64ee385d63cba818b5615336299d9256577b311f3b2fce621594dad"
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "cap-19/gain-1": "c8dc08d8be77425bf46e46a37eb558df7767ac46ad1bab26e16d4dc6db46cb85",
+          "cap-19/gain-2": "5bd526c4879fbe8f0b34e2cafcbb9793579e11ad881246d48baeb26cb62607a5"
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "c40333be56007629cd0f385a5ce4c55e728038504c56a7eb3024c252d3ad92f8",
+          "cap-19/gain-2": "f68921674f7b6bd3523f9da8a05f73b4f13e5af5051707b3240b0a39e182b3ed"
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "2c08b02a5be2e63084a49c6020175d7fef8082ebecd55914585e0745d497c070",
+          "cap-19/gain-2": "b95d439c4c630c9cad300e6e797f4adef393a5a16a99aa4883fefa3ec33e34c1"
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "ee04742d25801d967988f9e30c34fc94085208b87237829043d90e6e0a6f729e",
+          "cap-19/gain-2": "045263442e20deb1c5a88c305a4af21d6e645ff75cae93e81b4ee00783d05d5a"
+        },
+        "high_school_biology/google_flan_ul2": {
+          "cap-19/gain-1": "e09238b61d95f72b90e1336a87070206607efe27f92f7c882b626e2f15344c65",
+          "cap-19/gain-2": "29e351fba2f33db81277811fd0ba1fe0075d1bd4900a69ec945d7ed1428c238e"
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "b6c162a48d1c4ddde2ba880eb9c19cecf0397b2f0c067fa8fabf673b0f195116",
+          "cap-19/gain-2": "e4859c579d15d163be8b0b13a1549324c3de61d03360dbd0ea4a2f3a8b74aa94"
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "cap-19/gain-1": "6d562cbf79a13e9f6fdfe3fdd0b9a4901e81b8d33f6f4bae24d8822e0d6c803b",
+          "cap-19/gain-2": "4f14ecc7937182d8a1c7462857120ab7f928c30002b2059e13bb99ce07684faf"
+        },
+        "high_school_geography/google_gemma_7b": {
+          "cap-19/gain-1": "5db3a6d4c9b97faf3ebce0a84b1c9936051ca4d9254f9eac11fa9abaed086bc6",
+          "cap-19/gain-2": "2c3353004956713e1cb729a6519bfe048a2f7349dcfa3fa1c1cc6365348cbfc2"
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "cap-19/gain-1": "c3c3bca19607490b589e54e764729d9cbf3d8269cb16831963d6cd420780b855",
+          "cap-19/gain-2": "d051c053d70ecf68335c072a650061facf676912e7196d76771efe1a91e2b2d8"
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "cap-19/gain-1": "1c9f53f2004807e2b79c0596cd520bf65b0465b1782364cb55b34e12742d378f",
+          "cap-19/gain-2": "29b14bf0ec8e161b9b155f3e30a6286c0343b36eb6956fcae83b33d52739f9e2"
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "9d1a77e903408034cc72954fae145416bf1f997181f8efa061a5f09107ae88a4",
+          "cap-19/gain-2": "70276613f59fc29ca1730f73714e6047e57a048ecc79767a02522e46570d5f53"
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "1d58ad9a4da071411c12bfe5a106bea453f86049e10b64649dd6a47895f498f3",
+          "cap-19/gain-2": "69838f159f430193ca5e405257159639ddbc6da66fa6db22da13cdbf91bd159a"
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "cap-19/gain-1": "92c3832c1a0cdbe5e356f58151d5550841619642a3f4f6abf133ed795c63f128",
+          "cap-19/gain-2": "26fc45b6ce542261e2addfaf359234a7680f1dd87ac166e0edc7c524ff56b987"
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "cap-19/gain-1": "72b221eddd3b9d6553b77a9045e12ff6c8dd77249d74969b2148769c8c277620",
+          "cap-19/gain-2": "561c39219aa0c13ca4f711f8a10931d0262a8feb9795e7e9d6c6078544580707"
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "cap-19/gain-1": "c0b3048a7cd82bb204d3709611c258aa93b1984b13674aed997f94698c02d47b",
+          "cap-19/gain-2": "739b3d2da0bbdbef453a213f48320b4629d4de5ddc0f8b5edafbb5284fbf833e"
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "cap-19/gain-1": "0ced5bf29946a5a112320730a78d2ca09c3e26f768c880585f257fbe2300b8c5",
+          "cap-19/gain-2": "8f14786be77cdf95ed1a26a3f90c95fe65accff102b7d5d8bd6ee862e70c5191"
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "cap-19/gain-1": "64f51c2bd5a75a7c445db07e56a1d45900b575a6b730f874833029d4a9cf1beb",
+          "cap-19/gain-2": "2036ba9d425d34f8d4432e6b5ccd7bbc8fb53932589001ac45b34f712f599caf"
+        },
+        "moral_disputes/google_gemma_7b": {
+          "cap-19/gain-1": "72ecc9fdc59a4005c48e3be0b13f525535312f1f5e0de0e68e23627cd300bb48",
+          "cap-19/gain-2": "514ac4a07b43c03bbedc46f5a04c12ff142edcd8347ed871ab253c0dcfd7ba82"
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "cap-19/gain-1": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34",
+          "cap-19/gain-2": "84a1e6095809396d902984b8bd2af6a2fe9146eebfd5b1eb117f9541a375ee39"
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "04590f13f870727801b61cf12b5a532d8cb8b186c52430a4fa623c9064f86a9d",
+          "cap-19/gain-2": "651849a4a766d38659c76f9e298e205f49775363b5964a557ab1afc5e5893fd5"
+        },
+        "professional_medicine/google_flan_ul2": {
+          "cap-19/gain-1": "5f7818af26d067e5cd23a1ba1434b37f3f93d3b72138ebfb0ca7da657f073239",
+          "cap-19/gain-2": "6c8486d7a15bfc98e530e7c6a6306abfd76a436d42b8c5c53bc214390bfa83c6"
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "758ded29a6278fba8076854fd2038875facb5f91fb07248b133917db9b0eed1c",
+          "cap-19/gain-2": "1d5a947a42c0add1451499ee0dc7f52296fe7464887b9d1887fced6d470b005b"
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "51334fb229a6b76ab9dbb02d8085bfe688d858fc0482cad869cbfb55214fe9e2",
+          "cap-19/gain-2": "752951fee4d090bd0853ac0b0c18e558dae7c91b240bb12b01d1527a3ece8f45"
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "ed8f737900efd19f21d2d852846a194b7ccc6d642e1c55255e2a1ca52080444b",
+          "cap-19/gain-2": "7b99dc07b34c0a7d340dccc9cda7b3af635733414ea59a311f86fe649dfd08c9"
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa",
+          "cap-19/gain-2": "b63ee97021060bdd1d5f8375524c77c39c7c0c9ea8a4c2156254b3639bb23494"
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "f346f1ea30a4e9d1da52c2d0247785926cbf51f5d91252032f673b0e817703f8",
+          "cap-19/gain-2": "25d4cecd9c066f050a86f1a14b02d3e3d419ca6336b1f14f9e73253343cca13d"
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "f51a606a988566fb136afa331b0292a2739d1d38984af7faff2462cbcf6776d3",
+          "cap-19/gain-2": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "796603d672b107897982fb3e51c2fb59738548a589b8b4b600e115fd360c7b33",
+          "cap-19/gain-2": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2"
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "cheaperPaths": 93,
+          "dearerPaths": 9,
+          "holdoutPasses": 56094,
+          "originalLookups": 12933,
+          "pairedLookups": 12792
+        },
+        "cap-19/gain-2": {
+          "cheaperPaths": 46,
+          "dearerPaths": 9,
+          "holdoutPasses": 56094,
+          "originalLookups": 9017,
+          "pairedLookups": 8962
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "nativeSubjectHindsightBounds": {
+        "cap-19/gain-1": {
+          "lowerPasses": 26654,
+          "upperPasses": 26654
+        },
+        "cap-19/gain-2": {
+          "lowerPasses": 26653,
+          "upperPasses": 26653
+        }
+      },
+      "panelPathHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "08a6facc97b0fda2e1551df16d8c76566ed77b01de7f8d516b2e30473b83c44b",
+          "cap-19/gain-2": "c8f23e74f284d6f155874bbea8a436a6242c05a129ac6b2c7e5bc9ba3e1824a9"
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "e1c70777d64cc2e002598024ca0e878940d912b044dd1938ad6c110b3a945871",
+          "cap-19/gain-2": "c5a3b33ece55ba14654b0e9b79718d88d63324286a8a8617a7dec195671f92ef"
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "1ab872eade75aef53f81afaa62a6cc5920d1342bc36bd3bbae03fbf118420a39",
+          "cap-19/gain-2": "87831af5a26ac907434feac32b72d6eb232f6c08a6bcc0d8da4f0a6fc84e4bde"
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "0c5accc4e21a113f91414ea3789e8aa3b94b4626c6c452c3bff05ced2f5fcd43",
+          "cap-19/gain-2": "3dd8a33b38f8be84467590ef96744bd64cb2e449184aa1e1c7dba73511d81413"
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "d614a18a13a2c8906113f22458e26e5820a1b7dbcab5bbb32a83eda18004d0ad",
+          "cap-19/gain-2": "ad0f6395a32029246b874014f5439dfd76bc4044996f6c1be1a54f23e71b2553"
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "4d35423008ec1c3b6e89150696beb77b244c16bf35583cb4ef2acc1246f9ad04",
+          "cap-19/gain-2": "d7f13ae20521592e40616c5b5621fd2ea2a96477d865cc5faa5fb4a0f1ebacec"
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "953206fe3aaf725eda7f688c68c940130bf102a9a5ce0066a3d66313e4af9043",
+          "cap-19/gain-2": "ca980c59269b95f198eae0c25bf367f52efff09ac725d44bd43ef6ed1bd4c32e"
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "58971baa7c0e64cb7a61729866919173933fb2437830af0a5e8177d83af42b67",
+          "cap-19/gain-2": "090f602e20714c497ff97a964afd50a23f2942e816f9a89ac98255910d2090cf"
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "4f88bcefa287859becb1295608fce40c99be8c5337fcd7c3b737b256bb2b0e69",
+          "cap-19/gain-2": "7dc426d06548f78ad3301575b97b57453bd0de805d2c3cc33f3459e0d302ebeb"
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "bae0272b60b6a0206068692cccab5e1453be9f6a40bc05a09e2ce8294960ae0e",
+          "cap-19/gain-2": "d5390746e4188d6108e8aae0ee369a642d18db714790f73b5130e0242b623705"
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "8a423fa51e1edfd5f79c5d9f04e50676b7c0ecb5720b3ba3f2a5f00d3573878a",
+          "cap-19/gain-2": "bd8bbf9b7e4e0b3bf47ade443d6a477c33e681130ea6bee2dc22edc8316c9e46"
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "a03811d3f8ccaa8cd971d5dd3dd6036ffdb673c933bdc58e98fca7068b600a8c",
+          "cap-19/gain-2": "bbfcafb66eef6719e2fcc904e3fbce6a7fd32bd48634d8a1254c324da4162fe0"
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "cb74d497a9b79958c0955b4b2bc0667a0f1112d57206e6ac17003da597888a90",
+          "cap-19/gain-2": "602a049226d7b6adeb5311591f6cffc98963b9252bb24abb56a040154d476cc5"
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "cddcdf11ebcfc2b4cf5d34ecf3dd4523c8acce79d6ffb85b87715f9f62dc8187",
+          "cap-19/gain-2": "637925974062da5d1634aabfca5c39bbdd97fad0c9aaf8259554e353dad890a5"
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "b427092b1aad0012625e986005c5db3eee74f6f499a35a1e7ba6b842d461aecf",
+          "cap-19/gain-2": "27c25cfbadc993b3d3c4396d3b00f24bfe23a33da5c4968397abf205dee8e21d"
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "38622cb92cca408c411dec924b4a15b70cfb0071685a5086c2629ab35b25f77e",
+          "cap-19/gain-2": "6bc6d6be7f707cb193c14a6b8d9470f7dbb19ee01b37c1173ebd36f108496626"
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "0d296f2ed541ccf7037405979e88c4d11525ec60575e373fb967ea47cfd35646",
+          "cap-19/gain-2": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51"
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "c3a057bf66417e8c1751f320fbe7b62df214776f6c6f0af78516f3ff6a299a67",
+          "cap-19/gain-2": "e5a820c8b314be61a23eaf31c80a16c5e97f91c7f1d243e65c4c8f2f41eb4c3b"
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "bdc3525e9d1112a982ef153fe923b04c188a272a45f1f72c37d913810167f5c0",
+          "cap-19/gain-2": "42dc517d5fe41f6dfc903bfe7e2035923a3376d638c898409322e0cf9ec52826"
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "adb8eb72299141b8eab809c34cc297c995e28d31541851553bd8f077189ac27b",
+          "cap-19/gain-2": "8a8e031a33fd3f6098156f5019295c2290428e164df925df8a1af211b6ebd43a"
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "04ef40d4079850795ba80f6634fefd257b138e411385f104f9fa705b04f9c02b",
+          "cap-19/gain-2": "1515e497c74c50377b23ccc3316bf819feb33405a7bc16a8cc6b5877b4e227ff"
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "3614b1bbf78c98a800aae68bc3be3b5896e5f768f51e9b8357e05352848a2923",
+          "cap-19/gain-2": "6d84aa1eca2f2343cb02ede8a2146406f2ec962f2687156c7a55ec58f9911153"
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "c82d7abbdd6c8a26459ccfcd56718a4851aa3700dca6b9458ddce82fa163139f",
+          "cap-19/gain-2": "7da649f06603a38b0899a60bba0f9facd878bbf98e7fc2d56c00cc6c0e8c324b"
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "b63fa5221455031182ee083ad0249a60b2b045964fca6eaf06fd88a91884b09d",
+          "cap-19/gain-2": "5fdfffc74b66fa373eed5cad8e12c4af96209e4ed6118a3d3cc151881e1ac09f"
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "d1e4e5be6d047f071cbfd62b6f0dc11161266a68062ee09e300e2c30b366315c",
+          "cap-19/gain-2": "175a920a0d94ac3bff4d1e24db5ae886751cf4d39ee52ec2a3eed48419b725b8"
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "4b5e9aae2971be858e58db85a0e50dcd83bb13024be0fcd06984c01e14ee5675",
+          "cap-19/gain-2": "76e26d68ae941a2ebe1192a500102669a73a7f589e93b9adfda529acb130aec7"
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "48bbaaa88e18b3fb36cafdd838566408f791e0dcf16b57d81cc1cfbe744b5269",
+          "cap-19/gain-2": "5e24e38cdce7686a60d660bbc5602a64a1d827fe9deea4262883e3454e23671c"
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "4f0374ba6f397599e36adffcfeed43ff2de588d1f4f629e634bd83426a6532b4",
+          "cap-19/gain-2": "04a16ce2139a60d70cb1b892498ae60b7a8af548152c48c9638edfbc041be78d"
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "cheaperPaths": 110,
+          "dearerPaths": 19,
+          "holdoutPasses": 26619,
+          "originalLookups": 13739,
+          "pairedLookups": 13583
+        },
+        "cap-19/gain-2": {
+          "cheaperPaths": 68,
+          "dearerPaths": 3,
+          "holdoutPasses": 26630,
+          "originalLookups": 9831,
+          "pairedLookups": 9751
+        }
+      }
+    }
+  }
+}

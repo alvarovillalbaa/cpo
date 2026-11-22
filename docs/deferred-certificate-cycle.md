@@ -21,6 +21,8 @@ The algorithm reserves every probe that the eager screen would buy before it com
 
 For a stable grade per prompt and case, the two schedules select the same nominee and deployment. Actual callback order can differ. `result.search.evaluations` counts the callbacks the deferred cycle bought. The original roster and certificate allowance still use the full reservation.
 
+An opt-in follow-up also saves some qualification lookups by using the other prompt’s reply on the same case to order the proof. [Paired-order certificate cycle](paired-order-certificate-cycle.md)
+
 ## Recorded lookup savings
 
 The archive covers 134 model panels, each with 32 schedules, at one and two qualification gains. Six validation cases and eight challengers make cap 19 the first cap that admits the complete roster while reserving the finalist suffix. At each cap the replay preserves every nominee, deployment, qualification receipt, and non-probe callback. [Paid paths and cohort results](deferred-certificate-cycle-results-v1.json)
