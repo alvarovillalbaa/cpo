@@ -1,5 +1,7 @@
 # Compare CPO and GEPA with the same qualification order
 
+**Comparison update.** This archived GEPA menu used positional cache identities across training and validation. A later replay verifies this menu for historical reproduction and publishes corrected, split-safe results for the shared-panel CPO policy. [Cache correction and transfer](shared-validation-split-safe-transfer.md)
+
 The paired-order CPO cycle uses a paid reply on one side of a qualification case to estimate the other side. This study gives the same scheduler to sequential and batched GEPA at every integer search cap from 6 through 180. It applies to all three published qualification wrappers and keeps the original variants available. The replay holds each incumbent precheck, search, nominee, deployment, and held-out grade fixed. The paid qualification order and cost can change. [CPO cycle](paired-order-certificate-cycle.md) · [Original GEPA settings](deferred-certificate-subject-ceiling.md)
 
 The analysis prices the expanded control menu at the realized paired-order CPO budget for each margin and cohort. It records the best affordable common setting and the exact subject-tuned ceiling. Subject tuning chooses a setting using held-out grades for each subject, shared across both checkpoints and all seeds. All chosen subjects share one total budget. [Replay driver](../benchmarks/paired_order_gepa_comparison.py)

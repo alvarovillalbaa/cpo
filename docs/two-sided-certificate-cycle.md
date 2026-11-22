@@ -1,5 +1,7 @@
 # Prove validation gains before reading the full incumbent panel
 
+**Comparison update.** The recorded CPO traces reproduce. The native GEPA margins below use the original positional cache, with separate correction evidence for the newer shared-panel policy. [Split-safe GEPA results](shared-validation-split-safe-transfer.md)
+
 CPO's opt-in two-sided certificate cycle reads the incumbent through its first validation miss. It reserves one shared probe for each admitted challenger and uses the unreserved balance to prove a strict gain. Incumbent reads made during one attempt remain available to later attempts. A challenger that misses the shared probe can still earn a certificate after the positive probes if the balance allows one. [Cycle API](../cpo/two_sided_certificate_cycle.py) · [Original deferred screen](deferred-certificate-cycle.md)
 
 ```python

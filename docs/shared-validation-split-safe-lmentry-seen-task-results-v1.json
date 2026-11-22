@@ -1,0 +1,613 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "cohort": "LMentry/seen-task",
+    "cohorts": [
+      "BBH",
+      "LMentry",
+      "BBH/seen-task",
+      "LMentry/seen-task",
+      "BBH/new-task",
+      "LMentry/new-task",
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaValidationWidths": {
+      "split-safe-six": 6,
+      "split-safe-three": 3
+    },
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "0555e5efbd34dd0ec2f38c2769b2b044c11c3ee36013aa7c2db645560520c269",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "parentResultSha256": {
+      "BBH": "f1d74892f993da121acf101146fd1ae11d8d5de096fa579517df576ea287b196",
+      "LMentry": "cb1e9facf188ebc231cd166f70ba50cce75ad4948a48ce6eb24d276b5a99df81",
+      "disjoint-transfer-cohort": "2745bd16e6e023ae0c062c1005bb3e4c9da096a8099e603662dc230bd4515f7e",
+      "earlier-screen-cohort": "7f64ab4b2798b90d60d6227385d987c157c6ebd36d9fa1c05d63cef3172f27bb"
+    },
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "policies": {
+      "deep/gain": [
+        "deep",
+        1
+      ],
+      "deep/nonloss": [
+        "deep",
+        0
+      ],
+      "wide/gain": [
+        "wide",
+        1
+      ],
+      "wide/nonloss": [
+        "wide",
+        0
+      ]
+    },
+    "policy": "wide/nonloss",
+    "protocol": "shared-validation-split-safe-transfer-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Preserve wide nonloss CPO and the six-case historical native results for verification. Use disjoint GEPA cache IDs on the original six cases and their first three. Give both native modes all six proof wrappers and every integer search cap from the validation width to 180. Compare with their split-safe subject-tuned union at the CPO budget, and directly replay the attaining one-gain schedule for paired case resampling. Preserve the original case splits, roster and qualification rule.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "budgeted_shared_panel_search.py": "75fa87af6359da13c2ebbb0a54ffc7c8eb0f79e2c68930b5dfb57e7e6dacfdea",
+      "gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "shared_validation_split_safe_transfer.py": "e7cf20c0d55f15a6dcd384bce12aae6daca7049776141a74d1da66cc44fade63"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "ed37a48840f76f1a865acf53e7c2df8572cd087c890ce66da6abb934966b77f1",
+  "providerRequests": 0,
+  "results": {
+    "comparisons": {
+      "cap-19/gain-1": {
+        "attainingSubjectPoints": {
+          "lmentry-all_words_from_category": {
+            "holdoutPasses": 1181,
+            "paidLookups": 1104
+          },
+          "lmentry-any_words_from_category": {
+            "holdoutPasses": 1072,
+            "paidLookups": 1151
+          },
+          "lmentry-first_alphabetically": {
+            "holdoutPasses": 975,
+            "paidLookups": 1956
+          },
+          "lmentry-less_letters": {
+            "holdoutPasses": 755,
+            "paidLookups": 1888
+          },
+          "lmentry-more_letters": {
+            "holdoutPasses": 953,
+            "paidLookups": 1850
+          },
+          "lmentry-rhyming_word": {
+            "holdoutPasses": 468,
+            "paidLookups": 0
+          }
+        },
+        "cpo": {
+          "deployments": 139,
+          "holdoutPasses": 5546,
+          "nominees": 323,
+          "paidLookups": 8027,
+          "strictCpoLookups": 5794,
+          "strictCpoPasses": 5307
+        },
+        "historicalGepa": {
+          "holdoutPasses": 5314,
+          "paidLookups": 8025,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "positional-six:gepa-sequential-precheck/32/gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "positional-six:gepa-batched-precheck/34/gain-1",
+            "lmentry-first_alphabetically": "positional-six:gepa-batched-precheck/40/paired-gain-1",
+            "lmentry-less_letters": "positional-six:gepa-batched-precheck/40/paired-gain-1",
+            "lmentry-more_letters": "positional-six:gepa-sequential-precheck/47/paired-gain-2-threshold-precheck",
+            "lmentry-rhyming_word": "retain-start"
+          }
+        },
+        "pairedAgainstAttainingGepa": {
+          "holdoutPassDifference": 142,
+          "pairedRange95": [
+            81,
+            203
+          ]
+        },
+        "splitSafeCombined": {
+          "holdoutPasses": 5404,
+          "paidLookups": 7949,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-six:gepa-sequential-precheck/32/gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "split-safe-three:gepa-batched-precheck/25/gain-1",
+            "lmentry-first_alphabetically": "split-safe-three:gepa-batched-precheck/37/paired-gain-1",
+            "lmentry-less_letters": "split-safe-three:gepa-sequential-precheck/38/paired-gain-1",
+            "lmentry-more_letters": "split-safe-six:gepa-sequential-precheck/53/paired-gain-2-threshold-precheck",
+            "lmentry-rhyming_word": "retain-start"
+          }
+        },
+        "splitSafeSix": {
+          "holdoutPasses": 5301,
+          "paidLookups": 7958,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-six:gepa-sequential-precheck/32/gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "split-safe-six:gepa-batched-precheck/34/gain-1",
+            "lmentry-first_alphabetically": "split-safe-six:gepa-sequential-precheck/24/paired-gain-1",
+            "lmentry-less_letters": "split-safe-six:gepa-sequential-precheck/40/gain-1",
+            "lmentry-more_letters": "split-safe-six:gepa-sequential-precheck/53/paired-gain-2-threshold-precheck",
+            "lmentry-rhyming_word": "retain-start"
+          }
+        },
+        "splitSafeThree": {
+          "holdoutPasses": 5374,
+          "paidLookups": 7922,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-three:gepa-sequential-precheck/32/paired-gain-1",
+            "lmentry-any_words_from_category": "split-safe-three:gepa-batched-precheck/25/gain-1",
+            "lmentry-first_alphabetically": "split-safe-three:gepa-batched-precheck/37/paired-gain-1",
+            "lmentry-less_letters": "split-safe-three:gepa-sequential-precheck/38/paired-gain-1",
+            "lmentry-more_letters": "split-safe-three:gepa-sequential-precheck/41/paired-gain-2-threshold-precheck",
+            "lmentry-rhyming_word": "retain-start"
+          }
+        }
+      },
+      "cap-19/gain-2": {
+        "attainingSubjectPoints": {
+          "lmentry-all_words_from_category": {
+            "holdoutPasses": 1181,
+            "paidLookups": 1104
+          },
+          "lmentry-any_words_from_category": {
+            "holdoutPasses": 1072,
+            "paidLookups": 1151
+          },
+          "lmentry-first_alphabetically": {
+            "holdoutPasses": 940,
+            "paidLookups": 1609
+          },
+          "lmentry-less_letters": {
+            "holdoutPasses": 683,
+            "paidLookups": 1308
+          },
+          "lmentry-more_letters": {
+            "holdoutPasses": 904,
+            "paidLookups": 1361
+          },
+          "lmentry-rhyming_word": {
+            "holdoutPasses": 468,
+            "paidLookups": 0
+          }
+        },
+        "cpo": {
+          "deployments": 65,
+          "holdoutPasses": 5117,
+          "nominees": 258,
+          "paidLookups": 6579,
+          "strictCpoLookups": 5035,
+          "strictCpoPasses": 4963
+        },
+        "historicalGepa": {
+          "holdoutPasses": 5170,
+          "paidLookups": 6490,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "positional-six:gepa-sequential-precheck/32/gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "retain-start",
+            "lmentry-first_alphabetically": "positional-six:gepa-batched-precheck/34/paired-gain-1",
+            "lmentry-less_letters": "positional-six:gepa-batched-precheck/46/paired-gain-1",
+            "lmentry-more_letters": "positional-six:gepa-sequential-precheck/47/paired-gain-2-threshold-precheck",
+            "lmentry-rhyming_word": "retain-start"
+          }
+        },
+        "splitSafeCombined": {
+          "holdoutPasses": 5248,
+          "paidLookups": 6533,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-six:gepa-sequential-precheck/32/gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "split-safe-three:gepa-batched-precheck/25/gain-1",
+            "lmentry-first_alphabetically": "split-safe-three:gepa-batched-precheck/31/paired-gain-1",
+            "lmentry-less_letters": "split-safe-three:gepa-sequential-precheck/25/paired-gain-1",
+            "lmentry-more_letters": "split-safe-three:gepa-sequential-precheck/35/paired-gain-2-threshold-precheck",
+            "lmentry-rhyming_word": "retain-start"
+          }
+        },
+        "splitSafeSix": {
+          "holdoutPasses": 5161,
+          "paidLookups": 6488,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-six:gepa-sequential-precheck/32/gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "retain-start",
+            "lmentry-first_alphabetically": "split-safe-six:gepa-sequential-precheck/24/paired-gain-1",
+            "lmentry-less_letters": "split-safe-six:gepa-sequential-precheck/40/gain-1",
+            "lmentry-more_letters": "split-safe-six:gepa-sequential-precheck/53/paired-gain-2-threshold-precheck",
+            "lmentry-rhyming_word": "retain-start"
+          }
+        },
+        "splitSafeThree": {
+          "holdoutPasses": 5240,
+          "paidLookups": 6541,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-three:gepa-batched-precheck/25/gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "split-safe-three:gepa-batched-precheck/25/gain-1",
+            "lmentry-first_alphabetically": "split-safe-three:gepa-batched-precheck/31/paired-gain-1",
+            "lmentry-less_letters": "split-safe-three:gepa-sequential-precheck/32/paired-gain-1",
+            "lmentry-more_letters": "split-safe-three:gepa-sequential-precheck/35/paired-gain-2-threshold-precheck",
+            "lmentry-rhyming_word": "retain-start"
+          }
+        }
+      }
+    },
+    "historicalVsSplitSafeAtMaxCap": {
+      "gepa-batched-precheck/paired-gain-1": {
+        "changedDeployment": 25,
+        "changedNominee": 45,
+        "lookupDifference": 473,
+        "paths": 384
+      },
+      "gepa-batched-precheck/paired-gain-2-threshold-precheck": {
+        "changedDeployment": 11,
+        "changedNominee": 34,
+        "lookupDifference": 380,
+        "paths": 384
+      },
+      "gepa-sequential-precheck/paired-gain-1": {
+        "changedDeployment": 24,
+        "changedNominee": 43,
+        "lookupDifference": 410,
+        "paths": 384
+      },
+      "gepa-sequential-precheck/paired-gain-2-threshold-precheck": {
+        "changedDeployment": 10,
+        "changedNominee": 34,
+        "lookupDifference": 332,
+        "paths": 384
+      }
+    },
+    "nativeSettings": {
+      "positional-six": 2100,
+      "split-safe-six": 2100,
+      "split-safe-three": 2136
+    },
+    "nativeSubjectTotalsSha256": "15140961fcadd95dd18cf850ef87c594501bf6cb2be0a492a44a23026b67cd8f",
+    "panelPathHashes": {
+      "lmentry-all_words_from_category/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "2d495b8ff416a9e747523482aaf828cc37380e461090abff72f7d5a22a676f5d",
+          "wide/nonloss": "dce8e692c73696b7b4e28f2dc329dc0faa6a78d279af464ced511ff4cbac88a1"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "267ddc6aa009548a1ae2e053849a39b96c80aefb04bea1db1373598b291ac285",
+          "wide/nonloss": "9b6e469fd977270af45bfdc4a707d683860458d977ef7aa9ee892825a6b59e5f"
+        }
+      },
+      "lmentry-all_words_from_category/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "98d4f6691e346479a4a42d5053040f0ef3ed0ae3630288cc5b7257cbdebd74a0",
+          "wide/nonloss": "21a0b5411eeb0e3ec8d64ff168085397c4801b3a9c067777531d73538687b647"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "293ce7c55be412b2f0a843316896c1c703643b41e688a245458de1bf8a658fe4",
+          "wide/nonloss": "3deccf70e6f0869258b797a2420c19673306093ee1538646effd476b1f826a6b"
+        }
+      },
+      "lmentry-any_words_from_category/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "aa18f29991071f0d9d6cb0a59292122d32c4f994040173fbde8fb80b35ff34bd",
+          "wide/nonloss": "13dbf9d013f827267f7f0293f8bb1a4a8078b9cfacf9bfe3dba57858f6864df8"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "c5e4c7870a2fb01eced2d56e8a604e268ea09a6615155f5f4c53345f84e2f5f9",
+          "wide/nonloss": "23e2afa3948f39a9a4c2e3706a064accf6c19b774810c840b14d2509320e717e"
+        }
+      },
+      "lmentry-any_words_from_category/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "942887a8eeab282ca5a9f6dcb95a357ef3a1202208ffbc472b0d356ce34f639f",
+          "wide/nonloss": "7f3e8ec114d8c943aee03d8e6b05948b9f86e4fc1baf69e21a13bbe4d2aef788"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "2e8d759a077e292b554b253444bfa542cfde226593539a453cebcabe14ed0b6b",
+          "wide/nonloss": "e1f0f05bd08d56785754bd8545157320615fd14df19ea39f6e810ef48eb3c6a7"
+        }
+      },
+      "lmentry-first_alphabetically/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "10721269877423f7f5417e075ee9a7733553d06eb8154dcf5d21fa1b7aef9df3",
+          "wide/nonloss": "82c3ef6be25507f0e8023ffcb2f15b291058151c1e9e52a4b377f5045b65b11a"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "54b1125f52787e3c9978e55245e519ae26ef0374e69be69c05155fecc69f7c46",
+          "wide/nonloss": "c0045c4cb3075abf996266bee10581c46eaeba8fda824a8e8b5beb6d69c40531"
+        }
+      },
+      "lmentry-first_alphabetically/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "2833961cd68773a823714023beee84d71a607c7e8147ec845723dd1cc8dde61e",
+          "wide/nonloss": "c809d6c78431e9a0414e9db045cb5636454cb9b413e4b45409850e0f2e1624de"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "18cdea1a5170c7cda2b377f583cc8e479a87d01b64ef84fdd82a653800050905",
+          "wide/nonloss": "344ce75a45c49096e99ac92102e02a1e205140b17f56617b27ec24d85f37f624"
+        }
+      },
+      "lmentry-less_letters/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "b1bb3056ae66f7d5a74498d65cd4d0328d23f78b87ce5ad5bf35384af57b61e5",
+          "wide/nonloss": "7e38da479d529d15e9d1c0cda1e58c341d779b740f8ddb2f9ea92a5e65b40d2a"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "536ba1080a717c31dd2835c76113668736b5f4336426c9cf992f94f7e4a2115d",
+          "wide/nonloss": "c188c9fe0b102fd4233da0db906d169f953be0f7341e9b7ade87048c57f12bb9"
+        }
+      },
+      "lmentry-less_letters/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "615175149850bd0e7d3107c8cf81fb60038efe7c28e50dc2c4b27b04e865f392",
+          "wide/nonloss": "b1706a25af74ebce8504293dade511f42a27106ea5cd8f748c8ddcdc6b514337"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "a35cd4e5286a1e7c3dfbfe0541ba8b0e206b80677f09800f41ba413401ca7694",
+          "wide/nonloss": "8c1ba6dda18d3b872a515b68d43586f83b230f20960803ed59ace0a4d8c1e063"
+        }
+      },
+      "lmentry-more_letters/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "9f062099eaa20e37e8569f9fe3f888bb88344b3928fd91ec6c8a6c814cd36256",
+          "wide/nonloss": "db60b3256c93c6acf71e3dd898c4bf84639a7952cfead1ec343b6b360ded3f14"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "7ed806bb6b027fca86d8f9552275fdba30cdc3d4177d22786d4885f0f820a3ea",
+          "wide/nonloss": "092944dc1a70a90ad8cfdaf460779440858de6965e3ba4e23be57f9890f1decd"
+        }
+      },
+      "lmentry-more_letters/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "b7f5e66d8ac03d0591e0b6a4b6bd36fb8752fe388b271786d5e8e1fde4072af2",
+          "wide/nonloss": "adce7ed9a386deb83f5887fd813d3ec28808a5b64d391c63b2279148bdfc5990"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "11a3a8e5e2a67a4e66d435cee1c3126972251f7ef9931fdf6355e4738723b4eb",
+          "wide/nonloss": "abcd8b55e350d555c5041fb53c740e33859caaf38edf1d5f533684edf59ab703"
+        }
+      },
+      "lmentry-rhyming_word/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "1197fed6e52a496de4b9b1b5bc2b0513822f5e17ca55cb8acbaae9b4c497222a",
+          "wide/nonloss": "397b89bc2996c30926259fe606dda0ce5f7a39b1ebf4a1b614ecbc8a6671891f"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "e76b755e157d1df6a6fc66e568a2996a08d88207269e64cb0eb51f3b8109d44e",
+          "wide/nonloss": "cdd9487287f9f6e57b3d13bd3592fc041c90c1f6a1f131dee610c2ed435213f4"
+        }
+      },
+      "lmentry-rhyming_word/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "33bf36781f06433e5963ab47179f46c45e749fec1ec7e4404448ad9b1ac27680",
+          "wide/nonloss": "5edd89820ccdd63199eb27fbeaaa8740afab7ff9aa3e2746c52f871f25c7fff1"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "27832df4984faa42d93396f891d39116f76049ee136aba04b50dc38433e35bf3",
+          "wide/nonloss": "476618a9c07d3a750fa6c37f10adfd10217b8a049dcf2b045e921c01a378fafd"
+        }
+      }
+    }
+  }
+}

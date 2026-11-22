@@ -1,0 +1,685 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "cohort": "BBH/seen-task",
+    "cohorts": [
+      "BBH",
+      "LMentry",
+      "BBH/seen-task",
+      "LMentry/seen-task",
+      "BBH/new-task",
+      "LMentry/new-task",
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaValidationWidths": {
+      "split-safe-six": 6,
+      "split-safe-three": 3
+    },
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "0555e5efbd34dd0ec2f38c2769b2b044c11c3ee36013aa7c2db645560520c269",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "parentResultSha256": {
+      "BBH": "f1d74892f993da121acf101146fd1ae11d8d5de096fa579517df576ea287b196",
+      "LMentry": "cb1e9facf188ebc231cd166f70ba50cce75ad4948a48ce6eb24d276b5a99df81",
+      "disjoint-transfer-cohort": "2745bd16e6e023ae0c062c1005bb3e4c9da096a8099e603662dc230bd4515f7e",
+      "earlier-screen-cohort": "7f64ab4b2798b90d60d6227385d987c157c6ebd36d9fa1c05d63cef3172f27bb"
+    },
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "policies": {
+      "deep/gain": [
+        "deep",
+        1
+      ],
+      "deep/nonloss": [
+        "deep",
+        0
+      ],
+      "wide/gain": [
+        "wide",
+        1
+      ],
+      "wide/nonloss": [
+        "wide",
+        0
+      ]
+    },
+    "policy": "wide/nonloss",
+    "protocol": "shared-validation-split-safe-transfer-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Preserve wide nonloss CPO and the six-case historical native results for verification. Use disjoint GEPA cache IDs on the original six cases and their first three. Give both native modes all six proof wrappers and every integer search cap from the validation width to 180. Compare with their split-safe subject-tuned union at the CPO budget, and directly replay the attaining one-gain schedule for paired case resampling. Preserve the original case splits, roster and qualification rule.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "budgeted_shared_panel_search.py": "75fa87af6359da13c2ebbb0a54ffc7c8eb0f79e2c68930b5dfb57e7e6dacfdea",
+      "gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "shared_validation_split_safe_transfer.py": "e7cf20c0d55f15a6dcd384bce12aae6daca7049776141a74d1da66cc44fade63"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "1d9af6cb352cf7021a967ef5032b2d8d1a02bf00c7e7c9b30315180a8c2d7e8e",
+  "providerRequests": 0,
+  "results": {
+    "comparisons": {
+      "cap-19/gain-1": {
+        "attainingSubjectPoints": {
+          "bbh-disambiguation_qa": {
+            "holdoutPasses": 988,
+            "paidLookups": 2057
+          },
+          "bbh-formal_fallacies": {
+            "holdoutPasses": 483,
+            "paidLookups": 2186
+          },
+          "bbh-geometric_shapes": {
+            "holdoutPasses": 316,
+            "paidLookups": 1951
+          },
+          "bbh-hyperbaton": {
+            "holdoutPasses": 991,
+            "paidLookups": 1906
+          },
+          "bbh-logical_deduction_five_objects": {
+            "holdoutPasses": 581,
+            "paidLookups": 0
+          },
+          "bbh-navigate": {
+            "holdoutPasses": 500,
+            "paidLookups": 747
+          },
+          "bbh-penguins_in_a_table": {
+            "holdoutPasses": 457,
+            "paidLookups": 0
+          },
+          "bbh-sports_understanding": {
+            "holdoutPasses": 604,
+            "paidLookups": 998
+          }
+        },
+        "cpo": {
+          "deployments": 110,
+          "holdoutPasses": 4901,
+          "nominees": 457,
+          "paidLookups": 11037,
+          "strictCpoLookups": 8167,
+          "strictCpoPasses": 4843
+        },
+        "historicalGepa": {
+          "holdoutPasses": 4936,
+          "paidLookups": 10881,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "positional-six:gepa-sequential-precheck/51/gain-1",
+            "bbh-formal_fallacies": "positional-six:gepa-batched-precheck/59/paired-gain-1",
+            "bbh-geometric_shapes": "positional-six:gepa-sequential-precheck/40/paired-gain-1",
+            "bbh-hyperbaton": "positional-six:gepa-sequential-precheck/44/gain-1",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-navigate": "positional-six:gepa-sequential-precheck/20/paired-gain-2-threshold-precheck",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-sports_understanding": "positional-six:gepa-sequential-precheck/24/paired-gain-1"
+          }
+        },
+        "pairedAgainstAttainingGepa": {
+          "holdoutPassDifference": -19,
+          "pairedRange95": [
+            -66,
+            26
+          ]
+        },
+        "splitSafeCombined": {
+          "holdoutPasses": 4920,
+          "paidLookups": 9845,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-six:gepa-sequential-precheck/52/gain-1",
+            "bbh-formal_fallacies": "split-safe-six:gepa-sequential-precheck/44/gain-1",
+            "bbh-geometric_shapes": "split-safe-six:gepa-sequential-precheck/36/gain-1",
+            "bbh-hyperbaton": "split-safe-three:gepa-sequential-precheck/44/paired-gain-1",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-navigate": "split-safe-three:gepa-sequential-precheck/14/gain-2-threshold-precheck",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-sports_understanding": "split-safe-three:gepa-sequential-precheck/18/gain-1"
+          }
+        },
+        "splitSafeSix": {
+          "holdoutPasses": 4918,
+          "paidLookups": 10715,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-six:gepa-sequential-precheck/52/gain-1",
+            "bbh-formal_fallacies": "split-safe-six:gepa-sequential-precheck/44/gain-1",
+            "bbh-geometric_shapes": "split-safe-six:gepa-sequential-precheck/36/gain-1",
+            "bbh-hyperbaton": "split-safe-six:gepa-sequential-precheck/30/gain-1",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-navigate": "split-safe-six:gepa-sequential-precheck/20/gain-2-threshold-precheck",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-sports_understanding": "split-safe-six:gepa-sequential-precheck/38/paired-gain-1"
+          }
+        },
+        "splitSafeThree": {
+          "holdoutPasses": 4890,
+          "paidLookups": 7153,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-three:gepa-sequential-precheck/40/gain-1",
+            "bbh-formal_fallacies": "split-safe-three:gepa-batched-precheck/45/gain-1",
+            "bbh-geometric_shapes": "retain-start",
+            "bbh-hyperbaton": "split-safe-three:gepa-sequential-precheck/44/paired-gain-1",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-navigate": "split-safe-three:gepa-sequential-precheck/14/gain-2-threshold-precheck",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-sports_understanding": "split-safe-three:gepa-sequential-precheck/18/gain-1"
+          }
+        }
+      },
+      "cap-19/gain-2": {
+        "attainingSubjectPoints": {
+          "bbh-disambiguation_qa": {
+            "holdoutPasses": 988,
+            "paidLookups": 2057
+          },
+          "bbh-formal_fallacies": {
+            "holdoutPasses": 483,
+            "paidLookups": 2186
+          },
+          "bbh-geometric_shapes": {
+            "holdoutPasses": 316,
+            "paidLookups": 1951
+          },
+          "bbh-hyperbaton": {
+            "holdoutPasses": 989,
+            "paidLookups": 1555
+          },
+          "bbh-logical_deduction_five_objects": {
+            "holdoutPasses": 581,
+            "paidLookups": 0
+          },
+          "bbh-navigate": {
+            "holdoutPasses": 500,
+            "paidLookups": 747
+          },
+          "bbh-penguins_in_a_table": {
+            "holdoutPasses": 457,
+            "paidLookups": 0
+          },
+          "bbh-sports_understanding": {
+            "holdoutPasses": 604,
+            "paidLookups": 998
+          }
+        },
+        "cpo": {
+          "deployments": 39,
+          "holdoutPasses": 4806,
+          "nominees": 393,
+          "paidLookups": 9602,
+          "strictCpoLookups": 7529,
+          "strictCpoPasses": 4790
+        },
+        "historicalGepa": {
+          "holdoutPasses": 4920,
+          "paidLookups": 9598,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "positional-six:gepa-sequential-precheck/51/gain-1",
+            "bbh-formal_fallacies": "positional-six:gepa-batched-precheck/26/gain-1",
+            "bbh-geometric_shapes": "positional-six:gepa-sequential-precheck/40/paired-gain-1",
+            "bbh-hyperbaton": "positional-six:gepa-sequential-precheck/56/gain-1",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-navigate": "positional-six:gepa-sequential-precheck/20/paired-gain-2-threshold-precheck",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-sports_understanding": "positional-six:gepa-sequential-precheck/20/paired-gain-2-threshold-precheck"
+          }
+        },
+        "splitSafeCombined": {
+          "holdoutPasses": 4918,
+          "paidLookups": 9494,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-six:gepa-sequential-precheck/52/gain-1",
+            "bbh-formal_fallacies": "split-safe-six:gepa-sequential-precheck/44/gain-1",
+            "bbh-geometric_shapes": "split-safe-six:gepa-sequential-precheck/36/gain-1",
+            "bbh-hyperbaton": "split-safe-six:gepa-sequential-precheck/30/gain-1",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-navigate": "split-safe-three:gepa-sequential-precheck/14/gain-2-threshold-precheck",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-sports_understanding": "split-safe-three:gepa-sequential-precheck/18/gain-1"
+          }
+        },
+        "splitSafeSix": {
+          "holdoutPasses": 4910,
+          "paidLookups": 9579,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-six:gepa-sequential-precheck/52/gain-1",
+            "bbh-formal_fallacies": "split-safe-six:gepa-sequential-precheck/44/gain-1",
+            "bbh-geometric_shapes": "split-safe-six:gepa-sequential-precheck/36/gain-1",
+            "bbh-hyperbaton": "split-safe-six:gepa-sequential-precheck/30/gain-1",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-navigate": "split-safe-six:gepa-sequential-precheck/20/gain-2-threshold-precheck",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-sports_understanding": "split-safe-six:gepa-sequential-precheck/20/paired-gain-2-threshold-precheck"
+          }
+        },
+        "splitSafeThree": {
+          "holdoutPasses": 4890,
+          "paidLookups": 7153,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-three:gepa-sequential-precheck/40/gain-1",
+            "bbh-formal_fallacies": "split-safe-three:gepa-batched-precheck/45/gain-1",
+            "bbh-geometric_shapes": "retain-start",
+            "bbh-hyperbaton": "split-safe-three:gepa-sequential-precheck/44/paired-gain-1",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-navigate": "split-safe-three:gepa-sequential-precheck/14/gain-2-threshold-precheck",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-sports_understanding": "split-safe-three:gepa-sequential-precheck/18/gain-1"
+          }
+        }
+      }
+    },
+    "historicalVsSplitSafeAtMaxCap": {
+      "gepa-batched-precheck/paired-gain-1": {
+        "changedDeployment": 18,
+        "changedNominee": 57,
+        "lookupDifference": 258,
+        "paths": 512
+      },
+      "gepa-batched-precheck/paired-gain-2-threshold-precheck": {
+        "changedDeployment": 5,
+        "changedNominee": 51,
+        "lookupDifference": 241,
+        "paths": 512
+      },
+      "gepa-sequential-precheck/paired-gain-1": {
+        "changedDeployment": 24,
+        "changedNominee": 65,
+        "lookupDifference": 314,
+        "paths": 512
+      },
+      "gepa-sequential-precheck/paired-gain-2-threshold-precheck": {
+        "changedDeployment": 5,
+        "changedNominee": 60,
+        "lookupDifference": 279,
+        "paths": 512
+      }
+    },
+    "nativeSettings": {
+      "positional-six": 2100,
+      "split-safe-six": 2100,
+      "split-safe-three": 2136
+    },
+    "nativeSubjectTotalsSha256": "7efc05477169052c894677247f1294f2681a21e2ccdb9282321f79e09f1f3d3c",
+    "panelPathHashes": {
+      "bbh-disambiguation_qa/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "b7823222dd337a97e6b7c9583430efc134396a02e998c2646e896856e44bf44b",
+          "wide/nonloss": "f8f616d12123ac5b2c7e7f60ccbd3fb406be4e7cbf8ce89068a970284639f7d0"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "e5aa276c8c5dadb07a955cc7c972775aa6610ff63033358355629b4ab4edd692",
+          "wide/nonloss": "f0c05e543a5fcdf57c39e85356e5192aee8f2942b808776ac1a9b1e9833ef401"
+        }
+      },
+      "bbh-disambiguation_qa/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "5d536a633ebc2b2760ee879d2a1224f2a32885ff992d779759e70a80aa7f2dc7",
+          "wide/nonloss": "e76ff31cc4efeec22cbfb3cd5bdcf2d338a30b19bb146319185b9f08d5e609ab"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "7dc43c30aa7620e2d4223f552dcddb08e5b4c3582cb0dfe83ba84235c357412c",
+          "wide/nonloss": "4c41199fa7627e84ac8d1d6b409d66ba9f1d8434a7447710b3b10e5173490261"
+        }
+      },
+      "bbh-formal_fallacies/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "41322586770ad18fbf1396626fa5afe3c366561ee9913f33fbd69b2c157b0cb0",
+          "wide/nonloss": "15101a77e7f2fc97622d251df603b80638a3c2ea4249093fadab8929e26049ae"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "fa6d0044b8ad345f0d54c4d7e1f2b48be3c800fd98ff1e518527f13f9da61ce2",
+          "wide/nonloss": "2292a347bd865e94f812ba16cba8aedeb3122b6ba4c3a80e88442b132135855c"
+        }
+      },
+      "bbh-formal_fallacies/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "f675c41526937e3081f4d844770f8295efdedd259c8fe6f3877b28b3de926de5",
+          "wide/nonloss": "ec8c7dc3c58ecea3b80267da76cdf4606583eacb5c18eabcc2289f59c7cfcb7e"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "55686d4ed1d36734ec14ddc23b60adff797999bcc3a76dae0d428c21ba1cacb8",
+          "wide/nonloss": "aee5f3fe52cd8700af2c98594f81ae0546587aa82b5414cb78b1155b7348bba7"
+        }
+      },
+      "bbh-geometric_shapes/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "e8cbfabbcb89e89bf87067319533a291ec49484d6280bc3428ac4124017af6e0",
+          "wide/nonloss": "38405841e106ac975a5cf134d5073b8ab2288ca22cf3683b82455f6da117548b"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "309554772b951829c2f29f4770d80c534c16f23252579e1550d72cabcd905681",
+          "wide/nonloss": "2469fcfae0689b3ebe61a26626f12580216de8a9466f256aa292225252de1071"
+        }
+      },
+      "bbh-geometric_shapes/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "b07fa9fcecb6ad64f6fc1519ef12b8b5c3893432542924ce758151630eeb6204",
+          "wide/nonloss": "48a8b0a532625d20d1fc32743b7cbb9d52aaab633bcdbc7cccb4ddd4d4552860"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "60370871bb0fcb019596bb5cb1e92118f66e67e85d63b95f3158a856bdd9e49d",
+          "wide/nonloss": "f71a342deca9c30a154f73c4c7ecfae6619411b5b40d292f25e41a1b29bc4f21"
+        }
+      },
+      "bbh-hyperbaton/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "3f824581c8a6aa33a11813201740c8f9cc1fb5668adc31b083f2ebc9cc1a7f47",
+          "wide/nonloss": "67456551c1cab50aa4c129d927283f7369d714c550e4886e72538691edff2c08"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "5d4838631319e283b6772627ffd529fc0744d4ecde95199bfc07d0425c5d195b",
+          "wide/nonloss": "85fa2cab7dcd4277ad8e3800c0932fca68c1d912682d3cdc29c8e7ae5b6ae010"
+        }
+      },
+      "bbh-hyperbaton/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "575b2e15549d09a8ae4191522b52b5433d41139fddc1aff6986edc593ccfa395",
+          "wide/nonloss": "963b0c1f3ab0e23b471c21118dcf1715e149a4cfafca5d783680e6f315cb688d"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "b95521ae8471805238eb67b22aa9d282f9c9e256fcff234f785b1f8b997addd1",
+          "wide/nonloss": "b322a098c428163c48a5c1168ff9481d36c51ef5cb964bfadbf792ea42ff67e9"
+        }
+      },
+      "bbh-logical_deduction_five_objects/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "bd3650d06960de648332cdd8422a5c29ccc7368551210779a091d4469561ca87",
+          "wide/nonloss": "019db4346176d74917a473bed47a15f33e27e437ecf0ea6a440286c3934db079"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "3d4d90a8a08ac59c6dc2783bd1219eb9351c309626e55d33b23c8627fb629e1c",
+          "wide/nonloss": "aa5c1743e1bd0c3e06e9b05ec6d14a10a192160e5d7fc435b73b5321378b87cb"
+        }
+      },
+      "bbh-logical_deduction_five_objects/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "09d2de1a00b211dbfa89e632fb530b3663d43d19946089cda7b56186d3336a08",
+          "wide/nonloss": "9d86864333fccaa1196d28a3dc4b8d4f9ef8e90664836c7774ce04a27ba999c2"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "b7802ee7c15fb593bd4361c4c409345621543c5ce57467f76b44019b0d273150",
+          "wide/nonloss": "c4bc986b8275ff192d299588d1fb8c4b4d94949f6e4dc2a21075397b6b3edafe"
+        }
+      },
+      "bbh-navigate/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "04d80e4885144b0b408fc7c60d59655ca2ca7afc6fe12f5e36aadecaef8dc10c",
+          "wide/nonloss": "f51765c3d184dfc795c7e3f204e9b3614d3f215304a2b82460540f2d480f8a64"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "30b3bae2f32edf83fce7dac6d2f3eec3e9aa7362b9624ab027191b8d951e6573",
+          "wide/nonloss": "332ca5b27886d65f64220d7c96af9f8b00a5f5e6b933d1af4e37388a9b944bf8"
+        }
+      },
+      "bbh-navigate/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "232ed06a7f63028f432cfa41644c3dc0f9e782f6e58df9477a939daca27e9577",
+          "wide/nonloss": "dcbe9153e5ebf6f4caf2a90c580464ed53c8bd686b952850d3d8e7df6afb4414"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "259de5c8d4bfe6edf8c6a691700276074a3bf95e3d3acbae074beba693512c59",
+          "wide/nonloss": "784dbfee2157bce8f8d750163efdf183d6ce839c4e750d46e774efe448060914"
+        }
+      },
+      "bbh-penguins_in_a_table/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "db1f7c7bb9257aa4d7a3f2f395e8efa1325a8e7fa8e752b52088c7e8f60afe40",
+          "wide/nonloss": "fc14b41bfe8d4fb3d674538be9d2468716b7c722ebd9d26875376d81864a0ac7"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "e85f5cd799d38948f58f6f38b1bbcab54e61efa0b1468992c5631f3a8461e712",
+          "wide/nonloss": "20e899a5622c21693d984460227646446fefd46141110adabab7d1959b988318"
+        }
+      },
+      "bbh-penguins_in_a_table/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "4f26e6e2e9a3a87fba220577095a6456b60c517dd766c0b838609b01d245453f",
+          "wide/nonloss": "3d7d28a28c7f72c1cc6b3970bf29df29470be11d9f14aa6f6435fcdd3cd3cb68"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "68137b91b80d8e6a14df2be6c7bb0c0ec6841683e2c670b70210fa9d5b299bbd",
+          "wide/nonloss": "d4e7924dd55b1beb37c71ec13676f1bdf37d56a69bdd75769c685d23ebd3ac7d"
+        }
+      },
+      "bbh-sports_understanding/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "749871c0cdf0d4894b583ce7148c5c59477d192795b2f0aa178b067aae85d76b",
+          "wide/nonloss": "902e8a6c942bd2487c33a59eeff4ed46d2e0009f6caced656245e4d47fa130bf"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "bad2c9584f30b051761e53c93ef16e92bb04cdc5afbbc60370653cf124cb24fd",
+          "wide/nonloss": "29c1c26d38003f922824adf8b052ae89d1741a4f4a93e8149bb22229b2ecdefe"
+        }
+      },
+      "bbh-sports_understanding/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "8453926503b8bf4a0f963e96fbb767587b5aa449061c06ef48dbacfa760a5b6f",
+          "wide/nonloss": "414d3bbff6a7125d611e44997ab34696a9295047c5bfce769fa291636b35fd4e"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "e8f2e0bd9ad9d04736b8b6e73fea051e6ea85d793605a2798767a113ad6bcc57",
+          "wide/nonloss": "8f51bf01c5242715ac151af84680c589c2860fa2c53c7aa78b72d4dd8f904dba"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,433 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "cohort": "BBH/new-task",
+    "cohorts": [
+      "BBH",
+      "LMentry",
+      "BBH/seen-task",
+      "LMentry/seen-task",
+      "BBH/new-task",
+      "LMentry/new-task",
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaValidationWidths": {
+      "split-safe-six": 6,
+      "split-safe-three": 3
+    },
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "0555e5efbd34dd0ec2f38c2769b2b044c11c3ee36013aa7c2db645560520c269",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "parentResultSha256": {
+      "BBH": "f1d74892f993da121acf101146fd1ae11d8d5de096fa579517df576ea287b196",
+      "LMentry": "cb1e9facf188ebc231cd166f70ba50cce75ad4948a48ce6eb24d276b5a99df81",
+      "disjoint-transfer-cohort": "2745bd16e6e023ae0c062c1005bb3e4c9da096a8099e603662dc230bd4515f7e",
+      "earlier-screen-cohort": "7f64ab4b2798b90d60d6227385d987c157c6ebd36d9fa1c05d63cef3172f27bb"
+    },
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "policies": {
+      "deep/gain": [
+        "deep",
+        1
+      ],
+      "deep/nonloss": [
+        "deep",
+        0
+      ],
+      "wide/gain": [
+        "wide",
+        1
+      ],
+      "wide/nonloss": [
+        "wide",
+        0
+      ]
+    },
+    "policy": "wide/nonloss",
+    "protocol": "shared-validation-split-safe-transfer-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Preserve wide nonloss CPO and the six-case historical native results for verification. Use disjoint GEPA cache IDs on the original six cases and their first three. Give both native modes all six proof wrappers and every integer search cap from the validation width to 180. Compare with their split-safe subject-tuned union at the CPO budget, and directly replay the attaining one-gain schedule for paired case resampling. Preserve the original case splits, roster and qualification rule.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "budgeted_shared_panel_search.py": "75fa87af6359da13c2ebbb0a54ffc7c8eb0f79e2c68930b5dfb57e7e6dacfdea",
+      "gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "shared_validation_split_safe_transfer.py": "e7cf20c0d55f15a6dcd384bce12aae6daca7049776141a74d1da66cc44fade63"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "15cd8a05278936657bbe065069ff91a0bc61dfafa54e225a8b239752e6e37e85",
+  "providerRequests": 0,
+  "results": {
+    "comparisons": {
+      "cap-19/gain-1": {
+        "attainingSubjectPoints": {
+          "bbh-causal_judgement": {
+            "holdoutPasses": 592,
+            "paidLookups": 1318
+          }
+        },
+        "cpo": {
+          "deployments": 11,
+          "holdoutPasses": 620,
+          "nominees": 56,
+          "paidLookups": 1341,
+          "strictCpoLookups": 1006,
+          "strictCpoPasses": 591
+        },
+        "historicalGepa": {
+          "holdoutPasses": 592,
+          "paidLookups": 1307,
+          "settingsBySubject": {
+            "bbh-causal_judgement": "positional-six:gepa-batched-precheck/34/paired-gain-1"
+          }
+        },
+        "pairedAgainstAttainingGepa": {
+          "holdoutPassDifference": 28,
+          "pairedRange95": [
+            13,
+            43
+          ]
+        },
+        "splitSafeCombined": {
+          "holdoutPasses": 592,
+          "paidLookups": 1318,
+          "settingsBySubject": {
+            "bbh-causal_judgement": "split-safe-six:gepa-batched-precheck/34/paired-gain-1"
+          }
+        },
+        "splitSafeSix": {
+          "holdoutPasses": 592,
+          "paidLookups": 1318,
+          "settingsBySubject": {
+            "bbh-causal_judgement": "split-safe-six:gepa-batched-precheck/34/paired-gain-1"
+          }
+        },
+        "splitSafeThree": {
+          "holdoutPasses": 584,
+          "paidLookups": 1264,
+          "settingsBySubject": {
+            "bbh-causal_judgement": "split-safe-three:gepa-sequential-precheck/26/paired-gain-1"
+          }
+        }
+      },
+      "cap-19/gain-2": {
+        "attainingSubjectPoints": {
+          "bbh-causal_judgement": {
+            "holdoutPasses": 590,
+            "paidLookups": 970
+          }
+        },
+        "cpo": {
+          "deployments": 2,
+          "holdoutPasses": 581,
+          "nominees": 48,
+          "paidLookups": 1167,
+          "strictCpoLookups": 902,
+          "strictCpoPasses": 569
+        },
+        "historicalGepa": {
+          "holdoutPasses": 590,
+          "paidLookups": 956,
+          "settingsBySubject": {
+            "bbh-causal_judgement": "positional-six:gepa-sequential-precheck/20/paired-gain-1"
+          }
+        },
+        "splitSafeCombined": {
+          "holdoutPasses": 590,
+          "paidLookups": 970,
+          "settingsBySubject": {
+            "bbh-causal_judgement": "split-safe-six:gepa-sequential-precheck/20/paired-gain-1"
+          }
+        },
+        "splitSafeSix": {
+          "holdoutPasses": 590,
+          "paidLookups": 970,
+          "settingsBySubject": {
+            "bbh-causal_judgement": "split-safe-six:gepa-sequential-precheck/20/paired-gain-1"
+          }
+        },
+        "splitSafeThree": {
+          "holdoutPasses": 582,
+          "paidLookups": 966,
+          "settingsBySubject": {
+            "bbh-causal_judgement": "split-safe-three:gepa-batched-precheck/25/paired-gain-1"
+          }
+        }
+      }
+    },
+    "historicalVsSplitSafeAtMaxCap": {
+      "gepa-batched-precheck/paired-gain-1": {
+        "changedDeployment": 2,
+        "changedNominee": 10,
+        "lookupDifference": 27,
+        "paths": 64
+      },
+      "gepa-batched-precheck/paired-gain-2-threshold-precheck": {
+        "changedDeployment": 0,
+        "changedNominee": 9,
+        "lookupDifference": 34,
+        "paths": 64
+      },
+      "gepa-sequential-precheck/paired-gain-1": {
+        "changedDeployment": 0,
+        "changedNominee": 8,
+        "lookupDifference": -6,
+        "paths": 64
+      },
+      "gepa-sequential-precheck/paired-gain-2-threshold-precheck": {
+        "changedDeployment": 0,
+        "changedNominee": 6,
+        "lookupDifference": 5,
+        "paths": 64
+      }
+    },
+    "nativeSettings": {
+      "positional-six": 2100,
+      "split-safe-six": 2100,
+      "split-safe-three": 2136
+    },
+    "nativeSubjectTotalsSha256": "3fad4145673dcc0aa12f43ae52ce55393383d6794e6f9be0e0196e7bd8429021",
+    "panelPathHashes": {
+      "bbh-causal_judgement/flan-t5-xl": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "7a83d132b50a9030178279598d68dc1ab148e6898c041712c87d03e625abf4d8",
+          "wide/nonloss": "32f4274f99da04eed77a760017daaae4b117973e713d727a1bda2bb63e9091c6"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "20302b5a6d15dca657d90db96b16f4b7c772b1b0a3e23995f52390fb7828d8a5",
+          "wide/nonloss": "f70de7f6ae77d8be51dac26e1b16068b65f3032fc3adac744a1908f6903577b6"
+        }
+      },
+      "bbh-causal_judgement/minotaur-15b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "b8396ac7df8f38c3b1ec8e91d776be80ddd59a909f36922149ba11fc392ceede",
+          "wide/nonloss": "37e7eb174c0733e61833e27cbe8601522b8237bd9ca08f64200c5bd8a55db485"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "ecad537d24257394e417b63f6c087b72fbdfe4561658803a65be152eaaaa05aa",
+          "wide/nonloss": "bb0b2113817e4559d2c76a51c5ef7b8ba63352e5704fa556ff46de0e9c785c16"
+        }
+      }
+    }
+  }
+}

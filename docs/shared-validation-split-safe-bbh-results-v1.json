@@ -1,0 +1,901 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "cohort": "BBH",
+    "cohorts": [
+      "BBH",
+      "LMentry",
+      "BBH/seen-task",
+      "LMentry/seen-task",
+      "BBH/new-task",
+      "LMentry/new-task",
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaValidationWidths": {
+      "split-safe-six": 6,
+      "split-safe-three": 3
+    },
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "0555e5efbd34dd0ec2f38c2769b2b044c11c3ee36013aa7c2db645560520c269",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "parentResultSha256": {
+      "BBH": "f1d74892f993da121acf101146fd1ae11d8d5de096fa579517df576ea287b196",
+      "LMentry": "cb1e9facf188ebc231cd166f70ba50cce75ad4948a48ce6eb24d276b5a99df81",
+      "disjoint-transfer-cohort": "2745bd16e6e023ae0c062c1005bb3e4c9da096a8099e603662dc230bd4515f7e",
+      "earlier-screen-cohort": "7f64ab4b2798b90d60d6227385d987c157c6ebd36d9fa1c05d63cef3172f27bb"
+    },
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "policies": {
+      "deep/gain": [
+        "deep",
+        1
+      ],
+      "deep/nonloss": [
+        "deep",
+        0
+      ],
+      "wide/gain": [
+        "wide",
+        1
+      ],
+      "wide/nonloss": [
+        "wide",
+        0
+      ]
+    },
+    "policy": "wide/nonloss",
+    "protocol": "shared-validation-split-safe-transfer-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Preserve wide nonloss CPO and the six-case historical native results for verification. Use disjoint GEPA cache IDs on the original six cases and their first three. Give both native modes all six proof wrappers and every integer search cap from the validation width to 180. Compare with their split-safe subject-tuned union at the CPO budget, and directly replay the attaining one-gain schedule for paired case resampling. Preserve the original case splits, roster and qualification rule.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "budgeted_shared_panel_search.py": "75fa87af6359da13c2ebbb0a54ffc7c8eb0f79e2c68930b5dfb57e7e6dacfdea",
+      "gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "shared_validation_split_safe_transfer.py": "e7cf20c0d55f15a6dcd384bce12aae6daca7049776141a74d1da66cc44fade63"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "eb076840578e12983a8bf1b28c353c6c4e9f6ce7391a997d958b6297378cd67b",
+  "providerRequests": 0,
+  "results": {
+    "comparisons": {
+      "cap-19/gain-1": {
+        "attainingSubjectPoints": {
+          "bbh-disambiguation_qa": {
+            "holdoutPasses": 803,
+            "paidLookups": 1924
+          },
+          "bbh-formal_fallacies": {
+            "holdoutPasses": 408,
+            "paidLookups": 2463
+          },
+          "bbh-geometric_shapes": {
+            "holdoutPasses": 415,
+            "paidLookups": 0
+          },
+          "bbh-hyperbaton": {
+            "holdoutPasses": 1028,
+            "paidLookups": 1118
+          },
+          "bbh-logical_deduction_five_objects": {
+            "holdoutPasses": 547,
+            "paidLookups": 2467
+          },
+          "bbh-logical_deduction_seven_objects": {
+            "holdoutPasses": 311,
+            "paidLookups": 0
+          },
+          "bbh-logical_deduction_three_objects": {
+            "holdoutPasses": 716,
+            "paidLookups": 1859
+          },
+          "bbh-movie_recommendation": {
+            "holdoutPasses": 982,
+            "paidLookups": 2202
+          },
+          "bbh-navigate": {
+            "holdoutPasses": 878,
+            "paidLookups": 1830
+          },
+          "bbh-penguins_in_a_table": {
+            "holdoutPasses": 400,
+            "paidLookups": 0
+          },
+          "bbh-ruin_names": {
+            "holdoutPasses": 679,
+            "paidLookups": 0
+          },
+          "bbh-salient_translation_error_detection": {
+            "holdoutPasses": 425,
+            "paidLookups": 1809
+          },
+          "bbh-snarks": {
+            "holdoutPasses": 1011,
+            "paidLookups": 1996
+          },
+          "bbh-sports_understanding": {
+            "holdoutPasses": 1142,
+            "paidLookups": 2530
+          }
+        },
+        "cpo": {
+          "deployments": 282,
+          "holdoutPasses": 9840,
+          "nominees": 823,
+          "paidLookups": 20209,
+          "strictCpoLookups": 15059,
+          "strictCpoPasses": 9548
+        },
+        "historicalGepa": {
+          "holdoutPasses": 9796,
+          "paidLookups": 20136,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "positional-six:gepa-sequential-precheck/48/paired-gain-1",
+            "bbh-formal_fallacies": "positional-six:gepa-batched-precheck/52/gain-1",
+            "bbh-geometric_shapes": "retain-start",
+            "bbh-hyperbaton": "positional-six:gepa-batched-precheck/26/paired-gain-1",
+            "bbh-logical_deduction_five_objects": "positional-six:gepa-sequential-precheck/28/paired-gain-1",
+            "bbh-logical_deduction_seven_objects": "retain-start",
+            "bbh-logical_deduction_three_objects": "positional-six:gepa-sequential-precheck/38/gain-1",
+            "bbh-movie_recommendation": "positional-six:gepa-batched-precheck/46/gain-1",
+            "bbh-navigate": "positional-six:gepa-batched-precheck/40/paired-gain-1",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-ruin_names": "retain-start",
+            "bbh-salient_translation_error_detection": "positional-six:gepa-sequential-precheck/32/paired-gain-1",
+            "bbh-snarks": "positional-six:gepa-batched-precheck/40/paired-gain-1",
+            "bbh-sports_understanding": "positional-six:gepa-sequential-precheck/50/paired-gain-1"
+          }
+        },
+        "pairedAgainstAttainingGepa": {
+          "holdoutPassDifference": 95,
+          "pairedRange95": [
+            13,
+            174
+          ]
+        },
+        "splitSafeCombined": {
+          "holdoutPasses": 9745,
+          "paidLookups": 20198,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-six:gepa-batched-precheck/40/gain-1",
+            "bbh-formal_fallacies": "split-safe-six:gepa-batched-precheck/54/paired-gain-1",
+            "bbh-geometric_shapes": "retain-start",
+            "bbh-hyperbaton": "split-safe-three:gepa-batched-precheck/28/paired-gain-1",
+            "bbh-logical_deduction_five_objects": "split-safe-six:gepa-sequential-precheck/44/gain-1",
+            "bbh-logical_deduction_seven_objects": "retain-start",
+            "bbh-logical_deduction_three_objects": "split-safe-three:gepa-sequential-precheck/30/gain-1",
+            "bbh-movie_recommendation": "split-safe-six:gepa-batched-precheck/46/gain-1",
+            "bbh-navigate": "split-safe-six:gepa-batched-precheck/40/gain-1",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-ruin_names": "retain-start",
+            "bbh-salient_translation_error_detection": "split-safe-six:gepa-sequential-precheck/32/gain-1",
+            "bbh-snarks": "split-safe-three:gepa-sequential-precheck/37/paired-gain-1",
+            "bbh-sports_understanding": "split-safe-six:gepa-sequential-precheck/52/paired-gain-1"
+          }
+        },
+        "splitSafeSix": {
+          "holdoutPasses": 9724,
+          "paidLookups": 20140,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-six:gepa-sequential-precheck/40/paired-gain-1",
+            "bbh-formal_fallacies": "split-safe-six:gepa-batched-precheck/54/paired-gain-1",
+            "bbh-geometric_shapes": "retain-start",
+            "bbh-hyperbaton": "split-safe-six:gepa-batched-precheck/26/gain-1",
+            "bbh-logical_deduction_five_objects": "split-safe-six:gepa-sequential-precheck/44/gain-1",
+            "bbh-logical_deduction_seven_objects": "retain-start",
+            "bbh-logical_deduction_three_objects": "split-safe-six:gepa-sequential-precheck/38/gain-1",
+            "bbh-movie_recommendation": "split-safe-six:gepa-batched-precheck/46/gain-1",
+            "bbh-navigate": "split-safe-six:gepa-batched-precheck/40/gain-1",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-ruin_names": "retain-start",
+            "bbh-salient_translation_error_detection": "split-safe-six:gepa-sequential-precheck/32/gain-1",
+            "bbh-snarks": "split-safe-six:gepa-sequential-precheck/20/gain-1",
+            "bbh-sports_understanding": "split-safe-six:gepa-sequential-precheck/52/paired-gain-1"
+          }
+        },
+        "splitSafeThree": {
+          "holdoutPasses": 9586,
+          "paidLookups": 19830,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-three:gepa-sequential-precheck/44/gain-1",
+            "bbh-formal_fallacies": "split-safe-three:gepa-batched-precheck/37/gain-1",
+            "bbh-geometric_shapes": "split-safe-three:gepa-sequential-precheck/29/paired-gain-1",
+            "bbh-hyperbaton": "split-safe-three:gepa-batched-precheck/37/paired-gain-1",
+            "bbh-logical_deduction_five_objects": "split-safe-three:gepa-sequential-precheck/34/gain-1",
+            "bbh-logical_deduction_seven_objects": "retain-start",
+            "bbh-logical_deduction_three_objects": "split-safe-three:gepa-sequential-precheck/30/gain-1",
+            "bbh-movie_recommendation": "split-safe-three:gepa-batched-precheck/31/gain-1",
+            "bbh-navigate": "split-safe-three:gepa-batched-precheck/31/paired-gain-1",
+            "bbh-penguins_in_a_table": "split-safe-three:gepa-sequential-precheck/18/gain-1",
+            "bbh-ruin_names": "retain-start",
+            "bbh-salient_translation_error_detection": "split-safe-three:gepa-sequential-precheck/21/gain-1",
+            "bbh-snarks": "split-safe-three:gepa-sequential-precheck/37/paired-gain-1",
+            "bbh-sports_understanding": "split-safe-three:gepa-batched-precheck/36/gain-1"
+          }
+        }
+      },
+      "cap-19/gain-2": {
+        "attainingSubjectPoints": {
+          "bbh-disambiguation_qa": {
+            "holdoutPasses": 816,
+            "paidLookups": 2305
+          },
+          "bbh-formal_fallacies": {
+            "holdoutPasses": 408,
+            "paidLookups": 2463
+          },
+          "bbh-geometric_shapes": {
+            "holdoutPasses": 415,
+            "paidLookups": 0
+          },
+          "bbh-hyperbaton": {
+            "holdoutPasses": 1028,
+            "paidLookups": 1118
+          },
+          "bbh-logical_deduction_five_objects": {
+            "holdoutPasses": 471,
+            "paidLookups": 0
+          },
+          "bbh-logical_deduction_seven_objects": {
+            "holdoutPasses": 311,
+            "paidLookups": 0
+          },
+          "bbh-logical_deduction_three_objects": {
+            "holdoutPasses": 716,
+            "paidLookups": 1859
+          },
+          "bbh-movie_recommendation": {
+            "holdoutPasses": 982,
+            "paidLookups": 2202
+          },
+          "bbh-navigate": {
+            "holdoutPasses": 878,
+            "paidLookups": 1830
+          },
+          "bbh-penguins_in_a_table": {
+            "holdoutPasses": 400,
+            "paidLookups": 0
+          },
+          "bbh-ruin_names": {
+            "holdoutPasses": 679,
+            "paidLookups": 0
+          },
+          "bbh-salient_translation_error_detection": {
+            "holdoutPasses": 419,
+            "paidLookups": 1600
+          },
+          "bbh-snarks": {
+            "holdoutPasses": 1011,
+            "paidLookups": 1996
+          },
+          "bbh-sports_understanding": {
+            "holdoutPasses": 1142,
+            "paidLookups": 2530
+          }
+        },
+        "cpo": {
+          "deployments": 94,
+          "holdoutPasses": 9188,
+          "nominees": 724,
+          "paidLookups": 17907,
+          "strictCpoLookups": 14072,
+          "strictCpoPasses": 8998
+        },
+        "historicalGepa": {
+          "holdoutPasses": 9716,
+          "paidLookups": 17907,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "positional-six:gepa-sequential-precheck/48/paired-gain-1",
+            "bbh-formal_fallacies": "positional-six:gepa-batched-precheck/46/gain-1",
+            "bbh-geometric_shapes": "retain-start",
+            "bbh-hyperbaton": "positional-six:gepa-batched-precheck/26/paired-gain-1",
+            "bbh-logical_deduction_five_objects": "positional-six:gepa-sequential-precheck/28/paired-gain-1",
+            "bbh-logical_deduction_seven_objects": "retain-start",
+            "bbh-logical_deduction_three_objects": "positional-six:gepa-sequential-precheck/38/gain-1",
+            "bbh-movie_recommendation": "positional-six:gepa-batched-precheck/46/gain-1",
+            "bbh-navigate": "positional-six:gepa-batched-precheck/40/paired-gain-1",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-ruin_names": "retain-start",
+            "bbh-salient_translation_error_detection": "positional-six:gepa-sequential-precheck/29/paired-gain-1",
+            "bbh-snarks": "positional-six:gepa-sequential-precheck/20/paired-gain-1",
+            "bbh-sports_understanding": "positional-six:gepa-batched-precheck/34/paired-gain-1"
+          }
+        },
+        "splitSafeCombined": {
+          "holdoutPasses": 9676,
+          "paidLookups": 17903,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-six:gepa-sequential-precheck/40/paired-gain-1",
+            "bbh-formal_fallacies": "split-safe-six:gepa-batched-precheck/54/paired-gain-1",
+            "bbh-geometric_shapes": "retain-start",
+            "bbh-hyperbaton": "split-safe-three:gepa-batched-precheck/28/paired-gain-1",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-logical_deduction_seven_objects": "retain-start",
+            "bbh-logical_deduction_three_objects": "split-safe-three:gepa-sequential-precheck/30/gain-1",
+            "bbh-movie_recommendation": "split-safe-six:gepa-batched-precheck/46/gain-1",
+            "bbh-navigate": "split-safe-six:gepa-batched-precheck/40/gain-1",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-ruin_names": "retain-start",
+            "bbh-salient_translation_error_detection": "split-safe-six:gepa-sequential-precheck/30/gain-1",
+            "bbh-snarks": "split-safe-three:gepa-sequential-precheck/37/paired-gain-1",
+            "bbh-sports_understanding": "split-safe-six:gepa-sequential-precheck/52/paired-gain-1"
+          }
+        },
+        "splitSafeSix": {
+          "holdoutPasses": 9649,
+          "paidLookups": 17906,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-six:gepa-sequential-precheck/40/paired-gain-1",
+            "bbh-formal_fallacies": "split-safe-six:gepa-batched-precheck/54/paired-gain-1",
+            "bbh-geometric_shapes": "retain-start",
+            "bbh-hyperbaton": "split-safe-six:gepa-batched-precheck/26/gain-1",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-logical_deduction_seven_objects": "retain-start",
+            "bbh-logical_deduction_three_objects": "split-safe-six:gepa-sequential-precheck/38/gain-1",
+            "bbh-movie_recommendation": "split-safe-six:gepa-batched-precheck/46/gain-1",
+            "bbh-navigate": "split-safe-six:gepa-batched-precheck/40/gain-1",
+            "bbh-penguins_in_a_table": "retain-start",
+            "bbh-ruin_names": "retain-start",
+            "bbh-salient_translation_error_detection": "split-safe-six:gepa-sequential-precheck/30/gain-1",
+            "bbh-snarks": "split-safe-six:gepa-batched-precheck/34/paired-gain-1",
+            "bbh-sports_understanding": "split-safe-six:gepa-sequential-precheck/52/paired-gain-1"
+          }
+        },
+        "splitSafeThree": {
+          "holdoutPasses": 9567,
+          "paidLookups": 17745,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "split-safe-three:gepa-sequential-precheck/44/gain-1",
+            "bbh-formal_fallacies": "split-safe-three:gepa-batched-precheck/37/gain-1",
+            "bbh-geometric_shapes": "retain-start",
+            "bbh-hyperbaton": "split-safe-three:gepa-batched-precheck/28/paired-gain-1",
+            "bbh-logical_deduction_five_objects": "split-safe-three:gepa-sequential-precheck/34/gain-1",
+            "bbh-logical_deduction_seven_objects": "retain-start",
+            "bbh-logical_deduction_three_objects": "split-safe-three:gepa-sequential-precheck/30/gain-1",
+            "bbh-movie_recommendation": "split-safe-three:gepa-batched-precheck/31/gain-1",
+            "bbh-navigate": "split-safe-three:gepa-batched-precheck/31/paired-gain-1",
+            "bbh-penguins_in_a_table": "split-safe-three:gepa-sequential-precheck/18/gain-1",
+            "bbh-ruin_names": "retain-start",
+            "bbh-salient_translation_error_detection": "split-safe-three:gepa-sequential-precheck/21/gain-1",
+            "bbh-snarks": "split-safe-three:gepa-sequential-precheck/37/paired-gain-1",
+            "bbh-sports_understanding": "split-safe-three:gepa-batched-precheck/36/gain-1"
+          }
+        }
+      }
+    },
+    "historicalVsSplitSafeAtMaxCap": {
+      "gepa-batched-precheck/paired-gain-1": {
+        "changedDeployment": 54,
+        "changedNominee": 140,
+        "lookupDifference": 642,
+        "paths": 896
+      },
+      "gepa-batched-precheck/paired-gain-2-threshold-precheck": {
+        "changedDeployment": 24,
+        "changedNominee": 130,
+        "lookupDifference": 711,
+        "paths": 896
+      },
+      "gepa-sequential-precheck/paired-gain-1": {
+        "changedDeployment": 57,
+        "changedNominee": 142,
+        "lookupDifference": 583,
+        "paths": 896
+      },
+      "gepa-sequential-precheck/paired-gain-2-threshold-precheck": {
+        "changedDeployment": 19,
+        "changedNominee": 127,
+        "lookupDifference": 618,
+        "paths": 896
+      }
+    },
+    "nativeSettings": {
+      "positional-six": 2100,
+      "split-safe-six": 2100,
+      "split-safe-three": 2136
+    },
+    "nativeSubjectTotalsSha256": "7aa4b8e65ac23da1ca300181b66d96828d0c3c294b0da941ae2b7bc23e4879d2",
+    "panelPathHashes": {
+      "bbh-disambiguation_qa/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "07535d10cb0356e7a794aa73872a141c67ebda0600774639841b16c2344ad563",
+          "wide/nonloss": "b982639e9d0c08f16469154fd3cc4d6fe5961418fb7423c66eb37bfb6bafed7b"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "dcacfbd65048001b9a6f17bdb007a5a88ca2a1cd0698235d5a1618e72356ada9",
+          "wide/nonloss": "00c7fb14ffda18ac65d7b305823f631b6436995b2d316bc01ed13fd066ac899c"
+        }
+      },
+      "bbh-disambiguation_qa/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "a72e7b1fdea52d378c9a0bf1e017ddd6cf1979662f62c7dcd055e35ca3406ed3",
+          "wide/nonloss": "a6592a4275751f0b71b7cd6c38221941d06f692ee5ab338ff2c5b291872dcab3"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "5c7740ad6ce16cd8060ade919f10b474db890da66391a1d184f8da4594ba8b00",
+          "wide/nonloss": "5016fb87b581c8cb082996ef22354657a84333a4afe3adb764388dcd49332d6a"
+        }
+      },
+      "bbh-formal_fallacies/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "e15d5f8540e13abd2da29d03f32e31eca2252a4f5e5dc53c6ee4e922be4d9fcb",
+          "wide/nonloss": "561422a12940703ec7f39e6c03d4902925af3a631eb88b7d052dfd54d3516b96"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "14eb20617e0629101f3b50ed0c609eed00d0f22367b132222ccca67df32fe168",
+          "wide/nonloss": "c8c283c2526c26ed98fac91c3277be9662865a0852d7571c2366f2beca9454ab"
+        }
+      },
+      "bbh-formal_fallacies/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "e15648defc0151dde4cff05acb51f71f43108aa53fcaeec545b9c94923685e8e",
+          "wide/nonloss": "f24720ca8b5ab74c852759bf144badf35947d93762498277cca333c33bbad3e9"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "45c058fc125b509d929a19e79fced45d713a2f059c127136e8a9665ccb4690cc",
+          "wide/nonloss": "a76f6660b3bdc1602ff83e76935c8c2aeb9529d7861becee2c14cb3be9223249"
+        }
+      },
+      "bbh-geometric_shapes/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "576f5e0ba919b873a3b64d82c7e130591ab5e4d1796f5a9c354ed30a64c7ee97",
+          "wide/nonloss": "68a47fe9d395f80f8461d5de5d8eb194456b5e7045c23276ca8270120d51eaa8"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "0c504a02c97d61009380716810a521386398ade38f0ca05d1c5d4a0e85699b45",
+          "wide/nonloss": "bb5383c8ec896294306d9c7d1f945eb5fcaa0a02a06d9941cf4c95247428caa1"
+        }
+      },
+      "bbh-geometric_shapes/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "8227d2e177491e9616b2829f410638e6e3b23c3af44e0b3627b64afdb548bb50",
+          "wide/nonloss": "bfcc572ba196a016b2c8652e005ec87a7c316eaaaa80dd1902948f56d2b5fca6"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "c4acb17d249c9ccc141c5dc5633ef65b5db90930e085dfebc248e711e4007907",
+          "wide/nonloss": "c64067bb796eafb21d500f9d161b329e80ec2e6238509823ac5f5150dbf92cae"
+        }
+      },
+      "bbh-hyperbaton/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "4641785f91189559562b43b28fcef9b4dd7dbc7a08801c0ff4ebe99a18abb97c",
+          "wide/nonloss": "2fc3130a8caf168b657445a428e38f60bd63516a11c0751c1f89b22754121d4f"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "ce71223e6dc7a77bdadbfb025a2f6739a40372b5c18f192ef371b240522a5093",
+          "wide/nonloss": "b9702e75a59dfb849f6dded5e6e54cfae3c750eafa1fb3fa17d5f29747d413d8"
+        }
+      },
+      "bbh-hyperbaton/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "b91b5ad2424edcb153b8148d1a2c9c60f61b2222a5c3575d60dbaf2ffa26645e",
+          "wide/nonloss": "b764685152f48151f4b9838079a47de223304a3c40ad41dbddeeead224426495"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "2aee789dd66d41c2386c2a0affe41b781d80f214cde0edd6a9f4402794b2f4c2",
+          "wide/nonloss": "65c20d513d89c5cb9aaacf7b8b76aea4c18f6dc9e95e19a6adf891d102768dbd"
+        }
+      },
+      "bbh-logical_deduction_five_objects/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "06e287342bb38d9f2f2d7a9842501d7950a42440cef3fddee0908c53dad7f1da",
+          "wide/nonloss": "86c903f755712832dd631458675b9fd5c9d5c5a515e121a00e09abeee55790ba"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "2df05baa9ce3795ea992a5052131ec4e00dc2857a41975297c9593cc69ca635a",
+          "wide/nonloss": "c2109d57434985ac3789836d7bcdc45beb6f572833014e2317ed0023983eaab3"
+        }
+      },
+      "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "148d3bdd42a7c6a0d35a71f68a68c14b48a7633fb5a879bbb95dfd65da869b11",
+          "wide/nonloss": "7d56dd5631db3969bdc7e5ae8a19ff31f0e50247581b6d778f90da6bff249f84"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "b7640103c0f4c15264c7e615d79de10da8194103a0b4d0fddfb1b327d5a36542",
+          "wide/nonloss": "6ee8a207e67beac8e5ddcaf8786326426f611f77c7253fc1c5b6e98cc65d4334"
+        }
+      },
+      "bbh-logical_deduction_seven_objects/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "17cf2efd71c33ed5266ee2bf8c135bf8b83a8df2b6cee37f8909863a871fcbeb",
+          "wide/nonloss": "41c055ab9deb65fae4582187fa34a94b5f906f5aafeaf3a6ab3362198b739755"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "ad13283e37c5b5adcc4f5de6974fc40acdd0631eeefd13417daf1ce3147fece7",
+          "wide/nonloss": "b120dfca53451f9093df17a15645c45138e3a157fd20e8e3cd0b1331099c8c2b"
+        }
+      },
+      "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "46c225778e6e1cd7071a187a96c8d5ceda4cd4ca7a2a56615cb763cc853a44b5",
+          "wide/nonloss": "8015808ab35039db6c8bd54008bd2c038dd03386849dc9d53e90f5d4f8f3dc4d"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "37b64e5ccef186dacbed6ba9713a8058392d5b86efff67522be27bd1d588c24b",
+          "wide/nonloss": "d2a76111835a622a17e0b1aa7319bc26237672676c5e1c5cb8745c0cd5423f41"
+        }
+      },
+      "bbh-logical_deduction_three_objects/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "a1709bd5ed48dda47f193d5fc14782e5ce9f2c2677094a4920c1d15bff22349c",
+          "wide/nonloss": "ff8667e927d3304793914703931550c3a54597b754d4472f87eb015a056694ca"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "50f1ddc547602fb83edd08137d223fc6196df785de26e1057aa9c4e26e24b1ff",
+          "wide/nonloss": "8065a4b4e9d272fa57a4abe8d2dbb47da80cf91468014e62d8321eb9e05eb0ca"
+        }
+      },
+      "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "c8db934212d534a601b0b64084e4cfc00fac0b6ff43150d92e87d367637b24ad",
+          "wide/nonloss": "81a4982497f2bab52df3029ad2318d6a0721dc3da251486f8f10de3a9bb292d9"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "538901f225411a9ad8e78cd32c127055044fa7e7f5fdbe4c7d8494447be5083d",
+          "wide/nonloss": "e6999e14d803bf77138a8364d13ca67d22097389c95321a6baf0d01317308b1a"
+        }
+      },
+      "bbh-movie_recommendation/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "d1130ca2c43dd3b175e5952a228832f647470b50cde9288dc321b94cc55f3c50",
+          "wide/nonloss": "3603684e92a7809a35165cce37e712901ad67ef6dc8406e61e7d7426aa9b70f2"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "3735f75dd150e4af0c761a3db92ac722eb826c55fba9281c66388f03e9676ed1",
+          "wide/nonloss": "70ea6f5d63db0d3203607cb56cb3f74755bfce11a46731b6559d7b1ad81afbb3"
+        }
+      },
+      "bbh-movie_recommendation/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "faa39c7325c58a76bb0622f797acee030221be3e835ce332dc01b26a9cb34fb1",
+          "wide/nonloss": "2629cbbfd449d0b3653fd5bdd9fab6af54d9ecbb25f1b419d134f48c91818ffa"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "22a0ad8bb663224c4837ccae0f7bce3e070dd17026811b251169dec9df453b52",
+          "wide/nonloss": "c0fd9ee62616b345eafd56bf9cfe8fcb0bfc425eef84b240df13afbcf9e1ee4f"
+        }
+      },
+      "bbh-navigate/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "f33d027f557f3db1fa97bbe0f5db0257c468cc7ef1a6434b6e64e5b2d8f22269",
+          "wide/nonloss": "bd0fc42085cb3b4ba04531b7db8202154d1bda542ae52731bee5ca6731a08f7c"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "bcddb796f819dfbc015e285cb6e0163453833db1a1a258346be9b721ec981f28",
+          "wide/nonloss": "ba56bcbf1d1c21aee793eb9d01d12cbb312ba0c637ff26e1550db0d3e5e74aa9"
+        }
+      },
+      "bbh-navigate/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "f6b16141b8d05048cee99937cf2f24d2a9edc30e0bc33c72921ce7ff62e60ed6",
+          "wide/nonloss": "b8234d45d51f9718908ee053727661654cf0fbb518fe6780bc713ff7d19e6c5f"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "470b8efd72e508afd31186efc069eee4821e23218c1d6415d7acc14c90d1cfe0",
+          "wide/nonloss": "4c9efea4b7172a1251ddafa032dacced58040d291282666bdbddb418f09c02bd"
+        }
+      },
+      "bbh-penguins_in_a_table/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "ee66c25e812758d6e3b7674bd3d5e6131dcb30a2c0d63fd305bbb73858248351",
+          "wide/nonloss": "fd09a17c845c8f8609242475094e5fb60b225316be04cf0b6186af1049d92a7e"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "cc86d39ca2750bad71132751a3c8640df677341528fbe5625d7a2483f13ebc12",
+          "wide/nonloss": "6b23abca6bbb6bb6a37e62b9be82225b7c6bc8e32081397bbf843c44a08ddda8"
+        }
+      },
+      "bbh-penguins_in_a_table/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "ccd279ec91b1c5903be91ebb2ff6d35ebd322e40ea9c3ae8f5b21752eac4c86f",
+          "wide/nonloss": "1342355748214459c8c0622f63d38c19ebd736c97a32d591b90e29301d62f1c5"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "988239ea7cc2f9ee220d8ff5c69942d116a0531db1fd843670dc3e7a8dd2ffd0",
+          "wide/nonloss": "2a3bd64c25462adb3fd5e15960f012aba2feddad0652d2701d460c93765db315"
+        }
+      },
+      "bbh-ruin_names/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "050e6aa47e241d06c51efc2bfc796b36e8cc973f9f02309b563c8b0a484a3f84",
+          "wide/nonloss": "8716fff064118c6087664322c165ac6a55dfc5bc2b6988b34f30bbee5c8df2c6"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "41150465e515ae009c46b28829991d7d515023a63ab4c584eda0db7e4de4b465",
+          "wide/nonloss": "36cf0f73b449627fdfa2596420f724f0154acb9130f585d59c8d8c63ab641c3a"
+        }
+      },
+      "bbh-ruin_names/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "9daacd0b84a62f5cc8865add7fb402d0b9de7ac2adf90da4406ba75e4c0d65e8",
+          "wide/nonloss": "9f7252873cc8b76741fb0efc274e226ba33d5c4f7a04bbb34d9fbd7f2e223388"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "31ecdf5951589d7edfeaee2835e306a685ac8e20f388c91e6d428aec0780b491",
+          "wide/nonloss": "c05548dd507b7db86f2af5c495ccbb815b26a350d8b310f29d5d936e516125ea"
+        }
+      },
+      "bbh-salient_translation_error_detection/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "0eaf9ddc3193d63bc6d75a32e59d16a4c47991f5cf7f7c2d8620f5d9676471b3",
+          "wide/nonloss": "8429eb86fdf59ba8f1f8a9530b61c5731f7023cf5de4171a5d3b1dc6aee615b0"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "7a19676824e36cb54068712c777128ea1eed2c6e725a8d4cfafa410b4a3b866e",
+          "wide/nonloss": "c8fbd9cf9a3b1a7fd0d2250452fb43376934cdd1059ababc51df4c8a767636a5"
+        }
+      },
+      "bbh-salient_translation_error_detection/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "2029d0f63ea39dafe59360cdbd06ba688dedc736b2e145396bdc6df3ec0d6cf9",
+          "wide/nonloss": "c22a541cb1cfecdd4f05bb622e94e34678d48ba09071e9bdd4bf16017d3f36f6"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "f3128f6edd6e346768e02837aa0dee5b8c56c2d063944726893a98ca1b6c195d",
+          "wide/nonloss": "f149afe6a84c80919f26403660930fdccbbeef7948cf4e8b0acfa23bf3c30432"
+        }
+      },
+      "bbh-snarks/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "160d851cb18827024629a36f3d10cc786f120e5e813f2618f118a02e2ee8ad01",
+          "wide/nonloss": "a335a0070bc14b698aab307aad3dc3eb04b8d18d292a1e82b17426731d9f109c"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "bbdd2dcfafe53e967973d92e1828f9a32037486bbb7071234ac6b53064f64ebe",
+          "wide/nonloss": "02bc97d85b632f48c92b3f7f6fccae1f51c2aa7245fed100e8e423a1c944adc7"
+        }
+      },
+      "bbh-snarks/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "e9b4f7c73d4fb6f70819eeb19e3f785c0680322090fafb4a488b5b9d4c8c2da9",
+          "wide/nonloss": "a2cffc47ecf1cee398fa9109dd6e253f434954cf64df06c788b0c86d0a79e2e3"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "144536ad028ff5315bff96613c34d968a8b7536b8f4e10a73a9d8fbc921834db",
+          "wide/nonloss": "e2efd97a234033ef23ab9a5e0b64d71a5f4b9f1db6d8d2ebf0f88e2286fa34bf"
+        }
+      },
+      "bbh-sports_understanding/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "fcd5ebccb15b898965711c6f96149e388c092dee1802773b5230d1d074b4f382",
+          "wide/nonloss": "51111682fe27d4f3c1e2479d09838d0fe20772a7229f4d8582921fa42daaa1a3"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "0e735425b223ba0d7cb5e2c3d5f67da290d122779b515428df504b473a10a41e",
+          "wide/nonloss": "1e9fbe1beb3610679e8294a1378479a34364739583cbac692a162a6775409ccb"
+        }
+      },
+      "bbh-sports_understanding/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "6c852050498163283954f1b1725b7356260ecb8939668f22fca2b97c7ea98d9c",
+          "wide/nonloss": "2c44394c4b5a92f92e2767159deca72a81e956577597d028b275dab79bbf3834"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "f353503bb292ef4ececdf27db05ba6afbe7c5ba4a917799ab53629bfd0ddb66c",
+          "wide/nonloss": "5408cad3312ddac99af11432eda98be0feef7347f83c5425bc82708d3c7957af"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,685 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "cohort": "LMentry",
+    "cohorts": [
+      "BBH",
+      "LMentry",
+      "BBH/seen-task",
+      "LMentry/seen-task",
+      "BBH/new-task",
+      "LMentry/new-task",
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaValidationWidths": {
+      "split-safe-six": 6,
+      "split-safe-three": 3
+    },
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "0555e5efbd34dd0ec2f38c2769b2b044c11c3ee36013aa7c2db645560520c269",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "parentResultSha256": {
+      "BBH": "f1d74892f993da121acf101146fd1ae11d8d5de096fa579517df576ea287b196",
+      "LMentry": "cb1e9facf188ebc231cd166f70ba50cce75ad4948a48ce6eb24d276b5a99df81",
+      "disjoint-transfer-cohort": "2745bd16e6e023ae0c062c1005bb3e4c9da096a8099e603662dc230bd4515f7e",
+      "earlier-screen-cohort": "7f64ab4b2798b90d60d6227385d987c157c6ebd36d9fa1c05d63cef3172f27bb"
+    },
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "policies": {
+      "deep/gain": [
+        "deep",
+        1
+      ],
+      "deep/nonloss": [
+        "deep",
+        0
+      ],
+      "wide/gain": [
+        "wide",
+        1
+      ],
+      "wide/nonloss": [
+        "wide",
+        0
+      ]
+    },
+    "policy": "wide/nonloss",
+    "protocol": "shared-validation-split-safe-transfer-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Preserve wide nonloss CPO and the six-case historical native results for verification. Use disjoint GEPA cache IDs on the original six cases and their first three. Give both native modes all six proof wrappers and every integer search cap from the validation width to 180. Compare with their split-safe subject-tuned union at the CPO budget, and directly replay the attaining one-gain schedule for paired case resampling. Preserve the original case splits, roster and qualification rule.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "budgeted_shared_panel_search.py": "75fa87af6359da13c2ebbb0a54ffc7c8eb0f79e2c68930b5dfb57e7e6dacfdea",
+      "gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "shared_validation_split_safe_transfer.py": "e7cf20c0d55f15a6dcd384bce12aae6daca7049776141a74d1da66cc44fade63"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "c726398a0be24b797ab3744fa5a8809ac79df64f9c7039a13d7be5ff798886ea",
+  "providerRequests": 0,
+  "results": {
+    "comparisons": {
+      "cap-19/gain-1": {
+        "attainingSubjectPoints": {
+          "lmentry-all_words_from_category": {
+            "holdoutPasses": 1200,
+            "paidLookups": 1023
+          },
+          "lmentry-any_words_from_category": {
+            "holdoutPasses": 1004,
+            "paidLookups": 1360
+          },
+          "lmentry-first_alphabetically": {
+            "holdoutPasses": 804,
+            "paidLookups": 1582
+          },
+          "lmentry-homophones": {
+            "holdoutPasses": 319,
+            "paidLookups": 1354
+          },
+          "lmentry-less_letters": {
+            "holdoutPasses": 836,
+            "paidLookups": 1867
+          },
+          "lmentry-more_letters": {
+            "holdoutPasses": 843,
+            "paidLookups": 1966
+          },
+          "lmentry-rhyming_word": {
+            "holdoutPasses": 431,
+            "paidLookups": 2210
+          },
+          "lmentry-word_before": {
+            "holdoutPasses": 237,
+            "paidLookups": 0
+          }
+        },
+        "cpo": {
+          "deployments": 235,
+          "holdoutPasses": 6078,
+          "nominees": 461,
+          "paidLookups": 11379,
+          "strictCpoLookups": 8276,
+          "strictCpoPasses": 5650
+        },
+        "historicalGepa": {
+          "holdoutPasses": 5627,
+          "paidLookups": 11343,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "positional-six:gepa-batched-precheck/46/paired-gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "positional-six:gepa-sequential-precheck/24/gain-1",
+            "lmentry-first_alphabetically": "positional-six:gepa-sequential-precheck/32/gain-1",
+            "lmentry-homophones": "retain-start",
+            "lmentry-less_letters": "positional-six:gepa-sequential-precheck/36/gain-1",
+            "lmentry-more_letters": "positional-six:gepa-batched-precheck/51/gain-1",
+            "lmentry-rhyming_word": "positional-six:gepa-batched-precheck/46/paired-gain-1",
+            "lmentry-word_before": "retain-start"
+          }
+        },
+        "pairedAgainstAttainingGepa": {
+          "holdoutPassDifference": 404,
+          "pairedRange95": [
+            314,
+            493
+          ]
+        },
+        "splitSafeCombined": {
+          "holdoutPasses": 5674,
+          "paidLookups": 11362,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-six:gepa-batched-precheck/34/gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "split-safe-six:gepa-sequential-precheck/24/gain-1",
+            "lmentry-first_alphabetically": "split-safe-three:gepa-sequential-precheck/26/gain-1",
+            "lmentry-homophones": "split-safe-three:gepa-batched-precheck/28/gain-1",
+            "lmentry-less_letters": "split-safe-three:gepa-sequential-precheck/32/gain-1",
+            "lmentry-more_letters": "split-safe-six:gepa-batched-precheck/40/gain-1",
+            "lmentry-rhyming_word": "split-safe-six:gepa-sequential-precheck/38/paired-gain-1",
+            "lmentry-word_before": "retain-start"
+          }
+        },
+        "splitSafeSix": {
+          "holdoutPasses": 5648,
+          "paidLookups": 11347,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-six:gepa-batched-precheck/34/gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "split-safe-six:gepa-sequential-precheck/24/gain-1",
+            "lmentry-first_alphabetically": "split-safe-six:gepa-sequential-precheck/32/gain-1",
+            "lmentry-homophones": "retain-start",
+            "lmentry-less_letters": "split-safe-six:gepa-sequential-precheck/38/gain-1",
+            "lmentry-more_letters": "split-safe-six:gepa-batched-precheck/52/gain-1",
+            "lmentry-rhyming_word": "split-safe-six:gepa-sequential-precheck/38/paired-gain-1",
+            "lmentry-word_before": "retain-start"
+          }
+        },
+        "splitSafeThree": {
+          "holdoutPasses": 5639,
+          "paidLookups": 11311,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-three:gepa-sequential-precheck/26/paired-gain-1",
+            "lmentry-any_words_from_category": "split-safe-three:gepa-batched-precheck/25/gain-1",
+            "lmentry-first_alphabetically": "split-safe-three:gepa-batched-precheck/34/gain-1",
+            "lmentry-homophones": "split-safe-three:gepa-batched-precheck/28/gain-1",
+            "lmentry-less_letters": "split-safe-three:gepa-sequential-precheck/32/gain-1",
+            "lmentry-more_letters": "split-safe-three:gepa-batched-precheck/48/gain-1",
+            "lmentry-rhyming_word": "split-safe-three:gepa-sequential-precheck/32/paired-gain-1",
+            "lmentry-word_before": "retain-start"
+          }
+        }
+      },
+      "cap-19/gain-2": {
+        "attainingSubjectPoints": {
+          "lmentry-all_words_from_category": {
+            "holdoutPasses": 1196,
+            "paidLookups": 973
+          },
+          "lmentry-any_words_from_category": {
+            "holdoutPasses": 1004,
+            "paidLookups": 1360
+          },
+          "lmentry-first_alphabetically": {
+            "holdoutPasses": 804,
+            "paidLookups": 1582
+          },
+          "lmentry-homophones": {
+            "holdoutPasses": 221,
+            "paidLookups": 0
+          },
+          "lmentry-less_letters": {
+            "holdoutPasses": 836,
+            "paidLookups": 1867
+          },
+          "lmentry-more_letters": {
+            "holdoutPasses": 892,
+            "paidLookups": 2563
+          },
+          "lmentry-rhyming_word": {
+            "holdoutPasses": 408,
+            "paidLookups": 1978
+          },
+          "lmentry-word_before": {
+            "holdoutPasses": 237,
+            "paidLookups": 0
+          }
+        },
+        "cpo": {
+          "deployments": 125,
+          "holdoutPasses": 5435,
+          "nominees": 410,
+          "paidLookups": 10338,
+          "strictCpoLookups": 7933,
+          "strictCpoPasses": 5192
+        },
+        "historicalGepa": {
+          "holdoutPasses": 5562,
+          "paidLookups": 10338,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "positional-six:gepa-batched-precheck/34/paired-gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "positional-six:gepa-sequential-precheck/24/gain-1",
+            "lmentry-first_alphabetically": "positional-six:gepa-sequential-precheck/32/gain-1",
+            "lmentry-homophones": "retain-start",
+            "lmentry-less_letters": "positional-six:gepa-sequential-precheck/28/gain-1",
+            "lmentry-more_letters": "positional-six:gepa-batched-precheck/51/gain-1",
+            "lmentry-rhyming_word": "positional-six:gepa-batched-precheck/44/gain-1",
+            "lmentry-word_before": "retain-start"
+          }
+        },
+        "splitSafeCombined": {
+          "holdoutPasses": 5598,
+          "paidLookups": 10323,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-three:gepa-sequential-precheck/22/paired-gain-1",
+            "lmentry-any_words_from_category": "split-safe-six:gepa-sequential-precheck/24/gain-1",
+            "lmentry-first_alphabetically": "split-safe-three:gepa-sequential-precheck/26/gain-1",
+            "lmentry-homophones": "retain-start",
+            "lmentry-less_letters": "split-safe-three:gepa-sequential-precheck/32/gain-1",
+            "lmentry-more_letters": "split-safe-six:gepa-batched-precheck/52/gain-1",
+            "lmentry-rhyming_word": "split-safe-six:gepa-batched-precheck/40/gain-1",
+            "lmentry-word_before": "retain-start"
+          }
+        },
+        "splitSafeSix": {
+          "holdoutPasses": 5560,
+          "paidLookups": 10309,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-six:gepa-sequential-precheck/28/gain-2-threshold-precheck",
+            "lmentry-any_words_from_category": "split-safe-six:gepa-sequential-precheck/24/gain-1",
+            "lmentry-first_alphabetically": "split-safe-six:gepa-sequential-precheck/32/gain-1",
+            "lmentry-homophones": "retain-start",
+            "lmentry-less_letters": "split-safe-six:gepa-sequential-precheck/32/gain-1",
+            "lmentry-more_letters": "split-safe-six:gepa-batched-precheck/40/gain-1",
+            "lmentry-rhyming_word": "split-safe-six:gepa-sequential-precheck/38/paired-gain-1",
+            "lmentry-word_before": "retain-start"
+          }
+        },
+        "splitSafeThree": {
+          "holdoutPasses": 5568,
+          "paidLookups": 10324,
+          "settingsBySubject": {
+            "lmentry-all_words_from_category": "split-safe-three:gepa-sequential-precheck/26/paired-gain-1",
+            "lmentry-any_words_from_category": "split-safe-three:gepa-batched-precheck/25/gain-1",
+            "lmentry-first_alphabetically": "split-safe-three:gepa-batched-precheck/34/gain-1",
+            "lmentry-homophones": "split-safe-three:gepa-batched-precheck/28/gain-1",
+            "lmentry-less_letters": "split-safe-three:gepa-sequential-precheck/32/gain-1",
+            "lmentry-more_letters": "split-safe-three:gepa-batched-precheck/25/gain-1",
+            "lmentry-rhyming_word": "split-safe-three:gepa-sequential-precheck/32/paired-gain-1",
+            "lmentry-word_before": "retain-start"
+          }
+        }
+      }
+    },
+    "historicalVsSplitSafeAtMaxCap": {
+      "gepa-batched-precheck/paired-gain-1": {
+        "changedDeployment": 37,
+        "changedNominee": 64,
+        "lookupDifference": 466,
+        "paths": 512
+      },
+      "gepa-batched-precheck/paired-gain-2-threshold-precheck": {
+        "changedDeployment": 22,
+        "changedNominee": 59,
+        "lookupDifference": 441,
+        "paths": 512
+      },
+      "gepa-sequential-precheck/paired-gain-1": {
+        "changedDeployment": 44,
+        "changedNominee": 64,
+        "lookupDifference": 398,
+        "paths": 512
+      },
+      "gepa-sequential-precheck/paired-gain-2-threshold-precheck": {
+        "changedDeployment": 25,
+        "changedNominee": 61,
+        "lookupDifference": 408,
+        "paths": 512
+      }
+    },
+    "nativeSettings": {
+      "positional-six": 2100,
+      "split-safe-six": 2100,
+      "split-safe-three": 2136
+    },
+    "nativeSubjectTotalsSha256": "fdbfd10d91d55e8d3b4ecaeb2f3f70396684fd65499d3ad838fb2ddef5f32ea8",
+    "panelPathHashes": {
+      "lmentry-all_words_from_category/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "4543be428c26484568ee437ca380119d0b9d0c3a25fc59cbf456ae86a4cf793b",
+          "wide/nonloss": "aec239106a2410baf778d7ea61c02705ce508105980e5ff6bdff2305e84cc481"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "093ee580a8bd4e536aa771ec8d14600f662b9255e3da17080f72af911b0e65e0",
+          "wide/nonloss": "04bd2e308abbcdb3119bc86f175ca5ccb64e6b6eaeec8183246e830baed0fa81"
+        }
+      },
+      "lmentry-all_words_from_category/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "9ba2c122a70ef609bab41224d7da5f5e5f2ad98566e3bf0625de4e54a848ce10",
+          "wide/nonloss": "7254b45bfe8d05e6d47be56a43cd8d3f62399a07bccc781e0b34928fa3e20410"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "13ef847013f956ad91f786f8dcc5cf61df77edc85addf70d41c0839f4498b680",
+          "wide/nonloss": "cfc631eedcd8957382a7181c36e5d4d9227cad9d700c96250f61ca00861b7fa7"
+        }
+      },
+      "lmentry-any_words_from_category/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "0dd21f7e31c9a5f1e408264e94c7a772bad8ee6c23fb6e26f2df4cf40df4c5cc",
+          "wide/nonloss": "c4b155aed37461200d71fd8ff28a916191ec881481fc897e5e60205a165c8f85"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "a72952d49952835ca39f66a0e3f3564e3f61951c8146f45e03203c8242b5f3bf",
+          "wide/nonloss": "bf3b56c496a018bdbe5a91e2071bb4287d38a17fd5b243cd3fc3005b30a6bb2d"
+        }
+      },
+      "lmentry-any_words_from_category/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "cc9d05d186512bc12c6296abcca2c21b73716205d076c9b7252bce6d763989e6",
+          "wide/nonloss": "a6600747aa1dd3ae6405271236057d9bf9a6175bb756ce3c0211c7bf87f59900"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "288be76d8552034805e98ecf13e1f60477bd942f8e0c48dee58f683d413e1fd8",
+          "wide/nonloss": "28ba0cd68a7aedf0d03ea40df79c046c643986e90008192926ce65a59031e26c"
+        }
+      },
+      "lmentry-first_alphabetically/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "da1553c63a89f1520ee1b45b7204902db39f8c065f2799f2dec79d1e1e77f011",
+          "wide/nonloss": "9f0085c3f8d0b7b2ae9837f25b5678d7bd7c00ce2445cfaf6f93435e738778a6"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "037926c2d16d93f5532612b3ebc8083e9a7bba0f39c6a7d5fab5756e93cd33f3",
+          "wide/nonloss": "f43a2f3baa147721ab0e1dea78b86379c9d065c970c57e3e2b558e18acdc5fc7"
+        }
+      },
+      "lmentry-first_alphabetically/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "65279263f09ab29bfca1bf89016697bfcd92c2609d6c5b547d2fc44e81cb830a",
+          "wide/nonloss": "6b64471379ca2a130819c86b286a456f9ddb27a76d404f5acf8c620301eebdad"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "bdcaa8334743640fb1322c02f33c9a92b56bc64e8110980f7e2542133c7abf08",
+          "wide/nonloss": "57d747806cc9a2adef9c2e32e2401bb20d3b6d9a30bde6e02fe0fabad30f1bb6"
+        }
+      },
+      "lmentry-homophones/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "a4fc9fb9b6d6d8eac6ffd4a8ca93c8f4cf054bd0094e3fcb771b066f5382f4ca",
+          "wide/nonloss": "9442b584e29616aaffa0cf46444a70d6a14d19090f9597b5a70798b1c1fc2e72"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "912434dcbfefacfb6458901339c466359e44179bfb61fe582c991b58f31a81d9",
+          "wide/nonloss": "30cff55c5de3cda8428465b32f260a0f8ddf7a79aab1f02168ea7580510f284b"
+        }
+      },
+      "lmentry-homophones/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "dbefbd72fbf06fa28c0171935e4abdeaaabcc46a4d008a4d256a414ddb4e9654",
+          "wide/nonloss": "7a485b8ef0fbfe690ecdd9e61e2915ec026befb4f08edcc5a55f75e9a768e008"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "d9559092b80fed565dd6f785ff258370baeea813b84f1dd5cadfd740a5ff3f6c",
+          "wide/nonloss": "6c96b6dea19d62c35d4518b365aa40414bb25c089e7709085493d11a56e1cf10"
+        }
+      },
+      "lmentry-less_letters/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "71a97848c8f56c3bd18b614f7040a234910b6fa03d129c66d66d52212bc81a5a",
+          "wide/nonloss": "e29f243993b8a7bcef28af1f24129f4aa29d89fafdb0be6a80ebed384c739ca3"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "7986a2ac465ee78222a2719e666b95f266e23d5d576aab40b3d6681c57034aab",
+          "wide/nonloss": "5e4a322c8efa3d3360257be5f19dd94869fcbf4740f5bad8459605678cfa2f42"
+        }
+      },
+      "lmentry-less_letters/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "ae07fd9b329422c7d99d5095a3cc2c61dd736d99d5bfcf8cdec433309f03eaf9",
+          "wide/nonloss": "3428ecb094d6e15991353a899dea30aeffcfa80eefb88d988e8a49877ecbd365"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "71acfdfa8860b0b0862897ee4b6885e4aa5093abe610132853ef94dbadf3a37a",
+          "wide/nonloss": "e00107f636f46223accae3f3ff803933254e06f1e595f9571f9de19b31ebe56e"
+        }
+      },
+      "lmentry-more_letters/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "127c1d6f8a422689006e413937becf2c61c5a2d56ad4f6127c15e43c61391019",
+          "wide/nonloss": "afc9ce975f8311cebb6fefcf1130e63bf8ce633e587ad288120f7e8a567eec8d"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "a559ceaa4146488d988d74db83484d9508d3c0db645d2769fed87957d0804259",
+          "wide/nonloss": "6dfaded5654cbcec63d044312d489210dd8431f48759353a95b599d293ccf036"
+        }
+      },
+      "lmentry-more_letters/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "14ba69e45c673abeb1d32b4d657f40e18bc1fa88254f7d8b193461f9fc3a13db",
+          "wide/nonloss": "d013b847b11aae4171cd524d56fb5ffca14a3a54e4ff5a6053170c9ab358dfcb"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "ae5bb17ed7b8571771800ceaf9d86e29ce995893f08502cad7aec273d6515a95",
+          "wide/nonloss": "b09946f6ef0d338abe7eb12d52f47ccd6f53c570742198fa9440047cceca52c4"
+        }
+      },
+      "lmentry-rhyming_word/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "5e8efccd688a72f8d28119d379eec6ef9b7811ce7ab71181eb495e3c123e99c2",
+          "wide/nonloss": "2f99e2fe6b987b0cb03d8d89298f818544ddb20583c7c654d67d6a9dd1845f5c"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "e6224ffbdc117a44ef7bcab2ce20ec7c7987b07dd5a43201ecbc0a78eb404c16",
+          "wide/nonloss": "8eeb43dd4674e631db1b63a01c8ec47aabe3ce338b5db0c41c666a4cac554c40"
+        }
+      },
+      "lmentry-rhyming_word/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "ac4c906fec2c78e232a3264804f63de07524ce424431b7442957bde3b300bb24",
+          "wide/nonloss": "c88fe2834b6677e721fe9d9f8c8783af92489c5f7bbdf3e59d9474c764fb748b"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "373b014ace61276525388f339550d4c7bb9319ab4e1109d12b1934d3e1630bb5",
+          "wide/nonloss": "9474d05d2ce1476582a36e8e21aae3097afbdd53d42137a4e705af53bdd2ee78"
+        }
+      },
+      "lmentry-word_before/airoboros-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "de30f3f0e3aa3411a9dd3d8436c12b0954925f0874fce653a58a4f90462f1c0a",
+          "wide/nonloss": "8c76daebb4f65ae9248f5ae315680fdb5ba387525451bde14263e41a29a8605c"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "4d48d078dbaf9e19f6269c2c20aadc69935e21bd94c276105b952a7cc2f9fed7",
+          "wide/nonloss": "60655e7605e3e958fb2bedbe8f0b15172a838b0ec6fff0bde922a13b15308acf"
+        }
+      },
+      "lmentry-word_before/nous-hermes-13b": {
+        "cap-19/gain-1": {
+          "paired-expected-order": "8c16d6517ad7bc10f3e3654facc9609d7e9dd503efa1c527b49aa307729b42d7",
+          "wide/nonloss": "41d6a351e98e262f129c3641137d5e058c6837bd1b9a25d9dcb63173a503e347"
+        },
+        "cap-19/gain-2": {
+          "paired-expected-order": "ccda4bac85cc57735151d02309b1c1d29ea2f79f5691cf5ea48e9015fd084be3",
+          "wide/nonloss": "143626261f483264e46df169d6e302494ea9c8256fc029e9240913a68d5accb2"
+        }
+      }
+    }
+  }
+}
