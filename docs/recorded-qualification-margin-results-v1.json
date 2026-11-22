@@ -1,0 +1,1064 @@
+{
+  "plan": {
+    "baseline": "complete-panel/13",
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "candidate": "two-net-qualification-gains",
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "fixedCpoCaps": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "gate": "positive observed margin and nonnegative paired lower endpoint against the strongest affordable native GEPA, fixed CPO, published screen, or retained starts",
+    "gepaVersion": "0.1.4",
+    "minimumQualificationGain": 2,
+    "minimumSearchCap": 6,
+    "originalPlanSha256": "cc55f0838666bd296070797947dbe890aff539c33a5ec93b9e2c63864c8f94de",
+    "originalReceiptSha256": "f45d89bace132d6b51bdb2e340e484af544ee22ed40b2e4d7ea110b6d1d3a2e8",
+    "primaryCohort": "disjoint-transfer-cohort",
+    "protocol": "recorded-qualification-margin-v1",
+    "scope": "Keep the cap-13 full-panel-reserve screen, its nominee, incumbent precheck and proof panel fixed. Require a two-pass independent qualification gain under the original maximum proof budget with expected-cost scheduling and paid prefix credit. Evaluate both already-scored, mutually disjoint archived MMLU cohorts. Compare realized search plus proof lookups against the previous screen, both native GEPA modes and fixed CPO.",
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+      "recorded_early_certificate_screen.py": "452144a69bc3d22c9967c7888561aaa28963b8e0e8540250d40722aba45b2f60",
+      "recorded_paid_qualification_order.py": "8d110b2882ff0faf145953be12a667051e591c36456761012f4b99adb44b5965",
+      "recorded_qualification_margin.py": "211857f26bea7d43e7a2a94a9edc72afcd61b9715d6619c5746918f146288200"
+    },
+    "transferPlanSha256": "3d9c5c69d9568293087dbd3b794d15fc95a5fa7767fc92ab09e1403653c8f234",
+    "transferReceiptSha256": "e4f2ac401077b83705fa79befa036af71d00fb65e66b1ae625af9900f42b288d"
+  },
+  "planSha256": "bb8be9b799bcd694c26f7645d813116d5f243f97439ecc46a9b7ef243ed4743f",
+  "providerRequests": 0,
+  "results": {
+    "disjoint-transfer-cohort": {
+      "caseVectorsSha256": "c6c75404c54235db713857f4bbc00f9b268e274add1870437f341d178671b5e5",
+      "comparison": {
+        "joint": {
+          "bestWithinCost": "minimum-proof/13",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 56070,
+            "paidLookups": 8987
+          },
+          "cheapestMatching": "gepa-batched-precheck/46",
+          "cheapestMatchingPoint": {
+            "holdoutPasses": 56102,
+            "paidLookups": 22828
+          },
+          "holdoutPassDifference": 24,
+          "pairedRange95": [
+            -4,
+            39
+          ],
+          "resampledChoices": {
+            "gepa-sequential-precheck/16": 1382,
+            "minimum-proof/13": 1442,
+            "never-training/12": 639,
+            "never-training/13": 335,
+            "one-failure/13": 11,
+            "retain-start": 287
+          }
+        },
+        "native-gepa": {
+          "bestWithinCost": "gepa-sequential-precheck/16",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 56068,
+            "paidLookups": 9320
+          },
+          "cheapestMatching": "gepa-batched-precheck/46",
+          "cheapestMatchingPoint": {
+            "holdoutPasses": 56102,
+            "paidLookups": 22828
+          },
+          "holdoutPassDifference": 26,
+          "pairedRange95": [
+            0,
+            45
+          ],
+          "resampledChoices": {
+            "gepa-sequential-precheck/16": 2485,
+            "retain-start": 1611
+          }
+        },
+        "prior-screen": {
+          "bestWithinCost": "retain-start",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 56065,
+            "paidLookups": 0
+          },
+          "cheapestMatching": null,
+          "cheapestMatchingPoint": null,
+          "holdoutPassDifference": 29,
+          "pairedRange95": [
+            12,
+            46
+          ],
+          "resampledChoices": {
+            "retain-start": 4096
+          }
+        }
+      },
+      "events": {
+        "extraPasses": 15,
+        "gainsFromVeto": 37,
+        "lossesFromVeto": 22,
+        "priorPromotions": 19,
+        "promotions": 3,
+        "proofLookupsSaved": 201,
+        "trials": 960,
+        "vetoedPromotions": 16
+      },
+      "panels": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 1,
+            "proofLookupsSaved": 9,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "e9191a9d41132dba0935079e5d48ce06ac7f8b3329f25faf78ba221c0b6c0819"
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 5,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "94184adac1937a1475ccd630ee2d1d56ad6c6b77efca15a4be46173c21b05669"
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 0,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "b95055460ae05fe7769e910d8abe36f2907f50b0d0f18c66767e9a80287dfce6"
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 10,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "e74817978ec3b3742c1d95a59fc9af5a19defc7bc1d34d3bea48253fd061259c"
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "events": {
+            "extraPasses": 3,
+            "gainsFromVeto": 3,
+            "lossesFromVeto": 0,
+            "priorPromotions": 2,
+            "promotions": 0,
+            "proofLookupsSaved": 8,
+            "trials": 32,
+            "vetoedPromotions": 2
+          },
+          "traceSha256": "d9d5b973e8f769c36e492203f665753ea1591f529d769111f6e8f22c63ca7c97"
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "events": {
+            "extraPasses": -8,
+            "gainsFromVeto": 7,
+            "lossesFromVeto": 15,
+            "priorPromotions": 3,
+            "promotions": 0,
+            "proofLookupsSaved": 18,
+            "trials": 32,
+            "vetoedPromotions": 3
+          },
+          "traceSha256": "2bb2014a0faa58b7e89aa87a3426fd29f944a69c596b5f3682a81c956c939518"
+        },
+        "high_school_biology/google_flan_ul2": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 3,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "f250cd126fa0efd12d36c1d84da85be846b2926e05136a11098784a07d38c7b1"
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 8,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "58513761706cb34c1cbbfbf105adbe876cd737fa808864d9e0fcb7beb4f11b83"
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "events": {
+            "extraPasses": 2,
+            "gainsFromVeto": 2,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 7,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "83fe14a6803d226b3c36270452453b93b9691c05abc604102f532d142d865fc1"
+        },
+        "high_school_geography/google_gemma_7b": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 11,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "e83fe8dcef23842c49933b639e55c298fa9b9fcb6e8b5cba3c02b09a7e5c975c"
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "events": {
+            "extraPasses": 3,
+            "gainsFromVeto": 3,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 1,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "6745e1ebeb2e9cb0e1b5e58a02ad8bc5d59321a2273019ffb125e65f70b9b992"
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "events": {
+            "extraPasses": -1,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 1,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 5,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "f8a1065fc46acb0df7bda17964945cd76a065a8b2a89dd6fb978fc08efec4a46"
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "events": {
+            "extraPasses": 7,
+            "gainsFromVeto": 7,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 18,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "938e44adb2f88a46cabb925b8d49de7503c558d9fe5e04c710ba3bbbd36fce0c"
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 2,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "b7f3ea5e4e92962052acdd7605bdc8e97d2d47da6e2e908eefe2205ab4e7af81"
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 3,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "7e5f60bea9ead04ff80ad5f272e104ae2e8f00af61cb12b0fd5d14772a0f284b"
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 4,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "6927945b3e17de0eef7c2338d537dfe9d1fbb0103825731bfdfbe03d9272cb8a"
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 5,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "9885d52e157c77b9f8648ed46609be87105636c1e17d6af19110954a56bc6456"
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "events": {
+            "extraPasses": 8,
+            "gainsFromVeto": 8,
+            "lossesFromVeto": 0,
+            "priorPromotions": 2,
+            "promotions": 1,
+            "proofLookupsSaved": 12,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "4b3b89922c25802a32739fa726865decf5372ac2673b69daf4d5baf72f661cfc"
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 5,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "50827909402302143c09cf7ec2865438485e471f2da177989ece5ef439dd8afe"
+        },
+        "moral_disputes/google_gemma_7b": {
+          "events": {
+            "extraPasses": -4,
+            "gainsFromVeto": 2,
+            "lossesFromVeto": 6,
+            "priorPromotions": 2,
+            "promotions": 0,
+            "proofLookupsSaved": 8,
+            "trials": 32,
+            "vetoedPromotions": 2
+          },
+          "traceSha256": "b00ccde81d7a26cc7993461dff9d7a79bc4ae966fe66c58815cdf481bd7b9bfb"
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 0,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "964763044c8939fbd00287326e28e59a7f3dd727077d30a1bdc5bc806b2e7733"
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 1,
+            "proofLookupsSaved": 4,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "ad883bdc972963499b99b9485255045b5f8f2d57a9cd59d360d93665e6b65ace"
+        },
+        "professional_medicine/google_flan_ul2": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 5,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "e2a41a155d99b4bce7baaecf40e574bb6451abeffce9964c9adc9ef805b2f192"
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "events": {
+            "extraPasses": 4,
+            "gainsFromVeto": 4,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 7,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "07e6d334af40d6935011d171dd9c207a08d15ec1fd741b94d0cc56fd0fe803d1"
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 14,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "7612a2cee8aa7b2991203789c716dd45c4cc52461560493eb67755e206d6a8ec"
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "events": {
+            "extraPasses": 1,
+            "gainsFromVeto": 1,
+            "lossesFromVeto": 0,
+            "priorPromotions": 2,
+            "promotions": 0,
+            "proofLookupsSaved": 16,
+            "trials": 32,
+            "vetoedPromotions": 2
+          },
+          "traceSha256": "b6e99cec05d7e8304602705768906e0d261a77f0d14903a77e8b20bc6b70af7d"
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 0,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "3aba4cbab0f9743edbe9365e1819766552f04ea6b3649cd042eeb1dbebd38b32"
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 5,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "cd145e96390d4963f4dd8a040dfe0036bc62be19d2d7f5825747d443b58dacb5"
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 3,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "0164593477f462adc6a74631bee6b80979c05a3ed8dcf7445c4476c8655e82c5"
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 5,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "2de25af9508e286019162e5600a7694aff74d6a69f7d2b1bed513d7ada388d3d"
+        }
+      },
+      "passedArchiveGate": false,
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 56079,
+          "paidLookups": 9596
+        },
+        "retain-start": {
+          "holdoutPasses": 56065,
+          "paidLookups": 0
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 56094,
+          "paidLookups": 9395
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "caseVectorsSha256": "9a85aad26772198dee64c5146a125e5e0e90e3aeb9429d1ec2c45f06834636d4",
+      "comparison": {
+        "joint": {
+          "bestWithinCost": "retain-start",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 26625,
+            "paidLookups": 0
+          },
+          "cheapestMatching": "never-training/20",
+          "cheapestMatchingPoint": {
+            "holdoutPasses": 26630,
+            "paidLookups": 14345
+          },
+          "holdoutPassDifference": 3,
+          "pairedRange95": [
+            -7,
+            9
+          ],
+          "resampledChoices": {
+            "gepa-sequential-precheck/16": 1133,
+            "minimum-proof/13": 103,
+            "never-training/12": 210,
+            "never-training/13": 157,
+            "retain-start": 2493
+          }
+        },
+        "native-gepa": {
+          "bestWithinCost": "retain-start",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 26625,
+            "paidLookups": 0
+          },
+          "cheapestMatching": "gepa-batched-precheck/51",
+          "cheapestMatchingPoint": {
+            "holdoutPasses": 26630,
+            "paidLookups": 25664
+          },
+          "holdoutPassDifference": 3,
+          "pairedRange95": [
+            -6,
+            10
+          ],
+          "resampledChoices": {
+            "gepa-sequential-precheck/16": 1280,
+            "retain-start": 2816
+          }
+        },
+        "prior-screen": {
+          "bestWithinCost": "retain-start",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 26625,
+            "paidLookups": 0
+          },
+          "cheapestMatching": null,
+          "cheapestMatchingPoint": null,
+          "holdoutPassDifference": 3,
+          "pairedRange95": [
+            -5,
+            11
+          ],
+          "resampledChoices": {
+            "retain-start": 4096
+          }
+        }
+      },
+      "events": {
+        "extraPasses": 15,
+        "gainsFromVeto": 34,
+        "lossesFromVeto": 19,
+        "priorPromotions": 36,
+        "promotions": 7,
+        "proofLookupsSaved": 252,
+        "trials": 896,
+        "vetoedPromotions": 29
+      },
+      "panels": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "events": {
+            "extraPasses": -2,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 2,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 11,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "97ec2f3ddc0761b44a0614cd5f243437e696fa1ba9542864e5f959f1e002b885"
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 5,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "ec017c1a8caf787e7db90433a74d94b4f8073f648bf9185790f8d4c26d2547f6"
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 1,
+            "lossesFromVeto": 1,
+            "priorPromotions": 2,
+            "promotions": 0,
+            "proofLookupsSaved": 8,
+            "trials": 32,
+            "vetoedPromotions": 2
+          },
+          "traceSha256": "004f89743303043a15963d2fd19c63753c3703cdf0d247ca9d4b12ec5865251e"
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "events": {
+            "extraPasses": 3,
+            "gainsFromVeto": 3,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 13,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "907d9c5440bd8179f80622bb5fde92247e455b288ea1be7ef5c79e134b3884fc"
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "events": {
+            "extraPasses": 2,
+            "gainsFromVeto": 2,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 12,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "4e42853b719c2308139d22d72756f057581f630eacad835227e38111f9fdba01"
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "events": {
+            "extraPasses": 7,
+            "gainsFromVeto": 9,
+            "lossesFromVeto": 2,
+            "priorPromotions": 5,
+            "promotions": 1,
+            "proofLookupsSaved": 14,
+            "trials": 32,
+            "vetoedPromotions": 4
+          },
+          "traceSha256": "454a8a81e681d7aa745f0085fa7021f8a93773a78b14c8b0fe960b8a870ee5c1"
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 9,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "a180b8d9e0a1ffb73fd0dd6b3597f74e3e6da6a4784389e46d6d754537a1068b"
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "events": {
+            "extraPasses": -2,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 2,
+            "priorPromotions": 4,
+            "promotions": 2,
+            "proofLookupsSaved": 11,
+            "trials": 32,
+            "vetoedPromotions": 2
+          },
+          "traceSha256": "7f462ec3f3f31e0de1c9d143c96f81c21543ecdc752f8b0f3eded086c2b61a37"
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 1,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "548a5fad6f76e13134ffae036912b209f9d9d83c2346f9ce966e2750ee0e282c"
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "events": {
+            "extraPasses": -1,
+            "gainsFromVeto": 1,
+            "lossesFromVeto": 2,
+            "priorPromotions": 4,
+            "promotions": 0,
+            "proofLookupsSaved": 16,
+            "trials": 32,
+            "vetoedPromotions": 4
+          },
+          "traceSha256": "73cad8a2cdeacf89ea27eab39895ea1fe1e1b37170279451107403479415872b"
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 11,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "44c4042e73bc66ab2c14f70993e622fea04f59c850112fee893fcc78c004bede"
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "events": {
+            "extraPasses": -2,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 2,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 5,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "e1799cea063eb286ecc108b68b21b44ff4d9f3885f6ca5d6b5dda5cbdb753c28"
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 13,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "3ad8b02a44b9e47ba7b61f79a93cf4f77ac47fd12dae4033fe0df62fba1a2fdd"
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "events": {
+            "extraPasses": 1,
+            "gainsFromVeto": 2,
+            "lossesFromVeto": 1,
+            "priorPromotions": 3,
+            "promotions": 1,
+            "proofLookupsSaved": 7,
+            "trials": 32,
+            "vetoedPromotions": 2
+          },
+          "traceSha256": "847be1f7f417f88873a4635c31e548fe51af83fba5012bf67315f9b088aa5833"
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 0,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "4b40600634acbb631b7b7cbdff65b535cb10b5685e16db1732a7a808d56d20d6"
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "events": {
+            "extraPasses": -3,
+            "gainsFromVeto": 1,
+            "lossesFromVeto": 4,
+            "priorPromotions": 4,
+            "promotions": 1,
+            "proofLookupsSaved": 6,
+            "trials": 32,
+            "vetoedPromotions": 3
+          },
+          "traceSha256": "9d31914a9fd0de03f666c0cb5f3d95b01671bae731c97b1445b8a67ec99e0219"
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 4,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "7400917c1c6564f427a5df79d6ad8295f3827d1416b267ef7f15f22364018368"
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "events": {
+            "extraPasses": 3,
+            "gainsFromVeto": 3,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 10,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "d9a3fe93b27f0bf5c73f73de4ac2e3349ca13b877ef8b18a6024cf6a9bf83cb8"
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "events": {
+            "extraPasses": -3,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 3,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 7,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "707eade5ae7c6c6b54fcfdd952cd7238ddeca94b9b7169e61d735042e1483400"
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 9,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "42be22f6b8e6db1fdfa35b9bf53327ed3cbec9a71dd30537f43d4591fee7823f"
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 14,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "ebaef249f3f26e0f47763623a9cdf42154e2a75e14cdbff78cf8bba20cb1bca9"
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "events": {
+            "extraPasses": 2,
+            "gainsFromVeto": 2,
+            "lossesFromVeto": 0,
+            "priorPromotions": 2,
+            "promotions": 1,
+            "proofLookupsSaved": 8,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "6cd50b2f4453181f7ebb43d55e53245f80b3c3409293c3165b2a4d1d161ef620"
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 12,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "5a015e082c7479615cd2271a7d9ffde701fa1bdefa83a29c7858a637dc42e261"
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 9,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "6352aa386cb80002eb5cdfc2765bf72893624221df5775bbad2a4707718633b4"
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "events": {
+            "extraPasses": 6,
+            "gainsFromVeto": 6,
+            "lossesFromVeto": 0,
+            "priorPromotions": 1,
+            "promotions": 0,
+            "proofLookupsSaved": 11,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "11ef237cccb9e1276759a727f3379e56e8cd7f1bfb2823447bd04ff7361eb32f"
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "events": {
+            "extraPasses": 4,
+            "gainsFromVeto": 4,
+            "lossesFromVeto": 0,
+            "priorPromotions": 2,
+            "promotions": 0,
+            "proofLookupsSaved": 5,
+            "trials": 32,
+            "vetoedPromotions": 2
+          },
+          "traceSha256": "deec3897f1b6e963fb36b4e5c12983b0d898dcc496be226c6bcfb7d117a76792"
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 0,
+            "promotions": 0,
+            "proofLookupsSaved": 9,
+            "trials": 32,
+            "vetoedPromotions": 0
+          },
+          "traceSha256": "ccba0eb3e309689504e8b151409e2b6641314c23da0d9dcd4ffa2c4109ae5bb3"
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "events": {
+            "extraPasses": 0,
+            "gainsFromVeto": 0,
+            "lossesFromVeto": 0,
+            "priorPromotions": 2,
+            "promotions": 1,
+            "proofLookupsSaved": 12,
+            "trials": 32,
+            "vetoedPromotions": 1
+          },
+          "traceSha256": "d3cfc0d04937406b4d60718e5988896b763dde06be47e6d0a87ffe63b569e40b"
+        }
+      },
+      "passedArchiveGate": false,
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 26613,
+          "paidLookups": 10253
+        },
+        "retain-start": {
+          "holdoutPasses": 26625,
+          "paidLookups": 0
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 26628,
+          "paidLookups": 10001
+        }
+      }
+    }
+  }
+}

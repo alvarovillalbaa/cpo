@@ -12,6 +12,8 @@ One policy uses only replies already paid for. The other can buy up to two furth
 
 The two-read variant added one net held-out pass and cost 186 more lookups than the strict screen. Its six promotions gained four passes and lost three. The already-paid variant gained and lost three passes. The strict screen ranked first among the affordable controls for both variants. Sequential GEPA at cap 16 scored 56,068 with 9,320 lookups. Neither tie variant cleared the joint gate. The experiment leaves fresh-model performance unverified. [Full results and per-panel traces](recorded-screen-tie-qualification-results-v1.json)
 
+A follow-up left validation unchanged and tested a two-pass qualification margin. It improved both archived CPO baselines at lower cost. [Qualification margin](recorded-qualification-margin.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.
