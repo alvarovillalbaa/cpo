@@ -18,6 +18,8 @@ The common-cap comparison picks the highest-scoring setting affordable at each C
 
 On LMentry, two reserved cases saved 887 lookups versus full validation and gave up 15 passes. They retained a positive paired margin over the best affordable GEPA setting. BBH's one-case policy had the largest point lead and an inconclusive paired range. On MMLU the batched 38-cap setting improved the GEPA point to 13,447 at 8,776 lookups. The subject-tuned schedule reached 13,455 at 5,714 lookups, six more passes than one-case CPO, using fewer than half its lookups. The subject settings use hindsight and describe these archived panels. Fresh performance remains unverified.
 
+A follow-up swept CPO’s caps as well. At 5,714 available lookups on MMLU, a cap of 13 on the strict validation race led the common comparison. [Symmetric cap sweep](recorded-validation-tail-matched-caps.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Two socket- and DNS-blocked runs matched byte for byte. All 67 targeted tests passed from a clean export. The suite verified the integer-cap sweep by directly running every cap on representative episodes in each cohort and both GEPA modes. It checked subject-budget pooling against brute force. A separate direct audit checked the selected common and subject-specific schedules. The original CPO endpoints, full-cap native traces, sealed live-plan preview, and public selector receipt reproduced. The CLI rejected the prior seal. Storage Guard measured 1.7 GiB free. The export and publication worktree fit the standing 0.2 GiB LAB exception. No provider requests were sent.
