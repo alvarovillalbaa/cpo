@@ -1,0 +1,1302 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "parentPlanSha256": "86c7519f36607d023c02e984daa940ffe070fe8d5fbd29b50474ace78b34d3f0",
+    "parentReceiptSha256": "3c92e05d85a303d96393c994610a434ceaf32487fef4437ff1351603235875b9",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "deferred-certificate-no-regression-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Keep the full-roster CPO search and incumbent precheck for one-gain qualification. Require a gain and preserve every qualification pass the incumbent had. Use the published one- and two-gain paths as controls. Compare matched paired outcomes and price the strongest affordable original GEPA setting from the sealed curves.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "deferred_certificate_cycle.py": "1ae3346815495b85c57ff0db6b196f61cb29cbd5bcc77ff8cf0c033adcc613e8",
+      "deferred_certificate_no_regression.py": "d62ca96ef3749294c4a6c7dd8751c3ded64d3e4eb42069f62973c6af9937ffd4",
+      "paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "prechecked_certificate_cycle.py": "60e66aa4414e97a0cd5fbdf06494dd2df8740990e648fbbdb609db7d0fbcf68d",
+      "recorded_deferred_certificate_cycle.py": "ed2975cc78a9c4cfc678ca85702f4659e2270910d3db738c06db2fb193109476"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "2e3b2c4e8717b0b2ce822140b05f2f7d8327f384378486ee66fca6e58f42a2c7",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "bestNativeFixed": {
+        "holdoutPasses": 9203,
+        "paidLookups": 15776,
+        "setting": "gepa-batched-precheck/26/gain-1"
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 9650,
+        "upperPasses": null
+      },
+      "pairedAgainstFixedCpo": {
+        "cap-19/gain-1": {
+          "holdoutPassDifference": -33,
+          "pairedRange95": [
+            -64,
+            -3
+          ]
+        },
+        "cap-19/gain-2": {
+          "holdoutPassDifference": 517,
+          "pairedRange95": [
+            451,
+            587
+          ]
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "cap-19/gain-1": "b7515e32550c5ba098195f19cba1b5c996a0499a3b6afb3d2250c79b875e52a5",
+          "cap-19/gain-2": "fba202f4e4459dd77fc065d07857ac2aad3650243b3c5d85e0c9249881841e11",
+          "one-gain-without-regressions": "2d55af4ca17dc600a2b028c1df7ec5376620ec62ccab04438ded11536858b337"
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "cap-19/gain-1": "8823e021cbc9812bb57e06a90575fa30a63e22d69871875603017cf55e3251e3",
+          "cap-19/gain-2": "48e3b51b89ecd6379dec829dde6cf81a1bf171c678bbda4aae37580d79bfb015",
+          "one-gain-without-regressions": "157813c31723d8b2979c1e7d803f6c2ca669302c48cd37452dfd1bed4f4d1aae"
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "cap-19/gain-1": "666d40313977e8a713ca1018565f74a3bf9a4cca9f0ab3ed223a33fda446451c",
+          "cap-19/gain-2": "8b68f6b1f05290e7a518767d0141faeb200502d0f4f187df0793c9d79ac338bd",
+          "one-gain-without-regressions": "a42c06c0a2574cdfc17b6eb559b078ab30695e83905ac703f3edbd3f82fd662e"
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "cap-19/gain-1": "c44a6a76e595274d9c500fa8e1a508b4210fdc26f82fd0747173a92ed1f2185b",
+          "cap-19/gain-2": "a38aae343d1e3b0014a85dc889ee8a44725d7717a17970c80258946034356ac8",
+          "one-gain-without-regressions": "e8302a75e4a4db723d8bcb74fc324444e6506252bef1f72775eee27bc6450696"
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "cap-19/gain-1": "e9394da6baeb943022755450046dc00e1cf6289f96bc7e74cba9a04fd99a2812",
+          "cap-19/gain-2": "a7da6d814903674fffdb6a9f6f682eb13e576f719bb89f3538bfc41df309935f",
+          "one-gain-without-regressions": "66f76297b3cb7dc59a1621b197eac9ebb92084c7f57de5f9a813f75b7c75b920"
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "cap-19/gain-1": "5b63699ba375fa1e3df5f370fdae754065d12cbdeaaab4729237d3828c724413",
+          "cap-19/gain-2": "ae8242b3930d61c10b2f4669fdaf4f8c532151996e0dc398af9412929691efce",
+          "one-gain-without-regressions": "ea8439280d74ce607891126674a96e90af7e0e5c4f3e9c8350f8b0ef9572d351"
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "cap-19/gain-1": "3b33b369677984cd5f79df8bbae30c8573a59a7dc4a380269fa09023b407884a",
+          "cap-19/gain-2": "f0d34e68fd02256d17413a170e28b814764fb0bb1d931ee4237219a5e207c69f",
+          "one-gain-without-regressions": "4c48914e4b8e71cdd73ebda4725648b4483bb4fc7892b24df4fab809857d56ee"
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "cap-19/gain-1": "32f6149f78cb92acebcbeb4c3ca52242e9210e90e5693edfb9d89c8232ab2852",
+          "cap-19/gain-2": "5e02970cffa7b28da45803296d1a302b723a3dff83598be02f3cc517607ac55d",
+          "one-gain-without-regressions": "b01bfccb190d6b3d9efb6c1b6ffdee8ea98ae6379a4ad1af6b1894ce44655e5e"
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "cap-19/gain-1": "25b218b5bca8356dea7ff9a8727ade079d401903b347a281a0ade319a6f016cb",
+          "cap-19/gain-2": "303c107f5070fbc7ccbcfb7543d929ceb2fba900e4b37f047343f0e6189b0904",
+          "one-gain-without-regressions": "f87e42e8e0bd02c9a4c394e39b8a84c3df880af4b1e5e99736d720b13dd7c7a4"
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "cap-19/gain-1": "a79807162a8c7e35076231b3103780937f94c8e607c05022b0809bf4ace40f75",
+          "cap-19/gain-2": "8199e926d65f6bae3f349b911748fa9769654a52a7f0d03bbe6c2fafccbf3d56",
+          "one-gain-without-regressions": "c92fe487423829362e773c99ad37eef1d7098cd1c6bb0775585b36086fa9e493"
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "cap-19/gain-1": "d98022d85e61f3bfc965333cda2f7a5a96fbe0031552e64d7de7cc2486eae916",
+          "cap-19/gain-2": "9da61aea7f238b5006f071a94207d5e1209572b706f2126abb82b5b94a8bc0aa",
+          "one-gain-without-regressions": "94bdb3f23d346015b159e4737813947555681c11d0c6f679c8b69ba1b9ee9e6f"
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "cap-19/gain-1": "0b2adef2c97a42366ca0a63a5f56afcdae5c5750f9443904ac5daeecb45fac7b",
+          "cap-19/gain-2": "f0ec389b1bf9c6d70c9e6de06278767491590840fed3e667cfc296fa2cd6a12e",
+          "one-gain-without-regressions": "9f81c078ae1cc895815a50e195eb5f5124f093eecfb7f1281af1339787fedddf"
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "cap-19/gain-1": "837cab8b66126187305db23f3754331f2576128ee08d7226cd029a0b41322b1a",
+          "cap-19/gain-2": "27ea0940fcaab4323810484a155075faa0a6918dad9415202d65b13f151cd2ba",
+          "one-gain-without-regressions": "f21c8da18e8023eb7a4d96968459ff1bfceec5341333af68e9f9be46c360a483"
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "cap-19/gain-1": "d5fcff1ca6d1fdbcc3a5a1b319eeb2612680e4a6d4355ead720344a26c6be474",
+          "cap-19/gain-2": "67fd31c43a6fc63a3731dc14baf319df6adaaff93d2505c6cc89c218b59e43a5",
+          "one-gain-without-regressions": "c845cdb3ca5f717eac53df29217d1f674be23b6f0365f83d043ee2da75e31031"
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "cap-19/gain-1": "ecb5d26ceef445049ec5adf6aa9975eb229d25d46e5a9f2cff3d43b1a339da84",
+          "cap-19/gain-2": "25b12cbf456d4951b20baccd09ef7c8ca1addfc363e09c6a46beda1fa89a6e05",
+          "one-gain-without-regressions": "be7de14421b25c814fcdb63db44e1308fcab718446f76fd3068da3d38699f867"
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "cap-19/gain-1": "cbe14de5c4dab83bc08d53701118a0acf4e0d924bd64044b1219ba129ec7be5a",
+          "cap-19/gain-2": "af1e6168fc5c5a4534a368597e01ca8981fbe3940d70ca8681ceb4699eee79e6",
+          "one-gain-without-regressions": "0e7a3344eafe9f9756797e41d1d44602c5cab118e34d0fb791f091f3a0879da3"
+        },
+        "bbh-navigate/airoboros-13b": {
+          "cap-19/gain-1": "1c32755af0b9124b940617f82e20cc660bcf233b0d88cd4fd081f004a0d631ef",
+          "cap-19/gain-2": "4eb67319a794b667927eb3de13b13904f0439c96c95dbb3631c268f746197af8",
+          "one-gain-without-regressions": "4da546884b9a64b8e796c4c64bac02cb72af7117edd15a95bf86e92a2c3bb920"
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "cap-19/gain-1": "31c29f443928258ac688ce5dcf5e61b81911809617d74e10367f0fd3c4a91eb3",
+          "cap-19/gain-2": "354549d796401714a33dceeed15661628f49bb1ab5747d5c70c47c703c76b9eb",
+          "one-gain-without-regressions": "8421666416e856e1a58a523a2b7b64302a3b23dc1433784725d6eac3098cdc6f"
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "cap-19/gain-1": "fb8196da060f0284aa6eded87660eb0afdd2a6be2f6a81488936fbe7f9f5ded4",
+          "cap-19/gain-2": "21900c6c788fecfcd6d660ce27ec9631140a7557a8f48e07ecf69d84d8528d71",
+          "one-gain-without-regressions": "5588698637c8d3402ba4d3f901d2cd33d86fd277389b262c035cde427c1f9cbf"
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "cap-19/gain-1": "8ee1307cc3d61d520b449ff6864663500b1977094839ac8540ca67ccebd057f0",
+          "cap-19/gain-2": "2df204437830be31310d2cdca5037d118ec28dcb2bc1d6b444b94ca3c60f7a52",
+          "one-gain-without-regressions": "e0031981df2bc24d59d27803ad4c3e2e4035506d28cb7a33fc310f29e91c743b"
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "cap-19/gain-1": "b0f0cfba263affc908a0d31f7e91ee07c917e051f2504d049d156aae697653b9",
+          "cap-19/gain-2": "62ae6be4133b6e06c75e140ac9cd9a2bf74a45f65dc24ce10ae47c60f9b5d123",
+          "one-gain-without-regressions": "23d093fd71a012c9d9a892dcc86e84dfedf54d706ddf45551b2610c9f59333bc"
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "cap-19/gain-1": "367daf5909982b7699061e9f3f24999dafa1c6f3ed5831143572e4eb161b0789",
+          "cap-19/gain-2": "08f129d39e9644027dcaaecea4421ec20edb0b0432cb7f22d6d3c7a4857ddff1",
+          "one-gain-without-regressions": "6cf2509a8a1ec08694e471f050bd7814e4de68106eea5efa3819585512bccd3d"
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "cap-19/gain-1": "c14f86b18f2f9496e10d5c6c6e3dea5bf59c1dc23df0de616e99bd4f269fdb77",
+          "cap-19/gain-2": "2fb80ca865d144db52149d058498f1d74e82840e9a7f31a93848653f5135659a",
+          "one-gain-without-regressions": "06eaf34726fdcfbc35afb77ff9e79af286a82a016c70f77df31f75519dafe727"
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "cap-19/gain-1": "105fa8f4520d7bea3e8f300f3c25968f34238044c42d27a8679547b4f845bba2",
+          "cap-19/gain-2": "e67a127191cce6a253dac61ae5987525115d332cfdd4f02e663c89a0253a02a5",
+          "one-gain-without-regressions": "bed53a4025f6d6a0fe9b428d225da4a48b103e80177463dbdf94ab80119ba2af"
+        },
+        "bbh-snarks/airoboros-13b": {
+          "cap-19/gain-1": "5f24223a494ccd65fff2cd49c246f3f2c00d0abbe97877218b337ab1732c3cb2",
+          "cap-19/gain-2": "e5ec212db385d626ae87788b6241b22d1ba742be2a80258190f7cf89aa2e73a8",
+          "one-gain-without-regressions": "55590f5425ec85f80561abeb0b3d27d37422c586159bb9fb7d31a54a47f0362a"
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "cap-19/gain-1": "9acb1d223e5b61a4d1e9e6de8dccdb507d90747bf4ac408522d5dbb191e71d4e",
+          "cap-19/gain-2": "e0e9360b519ab0cb0f5c339df99c9ea68fcd55e0b343b077ce6e29bd389941be",
+          "one-gain-without-regressions": "aa48d0c2fade9877cd459bdf8536c00954339b79956a0f7ca7d06fe1a13af9a8"
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "cap-19/gain-1": "0b82c461f341d0fe2a2227a1321348051f7424684d0bf21f1b71accdbb81e6fc",
+          "cap-19/gain-2": "3d6d7f639f3cadd4b1aee52307022ec1b36a97fd6299ed5069e92c0e7b74aaf4",
+          "one-gain-without-regressions": "801af3f2b717ff235429f0617f4ca7de3763966bdfa2de7d6487a305ccc71898"
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "cap-19/gain-1": "d84849bfe25e7d90a9c0a682aeef8a655f31575489638839f91339f6489bd693",
+          "cap-19/gain-2": "968a8cc7194acba9d3cec49115620ea7529653f9b02364ff5b8abf39c104daf7",
+          "one-gain-without-regressions": "c0c321287019e33178787b68812626879eeee963ce0699af41759bd496bf0a91"
+        }
+      },
+      "proofChecks": {
+        "clean-gain": 169,
+        "one-gain-rejection": 715,
+        "passesLost": 53,
+        "passesRecovered": 20,
+        "vetoed-regression": 12
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "holdoutPasses": 9548,
+          "paidLookups": 16146
+        },
+        "cap-19/gain-2": {
+          "holdoutPasses": 8998,
+          "paidLookups": 15149
+        },
+        "one-gain-without-regressions": {
+          "holdoutPasses": 9515,
+          "paidLookups": 16255
+        }
+      }
+    },
+    "BBH/new-task": {
+      "bestNativeFixed": {
+        "holdoutPasses": 590,
+        "paidLookups": 959,
+        "setting": "gepa-sequential-precheck/20/gain-1"
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 590,
+        "upperPasses": null
+      },
+      "pairedAgainstFixedCpo": {
+        "cap-19/gain-1": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            0,
+            0
+          ]
+        },
+        "cap-19/gain-2": {
+          "holdoutPassDifference": 22,
+          "pairedRange95": [
+            10,
+            35
+          ]
+        }
+      },
+      "panelPathHashes": {
+        "bbh-causal_judgement/flan-t5-xl": {
+          "cap-19/gain-1": "3914813b73c4b7252157611ff8751b29be4baf121650ef1e809957a1669c0f09",
+          "cap-19/gain-2": "7548d2a3fc1465bf3754daf8b87ccc1c8537eb2b26ddeaf388b9d142f7ccddc5",
+          "one-gain-without-regressions": "e3f045a1d121324225021be4b5d8750a12e79af8ed088acb6622d5904305e404"
+        },
+        "bbh-causal_judgement/minotaur-15b": {
+          "cap-19/gain-1": "978fa0933e7d4b4fb0bae44855aed37a69fa46f59f1c778ef5da59086448a478",
+          "cap-19/gain-2": "9f35ae95b39f418b1dad5eaaa9b55140e5666b2a7793b5f219071bc3a19de03c",
+          "one-gain-without-regressions": "a103f2556c99ea42fe81f90af817a451c4a6cba96a2f2d0d0433413a907501fc"
+        }
+      },
+      "proofChecks": {
+        "clean-gain": 6,
+        "one-gain-rejection": 58
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "holdoutPasses": 591,
+          "paidLookups": 1123
+        },
+        "cap-19/gain-2": {
+          "holdoutPasses": 569,
+          "paidLookups": 1016
+        },
+        "one-gain-without-regressions": {
+          "holdoutPasses": 591,
+          "paidLookups": 1132
+        }
+      }
+    },
+    "BBH/seen-task": {
+      "bestNativeFixed": {
+        "holdoutPasses": 4675,
+        "paidLookups": 8265,
+        "setting": "gepa-batched-precheck/26/gain-1"
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 4917,
+        "upperPasses": null
+      },
+      "pairedAgainstFixedCpo": {
+        "cap-19/gain-1": {
+          "holdoutPassDifference": -6,
+          "pairedRange95": [
+            -15,
+            3
+          ]
+        },
+        "cap-19/gain-2": {
+          "holdoutPassDifference": 47,
+          "pairedRange95": [
+            23,
+            70
+          ]
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": {
+          "cap-19/gain-1": "53d687962dcf09f94008f8528710327f54e2d0ce8af51d7757d057fb83594524",
+          "cap-19/gain-2": "cb6086857b80c8198ccbef76b9e78013b8d29c1bbe03187638eefce4feb908b5",
+          "one-gain-without-regressions": "c1fc9f65a7b7cfb6d7563c9c88fc68fb9ab39ef502b8420556b4620fd9bf1440"
+        },
+        "bbh-disambiguation_qa/minotaur-15b": {
+          "cap-19/gain-1": "eaab0714f69332d3d5092250702fd46c65ed5de38998b83f166e8d187f1b85d1",
+          "cap-19/gain-2": "ccf50e36f7191be4f91bcf0e341914b79eea421ff3ed226a52b1a84c4ea48904",
+          "one-gain-without-regressions": "96e15a65cf0293337797021803b7436255bf0ddbfc27cef4578faf1299f028bb"
+        },
+        "bbh-formal_fallacies/flan-t5-xl": {
+          "cap-19/gain-1": "8df7c3447615534e3c66383db02a5db41ac3316109a26edf3d314e380845e54a",
+          "cap-19/gain-2": "bd4f3be036c623f5d5e564513516df1cb7b1bfee6cff2144b78f081624e153e5",
+          "one-gain-without-regressions": "1edfe717afda452b46c30c8f112cb199c099965c8d341904efa7593017b2553b"
+        },
+        "bbh-formal_fallacies/minotaur-15b": {
+          "cap-19/gain-1": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0",
+          "cap-19/gain-2": "2ba47179383644b7554fddb8a01d0e3c1d34f64bbf2d88bc3535af44af4c4026",
+          "one-gain-without-regressions": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0"
+        },
+        "bbh-geometric_shapes/flan-t5-xl": {
+          "cap-19/gain-1": "4b79628a92d1012d2ee21b7b4291f9ad17874fa56b96351d1d2e78d55c00e559",
+          "cap-19/gain-2": "a155e63de7f1cefc9abb185cdf1629979765b6f22159e5bdfb111aec4f4248f7",
+          "one-gain-without-regressions": "655e2e012c25ef3e8631725ac61ce9d102e1c99900b64c576595f416e81ebd9e"
+        },
+        "bbh-geometric_shapes/minotaur-15b": {
+          "cap-19/gain-1": "ec87da74d5093be6f6206923242cb6a8be03305567f61564081f5f1e0c6d2471",
+          "cap-19/gain-2": "a2b18aa5ee5ca25c5be7b34ac6fd076e60357ec3751b74e0529af6a85da7a5a5",
+          "one-gain-without-regressions": "07679c9418208dc4b3e7b1b14377aedfb597fcb50326bac6bc0f475c462040b5"
+        },
+        "bbh-hyperbaton/flan-t5-xl": {
+          "cap-19/gain-1": "987708e839d581895b18f10ac340ab2e179aa7765a2a1e3d5929a19cd8d57344",
+          "cap-19/gain-2": "9e9fb59daefaaab1c296a65304560761dc0d7889495436d85a7765965f9bd6ce",
+          "one-gain-without-regressions": "1ff4cad908f20de7e7c8eed6388d7ec990ffa1cbcdbdcbad543640742f6b9241"
+        },
+        "bbh-hyperbaton/minotaur-15b": {
+          "cap-19/gain-1": "d38adda569a9a8c008ad2e610c70dd13f02924d6662d9949f4cb9210757850f3",
+          "cap-19/gain-2": "d0a24c182e79c72c37a13fd5f742faf46b3752ce45c1b54d44bb193c0696c7bf",
+          "one-gain-without-regressions": "cca3d8f6515c7faab81af06edb6078b29667b122b6fa684e0713dcec152037dd"
+        },
+        "bbh-logical_deduction_five_objects/flan-t5-xl": {
+          "cap-19/gain-1": "ade6131b7e04fa7e271847aa40c8cbd85974c9db79fe1770c2417b702e70d26f",
+          "cap-19/gain-2": "371f5ff658e3c2f206c5843b2b318ec2b41708928bc1be71db10143d6954d22b",
+          "one-gain-without-regressions": "7ab8265f8fb4afa66ec2c6e424b2e1d42cca268d67a8184e14884f841e8269d4"
+        },
+        "bbh-logical_deduction_five_objects/minotaur-15b": {
+          "cap-19/gain-1": "3b7511b79db89523d6a003fc450abf8009ad570048125f8ab23f9c28dfbf90ff",
+          "cap-19/gain-2": "7c895a16dbcd841673b983126131371957c4c043fe07ec54cd52958c662e6e01",
+          "one-gain-without-regressions": "b719ee0d897ad7b8134d7819597f8a81a916a8c14408f8e9b4a03fdba19bd003"
+        },
+        "bbh-navigate/flan-t5-xl": {
+          "cap-19/gain-1": "64e46e4afefe0a4ee5758d8aadda1b82ecf972cadf081acba6f04793e1973686",
+          "cap-19/gain-2": "98b765ae0cc10922a736c2680b8b6269654c6d5b68cc43fc164050b2fcf25bcb",
+          "one-gain-without-regressions": "2b3912f11c0e2b49a7067ca9b5fa8e5dbf08a8c2abc1f525c5436b594958b7ce"
+        },
+        "bbh-navigate/minotaur-15b": {
+          "cap-19/gain-1": "5099bc1b458f1048f5f30deca7a52a8ed2320e5d7dc81d90377b4dbc979a28a4",
+          "cap-19/gain-2": "92f8a75ce50e704f21eb565c649b708896957b0aca776ec38f447f0b8fb88775",
+          "one-gain-without-regressions": "7108ee4ef6af54aef7b646a7c5898d4905a48ee510aad247e95c973388770699"
+        },
+        "bbh-penguins_in_a_table/flan-t5-xl": {
+          "cap-19/gain-1": "2c9303258c7d756e016f659db5040acb6a9a7bea95def2ee1e6a04d55d749f2d",
+          "cap-19/gain-2": "6acc49bc716563d92f1ac2544e17de6ecd1cef6ad1d0bcce7ac981267cf4cb2b",
+          "one-gain-without-regressions": "17f794ff85324911a50f6866f9a98e049de398f2bb93376282b7b40fc7dd97e9"
+        },
+        "bbh-penguins_in_a_table/minotaur-15b": {
+          "cap-19/gain-1": "dbb72fabac4187cd6673a4c181275ad56b7adf63df3aa84ed6f1d3622d5406cd",
+          "cap-19/gain-2": "96e374c3656ec3c17a730eeaf84d07026c499aaf714f89906f64d98a7aa3c4a5",
+          "one-gain-without-regressions": "7140dcdc8c0d3908d07001d841d47ab80feebf145c96b692cf54fc5d4875621c"
+        },
+        "bbh-sports_understanding/flan-t5-xl": {
+          "cap-19/gain-1": "837c233f0aaff9cce868b9b6df1d6327c2e5df4fe569ec750f7f8ae0f47d5c83",
+          "cap-19/gain-2": "ddf1b05e9d3b32d2b82b044f09c5741a855d7087731088d4f92851d6f8b0902d",
+          "one-gain-without-regressions": "092e72ac6f17cf07bb2d51b57f3fcd1bb24e9b9dadeb9165507358e494f6751d"
+        },
+        "bbh-sports_understanding/minotaur-15b": {
+          "cap-19/gain-1": "55456e31e27510c0dfd6dc479bc0eb09bcd8e702a576fc5e8a6e64ab5081e3c8",
+          "cap-19/gain-2": "bd60ebda2eb3d928bf7bf81dd2590ac4a6dd8c8b34b33a1915dfc81faba92a45",
+          "one-gain-without-regressions": "c376426eb18e0de9724d8b369718ef206efb45cffc96e67b1c154db2ac1bba48"
+        }
+      },
+      "proofChecks": {
+        "clean-gain": 53,
+        "one-gain-rejection": 457,
+        "passesLost": 6,
+        "passesRecovered": 0,
+        "vetoed-regression": 2
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "holdoutPasses": 4843,
+          "paidLookups": 9098
+        },
+        "cap-19/gain-2": {
+          "holdoutPasses": 4790,
+          "paidLookups": 8439
+        },
+        "one-gain-without-regressions": {
+          "holdoutPasses": 4837,
+          "paidLookups": 9154
+        }
+      }
+    },
+    "LMentry": {
+      "bestNativeFixed": {
+        "holdoutPasses": 5000,
+        "paidLookups": 8602,
+        "setting": "gepa-sequential-precheck/20/gain-1"
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 5424,
+        "upperPasses": null
+      },
+      "pairedAgainstFixedCpo": {
+        "cap-19/gain-1": {
+          "holdoutPassDifference": -10,
+          "pairedRange95": [
+            -28,
+            9
+          ]
+        },
+        "cap-19/gain-2": {
+          "holdoutPassDifference": 448,
+          "pairedRange95": [
+            398,
+            500
+          ]
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": "9b5668a7853f3e1575bbb5c0bfe6bf3fcc02885f0a840b61d470876ea918d49e",
+          "cap-19/gain-2": "19fdd8a19ff3ad3e22efc557e6f87afaaabb4f8818e21763f7e8f418b565ced9",
+          "one-gain-without-regressions": "caa7e000647b8c3de0a125162d8e8597eab918089ce789a17d13fd87a23c7f5c"
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": "6d5245ba8fba0f461f8b9f0bc41b586e161aad9fc654ee72cd029cf05899c28e",
+          "cap-19/gain-2": "f329c052072e01bbad679cc1b5ada1d7e63d6bb7296f584638cdca1bbe61ffca",
+          "one-gain-without-regressions": "abf3a5a83fc82a88d8555d681e448c040cc51fb1440875198ca98a5a5b2f797d"
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": "d0a1c2afa41de2076cbc9d5fcc4ee28059fb4fc52bc0a7423696efdf66a086c1",
+          "cap-19/gain-2": "8a3b4cc54ccb9b7f6d8b58d199313ecdb00443ace13b146dc9889a46ea4f7f94",
+          "one-gain-without-regressions": "941e64030d600c6bb8013b4547547fa5fda7face947ec900968569ffdcef9230"
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": "316c2053e591a7b424bf3d8162aac306428f1d60372012a1f9055cf6641e7572",
+          "cap-19/gain-2": "e6a6eec086e21a132db45bcd52753258b0a525cf6245592d7f51990b4ffa32b0",
+          "one-gain-without-regressions": "eaf47b337e4c665df482e830b46abbb2446393a792d2cbfc2a22ea9b6f10c3d7"
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "cap-19/gain-1": "e913da2a4a41d5397100bd8ceecf9e2dd764b9ca22bcc9f439cf195199a08cb2",
+          "cap-19/gain-2": "dcbf2f147d53e40dee61d48026bfcf062dd4e343527feeff5e7cd7c7fe0c5623",
+          "one-gain-without-regressions": "4bf5d5fa983ab1b109ef6bc70b78a129d8e1ec0ea624da0091a753be209cafc9"
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "cap-19/gain-1": "4e48d5b8d8b392fb03d6f53bf69bca9cf9d334ff3dae4e0d51f09da122e43977",
+          "cap-19/gain-2": "87cc13a48c8023f7cba6c96fa1ac328cfc4decc843135038c114c977fdcbdd2e",
+          "one-gain-without-regressions": "a99b4c6bb2f8d498501097dbe1dcc1ec2ba82f133df2b4b2396b129eee0182c9"
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "cap-19/gain-1": "3043a96dc6182f27b5caba3f620a52ad13808293ab2ea25fb76c76a82db2dd27",
+          "cap-19/gain-2": "ce9863856643a3aacec2295c0b61458df2b0328383a300fa0e4a948280945766",
+          "one-gain-without-regressions": "e267e7562b4d1f2b61f242b78628299510d9322cb30f20a3d51692995dfb2605"
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "cap-19/gain-1": "4089a35bcb132ce234cc021438d8320ae9b4c760660c3a1f1ecb5058939bf6cb",
+          "cap-19/gain-2": "c325fcba311674b55302aa9fc75c26420a4bd9038a42ebdaf028f459673cb2b8",
+          "one-gain-without-regressions": "39d590175ceb4b64d1c6ac3a46286ab881959fcd445301402f12fdce8fd6fe84"
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "cap-19/gain-1": "082416dee321aedc10ccfa02053c639251ef72021e3df0c300e2e0d7bdb1e532",
+          "cap-19/gain-2": "af71e0ce79d59d11bb214615ac874e56c67ac90e5dc9be6e43feb993316bccca",
+          "one-gain-without-regressions": "63a838022ede6d1fe2798f837bf0a00e5a7855827bfa2eb9935c91a34e0fb405"
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "cap-19/gain-1": "dc44e994bb5f4638619a8d3cfd293781ab25f8145f07667e2f6d3ad359b0a436",
+          "cap-19/gain-2": "67438f6c0e8b322d7d24acdb2292948f2c5cf06247b9297fe28b6c4dcc4eee5b",
+          "one-gain-without-regressions": "8f90bf6c456db51b4da2cf43c6e0589986dad4b09ca0df8d5e86e67e38a96a8f"
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "cap-19/gain-1": "da44efe9cab9a5499762d24fdeaa8ce8926daee3a858dc5a0e4a7cea71a3c5b1",
+          "cap-19/gain-2": "9a16f11303ed5d90ded0c79258f51a25ba437e12c609952a9fa68dd5a3092555",
+          "one-gain-without-regressions": "6a995560f05bc333926ce1a975a42428c66175e4d6d31b99c0d1d24530163b18"
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "cap-19/gain-1": "f3d8058b44c23c56375c740dd27164a71228085c42247f338ca0d79e39608f15",
+          "cap-19/gain-2": "8709728a59aee91c0dc2460779510ed2e868876bcf9b9cfde2c58b744a9f7090",
+          "one-gain-without-regressions": "0dfc4e090a9ebc337801c431a0e003ef59c633d418ac42700fe97a76782234af"
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "cap-19/gain-1": "dcbe38af6c99e4d48372eccbbb11fbb47da84714cc90b236c50d2e7815ad27ea",
+          "cap-19/gain-2": "3c88b590baca3b2532d6f765ce3ca41b0a46bbf3d44162d8e69ac37cf97796db",
+          "one-gain-without-regressions": "f1bd1487390f1f8668a3d6486f8d4f52758218c1c14212f75efaaa10c7af3f5e"
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "cap-19/gain-1": "af8b2b64f2d9801d8170dada16e1ba569b5f73fd5ae99e649ac84fe7a23ce0d1",
+          "cap-19/gain-2": "2416000dd7795fcea1029213e22d113f85b17baa25dc68fd09a35b7dacefcd57",
+          "one-gain-without-regressions": "4d086312781f5eb569ab3229f7b08a6d2a3c46090865f865261ff64afed11e6a"
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "cap-19/gain-1": "a1e6afdc71e68524356c20e1f12d1680edf3133e19d373234f7f7dd204bfb84d",
+          "cap-19/gain-2": "9a121e8a6713ea1e13647af6fb8363aafbb92a60fec0a639dc4e20b74612f261",
+          "one-gain-without-regressions": "e674c8b97a4829d2276f9cdfbfda9f9a906181a1d4373481f4fb1d13422f87a3"
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "cap-19/gain-1": "9152f6363123eb5dd387fb7fd3b53eecc7e8593414a0767106819c9ad051e8c0",
+          "cap-19/gain-2": "0cc0755aa963aab3f2b2437f27cbc0fcf6f107360153981264a4d84a631f0397",
+          "one-gain-without-regressions": "40ed39027797cd5805e2ac133748b830dad0fd040f5193ed98c976732c65e944"
+        }
+      },
+      "proofChecks": {
+        "clean-gain": 156,
+        "one-gain-rejection": 350,
+        "passesLost": 13,
+        "passesRecovered": 3,
+        "vetoed-regression": 6
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "holdoutPasses": 5650,
+          "paidLookups": 8781
+        },
+        "cap-19/gain-2": {
+          "holdoutPasses": 5192,
+          "paidLookups": 8386
+        },
+        "one-gain-without-regressions": {
+          "holdoutPasses": 5640,
+          "paidLookups": 8911
+        }
+      }
+    },
+    "LMentry/new-task": {
+      "bestNativeFixed": {
+        "holdoutPasses": 233,
+        "paidLookups": 1000,
+        "setting": "gepa-sequential-precheck/20/gain-1"
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 233,
+        "upperPasses": 233
+      },
+      "pairedAgainstFixedCpo": {
+        "cap-19/gain-1": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            -4,
+            4
+          ]
+        },
+        "cap-19/gain-2": {
+          "holdoutPassDifference": 7,
+          "pairedRange95": [
+            -1,
+            15
+          ]
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": {
+          "cap-19/gain-1": "65fc9ba932044e975b3e2146177f84b2df578f7aa8641cae0d2af848afd5219a",
+          "cap-19/gain-2": "60e2c66e5d0b7cb8fe01434486be72ad1ea1c3b775c415ffc6a4e04201880b1d",
+          "one-gain-without-regressions": "9cbae8e4519259f6b73a87816e8ea79ca0229b14a3a8b75bb57a0b7ecf1a79dc"
+        },
+        "lmentry-ends_with_word/minotaur-15b": {
+          "cap-19/gain-1": "862c6077c68ce33eafb2d1f774b135031f8d0f05e74e22e9fc660dc84d85054e",
+          "cap-19/gain-2": "3d0ae70e8568a3ab813ebb9f64a7fe2491ba3449d9f8432cd63d2c4a62ec6c1e",
+          "one-gain-without-regressions": "257750577c4be08bbda6d50b41cf3a65e08d9fb6dfb12f6ea56d2a4bdcb5d25f"
+        }
+      },
+      "proofChecks": {
+        "clean-gain": 12,
+        "one-gain-rejection": 51,
+        "passesLost": 0,
+        "passesRecovered": 0,
+        "vetoed-regression": 1
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "holdoutPasses": 263,
+          "paidLookups": 1170
+        },
+        "cap-19/gain-2": {
+          "holdoutPasses": 256,
+          "paidLookups": 1186
+        },
+        "one-gain-without-regressions": {
+          "holdoutPasses": 263,
+          "paidLookups": 1177
+        }
+      }
+    },
+    "LMentry/seen-task": {
+      "bestNativeFixed": {
+        "holdoutPasses": 4803,
+        "paidLookups": 6077,
+        "setting": "gepa-sequential-precheck/20/gain-1"
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 5117,
+        "upperPasses": null
+      },
+      "pairedAgainstFixedCpo": {
+        "cap-19/gain-1": {
+          "holdoutPassDifference": -16,
+          "pairedRange95": [
+            -27,
+            -4
+          ]
+        },
+        "cap-19/gain-2": {
+          "holdoutPassDifference": 328,
+          "pairedRange95": [
+            288,
+            369
+          ]
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": "737ed65e53ed9cf45b3348e8203781219036b9c1e77fb9a7e004d0505aecf4c0",
+          "cap-19/gain-2": "cfa2bd393d3d45f80811911ffe2279a643cf0720897e67afbf1fd56ed1943b01",
+          "one-gain-without-regressions": "22cfd3e7b6c546b430f379bf428786614c3b3ab30fc75eafc81479ac3953e724"
+        },
+        "lmentry-all_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": "cbf8fa6ba8d82035c565c9fe64fc88b1936b40472c6b3f6b3185f0df67d6e747",
+          "cap-19/gain-2": "72afd5af1c9859698bf23dbc683979d8102e4ca4e85460e8fb3e418c14494b59",
+          "one-gain-without-regressions": "6a9e27f4a4a75420b894de448ed2f71784354f941707d4224356891f94e08b04"
+        },
+        "lmentry-any_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": "80d14207892934143fbfbcd0b01b705af8cb3cba99fa088f2ae24e1d25a025ca",
+          "cap-19/gain-2": "67a146f5065493d250fd1efa7c1fc06594ed6a985e5ce1cef9d1fc86318616c9",
+          "one-gain-without-regressions": "990cb0061b45b3b615623ae23a30f47db3279bc127d46629897071a159c3d0b1"
+        },
+        "lmentry-any_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": "9f3333c87179cb779a8e537b5d32aeb96b352d22016d85bdfbb310a038644a0e",
+          "cap-19/gain-2": "77a461c0db46d88896a48e375d8f06c90545464ef43acd85a7d43eb4947907e5",
+          "one-gain-without-regressions": "bf72638e9b6037e9cddd7829510030d3843d581d461062f4e7cb7146622375ca"
+        },
+        "lmentry-first_alphabetically/flan-t5-xl": {
+          "cap-19/gain-1": "d52f628d616ee7550c88f1e9d6235a6bfcfbf3794af1476777b7194e422e91b0",
+          "cap-19/gain-2": "1aa4f26f980ed5bf25294d29157075bb8b81df68c93b15e847a695279fc919b7",
+          "one-gain-without-regressions": "7c667399532d2ca5cb15217644e6df722dd43223589e347a1570fb12e472dd36"
+        },
+        "lmentry-first_alphabetically/minotaur-15b": {
+          "cap-19/gain-1": "ea97d0a4c375a8e5d2195cfcd8926ecbb4e9eff412bfbd885e84d7bf000c339f",
+          "cap-19/gain-2": "3e86c961905cdd66e9bc747d193d89108d5d5ea698686c896576db6323d786c2",
+          "one-gain-without-regressions": "ac608f3e259634a0900ba34bb3c4ac0dbcaf8ae1559e24b828671487913379c4"
+        },
+        "lmentry-less_letters/flan-t5-xl": {
+          "cap-19/gain-1": "964db113f44f1a0409ca6f36d4bbe65f0cd3283f782404bae91bf6c0a5b79e2c",
+          "cap-19/gain-2": "b791f48b4f0bce20efc81bbef938691a503e2d6a8dd2e5bcfe022b24980fb35c",
+          "one-gain-without-regressions": "68a3f39ee267a0b36a16d09fde813e63dbd9156f027c36d9e954d6167b0fa4d4"
+        },
+        "lmentry-less_letters/minotaur-15b": {
+          "cap-19/gain-1": "91c6ec5fbdc36c84d2eb3b2bef527cf64a651bbd1f7e0e16363d84aded8d302a",
+          "cap-19/gain-2": "f00bcef44b478280fcb94e08312b847a0db0a7e49cc14e5d7eebfd361e3a4e8b",
+          "one-gain-without-regressions": "9d8f1197bc15d98b0c61778289825f6c425e8a3cb9d133b54cb9a214a8e7c0bc"
+        },
+        "lmentry-more_letters/flan-t5-xl": {
+          "cap-19/gain-1": "dc05c13a2095386fc0a28c0f5f4a349bbd34a657f8939127831eee28bea629bd",
+          "cap-19/gain-2": "edf5f6f94eabb4f950bd068896ea6e2994a661a345d181ed8ab5902bdc0611a0",
+          "one-gain-without-regressions": "db2b39f400c18487e3bbd9620a90fdc45a264df4f9db82c3c376f22fadcefa71"
+        },
+        "lmentry-more_letters/minotaur-15b": {
+          "cap-19/gain-1": "32ab7c6e70cba1f44bf187c7953337322775199586dd463fd234064c310bbdf5",
+          "cap-19/gain-2": "02ea6c1a3439e1e219f2b5577f0463a63fe50b71c6becb7b25845c367bd4813f",
+          "one-gain-without-regressions": "6341cbfb83cfe7feca3bcf71f967719333d59bc9747f03b57a5f02fad5950412"
+        },
+        "lmentry-rhyming_word/flan-t5-xl": {
+          "cap-19/gain-1": "02a5dd739aad6ebda3296e73cfa19f805c41e106ae3c904ebcbdceb1c429b481",
+          "cap-19/gain-2": "a7e3a1e9c3fae70f9f6b42e124f5269886ce3635e96196b630e9d0a72abb6d62",
+          "one-gain-without-regressions": "71999f9b4ebfb3aad632bd1701daf4e051c35d73706d0a5fa10698658b9f2683"
+        },
+        "lmentry-rhyming_word/minotaur-15b": {
+          "cap-19/gain-1": "13e888fae481474a6869e0d1ea9567a155b84978f3814f2b3321535fb4037bdd",
+          "cap-19/gain-2": "50c42f0ddd16e9c9d87c7c6e86f6757b286eb54ef91e4bb1f680af1c3ad6c5e1",
+          "one-gain-without-regressions": "a115ad28f733af6d81c04a244a3c1e787bda456dbd2c6a23714df55a10ea3e58"
+        }
+      },
+      "proofChecks": {
+        "clean-gain": 104,
+        "one-gain-rejection": 275,
+        "passesLost": 27,
+        "passesRecovered": 11,
+        "vetoed-regression": 5
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "holdoutPasses": 5307,
+          "paidLookups": 6174
+        },
+        "cap-19/gain-2": {
+          "holdoutPasses": 4963,
+          "paidLookups": 5402
+        },
+        "one-gain-without-regressions": {
+          "holdoutPasses": 5291,
+          "paidLookups": 6230
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "bestNativeFixed": {
+        "holdoutPasses": 56071,
+        "paidLookups": 12789,
+        "setting": "gepa-batched-precheck/40/gain-2-threshold-precheck"
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 56116,
+        "upperPasses": null
+      },
+      "pairedAgainstFixedCpo": {
+        "cap-19/gain-1": {
+          "holdoutPassDifference": 11,
+          "pairedRange95": [
+            0,
+            22
+          ]
+        },
+        "cap-19/gain-2": {
+          "holdoutPassDifference": 11,
+          "pairedRange95": [
+            -17,
+            39
+          ]
+        }
+      },
+      "panelPathHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "b508eb547d6094a9699ac5fe5b3b0c0cf9412ff27ee3f6ad4a9c07c759cdcb5d",
+          "cap-19/gain-2": "b1eae5153c007bac820b25402089e65ff6bd14a6a6dcea45010a14f02377be92",
+          "one-gain-without-regressions": "2172d08a2943b81595765f4eb719cec358df3ec1ca5c752dcb9ff6e2328932ab"
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "dc1b3cfc9614e39dec8b77e848c25d5efd525a4d8809cb433e0b1be4dabfe7d8",
+          "cap-19/gain-2": "2a06392b283a66196d9ddc748e030ac5a82e0e528ba21892a5d474c9a4038125",
+          "one-gain-without-regressions": "9c3570be01b1f4dd610109f79a606e6822b47b38123c2b7583e6c364b1eaeea7"
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "cap-19/gain-1": "08a5957eb7f40aa4e1bddd1b29f85cc85c30155adc7f3816d2b83122a60c82b7",
+          "cap-19/gain-2": "5e0958780211b4ea6942fd2738f48c2349f27e61d2652a341f6c7843a632f0b1",
+          "one-gain-without-regressions": "f26a4a89ffd6f67c53fb757595c200f47feace6d4fac521d84c33fa6d5884000"
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "eaa539326e179773e5b1f8ce4ecf91fd9658d1cc9ff1f305139c5f03ea632e60",
+          "cap-19/gain-2": "7aed155bf1f2678eafcf73bb86b22a1518b89f2713d8fae35507f1cb8a621c41",
+          "one-gain-without-regressions": "cc9d3ef36d1b95c50d22a5892b9889fd0ab0ee321b45b0e5b3c24c4458290c18"
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "00dda0cb3425b431231199587f0fdce822eb384c884ea0d5ea137b5c1275a8d7",
+          "cap-19/gain-2": "982690bb0d883ac67f521a979cf836b4f53ecc6abf6aac459b25c14154d54d71",
+          "one-gain-without-regressions": "3e102b6e20c08d0d8dae3c55fe315962b1fdb43a63ce10921a40371c82e03600"
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "6325362e4b0d9c37284f8954a98d28009a76f97de78cfaff68933625c9bb5af0",
+          "cap-19/gain-2": "a513d790fb5faa611f6fb4227d6d675d8e89d902e85cd238b28fed3fb155c7bd",
+          "one-gain-without-regressions": "643623afd98fc26d25b0f80d6b5162cd466be9f8d9a24da0142d5b1a6796ed24"
+        },
+        "high_school_biology/google_flan_ul2": {
+          "cap-19/gain-1": "5b86e1cbef84d3c963a040f22a3e3c7573634b0d7c40ff9398be7fd5a9d4bf8d",
+          "cap-19/gain-2": "9fabd61a4e90c1f7793d1769d79a5cebaa9767340fb64bdb79a07a359e414b72",
+          "one-gain-without-regressions": "07a416d6f53768f1434455e6a4fdc0d88359957072cd8f1237f46d2ddd53daa5"
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "ae1c1598192079a0bb2447721256b747db1aa68a0dc94600b8b56ccedc474c92",
+          "cap-19/gain-2": "15a699d9f1e01c856b9d1371ff132d0e1ae0972f02087ea7bf60d0fe1e45226a",
+          "one-gain-without-regressions": "f7c4a0d25ee5a63841b231e25925207a166ba474aa786a0ac42f720a2a7e5751"
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "cap-19/gain-1": "481cc8fb894f7b5ef5fd463c7507abfebebf5fce245caf24a396da64c23d473e",
+          "cap-19/gain-2": "54153a0e81701211cb452a63b53a57fc1f9fc9586aecd2d4e3b2f8b8c8c994c6",
+          "one-gain-without-regressions": "02ce47f842bd6ae2ee044efb9ffd14dc14e17c0d1f85d17ac40402d312de81ea"
+        },
+        "high_school_geography/google_gemma_7b": {
+          "cap-19/gain-1": "571a7ccb757042b0bfc2d5f5511121737dcc19c00ffdd71cf2c893efad74bb59",
+          "cap-19/gain-2": "cb34988b72766d3ee0c1753c0f27924468dd258721b75024c50bc8a4cd809aba",
+          "one-gain-without-regressions": "b38f30951537da37b67c29740cc57ab2ddd8e62e38d82ed9968e2cafcae00a28"
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "cap-19/gain-1": "8d638f186c24b5f9d12c17ac4b1748b0afd7437e32f2ffe86ddd6558c68b41a2",
+          "cap-19/gain-2": "b31a64d592c2a360cf1deb9f66c3c2ea2b73b63433b6db1dc8f4009befb8b2ee",
+          "one-gain-without-regressions": "ee5de2ae43685495e249500ff09fa60cccd85d2616eea41a10332e81a4a47d7d"
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "cap-19/gain-1": "c0cb1f27ad5a1c8d3ffd3120063ed9749a5bed4459af276d337e6d8667405a81",
+          "cap-19/gain-2": "82d58b4dfb3aa280ec0572127e0b6bc56d35d4bd05c6218b519c456e9ce489af",
+          "one-gain-without-regressions": "bc8ab81dcf33638fda64cb034efc6bf410ff8e1a64d0b77b9d0137cbf8bed395"
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "bf12217b3845b3f0d423f9cf6cba1c5a9d450f66fc6335492cd362ac3c4561af",
+          "cap-19/gain-2": "7a3ed304d819d0e04169e4cec05d87a2296ebe369d760ab8fdeb4e8f9756ad15",
+          "one-gain-without-regressions": "6b0c779946541972d8a765f879d6de0892f7db47ce3df705515de2433c18b477"
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "40a8ebe363b610726335f46fea8b63aa1c00a4b93f7689084e457c003e01edfb",
+          "cap-19/gain-2": "51963e344e43222a061b7470437ea81946e72a85572c5b8ee76cd7cea1928762",
+          "one-gain-without-regressions": "51596f859d2e267161e3a7c1427d74ed45fbc1d957eef3975d43c4c7f1cfeb17"
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "cap-19/gain-1": "8559cc96b4f27a8b4ca9d3054c8777c1040b097a50c13bcd8835ce999ca3ecf5",
+          "cap-19/gain-2": "672b810bf04983c33c0f0b4634291acf4d0589606f8acf8d719a10453cef27b0",
+          "one-gain-without-regressions": "d4e64e71b9e9de8ce3a62a08c00e4c31c3bab00c1619efbebf876760c00ad154"
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "cap-19/gain-1": "fe956c314c9da893274745301657494150d02c5340322aac2ad9780832c991c5",
+          "cap-19/gain-2": "74dad1b936098dfb0bc24cdb33966d68480498f125eda1b98ad4898afe043cbb",
+          "one-gain-without-regressions": "faa096c4505ec2e813d8e921fcc0073acece09617bd063aa610f14e63ba0f32a"
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "cap-19/gain-1": "2ab2fd8f71a95afdaee00ae59e92a275fade6f65c967264d8f0a9012e64af22c",
+          "cap-19/gain-2": "599547c5be305fdacb1d1542fc980e1e8044568f3a136a834b2272fc0c950829",
+          "one-gain-without-regressions": "4d4dda80f8afbf2e0adedf0a73e58e5de940897014e58528f74b60474482e313"
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "cap-19/gain-1": "a652d9c372d7c1d39c8c25a94548f32fc651e3512b15197cd17cbebfb6ba1118",
+          "cap-19/gain-2": "e05f7d11e147f5953f8edc1c1b2bb595321a9e2762e31c63b8b5e56f0815edd4",
+          "one-gain-without-regressions": "28531ad9085f79a1fcce978c2f150de7d18a2dbfadcadfa566e5df8cdeffb009"
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "cap-19/gain-1": "abdfdae35a0820f15567a90c0e8e74c15cd4ae0fd1bb0167d37579ea22408759",
+          "cap-19/gain-2": "64426dbc3c1478802005f085704481887ac912111ef8fd796c9fb124f1f02bd2",
+          "one-gain-without-regressions": "09a40fe5e585bf8172289a87de8d9054341149b78723644a023e31ae28706377"
+        },
+        "moral_disputes/google_gemma_7b": {
+          "cap-19/gain-1": "aef91d805d016d19462d144b1e1080dbd510f21798078bb3903e1b8f7ecc4e68",
+          "cap-19/gain-2": "38a91571accb7ab1711ce1504a945273cc7289451803b312d6a8aec890a85c25",
+          "one-gain-without-regressions": "4d2979993e98ca72190f425b8c14f961dda9b920cc0e8fa3b6de68ef5b570076"
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "cap-19/gain-1": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34",
+          "cap-19/gain-2": "84a1e6095809396d902984b8bd2af6a2fe9146eebfd5b1eb117f9541a375ee39",
+          "one-gain-without-regressions": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34"
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "e40aebdf559cbd67e2de71f0f4182d4f191b22952241ba4b8a74837ec32ff565",
+          "cap-19/gain-2": "ce603e616c45f36839d824e87639199f0fc68da554139c38086a9e50c681582f",
+          "one-gain-without-regressions": "c553d4d47da5a23dea28f5ec60ad6a814ac617f12e2b37f1116b5e0b3bcab0fd"
+        },
+        "professional_medicine/google_flan_ul2": {
+          "cap-19/gain-1": "136f2fbe8f993154c01ceed907918ef6973930251ca8c91a52d2dbcc82403e54",
+          "cap-19/gain-2": "dfcc920f7acc1ebf4c3e332af96e68e79727a596a355fd81cd7cd5c5cd2b4505",
+          "one-gain-without-regressions": "aae261c98e16c9297048a81ae10ba3dc62aa77c0c602be3d17229d3a2db217c1"
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "f8375fdd6bb8b3f79398b8b0124eb39f7066c0ada36fbbd92b8fd669d0218f02",
+          "cap-19/gain-2": "a36ea701c093c75da90717e35e705e91e2147b590a54620d0c5a169089a81337",
+          "one-gain-without-regressions": "81b55627086362fe4f7de7f5b0a08b3aebb8d16b03441b8dec4246566060e44b"
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "95ca4d7afd70c5181cd41655873196403fb918550a1b8f9f2d7e2d02e5bf9901",
+          "cap-19/gain-2": "59eca57bde3b56e8258a2c82ec14ca31a38138aeca239d6f1e1109db36facf02",
+          "one-gain-without-regressions": "90062b4809c4e88bf666d683db2c01fccf85da3bee7b0878afd8b80356e8fd11"
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "07898a4b34fbc163ca7bb8229f9823d227ce9313d94ba37754361d1621162dff",
+          "cap-19/gain-2": "d74ea8a0de2c184b2d87b745e875c4f3c04f6c080483bdcccc1dad99d70eaf0a",
+          "one-gain-without-regressions": "29d9938667c9cb33933189db0a31f205eb4e3db6dca3c38a3d041efc611f2e8d"
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa",
+          "cap-19/gain-2": "b63ee97021060bdd1d5f8375524c77c39c7c0c9ea8a4c2156254b3639bb23494",
+          "one-gain-without-regressions": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa"
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "bdcd27d3038fe21c1e557a9fc409a8f59d0d67378a061c819105ac9ffee1fafd",
+          "cap-19/gain-2": "91a78bddec8b60b48bca733dea991b202a6b31a1adfcee47de579aa54e6e1f90",
+          "one-gain-without-regressions": "c92eabfb8ebf6139a15171a82776d8ad5257ee9dfdb708985c11866204a7221f"
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": "b3ab4930b9b50d098508aa1a3718228858a388193cc8713c9aa92356a76c5d01",
+          "cap-19/gain-2": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+          "one-gain-without-regressions": "8c4f60cec0e21b801915b8fdacfd5bd73d0d3f8ffc5e0902f1f0f7a6a655f37e"
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": "167f5f7a9765eb373938b23437ec33cabdb7d02a89bcd2b9ee791550b73097a0",
+          "cap-19/gain-2": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+          "one-gain-without-regressions": "0ec7906eff20c398c26bd5eff7a1028730c9ee22c8600994967492a07df11ff1"
+        }
+      },
+      "proofChecks": {
+        "clean-gain": 24,
+        "one-gain-rejection": 933,
+        "passesLost": 4,
+        "passesRecovered": 15,
+        "vetoed-regression": 3
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "holdoutPasses": 56094,
+          "paidLookups": 12933
+        },
+        "cap-19/gain-2": {
+          "holdoutPasses": 56094,
+          "paidLookups": 9017
+        },
+        "one-gain-without-regressions": {
+          "holdoutPasses": 56105,
+          "paidLookups": 12958
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "bestNativeFixed": {
+        "holdoutPasses": 26628,
+        "paidLookups": 12438,
+        "setting": "gepa-sequential-precheck/28/gain-2-threshold-precheck"
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 26654,
+        "upperPasses": null
+      },
+      "pairedAgainstFixedCpo": {
+        "cap-19/gain-1": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            -3,
+            3
+          ]
+        },
+        "cap-19/gain-2": {
+          "holdoutPassDifference": -11,
+          "pairedRange95": [
+            -38,
+            15
+          ]
+        }
+      },
+      "panelPathHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "4020a8c84531cd938cc85c3ebc6a46ef3aee3354019244c9a2ced469e0703496",
+          "cap-19/gain-2": "04858d6912102d94324a5c0a177d30fc5de89275ce7d4216c49b9665b48c626e",
+          "one-gain-without-regressions": "a490bd62b55b5b97ae83bcc076cb480c15e7b914ebf714058022e556aa6aa71d"
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "af6b16b6bd9e42ecfaf2d1b1a00bd33609f968b7f1856f8979d5a1f9e889375c",
+          "cap-19/gain-2": "01ea2e01872c37c45ecad5b93f3e4a771b3ff09a4bb1660a1d9f03f86664abb7",
+          "one-gain-without-regressions": "4179dbd977d262797ecb46b0cba99e0e5671d9d934e568b4f390a845cff096d3"
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "e42abb2e6753424925b17e791315cfc46458dc4b896383a6f17917142c2c36f0",
+          "cap-19/gain-2": "4259d1461535a5d5d17851de44f6a64f726e84038618bcee712bff7c6ac2ffb0",
+          "one-gain-without-regressions": "49a0edebb40b8e69076b55132792ed26c5c79527a95ea87e4aec4e9d95cebcea"
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "faa2061c716044bb7687c5fc8c9cfecee0f49c51512e628abd1375b2c0b3760d",
+          "cap-19/gain-2": "f73f9cd307bba8d1a14c2e5b112e1349c1dfc8ff53bc6f0ee521e52d5affe151",
+          "one-gain-without-regressions": "f90ee6d7b41863d69e3d501d71af36993df6a0293bfefabc53de92e0735a073b"
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "0025dc49f60cb753c8028d021f947a9ff90174bf2be2e8cae1c9ed214cc98e07",
+          "cap-19/gain-2": "dc12ce1316fbcfd5290709f497752d997d3052a11c51882fb84a7916c2299ccf",
+          "one-gain-without-regressions": "8c26ea4f4918dbd8e21786cf545df031c60d0fe844c8569f35cb7f757dad33f2"
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "11403042850350108725d6459bb4bf0c335c01c0346c64a71f25b181fc46417e",
+          "cap-19/gain-2": "0f2e53b487c768afe57ecc45d150fa7139aee846be50292498d7df914e40d319",
+          "one-gain-without-regressions": "b7f301013d50077c7ed6cdebecbf08a8819678663f14d7ce24dadb083ad71048"
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "86089cfbfdb4b77dca97f8fb28417c63e9a0537f6a88ea5ac99c6f2198a57165",
+          "cap-19/gain-2": "a52924a51b8f79b42a16558e1c850e510f9cd21cf78809f501878213da656279",
+          "one-gain-without-regressions": "dd4c78998ca68af4c9434fb0f077b5693d15237f19f5eb30a2b3a62793a89956"
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "8439300de720f94c15829b395ff5ab410941c303a922d31f41c970507986cffe",
+          "cap-19/gain-2": "9d2f9e4698004f5644fa24f29043211b0f6de2415bc9c21239f8f2b359d4bd1e",
+          "one-gain-without-regressions": "23b5fe3b4589711311d4d2ca4acb2b84be0c6402f39caf776e506b4fdfb35608"
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "590eee0e151673e32851497c9342f010d3f586f28975c2058979777b87891a87",
+          "cap-19/gain-2": "ce2fe1b0193670dccf995ef9294f0e061b3d6e37dc0ee37c747aa3ceeccbe2ed",
+          "one-gain-without-regressions": "226e03435dc7e05f350d8a0e8ff9e33cd4d2b9a718ec4d5faecf3d1b8cbb15d9"
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "48baf5e60f0a3bf331260f68cd8112edc5b7efcbde678883b338420f6e304784",
+          "cap-19/gain-2": "3051cbb814f1601f8b274d722806b5b2b461586e31dfb79f44dc05175a151af2",
+          "one-gain-without-regressions": "2b8e1da7ea6669aca5ecdbab7f7137b74296c20bdfb746d63fad4ab2df5799c8"
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "3e017b2bae7f8a56c420efec84f8ad6f4181cd69371bb38c684e062635279016",
+          "cap-19/gain-2": "d4cf4a81c0ecef2d17f754ec45655d7d01209d27cac2aa304e6e55bc6b0625c9",
+          "one-gain-without-regressions": "d549c3b5b4aa2a16f1599c3f7d7b960e4f6d44bf87113418ff9a75feaabca0c2"
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "35303a51b940cb381fe955068c7fabb28747f83970a27cf31d4ad09718309fcd",
+          "cap-19/gain-2": "f1c3f7e7274fa1fff3402b05f0865355467945771674fa011a252fd2fd176306",
+          "one-gain-without-regressions": "9b044db36b820801923703be64fa7d58257464888f5242df66fee82e8123d319"
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "c2ecc7b3ff2e069234a023c2bb58d00faad8441323f3c5671e1a1d4a029461b8",
+          "cap-19/gain-2": "195199c9a6aaada1245ab82d163a7f53d49c09695d08a10328a04fc52e65e2a2",
+          "one-gain-without-regressions": "c50486aa0e854a09ad6fe809a6b31a59e04439ed5610347f742e09ac48351afb"
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "706a3cace29382e6771831235b8b78b2cb8a385532cd0b4d71548fa88cf11804",
+          "cap-19/gain-2": "fbb87c7e8612ab67e4c92e363aa85c4fbabd9a7d228c7b47bfa2af2c645af868",
+          "one-gain-without-regressions": "1e943795497f1ae2618465c14950e20b9139ae7635cca81dc1e1533e9225b042"
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "4fb85818fca3fcb94325970837c4bf9c4189377a8e9e01fd9c3428138797d8cc",
+          "cap-19/gain-2": "1dd4e98ee842116f1d612332c7ad5e2225117d79f38f19581d981e0610d37140",
+          "one-gain-without-regressions": "8bc7e071412087a277e7f901e60ed5181d45c50b38394009f19850cadcfa87ab"
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "4e58d876a6a5b8436f61e25d91a7488942256432e841c58386f5f18af88944a9",
+          "cap-19/gain-2": "4cfe83849e2b14e95588fef7722d2c1cfef026b0f89e49283fd8c094b849f8db",
+          "one-gain-without-regressions": "48e3305c5b943867b04d989985e80e4e9d5a6b109135cdf9c4ef5125076618d3"
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "77ee207535c1eb85a6a9bfb3a096d45e1603da168dd95d1afdea40d7f0b63ded",
+          "cap-19/gain-2": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+          "one-gain-without-regressions": "d92a9ce93a4b078ef3eb01d584e9c7e396b156f816a59b2e62735c87fdca354f"
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "20f2aa889b3037eb63969ed97a78bfb4abb8c9ce22a670e03abc217dab8d1a27",
+          "cap-19/gain-2": "6898d3cc3db6370c5e7c9e909a2024988c9911cb01306667bd97f4cf88534eb4",
+          "one-gain-without-regressions": "82f62f135a6191f840ba86109a3a47a26c061a0de043124188dbb10c418e3587"
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "ee52601b433fd59eecf86f831dc84ee94da486ff07c9a1419b1025fe8f063158",
+          "cap-19/gain-2": "bdaa44d0b96b2fd40c1b3e3c00b0bd575edbe87df6e9be61035cb393aba86a3f",
+          "one-gain-without-regressions": "d9cab306e1c7888794a91406ff5dad56c70e66ff712addc84bbe6bb5a4bb4774"
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "abd1044db32353932e5441eff5941c102d1240dce2832e420e2037c8150100e8",
+          "cap-19/gain-2": "27368ac1e754f42e7c621d35bf7a79bb17e8dbb8579537f874b37fb818075848",
+          "one-gain-without-regressions": "85c9a30f3efd362d4822e59eedf6fb4e563df968b673e5e29a1da2cdba3ba853"
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "d62cc803c9a72cfd61ba7fd30e3104055f76e822d29406d3c1dd4144637a84a6",
+          "cap-19/gain-2": "e4958125786168d86420c272c5a8c6bf07a7d54658757b8bc7b0429bfb26e40e",
+          "one-gain-without-regressions": "f5b341ead1281dca10bd82ad225358219aa2ed68510111b97e4bf61da4cc04c1"
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "4e8c8f51ab5e3004c7534b23b36b8e76a68aed2c97262aed87ccca509a634cb7",
+          "cap-19/gain-2": "c59c04cbb05f39acc74b63d140c624d9a51e86c431704b7633b331b8236bb6d0",
+          "one-gain-without-regressions": "075917b92623c49c46372b78b05fa553738c97f354399711c08d48594dfacb91"
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "a4884c5d3deeb486f32a4ab7e151358bf2ff40e8c30ebef7a86b2ad2548dec4e",
+          "cap-19/gain-2": "cb25f326a48bb873f2b319e8fbef2c364308ba621097d0221239af419781155e",
+          "one-gain-without-regressions": "b4b8069c96fd311f1235baacef62fdea2aea8858da33b827f961e1c6a5fa1e9c"
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "3d9b749ad02f08a5aff49cdd98026a9b924d470634f4ce98cc9b1e0406270f9f",
+          "cap-19/gain-2": "243a1eec860cbf25af60668c6aacf7f784ff56f31c101381a91a7a2ba4f27184",
+          "one-gain-without-regressions": "29e3d1e3f7522c209d5e4468565bcdb21cf0dd35934e6bdc1ba3bcd156b29577"
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": "299d24e55ee38a4dca0725bf2f1f5102dd9a01dc62bf3692e070403983d328fc",
+          "cap-19/gain-2": "a2b57c2ff7f5733f7105b8d1609f9ed8d44ede8396b62d292e00069d861890aa",
+          "one-gain-without-regressions": "976923211b312182c01c889a4a0256c198eb933973113528684aa35bc4758c18"
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": "1bfda8a16159eeb6e1a4329676b87499c507ba12dc9dfcdb1327687e05d5aec2",
+          "cap-19/gain-2": "b4e9204137afa3ce93ca5f287779cca85f9a61c9a9c4a0be79e57007b0df662f",
+          "one-gain-without-regressions": "33fc8ea149cd63c38cec80c0d61775e722e42cacc1223af8fd4ad2941ba87092"
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": "e26a1a142e347588a5751978a88e1ce0d5b9a1cb04e24a3117edde69569bb799",
+          "cap-19/gain-2": "d90278538a5ceef9f0217108c610370a9dbf387facbe18295b615c1d6adf24f9",
+          "one-gain-without-regressions": "b77820bd7073a9bb7b1abf88597eee7362f47ea2004ce5b8932e47f35f7d8b83"
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": "24f1980c06e6834f2b7e82d544d244245e3999c6c3f074f623bdecf01e72af8f",
+          "cap-19/gain-2": "ce75c24bec96a819b2b7ff7cbb34cab58958702302c4363ad94b67ac96b6beff",
+          "one-gain-without-regressions": "8cd968e2c986900a2904e229e039fd6163b4df8feb5002ea2596c59a48cf316d"
+        }
+      },
+      "proofChecks": {
+        "clean-gain": 46,
+        "one-gain-rejection": 849,
+        "passesLost": 0,
+        "passesRecovered": 0,
+        "vetoed-regression": 1
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "holdoutPasses": 26619,
+          "paidLookups": 13739
+        },
+        "cap-19/gain-2": {
+          "holdoutPasses": 26630,
+          "paidLookups": 9831
+        },
+        "one-gain-without-regressions": {
+          "holdoutPasses": 26619,
+          "paidLookups": 13786
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,520 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "parentPlanSha256": "2e3b2c4e8717b0b2ce822140b05f2f7d8327f384378486ee66fca6e58f42a2c7",
+    "parentReceiptSha256": "a9d687e06aefa933aeea8d0516903a1bbedd50b7d025297152f86eced49c0203",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "regression-free-qualification-replay-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Use the public regression-free certificate cycle on the frozen full-roster trials. Verify exact search, nominee and deployment parity with protecting every qualification case in the seeded proof. Report saved and added reads and the archived GEPA bounds.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "deferred_certificate_no_regression.py": "d62ca96ef3749294c4a6c7dd8751c3ded64d3e4eb42069f62973c6af9937ffd4",
+      "expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+      "regression_free_qualification.py": "5ab4bf2266946cebc89923823f6bb267fb2d435f0384d2423117e23a60488c9f",
+      "regression_free_qualification_replay.py": "d8167b297c69aa66c78635ecbf3a7f2c48172a59ce86b6c8c53c35d02e186338"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "4d6a0a141818bb101be9cb4fcc8813c76f2ef65a833206c8a0a55d658cd09ee7",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "audit": {
+        "grossExtraLookups": 45,
+        "grossSavings": 269,
+        "pathsCheaper": 167,
+        "pathsDearer": 45
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 9605,
+        "upperPasses": 9650
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": "559a641f679f06478e4c153866fdb7bf870bd4af5381dbfde9fb7654087c937a",
+        "bbh-disambiguation_qa/nous-hermes-13b": "92853e191cbf58ef66438ea0e0919295c0ab0573cc1d3c195516b1e14ff95fd4",
+        "bbh-formal_fallacies/airoboros-13b": "1735d101fe75b7f613375c3e561384a753d2ca7b7e530cc932632bddfb85f92a",
+        "bbh-formal_fallacies/nous-hermes-13b": "1eaec0fe1c368fded5081c79f7074fd61a275c533a46d8c63dd0262c03cf4eb8",
+        "bbh-geometric_shapes/airoboros-13b": "6f7631b258d01f572984b3a7e3cb4241bdc9dc15222192b57ca2fa08ab1233a6",
+        "bbh-geometric_shapes/nous-hermes-13b": "c615e947cd79ee0f6c02a4034e423c06d94f883c3d92321b4454395423c85e10",
+        "bbh-hyperbaton/airoboros-13b": "b9368f37fc6f6ed62ab65cb4108021e4e925a97082f3f10cee9047335dbd526d",
+        "bbh-hyperbaton/nous-hermes-13b": "5b66e508829bb1281c62269dbcb19a9e5045bc2abacf8d722ae4856179801c09",
+        "bbh-logical_deduction_five_objects/airoboros-13b": "0d29934b4fa58257cc417c14d6806209b3d9b3a0febf07544e63b97dc27241fc",
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": "cad10324a5969539e7f8a4b82f6d65691cb3de17fec61b0a3c56316a60b88493",
+        "bbh-logical_deduction_seven_objects/airoboros-13b": "04ee79f7efa9d9bda933e6454ec61ac9ebcbeac8f7a25e228b46d0d8274fc46b",
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": "eb587efe0926ae27cab61cc35a3a41aae49ab6b148fd5d0321a5586c69f73011",
+        "bbh-logical_deduction_three_objects/airoboros-13b": "a6fe011de81f9db6433c29cd6514a1154515b23901cb3dec874821a57618f87a",
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": "418ab06a19f8a58cdebbe1ca4e8513d937f424db91a93f96c250919bafe8e95f",
+        "bbh-movie_recommendation/airoboros-13b": "64bfa39a6406fa5ac345c626a0172bcc6b1ca9f8d85a712a2eaed61bec262eb9",
+        "bbh-movie_recommendation/nous-hermes-13b": "ac99b12cbdd559b4b7f79b274b477cbce21980e2a02ec7aef568ed63c59b54f8",
+        "bbh-navigate/airoboros-13b": "0cd66c429093729f5d9cda9a0c94fb81613c72d099e2a17c1b7ea23d2e648296",
+        "bbh-navigate/nous-hermes-13b": "1f1a08a3dbe72e34b4748051130c15487c3a55fef99196394178e853ad03cf9b",
+        "bbh-penguins_in_a_table/airoboros-13b": "ba0551a34f112d1f9787f40bcdb24b8648bc8de92bc9b1390d81ef24bdf67eda",
+        "bbh-penguins_in_a_table/nous-hermes-13b": "e512f36586bbf35db2b57b2b9e57177e80495494e01ac74917762cf58d1513ee",
+        "bbh-ruin_names/airoboros-13b": "b1feaa17366167aef143083cb49dca4b9c980d24bbc8ba8406330e09219c665f",
+        "bbh-ruin_names/nous-hermes-13b": "9016a926258b7e7825c3ec5929eee8efad9318e9c1a6e2a6cfe7eb2ab22d2b11",
+        "bbh-salient_translation_error_detection/airoboros-13b": "f94ab7562b57d524b69bc6d6b7b132eb4b87517f466628a7482c2fd8bdfe1793",
+        "bbh-salient_translation_error_detection/nous-hermes-13b": "f93f79060eec4d5b65d08d6ebe835edebcbccd2ee025b0a69cd627100525d246",
+        "bbh-snarks/airoboros-13b": "9a8bfa832614580224c2e761aa705efbf8b9df3a7b6c43b28ca3086e16ecb7ac",
+        "bbh-snarks/nous-hermes-13b": "9febeee2b2dd839b985d1044ecb4d11131318804c606c55cb4cd44b71e21cf3b",
+        "bbh-sports_understanding/airoboros-13b": "bf867218ab74a1fc4667292708b2755fd6c12b8847c8003f6ef8d508ee17b62a",
+        "bbh-sports_understanding/nous-hermes-13b": "da9efd597c85533b5216265e39a6f7f8bb31899d8773779a7baa111e670c7998"
+      },
+      "totals": {
+        "holdoutPasses": 9515,
+        "optimizedLookups": 16031,
+        "seededLookups": 16255
+      }
+    },
+    "BBH/new-task": {
+      "audit": {
+        "grossExtraLookups": 5,
+        "grossSavings": 15,
+        "pathsCheaper": 8,
+        "pathsDearer": 5
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 590,
+        "upperPasses": 590
+      },
+      "panelPathHashes": {
+        "bbh-causal_judgement/flan-t5-xl": "368549727782f22cdc01faa1d78c7a3c33fc822192840de2bd4dc9a81d454dbe",
+        "bbh-causal_judgement/minotaur-15b": "69c17348827563883e110eed7350352507097bf4cb9107c035ed2b0f14062d67"
+      },
+      "totals": {
+        "holdoutPasses": 591,
+        "optimizedLookups": 1122,
+        "seededLookups": 1132
+      }
+    },
+    "BBH/seen-task": {
+      "audit": {
+        "grossExtraLookups": 35,
+        "grossSavings": 103,
+        "pathsCheaper": 67,
+        "pathsDearer": 35
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 4917,
+        "upperPasses": 4917
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": "506d6b1db63a8bdeaf2bb4ab837b4c9a96aadaa6e712c707918359371e59a70f",
+        "bbh-disambiguation_qa/minotaur-15b": "8671557bb7006bcc9092159b98959735f34478531de0939f63faa362b52d7fbc",
+        "bbh-formal_fallacies/flan-t5-xl": "c2dbe68c97696e69121ed80082b419f77adf95fc146d99e38163f064ebd96416",
+        "bbh-formal_fallacies/minotaur-15b": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0",
+        "bbh-geometric_shapes/flan-t5-xl": "bb5ff6fe6b58bc5e34c484d69b52370c6ffd49413e97478aa7e9fc4355b5b0fc",
+        "bbh-geometric_shapes/minotaur-15b": "97f6f6851beb3d1b9dfe51b5f97f006e6f70ce44cb60832af179e70a24e1537f",
+        "bbh-hyperbaton/flan-t5-xl": "752d72c271d46f42ee104bb96d1fa0f6274d8d5d982e2fc0d4973e2058adf55d",
+        "bbh-hyperbaton/minotaur-15b": "fba28e6b5dac25efa6642d44ff24c4a22ea7a83f1faae908deb8361b23d67d09",
+        "bbh-logical_deduction_five_objects/flan-t5-xl": "b6e57b2bb608afc541616dfa38384f772c75aa41121cb1b2140c9e27afd2d38d",
+        "bbh-logical_deduction_five_objects/minotaur-15b": "18eccddfb370d77ddbeef953c3a2475f20a5b124fe5b8b39e781221207fb9bf0",
+        "bbh-navigate/flan-t5-xl": "a57afd9eb15473b1f4efa124281c2006591af04172118b903820260aac3f5ffd",
+        "bbh-navigate/minotaur-15b": "5099bc1b458f1048f5f30deca7a52a8ed2320e5d7dc81d90377b4dbc979a28a4",
+        "bbh-penguins_in_a_table/flan-t5-xl": "b3fb758da86af41c52bb717eeaca00f5230bdc0d1725444bc8c4501f4ee7d1e8",
+        "bbh-penguins_in_a_table/minotaur-15b": "8a1f62354aadbbb27c5fcf4bee2e5299223b74f9e875230e0111e6492848ed1b",
+        "bbh-sports_understanding/flan-t5-xl": "0f1959dfc93ea282b67e47cde36a326a1bc7878ff5bf9dd386d3db602fd6aeb9",
+        "bbh-sports_understanding/minotaur-15b": "55456e31e27510c0dfd6dc479bc0eb09bcd8e702a576fc5e8a6e64ab5081e3c8"
+      },
+      "totals": {
+        "holdoutPasses": 4837,
+        "optimizedLookups": 9086,
+        "seededLookups": 9154
+      }
+    },
+    "LMentry": {
+      "audit": {
+        "grossExtraLookups": 25,
+        "grossSavings": 232,
+        "pathsCheaper": 147,
+        "pathsDearer": 25
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 5388,
+        "upperPasses": 5424
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": "20439b206ed903aee647dfb7d63f4f6b0b8b2cb436e080749c938a28afb73e45",
+        "lmentry-all_words_from_category/nous-hermes-13b": "41e660ca102652dbd357569d8b97b9f9739f1458eda235750689cc5b64c8f50f",
+        "lmentry-any_words_from_category/airoboros-13b": "716ff1ac7dfc1312ad23b2a79a94357247e11960971dac0b200fc41e0278ebb7",
+        "lmentry-any_words_from_category/nous-hermes-13b": "b973b6e577f75a5984d993d6f437e5ef0ab82455be3b8d25422b5a4e48bc56f4",
+        "lmentry-first_alphabetically/airoboros-13b": "b11fce9e2770202aec341e5b4a4dc633b100a69fb7f6c95e1aa56584423de323",
+        "lmentry-first_alphabetically/nous-hermes-13b": "deb0e3828f909b5e3cec220f68e57990c9d5c10c6fb645cd984aa08b94b8b090",
+        "lmentry-homophones/airoboros-13b": "946229c90b85e79f036e4622ba4bada553a1572b6aa57e3355c9c7efb3303e5b",
+        "lmentry-homophones/nous-hermes-13b": "21d8b173cef6c69450f9639d95f79a457b746148e75e689eae9c6a612f8cce30",
+        "lmentry-less_letters/airoboros-13b": "f3a5121847e3af321e2b71c4da88068c5397a7242d47614dc6cb9c170cf20181",
+        "lmentry-less_letters/nous-hermes-13b": "3ebd0dad775605d344255100fa299d0810620e67ac9c63be7becacb7da90f0ee",
+        "lmentry-more_letters/airoboros-13b": "cef347acab9f2c20f0106494f9490fd7e4b3f1ab1b418d73cea0cbacda425b2e",
+        "lmentry-more_letters/nous-hermes-13b": "e0c8792c0276528db9be89e2957025a46289acdb107040b144c3ecbd9c59b3f3",
+        "lmentry-rhyming_word/airoboros-13b": "32c1f666ee98cafc40522d1f01c4eea193dcf9697fce0c54ea1a06b6897edfb5",
+        "lmentry-rhyming_word/nous-hermes-13b": "5e7c1d48bccbaf4a5202016c9acb67126487c7874efcb6acdae18807a2a05049",
+        "lmentry-word_before/airoboros-13b": "0e66866a44010f9e6b44621c96b6c794620146b9a6259c66bead9688837e938c",
+        "lmentry-word_before/nous-hermes-13b": "548c3664e42598bad697b983387b290e6d8450ebd4ab4c53baef6e72fc880e9f"
+      },
+      "totals": {
+        "holdoutPasses": 5640,
+        "optimizedLookups": 8704,
+        "seededLookups": 8911
+      }
+    },
+    "LMentry/new-task": {
+      "audit": {
+        "grossExtraLookups": 9,
+        "grossSavings": 28,
+        "pathsCheaper": 17,
+        "pathsDearer": 9
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 233,
+        "upperPasses": 233
+      },
+      "panelPathHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": "fe1759ad13cab5dbe0ab4305a64258282ada9327466bd0e3debaf1c5852d5861",
+        "lmentry-ends_with_word/minotaur-15b": "b3333cdc6146e15eb98ff120322150f4f5bafa6ef78d4baba0506c8c2d5c4282"
+      },
+      "totals": {
+        "holdoutPasses": 263,
+        "optimizedLookups": 1158,
+        "seededLookups": 1177
+      }
+    },
+    "LMentry/seen-task": {
+      "audit": {
+        "grossExtraLookups": 21,
+        "grossSavings": 155,
+        "pathsCheaper": 95,
+        "pathsDearer": 21
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 5117,
+        "upperPasses": 5117
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": "5a5346e8101a772c5fcee32aac96d48c9d5e35a765edf23d91aa4706f4a9d341",
+        "lmentry-all_words_from_category/minotaur-15b": "0fb17f488ca3d1927cf4f0fcdca62b2af49c05641c09e66da5def52fdf97a2c2",
+        "lmentry-any_words_from_category/flan-t5-xl": "78bb49e10e599005cdc9e41ed6eed9c5448910ed8201dca1be521044799b5bc5",
+        "lmentry-any_words_from_category/minotaur-15b": "abe84d9456c60219b87ebd75faccbc9b1f8e5ee46102053d2dc527351cc7d6e0",
+        "lmentry-first_alphabetically/flan-t5-xl": "be6e1f66352876a5b46eb7c03b7a0453c73d495fcbec9972f8e08a673bacf49f",
+        "lmentry-first_alphabetically/minotaur-15b": "ca22af06d44afb67699a890c3dd5dea46be1f4b26badfb23e0503d8425c12fcc",
+        "lmentry-less_letters/flan-t5-xl": "26a3356f7b222fb8d0829aaa1b2f6c62ad8f9a5eb0eef6d6118b70c825cf4618",
+        "lmentry-less_letters/minotaur-15b": "e63d16363bfc4353b62579881e835fe988b5869ceb296723d38cbea3b6283045",
+        "lmentry-more_letters/flan-t5-xl": "8d76e61bf281c5ab4c935352cf94a14b8e703f93ea94c102a20bec326233f77a",
+        "lmentry-more_letters/minotaur-15b": "f66118d9e278fe7d4de9cca64132c947b55d5e893bc9ae49b39d2fbd774d7e83",
+        "lmentry-rhyming_word/flan-t5-xl": "fb3980e945c78b848a49c3ecc7581a3a0b4962a1aa3a3d785780633d44b84980",
+        "lmentry-rhyming_word/minotaur-15b": "13e888fae481474a6869e0d1ea9567a155b84978f3814f2b3321535fb4037bdd"
+      },
+      "totals": {
+        "holdoutPasses": 5291,
+        "optimizedLookups": 6096,
+        "seededLookups": 6230
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "audit": {
+        "grossExtraLookups": 48,
+        "grossSavings": 77,
+        "pathsCheaper": 41,
+        "pathsDearer": 48
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 56116,
+        "upperPasses": 56116
+      },
+      "panelPathHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": "ee17fa2e259f083aec3a4318f8d90250c67aec87431b767e68f55ea96991ed10",
+        "anatomy/tiiuae_falcon_180b": "ad47df785e078ebd573692e384e58e828768bbb9173b8cd799e61c40f07d86de",
+        "clinical_knowledge/google_flan_ul2": "14e5595a2c523adacfe817a3e1851a40f7eb5a6b3961ae95acaef2c763f8090a",
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": "c667fff5a387bcf81203d40dbee9e64c4eec8614bec5c7dcacccfff6e33331d5",
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": "46d375c467dd329fa29f79c0522b1c38d77cefb749bafe48514a4d87e76d2a1d",
+        "elementary_mathematics/tiiuae_falcon_180b": "b2573b19b5489a6bcfb6d25fa7c4341d56126f89d86130d56c02dac14695159f",
+        "high_school_biology/google_flan_ul2": "f8e59b30ac970c458c2e4499e0b6184a83b50e911850dd25c9f865579b4ae740",
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": "2946135f238e3c077a9cd982f5392c6bf35f088c443845fbf323535fdfc16e4e",
+        "high_school_geography/google_flan_t5_xxl": "796e89eae83746b152494ba6a209597964fbe2aa93046856e491cad052637b44",
+        "high_school_geography/google_gemma_7b": "e91600346c84303def8888dd9e2e23de1a27f23e9cb62b6c103db01a9c09f410",
+        "high_school_government_and_politics/google_flan_t5_xxl": "ac5854ac57f6e4b482a3b63c9c29e7f5f25e152a235947df57440b6af7353045",
+        "high_school_government_and_politics/google_gemma_7b": "af6b6807caedd7c3a811810a251ed0af62c2a8e1e5d61272f6328ffbd6c08bed",
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": "60698f21722d4d9914a0eb87b9786a30c998a7f464d79c33971927721bd1af68",
+        "high_school_macroeconomics/tiiuae_falcon_180b": "1e696f7cfdad7b7334f5569bf34f00b2e653e916d7c4a8eaa492ec114f7e73e9",
+        "high_school_microeconomics/google_flan_t5_xxl": "c4a2511e04b00ded33cbe141e1abfe0b38d499d1bc57a4aa69772f65504bb64e",
+        "high_school_microeconomics/google_gemma_7b": "b709c806dd0d2d3317b678694169e072f0d5182fdf0404c384f491ab330cbc5a",
+        "high_school_statistics/google_flan_t5_xxl": "4bb5640e761ba7327736e0b310fa4c355c33f4ffdf11316fdccaf59b19832cf3",
+        "high_school_statistics/google_gemma_7b": "39a0786793abc7ed5d256c7ebe2f2c5674c85b2e82309b0e80f54fe9c0452b69",
+        "moral_disputes/google_flan_t5_xxl": "1635adf596ec8633dd544d5b66aa278ab3c8e52edeb3b5196a300da70327b9cc",
+        "moral_disputes/google_gemma_7b": "b37f1b74ab3b3208b76bb97c1888c7fe682aec6e3f8e9269b110a2c2c2d5c903",
+        "moral_scenarios/google_flan_ul2": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34",
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": "8f2a965382fdd5901316831d4f5303823061c2b513411c0588756b30589a2b91",
+        "professional_medicine/google_flan_ul2": "62bdd0bc6420da063e791377782a90aaf5f20f21356ad45251bcad72e912c1a2",
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": "62ef0ad202c04fb8e7036bde5abe3363eea5c893c95a6a16d5020079ba79f9d0",
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": "6e0996bd4d79abd868458150ad27c0abb1ef1b10c06b52e2bf3de44bc8b98c3a",
+        "professional_psychology/tiiuae_falcon_180b": "ebbd71bf8eade4a4fb2c5323f084b047b1614288c055d5e29ac3df23311a20a9",
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa",
+        "sociology/tiiuae_falcon_180b": "61dae856fdd3604c5fdd9d4efee573feff6a78553a4d1f7ee095fdc73c4f101f",
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": "c2a743e60909276c067bd77d7a32bbc559e56174c5d35f7496d95febeae34bce",
+        "us_foreign_policy/tiiuae_falcon_180b": "a6c52c04435b08dd7bcad3562e846874c6d0b1908a80c15bd8c3de67e43ae53e"
+      },
+      "totals": {
+        "holdoutPasses": 56105,
+        "optimizedLookups": 12929,
+        "seededLookups": 12958
+      }
+    },
+    "earlier-screen-cohort": {
+      "audit": {
+        "grossExtraLookups": 52,
+        "grossSavings": 128,
+        "pathsCheaper": 74,
+        "pathsDearer": 52
+      },
+      "nativeSubjectHindsightBounds": {
+        "lowerPasses": 26654,
+        "upperPasses": 26654
+      },
+      "panelPathHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": "3972f003698143e5a14322728878478b51205cea175403c096385a0c19a7d89f",
+        "abstract_algebra/ibm_mistralai_merlinite_7b": "254e5ce5bc2f0699d288649ce6b9e24854e1aad2d47b00571b9bb8109c4c2471",
+        "business_ethics/codellama_codellama_34b_instruct": "82ee39d19bce13a2e3522c2eef0bfed3d34705fc1afeeeb735dccba77646266d",
+        "business_ethics/ibm_mistralai_merlinite_7b": "7cc138cd8d7bede2ca2f550b4ba53b67ab3d111dfaaa2fef8805e7feb5dd5acc",
+        "college_mathematics/codellama_codellama_34b_instruct": "b7a1514300ad56ddb8a19c4de3665bffe67d611d0f71f5534515e285cd9a0ebe",
+        "college_mathematics/ibm_mistralai_merlinite_7b": "69122046198626a6e642cb10da459cbe582e93627b12a7d08ff6977e7c72d087",
+        "college_physics/meta_llama_llama_3_8b_instruct": "6c6a2231ebd4f5e4bc8be41685214afb92548de7664ce7934562f189962a7bf5",
+        "college_physics/mistralai_mistral_7b_v0_1": "d6f38bb5fd50ce4c87bc3bfd8f0e64d993e77d49e750b4001ccf1e3bb4d4086e",
+        "computer_security/meta_llama_llama_3_8b_instruct": "928d3674ea46e942b0a1f17ee201c9987eda9989c43092cdfff893139cb24d50",
+        "computer_security/mistralai_mistral_7b_v0_1": "221aabfb5975518c53909d981f2324dca8b04be9330022b6c3d8900f83a3809b",
+        "conceptual_physics/codellama_codellama_34b_instruct": "b4803146656c9d9ec36bb1a17d717348f3b511a53a7198eb23688f51aa4236a5",
+        "conceptual_physics/ibm_mistralai_merlinite_7b": "a3947c9cb166c2e579e50e1d399b21868c696491b92e25861a0e1f240d9a2025",
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": "88a41e28ce07b284c2fb2faa5f57b8d25c544d61a12c6f2cffe3a5308b0717c8",
+        "electrical_engineering/mistralai_mistral_7b_v0_1": "9e15d09fd3d53c5ecee84c2e7f95b2ce5c6d29d6fa226a4601eb47050615a4e2",
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": "f8088a760d0fb2dc157b0d78d0a2ecbd172245cf175397e14dbd6e5e752dd7f2",
+        "high_school_european_history/mistralai_mistral_7b_v0_1": "b8033af986bea6cac24dde97b62f3a0f3b42fea32b81a6fd1f9118c63a5abc6b",
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": "2b4d2f516709613263c3055ec696931cf9f14ced4cc1255363f371a82f85fc9e",
+        "high_school_psychology/mistralai_mistral_7b_v0_1": "8814397d7b5d5123d46f8cda4257490c1617ea00e61f9d81de0fb2dda52ebafe",
+        "human_aging/codellama_codellama_34b_instruct": "632355b5293ff16faf9b5b29f3bce604b65b8885f4a8cacb615d24889ab55ffd",
+        "human_aging/ibm_mistralai_merlinite_7b": "c5721dc823f0f63ba633436bad2b1f58cc38f67bbb8cf829053f0b50c23e64fb",
+        "international_law/meta_llama_llama_3_8b_instruct": "b4347d443a897cb586fcfc76bc9a4cacf8106ccdb856c038f2673048f497833d",
+        "international_law/mistralai_mistral_7b_v0_1": "200af4f859c3a867194406951872ca58a7d8ba7408fb76b8a9e52ab835f3ccd1",
+        "jurisprudence/codellama_codellama_34b_instruct": "d1f92007a5c987a12feb059a634061587c3d3869f7c0f21406af7fbebf49fd0b",
+        "jurisprudence/ibm_mistralai_merlinite_7b": "a15fbcc33fb6093f66b850167d8c01ec98d335476565ed604b60d254cd430689",
+        "management/codellama_codellama_34b_instruct": "577005ef729948ef536797134eeb0e607ef7d6fe582798b31cbe5a8ae3c500a3",
+        "management/ibm_mistralai_merlinite_7b": "c370ba8d7eec0f4dcc1fc3d4f0a99dd2f7e81dd01b509a010f04ce0fa2050148",
+        "public_relations/meta_llama_llama_3_8b_instruct": "df6622144386a824f21bb3cbd3837139d81bf9b7a2e2829ed1fe78d6762f5987",
+        "public_relations/mistralai_mistral_7b_v0_1": "da4f0b99a096bb8bc408181312d5e9d849e695eac73d487cc1084042f10075d4"
+      },
+      "totals": {
+        "holdoutPasses": 26619,
+        "optimizedLookups": 13710,
+        "seededLookups": 13786
+      }
+    }
+  }
+}

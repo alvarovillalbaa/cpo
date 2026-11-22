@@ -23,6 +23,8 @@ Each GEPA score is the best attainable at the lookup budget used by its CPO coun
 
 One-gain CPO exceeded the stronger GEPA control on all three LMentry groups. The largest original LMentry contributions came from rhyming word and homophones. On the alternate checkpoints, any words from category accounted for 158 of the 190 net passes. Separate GEPA settings reversed the one-gain leads on both previously studied BBH cohorts. The two new-task groups have one subject each, so their subject-tuned and common GEPA controls coincide. The prior paired range for CPO’s one-pass lead on BBH causal judgment crosses zero. Fresh-model performance and the quality of newly generated prompts remain unverified. [Paired fixed-control comparisons](deferred-certificate-cycle.md#full-roster-comparison-with-gepa)
 
+Requiring a repair with zero qualification regressions narrowed the disjoint MMLU gap to 11 passes. The same guard lost passes on original BBH and two LMentry groups. [Regression-free qualification replay](regression-free-qualification.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. [Pinned wheel](../requirements-benchmark.txt)
