@@ -13,6 +13,8 @@ The comparison looks for a positive point margin and a nonnegative lower paired 
 
 The paid signal spent 1,094 additional lookups on 46 continuations and recovered four passes over stopping at cap 13. It reached nine of the 45 promotions available only at full cap. Continuing after every failed nomination reached 40 of those promotions and recovered 34 passes at 10,642 additional lookups. The paid-signal policy missed the gate. Fixed cap 32 matched the full-pool score with 2,539 fewer lookups on this archive. Cap 32 was selected using these results. Fresh-model superiority remains unverified. [Full results and cap points](recorded-paid-validation-continuation-results-v1.json)
 
+A follow-up used the remaining budget for exact improvement certificates. It changed zero nominations. The hindsight diagnostic found room for only three extra passes at cap 32 with the search prefix fixed. [Remaining-budget certificates](recorded-remaining-validation-budget.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.
