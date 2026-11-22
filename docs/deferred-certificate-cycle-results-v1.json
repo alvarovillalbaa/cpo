@@ -1,0 +1,3223 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "parentPlanSha256": "6973dc2bf5677c890b0ff35bc1ec5ce493f6d546cc4179be5dbe2e709f07d92f",
+    "parentReceiptSha256": "7c3990f0d153fe1c8cf451bc642a9447ad9c1d2d05bbeb5be0c3e046ea453878",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "recorded-deferred-certificate-cycle-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Defer the reserved shared probes while preserving exact nominee, deployment, qualification callback order, and every non-probe callback. Compare paid lookups at the original cap and the first cap that admits the complete challenger roster. At the original cap, reprice the frozen native GEPA curves without changing grades.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "challenger.py": "478272234d6443c1aeca6ff59c80abf43ac7437a458a13807e5ae2602b2b88ac",
+      "deferred_certificate_cycle.py": "1ae3346815495b85c57ff0db6b196f61cb29cbd5bcc77ff8cf0c033adcc613e8",
+      "prechecked_certificate_cycle.py": "60e66aa4414e97a0cd5fbdf06494dd2df8740990e648fbbdb609db7d0fbcf68d",
+      "recorded_certificate_budget_route.py": "52b0e1b8948829412df548e63861887ef24521b9aff4f6d4e7aa068a87ba26e6",
+      "recorded_deferred_certificate_cycle.py": "ed2975cc78a9c4cfc678ca85702f4659e2270910d3db738c06db2fb193109476",
+      "threshold_precheck_gepa_frontier.py": "d7e56c18311193a116add970a45b6fa36623f2a95bc1c6a5885a00dc69a3a41b",
+      "threshold_prechecked_cycle.py": "94e21586ac3a73f2750e80ba4055e9c8215e521705a0dbfea57a5e15034c210a"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "36ec3fa066638c955bd0d2566ccb9e8cc74f13b4db811734cb83cd4a6caeb4d3",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "nativeComparisonsAtOriginalCap": {
+        "cap-13/gain-1": {
+          "bestAffordableControl": {
+            "holdoutPasses": 8913,
+            "paidLookups": 11371,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "previousPairedRange95": [
+            390,
+            513
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 9463,
+            "upperPasses": 9486
+          }
+        },
+        "cap-13/gain-2": {
+          "bestAffordableControl": {
+            "holdoutPasses": 8913,
+            "paidLookups": 11371,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "previousPairedRange95": [
+            -6,
+            86
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 8425,
+            "upperPasses": 9463
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "74d191747db28f3fb7a691e929ba094f33cd57e1f1636361fddb17d6fc930b81",
+            "eager": "8d8fde36e4ab6c2940f54ef525c013e5fdb64519936926e40913ad5648cc1db9"
+          },
+          "cap-13/gain-2": {
+            "deferred": "b7f6288b2bd4811a69f1b21c078ca104282ac0e73b68fd475b5571c1328f9c70",
+            "eager": "85a7a5b0bce35897323e25c5dc38f60ba555cd09a73c45353fb93b21a69aab0a"
+          },
+          "cap-19/gain-1": {
+            "deferred": "b7515e32550c5ba098195f19cba1b5c996a0499a3b6afb3d2250c79b875e52a5",
+            "eager": "e27f063dc07ada8e530b036e6d00db5932727de8038893ff30a3aeae8ad1f1e4"
+          },
+          "cap-19/gain-2": {
+            "deferred": "fba202f4e4459dd77fc065d07857ac2aad3650243b3c5d85e0c9249881841e11",
+            "eager": "5ab6cbb8af47a926dcd5286d43d0c9bfecde893a46405e731f513d558538a74f"
+          }
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "4f2af2c54cd4dfe28f09f4e3018336d77c056d4139192d8fd286a649c4801a7f",
+            "eager": "e3227a567ca0585217d08a2942ab49f783a0f2cc2feb209478ae677558996ffb"
+          },
+          "cap-13/gain-2": {
+            "deferred": "e71a79f2ed64289d7a0294bf92625dd5901f6f36a34d16607d6989e6365176e2",
+            "eager": "46c9abf5e7dd7cfde47ae04467e19765cba38cf81a8b3135f70612b5308f08ff"
+          },
+          "cap-19/gain-1": {
+            "deferred": "8823e021cbc9812bb57e06a90575fa30a63e22d69871875603017cf55e3251e3",
+            "eager": "4c0350dac3ab831977ca2ff4f52c293a5b93fd75ec03589674c7300d132aaf10"
+          },
+          "cap-19/gain-2": {
+            "deferred": "48e3b51b89ecd6379dec829dde6cf81a1bf171c678bbda4aae37580d79bfb015",
+            "eager": "e53c330e93e402eae013a0d55658b970eb95793e2ef2b98427c0b018a693c1e9"
+          }
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "f4f404d09ff5aadba6d0de479ad85fbe8a2b970fe13718ecccfa2b9f176f9a9f",
+            "eager": "9a888bc26af1fd63cc5949ecda3540407279c592afe2375cba325371e65c7682"
+          },
+          "cap-13/gain-2": {
+            "deferred": "876e48363d0baf85a490c2f1960d3548a09c3e5970a40ed4109a512cbb345e3a",
+            "eager": "1c97125c89bd4e54d8d19bce57336722d21bac8f86f6591eaacd847b79689473"
+          },
+          "cap-19/gain-1": {
+            "deferred": "666d40313977e8a713ca1018565f74a3bf9a4cca9f0ab3ed223a33fda446451c",
+            "eager": "ff20a0ad2b41d41464dc49e32ad154d3bd7369b2125273b727344eda5c436775"
+          },
+          "cap-19/gain-2": {
+            "deferred": "8b68f6b1f05290e7a518767d0141faeb200502d0f4f187df0793c9d79ac338bd",
+            "eager": "b55307c351cff1e883a3a960ed014292238624188bae21d73091f922c94e7384"
+          }
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "56eed1bc3636847ffe7d373b46748fb4d167d95a85d88054875936b362ce568a",
+            "eager": "a78f41266461f9e04ba2714e0ef621e767eaf144060376631e94663fba7bf597"
+          },
+          "cap-13/gain-2": {
+            "deferred": "482ab1108e59fddf23c6e633e91b9ce8a87497839c172be8fcb78f5e1790d388",
+            "eager": "21046c6e8f61d0f4e1ec896daa5e89435b2f8d2768c033c2b67191d45e3580ae"
+          },
+          "cap-19/gain-1": {
+            "deferred": "c44a6a76e595274d9c500fa8e1a508b4210fdc26f82fd0747173a92ed1f2185b",
+            "eager": "e79805d2e7a12483bee791b9027aadc96743ceea90b7b2909905dbfa250f0ae1"
+          },
+          "cap-19/gain-2": {
+            "deferred": "a38aae343d1e3b0014a85dc889ee8a44725d7717a17970c80258946034356ac8",
+            "eager": "b83a229264f98f5209ba1eb2fedc372dd1cc5e97bfc19a9678170fe9e3863cb1"
+          }
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "aa1806f8b350392c6a53d6ce87409683cd8fc61c39e5ec06aa1737de2b5c9307",
+            "eager": "319f0ac4ca846b12aa657f7ec677f24b23072e51e0154b0086a308d139292af1"
+          },
+          "cap-13/gain-2": {
+            "deferred": "5f34b163720349b4f6af23f14e0e453bc977df59e26aa9d6eb5b524dffb48b11",
+            "eager": "84d82f44859bfbdad9c9bb133099282322c7bff1a6dc289be740fb4e7cc2380f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "e9394da6baeb943022755450046dc00e1cf6289f96bc7e74cba9a04fd99a2812",
+            "eager": "df30b3e68f8a7c5dd4d98e7dc9e9acbb7caa0e8481320ca1133c47c2c366bd1a"
+          },
+          "cap-19/gain-2": {
+            "deferred": "a7da6d814903674fffdb6a9f6f682eb13e576f719bb89f3538bfc41df309935f",
+            "eager": "e5066188590559ad99cc8492798329000c41c67953c04d336d53d7a10f74309d"
+          }
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "3ac6d27b68bcc795f149afade9f7e0ad1738cbce86b01eb4fbfed41089da4e54",
+            "eager": "3eef2ee3188f11df3b6dd0617c0aab8b7cf30b0ce13cdb83253bdb1bbd89d774"
+          },
+          "cap-13/gain-2": {
+            "deferred": "dd6d72e2958c58973dd1518338d327093866a92e270b00a87235e8ab8023204f",
+            "eager": "a98c75e2d6b7325b570379217574bdaa7c0b137248b691eb34edcae7b6966ce1"
+          },
+          "cap-19/gain-1": {
+            "deferred": "5b63699ba375fa1e3df5f370fdae754065d12cbdeaaab4729237d3828c724413",
+            "eager": "a468600fd612e92e15e1b2546f1edf403cc27e1408af9a2478b5c0ad9d391998"
+          },
+          "cap-19/gain-2": {
+            "deferred": "ae8242b3930d61c10b2f4669fdaf4f8c532151996e0dc398af9412929691efce",
+            "eager": "a0407e8f33c3644307be5760c9a6cf459996b4988dd69cd2e05f9299af164602"
+          }
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "58c89d36d80a34d812abcf819ef2e53d2e63b9b395ce95ab33181dd12c495def",
+            "eager": "af517fd49eddce45a95dd2a9931a7c23d1badc071cd000bf4f8fa69563351f5b"
+          },
+          "cap-13/gain-2": {
+            "deferred": "4d524d566dc4f7dc5448a270546b8e532af88fba0cc258e65a598af031fb5483",
+            "eager": "6879ead8c78156204a4f8d81e0d3f491251c687d51cdb9501dfa03e04d1cc790"
+          },
+          "cap-19/gain-1": {
+            "deferred": "3b33b369677984cd5f79df8bbae30c8573a59a7dc4a380269fa09023b407884a",
+            "eager": "60cc4509101c7c9bda75d0a1791a2096828ce2804983a9d34d0697658558326d"
+          },
+          "cap-19/gain-2": {
+            "deferred": "f0d34e68fd02256d17413a170e28b814764fb0bb1d931ee4237219a5e207c69f",
+            "eager": "007608061b6069ba2e62d9d12021094cb08284e3a180722ec41993e142c68500"
+          }
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "46f2c80311becdcb327a938f7f25825ff3874cd184f3eda80597dee33df313f6",
+            "eager": "782ed7592f6dc4a279cf4b1765bfc5b33919d02c83588d9044034e58b54a4301"
+          },
+          "cap-13/gain-2": {
+            "deferred": "402bd2927f0e09c1dbc50134a7d362ccb40d0ef94d61e40384fd23f477ec0b68",
+            "eager": "7a8635b923a526fdee750e23570ce881954a13ad940fc7ad356e8a20c9419eb2"
+          },
+          "cap-19/gain-1": {
+            "deferred": "32f6149f78cb92acebcbeb4c3ca52242e9210e90e5693edfb9d89c8232ab2852",
+            "eager": "ed238fef4780d57527dce4f6d73062661e5d662388ad533dc1e06f3378efa439"
+          },
+          "cap-19/gain-2": {
+            "deferred": "5e02970cffa7b28da45803296d1a302b723a3dff83598be02f3cc517607ac55d",
+            "eager": "0e70fda073328b665a427720f9667547f364e1d61300760dcdc1e2d1c5e91c96"
+          }
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "9957ee57d02205875df51953b6bf3c5107a36a127d199e30714ebcc311c85e4c",
+            "eager": "52c16b8699a4419e993486a03b7d6a70d4094dba101729c4fe62b5e04531f29f"
+          },
+          "cap-13/gain-2": {
+            "deferred": "f172511268792bc547ca83727ee254df614a9ada1ef4e4825425fb652c1f5087",
+            "eager": "1de48d6206dc893c809edcaa5df97dcd4f4bfb04348bbbbb1d1a60c24e459efe"
+          },
+          "cap-19/gain-1": {
+            "deferred": "25b218b5bca8356dea7ff9a8727ade079d401903b347a281a0ade319a6f016cb",
+            "eager": "c378faeb3dae7c5e1d3151bc4489135803b63378d2d4812b20c9099e3be49bfe"
+          },
+          "cap-19/gain-2": {
+            "deferred": "303c107f5070fbc7ccbcfb7543d929ceb2fba900e4b37f047343f0e6189b0904",
+            "eager": "f49bb5c75357465a706756e3badc09df461c5f3bf6a875c5a66005b66268e187"
+          }
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "8601c3078d8278972842254652950d2a6520a23c37659e1203fd7d4c4148ddcd",
+            "eager": "d6996f35dd485166d560b6f851d0f428c836deb5a4434c93177f7041ea6dc9e2"
+          },
+          "cap-13/gain-2": {
+            "deferred": "1552223dc20cb3db1df77478124b76b9bd24effb01b4d00f26ac74d00f4b2770",
+            "eager": "e7752c7c1b8b0326b68e8a980129fce3270cd428df9c0bc36e51b4d7b4484bea"
+          },
+          "cap-19/gain-1": {
+            "deferred": "a79807162a8c7e35076231b3103780937f94c8e607c05022b0809bf4ace40f75",
+            "eager": "44f848d821998ab2692b6329d5947340009c08f1afeaefbbe2d14a6ebd6df184"
+          },
+          "cap-19/gain-2": {
+            "deferred": "8199e926d65f6bae3f349b911748fa9769654a52a7f0d03bbe6c2fafccbf3d56",
+            "eager": "0f4ba3c9b4149255a6337907356c9c681a75f8dede61ae4516ec3b8d62edc967"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "83e759cb07868a95f5a625f1df6f97ba326a40b5c4055d5d0bded2869cbbab48",
+            "eager": "eca3534c8c250b9189f81af564cfb0c493df8e00a32848d4f7fa99a25f9b25fe"
+          },
+          "cap-13/gain-2": {
+            "deferred": "5e7b7801a63688915bbfa1c2291f8d136982331b14dbd5db4c6a78d9aaa96859",
+            "eager": "6dc2900705fdb10eeb44f533ebf64285f49fa20f2612c220f4011d924f4228ad"
+          },
+          "cap-19/gain-1": {
+            "deferred": "d98022d85e61f3bfc965333cda2f7a5a96fbe0031552e64d7de7cc2486eae916",
+            "eager": "cbf1bbf86ca97f2692dc47a743202e1ff63156a48dfc9f4715ffd42ee04bf039"
+          },
+          "cap-19/gain-2": {
+            "deferred": "9da61aea7f238b5006f071a94207d5e1209572b706f2126abb82b5b94a8bc0aa",
+            "eager": "02abb6a4bf25ddf9e3b2c022ba8090898ed06ee2c34f0f6df5980aeec3195f7f"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "ff48f8cd639371a3fdae140c4843210d449295e94036cbd198014cd9e41365f3",
+            "eager": "ff48f8cd639371a3fdae140c4843210d449295e94036cbd198014cd9e41365f3"
+          },
+          "cap-13/gain-2": {
+            "deferred": "8b10a92f60322654b5d886f0eaef554e920c5373e76c1b2ffa4057c3efb0deee",
+            "eager": "8b10a92f60322654b5d886f0eaef554e920c5373e76c1b2ffa4057c3efb0deee"
+          },
+          "cap-19/gain-1": {
+            "deferred": "0b2adef2c97a42366ca0a63a5f56afcdae5c5750f9443904ac5daeecb45fac7b",
+            "eager": "6931dc715ae4b0f62737c8c59d9a75bda5eb6c46c41b6fda5c8bfc0abea191e1"
+          },
+          "cap-19/gain-2": {
+            "deferred": "f0ec389b1bf9c6d70c9e6de06278767491590840fed3e667cfc296fa2cd6a12e",
+            "eager": "23c3d38d0584dea6acd00bd83d1a9436c0347e5f24ccd7104fc40e11f521f284"
+          }
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "7b2ffcf71f1b850f585acce09ddff757835adcfc456987b2769d96c3c7ed83e7",
+            "eager": "c11af5403a1aeff600c6eb825a59b18df9b182e305e15c219253cb969f2ba2b5"
+          },
+          "cap-13/gain-2": {
+            "deferred": "af59ae61f735c68bf68d36a6e819510a9104b1730f0abd8ce8eef6fce4464459",
+            "eager": "5a9ca732c0c01089411a331be953b312d4483438569aae06134c5558433fb470"
+          },
+          "cap-19/gain-1": {
+            "deferred": "837cab8b66126187305db23f3754331f2576128ee08d7226cd029a0b41322b1a",
+            "eager": "25ca3033231c485e336db90e6736b4fafed358508f5cc996d60ad5730d72a31a"
+          },
+          "cap-19/gain-2": {
+            "deferred": "27ea0940fcaab4323810484a155075faa0a6918dad9415202d65b13f151cd2ba",
+            "eager": "ad754bb99eb720fa6f2fabb46501cfc20a182380b5f6fd7eb8dc0211a4a92956"
+          }
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "c147ff3e5bf8d4dbd9a4846ed6f8fbe46c46d7c19c04c40d0a8aa4af530a1b90",
+            "eager": "92fca01c1d3c3a23d0cdafeb3545974072f167382233956caf5f27ab0c365278"
+          },
+          "cap-13/gain-2": {
+            "deferred": "e50f25857f75e2b535f4227e32003d630a8feb6a3e8859d871490e1ed114be9f",
+            "eager": "f526d71091ed4ea291cff2ec4f91d713e74c57e24f587a8f275a4ed089ee0f52"
+          },
+          "cap-19/gain-1": {
+            "deferred": "d5fcff1ca6d1fdbcc3a5a1b319eeb2612680e4a6d4355ead720344a26c6be474",
+            "eager": "99cb929ce6bce9e5634a9f320447cbfb840fd6c69eb363ee443196ee3accb7be"
+          },
+          "cap-19/gain-2": {
+            "deferred": "67fd31c43a6fc63a3731dc14baf319df6adaaff93d2505c6cc89c218b59e43a5",
+            "eager": "3d51458b115f62845bb4d5a09aaa2a86af4ad0dda0cec33e7d2f11e19abac03e"
+          }
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "d8d67ee4cd65342b51bf3345f3f088df3e4e819bee688689592276061d744ef2",
+            "eager": "6c2a6c863e8b177f642175bd9650a3d16086aed08661eb8ebb498606e7a473b2"
+          },
+          "cap-13/gain-2": {
+            "deferred": "b9c26fdc852c423186b8949c48aebe34bf667addb56d5a906ba6e3257d3b0102",
+            "eager": "0a157bdb945baf219d2b579ae45806a349930fe2aa1c6c2a8b1b4485e4832453"
+          },
+          "cap-19/gain-1": {
+            "deferred": "ecb5d26ceef445049ec5adf6aa9975eb229d25d46e5a9f2cff3d43b1a339da84",
+            "eager": "dcc7aa494990421797b7c84493ef4f11d719ff8e3d38506b6684d21925f87c37"
+          },
+          "cap-19/gain-2": {
+            "deferred": "25b12cbf456d4951b20baccd09ef7c8ca1addfc363e09c6a46beda1fa89a6e05",
+            "eager": "e9a5d0c1250294944683ae2d003e89f57424a4596b811f925009c5273a260d47"
+          }
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "85a49381083e150b7359c18d19e81f01b012c96b20a98db7d155e05dfc153f46",
+            "eager": "5ba8baa0f79b00b8b90212c51655662d7f232e7ae9a59d8f19ef795ec56d4dcb"
+          },
+          "cap-13/gain-2": {
+            "deferred": "6458795b53c9e2fa16cfef9ee71c396fa6944f34c39b2f84db03ffa78ede0928",
+            "eager": "f5bc0d441c5003bcfcb31ffb4d3c9163437d36ddbb9b8e3731a5866e9f690827"
+          },
+          "cap-19/gain-1": {
+            "deferred": "cbe14de5c4dab83bc08d53701118a0acf4e0d924bd64044b1219ba129ec7be5a",
+            "eager": "25243e550d76faa38d05253226b07615a7cf7f9d4cf36c4b5285f1714d02eb74"
+          },
+          "cap-19/gain-2": {
+            "deferred": "af1e6168fc5c5a4534a368597e01ca8981fbe3940d70ca8681ceb4699eee79e6",
+            "eager": "ad4e91aeaf09b6ad90d28dbddf4494f249b923e0d47ef35e106db71b51d83c68"
+          }
+        },
+        "bbh-navigate/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "fb9fe8bd12872b902a041a54430fa16ff8b976923b53ae9151874dce26e684c9",
+            "eager": "d96b8eb59d467a4fd51a36f8e0f26d129c8dac48b618e085922afab73c5297e0"
+          },
+          "cap-13/gain-2": {
+            "deferred": "88d8350e2764b50e4fed905ec2639fbc7a4ed9a2e0433d9925c15f061425b123",
+            "eager": "c36466497c658bdfe56e026ca467d4c3819d0b05154b1057c0f5ee4603833416"
+          },
+          "cap-19/gain-1": {
+            "deferred": "1c32755af0b9124b940617f82e20cc660bcf233b0d88cd4fd081f004a0d631ef",
+            "eager": "d394d01c5391eb4d71b07d33e707177786e9910a365e0347fcd8352bc58cc723"
+          },
+          "cap-19/gain-2": {
+            "deferred": "4eb67319a794b667927eb3de13b13904f0439c96c95dbb3631c268f746197af8",
+            "eager": "2f55870e1429c5a12fe54c7f0055721d28490a0ab6a0e09d746f0c9fe38bfa62"
+          }
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "a82be066c0a0e900b42f75fa993c295609d6c9d82fa8340a8231aa271068bb7c",
+            "eager": "d1d84c609a7a2796a4809bf387cd112f61f7a014bc78495b411c9a6e0cbb3265"
+          },
+          "cap-13/gain-2": {
+            "deferred": "d8b497d9feae2216f42a540372762f7c82c09226943ffb90eca9d6daba568faa",
+            "eager": "d8b497d9feae2216f42a540372762f7c82c09226943ffb90eca9d6daba568faa"
+          },
+          "cap-19/gain-1": {
+            "deferred": "31c29f443928258ac688ce5dcf5e61b81911809617d74e10367f0fd3c4a91eb3",
+            "eager": "1db897a1a3771f8687c2c7765a562d46a2c67a9b5d5ab65d869164e7d7995e6f"
+          },
+          "cap-19/gain-2": {
+            "deferred": "354549d796401714a33dceeed15661628f49bb1ab5747d5c70c47c703c76b9eb",
+            "eager": "1b69cf2589e5f422972ad415366c0fd30dc21f25f56863780e5da473169c4ac8"
+          }
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "cf5f122767121bbc6f42a4b4026701fefad6221cc43a00f77952118c0a4fef3b",
+            "eager": "cad9d66fb26294da9d0ac19c8cd5d81a175e7442445766d67ed4be235602402b"
+          },
+          "cap-13/gain-2": {
+            "deferred": "00a0333400c6e7cd04cd7398a376ec6bdae571513b4e0a9d35243dbf284a5149",
+            "eager": "8c894b9d1ceb40ca1a9ca4179037f1c20581c33630ea65bae2123f0c0b52906f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "fb8196da060f0284aa6eded87660eb0afdd2a6be2f6a81488936fbe7f9f5ded4",
+            "eager": "4a9c77958d16b9bcb1aafa6c4e646f8efdc06e8fe3097f0bb219feeaa5021e7a"
+          },
+          "cap-19/gain-2": {
+            "deferred": "21900c6c788fecfcd6d660ce27ec9631140a7557a8f48e07ecf69d84d8528d71",
+            "eager": "4288f48b22abfc5d53799308548cde436c7d6c7ac9f769a186010be13062b730"
+          }
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "31fc16b74885614864b1e1aaddd9f006b26bc5651e89cf1e7a9067ade47b4c7c",
+            "eager": "b19169d2326a5c41696b38e4a50ba7f6c49f9899533762934598bdf84052761a"
+          },
+          "cap-13/gain-2": {
+            "deferred": "4073fa954b1c95fe31bb6903e40188a2b173c4afd74b2871fa3d359a93d5b980",
+            "eager": "a7ffd2fbb593406d3f2f985312f0af16bcaa96ccd94e3ae2c0ef791e917d9cb2"
+          },
+          "cap-19/gain-1": {
+            "deferred": "8ee1307cc3d61d520b449ff6864663500b1977094839ac8540ca67ccebd057f0",
+            "eager": "ba15991568c6cf20b24ef18656018f35e21f3b00de6911c19deff9bc885514cf"
+          },
+          "cap-19/gain-2": {
+            "deferred": "2df204437830be31310d2cdca5037d118ec28dcb2bc1d6b444b94ca3c60f7a52",
+            "eager": "6ee60db5cd69c87879b1b60bb4c50ca958858374360f01861248ba58b9c29eb2"
+          }
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "41be9895134034d1359b60ec5d8f6e9339ce41b9ec07d8fa074bf44a11264fd8",
+            "eager": "ea087a6f2bda122f8036ac3ebd45b2e1438ba7478f29e46b73d0d7def85c4d29"
+          },
+          "cap-13/gain-2": {
+            "deferred": "6ecb1d39e10a3dd8a83ef2677cb54d7d0e01a04fbfa41d437f55304f606581c4",
+            "eager": "c36227e2f78a0d95d12d65199782a470a664cb9692b0b071b4639e9aebdb7c6f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "b0f0cfba263affc908a0d31f7e91ee07c917e051f2504d049d156aae697653b9",
+            "eager": "6a56ecf8c8dbbbe32de716356f10ed37d4d2926dfa99a9c6beb1160496c5e1b1"
+          },
+          "cap-19/gain-2": {
+            "deferred": "62ae6be4133b6e06c75e140ac9cd9a2bf74a45f65dc24ce10ae47c60f9b5d123",
+            "eager": "cc7a4a8650b5d994812dc35e30a9cfca8eebe730807a8e8e24ce3434cc98b32a"
+          }
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "03c3e2d74866cc9e935b5ebcaaa15ead087f654437ad63e88be948e79bea979a",
+            "eager": "931a7af933d7254e0f6de894057afc79a8e4d61e96619500f9d32c668aead8bf"
+          },
+          "cap-13/gain-2": {
+            "deferred": "0fad5c1961e2088a97ce3191a94081e9d425a0720e83eadfc10faa976733ad00",
+            "eager": "6333d1dff589cb9fdb8d1afc8676e6274e5df80863a01af18032220bb765d23e"
+          },
+          "cap-19/gain-1": {
+            "deferred": "367daf5909982b7699061e9f3f24999dafa1c6f3ed5831143572e4eb161b0789",
+            "eager": "5e67c8f069e94fc780920a35e59c513c6073c18bb972f23737e5607eb6d3efbf"
+          },
+          "cap-19/gain-2": {
+            "deferred": "08f129d39e9644027dcaaecea4421ec20edb0b0432cb7f22d6d3c7a4857ddff1",
+            "eager": "6fee5c85aa7d2e7f25991544732aa3055a169e4eb756e64f7d1d00cf69b0fa58"
+          }
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "9a93aa62dda05384da9364d1f22a4b8fe82debf27d3fc4edb8d31b18d6e46ebb",
+            "eager": "5ac0d5ef6802ba5180a5ea5329006464002d5a2326caaecf2b914154353b4044"
+          },
+          "cap-13/gain-2": {
+            "deferred": "9214f5ee2988a84028559d49f2babe77b7c681dce7b651fefd1c0c673cd42e7b",
+            "eager": "3d473cfe6c30244550b4a3d10b79e2d70bf002ea4e729ae98feb2a545431500f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "c14f86b18f2f9496e10d5c6c6e3dea5bf59c1dc23df0de616e99bd4f269fdb77",
+            "eager": "77e6b42f18f1bfaf6d7fffb8a98eaec8867570506c46417fa3cfb8fa175dc3b0"
+          },
+          "cap-19/gain-2": {
+            "deferred": "2fb80ca865d144db52149d058498f1d74e82840e9a7f31a93848653f5135659a",
+            "eager": "4dbc21d3bab9171a06c821bce8a7f0401a5174533def625fb5a2fa5a09d53473"
+          }
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "bf2abffdf3e7ef24651096650116e478e7d8085b06e110628a42693ad36adcac",
+            "eager": "6bdf188790287dfcb46d0f45b22370e72b26dfafe14fddb2ed619a8145ffa963"
+          },
+          "cap-13/gain-2": {
+            "deferred": "d32094302ca63c4664904133cfb55646f58244290c40252e555b1bdae21734e5",
+            "eager": "2e44b36cfef29980882f8f831a04a3c177ad731a54ea98de8a53648148ae983d"
+          },
+          "cap-19/gain-1": {
+            "deferred": "105fa8f4520d7bea3e8f300f3c25968f34238044c42d27a8679547b4f845bba2",
+            "eager": "f2aadf5c8400a73c454a8177ad957880d605e701d0b5eb2d896695437b4c816c"
+          },
+          "cap-19/gain-2": {
+            "deferred": "e67a127191cce6a253dac61ae5987525115d332cfdd4f02e663c89a0253a02a5",
+            "eager": "f4b1a5f76c756ee447d8e6b565afd526976023f5ae41c771bfc23abcc633f5e9"
+          }
+        },
+        "bbh-snarks/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "38a78f064fa5ba54900780c270c69fd1d26f2f461d9d9daeff921b1d62e42943",
+            "eager": "5f1f857536fc25db2544d86ea0f221eac9c250d6a563a950b005a82026a7f538"
+          },
+          "cap-13/gain-2": {
+            "deferred": "ccce756a5f09f7150030187b855476bc6ce43263d259cf3d0eb1180de280a9ad",
+            "eager": "d22248c99b61e8db480e6099d452a60eeaba0ce6c14903516b83ea6d99926f93"
+          },
+          "cap-19/gain-1": {
+            "deferred": "5f24223a494ccd65fff2cd49c246f3f2c00d0abbe97877218b337ab1732c3cb2",
+            "eager": "203ecc0005ee9743610383053312c00d00f0536dfdb24f413e7bf6c0180ccfc9"
+          },
+          "cap-19/gain-2": {
+            "deferred": "e5ec212db385d626ae87788b6241b22d1ba742be2a80258190f7cf89aa2e73a8",
+            "eager": "d7614269dbb174449999f3c6363ad737a64974246c935b6e2ea19a4499c31b8f"
+          }
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "834e582c2c10d0d18af46a2f25f07ba3f2cdf0f4ec6f0d66b588fa436595a9b7",
+            "eager": "69b20f9ba4a8099c713754aab5adc9e4671f76e671aa3e676a7e4207e40bd7db"
+          },
+          "cap-13/gain-2": {
+            "deferred": "a90d648fcc1109713de3d68321c778f927e55d060cd58a8956418b792996c54a",
+            "eager": "75f31562e53f4a922ba125afb14d481e86c5c43587497884ce885a66b6f9fb1e"
+          },
+          "cap-19/gain-1": {
+            "deferred": "9acb1d223e5b61a4d1e9e6de8dccdb507d90747bf4ac408522d5dbb191e71d4e",
+            "eager": "d4b2d5e4a6087e9ace63144a8fe51bf3554f251565112a944bcd6a3034cc4d35"
+          },
+          "cap-19/gain-2": {
+            "deferred": "e0e9360b519ab0cb0f5c339df99c9ea68fcd55e0b343b077ce6e29bd389941be",
+            "eager": "eec34e0ed46a3e38d91d24e7cbdaed79fe57bdbb2b0f2b435317c7c492290517"
+          }
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "5803abc9fd72e77d416641a4f0c066b7f4743e2589fa4e9b026a663dccdcba52",
+            "eager": "149d9d3af0e432e92dc174ddc584276ef185cf9a4c1dbf6252080a1fbb24acae"
+          },
+          "cap-13/gain-2": {
+            "deferred": "a0881d69020323bf49a94be411fe79bcdbe2b08beb32c83a37b242685bd6146c",
+            "eager": "3352c5bf836265c7c23c3150c12e9079a411f05ed0df32a53c6e2ab3ddd17b92"
+          },
+          "cap-19/gain-1": {
+            "deferred": "0b82c461f341d0fe2a2227a1321348051f7424684d0bf21f1b71accdbb81e6fc",
+            "eager": "c5ecbf4f25c167644bc27b63085e5ea72a25dbd5c6f9e067346aaec75dd32e42"
+          },
+          "cap-19/gain-2": {
+            "deferred": "3d6d7f639f3cadd4b1aee52307022ec1b36a97fd6299ed5069e92c0e7b74aaf4",
+            "eager": "d64b109cf56571601203c26b5ff9069e0fc714cd8522378a9c2f2cc63f214584"
+          }
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "44cbafa420a77e751178c7572591fd81a4f6269980a4d6f0acf16928e16d72a3",
+            "eager": "698583ced15799b07de14d907077942b9e7adbb2ad2cb7e7d3c9865921d10cdf"
+          },
+          "cap-13/gain-2": {
+            "deferred": "080c521f4224b0a768b9b28179d3dd13bac2783334ca3ccb35cce2c4a88474cc",
+            "eager": "7142361c9760ec1d99d9710665c2cbb4ed3c86e8bc69f21413ea8f818580a20e"
+          },
+          "cap-19/gain-1": {
+            "deferred": "d84849bfe25e7d90a9c0a682aeef8a655f31575489638839f91339f6489bd693",
+            "eager": "46f248fa689a680833ee81157b6008b496972f829146dd4da467b301fc87d5a4"
+          },
+          "cap-19/gain-2": {
+            "deferred": "968a8cc7194acba9d3cec49115620ea7529653f9b02364ff5b8abf39c104daf7",
+            "eager": "b37f9fb2b2f6ec4c6266fc1e5f10a7374db2a58c2f7873c2f9a6d01e8482ccc2"
+          }
+        }
+      },
+      "totals": {
+        "cap-13/gain-1": {
+          "deferredLookups": 12440,
+          "eagerLookups": 12567,
+          "holdoutPasses": 9363,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 127,
+          "savedLookups": 127
+        },
+        "cap-13/gain-2": {
+          "deferredLookups": 11994,
+          "eagerLookups": 12107,
+          "holdoutPasses": 8953,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 113,
+          "savedLookups": 113
+        },
+        "cap-19/gain-1": {
+          "deferredLookups": 16146,
+          "eagerLookups": 18137,
+          "holdoutPasses": 9548,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 377,
+          "savedLookups": 1991
+        },
+        "cap-19/gain-2": {
+          "deferredLookups": 15149,
+          "eagerLookups": 16910,
+          "holdoutPasses": 8998,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 331,
+          "savedLookups": 1761
+        }
+      }
+    },
+    "BBH/new-task": {
+      "nativeComparisonsAtOriginalCap": {
+        "cap-13/gain-1": {
+          "bestAffordableControl": {
+            "holdoutPasses": 568,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "previousPairedRange95": [
+            8,
+            29
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 568,
+            "upperPasses": 568
+          }
+        },
+        "cap-13/gain-2": {
+          "bestAffordableControl": {
+            "holdoutPasses": 568,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "previousPairedRange95": [
+            0,
+            0
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 568,
+            "upperPasses": 568
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-causal_judgement/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "2f74bb9b88015c847ebcaa2e3fde8d5b65a4bd561430ddcff5dc270e4044a72c",
+            "eager": "5e8406898855fe185132ade895ed262c381a3fc747b0bac498add597391fb5f8"
+          },
+          "cap-13/gain-2": {
+            "deferred": "8706f2bc6e3306231c62d86fdee53abbe211a2f8d5b933b4cbd309a93bcf6546",
+            "eager": "8f88faa12cd4436742bee4e3b898a90f303369b494b0dbc5c3e4a06e58f09171"
+          },
+          "cap-19/gain-1": {
+            "deferred": "3914813b73c4b7252157611ff8751b29be4baf121650ef1e809957a1669c0f09",
+            "eager": "5b0173a985bcec6998c654908304982d973218bae574bd831076b14f17878f90"
+          },
+          "cap-19/gain-2": {
+            "deferred": "7548d2a3fc1465bf3754daf8b87ccc1c8537eb2b26ddeaf388b9d142f7ccddc5",
+            "eager": "6eaa1fe4b702f0eefaaca438b93381c738e765776c24de0f13fd3a41e8bd91c8"
+          }
+        },
+        "bbh-causal_judgement/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "096236ef1c73250ab14e421366c102d391886e8190609b24c811facc576b96fc",
+            "eager": "8e8a91514a23bbdedda6d85fbb756b85161ab6e2b9eaa20a3b7f2d6a730b8213"
+          },
+          "cap-13/gain-2": {
+            "deferred": "09b1b58dab97ce5071258bebfb3dd5081fd5351f4139055365efc3efc07ead94",
+            "eager": "33b0ef1a3a91340bd6048cb6dd2016d94d374ef9a076413575d217797c8095aa"
+          },
+          "cap-19/gain-1": {
+            "deferred": "978fa0933e7d4b4fb0bae44855aed37a69fa46f59f1c778ef5da59086448a478",
+            "eager": "1babc6295138130cf3a91994ab449c2795dbbe744b8d1ef57182a051136cfc49"
+          },
+          "cap-19/gain-2": {
+            "deferred": "9f35ae95b39f418b1dad5eaaa9b55140e5666b2a7793b5f219071bc3a19de03c",
+            "eager": "c5e09ff5df467aedf678e4e5bb5be2895a4c0cd1989275e7ed71bd188d2389c9"
+          }
+        }
+      },
+      "totals": {
+        "cap-13/gain-1": {
+          "deferredLookups": 837,
+          "eagerLookups": 845,
+          "holdoutPasses": 586,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 8,
+          "savedLookups": 8
+        },
+        "cap-13/gain-2": {
+          "deferredLookups": 788,
+          "eagerLookups": 795,
+          "holdoutPasses": 568,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 7,
+          "savedLookups": 7
+        },
+        "cap-19/gain-1": {
+          "deferredLookups": 1123,
+          "eagerLookups": 1214,
+          "holdoutPasses": 591,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 17,
+          "savedLookups": 91
+        },
+        "cap-19/gain-2": {
+          "deferredLookups": 1016,
+          "eagerLookups": 1098,
+          "holdoutPasses": 569,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 15,
+          "savedLookups": 82
+        }
+      }
+    },
+    "BBH/seen-task": {
+      "nativeComparisonsAtOriginalCap": {
+        "cap-13/gain-1": {
+          "bestAffordableControl": {
+            "holdoutPasses": 4585,
+            "paidLookups": 5995,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "previousPairedRange95": [
+            34,
+            87
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 4891,
+            "upperPasses": 4891
+          }
+        },
+        "cap-13/gain-2": {
+          "bestAffordableControl": {
+            "holdoutPasses": 4585,
+            "paidLookups": 5995,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "previousPairedRange95": [
+            23,
+            66
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 4887,
+            "upperPasses": 4887
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "0629fd0e70af47bbbff50d5ea1e7004de6844e3ba8e3603c7f70cc8101b698fb",
+            "eager": "711fb73a6439f4dc5e805b0ae3b21ad61c91fead271544ca6869df79ace47cfd"
+          },
+          "cap-13/gain-2": {
+            "deferred": "a8c0484a5a5fb27f68321cf78591d0bfe79d7c4aa463f298d43e6a5ea81e60d4",
+            "eager": "8fd071da6b1554189943c6b2acfb1f0b889269360cf7531466022aac49bdd9b4"
+          },
+          "cap-19/gain-1": {
+            "deferred": "53d687962dcf09f94008f8528710327f54e2d0ce8af51d7757d057fb83594524",
+            "eager": "f87bac418bc82af147c8add4541264e9c3206156178b8f4c08f170059f6d5a0c"
+          },
+          "cap-19/gain-2": {
+            "deferred": "cb6086857b80c8198ccbef76b9e78013b8d29c1bbe03187638eefce4feb908b5",
+            "eager": "09b6e37abaa8c34da67f9092f43c63591ed5040492f6a9484fcb4c6f664fa0e9"
+          }
+        },
+        "bbh-disambiguation_qa/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "c2f3e14147c2d8706bb38bca98089a5d741010c946dbf46db675e39d5f985f1e",
+            "eager": "3be87122f39c2a3a467d46f355a1eebc1d37e5af068566cd41e0d19cee0ffbd2"
+          },
+          "cap-13/gain-2": {
+            "deferred": "c18210ef2a23709b56aa2ed3d24e019d651ec20593cdd23249e17d901409e153",
+            "eager": "6ea656413f4685c4f45ea851f48bdf3b025b227ced88c6d260f1d4a0be11318f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "eaab0714f69332d3d5092250702fd46c65ed5de38998b83f166e8d187f1b85d1",
+            "eager": "bc039643078f6bd0ac91ee8b9ea9687a8cbeebafd412e53b811a3f65d59e1046"
+          },
+          "cap-19/gain-2": {
+            "deferred": "ccf50e36f7191be4f91bcf0e341914b79eea421ff3ed226a52b1a84c4ea48904",
+            "eager": "1e5f81c53c9928139670993ba2271c7b7ec14a3c8d26feea1599417173950e72"
+          }
+        },
+        "bbh-formal_fallacies/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "ec491d4cc95fc35e1b7943a46c6eb075f81709461d0df0aba4e4642f7efe971d",
+            "eager": "0ee6801cdacd0111f6c2d47ef082e76988258430aabec03205e40000713d4cfc"
+          },
+          "cap-13/gain-2": {
+            "deferred": "9e2f52c8ef859ccbccf41f013d1459457e8cd4f4929ddf13a7e0462e893979cf",
+            "eager": "a2dfae2f20c7429d7765ef3f5b32bdfb5ffd74f14a05367ebc5abb5aa17b8eb7"
+          },
+          "cap-19/gain-1": {
+            "deferred": "8df7c3447615534e3c66383db02a5db41ac3316109a26edf3d314e380845e54a",
+            "eager": "0750387dc5d16e21148103dd7e5a8a2b6825a510779ff1438683f5cf396162fb"
+          },
+          "cap-19/gain-2": {
+            "deferred": "bd4f3be036c623f5d5e564513516df1cb7b1bfee6cff2144b78f081624e153e5",
+            "eager": "750a80cbfe91c9093f819fb112d461c3079556ae09b0f891f37417d22c683a8d"
+          }
+        },
+        "bbh-formal_fallacies/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "88ff281463d72fade01ac4d52eb1d6149d3ca628d44ed338cf0eac0beccbc298",
+            "eager": "88ff281463d72fade01ac4d52eb1d6149d3ca628d44ed338cf0eac0beccbc298"
+          },
+          "cap-13/gain-2": {
+            "deferred": "2c6c3e61b40d8cb6b55cac3703f2d0f7a48fd6586bd1896c874306156746b465",
+            "eager": "2c6c3e61b40d8cb6b55cac3703f2d0f7a48fd6586bd1896c874306156746b465"
+          },
+          "cap-19/gain-1": {
+            "deferred": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0",
+            "eager": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0"
+          },
+          "cap-19/gain-2": {
+            "deferred": "2ba47179383644b7554fddb8a01d0e3c1d34f64bbf2d88bc3535af44af4c4026",
+            "eager": "2ba47179383644b7554fddb8a01d0e3c1d34f64bbf2d88bc3535af44af4c4026"
+          }
+        },
+        "bbh-geometric_shapes/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "ce9155c52e30f0441b6d7b77331c657b70e38003aea4c5a7d3ccab8ed7b09632",
+            "eager": "8b105738b598dc68d1e9ec1b826625001e1dcdc1a790d090081961db22d634fb"
+          },
+          "cap-13/gain-2": {
+            "deferred": "e61a3ffb58bc01cb6b15de4d45368864ede327f16eba2c7cc6029cfc4cdd0166",
+            "eager": "8be225d0abaa1ba9f11c8227e278c4c8e48eb12af28703d5756f413083d565d6"
+          },
+          "cap-19/gain-1": {
+            "deferred": "4b79628a92d1012d2ee21b7b4291f9ad17874fa56b96351d1d2e78d55c00e559",
+            "eager": "984147411d60d5a049001a02716ba41f5eb8b99dca124f1c93b68fb1e695b118"
+          },
+          "cap-19/gain-2": {
+            "deferred": "a155e63de7f1cefc9abb185cdf1629979765b6f22159e5bdfb111aec4f4248f7",
+            "eager": "5ca2126cfb89c92181bd4efe5de9acf64f01260f7aab86809ee9913fae0f6c48"
+          }
+        },
+        "bbh-geometric_shapes/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "235fd1ef2e88a9bf5c9e8504e9a4ea52253fc8bb85acc35362e5d22da0555bb9",
+            "eager": "235fd1ef2e88a9bf5c9e8504e9a4ea52253fc8bb85acc35362e5d22da0555bb9"
+          },
+          "cap-13/gain-2": {
+            "deferred": "3cd6d554c77cb8cc55d5770642607a376bff73b997e4cb8828de05754f88600c",
+            "eager": "3cd6d554c77cb8cc55d5770642607a376bff73b997e4cb8828de05754f88600c"
+          },
+          "cap-19/gain-1": {
+            "deferred": "ec87da74d5093be6f6206923242cb6a8be03305567f61564081f5f1e0c6d2471",
+            "eager": "f8228ca5433b5bb181952a6d289a7ab52c438badc92e4c620f476ae4afad434c"
+          },
+          "cap-19/gain-2": {
+            "deferred": "a2b18aa5ee5ca25c5be7b34ac6fd076e60357ec3751b74e0529af6a85da7a5a5",
+            "eager": "1af1a3cdad39f87b7c94aa5f8608628bb70d110a62bbd334d74c006d7c61c8bc"
+          }
+        },
+        "bbh-hyperbaton/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "32cfaddf15c3bc8f59257e91e266ce8e486d6b7c8ea703ba227e57103014fd8c",
+            "eager": "bac5b0e5c71e3617c01c5aee95ca2e4f59bf18fbedfd43e922fc407eb445227c"
+          },
+          "cap-13/gain-2": {
+            "deferred": "2da86c28086e669e1a2c6fdbeee4443be4f7ea9261f0434c7f327cfde6cbaf69",
+            "eager": "2da86c28086e669e1a2c6fdbeee4443be4f7ea9261f0434c7f327cfde6cbaf69"
+          },
+          "cap-19/gain-1": {
+            "deferred": "987708e839d581895b18f10ac340ab2e179aa7765a2a1e3d5929a19cd8d57344",
+            "eager": "e47e100b12abcd5b7314afae16f573bb5226f31262089f891be05f57dcca876d"
+          },
+          "cap-19/gain-2": {
+            "deferred": "9e9fb59daefaaab1c296a65304560761dc0d7889495436d85a7765965f9bd6ce",
+            "eager": "e9c5715e8664cd29f0c572f5bb31268376497121cc7f01442a798bfb2c5310f1"
+          }
+        },
+        "bbh-hyperbaton/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "987f6d0804f681c5064903e5eff85210b4a5da212a2bf29ca1c64d3492d17419",
+            "eager": "c7d95e59911f0083aa7bcb67315032b02d53ff73c55047cbecf128ba77f67d99"
+          },
+          "cap-13/gain-2": {
+            "deferred": "b3b4d50b978a74c415162229355034aff2a9c986a26e8430dc51d9cd87a6d66b",
+            "eager": "3ae478e35f62a59b83eab984e376f751f383f28934e2af00a3e88668ccdbf740"
+          },
+          "cap-19/gain-1": {
+            "deferred": "d38adda569a9a8c008ad2e610c70dd13f02924d6662d9949f4cb9210757850f3",
+            "eager": "f6dedfbbb588bc126655102e65256f48b81d4b47626ea0f345a0c32be968ec8b"
+          },
+          "cap-19/gain-2": {
+            "deferred": "d0a24c182e79c72c37a13fd5f742faf46b3752ce45c1b54d44bb193c0696c7bf",
+            "eager": "e602b09fda8356ff3939baba71d2382c077b229e5ccb7d13405574b950901bb2"
+          }
+        },
+        "bbh-logical_deduction_five_objects/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "ca495b21df15f500e43565f7ef798d36c50c62f562aa4497cd4e094ff2a84769",
+            "eager": "66e1c9a17e9abed2c78bea6c1491302622384d48e9749e836a4a51ed3b0fce39"
+          },
+          "cap-13/gain-2": {
+            "deferred": "ee83fe2a35d3dcf1ec61249c8157ecdf39086297f2d958e9299e3eca442e6123",
+            "eager": "052bdd7c7ec0a8f4fbaf87969a15bfa54d04822dd6f74e4f4f40c5188d0178c2"
+          },
+          "cap-19/gain-1": {
+            "deferred": "ade6131b7e04fa7e271847aa40c8cbd85974c9db79fe1770c2417b702e70d26f",
+            "eager": "55ef6a69d8ea8649208458b05999fd696d746d558aa9ea2bc5e1ac262f14863e"
+          },
+          "cap-19/gain-2": {
+            "deferred": "371f5ff658e3c2f206c5843b2b318ec2b41708928bc1be71db10143d6954d22b",
+            "eager": "ce6be58bd9f83771e0e3b3c96f895c3f47213134802f11e41850765bed23f570"
+          }
+        },
+        "bbh-logical_deduction_five_objects/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "183d265e015c2a47697d971b049b7fd202e4d9023d49c4e9a52fa11a79a91cef",
+            "eager": "183d265e015c2a47697d971b049b7fd202e4d9023d49c4e9a52fa11a79a91cef"
+          },
+          "cap-13/gain-2": {
+            "deferred": "730eb4946eae5379862ee0636b3e9e53d1b7822c1dafed7217c378d5e3ea0d83",
+            "eager": "730eb4946eae5379862ee0636b3e9e53d1b7822c1dafed7217c378d5e3ea0d83"
+          },
+          "cap-19/gain-1": {
+            "deferred": "3b7511b79db89523d6a003fc450abf8009ad570048125f8ab23f9c28dfbf90ff",
+            "eager": "04ba23a37d8392178827d0759ef7ad6c9f85d9a5ada0af83ea8f44165f28d60e"
+          },
+          "cap-19/gain-2": {
+            "deferred": "7c895a16dbcd841673b983126131371957c4c043fe07ec54cd52958c662e6e01",
+            "eager": "78e25889d2e7438bd59ff4e7b2909b7317feccc115f16a52c60252f96c01a384"
+          }
+        },
+        "bbh-navigate/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "bc7823a04643104144eef8436a2fad113f1ab7046bc4bd2a8ac82118bdad2236",
+            "eager": "85217dfe3415371fc3d81f3c697dd35c74c722e770826dba24e361ae96792ec0"
+          },
+          "cap-13/gain-2": {
+            "deferred": "c7d00d6371431c5e089a89f90434075ccaac14701f1011b56a9bfddfbf1d6c05",
+            "eager": "eafcaf756e1a2aaba3eb5687a6f6bdcc895e9379563495da539e03c133e60800"
+          },
+          "cap-19/gain-1": {
+            "deferred": "64e46e4afefe0a4ee5758d8aadda1b82ecf972cadf081acba6f04793e1973686",
+            "eager": "0613f85b9d6c82e4fd8aba68876cb48ac328ca6bb2d9cab80e36d65fc2f22bd2"
+          },
+          "cap-19/gain-2": {
+            "deferred": "98b765ae0cc10922a736c2680b8b6269654c6d5b68cc43fc164050b2fcf25bcb",
+            "eager": "ce035af3e14ceeccb8b46528242cf2c409120fb375898cfea3f0d5f7d7ccf7aa"
+          }
+        },
+        "bbh-navigate/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "b3fd0adebbb6791e4f3e8c062417194861e6cbc6918d5f8d5c14b83d43af2865",
+            "eager": "b3fd0adebbb6791e4f3e8c062417194861e6cbc6918d5f8d5c14b83d43af2865"
+          },
+          "cap-13/gain-2": {
+            "deferred": "7e79ec02ee1cdfe2509153bb00945498a69a895528d474a49ca0a4a5647edda9",
+            "eager": "7e79ec02ee1cdfe2509153bb00945498a69a895528d474a49ca0a4a5647edda9"
+          },
+          "cap-19/gain-1": {
+            "deferred": "5099bc1b458f1048f5f30deca7a52a8ed2320e5d7dc81d90377b4dbc979a28a4",
+            "eager": "e286551c1e21cdcfc33cdbf2629f8c817000050b986defeb41fb10fff0b1b2da"
+          },
+          "cap-19/gain-2": {
+            "deferred": "92f8a75ce50e704f21eb565c649b708896957b0aca776ec38f447f0b8fb88775",
+            "eager": "bd15cf402890ac6cf09580f47c6a1e342c713dc4df9401c502b3f2403d469fdf"
+          }
+        },
+        "bbh-penguins_in_a_table/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "163a70794e7739a0258d3ececede1df16203ee1839340b74a8692cbc99b45efd",
+            "eager": "2ee0a7fb32093657a68ee87bd12d8f879e0ae292741eeceec446050a90c0c996"
+          },
+          "cap-13/gain-2": {
+            "deferred": "8ecb059bd6944b4c992a5938b9e73012e625100c99fc4381ce1e5adb4f317314",
+            "eager": "d09cd8f44f4c0091f10d4dfa91a23346031885ca1306428570d89615b1b12c98"
+          },
+          "cap-19/gain-1": {
+            "deferred": "2c9303258c7d756e016f659db5040acb6a9a7bea95def2ee1e6a04d55d749f2d",
+            "eager": "a5bf1f70c080f492c9015d36dbff2649b802470b00124c946072035b3f708393"
+          },
+          "cap-19/gain-2": {
+            "deferred": "6acc49bc716563d92f1ac2544e17de6ecd1cef6ad1d0bcce7ac981267cf4cb2b",
+            "eager": "509e38d7d68c7eeaffd896de9004e590c02c0059b6dfcd896d3fb47da8cb70a7"
+          }
+        },
+        "bbh-penguins_in_a_table/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "3db42dc889f498c7caff5ada6f13a330161924295e728733b367c29f9b137e35",
+            "eager": "a20ba934629add35882faa468bf4693a2bdb82f81b65a2fdc10fb00b696dfd3a"
+          },
+          "cap-13/gain-2": {
+            "deferred": "4d2449761986250e519e3008fae2fc85951d8c7d51acd6b255b8b0494eb35377",
+            "eager": "49d9f94f9c7ccc08006d909f9c08ae268d81aa463a8828af95a3a8a32c1b5db3"
+          },
+          "cap-19/gain-1": {
+            "deferred": "dbb72fabac4187cd6673a4c181275ad56b7adf63df3aa84ed6f1d3622d5406cd",
+            "eager": "469dfe8ad274692b8af600ff715f323dbba3a80844238b8e7908dbfb89c78fd2"
+          },
+          "cap-19/gain-2": {
+            "deferred": "96e374c3656ec3c17a730eeaf84d07026c499aaf714f89906f64d98a7aa3c4a5",
+            "eager": "46497ffc9f15b7d2167e83d2f224f420184ef7d36680d04fd150389154f32a49"
+          }
+        },
+        "bbh-sports_understanding/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "2293cb5f23c9a2f2a22f6baa828d3d560ace31af9dde820b2c8b6af2f2959741",
+            "eager": "afc37ca5fba75294350dd9e2d0b748a2c8401cc96358d8cc7e6887aa3d9aef9b"
+          },
+          "cap-13/gain-2": {
+            "deferred": "f00e98a5b33e8da6846d6e23840ab0fb07e88f6f9b280b604340af04cdb95411",
+            "eager": "1f857bb0f7133f6f30cdef96ca7c8231d76273402bbeb0580f5f1c635d4ffb69"
+          },
+          "cap-19/gain-1": {
+            "deferred": "837c233f0aaff9cce868b9b6df1d6327c2e5df4fe569ec750f7f8ae0f47d5c83",
+            "eager": "114914e3f673ee496b408f7367e88defb407566cc38070369f06e55188792493"
+          },
+          "cap-19/gain-2": {
+            "deferred": "ddf1b05e9d3b32d2b82b044f09c5741a855d7087731088d4f92851d6f8b0902d",
+            "eager": "9b48fd484a8c41b684f9f3488ea856bb28454d0681359fd9f7347838073343dc"
+          }
+        },
+        "bbh-sports_understanding/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "f4bd16d6dc57d40f6ecdf66fef88cc284b3b22ea44c2adfe92813d405025765d",
+            "eager": "f4bd16d6dc57d40f6ecdf66fef88cc284b3b22ea44c2adfe92813d405025765d"
+          },
+          "cap-13/gain-2": {
+            "deferred": "334e4a37ec346f3b19da8503ef8e1572e9f213d7c3de8301c4386721e40a6702",
+            "eager": "334e4a37ec346f3b19da8503ef8e1572e9f213d7c3de8301c4386721e40a6702"
+          },
+          "cap-19/gain-1": {
+            "deferred": "55456e31e27510c0dfd6dc479bc0eb09bcd8e702a576fc5e8a6e64ab5081e3c8",
+            "eager": "0d565214e1da3f3a64fbb90153084539e2f3bb794ed615813750d00048565cd8"
+          },
+          "cap-19/gain-2": {
+            "deferred": "bd60ebda2eb3d928bf7bf81dd2590ac4a6dd8c8b34b33a1915dfc81faba92a45",
+            "eager": "a31fb1f874de9658d326ab2fabf145bf8e7ac5a0ad396ee47f8574ead161bffe"
+          }
+        }
+      },
+      "totals": {
+        "cap-13/gain-1": {
+          "deferredLookups": 6841,
+          "eagerLookups": 6903,
+          "holdoutPasses": 4648,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 62,
+          "savedLookups": 62
+        },
+        "cap-13/gain-2": {
+          "deferredLookups": 6489,
+          "eagerLookups": 6530,
+          "holdoutPasses": 4632,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 41,
+          "savedLookups": 41
+        },
+        "cap-19/gain-1": {
+          "deferredLookups": 9098,
+          "eagerLookups": 10014,
+          "holdoutPasses": 4843,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 174,
+          "savedLookups": 916
+        },
+        "cap-19/gain-2": {
+          "deferredLookups": 8439,
+          "eagerLookups": 9125,
+          "holdoutPasses": 4790,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 134,
+          "savedLookups": 686
+        }
+      }
+    },
+    "LMentry": {
+      "nativeComparisonsAtOriginalCap": {
+        "cap-13/gain-1": {
+          "bestAffordableControl": {
+            "holdoutPasses": 4583,
+            "paidLookups": 6349,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "previousPairedRange95": [
+            517,
+            650
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 5243,
+            "upperPasses": 5263
+          }
+        },
+        "cap-13/gain-2": {
+          "bestAffordableControl": {
+            "holdoutPasses": 4583,
+            "paidLookups": 6349,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "previousPairedRange95": [
+            193,
+            295
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 5243,
+            "upperPasses": 5243
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "52f1bdb95b7ac7dfd950757d4949312a41cb9a0449c6a7f7aa227ab5b06beacf",
+            "eager": "7089e429b2661b84e29cb8105a4990830d6c1c3a6bd8c023ee01c9cd7851fc84"
+          },
+          "cap-13/gain-2": {
+            "deferred": "86d56bbbe6bb63b6036c94a378bad507269fa1bfc8a241cdddd6118c02e3f930",
+            "eager": "c2693440de3ceca9ef669753e4e613a9cf74ea017875d50a12ef7ea2ed8ee2e7"
+          },
+          "cap-19/gain-1": {
+            "deferred": "9b5668a7853f3e1575bbb5c0bfe6bf3fcc02885f0a840b61d470876ea918d49e",
+            "eager": "10dc48036d15c9a9b7cd0a25b114c46774106cc5ff26c68809eeb96737f0ca5f"
+          },
+          "cap-19/gain-2": {
+            "deferred": "19fdd8a19ff3ad3e22efc557e6f87afaaabb4f8818e21763f7e8f418b565ced9",
+            "eager": "7a0e526bf5b98239e3166afc64ed71a00bde0f059637429a6cb6bac247d48aea"
+          }
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "b1757c8765bde4aa75259f2c273122e921e52d6cd937daae8c5989ad64dad581",
+            "eager": "0e0e5f55c2fb7bf6940828d98fe95179529fcad38910ee347119977a50ed2530"
+          },
+          "cap-13/gain-2": {
+            "deferred": "f329c052072e01bbad679cc1b5ada1d7e63d6bb7296f584638cdca1bbe61ffca",
+            "eager": "78f6af26207a9803da2c72018081d57774078c19026a52998f660e0830d0e152"
+          },
+          "cap-19/gain-1": {
+            "deferred": "6d5245ba8fba0f461f8b9f0bc41b586e161aad9fc654ee72cd029cf05899c28e",
+            "eager": "d7b5a2894ef79f8cd14705c9fe191c88e8fb16cbeefaa045503c687294ce1bc4"
+          },
+          "cap-19/gain-2": {
+            "deferred": "f329c052072e01bbad679cc1b5ada1d7e63d6bb7296f584638cdca1bbe61ffca",
+            "eager": "b6843b84a96c5288c85a1643b0b6b1716b86ad129e796bb17cab8b1827e4d995"
+          }
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "858240820da3d7650e7d0448d0f4fc7e633f8b44f250eaab5b1f644841545da5",
+            "eager": "9d08fe4e38d20b60d1f4f3b43cd655edd40535470b68322c1a8005fc1005b966"
+          },
+          "cap-13/gain-2": {
+            "deferred": "7427be1778ccac4e3510bec4821f2a51fe820bc6abd88577834eb6cf067fbfc5",
+            "eager": "ef3884a49b81cb5af8dc5bd85e427a9fb5e9951e7baf808da11a20bf9dee9928"
+          },
+          "cap-19/gain-1": {
+            "deferred": "d0a1c2afa41de2076cbc9d5fcc4ee28059fb4fc52bc0a7423696efdf66a086c1",
+            "eager": "8de5c206cbabdd0a9558ac92bf95051d352d0eca8e5a77645de0a544315d135b"
+          },
+          "cap-19/gain-2": {
+            "deferred": "8a3b4cc54ccb9b7f6d8b58d199313ecdb00443ace13b146dc9889a46ea4f7f94",
+            "eager": "ddf6650468ef4a053d045e2ae9d6a1f45f6841e448742b64ba5f925f477593a7"
+          }
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "df11b5f93dcc5552cb44c73d1ff0eb54e5ad8ee56d53e2d35485f87d990fbce3",
+            "eager": "05895c133301732c2d89819eff6c609c92fee01321fdc0b070f79258a4a03fb7"
+          },
+          "cap-13/gain-2": {
+            "deferred": "33456da41da32c166ec294011c955e982fd6a2228e748e5303ea4f0ecdc4a8f5",
+            "eager": "e6303eeed262d511fcfeeff4aa79c01b3e5cee1d1403012d133722f63313d381"
+          },
+          "cap-19/gain-1": {
+            "deferred": "316c2053e591a7b424bf3d8162aac306428f1d60372012a1f9055cf6641e7572",
+            "eager": "052b1745198504999b56fab1f713546cb54370704e03f342feb11a356e3a3934"
+          },
+          "cap-19/gain-2": {
+            "deferred": "e6a6eec086e21a132db45bcd52753258b0a525cf6245592d7f51990b4ffa32b0",
+            "eager": "3c4e94bc4fe2ef4f4f3b4de5f4bf5978e0094ca14343a4b821c7827539678a46"
+          }
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "a34efeec22eaf07c66d9924914c288cdf35cd303257db8fc52e05c66660d7d21",
+            "eager": "f1d21c42361a3f99a69f81882b7e3e03a830a09c7ef0e5570ed9d8bdc378c31f"
+          },
+          "cap-13/gain-2": {
+            "deferred": "e0bc92b3c7db759d589e7fc1d2fc2d0051820a1e72dfd5ca170b6ca6a46998b6",
+            "eager": "9563a1de55d65841ae7b61f539c53bb8241ab4f1a40518a94403cc749d682c83"
+          },
+          "cap-19/gain-1": {
+            "deferred": "e913da2a4a41d5397100bd8ceecf9e2dd764b9ca22bcc9f439cf195199a08cb2",
+            "eager": "2f3825a2be08c51fd2621f34f31333de65a2969c81955622d00203479afdbc3c"
+          },
+          "cap-19/gain-2": {
+            "deferred": "dcbf2f147d53e40dee61d48026bfcf062dd4e343527feeff5e7cd7c7fe0c5623",
+            "eager": "7022de3091e4b860b92012853bcb6d8eb8080c3e05e105793fe8b29c8a0f1dc8"
+          }
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "fc1dd1e06a4362f3ab5dca013e9d09c740a74b4046ac7101127aedfb5015b4b7",
+            "eager": "288a7de25b3ea0fc97c5c9c301780a026b1f5f937d8f8eff715b6b1bb9d43829"
+          },
+          "cap-13/gain-2": {
+            "deferred": "f98ae72e8c565738a8ac54df8df3c7c25c50958d2d029b85d537be1009451afd",
+            "eager": "33c89358771648d94c16358942f2b77999126c8d0f7fc26eb8bd4917f12ac7ef"
+          },
+          "cap-19/gain-1": {
+            "deferred": "4e48d5b8d8b392fb03d6f53bf69bca9cf9d334ff3dae4e0d51f09da122e43977",
+            "eager": "d0d73ea326998c39642ef3583545927787e084cba5292fc7c99fe9431958b13d"
+          },
+          "cap-19/gain-2": {
+            "deferred": "87cc13a48c8023f7cba6c96fa1ac328cfc4decc843135038c114c977fdcbdd2e",
+            "eager": "15e21c35276aa055d6e2fe52f5d5142a4ea47ffc2de05e1fcab7fffa6eace583"
+          }
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "eae806441a8da90a82bf439ef4501031dd7405e6b5abe8caf659a932d0c0917c",
+            "eager": "b27bac137d2a789a6c1a69a357c634e7c67c38254a736575861a7add331d9bbc"
+          },
+          "cap-13/gain-2": {
+            "deferred": "ef25ca12d2474ea8e3df39075a47928cc442e35f388d8d4a5e0b7c3ae4ab51f7",
+            "eager": "f531226f2ae008e52ad2d95ace5f50a389d2103281100a70b99c31099b07bfd6"
+          },
+          "cap-19/gain-1": {
+            "deferred": "3043a96dc6182f27b5caba3f620a52ad13808293ab2ea25fb76c76a82db2dd27",
+            "eager": "21b6fce0084977335619e15475c7407872767ea351e522b83dddc505aa33b840"
+          },
+          "cap-19/gain-2": {
+            "deferred": "ce9863856643a3aacec2295c0b61458df2b0328383a300fa0e4a948280945766",
+            "eager": "357b6f3395c09540e2e43a1147049032c7aa87e1ca75f9a65fc6d6a2d811bd26"
+          }
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "f47be67f87e49a7dcfd9af05e5f08132836a6ee153c04405602757edd2faf142",
+            "eager": "1e6365a63b94634e6d02df8b87a889388889e3acb835cbb0b95466713d1d9ac4"
+          },
+          "cap-13/gain-2": {
+            "deferred": "23ff31cdbedf4c2f82d6305d1c4c94312cad639fac422ec58e3cc18f39315795",
+            "eager": "e623242947b1e3b6fa97a23b34b03887c3325a5984181e9898439aa60418fa46"
+          },
+          "cap-19/gain-1": {
+            "deferred": "4089a35bcb132ce234cc021438d8320ae9b4c760660c3a1f1ecb5058939bf6cb",
+            "eager": "ccc045f9c2f6c4e829bdd5a8be6ea273091bf8aa678ab80cd46eea7b12ab2aa9"
+          },
+          "cap-19/gain-2": {
+            "deferred": "c325fcba311674b55302aa9fc75c26420a4bd9038a42ebdaf028f459673cb2b8",
+            "eager": "b2d401cd54bdf2b66dce4aa134fa929aabe5f97eca0ae4e204c3c77152e4943c"
+          }
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "ede9938547c9355596963461c67dbaecd6ef48976d29749be0487e623ea72e07",
+            "eager": "9830b7aa9d137bef4b9220bc65d0310b7332530818f45e3cecda5435b90c4779"
+          },
+          "cap-13/gain-2": {
+            "deferred": "4ff85cf93097a291377c081daf97876c2e01f8d11a7232c4207d1a9ef8fdfcee",
+            "eager": "3c2493a6b9bf2545f457c4e703a03b360b14d2ab62fd10b0273a74d7500aaf59"
+          },
+          "cap-19/gain-1": {
+            "deferred": "082416dee321aedc10ccfa02053c639251ef72021e3df0c300e2e0d7bdb1e532",
+            "eager": "886b5e9c1679a4eb0d72432e8d69104a0a18789f0e4dd503216463e79a4d75ed"
+          },
+          "cap-19/gain-2": {
+            "deferred": "af71e0ce79d59d11bb214615ac874e56c67ac90e5dc9be6e43feb993316bccca",
+            "eager": "f59853509204f97f243b811a450fefccda401b39dec0ba5e0df6d036874e7f5b"
+          }
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "3c7c10702b4232eec44a5b7bedbdb8ffdf4da85b9172cf5e929f5d336b2b413d",
+            "eager": "5130ecf59a8f4e784c2e1f2eed0a9b22cc00a3b3ab0b839dd6296b5ccdd156e7"
+          },
+          "cap-13/gain-2": {
+            "deferred": "28bc8267b0887a2c0df87e1f881dd24f32f133b1e0ce61ddd82a8d09dd1b6c83",
+            "eager": "56fd8ba59a54556accf9ee36fffa5a71050ebbbac1d04b8e096468ee8c3b7838"
+          },
+          "cap-19/gain-1": {
+            "deferred": "dc44e994bb5f4638619a8d3cfd293781ab25f8145f07667e2f6d3ad359b0a436",
+            "eager": "a63b182590f6e32aa3ef7d78ededdc5d2c8b739bf9595bcfa5d4b419edc8921f"
+          },
+          "cap-19/gain-2": {
+            "deferred": "67438f6c0e8b322d7d24acdb2292948f2c5cf06247b9297fe28b6c4dcc4eee5b",
+            "eager": "2decf7f459349c7faab83e4b2ce51515b32f22b4bf28686ac59d8584527975fa"
+          }
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "f58ee862696473e8485b5f29535429c55bb6597b653f5a249823324d36e8a5b4",
+            "eager": "07b280e53badd32ddad25f49a0c287f72605ef1149a7b5092aa1a06f2c03ed0e"
+          },
+          "cap-13/gain-2": {
+            "deferred": "72f31a656549718774e0a6493fd1a47b4bfe5809f5bae742b810eb4280fe43bb",
+            "eager": "0f87f729b5b56d308f77cf58ff3ce9d8638fb3897375aa3e269dd2f80cde168c"
+          },
+          "cap-19/gain-1": {
+            "deferred": "da44efe9cab9a5499762d24fdeaa8ce8926daee3a858dc5a0e4a7cea71a3c5b1",
+            "eager": "2f8036fe9bfe1428299cad8e6eb905cb7caf7f614ebdc4b357f19e0755671ecf"
+          },
+          "cap-19/gain-2": {
+            "deferred": "9a16f11303ed5d90ded0c79258f51a25ba437e12c609952a9fa68dd5a3092555",
+            "eager": "2526c82e2162e43429e051c5f989146b0bf99b8a8c8500b0de607afd6b6ceb6b"
+          }
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "c0c5749693e74a0fc1e64a3fd0a219049828802a13ffaab27d68a15f0f9643f2",
+            "eager": "9da94abc83f75836d937b98c5dc025c0a835380603ab07d5e344edbf428f70ef"
+          },
+          "cap-13/gain-2": {
+            "deferred": "2c839157fff71005c2591a21e06705f03c44b16506f808ccd69d81735caeb130",
+            "eager": "c8959a23ffa7f89d60021a0cc7f07816f94242b7112b74b6729d7f859272119f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "f3d8058b44c23c56375c740dd27164a71228085c42247f338ca0d79e39608f15",
+            "eager": "5fa66e895229ebdc1795ac890c270c5102364f53db9c2cad5b7e3f4c8dc4c458"
+          },
+          "cap-19/gain-2": {
+            "deferred": "8709728a59aee91c0dc2460779510ed2e868876bcf9b9cfde2c58b744a9f7090",
+            "eager": "d3decac594a30caf24dbc670835373cd0097cdeac501fbfe86d215c2e8a6f7b8"
+          }
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "efcc03d4592717f3c98be335262dbe6dcd9e0a051705f10022cf77b3b88dd29e",
+            "eager": "1475c9be5d58e55d35fc1f27afb083aa9fbd280ff00eb90990be039d2684d781"
+          },
+          "cap-13/gain-2": {
+            "deferred": "d65d7026f5c2c9fb5b712cb7bf8de9c095b171282cd5279f66592bf92739264c",
+            "eager": "2e23968b5f03105edcbcd99e3c03d83558e277103c8882e4ae2186474110b23a"
+          },
+          "cap-19/gain-1": {
+            "deferred": "dcbe38af6c99e4d48372eccbbb11fbb47da84714cc90b236c50d2e7815ad27ea",
+            "eager": "c357507ae408e5a3896a56bb11b10b766d5696039cf7d62d65cfa5382f52c96a"
+          },
+          "cap-19/gain-2": {
+            "deferred": "3c88b590baca3b2532d6f765ce3ca41b0a46bbf3d44162d8e69ac37cf97796db",
+            "eager": "21813c44e77f2b672b4e966a4e4609e94f92f2988617d84d6c4be7fdde7b86ad"
+          }
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "2d7cb10fd26d5528e8f496bb35d2d19cade36f7755cdb5c8637f27880cf57c71",
+            "eager": "6feba106e92c5503cc8f57da03297f4c5caa1df5d9076a51561b3df3c746ac3a"
+          },
+          "cap-13/gain-2": {
+            "deferred": "451c0320adcf33561ad15303a022f7c7b70b51b11f2af067cc1b12dfaeebbb2b",
+            "eager": "19e2d0070fa750f96b3821f27e001389888c3f5cea15d868405410a3c609daac"
+          },
+          "cap-19/gain-1": {
+            "deferred": "af8b2b64f2d9801d8170dada16e1ba569b5f73fd5ae99e649ac84fe7a23ce0d1",
+            "eager": "a02fc6f74e2cbfd7b339cebc2ff2b2ed58b4a903fd233af320efc938c942e88f"
+          },
+          "cap-19/gain-2": {
+            "deferred": "2416000dd7795fcea1029213e22d113f85b17baa25dc68fd09a35b7dacefcd57",
+            "eager": "ceadbae20649107824409f5c59cbdae6c31defa65298021736b435180898a175"
+          }
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "cap-13/gain-1": {
+            "deferred": "e82af0cf2c4120b0de81e84ba3350564a835bf63dffa9a48aef0d9106a56f675",
+            "eager": "f91414382716ecbc33f78d90dd681cef1c0b29918a44586486f53932dc32507b"
+          },
+          "cap-13/gain-2": {
+            "deferred": "ae22c5375832dc1ba9360865d6619b8c8a9ffb9dcdc18541cb4ff02a033eb6d9",
+            "eager": "6f8ddb81bc824894754a6552595b74065d0483aaaf783913ffed87e92a7e9398"
+          },
+          "cap-19/gain-1": {
+            "deferred": "a1e6afdc71e68524356c20e1f12d1680edf3133e19d373234f7f7dd204bfb84d",
+            "eager": "0eb0768170554bf1f2a7fe9c5c3a65a6a0cf3cfead14d0089e254c68031c53c6"
+          },
+          "cap-19/gain-2": {
+            "deferred": "9a121e8a6713ea1e13647af6fb8363aafbb92a60fec0a639dc4e20b74612f261",
+            "eager": "64aaf1980f34e3f66077f2970f72a85ff8ddf0bc50cd513e93542cf933352c43"
+          }
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "cap-13/gain-1": {
+            "deferred": "dd1f5b575a9766da8580e9f68038ea22aae9ae63ce6ee2b3d22f13ffa8454154",
+            "eager": "59cc467c1fea28214407f2f0c19b16b51a15a203990c1a3748a55d9c18a292ab"
+          },
+          "cap-13/gain-2": {
+            "deferred": "bc2a6cd3f1a414cd92b8a279855e36243fb0682b01bb6d9047bf548464ce88fc",
+            "eager": "0894f909770dafa744fad6bd90f6bf28a1451fed8810859e9623227f3f348dfe"
+          },
+          "cap-19/gain-1": {
+            "deferred": "9152f6363123eb5dd387fb7fd3b53eecc7e8593414a0767106819c9ad051e8c0",
+            "eager": "fa9fc68c431fa94e56a3329e61fbd1b4e5d0608fd9b582be54dd0c837130960e"
+          },
+          "cap-19/gain-2": {
+            "deferred": "0cc0755aa963aab3f2b2437f27cbc0fcf6f107360153981264a4d84a631f0397",
+            "eager": "4cd7062fa03628ddb3d1f504b6d93b5e60df61f96062d7f7e078bb8e61c692c3"
+          }
+        }
+      },
+      "totals": {
+        "cap-13/gain-1": {
+          "deferredLookups": 7021,
+          "eagerLookups": 7105,
+          "holdoutPasses": 5166,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 84,
+          "savedLookups": 84
+        },
+        "cap-13/gain-2": {
+          "deferredLookups": 6844,
+          "eagerLookups": 6911,
+          "holdoutPasses": 4826,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 67,
+          "savedLookups": 67
+        },
+        "cap-19/gain-1": {
+          "deferredLookups": 8781,
+          "eagerLookups": 10226,
+          "holdoutPasses": 5650,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 284,
+          "savedLookups": 1445
+        },
+        "cap-19/gain-2": {
+          "deferredLookups": 8386,
+          "eagerLookups": 9634,
+          "holdoutPasses": 5192,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 250,
+          "savedLookups": 1248
+        }
+      }
+    },
+    "LMentry/new-task": {
+      "nativeComparisonsAtOriginalCap": {
+        "cap-13/gain-1": {
+          "bestAffordableControl": {
+            "holdoutPasses": 161,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "previousPairedRange95": [
+            40,
+            61
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 161,
+            "upperPasses": 161
+          }
+        },
+        "cap-13/gain-2": {
+          "bestAffordableControl": {
+            "holdoutPasses": 161,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "previousPairedRange95": [
+            42,
+            60
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 161,
+            "upperPasses": 161
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "2f005f8d4487fb2f9ed8afc76dfeb69773d4f2c058b3ca1942757d05183ef3f4",
+            "eager": "50c969de74baf1978b49f16b8245f09bbb9a258a1374ac4310748a1ebfc20349"
+          },
+          "cap-13/gain-2": {
+            "deferred": "79b14927ac6c83867966597e3792b2bd76af677992279d48d0527c6edf6943a3",
+            "eager": "d45c4c0a7a5b534551ec98c06bcd1dec07ceb8f1e4e7944820644adbee5a5d1c"
+          },
+          "cap-19/gain-1": {
+            "deferred": "65fc9ba932044e975b3e2146177f84b2df578f7aa8641cae0d2af848afd5219a",
+            "eager": "04d49d02b5aa79508361cf9ff2d569bd851f4181f8afcea78bda8f4e72b75b38"
+          },
+          "cap-19/gain-2": {
+            "deferred": "60e2c66e5d0b7cb8fe01434486be72ad1ea1c3b775c415ffc6a4e04201880b1d",
+            "eager": "462b31d16b5f7aaf9f85c8c61e5aede6e2b3ec84c7a27c794478084ebd5a8542"
+          }
+        },
+        "lmentry-ends_with_word/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "b32668c90b46687dbcf563a375e69a7302808b1203a030fc0b8671036e108337",
+            "eager": "7d538508879677f2c0b10ff9fac242735e402ab81ae2dd0995957bea95542854"
+          },
+          "cap-13/gain-2": {
+            "deferred": "c1093c44ee44fc21338d1e56f998131a57f398d2dceb2df3e2a6c439eeacc640",
+            "eager": "d8c17b143c948710a3195c0bc8adbae1bfb28342a52648b8641ba7493f83a7e7"
+          },
+          "cap-19/gain-1": {
+            "deferred": "862c6077c68ce33eafb2d1f774b135031f8d0f05e74e22e9fc660dc84d85054e",
+            "eager": "b5a535b1ea9ff6498d3897960a9e678528c754fc6ac3ddfd9c9c2ccc3b622b05"
+          },
+          "cap-19/gain-2": {
+            "deferred": "3d0ae70e8568a3ab813ebb9f64a7fe2491ba3449d9f8432cd63d2c4a62ec6c1e",
+            "eager": "7be35c1ffed1e0db1db94c9778359353b2d1155f62777600a4b048cc63dc505e"
+          }
+        }
+      },
+      "totals": {
+        "cap-13/gain-1": {
+          "deferredLookups": 901,
+          "eagerLookups": 907,
+          "holdoutPasses": 212,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 6,
+          "savedLookups": 6
+        },
+        "cap-13/gain-2": {
+          "deferredLookups": 946,
+          "eagerLookups": 952,
+          "holdoutPasses": 212,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 6,
+          "savedLookups": 6
+        },
+        "cap-19/gain-1": {
+          "deferredLookups": 1170,
+          "eagerLookups": 1348,
+          "holdoutPasses": 263,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 38,
+          "savedLookups": 178
+        },
+        "cap-19/gain-2": {
+          "deferredLookups": 1186,
+          "eagerLookups": 1364,
+          "holdoutPasses": 256,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 38,
+          "savedLookups": 178
+        }
+      }
+    },
+    "LMentry/seen-task": {
+      "nativeComparisonsAtOriginalCap": {
+        "cap-13/gain-1": {
+          "bestAffordableControl": {
+            "holdoutPasses": 4638,
+            "paidLookups": 4619,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "previousPairedRange95": [
+            233,
+            309
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 4964,
+            "upperPasses": 4971
+          }
+        },
+        "cap-13/gain-2": {
+          "bestAffordableControl": {
+            "holdoutPasses": 4505,
+            "paidLookups": 4224,
+            "setting": "gepa-sequential-precheck/16/gain-2-threshold-precheck"
+          },
+          "previousPairedRange95": [
+            162,
+            220
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 4918,
+            "upperPasses": 4918
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "f82d69308aaca20fce1e5da2a4ba78a203ccea7ca138a66acf64749bda6f504d",
+            "eager": "919d4cf2a6790cfc70eec622434be7c614777a7295d75dd23ea0b22526754269"
+          },
+          "cap-13/gain-2": {
+            "deferred": "871acf80b9de684e2ec3cfcae3acfdcee9f3d865b54e16b10984dbae75e6fee4",
+            "eager": "202afcd99041c93905eb7e7a42c907926948289a13289d6370d2385135aacf7a"
+          },
+          "cap-19/gain-1": {
+            "deferred": "737ed65e53ed9cf45b3348e8203781219036b9c1e77fb9a7e004d0505aecf4c0",
+            "eager": "2b355780c9e1fc75341b3878eb1c9bf3e2468bd3cf2a8f3d2f384b6a87b97d18"
+          },
+          "cap-19/gain-2": {
+            "deferred": "cfa2bd393d3d45f80811911ffe2279a643cf0720897e67afbf1fd56ed1943b01",
+            "eager": "80941f223a8a03ba4213d3fcc0849052aacc7f1df8c534f8d36bf983462d06b8"
+          }
+        },
+        "lmentry-all_words_from_category/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "9fc99be9588d26d278fb4edccf5e11c336568cc78e44bc1b15921cb50cfb6915",
+            "eager": "bcb49e9cb0911cc7c894fde93eadbfe448f7c74db6dfc88b302bf08fce847c00"
+          },
+          "cap-13/gain-2": {
+            "deferred": "d65d0f51a156b13117acb2d2555d8f41fe1fafb432d6543c67e91f32ea122a5d",
+            "eager": "8c454efe29e1a60442296954686d7642e25457ddcbfd6d861e2865a5ea7085cc"
+          },
+          "cap-19/gain-1": {
+            "deferred": "cbf8fa6ba8d82035c565c9fe64fc88b1936b40472c6b3f6b3185f0df67d6e747",
+            "eager": "ee1827ade1fef96de58ee253401f909321e0557fb1077c446c58fe0e51e4ceb5"
+          },
+          "cap-19/gain-2": {
+            "deferred": "72afd5af1c9859698bf23dbc683979d8102e4ca4e85460e8fb3e418c14494b59",
+            "eager": "5403f6b43bce64e3047aca8785a35006ca9d7fc9084266537f45592e4875f7c2"
+          }
+        },
+        "lmentry-any_words_from_category/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "9304805f8a54a8a902700206bfc41765489673a6d9f37ff18ca6e228cc2ba007",
+            "eager": "d634d275c5dbf767ba0618345c13dfbf30c5985d39fd3f2208541ebc0deaf162"
+          },
+          "cap-13/gain-2": {
+            "deferred": "8c647932b265758b95935c34d45d226a0e104e8ae48a8e0f81e1cb7f1e9490b4",
+            "eager": "96d146f98a19fc3956e4d4141edf1f78ff2aa958736d5a18262f111533424927"
+          },
+          "cap-19/gain-1": {
+            "deferred": "80d14207892934143fbfbcd0b01b705af8cb3cba99fa088f2ae24e1d25a025ca",
+            "eager": "23b6d66820955f24e6c095e023755ac9f061a84d1072794afbb18d8080978886"
+          },
+          "cap-19/gain-2": {
+            "deferred": "67a146f5065493d250fd1efa7c1fc06594ed6a985e5ce1cef9d1fc86318616c9",
+            "eager": "54400f75822cf2a028f3bf73dcd5d07decf26d547226fd17f9aa8068e30b45f4"
+          }
+        },
+        "lmentry-any_words_from_category/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "cac1ebe847221174d266b3988bc3ef091d15597d17c26ff20ca011610144b7ad",
+            "eager": "63fee7404d4fe27c08b92ac3ce91f51c6e7167e771cc1131130cd3dc00aed481"
+          },
+          "cap-13/gain-2": {
+            "deferred": "35b5e0b8a7f1b0062908e3b29d9047ec4aa98b60c2d0d747e956d30d5f7f2a69",
+            "eager": "eae4263952cab3b8ff333e195a49575e1bc8a53c4ceda5a4dbf57cdeb86ecd3d"
+          },
+          "cap-19/gain-1": {
+            "deferred": "9f3333c87179cb779a8e537b5d32aeb96b352d22016d85bdfbb310a038644a0e",
+            "eager": "bc3e3de55d029809fbf49de81b5a56ddee5f96b8bd12b6541a8ef96051132c90"
+          },
+          "cap-19/gain-2": {
+            "deferred": "77a461c0db46d88896a48e375d8f06c90545464ef43acd85a7d43eb4947907e5",
+            "eager": "baa6ecd8a684d60974c8017f3bb3f6c944ccb72de8dd3d73150921acebb5b435"
+          }
+        },
+        "lmentry-first_alphabetically/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "4cc951944d9282fdfa7dbddbe1263b97e97ef24c5ac4c406de23259abbf2b9e8",
+            "eager": "fba5b95c04eb3d1d1611b737e7284f11f969f9e7f1f49a310984ae9725d31f4d"
+          },
+          "cap-13/gain-2": {
+            "deferred": "3bfd5d00c2738ede67307acf1911bb402b24fc53d55902af3e93f61a904c7aa0",
+            "eager": "a3cc1715b968a9bb338b00734ea9f8ce33f6aaeeb901fd7655b77db97b0226c8"
+          },
+          "cap-19/gain-1": {
+            "deferred": "d52f628d616ee7550c88f1e9d6235a6bfcfbf3794af1476777b7194e422e91b0",
+            "eager": "e5e0c2bcbb1026e3b12964f5b27696cfd61491e2438bafdcb8e1e9a7ccaa87a0"
+          },
+          "cap-19/gain-2": {
+            "deferred": "1aa4f26f980ed5bf25294d29157075bb8b81df68c93b15e847a695279fc919b7",
+            "eager": "9ce965f7d51aad4aae157b3c95ee3f353775aae1fc76431eb2901dea461a84ed"
+          }
+        },
+        "lmentry-first_alphabetically/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "c4e6efcc49f00a2a53e99d2ccefb6696de9d0146572e18fc26c080bbae4420c3",
+            "eager": "6d9e4a19fbab0672bb6fa586713d9b28def7e0e709571be1151ac8d76117f3be"
+          },
+          "cap-13/gain-2": {
+            "deferred": "567b4a9df3c1d6ece44c8b26339cdcb83523513db5c6e5c493cb1af3c02bd484",
+            "eager": "021a6b7068a099b240f8040ba46bd6b45cdc7fe0c9aa46679b30bb2b5a06694f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "ea97d0a4c375a8e5d2195cfcd8926ecbb4e9eff412bfbd885e84d7bf000c339f",
+            "eager": "1d646f7a29ea942f75ae6f257b4eeef0ebe56e8822bd37efe6317183ff1a227d"
+          },
+          "cap-19/gain-2": {
+            "deferred": "3e86c961905cdd66e9bc747d193d89108d5d5ea698686c896576db6323d786c2",
+            "eager": "431e9b653f9e710f639459a418de9df49cfc5be3b9ad747bd8c93e877d6fbfa7"
+          }
+        },
+        "lmentry-less_letters/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "dff46b52334fee2cf1670d867955c3a34c6932ae6e11268a78f61aaf3da56833",
+            "eager": "5d3f718289f9042845e9f95a8053537a981e2089b61e82b02145512ab6d9996e"
+          },
+          "cap-13/gain-2": {
+            "deferred": "194b7edd7d9ae6c103524640e714c464e40f76152898a76b184db4a08208e183",
+            "eager": "2bbd5664fe44c0dfa91735371d435c9a81af0db81484b86828a8aa38c005d585"
+          },
+          "cap-19/gain-1": {
+            "deferred": "964db113f44f1a0409ca6f36d4bbe65f0cd3283f782404bae91bf6c0a5b79e2c",
+            "eager": "64858e6649d7dc9b80a014c82e13737cd099137d0d0817a7cd25c053095b0bc6"
+          },
+          "cap-19/gain-2": {
+            "deferred": "b791f48b4f0bce20efc81bbef938691a503e2d6a8dd2e5bcfe022b24980fb35c",
+            "eager": "42d1f1106c17aa69243cf446f9f122166fec7d8b5bc61b928e87d03bafa9efdf"
+          }
+        },
+        "lmentry-less_letters/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "934aab5736afb64090ebb9a0ee1c68b0cb2a427aad2d739d9391657cdfbd9085",
+            "eager": "d949abb5146e54046e3f7784427eb1c2eb5a07ac7068307cbe5998399e26a2b6"
+          },
+          "cap-13/gain-2": {
+            "deferred": "30a48b2c9c5927519904743029a726c31f57b1a4fd1e460f67bee27f418761ae",
+            "eager": "e8d47c1b0fd4706c21df72af908cdfbebc1095b34b105142fb427469518fd7f6"
+          },
+          "cap-19/gain-1": {
+            "deferred": "91c6ec5fbdc36c84d2eb3b2bef527cf64a651bbd1f7e0e16363d84aded8d302a",
+            "eager": "ae70f2305e9d8fd2fa03a6c292a7d0d2226bd085c529e1bdc532d8b19f342779"
+          },
+          "cap-19/gain-2": {
+            "deferred": "f00bcef44b478280fcb94e08312b847a0db0a7e49cc14e5d7eebfd361e3a4e8b",
+            "eager": "e5fadd2820a3c62d171b4c03ed69d99246e5d34e2144a335114f4dd21b53e524"
+          }
+        },
+        "lmentry-more_letters/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "880a0a7290ddb71161b62ed0f9be757a51494010535ce0937910dfe8e685c349",
+            "eager": "c0f9407c2ad534ec8b803fb444a06b5df3b4f96d8fde4ee88b611cc15d56515f"
+          },
+          "cap-13/gain-2": {
+            "deferred": "0e8037d0e356603fa55a18a873c0b47e77aeb96906bef96e3ef948c8701a7c9b",
+            "eager": "fc386b6c494b8d418a144fb39330239c7eccabe1ba6c8e5bbf6d3147dd4475dd"
+          },
+          "cap-19/gain-1": {
+            "deferred": "dc05c13a2095386fc0a28c0f5f4a349bbd34a657f8939127831eee28bea629bd",
+            "eager": "05150b436c64974700fd083931b81dbca51ab242e1559ffb5647904f5a87875b"
+          },
+          "cap-19/gain-2": {
+            "deferred": "edf5f6f94eabb4f950bd068896ea6e2994a661a345d181ed8ab5902bdc0611a0",
+            "eager": "72b4f3ee3141ee3b3f65a78a66dcf50ca0edccc4b0c776607c67a4c46a70e06e"
+          }
+        },
+        "lmentry-more_letters/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "4e86e07f10520b104eaf0e6b9283af47b8265501505546030a4e3ff9453aff02",
+            "eager": "11ab5a85b052b00955b24aa35b6ae32fac7f7185fab54063de748adaad81cb4c"
+          },
+          "cap-13/gain-2": {
+            "deferred": "2599380ddab1be33a61201386836249000d253100f7d8f8ad8b10e6d3e1cfd54",
+            "eager": "f6f52ca87ffbdb5c44a74f2e1c0ecc128ff01cfed4075252f2b2b32cdbfdc464"
+          },
+          "cap-19/gain-1": {
+            "deferred": "32ab7c6e70cba1f44bf187c7953337322775199586dd463fd234064c310bbdf5",
+            "eager": "80266cc5d1573890045f045786c7c7c6a44530f84b4ff5bd296f9aa519fa2f7f"
+          },
+          "cap-19/gain-2": {
+            "deferred": "02ea6c1a3439e1e219f2b5577f0463a63fe50b71c6becb7b25845c367bd4813f",
+            "eager": "624b39a7bfa351db53b7ca54754f09ea6f84d519d2530e4fe804f38171ec2cae"
+          }
+        },
+        "lmentry-rhyming_word/flan-t5-xl": {
+          "cap-13/gain-1": {
+            "deferred": "afc70cfc0e5349e63e318fb0208cc7e0a773bcba5e48d2331614a90533a4ef19",
+            "eager": "325cc823fb80a0c7de789de6a49255569edaf71de9504e8ce0b53ca87092aa97"
+          },
+          "cap-13/gain-2": {
+            "deferred": "097352dbcd27c141eacaedbd3ff37e2ab032cb1ebaac967da6669ab433d5e68a",
+            "eager": "94710b073b927bc6f3e2b979b3d8456ef53af829efef7a5989f8d9fb8d320de4"
+          },
+          "cap-19/gain-1": {
+            "deferred": "02a5dd739aad6ebda3296e73cfa19f805c41e106ae3c904ebcbdceb1c429b481",
+            "eager": "a0022409836c692ffa0a36273f2f888fcb2c2e1d608b135343f083517de7bffc"
+          },
+          "cap-19/gain-2": {
+            "deferred": "a7e3a1e9c3fae70f9f6b42e124f5269886ce3635e96196b630e9d0a72abb6d62",
+            "eager": "ff53c5f7354e2975516ccd6e55f4ee0bf2e78fcab4cd69e46a3516ab9fe1a234"
+          }
+        },
+        "lmentry-rhyming_word/minotaur-15b": {
+          "cap-13/gain-1": {
+            "deferred": "102be9dfb39342fdc81df76e094cfad909b1b8b0d508e6a94e2b7e7afa0f722b",
+            "eager": "88714c20c5f3e8fae426a72f5c46a4b4b877a1124f64c687fcab7498bd0da2a6"
+          },
+          "cap-13/gain-2": {
+            "deferred": "87e0463fac361103370411701f6953827350a4b28aea2d617bc15cbf43cdd99c",
+            "eager": "028590fc6eb6da407a07b1fd05c4e9ce7ef9af5f3341376f23370271cdb34cad"
+          },
+          "cap-19/gain-1": {
+            "deferred": "13e888fae481474a6869e0d1ea9567a155b84978f3814f2b3321535fb4037bdd",
+            "eager": "2d6e4af0a8d433fddcb64d7a65b8dcc8c298c81db8df9735fabf8e215799f8f4"
+          },
+          "cap-19/gain-2": {
+            "deferred": "50c42f0ddd16e9c9d87c7c6e86f6757b286eb54ef91e4bb1f680af1c3ad6c5e1",
+            "eager": "20e88d13dbee51f04eb39307db7aa307091fe10119475964698a23fbc18bac8d"
+          }
+        }
+      },
+      "totals": {
+        "cap-13/gain-1": {
+          "deferredLookups": 4956,
+          "eagerLookups": 5029,
+          "holdoutPasses": 4909,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 73,
+          "savedLookups": 73
+        },
+        "cap-13/gain-2": {
+          "deferredLookups": 4444,
+          "eagerLookups": 4499,
+          "holdoutPasses": 4696,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 55,
+          "savedLookups": 55
+        },
+        "cap-19/gain-1": {
+          "deferredLookups": 6174,
+          "eagerLookups": 7300,
+          "holdoutPasses": 5307,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 216,
+          "savedLookups": 1126
+        },
+        "cap-19/gain-2": {
+          "deferredLookups": 5402,
+          "eagerLookups": 6246,
+          "holdoutPasses": 4963,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 162,
+          "savedLookups": 844
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "nativeComparisonsAtOriginalCap": {
+        "cap-13/gain-1": {
+          "bestAffordableControl": {
+            "holdoutPasses": 56068,
+            "paidLookups": 9320,
+            "setting": "gepa-sequential-precheck/16/gain-1"
+          },
+          "previousPairedRange95": [
+            -26,
+            42
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 56113,
+            "upperPasses": 56113
+          }
+        },
+        "cap-13/gain-2": {
+          "bestAffordableControl": {
+            "holdoutPasses": 56065,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "previousPairedRange95": [
+            10,
+            46
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 56109,
+            "upperPasses": 56109
+          }
+        }
+      },
+      "panelPathHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-13/gain-1": {
+            "deferred": "c4a474c03d3e4912d3e6839cab1cd08579044bf7860025054ed87dd1714f4a9d",
+            "eager": "c4a474c03d3e4912d3e6839cab1cd08579044bf7860025054ed87dd1714f4a9d"
+          },
+          "cap-13/gain-2": {
+            "deferred": "1c845043c2d56556d195fdcfc80caa4ae84881e37713b2b2cc8f7a4bee42e477",
+            "eager": "1c845043c2d56556d195fdcfc80caa4ae84881e37713b2b2cc8f7a4bee42e477"
+          },
+          "cap-19/gain-1": {
+            "deferred": "b508eb547d6094a9699ac5fe5b3b0c0cf9412ff27ee3f6ad4a9c07c759cdcb5d",
+            "eager": "de62355d864e7633dfc4b7ab3133475d65dadcd777e1eb0f1dffd81395f721e9"
+          },
+          "cap-19/gain-2": {
+            "deferred": "b1eae5153c007bac820b25402089e65ff6bd14a6a6dcea45010a14f02377be92",
+            "eager": "c080edc230c05c1d14a6c7db793ea39495d465eb35faf668436be7fd3f122018"
+          }
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "cap-13/gain-1": {
+            "deferred": "f46578f50517cf229611c9558ed6172ae177ddf4e70ea3e4602075fdf4f97fbc",
+            "eager": "708e7b9488897bd23bf89abc05f47534470936ef6774d2e8eed9db429573275e"
+          },
+          "cap-13/gain-2": {
+            "deferred": "7fe7a5d47b630c5672ea9171a5bbe591851de37743df1406de77bd1f12037f67",
+            "eager": "1f07a2b9dd1b2fc0c8d17aa9a4b6be9ded07e890fce67df00863a6f50683d198"
+          },
+          "cap-19/gain-1": {
+            "deferred": "dc1b3cfc9614e39dec8b77e848c25d5efd525a4d8809cb433e0b1be4dabfe7d8",
+            "eager": "1aade39490ab7703add7413f4c79c0dfa2bd5ccd1b2b880428f533dd70f3ea32"
+          },
+          "cap-19/gain-2": {
+            "deferred": "2a06392b283a66196d9ddc748e030ac5a82e0e528ba21892a5d474c9a4038125",
+            "eager": "3f43aa5591c3cf209a5041f87123e58b371feacb7de109fdd67fb2f27acb17ad"
+          }
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "cap-13/gain-1": {
+            "deferred": "dae604b2a757f5cf932e979ef6b668bc8b0e19c7ea050c793fb228f09e7d294e",
+            "eager": "dae604b2a757f5cf932e979ef6b668bc8b0e19c7ea050c793fb228f09e7d294e"
+          },
+          "cap-13/gain-2": {
+            "deferred": "d5a8d10e853f2b25ff39177d68c872d8b329a24ee52f6f13932eacb9b058943f",
+            "eager": "d5a8d10e853f2b25ff39177d68c872d8b329a24ee52f6f13932eacb9b058943f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "08a5957eb7f40aa4e1bddd1b29f85cc85c30155adc7f3816d2b83122a60c82b7",
+            "eager": "a773179930c9074803d00e0e7790f00ef9c9e8cbd6dc8e31cd3adb9c623196bd"
+          },
+          "cap-19/gain-2": {
+            "deferred": "5e0958780211b4ea6942fd2738f48c2349f27e61d2652a341f6c7843a632f0b1",
+            "eager": "fd355ec704ac58e5e055d3ebd353f4c176f45ebae9b001f6f76fd3f2f63da13c"
+          }
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-13/gain-1": {
+            "deferred": "8194e061fdf21172ccbb2a89c593384cdedb6a27151de0774d29e8a4844ece19",
+            "eager": "46ba73192b78eb190346d9793c0aa88db0b04b20de8ab61f436a145131147e45"
+          },
+          "cap-13/gain-2": {
+            "deferred": "c517ab50de7d37ea49b4445567cd809cf7a640e51b3fa7008a47cf97ae095c5b",
+            "eager": "0885ee5fcc88a83d31c0c0e29c744d4806886d2ce2123bf5cbe40c99fe6954d7"
+          },
+          "cap-19/gain-1": {
+            "deferred": "eaa539326e179773e5b1f8ce4ecf91fd9658d1cc9ff1f305139c5f03ea632e60",
+            "eager": "9b3f5b527e4f675ce8f5beae6374387ece6235acd5fee6129cee0bc06f55f54a"
+          },
+          "cap-19/gain-2": {
+            "deferred": "7aed155bf1f2678eafcf73bb86b22a1518b89f2713d8fae35507f1cb8a621c41",
+            "eager": "61adc379d94849400249c5cceb7e91ebc3e22d52ed6a45c92d9f4f08a4f3387a"
+          }
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-13/gain-1": {
+            "deferred": "dec86028840affc849f7d77eb422be4e4d330f21c106c5f481ac1e9080a5489e",
+            "eager": "6da281790315b19c57e3a880782a0c3de05fd6ac389036c8d5889e993c5ac991"
+          },
+          "cap-13/gain-2": {
+            "deferred": "e62530d6f292f4e7655a46d4df2203da7cdc2210431024e146a13f8522a4fbc3",
+            "eager": "a11b33db02370e197b2da3b217b17d680652cd907dce298ec0961080014218e2"
+          },
+          "cap-19/gain-1": {
+            "deferred": "00dda0cb3425b431231199587f0fdce822eb384c884ea0d5ea137b5c1275a8d7",
+            "eager": "7197394994780f901d7569d4193a1339ce5e855a801b8f194f7739d541f5fbc9"
+          },
+          "cap-19/gain-2": {
+            "deferred": "982690bb0d883ac67f521a979cf836b4f53ecc6abf6aac459b25c14154d54d71",
+            "eager": "425c588b7cdec8f1d937c636eb7dca1db99bcdfe48d5dcb17c6344dc41d5146b"
+          }
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "cap-13/gain-1": {
+            "deferred": "961e75bf284c1ac314803a88466612fadf1f0d947b6e9b84166b814dd6732a06",
+            "eager": "061c5c74d30b5e05f7d7b22f1a04741c2ad7f02f79219beeaaf0ce50f66e1d73"
+          },
+          "cap-13/gain-2": {
+            "deferred": "f021ca12f76a042998b4d1fdf889f2a5fb3441125e489ee231fe32828ad986ce",
+            "eager": "7fefce161fdbb742d68a26130c6713578eeb3a7d51bbb528550558102c3d60e5"
+          },
+          "cap-19/gain-1": {
+            "deferred": "6325362e4b0d9c37284f8954a98d28009a76f97de78cfaff68933625c9bb5af0",
+            "eager": "326a23c686faac19a23d2f9675c55ca36391827d15b61c658e900c44d4a64551"
+          },
+          "cap-19/gain-2": {
+            "deferred": "a513d790fb5faa611f6fb4227d6d675d8e89d902e85cd238b28fed3fb155c7bd",
+            "eager": "34a495a49822cf23b07a17908f8eb507ce0c268ee50140b6bd4c55d5480cf6d5"
+          }
+        },
+        "high_school_biology/google_flan_ul2": {
+          "cap-13/gain-1": {
+            "deferred": "40eea3b9005b07e45482f2858482c7561813b7100163f4d9563839c88f9acafa",
+            "eager": "46b49750a23de794e667a1385b5e89c1e497458a4c6a88f47784a865da31b325"
+          },
+          "cap-13/gain-2": {
+            "deferred": "796bdca27ffad0e0c9220e238060da0059980104d1eae06e7ed8c22af7bf79c1",
+            "eager": "18b11c0eefd4b01a1bd6fdd38f69bda504cf5c1901fdd686cc3aff442b9cec65"
+          },
+          "cap-19/gain-1": {
+            "deferred": "5b86e1cbef84d3c963a040f22a3e3c7573634b0d7c40ff9398be7fd5a9d4bf8d",
+            "eager": "fd36993e957a30a6640bbbb7b9259b1025ff7712b1d0415422ff68e5820f3ca9"
+          },
+          "cap-19/gain-2": {
+            "deferred": "9fabd61a4e90c1f7793d1769d79a5cebaa9767340fb64bdb79a07a359e414b72",
+            "eager": "5b5aa84742bc21e864c414e339f7f3c99716461d4d9222101c55b6a5da4da3ed"
+          }
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-13/gain-1": {
+            "deferred": "188842113f31be35aebf8058d50f12b503369a4a7a39d7558632688e672a6ab7",
+            "eager": "de27cf251575238f8c3b43cbac94c2d393895eaa3b3a6327fc06a956254fcd0b"
+          },
+          "cap-13/gain-2": {
+            "deferred": "e042e336b67cb8e92acab684f0c69c2ba1ebdb1dd958c4e7df33247d383d89ed",
+            "eager": "e042e336b67cb8e92acab684f0c69c2ba1ebdb1dd958c4e7df33247d383d89ed"
+          },
+          "cap-19/gain-1": {
+            "deferred": "ae1c1598192079a0bb2447721256b747db1aa68a0dc94600b8b56ccedc474c92",
+            "eager": "f32afabc20814602734b2a9eeb6cb8f130f2bf066f367d93cff733af09c409ee"
+          },
+          "cap-19/gain-2": {
+            "deferred": "15a699d9f1e01c856b9d1371ff132d0e1ae0972f02087ea7bf60d0fe1e45226a",
+            "eager": "cc7d007ea9b8c64e35d1c1f2fdd50a65325b5438b3477e961882ec52ea5e5375"
+          }
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "cap-13/gain-1": {
+            "deferred": "005f78c8c09a99b141f810e02cae0fdc0753ca23f509de3f77cebda9265d9106",
+            "eager": "09b8d748c49ec9ae6f478c48e1688f4990458f14b748291a90beb4a073e3f2f9"
+          },
+          "cap-13/gain-2": {
+            "deferred": "ff97d265e21e493a9cb140d4406a7a52a822ff18c8d71a4fc238913681f6864d",
+            "eager": "32ec83e6e7baff6e0fedba7ee7d6b8517b95d009bf3b20fe7d537e9e963fd7ff"
+          },
+          "cap-19/gain-1": {
+            "deferred": "481cc8fb894f7b5ef5fd463c7507abfebebf5fce245caf24a396da64c23d473e",
+            "eager": "966e74ae4f0f5118784180c5ea9d9a712b7377bfff954da5164db0e9524f1fe9"
+          },
+          "cap-19/gain-2": {
+            "deferred": "54153a0e81701211cb452a63b53a57fc1f9fc9586aecd2d4e3b2f8b8c8c994c6",
+            "eager": "96705fe4775985b4b19649732469ad8752bca92cad5d8a8d495351f8302f46c8"
+          }
+        },
+        "high_school_geography/google_gemma_7b": {
+          "cap-13/gain-1": {
+            "deferred": "aaadfb11cf17ab78e10def3fa30b1dcb0c41513a6f812b81c3113c4105ab2799",
+            "eager": "61fbb4d20a64c56740ece19e132758968c2b146c635a9781ed919494a8b62828"
+          },
+          "cap-13/gain-2": {
+            "deferred": "b658c2e4b1c0e5aca28b26579a7b417f93f07e3aa33b43f03ceb1c5a0b290191",
+            "eager": "b658c2e4b1c0e5aca28b26579a7b417f93f07e3aa33b43f03ceb1c5a0b290191"
+          },
+          "cap-19/gain-1": {
+            "deferred": "571a7ccb757042b0bfc2d5f5511121737dcc19c00ffdd71cf2c893efad74bb59",
+            "eager": "df89b35a14cd4dd5fe0846e8876f7dbbf8352d6d5daadb16d149f3ea546a9e08"
+          },
+          "cap-19/gain-2": {
+            "deferred": "cb34988b72766d3ee0c1753c0f27924468dd258721b75024c50bc8a4cd809aba",
+            "eager": "c78dc99b0b290e208e10548dfbb39f2f0b4004b5656514cb51a2101efcc8925b"
+          }
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "cap-13/gain-1": {
+            "deferred": "d69fc9294768b5aa6d493b6520aa3e2c8b0f5e9edb5f79332eea53ca84eb01f5",
+            "eager": "d69fc9294768b5aa6d493b6520aa3e2c8b0f5e9edb5f79332eea53ca84eb01f5"
+          },
+          "cap-13/gain-2": {
+            "deferred": "eaa0062eed1e6933726b679550635ecff2369de3bfc7a6246c9f6e9606cefe24",
+            "eager": "eaa0062eed1e6933726b679550635ecff2369de3bfc7a6246c9f6e9606cefe24"
+          },
+          "cap-19/gain-1": {
+            "deferred": "8d638f186c24b5f9d12c17ac4b1748b0afd7437e32f2ffe86ddd6558c68b41a2",
+            "eager": "e7eca20a59cd084cfffb1a1ce336c82d90dd0c81a2b40176e77784748f011fa0"
+          },
+          "cap-19/gain-2": {
+            "deferred": "b31a64d592c2a360cf1deb9f66c3c2ea2b73b63433b6db1dc8f4009befb8b2ee",
+            "eager": "659a1cf1a8cda74c4e83417a6aaee385c1d983a5843cb670897f24074dfb33bc"
+          }
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "cap-13/gain-1": {
+            "deferred": "d7725e179049acd62a27d0c072d6870b695c1c3f80801a8db49e7568a4e94daa",
+            "eager": "a1d6f63ae8515afabab4dfee41476d4b30860e98b1d1fb78d4152dc906ba4f12"
+          },
+          "cap-13/gain-2": {
+            "deferred": "4f81802f770e30e4534354c104c7304fed11375c91b248bec5bc2e02b3a8c9e2",
+            "eager": "b034b51f1fdaf57aa664c8b795c407e5c288ef0de2c255c12b5ca723d33460c6"
+          },
+          "cap-19/gain-1": {
+            "deferred": "c0cb1f27ad5a1c8d3ffd3120063ed9749a5bed4459af276d337e6d8667405a81",
+            "eager": "545d97a011ef82adfbce32d2db7e75399a7ff8ba3bfed11d6561ab48855d7868"
+          },
+          "cap-19/gain-2": {
+            "deferred": "82d58b4dfb3aa280ec0572127e0b6bc56d35d4bd05c6218b519c456e9ce489af",
+            "eager": "57b7fb37a2f31619c22b280c7004e66c92c313c5902e4ac6d58290dc25bc3743"
+          }
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-13/gain-1": {
+            "deferred": "a1d3f8e4cbd4ff2b0bc51215306386ef5710c41b7f3dc2f0108fc623bbd06dd8",
+            "eager": "8c65b0e67c8e348ddb2ecd2806a2deb9076834c3c7c08b98f8a39c520ab4d9fa"
+          },
+          "cap-13/gain-2": {
+            "deferred": "e87c89009c59baec77e1c5cb5fddc545548933e17ed61cc6378458036fa62d28",
+            "eager": "f9282e13bd74b8d129fda04ca77a804b1286346cc97a59a46f0350765668dec2"
+          },
+          "cap-19/gain-1": {
+            "deferred": "bf12217b3845b3f0d423f9cf6cba1c5a9d450f66fc6335492cd362ac3c4561af",
+            "eager": "ba388d85a3dc1b45aa28106dc731bfa8558215495280c95b001bdf35ead5e385"
+          },
+          "cap-19/gain-2": {
+            "deferred": "7a3ed304d819d0e04169e4cec05d87a2296ebe369d760ab8fdeb4e8f9756ad15",
+            "eager": "566509bfe4cf77bd391b5f8390f501e68d1ef3fd1747fa0c8ca51edfe319c013"
+          }
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "cap-13/gain-1": {
+            "deferred": "6b549c5c809bb39d7d7cb86430ef8f33e29a93e6c72d61a4852037907d987a93",
+            "eager": "6b549c5c809bb39d7d7cb86430ef8f33e29a93e6c72d61a4852037907d987a93"
+          },
+          "cap-13/gain-2": {
+            "deferred": "f22c9d33fe78b7fc5269137acf87c47983b132a7da5ac00b0bba1f77e6097612",
+            "eager": "f22c9d33fe78b7fc5269137acf87c47983b132a7da5ac00b0bba1f77e6097612"
+          },
+          "cap-19/gain-1": {
+            "deferred": "40a8ebe363b610726335f46fea8b63aa1c00a4b93f7689084e457c003e01edfb",
+            "eager": "790ab7728afab4e9809b5fb0e719450f959e8bc570376772ba288d4e9f7dab32"
+          },
+          "cap-19/gain-2": {
+            "deferred": "51963e344e43222a061b7470437ea81946e72a85572c5b8ee76cd7cea1928762",
+            "eager": "51963e344e43222a061b7470437ea81946e72a85572c5b8ee76cd7cea1928762"
+          }
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "cap-13/gain-1": {
+            "deferred": "961f64b88b3927f13fab0cda2def8afaa5acc8e54c1d884dcdfb415d8c0e9135",
+            "eager": "961f64b88b3927f13fab0cda2def8afaa5acc8e54c1d884dcdfb415d8c0e9135"
+          },
+          "cap-13/gain-2": {
+            "deferred": "2adc70ddfd5f314ba1afbf258af4235668f713f08055d3019d4e91813a94b49e",
+            "eager": "2adc70ddfd5f314ba1afbf258af4235668f713f08055d3019d4e91813a94b49e"
+          },
+          "cap-19/gain-1": {
+            "deferred": "8559cc96b4f27a8b4ca9d3054c8777c1040b097a50c13bcd8835ce999ca3ecf5",
+            "eager": "24793915b94114a02d1e7428b907be994b889e6757765336cdfb110c82c86992"
+          },
+          "cap-19/gain-2": {
+            "deferred": "672b810bf04983c33c0f0b4634291acf4d0589606f8acf8d719a10453cef27b0",
+            "eager": "a89ff2ef89decc81bb457d050ce37c1979e403849c79383228750dc425e7b83e"
+          }
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "cap-13/gain-1": {
+            "deferred": "7b623d9ccdb8b9d323c212da6097dab471e767d512b0c3e11a8ad0aee60aa12e",
+            "eager": "d36af98c404607c721100d4464b26d6d3cef11e6602f52436772698f6c904c5b"
+          },
+          "cap-13/gain-2": {
+            "deferred": "e634bbda71ea51cf82da817bf458f298a25a93fb24fdf490f8272db2d9f2e820",
+            "eager": "6890dea2a35cfafd8cb47f254fa6f1445e437a42ba5450b3eddb5a8155da210b"
+          },
+          "cap-19/gain-1": {
+            "deferred": "fe956c314c9da893274745301657494150d02c5340322aac2ad9780832c991c5",
+            "eager": "8a0ffaad41ce643bf482c0495bfddd654297429cf4835768f16b6fa52a84045f"
+          },
+          "cap-19/gain-2": {
+            "deferred": "74dad1b936098dfb0bc24cdb33966d68480498f125eda1b98ad4898afe043cbb",
+            "eager": "c1d140e05d0055d238f54ce2b27132feb5d5ecdfffc64b6ce358be90608929d0"
+          }
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "cap-13/gain-1": {
+            "deferred": "35b4f83cea1b29e7494b991de6f6ac974514ace343641bc77c875b34a4a4979e",
+            "eager": "4d28f01c50b8753c2dafc4183f69dee6b4f39bfabc75713be2020896e3e5e119"
+          },
+          "cap-13/gain-2": {
+            "deferred": "7ae49555d63255d4cdeadd918a26e1e190b78c115341c5695cf1f579ad0afa17",
+            "eager": "be92c79c544b39ea9edf36ab3f2068e3812dc6a4b85336d616d75f91d71a017a"
+          },
+          "cap-19/gain-1": {
+            "deferred": "2ab2fd8f71a95afdaee00ae59e92a275fade6f65c967264d8f0a9012e64af22c",
+            "eager": "d3977b96f0f27d8d43fda730c0cf7df69565892a39db60f804551c0f3ae8e884"
+          },
+          "cap-19/gain-2": {
+            "deferred": "599547c5be305fdacb1d1542fc980e1e8044568f3a136a834b2272fc0c950829",
+            "eager": "3a9f1a334a046c3e59d120099116e07fb407a8b8dff31345a499b3dc7bed65f0"
+          }
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "cap-13/gain-1": {
+            "deferred": "bdf1b92cd3fc1ed7a03907157bd3804d58558c1b3c4797f62988aa588cea705e",
+            "eager": "c80d853d8b288fae03f80a5460e003efd857c011ee3629f7c6459d0f9ead245f"
+          },
+          "cap-13/gain-2": {
+            "deferred": "21da5186411defbfb9f21d2403757df4ddf734b2fc4c672fc8caec8d0d8686e8",
+            "eager": "6c4d21fc1473dbe2ab06db7f77cbccf31bd4cb773ea6a5c4c6225203085644af"
+          },
+          "cap-19/gain-1": {
+            "deferred": "a652d9c372d7c1d39c8c25a94548f32fc651e3512b15197cd17cbebfb6ba1118",
+            "eager": "562af3732e347193b4640cb5f2873ba343ac81688fb442854580dc41460976d7"
+          },
+          "cap-19/gain-2": {
+            "deferred": "e05f7d11e147f5953f8edc1c1b2bb595321a9e2762e31c63b8b5e56f0815edd4",
+            "eager": "7111ab2efb339137d9c3dad980bfede7ebd92670c04cec93c47edd052d968958"
+          }
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "cap-13/gain-1": {
+            "deferred": "705112b26dd980ad7cdc121c301ca693721adc9c003ec016eb77ff4e11dabee6",
+            "eager": "dc1adcba68a0c4a3dbe1b65d4912a4ec4b325849dcc13f81e0aa047d0ed7f8cc"
+          },
+          "cap-13/gain-2": {
+            "deferred": "971c4c06d0b8aa84165dd8d6e4dfd9e36540c5fa6a0a177b944f1bb987ecf5f3",
+            "eager": "0985bc1e632a82684e5568fa3f9b083788f4771623803d1cfaf254e5d160792f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "abdfdae35a0820f15567a90c0e8e74c15cd4ae0fd1bb0167d37579ea22408759",
+            "eager": "a593734c1ec061c3fad0f2861fa1e6e2f215c97d9098ca07847603f7d56e33d8"
+          },
+          "cap-19/gain-2": {
+            "deferred": "64426dbc3c1478802005f085704481887ac912111ef8fd796c9fb124f1f02bd2",
+            "eager": "a7f76ad3e572835163ea21714617eeaf60e30a03671e79169d42f8220fe309b2"
+          }
+        },
+        "moral_disputes/google_gemma_7b": {
+          "cap-13/gain-1": {
+            "deferred": "9c5398f2eefd0120dc838df56ad91116ed871e4e6638784370c70389e865a49c",
+            "eager": "9a9b28a051b7bc4bdf7ca6069ebcc335f9c4776348cbf04d29b007d7cbd85816"
+          },
+          "cap-13/gain-2": {
+            "deferred": "eab6ca643286d7c209fbe66e7ffc22f7babb58170956af2cdc10fbae8b7b464f",
+            "eager": "189143391bc0df8c4d5a147ae2b94196463aeae9e91f536c677c3a361590cc57"
+          },
+          "cap-19/gain-1": {
+            "deferred": "aef91d805d016d19462d144b1e1080dbd510f21798078bb3903e1b8f7ecc4e68",
+            "eager": "8a974b1f342c3ad21097a73e10af3e066f26e6ddbc878ae22bfec11b094427af"
+          },
+          "cap-19/gain-2": {
+            "deferred": "38a91571accb7ab1711ce1504a945273cc7289451803b312d6a8aec890a85c25",
+            "eager": "49c75205eead2e170ebd50ccf2d4634b9b1db9033d4cb796e7976e3c97dc04c4"
+          }
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "cap-13/gain-1": {
+            "deferred": "4e4431311dc877732a5adfe1653f5b0a5724e5cb5c68409bc878fa57cb32d821",
+            "eager": "4e4431311dc877732a5adfe1653f5b0a5724e5cb5c68409bc878fa57cb32d821"
+          },
+          "cap-13/gain-2": {
+            "deferred": "36b3561eeb6c0a44311a1ead3fa6353d1c9b72963ca48e9360bde906676a7009",
+            "eager": "36b3561eeb6c0a44311a1ead3fa6353d1c9b72963ca48e9360bde906676a7009"
+          },
+          "cap-19/gain-1": {
+            "deferred": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34",
+            "eager": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34"
+          },
+          "cap-19/gain-2": {
+            "deferred": "84a1e6095809396d902984b8bd2af6a2fe9146eebfd5b1eb117f9541a375ee39",
+            "eager": "84a1e6095809396d902984b8bd2af6a2fe9146eebfd5b1eb117f9541a375ee39"
+          }
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-13/gain-1": {
+            "deferred": "60708df22da791b57bf1cc120fad00c1b4c54e2f2ca411693cc980355378cb2c",
+            "eager": "60708df22da791b57bf1cc120fad00c1b4c54e2f2ca411693cc980355378cb2c"
+          },
+          "cap-13/gain-2": {
+            "deferred": "c79c227c1eeb1fb12bbf90fcfd91914d9981fd932e00dc23113b06fd470738c1",
+            "eager": "c79c227c1eeb1fb12bbf90fcfd91914d9981fd932e00dc23113b06fd470738c1"
+          },
+          "cap-19/gain-1": {
+            "deferred": "e40aebdf559cbd67e2de71f0f4182d4f191b22952241ba4b8a74837ec32ff565",
+            "eager": "6e88b8c2bb51e75f64a4ed322601ec03e3c9c0285fdcf6967ae9fa612c0c4f0c"
+          },
+          "cap-19/gain-2": {
+            "deferred": "ce603e616c45f36839d824e87639199f0fc68da554139c38086a9e50c681582f",
+            "eager": "d037681dbc3824ce2f19b4e80ce3bcf4234de38160a297a6d1f8a86b5594f01b"
+          }
+        },
+        "professional_medicine/google_flan_ul2": {
+          "cap-13/gain-1": {
+            "deferred": "d6dad33d1fb84fffc994dcb45417f9f76d8f6e868babf464cddc1ee35619ea57",
+            "eager": "8ab681ddf925f2a0f065ae3c8dfb88a71f72c177f50f0c091ed60bbd07b48b6a"
+          },
+          "cap-13/gain-2": {
+            "deferred": "60765c2e308f1d7f22c2f3cd0e853d7e0314044b2fa3d0080db6ad36bd37ff5c",
+            "eager": "60765c2e308f1d7f22c2f3cd0e853d7e0314044b2fa3d0080db6ad36bd37ff5c"
+          },
+          "cap-19/gain-1": {
+            "deferred": "136f2fbe8f993154c01ceed907918ef6973930251ca8c91a52d2dbcc82403e54",
+            "eager": "c2169562aa60e4489407f76bf015abbd568ff2684f46fd5a1fedac40bef30283"
+          },
+          "cap-19/gain-2": {
+            "deferred": "dfcc920f7acc1ebf4c3e332af96e68e79727a596a355fd81cd7cd5c5cd2b4505",
+            "eager": "c5ee575702a1d67e3f225ab8388eb7938c7c8521f3da89b77c7ea85f27d4ee93"
+          }
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-13/gain-1": {
+            "deferred": "bf95d0c709127c01586b8faea812838fe5229071c7e5656aca641b0a618f203c",
+            "eager": "10cb587f29a83edacce99d05bff17eee817e80496b3fd6ab11d5411e2a656dd2"
+          },
+          "cap-13/gain-2": {
+            "deferred": "d2b8120e2e0430cf4b455dc046a9a5759e54987e496a1e65368f9ba4ad3f1c0d",
+            "eager": "0b77b3cc49879098c7cd5753ea910f34e473d2c57c240b4dca90aab55ee7ded7"
+          },
+          "cap-19/gain-1": {
+            "deferred": "f8375fdd6bb8b3f79398b8b0124eb39f7066c0ada36fbbd92b8fd669d0218f02",
+            "eager": "1ef7cde5d1cc9857098580c3e260cdb66042c20e8737bc9e25f8454920a2bb45"
+          },
+          "cap-19/gain-2": {
+            "deferred": "a36ea701c093c75da90717e35e705e91e2147b590a54620d0c5a169089a81337",
+            "eager": "7361c28e7c0a320c011e8ad8482c53d241d3867dea5135f6457ac6a1425776a5"
+          }
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-13/gain-1": {
+            "deferred": "7e6713224ef1952822b8eeaaa0235b8a03ea8e919aefa747898e36177b650db9",
+            "eager": "2bb12b436d7e1f6e0d5a3c963ab1e9ef900c6850a989beb810eaf699dcfff14a"
+          },
+          "cap-13/gain-2": {
+            "deferred": "2e4677b27e075484424e02ac82a171397b00a7e0e8c721a2b5ef42b19ae9f3bb",
+            "eager": "309557eac050aed043f58b5450c7fe9701606105b7bf72799b806be9a099e8c9"
+          },
+          "cap-19/gain-1": {
+            "deferred": "95ca4d7afd70c5181cd41655873196403fb918550a1b8f9f2d7e2d02e5bf9901",
+            "eager": "4f8c48a3a1629f72fbf0b08f8055d59823273958f133fdd53bd59d664ef14f0e"
+          },
+          "cap-19/gain-2": {
+            "deferred": "59eca57bde3b56e8258a2c82ec14ca31a38138aeca239d6f1e1109db36facf02",
+            "eager": "0f3f9b65065ea73a1aeebaf602d6dd40971559a1c615810150478cdab60cd724"
+          }
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "cap-13/gain-1": {
+            "deferred": "3fe72a89f931a69b3b493a8efcf828d971faefb47d395ca1983df006a92a0f97",
+            "eager": "2f62c7d57404c5cca92bb41c4954345f4c37590d6f31dbe8b607dae1766527b4"
+          },
+          "cap-13/gain-2": {
+            "deferred": "0baf529476def22272a875d4d02f00dc7db46606f4ea77dc9668ccb472293f76",
+            "eager": "8f06e5c227753022bacf6555395d51f505377a6a8cb82d8ce7f62cf954d00d67"
+          },
+          "cap-19/gain-1": {
+            "deferred": "07898a4b34fbc163ca7bb8229f9823d227ce9313d94ba37754361d1621162dff",
+            "eager": "246316db6fec1fe4d1e4863b1d7edea77ef266b387c51a824ede15695e0b9279"
+          },
+          "cap-19/gain-2": {
+            "deferred": "d74ea8a0de2c184b2d87b745e875c4f3c04f6c080483bdcccc1dad99d70eaf0a",
+            "eager": "e1ba2dc0250e1e25cbde3a491f69ad1fca62170a022361d27b7e32418314f9e6"
+          }
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-13/gain-1": {
+            "deferred": "57e18a1711ce654cc921a682d465ed6d7a808324301bfc9cd0ecee5c9cc62d4d",
+            "eager": "57e18a1711ce654cc921a682d465ed6d7a808324301bfc9cd0ecee5c9cc62d4d"
+          },
+          "cap-13/gain-2": {
+            "deferred": "aac812ac3dbe10792d6d5b23bd2b9399b4fcc0679519d19763d95997c9badef5",
+            "eager": "aac812ac3dbe10792d6d5b23bd2b9399b4fcc0679519d19763d95997c9badef5"
+          },
+          "cap-19/gain-1": {
+            "deferred": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa",
+            "eager": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa"
+          },
+          "cap-19/gain-2": {
+            "deferred": "b63ee97021060bdd1d5f8375524c77c39c7c0c9ea8a4c2156254b3639bb23494",
+            "eager": "b63ee97021060bdd1d5f8375524c77c39c7c0c9ea8a4c2156254b3639bb23494"
+          }
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "cap-13/gain-1": {
+            "deferred": "90ce23f868ac34d1eab0d075ac0f02067e05173d152ec4af19554a8105fc16ec",
+            "eager": "0e53402880e65071365a7fe5abf270ebe86a8ed1c7bac5c17b1fb5dbafe28e05"
+          },
+          "cap-13/gain-2": {
+            "deferred": "b4495f4f1938611241b861bda754003bb8e5f5d161da300285af280b1117d1ee",
+            "eager": "b4495f4f1938611241b861bda754003bb8e5f5d161da300285af280b1117d1ee"
+          },
+          "cap-19/gain-1": {
+            "deferred": "bdcd27d3038fe21c1e557a9fc409a8f59d0d67378a061c819105ac9ffee1fafd",
+            "eager": "5069c9db75737e10370edbc50e22c58d1be28f56b9f972d0d9000a6be8c8071d"
+          },
+          "cap-19/gain-2": {
+            "deferred": "91a78bddec8b60b48bca733dea991b202a6b31a1adfcee47de579aa54e6e1f90",
+            "eager": "7b3aac23c02b19c3526e8835537aaecd5e92ce85c8da435165f414c133b2e1e0"
+          }
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-13/gain-1": {
+            "deferred": "c39ff2fa691ce173b1e5e904ca917d974b29c3d317ca0a7b928e390d10f7f344",
+            "eager": "56638542138eed8265bc399b2bd1edb5ef6ad29a6c97e6ac74c491cb51f41775"
+          },
+          "cap-13/gain-2": {
+            "deferred": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "eager": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+          },
+          "cap-19/gain-1": {
+            "deferred": "b3ab4930b9b50d098508aa1a3718228858a388193cc8713c9aa92356a76c5d01",
+            "eager": "431264f99868bd8dd8902c1af72fab4cb645741af243b1d1bf9d32d742d042e5"
+          },
+          "cap-19/gain-2": {
+            "deferred": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "eager": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+          }
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "cap-13/gain-1": {
+            "deferred": "5481886cc9980936af896c0d952349eb2103a15a28ea8ad9cffe92b69b492424",
+            "eager": "cb4372d395003b4e5841208deb73600634c8d6cb26f6148577e9e15a2b404376"
+          },
+          "cap-13/gain-2": {
+            "deferred": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "eager": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2"
+          },
+          "cap-19/gain-1": {
+            "deferred": "167f5f7a9765eb373938b23437ec33cabdb7d02a89bcd2b9ee791550b73097a0",
+            "eager": "692b0ad57e5e5cc1a2de7dbdd4035dbcf1558d450c411cdb0d646007fee1cb6c"
+          },
+          "cap-19/gain-2": {
+            "deferred": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "eager": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2"
+          }
+        }
+      },
+      "totals": {
+        "cap-13/gain-1": {
+          "deferredLookups": 9547,
+          "eagerLookups": 9596,
+          "holdoutPasses": 56079,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 49,
+          "savedLookups": 49
+        },
+        "cap-13/gain-2": {
+          "deferredLookups": 7082,
+          "eagerLookups": 7110,
+          "holdoutPasses": 56094,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 28,
+          "savedLookups": 28
+        },
+        "cap-19/gain-1": {
+          "deferredLookups": 12933,
+          "eagerLookups": 13735,
+          "holdoutPasses": 56094,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 153,
+          "savedLookups": 802
+        },
+        "cap-19/gain-2": {
+          "deferredLookups": 9017,
+          "eagerLookups": 9472,
+          "holdoutPasses": 56094,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 91,
+          "savedLookups": 455
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "nativeComparisonsAtOriginalCap": {
+        "cap-13/gain-1": {
+          "bestAffordableControl": {
+            "holdoutPasses": 26625,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "previousPairedRange95": [
+            -40,
+            12
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 26653,
+            "upperPasses": 26653
+          }
+        },
+        "cap-13/gain-2": {
+          "bestAffordableControl": {
+            "holdoutPasses": 26625,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "previousPairedRange95": [
+            -6,
+            10
+          ],
+          "removedAffordableSettings": 0,
+          "subjectHindsightBounds": {
+            "lowerPasses": 26625,
+            "upperPasses": 26651
+          }
+        }
+      },
+      "panelPathHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "3f210ec2dbd5a005f96d09122dbe162e41ac5e5e6058057b7e46b53f0f5314fe",
+            "eager": "f6377c095f9af83a4a1ceb86eb3dffbea4fe2519a075a058f270e129fc3ba765"
+          },
+          "cap-13/gain-2": {
+            "deferred": "38c346412a81dd499c2d59ca80556964db5a63fa33653a97b632572572a47069",
+            "eager": "ecb60fa47f408f6de84e11b26bc56d5bc825e3cdbe026867104a98fc347d9c37"
+          },
+          "cap-19/gain-1": {
+            "deferred": "4020a8c84531cd938cc85c3ebc6a46ef3aee3354019244c9a2ced469e0703496",
+            "eager": "c93d28aa34481ddf832e3627a7f8bf82b2e4b95dd2203a56a1b7f4286370b6aa"
+          },
+          "cap-19/gain-2": {
+            "deferred": "04858d6912102d94324a5c0a177d30fc5de89275ce7d4216c49b9665b48c626e",
+            "eager": "8c89b7ee3a79fa6da2306e8511694839b4816b934f1277997f5749a2f7fededd"
+          }
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "cap-13/gain-1": {
+            "deferred": "c28f52b6a68b43635d08afa08bd7fa501f1d306a784e63b899ecbe47153f4519",
+            "eager": "5bd4425c56871f1f37dd81af546b2e605d22f84dacb6d0bd18c30f8094e49051"
+          },
+          "cap-13/gain-2": {
+            "deferred": "43eac32699ee9b210a0f518565f77bed6b5f8103ff05907e108a08cd6b0dd0ec",
+            "eager": "345bcb65d9b4692f513dc4bff44dabd98659c68a50221ca119a2b533f3d4fc3a"
+          },
+          "cap-19/gain-1": {
+            "deferred": "af6b16b6bd9e42ecfaf2d1b1a00bd33609f968b7f1856f8979d5a1f9e889375c",
+            "eager": "09d9201d49060034956e8ca3393de0a8bc17502df496a53ac3b61f609678d872"
+          },
+          "cap-19/gain-2": {
+            "deferred": "01ea2e01872c37c45ecad5b93f3e4a771b3ff09a4bb1660a1d9f03f86664abb7",
+            "eager": "cf3be70e2f0578151c7c70bc03ae9a363fe99ffe0f405de5104240d8cb9d4a37"
+          }
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "c4894079d1c9833c37cb8d52e40ad771112d4af094b2d246ef4b926fc21e16c5",
+            "eager": "6bff7096345ed6523bf21d15fb49f6119480942b2182d28eec9f08503c8de559"
+          },
+          "cap-13/gain-2": {
+            "deferred": "31743e16a40c8feaae327482f023da9bae7e804de78381212088fe273c259caf",
+            "eager": "a1729f26a52fc84d53f1d5ba2b364eb2beb856d2dd7c6fa15a58085c57d38610"
+          },
+          "cap-19/gain-1": {
+            "deferred": "e42abb2e6753424925b17e791315cfc46458dc4b896383a6f17917142c2c36f0",
+            "eager": "7e92c4f9443d4acfd876f6fb48505880e29262428e8af4735061016be17f9c4e"
+          },
+          "cap-19/gain-2": {
+            "deferred": "4259d1461535a5d5d17851de44f6a64f726e84038618bcee712bff7c6ac2ffb0",
+            "eager": "824b7117440d4a2dd473fc689ca5bf1754097998ff1f735c9a1cd2a0da7a2e6b"
+          }
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "cap-13/gain-1": {
+            "deferred": "75792bc440e309d2243e986789937ed0254bfdeb0b7581268fc689cbc86b0b4c",
+            "eager": "36dab89355e334f0b03206eecc8854289403f5910cd02010664677b1f9cbe168"
+          },
+          "cap-13/gain-2": {
+            "deferred": "bd800c532e48992896b0c0f587b7ee7af7c44fd06aa3a2060c0e216cc34100f1",
+            "eager": "797882c724b3717a3fd3154c7ea64160c8481ec313855aa2d6eb7389d84e8c33"
+          },
+          "cap-19/gain-1": {
+            "deferred": "faa2061c716044bb7687c5fc8c9cfecee0f49c51512e628abd1375b2c0b3760d",
+            "eager": "452516370e73106cac231535473f5030b6677aec0e436ff9065f4a028b9c4d24"
+          },
+          "cap-19/gain-2": {
+            "deferred": "f73f9cd307bba8d1a14c2e5b112e1349c1dfc8ff53bc6f0ee521e52d5affe151",
+            "eager": "fe386074a15c0b1570c01542bd140361f6cfefd693da6d2871d90d845ac3cdfa"
+          }
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "0a043fb0c8991ff0aa68fc448dd6aa0b127da20a14d3b5fe23a44abada0c9d0c",
+            "eager": "ae8d5fb43609a857469370079752e7589bb0a765c7696c0a367c38e986faede9"
+          },
+          "cap-13/gain-2": {
+            "deferred": "f328e9185d9827f883f110dcc07e48c68449d77a11011f03f434ced7cca235a6",
+            "eager": "e2b90aec1807347ba1debcbd020fa008da229a2a4f4c304ae8c7a1514f4733ba"
+          },
+          "cap-19/gain-1": {
+            "deferred": "0025dc49f60cb753c8028d021f947a9ff90174bf2be2e8cae1c9ed214cc98e07",
+            "eager": "57edc49e192a9b04b4ecd63ca00998c383d752a461d92e017a2a64220f2f1760"
+          },
+          "cap-19/gain-2": {
+            "deferred": "dc12ce1316fbcfd5290709f497752d997d3052a11c51882fb84a7916c2299ccf",
+            "eager": "e369e0a0da815eeb14f9fe7180c9e7d022b41cf6e7ec76b3e6273a3cff544f59"
+          }
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "cap-13/gain-1": {
+            "deferred": "fb6e30693dbdffb5e79044044ea85cb69594663729155efe26f9b876ee906673",
+            "eager": "e080561ed8c9d44593f7b5357bd27cd5d100bb8f1d655ef2e9ba9311e2ddb7b9"
+          },
+          "cap-13/gain-2": {
+            "deferred": "d76600242fa4a7fce7cfcbb57d36d3a7d4e262bbd3ae133d5cec6c43a618c210",
+            "eager": "8f8c74b02f82696df6b663a5e0516548821bfaf5902661e84d7219f2dde4a55f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "11403042850350108725d6459bb4bf0c335c01c0346c64a71f25b181fc46417e",
+            "eager": "40f57cb93e42b19d43cc6fbefb708ae73a9518816574c7fd6beb1770fe4ed3fc"
+          },
+          "cap-19/gain-2": {
+            "deferred": "0f2e53b487c768afe57ecc45d150fa7139aee846be50292498d7df914e40d319",
+            "eager": "f1b60d8cc26a0d2daeb8cad96d18e182aae16cf2ca8490f1cc68690ce9c29f58"
+          }
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "fed30b6a90c58d24727a65d80ea0d899902bdcb19d282fa51e694df859f68040",
+            "eager": "8b80a9c42339d5144fb19c9f5930c8125af8f5c3353c3b117825c432ec03b145"
+          },
+          "cap-13/gain-2": {
+            "deferred": "ca91fa71b196e7f1001d1784cf0ebcc4a0f99d7a954334b1edef54c43763a217",
+            "eager": "0cbdf997668e34a8c1f7eef9a5db82895d19606098cded84f2584e7ab573aa8a"
+          },
+          "cap-19/gain-1": {
+            "deferred": "86089cfbfdb4b77dca97f8fb28417c63e9a0537f6a88ea5ac99c6f2198a57165",
+            "eager": "86c21497911059bbad7af19bdc0e001407bbaa99aa9647963694d526df982f6d"
+          },
+          "cap-19/gain-2": {
+            "deferred": "a52924a51b8f79b42a16558e1c850e510f9cd21cf78809f501878213da656279",
+            "eager": "e1c7529151ccf88a34e77e2db61bfd6f545a172e679dea3bfe81c04347a95cea"
+          }
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "cap-13/gain-1": {
+            "deferred": "94e970c0e81064b53f32527f7b13bf9e942eeb41c8ff734b7530553c7ccdfb80",
+            "eager": "1df0ef8552d8c7b95bbf9b2dc7cf47d97251da5736b3c897a85cad59e84777eb"
+          },
+          "cap-13/gain-2": {
+            "deferred": "83257c9c885e5f636ab65b206900e090b911c3b5378bee528e75aad682d3a67f",
+            "eager": "8a2321765773a09425f53867e21e000393d8a793d62f78fab7efe6f628111734"
+          },
+          "cap-19/gain-1": {
+            "deferred": "8439300de720f94c15829b395ff5ab410941c303a922d31f41c970507986cffe",
+            "eager": "4300b6754c35c93431c549d250911075f173ed791748eee159c912755491925b"
+          },
+          "cap-19/gain-2": {
+            "deferred": "9d2f9e4698004f5644fa24f29043211b0f6de2415bc9c21239f8f2b359d4bd1e",
+            "eager": "340963a5813eb888cd55333e236477db7b4977ddaa1ce19db7ad8fd0aa3750f3"
+          }
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "048314faa0464023100d0845bf379db8fd4c7a6d9907f9fa0a60f6f80ebfc11f",
+            "eager": "2eec330a0e044cdcd5658aec51760240024b330adfd72def032692dd3d75cb3f"
+          },
+          "cap-13/gain-2": {
+            "deferred": "e534e05486070a5389e255ac8a2ca94c6e892d399c8d76c4abc25260415abaa2",
+            "eager": "e534e05486070a5389e255ac8a2ca94c6e892d399c8d76c4abc25260415abaa2"
+          },
+          "cap-19/gain-1": {
+            "deferred": "590eee0e151673e32851497c9342f010d3f586f28975c2058979777b87891a87",
+            "eager": "87d11689f58a8e911d4072a4ea1a87e7365dd8e3725e99531ab5f1617a385cb9"
+          },
+          "cap-19/gain-2": {
+            "deferred": "ce2fe1b0193670dccf995ef9294f0e061b3d6e37dc0ee37c747aa3ceeccbe2ed",
+            "eager": "96863c05ff0f193c9b89754296a40c6b5d2f20815a5a634f20a107f928da72ec"
+          }
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "cap-13/gain-1": {
+            "deferred": "ca2482eff4bdaab873ad344900998eaf6d25c3aef85cf9ce98d5ef346b674dda",
+            "eager": "e03a97bf05c545e983c3776a74da07838bdc99ac66cc04b6b77bafd5975a7cd9"
+          },
+          "cap-13/gain-2": {
+            "deferred": "79ad51b64693a5f289b67a6bf94ba840322b6f514fcd42604d73ef7b5af1a230",
+            "eager": "e7584e2d77cd886c37c188dbb9599f69b1bbf226e227c7b9f32d91c6b9ebee97"
+          },
+          "cap-19/gain-1": {
+            "deferred": "48baf5e60f0a3bf331260f68cd8112edc5b7efcbde678883b338420f6e304784",
+            "eager": "2f3e6e89eadb28f6df5d917e1eebfe18b4eb45105666df63b415294ba887e4c2"
+          },
+          "cap-19/gain-2": {
+            "deferred": "3051cbb814f1601f8b274d722806b5b2b461586e31dfb79f44dc05175a151af2",
+            "eager": "0dd36e33b8837243ae4c813c08ce2710cbd041179923237add7ffbe7e9afef6f"
+          }
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "242f1125256e376df8ef02de6d2c31d36cb3e4affbbd7586947c3f25b9293f59",
+            "eager": "c714d2d091f6fce0485a138aa637446b41ab97e1043d7a277fc5e980414346de"
+          },
+          "cap-13/gain-2": {
+            "deferred": "3817485d0b61779a74f84cca453d3bfe933c87678d8f4e64c412a0449cda038a",
+            "eager": "c3a31e8c4ef988c722383ebed5a7449513dc96de76b29ce91b54822ff39e8431"
+          },
+          "cap-19/gain-1": {
+            "deferred": "3e017b2bae7f8a56c420efec84f8ad6f4181cd69371bb38c684e062635279016",
+            "eager": "bcd4a9fa007e60ffaa8ded93de56aa557fa056ac8ad0bac57a46089b7fc3bfc9"
+          },
+          "cap-19/gain-2": {
+            "deferred": "d4cf4a81c0ecef2d17f754ec45655d7d01209d27cac2aa304e6e55bc6b0625c9",
+            "eager": "a9e2aab4fd957940dbe18a1fc690a2f468a1fd033e40c5ae6c61be0d31fca392"
+          }
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "cap-13/gain-1": {
+            "deferred": "64934c9db349a8032557319bc6b8e0ef3f65f06966834df8cfe61d4dfd734da0",
+            "eager": "631235837992c578f6e4954784a8dcc909d90cc51677effdc717ab08012a3ad5"
+          },
+          "cap-13/gain-2": {
+            "deferred": "fb9f736d6173cbaefcf2445eae725b00eae7b64f1e6b3e9faecccedc550d74b1",
+            "eager": "c0403ef2e51a9ebdf5c8abadf3b943fe7d551c4503481006ef063038d1bc80ac"
+          },
+          "cap-19/gain-1": {
+            "deferred": "35303a51b940cb381fe955068c7fabb28747f83970a27cf31d4ad09718309fcd",
+            "eager": "24d2904e991532ec8c54fd003bde74653e20e586731184d524d918326cc2dc39"
+          },
+          "cap-19/gain-2": {
+            "deferred": "f1c3f7e7274fa1fff3402b05f0865355467945771674fa011a252fd2fd176306",
+            "eager": "c48eadcfdba67c90cc5969f24fefb102fdae8d04dfd20903fc94d9a460abe691"
+          }
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "ad75cb2525b2b43703ba76cd81dfbd0f8768e07faca6579ace7bb8dbdb9ad7db",
+            "eager": "3947bf5a191bbbd2e3c57b32f1c12e73c0171343758fffc7bb4771a8f5895781"
+          },
+          "cap-13/gain-2": {
+            "deferred": "b83af054db9e9d2606cbd3af9d8b25cec28947679d6e03a408ad2cc32d5de8ef",
+            "eager": "b83af054db9e9d2606cbd3af9d8b25cec28947679d6e03a408ad2cc32d5de8ef"
+          },
+          "cap-19/gain-1": {
+            "deferred": "c2ecc7b3ff2e069234a023c2bb58d00faad8441323f3c5671e1a1d4a029461b8",
+            "eager": "d63d27491496532be7a259882a078fe17cb54ccb74c35992cfdbab0966eb5e55"
+          },
+          "cap-19/gain-2": {
+            "deferred": "195199c9a6aaada1245ab82d163a7f53d49c09695d08a10328a04fc52e65e2a2",
+            "eager": "195199c9a6aaada1245ab82d163a7f53d49c09695d08a10328a04fc52e65e2a2"
+          }
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "cap-13/gain-1": {
+            "deferred": "7add86e38664e1f4d3a4f326fc2f7c86097a481096739400125046983c9397c0",
+            "eager": "e3bf98aefa31bf08eac2d97154007df6609640eae6a3900e4f933b5b591cceca"
+          },
+          "cap-13/gain-2": {
+            "deferred": "bf533a84113594329c71f7131a732434abe9e853d4883d0b46b2eca10bc4b9fb",
+            "eager": "782f62da2ec1f660a4c2fa2f4ea3b665e1ef824ea396dda154974fd2c9ee874c"
+          },
+          "cap-19/gain-1": {
+            "deferred": "706a3cace29382e6771831235b8b78b2cb8a385532cd0b4d71548fa88cf11804",
+            "eager": "5af9ad88a1242845c5cc85ba71a93be671509d26eafeb760d789092507f024d8"
+          },
+          "cap-19/gain-2": {
+            "deferred": "fbb87c7e8612ab67e4c92e363aa85c4fbabd9a7d228c7b47bfa2af2c645af868",
+            "eager": "8164018df6cf4c67148371ed3381c1896ca0b0299651d5f41246e0b480f48c53"
+          }
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "0a44cdbaf4ddb4db1211ed6beed6e0e1ff43433de18dc33a6f8fb2d64b6c7958",
+            "eager": "2068de64b717940a3fefd7f5c6aa8521a7c105cad23ca50953bd35ce42e38797"
+          },
+          "cap-13/gain-2": {
+            "deferred": "753ce55030968a2ffc8480cc9974b978c7fda770912b0d9548a0d54ecc48015d",
+            "eager": "753ce55030968a2ffc8480cc9974b978c7fda770912b0d9548a0d54ecc48015d"
+          },
+          "cap-19/gain-1": {
+            "deferred": "4fb85818fca3fcb94325970837c4bf9c4189377a8e9e01fd9c3428138797d8cc",
+            "eager": "b7a2a1af8c55cfa33b7abf7af4b1331bea398290ecba4164bcb3f960b95e1138"
+          },
+          "cap-19/gain-2": {
+            "deferred": "1dd4e98ee842116f1d612332c7ad5e2225117d79f38f19581d981e0610d37140",
+            "eager": "ce5884fb04f91ccb165ee38ed0837522804f6dd9391b23b3806c71e03f704eb5"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "cap-13/gain-1": {
+            "deferred": "6af738dd7f724a22ea4b992ed39d018ca3fb63d445890034b9356551b43e4991",
+            "eager": "b71edd95aa7e674a807c391d1e21387e66ac2bbfef409e6b5fb93e281ee06c92"
+          },
+          "cap-13/gain-2": {
+            "deferred": "d8337873457a8c742b1e4582932074303b38d793eeddb3e9518a9f125de14bb0",
+            "eager": "42c405514151f762390683c2d1ede1d857fecfbde002ecbc0c6858e6f294f6e7"
+          },
+          "cap-19/gain-1": {
+            "deferred": "4e58d876a6a5b8436f61e25d91a7488942256432e841c58386f5f18af88944a9",
+            "eager": "8bbe98f8a08a3fe570ea60a9b50c59ecee7b416e6da7a7216882377b3bef2d7f"
+          },
+          "cap-19/gain-2": {
+            "deferred": "4cfe83849e2b14e95588fef7722d2c1cfef026b0f89e49283fd8c094b849f8db",
+            "eager": "367f8dea625c0892d77b86cef80865c23eb00ea4b7e04c90a1423910fccf30d0"
+          }
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "ba6aa8a6e0893709546b877ebcac565020b88557d62a2caf43acfe641160f5ae",
+            "eager": "ffcfb97988c860ee31041e746a39a846aee50123dcf83fc729045214ed14e4d4"
+          },
+          "cap-13/gain-2": {
+            "deferred": "c9f5d8c7f6284cedd5b1f68d9bcdad8a3f954f452196f082b61de948cd8fd212",
+            "eager": "c9f5d8c7f6284cedd5b1f68d9bcdad8a3f954f452196f082b61de948cd8fd212"
+          },
+          "cap-19/gain-1": {
+            "deferred": "77ee207535c1eb85a6a9bfb3a096d45e1603da168dd95d1afdea40d7f0b63ded",
+            "eager": "ff7929825452feb4af4c13a6b079bb790a80b2fc4c22448eca1864e6d8f934d3"
+          },
+          "cap-19/gain-2": {
+            "deferred": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "eager": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51"
+          }
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "cap-13/gain-1": {
+            "deferred": "947c1bd20e067b9f9c5d613282a2717c3c937f80e8798fede96a67db8127799f",
+            "eager": "0bae99d8965b4917cfb2cf86c450ca424f85c2de1c810e62b873be1e113a0478"
+          },
+          "cap-13/gain-2": {
+            "deferred": "9af5c53bd6e097b693a050fc3eb159e88943988e86789dd420667bb9a5f9a05f",
+            "eager": "9af5c53bd6e097b693a050fc3eb159e88943988e86789dd420667bb9a5f9a05f"
+          },
+          "cap-19/gain-1": {
+            "deferred": "20f2aa889b3037eb63969ed97a78bfb4abb8c9ce22a670e03abc217dab8d1a27",
+            "eager": "4cdf6efde1151b4dfbb5560ba49fac2527d08b79550646db5847b8083730983d"
+          },
+          "cap-19/gain-2": {
+            "deferred": "6898d3cc3db6370c5e7c9e909a2024988c9911cb01306667bd97f4cf88534eb4",
+            "eager": "998c3dd443e2bc21d0e114241dd627b4550c2ae4da1654a2f45ad2c61fe775bb"
+          }
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "79123bfeb35b0ff40b1c3559380cb3868351926898b00db080edbdcea832da50",
+            "eager": "79123bfeb35b0ff40b1c3559380cb3868351926898b00db080edbdcea832da50"
+          },
+          "cap-13/gain-2": {
+            "deferred": "efdc8d53a264daf72d52d3438d1119f469cd08ce287c47256a96d44b8c02bc1e",
+            "eager": "efdc8d53a264daf72d52d3438d1119f469cd08ce287c47256a96d44b8c02bc1e"
+          },
+          "cap-19/gain-1": {
+            "deferred": "ee52601b433fd59eecf86f831dc84ee94da486ff07c9a1419b1025fe8f063158",
+            "eager": "b7c56fb13f8addddff026a6098fc2d9137eecd1ec9d840746290eb515ce38588"
+          },
+          "cap-19/gain-2": {
+            "deferred": "bdaa44d0b96b2fd40c1b3e3c00b0bd575edbe87df6e9be61035cb393aba86a3f",
+            "eager": "beb79e73b1ba326431259599446635c54b1aa3312a94d311adc301a3b0a1ca55"
+          }
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "cap-13/gain-1": {
+            "deferred": "87fd0ec4496203c31cea5799a9f2bb148db14b862fe8797e99299776980335dd",
+            "eager": "a44a3acfe7b8bb7fbad14990afb549389832ef4a6e3fa185007e2244ebe9da2c"
+          },
+          "cap-13/gain-2": {
+            "deferred": "cdc5d3bb987c9b5defd0d3068004a37a4e7ad95457d58facef454d14ca2d60f2",
+            "eager": "cdc5d3bb987c9b5defd0d3068004a37a4e7ad95457d58facef454d14ca2d60f2"
+          },
+          "cap-19/gain-1": {
+            "deferred": "abd1044db32353932e5441eff5941c102d1240dce2832e420e2037c8150100e8",
+            "eager": "1aa76e867a9d30b0f028100fc670cef04ded66255c7bf9cf52a036c943648106"
+          },
+          "cap-19/gain-2": {
+            "deferred": "27368ac1e754f42e7c621d35bf7a79bb17e8dbb8579537f874b37fb818075848",
+            "eager": "acf44bf4df0cae52ccdcc1de544b7e461a35d85feb9f29aab86c8fcf58ef971e"
+          }
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "b730ff2e07a34800f965461278e6a1d76b2046a5959bf9de49ad7bb29244881d",
+            "eager": "45efc45ed7bccc184143f7c29538df5e0a3e6afd3b414f0ffabdeed8813145e1"
+          },
+          "cap-13/gain-2": {
+            "deferred": "4abe4a8e976ec6cc5f2a1ffb329cf1406deb321f3c62ae94d146c1fc1592af26",
+            "eager": "4abe4a8e976ec6cc5f2a1ffb329cf1406deb321f3c62ae94d146c1fc1592af26"
+          },
+          "cap-19/gain-1": {
+            "deferred": "d62cc803c9a72cfd61ba7fd30e3104055f76e822d29406d3c1dd4144637a84a6",
+            "eager": "fe9d8d0bd57ca4c7456c4f7cc59aa1519a66298933a919ac2a54143ea56bcf37"
+          },
+          "cap-19/gain-2": {
+            "deferred": "e4958125786168d86420c272c5a8c6bf07a7d54658757b8bc7b0429bfb26e40e",
+            "eager": "7268fe24cf02666464fcfc915b9cf05877d3bcd48977de44cf9d7327690f21ed"
+          }
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "cap-13/gain-1": {
+            "deferred": "ed23354bad89554fce487216d17624b5832d6830d4b02d31ce966b2e752a085c",
+            "eager": "e80ae396c231e120ae89a64f8cb2aa3c4489f0f87a8724f19b3d66d9a6934628"
+          },
+          "cap-13/gain-2": {
+            "deferred": "45011ecfc2e44b0bf5b71c5fe58b45c1993ea694692c20fa05548ad6cf69d2db",
+            "eager": "10c00a3ab28c31015167dd7aa178a685544ab460943e096216d463ae91b460a1"
+          },
+          "cap-19/gain-1": {
+            "deferred": "4e8c8f51ab5e3004c7534b23b36b8e76a68aed2c97262aed87ccca509a634cb7",
+            "eager": "de6edbf08dd25d4be70c095dc405471ddae52440d961e54e04affbc7e258adc1"
+          },
+          "cap-19/gain-2": {
+            "deferred": "c59c04cbb05f39acc74b63d140c624d9a51e86c431704b7633b331b8236bb6d0",
+            "eager": "3354530b43931fed9476fe6ea0f6756841d71370f0b857322811fca9c998e449"
+          }
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "dfab3552cdc36c83df5c91fffb5f1f0697084166d1cafb62eb28a442a7f7e1fa",
+            "eager": "0a6ef95cd01f99239630c270df3a0de7e6ea41dfa53e862d5719ba3fab4bde0e"
+          },
+          "cap-13/gain-2": {
+            "deferred": "fe6f6aa826dfd5bacc6c4ecd6a89fc31d7e777f6238cdcca6c9024aba585175e",
+            "eager": "e976c2f426fff422d2d4585b5ce37b791ecd6c71bbd8f4e438136516917899e5"
+          },
+          "cap-19/gain-1": {
+            "deferred": "a4884c5d3deeb486f32a4ab7e151358bf2ff40e8c30ebef7a86b2ad2548dec4e",
+            "eager": "b69420f8c0667fd9d6043e0acf4d7aaacc25d881ac6af41c18d44e6a6d669902"
+          },
+          "cap-19/gain-2": {
+            "deferred": "cb25f326a48bb873f2b319e8fbef2c364308ba621097d0221239af419781155e",
+            "eager": "0e8fed26626f531dec4d589c5e796d78acc39469c9fba32e96ad74817b542635"
+          }
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "cap-13/gain-1": {
+            "deferred": "606d60e0344925f6b4b538e23e9398ad03b43a4dc797de36714165dddcf6b693",
+            "eager": "65c73b8d69f709de1a5384acc63e726f87015c96ea97ead4f709170b9562ab28"
+          },
+          "cap-13/gain-2": {
+            "deferred": "6f67c3e1ee9d5e6b9a4bea09601095dfc834218660a467a2676f04fb9edbc2a4",
+            "eager": "7ca9f9c1fd97ec8e85b97da43565120f5a7eb0501d8a8ca3f8d87a8bbbb25607"
+          },
+          "cap-19/gain-1": {
+            "deferred": "3d9b749ad02f08a5aff49cdd98026a9b924d470634f4ce98cc9b1e0406270f9f",
+            "eager": "a66638c69108c7c61052b77a86a260b91c798435f95f58c9597ac30be7c74ffa"
+          },
+          "cap-19/gain-2": {
+            "deferred": "243a1eec860cbf25af60668c6aacf7f784ff56f31c101381a91a7a2ba4f27184",
+            "eager": "996221760a3022bc3bd24a321abe7e65b0f0f9d47419af9727fc6136484d0fe8"
+          }
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "b73113ef180f7bd44c910f20920d1239926d43d6382914e3a261a04f3ec0c37c",
+            "eager": "81db7d96cd5d0be8116ebcb853ad0c7b05e67668256ef05a0db6335912bd7fd4"
+          },
+          "cap-13/gain-2": {
+            "deferred": "b56bd223bb661ad0d3b00dcc481fcc19c589971c5e511f50a37653ece48efc0e",
+            "eager": "3c2b8a30592d57df0c8524ee94963634220bb45e7b1e5dbab0000e7ec7b84c34"
+          },
+          "cap-19/gain-1": {
+            "deferred": "299d24e55ee38a4dca0725bf2f1f5102dd9a01dc62bf3692e070403983d328fc",
+            "eager": "cb0a1d635370427768efd11a7b21b8e10bf67c2626dd54121e78318dbf211fe0"
+          },
+          "cap-19/gain-2": {
+            "deferred": "a2b57c2ff7f5733f7105b8d1609f9ed8d44ede8396b62d292e00069d861890aa",
+            "eager": "0c262b0dcc5fcefd7590286bc58f4743da2d3cb4f557932ddd0407dbee6d4a3a"
+          }
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "cap-13/gain-1": {
+            "deferred": "9287ef2396538f998e29e8cb8a62cc51804b9edb10a2e844a0ba07059b839f78",
+            "eager": "22f2c4b59e79aa2df98ed41bc61acbd332d1936ed8bcebb8c824fddab28e84de"
+          },
+          "cap-13/gain-2": {
+            "deferred": "4199b745090898b9c4e572fad9a67a957af13d363d79037b9c51687daec9b6a7",
+            "eager": "448953303220e266a62b431939796f17baaa80340724263753df1c5508cb07d9"
+          },
+          "cap-19/gain-1": {
+            "deferred": "1bfda8a16159eeb6e1a4329676b87499c507ba12dc9dfcdb1327687e05d5aec2",
+            "eager": "248995cd1a76bd167958642510bdc8ab6bb20f483c435c439473d6b8263d536f"
+          },
+          "cap-19/gain-2": {
+            "deferred": "b4e9204137afa3ce93ca5f287779cca85f9a61c9a9c4a0be79e57007b0df662f",
+            "eager": "8bc16246c3f365ddb9858a2196378c2a674ecde50a862f9df9ba9ac62ca45bf1"
+          }
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "cap-13/gain-1": {
+            "deferred": "a2faeebb8a1f32c4cfd16e1f2ba82cfecd9f3c9d9220a18d20c12bdf526c2b4d",
+            "eager": "73e496432964fc652464ef620593d2f52016c93a5d652a5aba0812cd054ee5cd"
+          },
+          "cap-13/gain-2": {
+            "deferred": "1e4a0e73741e9d99e51d601448d28166a0061390719f80cf413be09bf514b0c2",
+            "eager": "3fa8353cd206568de5270f302df91ffc033ae406580dc002fd14001fa2d7c0d2"
+          },
+          "cap-19/gain-1": {
+            "deferred": "e26a1a142e347588a5751978a88e1ce0d5b9a1cb04e24a3117edde69569bb799",
+            "eager": "8c33edb326cacd0748c74c9073488e3fe995a9ab02c77d5aeb2fcf063ea87ba0"
+          },
+          "cap-19/gain-2": {
+            "deferred": "d90278538a5ceef9f0217108c610370a9dbf387facbe18295b615c1d6adf24f9",
+            "eager": "a34fd1b58ccfcbd421887470789a1b26ba900d806ea2e44c9bb7f736508fc412"
+          }
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "cap-13/gain-1": {
+            "deferred": "e0d4e5f468cc7acf71f2d66b775317876ee6d301a69e542eedb83cd8f3f46f9c",
+            "eager": "2f6db666ba72909f9eda2c6db53de49fec6777f56249d1177cd8ee7df4db3c77"
+          },
+          "cap-13/gain-2": {
+            "deferred": "c044f8b5362c04ab61d8acb305b0085bf9ea6671d0091fc5c736e6274360b061",
+            "eager": "91fbdae83ea82e489a86b22dcaf34b04221e45e755f09e46b1dbc33169175c2b"
+          },
+          "cap-19/gain-1": {
+            "deferred": "24f1980c06e6834f2b7e82d544d244245e3999c6c3f074f623bdecf01e72af8f",
+            "eager": "8e05e9b5c41469ca828ebd9240390248ba4507e7982be7f3727b4cf8df205a66"
+          },
+          "cap-19/gain-2": {
+            "deferred": "ce75c24bec96a819b2b7ff7cbb34cab58958702302c4363ad94b67ac96b6beff",
+            "eager": "48fa22d78d3d725ff328b53cdb3bd86e641ae7087ef464693dde472d65646637"
+          }
+        }
+      },
+      "totals": {
+        "cap-13/gain-1": {
+          "deferredLookups": 10175,
+          "eagerLookups": 10253,
+          "holdoutPasses": 26613,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 78,
+          "savedLookups": 78
+        },
+        "cap-13/gain-2": {
+          "deferredLookups": 7697,
+          "eagerLookups": 7746,
+          "holdoutPasses": 26628,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 49,
+          "savedLookups": 49
+        },
+        "cap-19/gain-1": {
+          "deferredLookups": 13739,
+          "eagerLookups": 14777,
+          "holdoutPasses": 26619,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 192,
+          "savedLookups": 1038
+        },
+        "cap-19/gain-2": {
+          "deferredLookups": 9831,
+          "eagerLookups": 10460,
+          "holdoutPasses": 26630,
+          "pathsWithReorderedCallbacks": 0,
+          "pathsWithSavings": 117,
+          "savedLookups": 629
+        }
+      }
+    }
+  }
+}

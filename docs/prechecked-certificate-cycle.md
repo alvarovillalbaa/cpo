@@ -29,6 +29,8 @@ The archived BBH and LMentry comparisons favored one gain. The stronger two-gain
 
 The opt-in threshold precheck can skip validation when the incumbent’s recorded qualification passes make the requested gain impossible. [Threshold precheck and replay results](threshold-prechecked-cycle.md)
 
+The deferred certificate cycle keeps the reserved screen’s decisions and omits unnecessary probe callbacks. Its measured savings are largest at the first cap that admits the full roster. [Deferred cycle and replay results](deferred-certificate-cycle.md)
+
 ## Reproduce the archived paths
 
 ```sh
