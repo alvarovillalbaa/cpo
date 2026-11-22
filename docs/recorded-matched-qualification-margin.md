@@ -13,6 +13,8 @@ CPO cleared the fixed-setting GEPA gate on the transfer cohort when GEPA could u
 
 A separate hindsight calculation lets GEPA choose the search mode, cap, and qualification rule per subject, shared by its two model panels. It leads CPO on both cohorts within the same total lookup budgets. Its settings use the held-out grades. The prior transfer comparison against the broader CPO control set also remains inconclusive. Fresh-model performance remains unverified. [All measured settings, paired ranges and attaining subject schedules](recorded-matched-qualification-margin-results-v1.json)
 
+The frozen two-gain rule later scored below one-gain CPO on both BBH and LMentry. The one-gain screen cleared the fixed-setting GEPA comparison on both families. [Cross-family qualification transfer](recorded-qualification-margin-language-transfer.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.
