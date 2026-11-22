@@ -15,6 +15,8 @@ For each trial the audit starts from the actual deployment and can always retain
 
 Each cell gives extra passes and the number of trials with a possible improvement. The whole-roster ceilings describe the raw choices in the archive. On the complete-panel route, the two strict gates reduced that headroom from 2,564 passes to 169. The paid probes left 49 passes reachable, including 37 that a perfect veto of the original promotion could recover by retaining the start. For the minimum reserve, the larger screen left 109 passes in the probed set and 63 fundable after the probes. The one-failure reserve left 108 fundable passes from screened alternatives. These numbers bound specific changes to selection on the same archived prompts. They leave open whether different qualification evidence or fresh proposals improve performance. [Per-panel ceilings and reproduced totals](recorded-screen-coverage-ceiling-results-v1.json)
 
+A follow-up let witnessed validation ties enter the same strict independent qualification. The two-read variant added one held-out pass and missed the matched-budget gate. [Witnessed tie replay](recorded-screen-tie-qualification.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.
