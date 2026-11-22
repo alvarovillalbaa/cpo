@@ -1,0 +1,2659 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "shared-probe",
+      "rotating-probes",
+      "shared-probe-race"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "90de1ef71b10625a67fe9b5427dbff456ba69aa9e00fb32234b970a74493dfea",
+    "parentReceiptSha256": "2b6ac95cfae9361a380aa9eb2a38858e8b03c8a7dfebd11268736ff537b63fd8",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "deferred-certificate-probe-allocation-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Keep the full-roster search cap, paid incumbent precheck, matched cases, roster and one- and two-gain independent qualification. Compare shared deferred probing with rotating the witness in roster order and an eager shared-witness race that gives the next paid proof reply to the challenger with fewest paid misses, then fewest favorable replies needed, then earliest roster position. Audit how often an independently qualifying holdout improvement was capable of exact certification under the original probe reservation. Oracle grades cannot select a challenger.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": "03f5cccc32854cc2b81988f316a6eca4c9f470621bca45b90cdc053f592c8a6a",
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "9348cf4b424da11c65e1c144332f86089418f9ffd307e9709da76d8d96b47ad0",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "headroom": {
+        "cap-19/gain-1": {
+          "betterSharedWitnessWasProbed": 139,
+          "betterSharedWitnessWasUnprobed": 102,
+          "maximumHoldoutUpside": 1377,
+          "noBetterEligiblePrompt": 655
+        },
+        "cap-19/gain-2": {
+          "betterSharedWitnessWasProbed": 61,
+          "betterSharedWitnessWasUnprobed": 59,
+          "maximumHoldoutUpside": 879,
+          "noBetterEligiblePrompt": 776
+        }
+      },
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "lowerPasses": 9601,
+            "upperPasses": 9646
+          },
+          "shared-probe": {
+            "lowerPasses": 9646,
+            "upperPasses": 9646
+          },
+          "shared-probe-race": {
+            "lowerPasses": 9646,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "lowerPasses": null,
+            "upperPasses": 9601
+          },
+          "shared-probe": {
+            "lowerPasses": 9601,
+            "upperPasses": 9601
+          },
+          "shared-probe-race": {
+            "lowerPasses": 9646,
+            "upperPasses": null
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "955629ad7582e9e6e6509e4742deb790a664a8ce118a2209a57380db7e69fa91",
+            "shared-probe": "5e0f47e07a9cd8269b75f0db979a4f494f228d822bf1fb198d4a6140e3f88d74",
+            "shared-probe-race": "d889cd28227cbc07ba16f6fa396aede644e6f2b322368791bfbb266738510de0"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "aaf96b3c41a42ba7635dd1e2c01b3f1ee7d1a0b5f29bd6033d453cbeb6d67de9",
+            "shared-probe": "44d2b9c0a658f794504886589fdfa7f962663a467a88bb0ba2050913a14b9a5d",
+            "shared-probe-race": "62c7e89753b654f3046c1d69d7e8ba07e4b51b8a9fafbd45f4db3473528a2ff3"
+          }
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "f247d4a7edcc43b88d56641c867862fc91eb31c674d5812e7c96cd006936558a",
+            "shared-probe": "763e4b40e299a39d81ff6a62dd92bbc33345ecacf06c2dccbf16a647a4d971a0",
+            "shared-probe-race": "678d6851b9dca7d7a53f233040ecbd4d7f74d53e174383958d1470a279164726"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "065e28c6dfc6c66f3b1262c56114add911b956d5e5bd38ebd71b77f3c4b857ec",
+            "shared-probe": "0d3e3cbb63b8e5fbbb52d8c0edb7ea31da448630aef6455723c3049bfc345dd0",
+            "shared-probe-race": "69af3e5eedb77614bc8790a6dec7b8d96a039510211f919a3084762191ff3d65"
+          }
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "32641c327555e0898b3a5ca4ff3069a896d8179c99070b70c03712899f56d61a",
+            "shared-probe": "95efd8b7aa37826ddf9175c1a050395a2ef02fbd13263504dfb1d9b138625faa",
+            "shared-probe-race": "c5721ea7ea2dfbab714adce69403d282869c75b549a78b46818c313a731a4f18"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "6d1cd1cddb7a76d0d378f55a840210667d5ab22e38517f004eb5ab57247d3bc9",
+            "shared-probe": "8b68f6b1f05290e7a518767d0141faeb200502d0f4f187df0793c9d79ac338bd",
+            "shared-probe-race": "b42d1d0a810c16add59b4b39aa9a89e7a5ee274c76c688abd800edc873a45799"
+          }
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "1128bd8e634f37324f26c51cbc0ef8b7b73e484563acd18829039a5645612735",
+            "shared-probe": "6282edfa25579cf72896f597dabddc9e7c719a0b297b5d9ca6da2c1aa8e48a10",
+            "shared-probe-race": "055b3b1fbf4c31cc8c962544e2eaedf1d8bbe125c0dd2884802f83c9a9b7045e"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "494f3d4c47baf71729dff8e599ed1e7dd2e1bd78358560dd0de3e3b3c63364ff",
+            "shared-probe": "18526456103010d32ecb3194f33ad389c0174cb9d9c3bdd04f8df14d13f21a64",
+            "shared-probe-race": "d83c1e2ce602397cfcb3d8be5a293ad1d47e02fd7b39c4fb005286ea39c4b921"
+          }
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "1661225b52a8cd7a1828d356bd7b7c7b66bd2a4fd4da9ac9e9a0c0942395827f",
+            "shared-probe": "74f24aa5f6d629a67be59830b944098fe0326051a4263944e3d5e0fcd7b23336",
+            "shared-probe-race": "50942cc3df3e92a060d7367bb48b0777fd7e04e2a26f5f3edec76a690920ccea"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "19a51db947a44998602f2ed27ccdfc1a304afe9cc4ad7dd81e7e8dde06d11f50",
+            "shared-probe": "4d8be6e55738c955c92f3fbd22841c7c0662624a6fb43bf3d6678258607471dc",
+            "shared-probe-race": "92087b32301899196112785b33ea253fabc85795e8a72d72f0ff337226142dd6"
+          }
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "661157a91d35bb9fffcc89ed84af9decc0979e701b1932f548140f365916b422",
+            "shared-probe": "c2e9c6954ea5b39a3f19ccf9f89284e92410a77cc87cdd25a4a17663d8795722",
+            "shared-probe-race": "7ac8440b05925e6689f1ffe597b7ae45996735eaa222b08582ae0a1e641a029b"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "1ddc299aa48e31c4fe45d434727db83c35e8b1026819b5f7eb5e9e8810fe13c9",
+            "shared-probe": "ca12933226ede915a8657c78a95450381cebe42d081d47cd547c0a5e258ce77c",
+            "shared-probe-race": "386fa47e9313285695b380faccbc7939f452900a02a8345511d4e8b1a0f390af"
+          }
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "69f7d446788f4b1c9836bd70a49e9d8ffed89b2b2d4439ba74210bfd41cfd35b",
+            "shared-probe": "afa3db6b4a6d5995dfdbd50ffa026f27da92c403e12d5a409d309a1e2c123595",
+            "shared-probe-race": "a2dc6ad2c4d1a6f75eacbb549bd2144ce007d52bb57d5f40a87edd95759b1a70"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "9bb826c3cd4efab3acd02e771598274423aee8ce463d8f78a3a53fc8213a9cbf",
+            "shared-probe": "ebf2109605360c2ace8cff75f6e86f87ed11438673813c30d4d5eeecdd6d52bc",
+            "shared-probe-race": "c053536e5187b51c58bea79a4cec54f6bbc1acc5fd0fdd005673996533d43d2d"
+          }
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "328dc11a5af51b9fcc68301505330bf70f0ea687af72424fcc05e5129eaef78e",
+            "shared-probe": "1a2d0b66ad0083da11d4dcdb910d46145efde6904fd859c67ee88dca7b573bc6",
+            "shared-probe-race": "3e821c5c5d2bb7a411a2aa5868912473a8a63255f40c1f4c05f7b56ec158e173"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "c6b84b3a9ba97d5d33cd80037db7a5f366bb6112512478057e8e085c0fee5bb7",
+            "shared-probe": "566abb0a132db3983bf8e5999bb8364edab4c371d9a8461ec4d6162bde6c95ce",
+            "shared-probe-race": "617477f829ee2f8696bb608319a25cd399ce6ef6c97dd00285b1d168a9b1084c"
+          }
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "b19e1a53770d30c3efebd17e05cecced15c6a3d0e76dc8d761048a6055723eda",
+            "shared-probe": "c3b249ef3feae32d385d925368ccf162e044fa93a1e9680a7ae4abbaa6e67ee1",
+            "shared-probe-race": "a2ce91b34a020835172842c432a6cbc77d2add54a0c3cb8b1e6c4bab45d22093"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "9922f06e5983800718e904f8044988924d44612d75127a3c3466213c8433ab67",
+            "shared-probe": "61179a4432ac1f40f9d5a03c77623a7f0f66446e3e270a1c73695b9c5acb6c27",
+            "shared-probe-race": "86d5a81549bdd15daa5d7633c028cadc487ff095c214452520d0ce5c3195a29e"
+          }
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "02858476c7ca3031abcc6dfbe625ff6cfe8863f1f4f4a6655f4e6118b6444d73",
+            "shared-probe": "43988786e7732cb817e43370774ea6328ca0f1039809f4e3369bb5306708ad3f",
+            "shared-probe-race": "1c4f616db4056a954cdd5b62dcce661a8690512ca226048def3df7f18ae726c8"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "1bdca1c7c762bdaf90abd3925cf87765d025522620d486de8233096d9f368190",
+            "shared-probe": "81a17443a5cae274d2263ee711fb4b67a568c6794918ccec366bee3be5553bd2",
+            "shared-probe-race": "73079126ccd254eb34759c6d046898088e81045e196c09c7d098fd0d605b6c3f"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "d7fa3aa53f968784187a1a8223191b8ba2bad22ababdcdd3c9705610850adc0c",
+            "shared-probe": "05da453dc0cf186c6a5d165cb938a5b552d4eda7f2b0439dbe32846270777839",
+            "shared-probe-race": "52edf5386976a066c17aa302d3ddeddefe668e41acf41bfe457bbb385ab383e4"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "a6415bf78890329357d4b6fb6134557c243b88aad8f25af6b3333de56fc6d810",
+            "shared-probe": "a424b86176d0eb3516a09dadba2cb59c65f96b7c8ea32abc478c1a60979dd794",
+            "shared-probe-race": "813f3725f1312c077ec7d8df797a447d196efa790fa51ff769d3c6c5d7230cf0"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "6968ce1126a9bfeeaa2e273aaf13cd5e6a3466027e0c2034dffdebf5837ab755",
+            "shared-probe": "719c95dd85cdfeaadf718e021f5272c743fe7314216858d5061c68a238be1fdb",
+            "shared-probe-race": "7f6b32b8580ad9edf2bf06e6385e20fcd903b85181d7e0ffc651e9d8ab0a72bb"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "f90b5ddb9a3289ddbdc4796bbb16a21410e392faf3fd8b309c6a03174b7d8643",
+            "shared-probe": "35fc2b0fd748da21d57423b690776be965bd9ffddcb667150fa0f547dc4327b8",
+            "shared-probe-race": "52ad13800dee8114f6fac63ed82c300b37506296d2f2059c5819e2fbea8e0df5"
+          }
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "010bbdeacd3466b0e896dd2cff53266c8c384a2bb39019cc922db41ad3869d15",
+            "shared-probe": "dd6a660f0b94668419b48bc2c1fe97aaa8b204bec6687ba62f31efe6aecb2848",
+            "shared-probe-race": "66897ae7219c73e0a09106e98a34e21a538c151b15e6c30c52d33da754b3b0cc"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "e52ad983ea0156fb2bcec1831a3dcbf96119d5242468618048caf11a7a5369d9",
+            "shared-probe": "42339d53320356fef9b8a8351083ea2c904ddcd1807714617e675e4c0a405c3c",
+            "shared-probe-race": "7398bdfbaddf22f875d01af3d04a43689d63d103ae37dfb806c7191cb656d0e1"
+          }
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "00c74cf1a1cb6407ffaf51216fb134afcdd4d20faebe3096bd28a6d456b82494",
+            "shared-probe": "155bd969b367f629a2b6bb61ae3713efae6f91c7dddbaafa63dd93d867cfbc09",
+            "shared-probe-race": "486530746280588cec3a3b7ea08bdb2d45a87c28bbba2bde46ff4fa6586eabd7"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "6b57cfd39b391916b2244ceeae7117ca66564289a6aec7452216059bf6eb79a7",
+            "shared-probe": "fce5089b8f6289ab4b9fd5317e042c83ede9c730f407506013bdc15c7d8df42b",
+            "shared-probe-race": "314a429692284273d157b022398b0091efa59f1b51e4673da1d71ecdccf317f5"
+          }
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "d5eff54973980768200691ce563f7c9252e3054e94ff729e4090c5cb7a825b83",
+            "shared-probe": "5cd5f5a528108a0a6ef7387e934a07bf9ae08b606732853cdc380e7f97af5eb0",
+            "shared-probe-race": "fe76ae291860666b42551984c775299460b3cdf1a227a640bc667c912d6ae4b2"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "d74dec2ecb8f94f2980b485a372a436ea7adf07706a13a301d293663d018b4a1",
+            "shared-probe": "6658595b0cd480763f0325181f06d1eba316e936233f241fcc115cb66739ae22",
+            "shared-probe-race": "b3445b44a63142deacbe738a91d603d10bbecec7f312381908122a46db893443"
+          }
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "b57eb9e842176f1c58c87f280d0bf5c1f06d6c79b8cbe2c8ebf12c99179358c8",
+            "shared-probe": "aa215cc16c296ca89b25a3541588b125cb6621860151145fc3d49340f622fcca",
+            "shared-probe-race": "09f271d534572180d990c4c5270319aa4adbaa614fef4eaa3de28f746f18b527"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "c1e0d75d11fa5416bdfad5982f09a9c851f62fa772bd267b7a083bde156297b2",
+            "shared-probe": "e83996f76f67f2970e13bc61a47e3e1a8ef221d64b2d88cad243f04b46f5f5bd",
+            "shared-probe-race": "2ca690a97c684b0fd5d945c6bfa3ed7887e94f71fbf3b69fb7afb965ec88439c"
+          }
+        },
+        "bbh-navigate/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "13bd30280fa3ec13b4be2f1bb119135a12d763526abd38c0a80cac80cd9d8bb3",
+            "shared-probe": "86fffa313ba085819979e27dbb475b6effafc7c6b20fbf53bcf8de195c91e3d0",
+            "shared-probe-race": "532d90c67bf8e94cbe2dd5ad34ef3b7d7c02ea71d4617f58416eba2d1051b983"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "d08d1dc61aca03a3e0bfeeb297253c73c8f2ef9813a45495ab58fe48a7025882",
+            "shared-probe": "df1a3f59bcd8cd4425a89e2acb34e92c0bd33588a22825e2053297eb4c097de1",
+            "shared-probe-race": "1bba2801874aa2bf74ac3f3bbaf59adb7f17c353cffdb8a826c587f097e39b38"
+          }
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "90bbca992195cf26e70077ad07b06a509fb1ec23456b821e9744d79fa4a1f787",
+            "shared-probe": "8ca65cf684dfad30e711cd0b79f01327656838148b971e1c0b2fe99ee74df427",
+            "shared-probe-race": "8270b244b9d86dc5a238b7bd21dd2628c801c59da594b6a463493da00dd870a2"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "e470ef408689d0f4e57412eaf05209123d53c330e1ab21de9580a66f97fca8ba",
+            "shared-probe": "3502bb5d7b15de83e9f51cd0b85d4f016fbe6712e368123933937718fbd8e5eb",
+            "shared-probe-race": "62b3a0264104d506aa8176aca721840142d0615813070347dcc7d0c4d9f7e277"
+          }
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "39da6940b0ba0b77be59728999764495d179bd6503cd281362f82f1713a2671d",
+            "shared-probe": "235700ce5b4d6556c76d884f4aac90dcab871d961d8657733732fceed37abd31",
+            "shared-probe-race": "b6703f0d1ea0a11f5a46280b1c8b75d265b5f0d2ef84d4937df47d9132a327b0"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "2cd9ee216104813c295b25d1980d64572bfca5af475e4efd86ba3d9863d63b97",
+            "shared-probe": "63a7b708409186eb472896352f031924383dc4613344e5cd4d3f5f4922b9fa78",
+            "shared-probe-race": "9a4203c669e1374ed159e14c579dd966aab8c86339b50cdfda6cae69b45e09a7"
+          }
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "9df37c12a11f3d8223d6ef46089975becfa4c87612f3385d137271a25fc457e5",
+            "shared-probe": "1127c449aff908546c987e9632e1837b1a9a229ce32f6f475a4c5e6371fe8cfb",
+            "shared-probe-race": "f68dea0369c0b7760aa279a5e0500850de2be802dcb177aa669f6d8b5eeed0ce"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "ff1a6e8e00e3c26fa7ec2aa5c148330fe1373e383bcd378dd5fc872504079723",
+            "shared-probe": "6e86b2f23d4afc61e2e5e8a15dadf45be050c57f6911c5aeb98dcd44fdbbd0f6",
+            "shared-probe-race": "ef052396ba4d62e0778d8064b2ef91e7286e43c35a0243f922f31fcaf83413c9"
+          }
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "3877a7f388661b6e6110601c5194c30d4c16e5f61aa8ab5a69278a37bc90d424",
+            "shared-probe": "634f8df386c1f1c3ca87e0acb1dc9256474dea6c900e0a9b78dfdf72f94dab6d",
+            "shared-probe-race": "e88c51b89ebc3a10d68af7a41439923383a1f99de785a4513cf0d18232e00846"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "e70835e26b8e796d0bf4e1cbf90a1c40eabb1dacdad5b9af2748dca7329df52c",
+            "shared-probe": "b0c40e3b8f452eeadd74889657b2d76be8ecc2df4907e35a759d0841c41b18d6",
+            "shared-probe-race": "072870b7bce0f3b7df21dd0ebbac8d65a22117075eddb348c9e9c201e04d1c55"
+          }
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "069bda97cd0d3f8eaf12a52d0c2d1064568772d40c576890614c593f73ab9290",
+            "shared-probe": "048d76dcf0c4cf7bf14cbdf77b32a8f4b8f887ae0ba8e7c0a2ecfe648ca4c117",
+            "shared-probe-race": "7762242d1fae499463938adfd71af071c879cd62e8490eebe73f3948c5beff22"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "efca2d16d1801439da64322ec4cae320d9c4aaf0b070c579e09120f6526bda4c",
+            "shared-probe": "95dab4e6ba757b9c32604c75099fbf6e8bc9fb2d4bbb37f492a333c1feef3c5a",
+            "shared-probe-race": "b92f0672905ed539cd56643c88f106e09dc255533e1087500aff5da1385053e9"
+          }
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "a06dd9c619fad5548e36edd62493bedd5165b7158f5c744c251003aebd916bbb",
+            "shared-probe": "c51505a18c2f786301f1e269ce104045dd401301e5e24043bee568e1f7c7d85b",
+            "shared-probe-race": "41ce36ab5dcc4d7492031470cc3e7eb5745e6c117706a2c4b842b6192af0507b"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "6f8b0f1cd262dbfeb18a4ec39625090e38342cf4a407ca8c32b70aaa4f36536c",
+            "shared-probe": "42eafbe6cbd373575ae4da5530da32cb60c59c1ca7004ef55d75e3ddc9b0935e",
+            "shared-probe-race": "34ea5db9e519b257ec0ab4338fbf5beecca8e07c28acc021b80027f63e92a50a"
+          }
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "c8134144be9500dfdb2a9c413121fb9c59d4b2efd5de429bae69f0d6574e343c",
+            "shared-probe": "301d27aa2288d028cbcd467bd05adaff177d4312a05a78da5399236624793c55",
+            "shared-probe-race": "e77ad098deec71a63757244d6fb719577a9c7e48e3cd2812e6a2cb4ecf15d05c"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "3dc02b5ea16a5b5ddf6db0ce591ef2ae7c0a1c5201b054c92454f3fc114d80dd",
+            "shared-probe": "618c62cda77cea1cef023bd9c6d896799affbdb52dad6509c5933f1cbd64fdb4",
+            "shared-probe-race": "f54585dd275a05afc29db14bc5676919bed9549cdc5c8a3943962ea9ac8ec61c"
+          }
+        },
+        "bbh-snarks/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "613c07fd56e09d2a288e5df5c013c9962f2d5137644d98c5cc43f3684223ce4f",
+            "shared-probe": "758831d4e58eccd7403afb8ce7d68451e41d06722839975e319865780bfbe939",
+            "shared-probe-race": "dd44346368323f84a37184a10ad6d90ac303dd772901aaa9494ea413c451b696"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "b5c543abb638e3966e13f5316d316d7f63786c388568c96c2fd854ba84c6637e",
+            "shared-probe": "d262887b6ee324934ebeeb4df2f737f6fb8c983faeb5b6e259854a580982c65d",
+            "shared-probe-race": "646091465d44d91d3339c7cb1af2472e78eb2479caab67057013230ddefd411e"
+          }
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "3f2347c558668aa0d4cd16723fc15af65b3b8678c7c7d2c4c92a5cc812d25828",
+            "shared-probe": "411abfeafe7f5e7fdb886b78d3a396d94475f8f44083a4098ba1479e983d8261",
+            "shared-probe-race": "291dc5e44a220edd5e370fab4462b0e9268e19cf3260a8f93399a207e5ee643f"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "9cd8208d08668927ab26cf18597fc2699a869c7be3de0fc059822cdb1f2b966e",
+            "shared-probe": "cf6ed0a011858cacfe04bef67395e189382c45b3346594ad4efac62f663b8d9c",
+            "shared-probe-race": "4c9e031b15bacae0700bf79c1c30b03961ff72663f8d8a8b9ed4dcc6d2924a67"
+          }
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "3ac317b7ee8e158723a76fe55e0aee91ff70e3f60fa3da2dae1713bf60f768ae",
+            "shared-probe": "44d12b4b1ff92b2a8d5dc5cff9f6e1bef4a197ab0b8d33e5819ffec742c1d17c",
+            "shared-probe-race": "7feaa4a3cf11022c5f0cd71592afec32626116cf4c077e6162886ec5a5ad48bc"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "3ed7ff4a1dffa679e9ab599bc80e188b34b257b2a6a7330e735bb41690ae4fe5",
+            "shared-probe": "f5495a4fa5e6f8122e22dc6b9beea121fa7c97f20dd5982a206ed4c05efa701b",
+            "shared-probe-race": "e10c2e6c4b636a7486cb6f214dca674e3fc167cf4585f6958c4f0c811cbe8f38"
+          }
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "3d82095249d2e601e6bc357d77985bba09b134f47f77125b800ac01e0607954b",
+            "shared-probe": "0f1de5109038ceb7fdecb35fe741398dda742103cdc6c6f221aeb3e5a754b4db",
+            "shared-probe-race": "935d6cc56a6c3608c97b744523d94cf12c37181166de32e81939dffaea0703c2"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "b6cdc6cf6888b2de6ba84dd2ba6a4c01fc54f29e539c86e753da5d77acfbb73a",
+            "shared-probe": "caab82f938157cf3a27495635a37de5c0a3ee06a14ee85a6e42ad817dedf1471",
+            "shared-probe-race": "6c8d6c4dc419b214a1654b041e53b947c0e999b25829962ada44b0dd20c574e4"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 274,
+            "holdoutPasses": 9570,
+            "nominations": 394,
+            "paidLookups": 15786,
+            "promotions": 185,
+            "searchLookups": 12378
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 9548,
+            "nominations": 358,
+            "paidLookups": 16083,
+            "promotions": 181,
+            "searchLookups": 12920
+          },
+          "shared-probe-race": {
+            "changedNominee": 167,
+            "holdoutPasses": 9500,
+            "nominations": 286,
+            "paidLookups": 17649,
+            "promotions": 150,
+            "searchLookups": 14841
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 249,
+            "holdoutPasses": 9013,
+            "nominations": 357,
+            "paidLookups": 14735,
+            "promotions": 68,
+            "searchLookups": 10936
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 8998,
+            "nominations": 322,
+            "paidLookups": 15062,
+            "promotions": 65,
+            "searchLookups": 11415
+          },
+          "shared-probe-race": {
+            "changedNominee": 154,
+            "holdoutPasses": 9010,
+            "nominations": 257,
+            "paidLookups": 16541,
+            "promotions": 61,
+            "searchLookups": 13102
+          }
+        }
+      }
+    },
+    "BBH/new-task": {
+      "headroom": {
+        "cap-19/gain-1": {
+          "betterSharedWitnessWasProbed": 10,
+          "betterSharedWitnessWasUnprobed": 6,
+          "maximumHoldoutUpside": 101,
+          "noBetterEligiblePrompt": 48
+        },
+        "cap-19/gain-2": {
+          "betterSharedWitnessWasProbed": 3,
+          "betterSharedWitnessWasUnprobed": 1,
+          "maximumHoldoutUpside": 37,
+          "noBetterEligiblePrompt": 60
+        }
+      },
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "lowerPasses": 590,
+            "upperPasses": 590
+          },
+          "shared-probe": {
+            "lowerPasses": 590,
+            "upperPasses": 590
+          },
+          "shared-probe-race": {
+            "lowerPasses": 590,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "lowerPasses": 590,
+            "upperPasses": 590
+          },
+          "shared-probe": {
+            "lowerPasses": 590,
+            "upperPasses": 590
+          },
+          "shared-probe-race": {
+            "lowerPasses": 590,
+            "upperPasses": 590
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-causal_judgement/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "999643edc18666bc5e1b53361c98dc3f59e8d2908fec97bc0a08c7566e3fc104",
+            "shared-probe": "55bd15f868cf0dbb3cac51deb16b254ef59ed39c0859b6ab16c8fade4521b312",
+            "shared-probe-race": "b8dacb88e29cc9be48468d566dbb3c8a9ecbf724e3899b066646b6c2787b9dda"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "14f30476227e83e1647877fb080105ed4bc54c79fc2ae21f8b8af31c672de597",
+            "shared-probe": "0d0ebc793fa1a1bf5e2d0df54c99a695a34478249cbcb5955513e48bf905e5bd",
+            "shared-probe-race": "7aef280e6ca5e05c360045cf6395525135495cec6f94ac41a73d4ba5b5cdc332"
+          }
+        },
+        "bbh-causal_judgement/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "bf055ae4772b76dc68db202a04e3a13fb7864317bf8364061d55e2566ac35c7a",
+            "shared-probe": "edb4589b39b75bd9be7d93ec2b7256d913221d4ef58b28dae94e0d86710571c0",
+            "shared-probe-race": "577ed2ffd61bf3165a69e13a3cf169e19a7a3ef9732991198dcc121bca70f407"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "fb71ea175e18b7549d85bcc9bf737aff1ba4a89d1c572c9d2dcf2dcf2788d1a5",
+            "shared-probe": "8b378298d948ea1be3bbdb1c8454c953ed9d1f2ce1bf964a306e665183fd60b2",
+            "shared-probe-race": "f800376405ef1b1217875085f93855d4ebcec7741ee250f42e6723b6f3078339"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 13,
+            "holdoutPasses": 624,
+            "nominations": 27,
+            "paidLookups": 1111,
+            "promotions": 7,
+            "searchLookups": 873
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 591,
+            "nominations": 22,
+            "paidLookups": 1118,
+            "promotions": 6,
+            "searchLookups": 906
+          },
+          "shared-probe-race": {
+            "changedNominee": 14,
+            "holdoutPasses": 593,
+            "nominations": 15,
+            "paidLookups": 1158,
+            "promotions": 5,
+            "searchLookups": 981
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 12,
+            "holdoutPasses": 590,
+            "nominations": 24,
+            "paidLookups": 1008,
+            "promotions": 2,
+            "searchLookups": 749
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 569,
+            "nominations": 19,
+            "paidLookups": 1007,
+            "promotions": 1,
+            "searchLookups": 775
+          },
+          "shared-probe-race": {
+            "changedNominee": 12,
+            "holdoutPasses": 569,
+            "nominations": 14,
+            "paidLookups": 1062,
+            "promotions": 1,
+            "searchLookups": 845
+          }
+        }
+      }
+    },
+    "BBH/seen-task": {
+      "headroom": {
+        "cap-19/gain-1": {
+          "betterSharedWitnessWasProbed": 31,
+          "betterSharedWitnessWasUnprobed": 22,
+          "maximumHoldoutUpside": 306,
+          "noBetterEligiblePrompt": 459
+        },
+        "cap-19/gain-2": {
+          "betterSharedWitnessWasProbed": 12,
+          "betterSharedWitnessWasUnprobed": 10,
+          "maximumHoldoutUpside": 160,
+          "noBetterEligiblePrompt": 490
+        }
+      },
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "lowerPasses": 4906,
+            "upperPasses": 4917
+          },
+          "shared-probe": {
+            "lowerPasses": 4917,
+            "upperPasses": 4917
+          },
+          "shared-probe-race": {
+            "lowerPasses": 4917,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "lowerPasses": null,
+            "upperPasses": 4906
+          },
+          "shared-probe": {
+            "lowerPasses": 4906,
+            "upperPasses": 4906
+          },
+          "shared-probe-race": {
+            "lowerPasses": 4906,
+            "upperPasses": 4917
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "267554aafef016e4397ff10ecf97f8a635eef5ffcdcdeb75fb0d61b4605e2672",
+            "shared-probe": "2fc14d6e50349bc6a1d5434a2c276cdee79045fa570106cf1d5d83cf514ca7bc",
+            "shared-probe-race": "3da4f9d10db4d4d35d4771e05359e5685f515880c13cd8e4974fddce59c963c6"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "1f6b7fa5f6078e2f0f0f3338211855f37a77761f2f77fb5b559a264c250025a8",
+            "shared-probe": "4d1dbd644c0a51eb4c87bc4064af9b99ffa434c10ac93b63727a0a6556e44d82",
+            "shared-probe-race": "a658222eb3fb1a91f9a4bdba503207ff1ff890eaa0af8ac4e0932c046819e666"
+          }
+        },
+        "bbh-disambiguation_qa/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "c71b3cc77bb48ddc59972b70ba24f0e39302e6b2282cf0f78374c417779c654d",
+            "shared-probe": "7dfc8ea45b16e192f173917b6fd56885c2681135f86ce61c6cf269be9a93e419",
+            "shared-probe-race": "30f1871310f3421eef7d45f3619fef6c194fbee5d0501606552062638d5900ae"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "f4ad5e6dd5fce50abbf5cee9980bce2f23ce48a90f9f1dc21a5a8f5da52906ea",
+            "shared-probe": "cf12c19c3b8d2068296a6f4582c3e9d7c005ae5da5a62ae2102256142625e348",
+            "shared-probe-race": "2c810cd75ed3933e401efc7a10fd8ed3b54a7c27d84b548d5788e039c911bbb2"
+          }
+        },
+        "bbh-formal_fallacies/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "3d82702e864e2e0e7412208c3885b8b7cedd29d5be922b4dd5e5bc85b63caf95",
+            "shared-probe": "40af03392f23849efb1149a3844c38928077e5e79e1cdee4889510e01cd3bc04",
+            "shared-probe-race": "b199d90f6123ad964b7f64a477c36761e4268d2c99d79d17f67ed3b7dd80d7d1"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "d7c1dd4b4b5a381b7abbfc58405805f00ce51c0c2272f0e124aae18a27814c3f",
+            "shared-probe": "18d56c5de9d43a63829116736f72e1c7077e9f803c99134d2ff2e30c87a25a7d",
+            "shared-probe-race": "f9c0c8c1ed68c3a8e92e9a6214a21f314620071263d12b15656efa43dbfea6a4"
+          }
+        },
+        "bbh-formal_fallacies/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "889f0858748b5bcfa07ee0151a6a729a74bbf192f2b1c8f52f159e749be03eb9",
+            "shared-probe": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0",
+            "shared-probe-race": "24b14828dc00609d6c041439cd66de5801d839e039fea0355e2bd06f6ca17f20"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "53632e03ec0eddac77f2c09d06acfd6055d443090b2d5242b09fe6d37a0519c5",
+            "shared-probe": "2ba47179383644b7554fddb8a01d0e3c1d34f64bbf2d88bc3535af44af4c4026",
+            "shared-probe-race": "be7152916e345af7867414e300335050ccfb034f495a3937e202f98529950238"
+          }
+        },
+        "bbh-geometric_shapes/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "08464b8cc411754206b5f03d9ad268485f42d4de38965dc84038532fefc29fd7",
+            "shared-probe": "ae118b2ba72b3cdacd6f627466383a8d660ccc168492c6e2b535798493f46cfb",
+            "shared-probe-race": "08651692b1222a7932b0b5a89eec396aec795c54779c26019180cd14ef9ba85f"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "2f7294e15e5f14cb7adc4077f5822c4cb09ab71e31d202bc54e69f907c0fe480",
+            "shared-probe": "133fbca5624082860832bdb9894c0f385e8f4a36764cef978b4fa318b4c20b91",
+            "shared-probe-race": "3f6bd1a0c6a75d17336c4860adbf940ded54e555b6770c5492613900bbf5a03e"
+          }
+        },
+        "bbh-geometric_shapes/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "1dcc60172bc2c8fee65806d231f82156443285de595ae2eb4c410a16a5b92226",
+            "shared-probe": "7338ee8c6065afb00bce4598b88a780555cd0cd7f9a0fd0c9671b69fb96737a9",
+            "shared-probe-race": "f376aa86300b7c2f31508f2a8f6baae929c5e442b90c97da7dd589f4d7326948"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "4aa570965979975745467f30308735345dbd7159e078f574dd85cffbd11e7a43",
+            "shared-probe": "a2b18aa5ee5ca25c5be7b34ac6fd076e60357ec3751b74e0529af6a85da7a5a5",
+            "shared-probe-race": "1337c4134d5b2eb9d4d4357c5ea98a3c82a96e23667d77b48489bf426c72ebbc"
+          }
+        },
+        "bbh-hyperbaton/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "0502256f88751665e762a6f9128c9b1a076b570816a5e4eebb182548401c6f4e",
+            "shared-probe": "45a2b715cbed703b5452f59346c0047a6a26a2b9b67f27caa3389d708f5378f6",
+            "shared-probe-race": "9397d5c2957fdbd8b261d52c2bf21624e79c6c3eb8e6ddd34a248a7cb430b518"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "fb9b50b7840009edfe4a7c3b2be9bdfed1002cf384337ff282241482dea1b8c7",
+            "shared-probe": "a04268552eb8f7b33b230d6ccd2e264aeefcbcac30dd83ee365e044731d0bd29",
+            "shared-probe-race": "956093228d88b1d4c0981f331826c762500c58cb5ecbce24872916a268e28546"
+          }
+        },
+        "bbh-hyperbaton/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "f0d60b858000ac19afe3091b1b6c683f5569adc9944a109deb288c1cdcbda803",
+            "shared-probe": "3df90cd4f9ad229f6db5c1203787db116fd524e48d69c322cbdba30de3939426",
+            "shared-probe-race": "b9d488444660cbff14740ac64dc38bc8b7d5b64ba040d65f440be23bbbd1f060"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "38ddcdbf598d139037de28ea16519560ed6ca4ce785b6385b8ec2bb1e0381c2b",
+            "shared-probe": "edcdf37285662a8ee27ab1936bd38010a8c1d2b4421b308a6ed64b3bae041bc0",
+            "shared-probe-race": "245e54246317901ff7943101bfb90717c44ea1f3d7ce9aa3af3e5151095a4f9f"
+          }
+        },
+        "bbh-logical_deduction_five_objects/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "07162cff2eef14ae395753acd9018d90ca33273a8148db5cc72f5106b2267e62",
+            "shared-probe": "da451c17d3c6d7dbf0abb3bbe755c8408bf39f18e4bbf3a487fe37719307de7c",
+            "shared-probe-race": "c4825e4fe83f228e12ff5b9015631d8072809a4dbf58bf7aff46b4408f256566"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "e399d9b2cdb001d5d6253a2be844921665b5e23473b769c4f883352cca232132",
+            "shared-probe": "3dab9b0c6ca41b0e2062f0de03ecf1405ba57db8e2dfb1510e297ebe8edfd3be",
+            "shared-probe-race": "447ca28e61f1cc3ff5a4ba69ddda29c03d75c17f294b6544eb2b4fa14f461d7b"
+          }
+        },
+        "bbh-logical_deduction_five_objects/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "2c23dc62c665421505d5737b2200536280783fe262fd2da854153f7517b5433b",
+            "shared-probe": "3b7511b79db89523d6a003fc450abf8009ad570048125f8ab23f9c28dfbf90ff",
+            "shared-probe-race": "93f5280c17befe1c5b7c93a5109a4c1cc95875dfbbf24d37c364c677de971faa"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "eca2878119f6ad0bd5966b83d4d0ef47e6df311c3aa5589ccfaa66ced05833e6",
+            "shared-probe": "b998232ad50f93aeeca3b4d96e0fce1cb83b970fe1934a79ae6059f9785abc46",
+            "shared-probe-race": "81ba0c04c9e124fbcfb66d8039aed836dec5db94d97e295c3588f9b5d22b1ecb"
+          }
+        },
+        "bbh-navigate/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "4c473b00aaec332c92a025ac59b984ee32d82a7fe25bef41f50b25824f0d3486",
+            "shared-probe": "43689fec74f23c98f0cd27407993590d9916383c6f75d5a39989bec3a4bc2007",
+            "shared-probe-race": "53b907ca0ef9cf1850bd5877ff71e040e6f685cbc7fcf0884e8f5c3674a8a22c"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "043f7cccb25a772b510946caa067380bfe198ed33b1f8219291b4dcce6120644",
+            "shared-probe": "4439d99c06697a57177e0832a64b25ec594fb7dc08feffc88d163d3e97f9937e",
+            "shared-probe-race": "4358d83046b29addb13fdae17a126a1e064238c04362b32453f2b4b27392a23a"
+          }
+        },
+        "bbh-navigate/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "d84dd98c121a9517f59011003a0f7d1c257d23111da55fe2ca85c2bec0412081",
+            "shared-probe": "5099bc1b458f1048f5f30deca7a52a8ed2320e5d7dc81d90377b4dbc979a28a4",
+            "shared-probe-race": "288148901695ac346f5a5eab1a23bb98f76b46f9daf8086189744327cea3c44d"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "6451c3f347292a42eb04faafbed220ad7178894bc77d2ce1c1daf0b738ef2078",
+            "shared-probe": "92f8a75ce50e704f21eb565c649b708896957b0aca776ec38f447f0b8fb88775",
+            "shared-probe-race": "305ac7c271b4cb58054c8dd2836851570b483c37763c89affed38bb1c3ff88ed"
+          }
+        },
+        "bbh-penguins_in_a_table/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "7712fc1e17cf6be91ad5448963473560abc25edfa651845a80ec90d1e767ff7d",
+            "shared-probe": "1d8e0d43209767f9dd8aa158d31a4acbef24489654c6f187df2e2710481ec539",
+            "shared-probe-race": "d1e692305d5b28e34d0d4b85ebb814b4ace59cacdabc05b76d33cf8af14654b1"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "2109daf014d1423a8b5f1f8145ea6ab06d2de5a5afd2be9f6f205376487c298c",
+            "shared-probe": "ae8981e0bb3b6404ef3c932cfb8e2df3611e9031a2957185a623e80f96c9506a",
+            "shared-probe-race": "b8a1df39d21a2027a0802cafee972c9987b0e0f8c17e09177358a04173aa9e07"
+          }
+        },
+        "bbh-penguins_in_a_table/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "c27b477e97d0a3e04e830025b9300313eab2699162aae14b28f5cb2d19ee903d",
+            "shared-probe": "68577a91350c269b8cd8e9a8e78b2ae2fe3152097dbb325b4621f2f5d8eff63f",
+            "shared-probe-race": "1127b7915357d263b96af53dd22302ec150bbb4037e1676e1f1fe2e1a9ebc372"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "778dd6671aa9c00e80841301bc50786d83908fae87ed5c83fd0a1ddc9bf7e92d",
+            "shared-probe": "2967c7965b145dfb01defe5d228a48f2b0f20e04e86928aec85c46b7332cdbac",
+            "shared-probe-race": "5426bcfcc0b48f0c42f0ad54b202add5a8490267c7a3a3ffe2b1e2e1ed698106"
+          }
+        },
+        "bbh-sports_understanding/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "7dacce23d134151e49b6be49f2a5622d5f54316135e26d494fcff2bd60db9634",
+            "shared-probe": "b263a61ce95c12eca4a1d0176b14e3d4f7f1d5a74bb972dff8b285aecdcc8d09",
+            "shared-probe-race": "6069883ae9bc6907d495f1f73adcfc1d9cf42487b0cacf2d52233d9b33474831"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "dac66103f3c3f14e7c17cb190db0e4050b53c099dd70557455d12764b5f1ca0c",
+            "shared-probe": "7777234ae83cef3951a57301a0bdaa4222b507a46099904565864d5ae3a9d4a0",
+            "shared-probe-race": "3aea9d55d334cad5db77ec310c5db84328315c9698031a379a9c2c6db6554ab9"
+          }
+        },
+        "bbh-sports_understanding/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "69496f87c06905d69d474587dbb7ea0701a3e40a13c5199bce4c7ea0c92bd6d8",
+            "shared-probe": "55456e31e27510c0dfd6dc479bc0eb09bcd8e702a576fc5e8a6e64ab5081e3c8",
+            "shared-probe-race": "3b40f10f72c6af801fb2fd88bbb8f5a33d69f0256642f6cda0a5ed96589d73e7"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "58901505ad4b1ce5209705b13a9dc8c1dbb2b291c43af06838301135bacc926a",
+            "shared-probe": "bd60ebda2eb3d928bf7bf81dd2590ac4a6dd8c8b34b33a1915dfc81faba92a45",
+            "shared-probe-race": "88d82d8ef0f8768880c79c0c92d14dbfc0a001b1b1ba6f131c5a2555079019e5"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 122,
+            "holdoutPasses": 4854,
+            "nominations": 172,
+            "paidLookups": 8924,
+            "promotions": 59,
+            "searchLookups": 7317
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 4843,
+            "nominations": 164,
+            "paidLookups": 9059,
+            "promotions": 55,
+            "searchLookups": 7504
+          },
+          "shared-probe-race": {
+            "changedNominee": 79,
+            "holdoutPasses": 4861,
+            "nominations": 119,
+            "paidLookups": 9733,
+            "promotions": 51,
+            "searchLookups": 8371
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 103,
+            "holdoutPasses": 4760,
+            "nominations": 142,
+            "paidLookups": 8281,
+            "promotions": 26,
+            "searchLookups": 6443
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 4790,
+            "nominations": 135,
+            "paidLookups": 8403,
+            "promotions": 28,
+            "searchLookups": 6598
+          },
+          "shared-probe-race": {
+            "changedNominee": 64,
+            "holdoutPasses": 4823,
+            "nominations": 98,
+            "paidLookups": 8937,
+            "promotions": 31,
+            "searchLookups": 7233
+          }
+        }
+      }
+    },
+    "LMentry": {
+      "headroom": {
+        "cap-19/gain-1": {
+          "betterSharedWitnessWasProbed": 93,
+          "betterSharedWitnessWasUnprobed": 90,
+          "maximumHoldoutUpside": 1254,
+          "noBetterEligiblePrompt": 329
+        },
+        "cap-19/gain-2": {
+          "betterSharedWitnessWasProbed": 51,
+          "betterSharedWitnessWasUnprobed": 65,
+          "maximumHoldoutUpside": 985,
+          "noBetterEligiblePrompt": 396
+        }
+      },
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "lowerPasses": 5388,
+            "upperPasses": 5417
+          },
+          "shared-probe": {
+            "lowerPasses": 5417,
+            "upperPasses": 5417
+          },
+          "shared-probe-race": {
+            "lowerPasses": 5417,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "lowerPasses": null,
+            "upperPasses": 5388
+          },
+          "shared-probe": {
+            "lowerPasses": 5388,
+            "upperPasses": 5388
+          },
+          "shared-probe-race": {
+            "lowerPasses": 5417,
+            "upperPasses": null
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "c9c5dee0bb1939964040d32b42cab82ee79993eca0b3a1444a6f8dd2d00eb4bd",
+            "shared-probe": "52ec3dfd4b658bab2685895ae77632c490f830da02f5140a3922ec9fe56f6223",
+            "shared-probe-race": "9e493078300c29b838ba8613f8c2c0a4488e4cb6d1217f8075acabbf13338f5e"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "7b478a53282d9500f174cbfddac43a691bedb6581f6cc6f471267f4f4647e7f6",
+            "shared-probe": "531b6cd28bb50c6c5c4364a094a29ecc1fac25ff6fc460e006f6ac02b0598788",
+            "shared-probe-race": "c15ca4fd8ca10f362ac7b0bf4653d78d955b29ae9ecc8326b4c47fd8e46622e9"
+          }
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "941928cf6640c6f9e91b6fff72cd193c2e48a33d774dff73790eb09205e5e587",
+            "shared-probe": "97e1d96f46e5ba6deaeef657a3d2c6edad195d6eb536ad841db7ab467a73a6c6",
+            "shared-probe-race": "2e78e869a169ff5389e3f0d6c0ac873ca89c35d71d392b1fc217f709893898c0"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "37104a737a140427b44efa98b9ad98bc88f8dac52c7210e581ae31a45d900d70",
+            "shared-probe": "6d1a10b86a2c0b62d4e705f5b5511666bba7d834b7707f9cfec87a115faf05b6",
+            "shared-probe-race": "3118c37bc5ec367e078812c567ab2eff9f5c9a316b63c399d394224380db26e9"
+          }
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "6e5874c916b44423a39c43d712c2c685656b24b18f8d79102c62a7ae18a152d0",
+            "shared-probe": "459308a830baea0eafaeda1e28b7d585d0a2567892e0703253a50a13d0b7572b",
+            "shared-probe-race": "edc0cb5c6c5cc7159ca7769e2371edca0f47a656607dfcffdeab54c7d8806b61"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "1451c3ae3a51bdfab1a28faeb0a67b7194c94eb36fe472e0af7a3349a91c737d",
+            "shared-probe": "171559804b3b35a14cf3cad0fdd7f31d429a19e3676a8ea3f4851026836321a0",
+            "shared-probe-race": "2197d1cbe1fbf09e5a747c4c1645796a759d556913e0f08b011951f82f57e21e"
+          }
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "f7b31a83d583531439f9aadbb5690ff40812b285a16d093b48de79dea426d006",
+            "shared-probe": "d36a4b25968d60a6884a277aa9c663b01dc436ffb06a6aa7fbba44a7b3d15e70",
+            "shared-probe-race": "9485e53c5e1ddf9cff1be28446e73ea7f7f46d1156e75c220c15c97877a865d7"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "fb36c7c1fbd3d6a77eecb1bfdc793acdc344559c11aeade86c81c5eb2997d779",
+            "shared-probe": "e6a6eec086e21a132db45bcd52753258b0a525cf6245592d7f51990b4ffa32b0",
+            "shared-probe-race": "c44ffe7a0fae284c538370e5f3111ad90e0bc069e17b068975b4d38ea919d0d7"
+          }
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "df79a690d289d0d3b75daf7a849296e36d1463bb15a020d2dacf8e85122aa324",
+            "shared-probe": "d36154764916cf66167b39e27119dbbd17199384fdda3bc4e65482a88604a127",
+            "shared-probe-race": "dc1d2095724b25f27025b1a89e623a9af645d6d718dce8e47cffbb4048422c17"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "5094127a38eee3d08f114d2bf56c41fff5ec89056aa280e058040fc7018c27a9",
+            "shared-probe": "56a87fe162b1c4efa99672fcd0eb06d232cb2662cc76e7ed4d64c6d3384126cc",
+            "shared-probe-race": "8cfcc3a0c7af4dffb819d568722b4d975fbadb93af38bc0825e3ffe0320568bc"
+          }
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "f02de1c1b85735b03e0acaca64a2b782672b5a1e2e20868674cf7f0601bff5ac",
+            "shared-probe": "9c824a2920f7c86925a9ca1ededf2f45a2a364b6ec6c35cb0cea82f498cd7ab3",
+            "shared-probe-race": "26127d6af64a2cb33aacfb3ffa764e3d7eb621d4d025d72211eb1ba197f07630"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "cad37ca851684682fd1203090d7d44ff3ae8ed035f1b9740f826885d11a93c41",
+            "shared-probe": "8fac369bbe45389ec0bcc3f7484afd03da9fe2f8cdc0ce76d347d77126a11ca6",
+            "shared-probe-race": "fd8850eafe76f543a786a2683ca5725b2bed651a4c062a64f8adcd64c15738ec"
+          }
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "7fb7e5c62cdca0fe7250cc63f1525159adbc678f609c90ce7aeadb3f97e78584",
+            "shared-probe": "e4c90bcd60a739d007adcaf2e5b24cf31a2d950ef42f716deca3770b47c4beaf",
+            "shared-probe-race": "9b31152d4c90fd87119a4374fb8db3e399cd2d66152e8c211edf463c87e0f1ea"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "5a1cac5a83ad6d75cd3a5c9ac94fbbae42d7c8c113ac862b4f7db71e09f2e888",
+            "shared-probe": "21b853acac24552995154bccd0f2680329c7e810d8a0f8162e74291b65715bc6",
+            "shared-probe-race": "550fbe31cf92eb7a72167098ed3463ebdc866967ebd12828df3c2fba4ace53d2"
+          }
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "996e692267213fa87952e11f3e8f14129b9ad7b5470b3fe37af2e63e8bd55285",
+            "shared-probe": "b029a65674c0eb068dbc25ed5e05842103ffc605623e995086c254fd5de24a69",
+            "shared-probe-race": "9b43fd0c88619e7abff1bc36310a5b1f769ab5c76eb902df9c8885f3b3583c5d"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "7b545940837862f8a791d44c55a32ba7d59c08e800934bdbacf8e1542137aa3b",
+            "shared-probe": "d15d782090fbdf95483aa0140aa0a068beebfb7da2b5cad319066b8f4b39a7ae",
+            "shared-probe-race": "7bcde74f2b919f80f3adb4a93ce2c3ae5751b53dc6ec8ffc61f0910070d89285"
+          }
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "63ad3dfb263e24313deca36494c1f6af503304164d3bcd21e2e95f81cd8a4a5c",
+            "shared-probe": "e4e79bbd06d9a2b6df5207b981e64e427cd9584b85cce786d71740237e3cb453",
+            "shared-probe-race": "5a290e958c025c1c38bc804ab335b11fa3222719765155e5f4236d9eff33fdd5"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "2f5be8c84238e01624e409307a16d7358284d507e40ff6350ba356a9fa3422b4",
+            "shared-probe": "16cc91801d0f7483c8727131abe4b5ece24ffbfcf9c96b202c4f62c0b6e3efd0",
+            "shared-probe-race": "5b224fe26253f80f236f94c6d9344e92073ca22d299426e70e3de96f5ff203d7"
+          }
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "1afb5e9d6d9b7025cfec2d30961604bf47ae07a420344897bf07c21199728c5c",
+            "shared-probe": "523b59406cad42762817405193ee603fc95e52a45bd80808083b434455140741",
+            "shared-probe-race": "e130571446c17ad0554cf27d970379cd0500d13bb559b43418070f541271624f"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "944f79c82d2b7b6a8fad63c09c0a60d1d585cdf47bb077ab59749c74f99deeb6",
+            "shared-probe": "307fe3ee4d3bcb41253ed86d3b656f1baeee4f475fa49ce32a3fb48b5fbeaa9c",
+            "shared-probe-race": "08f0e267a00219cfb283e7d7f961ac7a55a3700676de06d5825ad3463910d107"
+          }
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "156cf4e6f18b6ed48745f596814bb25503e53a34e04e58a81f27f9f860394198",
+            "shared-probe": "7efe1f66f8b7c2b16ac693e2db45984a462fe11750548ed5f9be4cc1a0cf0e03",
+            "shared-probe-race": "5bfa504986d30b33e7d47d3e934de37234676fc14cf15169e89b0f4198d7d941"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "c5fea4e8651e9b0a00100eac17f7b6410a8b081dc68bf88dc2a7ab43ee5d5d58",
+            "shared-probe": "6070f7f751bc6cdfbd4bcc4bdc7df38b18805d2df7581264d178a3a7539b6b2c",
+            "shared-probe-race": "2f11e7884dc84ae53b2b76e92a1ea2a930802b9a61352737353d7cb9b035be8f"
+          }
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "7b0f075b8771152602d12e01041d18e627c661129acdf61d6ac8c03b48b5645b",
+            "shared-probe": "ed4433db48fb166824c76b95270552460c06ba0794ac301d51cd9925305af41f",
+            "shared-probe-race": "6fec43772564e75bd10786dc5a7bb08d1411227027229dfc54e340b11f25b406"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "640af880d69ad06bc9f884e68ced41778985769231338acac34e24908582d7f3",
+            "shared-probe": "c279f88f75dbd380bc1e0f4fca35821699246a6d344890d3bbf20c15c0e594b3",
+            "shared-probe-race": "12ec4ce5b49cdcc5af3e645a7130399226ddedf5623c0b41f9ac7b76b7550139"
+          }
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "431dc8b7e3ab9625bb255dec18e6ed8b94f53cf39e04bac31aa38585e55239b3",
+            "shared-probe": "8420c77f5adb2b81e6f37dd626c7aa73489739c797b663484d3e36a4dc77941d",
+            "shared-probe-race": "b803149bc737c95fc85d849a7a028c86fb67ad536702bc47ed5b4fd335a70b9f"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "3e047d866626f3d97e024a771d323a95e778d8d9ba41495e8694326937670088",
+            "shared-probe": "edf7ef14dccebc2b605b320beaa50793dac804cbd6d05910e3dcf4adb2a02ff4",
+            "shared-probe-race": "17088bc886a7e22456f518ef05fecb8d2356f05ef3665e5ec9d175f1132c229e"
+          }
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "79178d988a9cb4ffb5c4946f9faa6f7fbd66124f54bca15352f837022128fd53",
+            "shared-probe": "d5e6898999dd3a5a217d9c3812b11a07d151e1f09b49630aef440fce06e14f66",
+            "shared-probe-race": "cf3db323d64c89a0e0672770268024d57905c87ac6969c3771b97943ea821166"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "eb5d6609cc3ad7825a3a0df338446c48ef3b46c827db8d5e1c308b538c95752a",
+            "shared-probe": "9f7889eb295681d40a36de28eff04d40604b189768d60a53504d9d19bb95cd5e",
+            "shared-probe-race": "c0191e8ea722cd29c30ba02e06d99eb9bd4c6aeae541abb92b74f32b8133203f"
+          }
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "8fcce4d6261cbf42ef3f8bb71c10a545d8e52728fb6352ce8aec251a7dda1ab8",
+            "shared-probe": "0b6fef8bc8ecf39e69b0471a379bd55898babe8be215e3721b2b5667dddf55fd",
+            "shared-probe-race": "4845637100d64d016fb77e149eb279d30d39dc65c1b71dd6f754d67082922564"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "fc706326b7d0c8d7ba7a9d1914527ab7608b430481711e9a5fd693339dd15044",
+            "shared-probe": "e1ac970f33aeafb84781ee2f5feed372826ce7a3a83d0920b74cf3a0d492d835",
+            "shared-probe-race": "f896b048edf99b0159896921638ee7994600420a77edc0d7370c08e201985322"
+          }
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "58f36edc4aa093b1af7f05dcc9cb61128012cb53ff9af0eb2dd87f8d32668090",
+            "shared-probe": "4e6ef2fc7015da758766c408b4eb510c3d9375a52be47048c7142e827dc8c478",
+            "shared-probe-race": "e3fa50399eb2a880ae6710acc1eddce93aba3d8194a9b304c10154ba759508c5"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "b4ab553fbdba2d9751ce7c26a8d4ce2f9728e7044892d3fc04c8e84be5c900d6",
+            "shared-probe": "c1fca0ef040bef47c162610d05287b6738918dc212fde4381ef18d34968024a6",
+            "shared-probe-race": "ef069ed54990d5c55332d7e4f6392ca151bdb49a6357614b0ecfbb575b7e0673"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 172,
+            "holdoutPasses": 5690,
+            "nominations": 282,
+            "paidLookups": 8694,
+            "promotions": 179,
+            "searchLookups": 6499
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 5650,
+            "nominations": 265,
+            "paidLookups": 8751,
+            "promotions": 162,
+            "searchLookups": 6659
+          },
+          "shared-probe-race": {
+            "changedNominee": 96,
+            "holdoutPasses": 5572,
+            "nominations": 248,
+            "paidLookups": 10114,
+            "promotions": 155,
+            "searchLookups": 8100
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 163,
+            "holdoutPasses": 5156,
+            "nominations": 263,
+            "paidLookups": 8323,
+            "promotions": 97,
+            "searchLookups": 5844
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 5192,
+            "nominations": 247,
+            "paidLookups": 8368,
+            "promotions": 94,
+            "searchLookups": 5993
+          },
+          "shared-probe-race": {
+            "changedNominee": 84,
+            "holdoutPasses": 5160,
+            "nominations": 229,
+            "paidLookups": 9571,
+            "promotions": 93,
+            "searchLookups": 7243
+          }
+        }
+      }
+    },
+    "LMentry/new-task": {
+      "headroom": {
+        "cap-19/gain-1": {
+          "betterSharedWitnessWasProbed": 3,
+          "betterSharedWitnessWasUnprobed": 5,
+          "maximumHoldoutUpside": 118,
+          "noBetterEligiblePrompt": 56
+        },
+        "cap-19/gain-2": {
+          "betterSharedWitnessWasProbed": 1,
+          "betterSharedWitnessWasUnprobed": 5,
+          "maximumHoldoutUpside": 108,
+          "noBetterEligiblePrompt": 58
+        }
+      },
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "lowerPasses": 233,
+            "upperPasses": null
+          },
+          "shared-probe": {
+            "lowerPasses": 233,
+            "upperPasses": 233
+          },
+          "shared-probe-race": {
+            "lowerPasses": 233,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "lowerPasses": 233,
+            "upperPasses": null
+          },
+          "shared-probe": {
+            "lowerPasses": 233,
+            "upperPasses": 233
+          },
+          "shared-probe-race": {
+            "lowerPasses": 233,
+            "upperPasses": null
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "1ec049581b0dead59bd725ace980d06fe315f5bbe8f5e94338b836db99098e1c",
+            "shared-probe": "7f19593930a14caf8007b6c8362beba956d7aee2fc45efa7cb6bc7e51be303d1",
+            "shared-probe-race": "fa3e7f835055101c09e731057a8bed8b5ad2f483410fcb56f07e9d720f14f5b7"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "6e6c52a978301fddaa5588cbc2d291091fb626e1d77ff63107a218d30a57c4dd",
+            "shared-probe": "6a3a8125ebada9b097f007f99a376755e8b11e553cc800ca3e4060c043d80d3f",
+            "shared-probe-race": "64c5830639805ed9dd093eff301f426010c57c680faf794f7d7ac3581c306f98"
+          }
+        },
+        "lmentry-ends_with_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "9a16954a23a627656a27e982995b90e5270abb4ed15b9195bdc22eff681e8e59",
+            "shared-probe": "299c1d349d8776d3ca83b2c4bf0d02db433ebcac0301264da8ae4e6afd1824fc",
+            "shared-probe-race": "8194d87f58ab56d7fb55e31afc4039f9f7974e9138fc84fc9ccbf2a6e424b95f"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "067947d06580156af9b5d7976b77f1fc0a0e51e3e94b8736a6f8a16e0f699391",
+            "shared-probe": "a8707c997bfd35098db55193cf44127e3d0582a22a934c08005df470207df81f",
+            "shared-probe-race": "030a0863ff6ad8aab2d86a4520626c52917bcae1b4bdf2293a8873fa4be367b5"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 31,
+            "holdoutPasses": 304,
+            "nominations": 34,
+            "paidLookups": 1193,
+            "promotions": 11,
+            "searchLookups": 930
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 263,
+            "nominations": 42,
+            "paidLookups": 1168,
+            "promotions": 13,
+            "searchLookups": 870
+          },
+          "shared-probe-race": {
+            "changedNominee": 10,
+            "holdoutPasses": 316,
+            "nominations": 38,
+            "paidLookups": 1327,
+            "promotions": 16,
+            "searchLookups": 1045
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 31,
+            "holdoutPasses": 299,
+            "nominations": 34,
+            "paidLookups": 1218,
+            "promotions": 6,
+            "searchLookups": 930
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 256,
+            "nominations": 42,
+            "paidLookups": 1184,
+            "promotions": 6,
+            "searchLookups": 870
+          },
+          "shared-probe-race": {
+            "changedNominee": 10,
+            "holdoutPasses": 303,
+            "nominations": 38,
+            "paidLookups": 1353,
+            "promotions": 8,
+            "searchLookups": 1045
+          }
+        }
+      }
+    },
+    "LMentry/seen-task": {
+      "headroom": {
+        "cap-19/gain-1": {
+          "betterSharedWitnessWasProbed": 53,
+          "betterSharedWitnessWasUnprobed": 73,
+          "maximumHoldoutUpside": 885,
+          "noBetterEligiblePrompt": 258
+        },
+        "cap-19/gain-2": {
+          "betterSharedWitnessWasProbed": 32,
+          "betterSharedWitnessWasUnprobed": 49,
+          "maximumHoldoutUpside": 785,
+          "noBetterEligiblePrompt": 303
+        }
+      },
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "lowerPasses": 5016,
+            "upperPasses": 5117
+          },
+          "shared-probe": {
+            "lowerPasses": 5117,
+            "upperPasses": 5117
+          },
+          "shared-probe-race": {
+            "lowerPasses": 5117,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "lowerPasses": null,
+            "upperPasses": 5016
+          },
+          "shared-probe": {
+            "lowerPasses": 5016,
+            "upperPasses": 5016
+          },
+          "shared-probe-race": {
+            "lowerPasses": 5117,
+            "upperPasses": 5117
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "4aaaf2973da513cfa0e92713be5bbc4ff10a02b99f423de51b32b7f07388143d",
+            "shared-probe": "d22f8a5d5884575e4a66abe0104c67927b8d4b492fff1d2d48f13b454c358f44",
+            "shared-probe-race": "c23bf37cc2fbd3d42901f529d8ffd945cebda682eda5215b0bd5cf13f4333d2f"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "b93de64c9b8c16fcac35332be2b7050f2026f46f93d7b2385c96746cbb3e7ef8",
+            "shared-probe": "710fc0d2ea025486622b6b83a1a0a2f120e3ed41184620b7ac7816ea9248b28a",
+            "shared-probe-race": "a74cb5817a0da2b32e707e2cb882ef84418e675ab948dd826be11ab77c2b5731"
+          }
+        },
+        "lmentry-all_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "61a54c10d4437d72749e83d7d478b1486b414d29d043c545859496a90bfd4920",
+            "shared-probe": "deb470fa74c5c70169bd8687ef5610976346688834af227581135077f09424ea",
+            "shared-probe-race": "ff20d717649734be9231d9624c222e6de3103be7aca983fdc902d42c79f336b6"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "14e8f8bdaa4912693b49ee6077fbdf00c10c3534e7ab860382f04c73fa45fd6c",
+            "shared-probe": "02871d094f3ac3a2bb004b67fa2a1aebc663b7b117a16006092dfb26f71859b8",
+            "shared-probe-race": "34b17431b5ef2cee9df74955fb160bb8bd063fdd6544263438526cc60539c250"
+          }
+        },
+        "lmentry-any_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "2d2936dcaab48e6f49d6caa0742e80867228f6027713a21403a9531890bd30df",
+            "shared-probe": "4977a800d46b1ed1326568657aab8045939a485d9d18084d20ab6841e28c1833",
+            "shared-probe-race": "50aeaa7f893d9f8c48e252fff5ce0b0a380f07fd6ad5f39080a015a8f86e4257"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "2ce21956788743232c64a7af9ecfec233a5587e5137260884b443ce4c68d81fe",
+            "shared-probe": "9e5040de3b2fd763c2ae9550190d9322d0d1914b13fbe2316542e9a439f9ead3",
+            "shared-probe-race": "c92b4b06b41bba774b158121ae9415e06b9fbd28fd259ae67167d5919f7cc59e"
+          }
+        },
+        "lmentry-any_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "6fbfd0d93d81682186b817ecfe243bce81805bcb4cefb1ec7292e223a7eda335",
+            "shared-probe": "511c0308dbc9d9978bfdb6847c683e51a1eed8dd54bd1a3ad51f9d177f36fc33",
+            "shared-probe-race": "25489a5009000728f3144bb0a0abbbb4d34260484d962d9855f443e3c92c2378"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "0e8de42f980e03ff9839627c74ce66b49f504f7fae42c17e343e9d9b178108c7",
+            "shared-probe": "3c90cd601fd8e84bced41d154997c9ccbf10b6b66b62a512923c0691eb3281d3",
+            "shared-probe-race": "cb7fc2151c2a2b7001b0b3d6eb7b722e06f70fab3bbba77addc25cb1e020b08c"
+          }
+        },
+        "lmentry-first_alphabetically/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "1f8e5e21ce39a96aea48bea4c60df631cda7ce7ffe70198a9d9062f2286ba3af",
+            "shared-probe": "330931298ea92374d3826186b2ea9bbad5490d4cf6f4e7497c21b990717eed1e",
+            "shared-probe-race": "f3ed99d371713e0949fff313e42d1e130de8d5faf9e201e29be00b12dda76336"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "c4aaaea4bba821bc928146fba0180a4bd97b295cc17767d3b701b470db0fbff5",
+            "shared-probe": "22deaf5fc47dad04e113732c5c8ca8e47569e5904f39a8355e47968ade0d5539",
+            "shared-probe-race": "e5f52104d6eade6643c8df732f87ace9d1e8533f6bc9abfd22be7e76f5fc1012"
+          }
+        },
+        "lmentry-first_alphabetically/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "23e754213164dcc387ef2ccf1ba1c55efb0cab7dde7c97eaaeccca573b7916fd",
+            "shared-probe": "5bfe3057f6d3a266b1bb193bab429e2a5337f65705af432569cbbfead3f48a03",
+            "shared-probe-race": "a44bdd02bb8623b7df6847ca4b3e3c9412f5ea8bb308017977313c5da18ab888"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "a39e0176397f84586d881c58170320d49cbb572b3a2bca7026fbaabac7e3f59d",
+            "shared-probe": "36a56f53f0647671c8be69613195b72731234db87a9b1ba66368a5486dea9426",
+            "shared-probe-race": "d7ee8f358960532d40e710f589524a1a5624e7ab966899e78c46697a438b843b"
+          }
+        },
+        "lmentry-less_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "3519a821a22a9c872e0344143ab8c2cd9986a0f3b62820288c6a3d3c45095c9a",
+            "shared-probe": "bf45ff9937f43fd62d2861063bbc37b8d7592b6521ec534cc369b7be55d9cbff",
+            "shared-probe-race": "f9d0f1e93b023ea961ad78acd5cc7214a6d9683e31132f960bc2202e2cfb7a57"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "0173a936f760329e9db31129dcbd0d334d29e1f99954d110ef04d3b2d0f83c1b",
+            "shared-probe": "d52e7b2707bd9d08a1a9c8102ec1cff08e986996b7c41c2077b3453e6a151d90",
+            "shared-probe-race": "c67a88b61792dd1b1377d5668a7f5a64da78749d208c4e467fab31e8d35e3720"
+          }
+        },
+        "lmentry-less_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "f584bc3041fb98c4591edefe3b697051a6c664cf2e8310e9a49b9619263ac08f",
+            "shared-probe": "142ae863885ddef87ec6a16a4b8ce2c3279ba2da360d20b6a8b322d1d0858d44",
+            "shared-probe-race": "fc10aa1c857f16231f7496205aca3eec9ad9665c48606a754244238934d9a941"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "143326b399f25e618279543e8e832cffe71541f22631578a009771fbb978b440",
+            "shared-probe": "064bb82de7be3571edb43bae7c2ae1ba5e850b1a56ef4bbc7ca5a7895d8cbc10",
+            "shared-probe-race": "6f2ea308ff80b711d4ff6f392b71c29e0f1ec484b845cb227a0f08e30952790a"
+          }
+        },
+        "lmentry-more_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "14669b632f368cf7329dbd5d237ed6aae76b1b8d3e06019e9c012affa4b1faf6",
+            "shared-probe": "ef01f5a414639408cfeb04857e7befdef477f68471ad5cc5cf3404b9dbde8f9d",
+            "shared-probe-race": "58780203e8c84a2a30397db4dffbc5b103204a42d12d3c5ef2468565ef54c33a"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "4791846368666982403d2f98837d2db02239b6b5e7367ae99d8808b5b6aba32f",
+            "shared-probe": "4c83cd9d35667ec1cddc54e6f64fe940001170afa166e3ea08db4551be1f8c80",
+            "shared-probe-race": "7a2b01a7d146d16a650ef8ee2428d85a1dcf743f3b27bdd9c3d3919b54b4dd41"
+          }
+        },
+        "lmentry-more_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "a62d8920dd7372b06a37d3db1df67f75da83741a50eb07667ae616a2b86f87d2",
+            "shared-probe": "e17d86d6cd059bbd69cccc1ac2dc2ee7fe4021112f387d8cb82509fc724c4eac",
+            "shared-probe-race": "e1d4296b98d1632dc6809e30a2fc287ac0a3edb907047f800b950d64da95647e"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "b6d7c580d191bc545089ce4fc8ead7076595169a969dfa8af37693919b837069",
+            "shared-probe": "44cbf37c242f227da04945c4affb8ae839b5d2b1dde8fa623b0843361150ec69",
+            "shared-probe-race": "c94989d17662907774d0f68acb2585f8de386908e7cc609c75c4e33d8f88dcf9"
+          }
+        },
+        "lmentry-rhyming_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "87e48e274be2b54f3327e8ff5d72bc127abddf1e4b93208427148739beb6f72d",
+            "shared-probe": "3e1c5b65d1e6c25dd1fccb062f7195353cc8869f9cb6a07a45b48dcc2ed5e82c",
+            "shared-probe-race": "7c83ad42a44a441c28beb71936c2e12ef3ec9644873ef3ed65ac7106cb0a62ec"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "73fdcbab08067463ecea0736d70397effbe615a8fa9d2de8dd030410bf2cc7eb",
+            "shared-probe": "fa1f7260b5d0991a6d4a56c9f7ba12df091dc6b98399615e76aa4bafa777a38f",
+            "shared-probe-race": "8f72e65f6c825d29ac00dacf5a0329f87b5aa1eb2077302b2aaf987629581714"
+          }
+        },
+        "lmentry-rhyming_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "7d434d8efdf227f3cbbe889c867af941999d10ca5d93bc0caa40dc1d8e1ce107",
+            "shared-probe": "13e888fae481474a6869e0d1ea9567a155b84978f3814f2b3321535fb4037bdd",
+            "shared-probe-race": "9be1ad25a0587c6a70594eca3917b4f64de7f5a80150ba944f4a0ae61a5985a9"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "41e40ca6624ec4e579e4e0a6173dde5b969f568e976677749c9f9ef298f27f54",
+            "shared-probe": "50c42f0ddd16e9c9d87c7c6e86f6757b286eb54ef91e4bb1f680af1c3ad6c5e1",
+            "shared-probe-race": "c39f92a31899508d2a03ad51b13e64a8182343e2624eee58d4f6cc5fa2442bb1"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 102,
+            "holdoutPasses": 5412,
+            "nominations": 174,
+            "paidLookups": 6032,
+            "promotions": 117,
+            "searchLookups": 4496
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 5307,
+            "nominations": 176,
+            "paidLookups": 6151,
+            "promotions": 109,
+            "searchLookups": 4590
+          },
+          "shared-probe-race": {
+            "changedNominee": 76,
+            "holdoutPasses": 5299,
+            "nominations": 157,
+            "paidLookups": 7153,
+            "promotions": 101,
+            "searchLookups": 5695
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 79,
+            "holdoutPasses": 5084,
+            "nominations": 144,
+            "paidLookups": 5261,
+            "promotions": 62,
+            "searchLookups": 3589
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 4963,
+            "nominations": 147,
+            "paidLookups": 5363,
+            "promotions": 56,
+            "searchLookups": 3701
+          },
+          "shared-probe-race": {
+            "changedNominee": 59,
+            "holdoutPasses": 4998,
+            "nominations": 132,
+            "paidLookups": 6144,
+            "promotions": 59,
+            "searchLookups": 4528
+          }
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "headroom": {
+        "cap-19/gain-1": {
+          "betterSharedWitnessWasProbed": 17,
+          "betterSharedWitnessWasUnprobed": 18,
+          "maximumHoldoutUpside": 132,
+          "noBetterEligiblePrompt": 925
+        },
+        "cap-19/gain-2": {
+          "betterSharedWitnessWasProbed": 1,
+          "maximumHoldoutUpside": 1,
+          "noBetterEligiblePrompt": 959
+        }
+      },
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "lowerPasses": 56116,
+            "upperPasses": 56116
+          },
+          "shared-probe": {
+            "lowerPasses": 56116,
+            "upperPasses": 56116
+          },
+          "shared-probe-race": {
+            "lowerPasses": 56116,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "lowerPasses": null,
+            "upperPasses": 56112
+          },
+          "shared-probe": {
+            "lowerPasses": 56112,
+            "upperPasses": 56112
+          },
+          "shared-probe-race": {
+            "lowerPasses": 56112,
+            "upperPasses": 56116
+          }
+        }
+      },
+      "panelPathHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "rotating-probes": "8fd622ed2fcfab380883fa15b6d414c9d152df6107710465ab8b26d3f83e91b8",
+            "shared-probe": "aa3fba2017d5f96f478502125a34543686e3d4ddbe8c106906fcda69a95e704b",
+            "shared-probe-race": "fee43147e6df35b12f59b51db63c492e4d93bcf6dab7786c199f70b64f059dfa"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "c16347d7468a2b62922f530c45d7e43ebaaae184672e0fce1f9bb47c9f7954a6",
+            "shared-probe": "9baadca30f65709c8c76b5ce34cafec61910e68610019c78a260945077826fcc",
+            "shared-probe-race": "efa293dcfaaa52e9dea975dcbe2384096ce7583581aefeb9c25cb56656c44713"
+          }
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "0890c580ffdcc9463e1cd4bdf0a0100b9d2cee95bab3b724d816fc184fe33155",
+            "shared-probe": "2cf49334ac21cf9b30650b43a424f65cdefc4b1cc9ee653b373e822f6358bc18",
+            "shared-probe-race": "5758733ecc9903ae6b08c4a6d3a1272736b1d9b2beee292f56834a2830419f73"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "bcd2291e365759df4961898c8933982b3c03caa4f9b75d3319bbe68b32cf7efc",
+            "shared-probe": "3d335374a64ee385d63cba818b5615336299d9256577b311f3b2fce621594dad",
+            "shared-probe-race": "59cfc37824e4cdd65fd061eea058adb66803d6c26088c5288aa31e306b240a3c"
+          }
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "rotating-probes": "9428b26d1cf85f8b1e7e53eb8fb6c0c772b9c0c1bd45364bb4a88c42a5a93fba",
+            "shared-probe": "c8dc08d8be77425bf46e46a37eb558df7767ac46ad1bab26e16d4dc6db46cb85",
+            "shared-probe-race": "9a8920b061540c1fb24f46fcf02dce66d8cf3824f2105593558b396d523dacfc"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "51a1b7630c74883cf5df4a77f7dcb6bffb65e93e58372f57e44bbcd23726b70c",
+            "shared-probe": "5bd526c4879fbe8f0b34e2cafcbb9793579e11ad881246d48baeb26cb62607a5",
+            "shared-probe-race": "de63b33352834a9ae3cec04b2712d726bddfa9df45da899d865590be172f5626"
+          }
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "rotating-probes": "895b4c9c1839b004754703925334b13b961cfc172339b0f61cd6a1df7f12b059",
+            "shared-probe": "c40333be56007629cd0f385a5ce4c55e728038504c56a7eb3024c252d3ad92f8",
+            "shared-probe-race": "0a02df5d27362f6bc672c8087fa1ba0c40a419cc5893f8c9a3365810a5cc46ef"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "f68921674f7b6bd3523f9da8a05f73b4f13e5af5051707b3240b0a39e182b3ed",
+            "shared-probe": "f68921674f7b6bd3523f9da8a05f73b4f13e5af5051707b3240b0a39e182b3ed",
+            "shared-probe-race": "c3cceed4f5e8c6fa03d6a3b8ac285be1ecf068acf214488a7cde13d809e167d8"
+          }
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "rotating-probes": "2db5aaad4359926033ee1c3ba8b60b1fbd01c39affa4497edd38318d34c0428f",
+            "shared-probe": "2c08b02a5be2e63084a49c6020175d7fef8082ebecd55914585e0745d497c070",
+            "shared-probe-race": "88711d0937f29d55308339870029496ffc23179e6946dd2e7177ded52b1395f2"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "f1fa7210fabf57dbc15fe859a1ccc8741c8e0a15d7022c16909d143f48730fd0",
+            "shared-probe": "b95d439c4c630c9cad300e6e797f4adef393a5a16a99aa4883fefa3ec33e34c1",
+            "shared-probe-race": "36b9ca1ccfa9dbf1a8736551115010183308891035e306a8cf92d2d71b8180c5"
+          }
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "3123c690091e2b35cdc67bba63f2b3d82f103cbacac57615a94b3af5609e8ec1",
+            "shared-probe": "ee04742d25801d967988f9e30c34fc94085208b87237829043d90e6e0a6f729e",
+            "shared-probe-race": "4a66216d54785d386796defe787e765b2d8ef7a1de59ee437eda20621d8803f6"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "49ec1bd43b02043f2dd548728c0314cfd6ab7c0a8ff89f5792589b8a95eb83d0",
+            "shared-probe": "045263442e20deb1c5a88c305a4af21d6e645ff75cae93e81b4ee00783d05d5a",
+            "shared-probe-race": "3a022e093eb9bac40fe8beef47e3d632bc0140816646fe0b6545de91ca46df3a"
+          }
+        },
+        "high_school_biology/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "rotating-probes": "36ed881fb21877be9e98b5fab1769d5bc0f3f5cb3808bba9c29dcf82010a60b3",
+            "shared-probe": "e09238b61d95f72b90e1336a87070206607efe27f92f7c882b626e2f15344c65",
+            "shared-probe-race": "ad5c43e7e50505e7cb5eb98d482bf714d48052cb69d05afa27ca30692a8e00c9"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "57d95700aa50ba7e829bad17e353594b15e31cb12032327e01a013446e6b83b5",
+            "shared-probe": "29e351fba2f33db81277811fd0ba1fe0075d1bd4900a69ec945d7ed1428c238e",
+            "shared-probe-race": "4449681f5f120058ca1f425a95acaa402a2cbfca4f5cd00768105b026989d3a5"
+          }
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "rotating-probes": "c389b64a3a5ddbf561d4e8d2c5b18405dcf1d139d09a7b59a1198e874e229589",
+            "shared-probe": "b6c162a48d1c4ddde2ba880eb9c19cecf0397b2f0c067fa8fabf673b0f195116",
+            "shared-probe-race": "84e0c0bf8d31175a58eac129fbd94e8dec78bb954b0f2287d0f85ac62216db00"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "72f120db08d1a4f83395a347f1d73eb81c77977fb6148fcaf1fbcaf3c58a49a7",
+            "shared-probe": "e4859c579d15d163be8b0b13a1549324c3de61d03360dbd0ea4a2f3a8b74aa94",
+            "shared-probe-race": "41218962a7eb07fe461aebe9c001e80c33fdeaa52f35d55bd78e9fd0588c9b0d"
+          }
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "565c718c72919d2a649a4aa9454de1606835dfdba42ec5863e71c628d0662cef",
+            "shared-probe": "6d562cbf79a13e9f6fdfe3fdd0b9a4901e81b8d33f6f4bae24d8822e0d6c803b",
+            "shared-probe-race": "f259e7d43d4658c6f7a37f3403250aad0571a4c654917806b8b407ae121025a3"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "cea2ff3186beb01fee82a5c76a80607204dc09fba04136bd2fb95003aef2cf4b",
+            "shared-probe": "4f14ecc7937182d8a1c7462857120ab7f928c30002b2059e13bb99ce07684faf",
+            "shared-probe-race": "20d2709cceb82ec0437bb4da012a02294a868e15c2e40076c2a03ea29e74782f"
+          }
+        },
+        "high_school_geography/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "aba390a7fc2a047c850450d4310ed84ffef67fb0e80025dda4888ce0b1b1946e",
+            "shared-probe": "5db3a6d4c9b97faf3ebce0a84b1c9936051ca4d9254f9eac11fa9abaed086bc6",
+            "shared-probe-race": "ef79eba7ee8c3b2010645dce493b19ce7e67279f090cb64479958c1c68882bd1"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "c62668304959ba27c76484b56e9ca7f51f96994a752ff53512503771cab39c4a",
+            "shared-probe": "2c3353004956713e1cb729a6519bfe048a2f7349dcfa3fa1c1cc6365348cbfc2",
+            "shared-probe-race": "ad915a9f596849510d6b3ca2e80251471295d1211ca611a9abaf45b937c5ab6d"
+          }
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "62a7b26355370fecc30152c5eac4882f2bb28e8136a41b677a288e5e24044926",
+            "shared-probe": "c3c3bca19607490b589e54e764729d9cbf3d8269cb16831963d6cd420780b855",
+            "shared-probe-race": "d2ffb1a5da3e87a2266295307fead473b61df6017de7c51f6851569be654eec4"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "5de47337505a2fa977f0b8dbb594ca8dfe3f5a1b943cb2837f655c6b927e5e5a",
+            "shared-probe": "d051c053d70ecf68335c072a650061facf676912e7196d76771efe1a91e2b2d8",
+            "shared-probe-race": "ce23e41b06ac7809ff8b4799636f33bdbce154125858a563e3f43b2bb670acbd"
+          }
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "2600ad1df488c81cddafd87937e18835d13cee94267586598d18de57f98f7c51",
+            "shared-probe": "1c9f53f2004807e2b79c0596cd520bf65b0465b1782364cb55b34e12742d378f",
+            "shared-probe-race": "9bae952bf3f3fefd36eec810f5050f8d266d9be1bcd3b2e20a4c43689346867e"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "29b14bf0ec8e161b9b155f3e30a6286c0343b36eb6956fcae83b33d52739f9e2",
+            "shared-probe": "29b14bf0ec8e161b9b155f3e30a6286c0343b36eb6956fcae83b33d52739f9e2",
+            "shared-probe-race": "3e734d96994fc407c726cbd1747973259adc6a16e22b79bdbc965ca8232cdcb1"
+          }
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "rotating-probes": "5ca5cdcefdeec26a24684024d5852c4c6e534a4a4e2e155c04907c92cf3879aa",
+            "shared-probe": "9d1a77e903408034cc72954fae145416bf1f997181f8efa061a5f09107ae88a4",
+            "shared-probe-race": "0c3b6d3a4eccb11cdcaed44bb1bac022c558e7505af1c677216d0989ebf8129e"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "e0dd1e29d41273635b43a89b58198741fd5c92ff54c6659f3b608a72a9e41a99",
+            "shared-probe": "70276613f59fc29ca1730f73714e6047e57a048ecc79767a02522e46570d5f53",
+            "shared-probe-race": "ca35365d7012d6e89dffdc5549927534a90e8bd35ceeb0afdd97fd2d40294b5c"
+          }
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "ec1cca9c1bff6779fb6f51ae1fe63cc8bbda0676c1785b61e7e807bfebea501f",
+            "shared-probe": "1d58ad9a4da071411c12bfe5a106bea453f86049e10b64649dd6a47895f498f3",
+            "shared-probe-race": "10893c07a7b24044243b25d5baf266cdf5b1113f91b2a18fa0f9dac6e8e9b83e"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "850ede45e25acdec7402041360420dc54c5b78b603ef2f34d392483ef1536dfb",
+            "shared-probe": "69838f159f430193ca5e405257159639ddbc6da66fa6db22da13cdbf91bd159a",
+            "shared-probe-race": "8146cb69dcb35ab701e287ac8e0bce1310d45e0d25a350b19417208f61d5e65d"
+          }
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "6c520e5767143de51477012269d09d42418972c0e2d99d13192e2ed856968990",
+            "shared-probe": "92c3832c1a0cdbe5e356f58151d5550841619642a3f4f6abf133ed795c63f128",
+            "shared-probe-race": "b03fb55fd2c34472c741c9a9fa18d8e3007678412bb5033cca9b635839f72935"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "5562b851c67762605da023869c15c85eda4deb5eebdd60c37a34accb9d3f7e01",
+            "shared-probe": "26fc45b6ce542261e2addfaf359234a7680f1dd87ac166e0edc7c524ff56b987",
+            "shared-probe-race": "e5f4d315964d53810c5a0d1d8806ae970419bce467465bc532816f59559b638d"
+          }
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "5b07d5c8f1c059eebc8f0fcb0c9ccf6bc342dd70803878ba343cfceae46e6c8c",
+            "shared-probe": "72b221eddd3b9d6553b77a9045e12ff6c8dd77249d74969b2148769c8c277620",
+            "shared-probe-race": "9253e62067056ec8671f59ad0c3e8c43533e57215de03b7d4adfa1d3514946a3"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "16e7db7ef6cd5c0a2909640ebb864911d7762215571d9960d913e84d368d0699",
+            "shared-probe": "561c39219aa0c13ca4f711f8a10931d0262a8feb9795e7e9d6c6078544580707",
+            "shared-probe-race": "afdf013f95f7455208f16c8c38ec0b81cd6afcc7242f87d0b5f84b179170ca8b"
+          }
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "50e0d76f1e74a6b160969d549390d0fbf46aeba258b3a29b61bfb0a5bec816e4",
+            "shared-probe": "c0b3048a7cd82bb204d3709611c258aa93b1984b13674aed997f94698c02d47b",
+            "shared-probe-race": "877aba58e36af307d8e6692925214e16437d473e9f22a912a6572bcfd09cca49"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "e4eab8e7ff0e6c9751feddb900ce5f11097546b4730f9cbb7b7a0170b37825fa",
+            "shared-probe": "739b3d2da0bbdbef453a213f48320b4629d4de5ddc0f8b5edafbb5284fbf833e",
+            "shared-probe-race": "a7e2cf8d1931dd2f819259b0ec055b68c436dfc472a7b722c5a9746beea88f03"
+          }
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "385c4ad3fabbe0e802819f97447cdbd9fe20ac10f12b69b292a3748d38462dce",
+            "shared-probe": "0ced5bf29946a5a112320730a78d2ca09c3e26f768c880585f257fbe2300b8c5",
+            "shared-probe-race": "5cd018cfd09cf159751963a6175935d2a414584933e01aa1aafac2870f9be5c5"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "4d5ec4538b7acb23bb6983864b49339d7bbcd83cb743610a0d529535e2935328",
+            "shared-probe": "8f14786be77cdf95ed1a26a3f90c95fe65accff102b7d5d8bd6ee862e70c5191",
+            "shared-probe-race": "fca00da016a1b885a46af85acd2bd8b9f022d5055e65bd73c8b2a4ff0cd5cf17"
+          }
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "rotating-probes": "b192b83959764a9ad587974ee32814b5e5495a5a073e38c4b88443d8a8ef69db",
+            "shared-probe": "64f51c2bd5a75a7c445db07e56a1d45900b575a6b730f874833029d4a9cf1beb",
+            "shared-probe-race": "a8f1836b28151cbfaea290d17da389e1978671f8c2f1ec4cf41e856ba9d52609"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "6522b7af342dbe231b67a59c3173295cd8063c72cdfce0b5395637da18bca416",
+            "shared-probe": "2036ba9d425d34f8d4432e6b5ccd7bbc8fb53932589001ac45b34f712f599caf",
+            "shared-probe-race": "35290f900e9d9fe3bc51e0bf613eb4f79b2ad2a025fc68a43fbe98a752224d2f"
+          }
+        },
+        "moral_disputes/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "28a51cb1ba56f291c150a5f1f0415197f93aa6b44cdc74998d950c983d2e2ad4",
+            "shared-probe": "72ecc9fdc59a4005c48e3be0b13f525535312f1f5e0de0e68e23627cd300bb48",
+            "shared-probe-race": "3f3a989139a7ccee9676a9761fec806afb3d83387e7099119caa8240b0c4ae5c"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "d47f0ca004ec85742d6a0b6c5a8184de8fcc5d2771575d7fd51d845cf3d2b1b4",
+            "shared-probe": "514ac4a07b43c03bbedc46f5a04c12ff142edcd8347ed871ab253c0dcfd7ba82",
+            "shared-probe-race": "844659d05b2a7d4139b14f599d380d38fa4cab0b803f80874316a5b379f350b9"
+          }
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "rotating-probes": "1f9bbda3117f5288344808f712de18ac4a71e91107652ce0fc44a0a31a176ec5",
+            "shared-probe": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34",
+            "shared-probe-race": "8ed47da4a1240aeff0a8d3621cb59d8b5ea17abaef08ac2876fae1d33d7536d7"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "3d24307b3d09dd0cf57670d701e52cb4bd3c10bed37d0846f0ec2f9a8e7ee9ad",
+            "shared-probe": "84a1e6095809396d902984b8bd2af6a2fe9146eebfd5b1eb117f9541a375ee39",
+            "shared-probe-race": "078072c14615e57d0bb112c6145557b93d37b859d245553a76d5ceac965cbea6"
+          }
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "rotating-probes": "b4bee20b5759fd71f94e338fb0f19b7afafa6df0c14c8384e969acae360391c8",
+            "shared-probe": "04590f13f870727801b61cf12b5a532d8cb8b186c52430a4fa623c9064f86a9d",
+            "shared-probe-race": "e3c6043677ce6e42e0b9b88798af5c7f805c6e5f0c059638ed3356817cd24a03"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "75d6112f8fe5d703a28a03276c72f7148436aa760a964c0bd519bd0c216a3221",
+            "shared-probe": "651849a4a766d38659c76f9e298e205f49775363b5964a557ab1afc5e5893fd5",
+            "shared-probe-race": "5de34d771b073b18e8225f537b1192bb29c4fa949e6dfa91330cf70ab969b895"
+          }
+        },
+        "professional_medicine/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "rotating-probes": "b043a126c80f34f0308b2f710250c6133f8fc42303f3c6e07bf1da849222e1b9",
+            "shared-probe": "5f7818af26d067e5cd23a1ba1434b37f3f93d3b72138ebfb0ca7da657f073239",
+            "shared-probe-race": "33057fb9434a23d40523c7f939466ec6de84e7d9792b8ea073157d2659fbc53e"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "dcc41445b7710a56fde993d409626261e4d56242e3f1249281a7ff42506acc58",
+            "shared-probe": "6c8486d7a15bfc98e530e7c6a6306abfd76a436d42b8c5c53bc214390bfa83c6",
+            "shared-probe-race": "50f9d5fc6d76df7d04d356def902e6a46121993ece8dd9bd6c8a330e34b70963"
+          }
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "rotating-probes": "53baeed82a8eaa1da6c8d5b44d3f9429cbf9e37429f1852e437e9d3e14ce8734",
+            "shared-probe": "758ded29a6278fba8076854fd2038875facb5f91fb07248b133917db9b0eed1c",
+            "shared-probe-race": "1d17a32a6cabd6757c66617e30cdc3a729d5d0296f1248bb2aa03ad0e89ef677"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "1d5a947a42c0add1451499ee0dc7f52296fe7464887b9d1887fced6d470b005b",
+            "shared-probe": "1d5a947a42c0add1451499ee0dc7f52296fe7464887b9d1887fced6d470b005b",
+            "shared-probe-race": "bcfc080e13e53ef071cbfdd899d814454c58a61ca301f77747796c9311ecd192"
+          }
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "rotating-probes": "dbae36e22ee2c73e3fea1601903e34fa0fabc0dce625e2d73a8d58bf7bf3083e",
+            "shared-probe": "51334fb229a6b76ab9dbb02d8085bfe688d858fc0482cad869cbfb55214fe9e2",
+            "shared-probe-race": "9b0d82c2c9a2a86cb92c5f9bd24906806bb497cf38038e2f87e2bd5a821a4593"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "a93327cb11cac500647ffb608bab91d90bd69a2ab333272212f5d405885462d0",
+            "shared-probe": "752951fee4d090bd0853ac0b0c18e558dae7c91b240bb12b01d1527a3ece8f45",
+            "shared-probe-race": "292b2311856c4ca0b95e345c80c6e2a2c7dd3f660d273654ec270fc0f27c2146"
+          }
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "1864a814149ad3cface9345f0c907ca304e1baa526d6f85ecd0cf7b31a0542b6",
+            "shared-probe": "ed8f737900efd19f21d2d852846a194b7ccc6d642e1c55255e2a1ca52080444b",
+            "shared-probe-race": "54ed2fe756c3b2c4746e7e1c178fe0e09caf6ed9fb15832cb7bf4584f4dcd04e"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "26e9c3b3b8e09b062bf0c7f0f91e6a89851f876fb922e5e205f01b47363224e4",
+            "shared-probe": "7b99dc07b34c0a7d340dccc9cda7b3af635733414ea59a311f86fe649dfd08c9",
+            "shared-probe-race": "7a2e18edac99feaa800e3323d3a0d34c55b358851ca8dcd1e1dd52cba19bee39"
+          }
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "rotating-probes": "545d24dec71971e9c18cae6712074417dd00c18b60046bb041a464649078bee8",
+            "shared-probe": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa",
+            "shared-probe-race": "c6447c00fb204182a9efe91241ebad53509a816adacd0adc4b201f8345fe2510"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "930f5e4b2b01ac075a62f537111c34959d8e2e65829aab17c90833c1e5525887",
+            "shared-probe": "b63ee97021060bdd1d5f8375524c77c39c7c0c9ea8a4c2156254b3639bb23494",
+            "shared-probe-race": "65a353e17b2d1312f3c9a6ea896c63d0cdea568828d0bc8a57313106fb28c8bd"
+          }
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "9190feaec4755db9983817900714542b3bc040de16dd5cf353d1ab043f50b10f",
+            "shared-probe": "f346f1ea30a4e9d1da52c2d0247785926cbf51f5d91252032f673b0e817703f8",
+            "shared-probe-race": "a017a8b53d49e031a2f896e58b8a2fd558cd8b1772af6a4f44e68ff739b52f9a"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "808946a5243387a451b77c53896513b3db987c79478bc79093cb959030ae3ef8",
+            "shared-probe": "25d4cecd9c066f050a86f1a14b02d3e3d419ca6336b1f14f9e73253343cca13d",
+            "shared-probe-race": "73ae83cb8acfceb7a5987a3815ecc5ccb58d0f8c233210f3b9b89206480d0a17"
+          }
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "rotating-probes": "4a32ee4ace455c91530a5dabbf1e9575de0f1e8c8fa6fb8716441745f3b18028",
+            "shared-probe": "f51a606a988566fb136afa331b0292a2739d1d38984af7faff2462cbcf6776d3",
+            "shared-probe-race": "dd816ec2d2f7699943e6c8c85918d93008f5c9961a5696442c7cf8e7f42ef9f7"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "shared-probe": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "shared-probe-race": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+          }
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "1db7ae4455e3e450e047651ae4ab679ad41f727c10802c6d0d911d5d2503225b",
+            "shared-probe": "796603d672b107897982fb3e51c2fb59738548a589b8b4b600e115fd360c7b33",
+            "shared-probe-race": "0ef518a62430c9402df56a3ff309abd2e634413ee72682cdfa4ddb4788ab49ad"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "shared-probe": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "shared-probe-race": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 125,
+            "holdoutPasses": 56067,
+            "nominations": 177,
+            "paidLookups": 12756,
+            "promotions": 30,
+            "searchLookups": 9622
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 56094,
+            "nominations": 153,
+            "paidLookups": 12792,
+            "promotions": 27,
+            "searchLookups": 9765
+          },
+          "shared-probe-race": {
+            "changedNominee": 84,
+            "holdoutPasses": 56066,
+            "nominations": 80,
+            "paidLookups": 13141,
+            "promotions": 11,
+            "searchLookups": 10430
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 71,
+            "holdoutPasses": 56065,
+            "nominations": 96,
+            "paidLookups": 8859,
+            "promotions": 2,
+            "searchLookups": 5514
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 56094,
+            "nominations": 88,
+            "paidLookups": 8962,
+            "promotions": 3,
+            "searchLookups": 5631
+          },
+          "shared-probe-race": {
+            "changedNominee": 51,
+            "holdoutPasses": 56065,
+            "nominations": 41,
+            "paidLookups": 9227,
+            "promotions": 0,
+            "searchLookups": 6011
+          }
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "headroom": {
+        "cap-19/gain-1": {
+          "betterSharedWitnessWasProbed": 26,
+          "betterSharedWitnessWasUnprobed": 26,
+          "maximumHoldoutUpside": 147,
+          "noBetterEligiblePrompt": 844
+        },
+        "cap-19/gain-2": {
+          "betterSharedWitnessWasProbed": 6,
+          "betterSharedWitnessWasUnprobed": 3,
+          "maximumHoldoutUpside": 23,
+          "noBetterEligiblePrompt": 887
+        }
+      },
+      "nativeGepaBounds": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "lowerPasses": 26654,
+            "upperPasses": 26654
+          },
+          "shared-probe": {
+            "lowerPasses": 26654,
+            "upperPasses": 26654
+          },
+          "shared-probe-race": {
+            "lowerPasses": 26654,
+            "upperPasses": null
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "lowerPasses": 26653,
+            "upperPasses": 26653
+          },
+          "shared-probe": {
+            "lowerPasses": 26653,
+            "upperPasses": 26653
+          },
+          "shared-probe-race": {
+            "lowerPasses": 26653,
+            "upperPasses": 26654
+          }
+        }
+      },
+      "panelPathHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "033b1e08d1bbf1dbe5f249658b4848bcc52051e246977c46246ce84af40e0334",
+            "shared-probe": "08a6facc97b0fda2e1551df16d8c76566ed77b01de7f8d516b2e30473b83c44b",
+            "shared-probe-race": "f426bd19a546cd0647f8b5ebbac55fed5d4c27ff81710450eea9f9177b47f9c5"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "d6cf0ff2c10828d2b05432e9027c22407f745bdbdcfc10738c404ebc60826304",
+            "shared-probe": "c8f23e74f284d6f155874bbea8a436a6242c05a129ac6b2c7e5bc9ba3e1824a9",
+            "shared-probe-race": "873f9ba0e3aa7d05c33db6516263bb2f6ba8e0024a06a255c8f760bb9040ffab"
+          }
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "b302452ecfe8fd9bb1109960ba8193e014fba33e3a6fe3b7977cf2cc5fbe8af2",
+            "shared-probe": "e1c70777d64cc2e002598024ca0e878940d912b044dd1938ad6c110b3a945871",
+            "shared-probe-race": "d17594c2c499bbd1cfa70d90dbfcadb32d052c4067b26f842c272e6974ab5dcc"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "972a57ff0c242a49e43245cf5d82b335d49448947d6f6308b2489534c8e32cbb",
+            "shared-probe": "c5a3b33ece55ba14654b0e9b79718d88d63324286a8a8617a7dec195671f92ef",
+            "shared-probe-race": "4d1956df1c8ecb70230c29055a3fdc03d5e8d0efd20eece69ca19f41e507858b"
+          }
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "5026bf0191be68e37743bb5a0a28e017c3fa8aeb73b9091d1820f472f9dadb6a",
+            "shared-probe": "1ab872eade75aef53f81afaa62a6cc5920d1342bc36bd3bbae03fbf118420a39",
+            "shared-probe-race": "d6b9003f6e957dcdf7e474a7ca5f0738d12ea170d26a9dfe7d48a5f5c3c40764"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "8e2a97248717ae011afafe700706487762e7acac9165a469141d05cd36746729",
+            "shared-probe": "87831af5a26ac907434feac32b72d6eb232f6c08a6bcc0d8da4f0a6fc84e4bde",
+            "shared-probe-race": "8f5f8c1bc4716ae6a5895582399822a00be63f358d34d3841d55ca205dee61d8"
+          }
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "fd6e8e15497f88f792610150c09184208d8a0fc607a728f481e5daf713495573",
+            "shared-probe": "0c5accc4e21a113f91414ea3789e8aa3b94b4626c6c452c3bff05ced2f5fcd43",
+            "shared-probe-race": "2e36c3f58e50d01125da354f23d9d3926aea1227c12c10763300f694e8480fbf"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "e67e72b544da39aac547eb0179e03b54cd5cbc193c548922820c9b085f87bfaa",
+            "shared-probe": "3dd8a33b38f8be84467590ef96744bd64cb2e449184aa1e1c7dba73511d81413",
+            "shared-probe-race": "2bcfab5a432c6382c7d137c647d79bfd41640d7ce7dbf1fc11ba6f0217350aaf"
+          }
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "b96a3d2805aa82e143853d73c4f80b63dc70e1f712d326f93e71d5c890624970",
+            "shared-probe": "d614a18a13a2c8906113f22458e26e5820a1b7dbcab5bbb32a83eda18004d0ad",
+            "shared-probe-race": "cd3eb086022315e03c816474362828c812db364fc3ca6d550d447331d1f70ab8"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "5060cfe790d7117fd68db9480e32cf1e5ff70fed9a8d0261d41b815de665d325",
+            "shared-probe": "ad0f6395a32029246b874014f5439dfd76bc4044996f6c1be1a54f23e71b2553",
+            "shared-probe-race": "abc06a4f890b913651e400035a74d86838bec32b81004ec3ed85436bc798ee92"
+          }
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "3cd381f495bde19718775fbb2495159e29e3a46ee55c74a3cdeea1694682fa20",
+            "shared-probe": "4d35423008ec1c3b6e89150696beb77b244c16bf35583cb4ef2acc1246f9ad04",
+            "shared-probe-race": "dedd5fdfb16f4ddc5f756dd6b5a2a20831b1ef5dc24646b38b4979f6c8d5bab3"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "1c4d42cd4f5f6c0d50383dd7eba011aadb64b1d57c9ecb3dd05c779b73dc195f",
+            "shared-probe": "d7f13ae20521592e40616c5b5621fd2ea2a96477d865cc5faa5fb4a0f1ebacec",
+            "shared-probe-race": "ec032e1816ebf0328e550b38f5ad58d0cf30fc18ee1c7871e30a7a370d6612d7"
+          }
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "fbceb5f9a0b5ae0e1ba0b322325f7221af9e2d212b0ff7cf08842c96b53e0460",
+            "shared-probe": "953206fe3aaf725eda7f688c68c940130bf102a9a5ce0066a3d66313e4af9043",
+            "shared-probe-race": "fdf71ef296385bd9a5633dbca74e5c0cfd176a965599ec732a260a515d99ead8"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "d42508ad3fc4749fbaa64b0f89711c5caf196ec1d4f9dbd29a8a8cbc9f82e64a",
+            "shared-probe": "ca980c59269b95f198eae0c25bf367f52efff09ac725d44bd43ef6ed1bd4c32e",
+            "shared-probe-race": "c74b1d739c8c136c9b9570080375dd40c2d86419d87b89226bf23f127eeac136"
+          }
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "rotating-probes": "8111b6d1a8b43ae1731819b28fe8170faa14721d754a3ebb6e5006f9852763f7",
+            "shared-probe": "58971baa7c0e64cb7a61729866919173933fb2437830af0a5e8177d83af42b67",
+            "shared-probe-race": "7f974228ecd7aa3a5f1d801cd98a2bafa154b51ff8760ef112d0a8933d99359e"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "aacee7ec5b533953a8e2598e2531ccfd0f1bbd47b1b285e23f5fab0e8fd78233",
+            "shared-probe": "090f602e20714c497ff97a964afd50a23f2942e816f9a89ac98255910d2090cf",
+            "shared-probe-race": "62c03734128776fbfc2abafdf71f12a30564c08ab78ec134253b990deb563c4c"
+          }
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "542a2b669b6890944f49b0dd55bfd02e6efc4ec854fb90e1f6dcdddf2f137599",
+            "shared-probe": "4f88bcefa287859becb1295608fce40c99be8c5337fcd7c3b737b256bb2b0e69",
+            "shared-probe-race": "4851d0c5f11333251dfdb76d80f817f950e4624c44b62001322d7067e9d0a275"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "7dc426d06548f78ad3301575b97b57453bd0de805d2c3cc33f3459e0d302ebeb",
+            "shared-probe": "7dc426d06548f78ad3301575b97b57453bd0de805d2c3cc33f3459e0d302ebeb",
+            "shared-probe-race": "b6f1d8f5ae69c77042304e624f420fc28f6e67f90f49050c3949e5068955f6cc"
+          }
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "rotating-probes": "36d510a24a09ea6de08c92f4cb73e40c0f167b80234c99016ed9f0514fedc127",
+            "shared-probe": "bae0272b60b6a0206068692cccab5e1453be9f6a40bc05a09e2ce8294960ae0e",
+            "shared-probe-race": "35152f3394a95ad549f831739791cd6795b641b2e5c0774e8d57a833feabcd22"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "5b6e6c265d398d70b5a777748761d783247178b309b8a17d87e8b50a33e285c1",
+            "shared-probe": "d5390746e4188d6108e8aae0ee369a642d18db714790f73b5130e0242b623705",
+            "shared-probe-race": "9d0f44e69cc04e31dc0006ce2a7a6c298324bf4e93b3a2db3f9236c139f6ca7b"
+          }
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "7da31551a8943721e13b85166a8a785ff20d0fee7b5dda379bff31e3f85d6811",
+            "shared-probe": "8a423fa51e1edfd5f79c5d9f04e50676b7c0ecb5720b3ba3f2a5f00d3573878a",
+            "shared-probe-race": "d33e7ac96f3e9b2c659ee387fc17c036f74b3787cc6dabe5fe1540583ea4c389"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "353702a2a9957941c434cff63c18ec6591e248df5651c86a24d081c0035d3969",
+            "shared-probe": "bd8bbf9b7e4e0b3bf47ade443d6a477c33e681130ea6bee2dc22edc8316c9e46",
+            "shared-probe-race": "6f2e0119d52a5c4d3d2b76c501786ba4cd4ef8394785fdefdcf111dd7055f388"
+          }
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "dbbbf7f0d754c760708c9270a8607713a08ac3b9f032734c8ec80f1d6605cd78",
+            "shared-probe": "a03811d3f8ccaa8cd971d5dd3dd6036ffdb673c933bdc58e98fca7068b600a8c",
+            "shared-probe-race": "575f752cad7e9a2a9a4f702ed818aad6c3b1fff88aa687c7927ee8c1b4696011"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "7637df3588a3d6d836dca2f45b7930e3951738789656896284aacf767bb66d12",
+            "shared-probe": "bbfcafb66eef6719e2fcc904e3fbce6a7fd32bd48634d8a1254c324da4162fe0",
+            "shared-probe-race": "b92b152dbbb4fd3f83f60b8b5996d67abef8e35f94d73b27dd5da13207e0a87c"
+          }
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "86b40c579641dd1c9c02803c50e6707d301ad066e47b417800a08aef00f22e5b",
+            "shared-probe": "cb74d497a9b79958c0955b4b2bc0667a0f1112d57206e6ac17003da597888a90",
+            "shared-probe-race": "896b29dde8525390862e8f2706823ce19f5c693ae37f35ad6834dd7a41767cd0"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "bc666efdebeb6e2947144f9cb1a4012e7fa49e48a549585e3e6cd24aff4f8cde",
+            "shared-probe": "602a049226d7b6adeb5311591f6cffc98963b9252bb24abb56a040154d476cc5",
+            "shared-probe-race": "b96ea91f80534c66bb2f2c878f42c30e1e9257790c6df5d79e9146e8756113c4"
+          }
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "rotating-probes": "460a2fe98d2dbcc3386d8dbb960da7fb6b40b2899058bc6221cdcdf82db00b54",
+            "shared-probe": "cddcdf11ebcfc2b4cf5d34ecf3dd4523c8acce79d6ffb85b87715f9f62dc8187",
+            "shared-probe-race": "2325dc71a233c5abce8fab61e62af317307489954acb0acf7d73dd3bb38a5624"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "18a1689dbdec7612785fff95407cc6cf86f4d48cc21fb6f6aad6eb549155b225",
+            "shared-probe": "637925974062da5d1634aabfca5c39bbdd97fad0c9aaf8259554e353dad890a5",
+            "shared-probe-race": "78a7e1f67bba0df3e6ed9878121d84c5c5478b2363a97b18353b6d2af52c5162"
+          }
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "e359dd4609fad1377a1b37a788a9cedf27ac5ab516ffee3eaf14182ae7cb485e",
+            "shared-probe": "b427092b1aad0012625e986005c5db3eee74f6f499a35a1e7ba6b842d461aecf",
+            "shared-probe-race": "8fd105383581de3f6cd5020bc8276965ebafa93ac3c8185f89dc446c1e8c2b93"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "da545aa088f7ecfa9e24e178545ac4121ad2044ef18e8bacce124c747722ff22",
+            "shared-probe": "27c25cfbadc993b3d3c4396d3b00f24bfe23a33da5c4968397abf205dee8e21d",
+            "shared-probe-race": "18d57378e52c10d8c9e50956398e6482518f1ec0e5f2406be0a25fe6cffb6e78"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "rotating-probes": "51eb9abfa550d98027cc5ca12f0f0a4211f22ed05c39eca7706e6e318790fdc6",
+            "shared-probe": "38622cb92cca408c411dec924b4a15b70cfb0071685a5086c2629ab35b25f77e",
+            "shared-probe-race": "91637bb6f07d4c19d643d87782a2f66e993b76cf3dac883ff4a7c4150b82443c"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "647b6c6b37fb12052ed2694e5bfe061f83b94f75331c9e08bf0ab61b87a0ef5e",
+            "shared-probe": "6bc6d6be7f707cb193c14a6b8d9470f7dbb19ee01b37c1173ebd36f108496626",
+            "shared-probe-race": "8e90a2598d9c1aa0bf6e23e6d9c6d2106fd90abd836ff8978deaf7f9903c62ef"
+          }
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "6eaf68b5f574bb4850db52a959b2df0d258420148b034dde4bb7d39e00f1075c",
+            "shared-probe": "0d296f2ed541ccf7037405979e88c4d11525ec60575e373fb967ea47cfd35646",
+            "shared-probe-race": "3e445d86141c573c487352c50741af60a41d945efa8e6efd5be71b42b38caf72"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "shared-probe": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "shared-probe-race": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51"
+          }
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "rotating-probes": "b9e5b540bf54f6669c026cb75631686569bfacac139cb19c5eebd6694ec41c87",
+            "shared-probe": "c3a057bf66417e8c1751f320fbe7b62df214776f6c6f0af78516f3ff6a299a67",
+            "shared-probe-race": "bfeef8ea5aa3073cc4413fa2018fa4335658408f3c23d0cf92667ca93effa672"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "133e61443b7f8c1389e35f4d3850df8784eb3efa1037516d3b3c15d4a29ef688",
+            "shared-probe": "e5a820c8b314be61a23eaf31c80a16c5e97f91c7f1d243e65c4c8f2f41eb4c3b",
+            "shared-probe-race": "f642707394cd6f8607f9a0248e61d0e1e3f2eb9006b3243da4bbc2a826cc1900"
+          }
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "67b6a87565a5f95ab1939edc5f87ba820c3ccbc77f6685e0e638e15e85f8e26f",
+            "shared-probe": "bdc3525e9d1112a982ef153fe923b04c188a272a45f1f72c37d913810167f5c0",
+            "shared-probe-race": "0f5131cc6dd992e514cc5ad1c688c881b12c43f90a1973216f49e0f21f30b813"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "37addd3653f31f87292e00fcca1de4d9e996c13129262c9375a651e16e49cd4c",
+            "shared-probe": "42dc517d5fe41f6dfc903bfe7e2035923a3376d638c898409322e0cf9ec52826",
+            "shared-probe-race": "644461f82d55779ff9bd214ee9815a29708844cb47125de6b82bb5d6aa5a54f3"
+          }
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "d78d7be818040ce3f5941c5ba58b9d825b48e1214a9e0cc7de35a8844c42a832",
+            "shared-probe": "adb8eb72299141b8eab809c34cc297c995e28d31541851553bd8f077189ac27b",
+            "shared-probe-race": "cc62c37c403e90ff738eeb5dab22251f6e83279b10c53bf7ba667d222c55b97d"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "55fd41cd56dc746d018a92181f70d7e5fefa61179f70dfc25b802ddbdf0614ef",
+            "shared-probe": "8a8e031a33fd3f6098156f5019295c2290428e164df925df8a1af211b6ebd43a",
+            "shared-probe-race": "b0e1f3ee5501d51073a763e24f715e30412c6fb44905f5a075e4a3be271cc722"
+          }
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "e1f001d5549bf91c0360e00d48471210ec7888233dd70d17a13c8ee64191ac73",
+            "shared-probe": "04ef40d4079850795ba80f6634fefd257b138e411385f104f9fa705b04f9c02b",
+            "shared-probe-race": "f239fe67ee40f791eba679b40642dfa67985ede4dcbd9a1df7fb61a342408b7d"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "f96fb264a92615a28fb6cf7e36664c57d2afb1a517a4757050cb41c8f9e91cf4",
+            "shared-probe": "1515e497c74c50377b23ccc3316bf819feb33405a7bc16a8cc6b5877b4e227ff",
+            "shared-probe-race": "7612d0f6dcb5df9927c86ed91f0820caa36fd227ffcf563197d72854a2ae24bd"
+          }
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "rotating-probes": "2c6b7bca5bb7c1277aea51b6dbff706515426edfb2ca272bebee515d7c297b53",
+            "shared-probe": "3614b1bbf78c98a800aae68bc3be3b5896e5f768f51e9b8357e05352848a2923",
+            "shared-probe-race": "49751f01a510e073a3787a8de45af60e3765e33ca06447872053795306e8e0c6"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "d66d375496dc2ae0b54456341ba3ddd4fb861dd00c4a7c9468ee3c2bccde3c2d",
+            "shared-probe": "6d84aa1eca2f2343cb02ede8a2146406f2ec962f2687156c7a55ec58f9911153",
+            "shared-probe-race": "e820a595728cea8ccdc7ea6b3fe47a577479ca8426f165562ed584406a2addd9"
+          }
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "bea02474225b3e5ae661b010fa82f89591f876ddf4dcaeaaeb015ee37bf12faf",
+            "shared-probe": "c82d7abbdd6c8a26459ccfcd56718a4851aa3700dca6b9458ddce82fa163139f",
+            "shared-probe-race": "9f131928e27b3211f1cf1f09dce9e67fd954e84580939df0f8c1e85b3468a087"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "e49533a2f6483666cc24fc159a344db7e7d7ee2555623feee5f6f0b9d299cc75",
+            "shared-probe": "7da649f06603a38b0899a60bba0f9facd878bbf98e7fc2d56c00cc6c0e8c324b",
+            "shared-probe-race": "4f8770b2821b93588675f15306720fdf73e0c0240fdbb552a695d70651c6742f"
+          }
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "c471dbc3db1fed001ecd9edddba6bcbdc86ae71504a7e06271bd0f56dcdf87b2",
+            "shared-probe": "b63fa5221455031182ee083ad0249a60b2b045964fca6eaf06fd88a91884b09d",
+            "shared-probe-race": "8cf5bae4a93f099acb43d665fb6d57df8e92c7b1af14ef56100bdea843fcae6d"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "017a20320a2881955d8a743cb7b77a97a4f4690c263cd1eb86e3203c945de4ce",
+            "shared-probe": "5fdfffc74b66fa373eed5cad8e12c4af96209e4ed6118a3d3cc151881e1ac09f",
+            "shared-probe-race": "ce9b2d14c6d0a5570baf9cae4cd15281fd176d9ec8419d664b6c44b28ac4785b"
+          }
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "c0076b43b6673af2d6ae07e87e8148b3b6044e2c929c335be2c2ffb912d76ac9",
+            "shared-probe": "d1e4e5be6d047f071cbfd62b6f0dc11161266a68062ee09e300e2c30b366315c",
+            "shared-probe-race": "af241684ca4968f9c0b09faabd65971dda413d950a1e991aa4322dde0efe80b9"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "4266f428c25d0c04dc20663ca787a35b780820d368611c6d4101e91768e6e899",
+            "shared-probe": "175a920a0d94ac3bff4d1e24db5ae886751cf4d39ee52ec2a3eed48419b725b8",
+            "shared-probe-race": "17b864a5ef194d909574605d07c2547cf363be9553d9bfe825f123da7e07ec45"
+          }
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "rotating-probes": "09348f5378c93a84f5dfaa80cc8963f8b6f189a6a404b0dcba692f0cdbeaadbd",
+            "shared-probe": "4b5e9aae2971be858e58db85a0e50dcd83bb13024be0fcd06984c01e14ee5675",
+            "shared-probe-race": "db7992c37ee5ead75e0ed98102516c85afe201d2f4ad455a12c9358132cfee2e"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "b74b44ce74019f64796b04d927d80bed101f3dd6e050c0e3f617a18d5b53303f",
+            "shared-probe": "76e26d68ae941a2ebe1192a500102669a73a7f589e93b9adfda529acb130aec7",
+            "shared-probe-race": "3372748702097f4c04eeddc736b82b3e7c52b204e82e93cd2d9a19221aa2dfe9"
+          }
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "rotating-probes": "7699c7803e093a11a321017580b43352b8ab6566da8f1ea53fb6217018512042",
+            "shared-probe": "48bbaaa88e18b3fb36cafdd838566408f791e0dcf16b57d81cc1cfbe744b5269",
+            "shared-probe-race": "1be4f837a1a7cfa347cc4f65f2314c9220d11564afe7cd88ab649c45fa1281f0"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "51536b375504ca1bd4b346e846a3a0b89a7aaee355bb25c6a2ccd0ec8fc218b1",
+            "shared-probe": "5e24e38cdce7686a60d660bbc5602a64a1d827fe9deea4262883e3454e23671c",
+            "shared-probe-race": "f90afde44857678dac6a6539959c0d1727b6eeb6acd6286b0f1c8835f3b6fbc9"
+          }
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "rotating-probes": "8a93331232bdbb7700ea7cfe9b67ce1079f2f2956f8623ed60a12f568d01d17a",
+            "shared-probe": "4f0374ba6f397599e36adffcfeed43ff2de588d1f4f629e634bd83426a6532b4",
+            "shared-probe-race": "5e41ca40d4e3dd3072d45f99b4b97c8cad01ae10f12a8fecdeee728efcf1310f"
+          },
+          "cap-19/gain-2": {
+            "rotating-probes": "4adc183122b854de4785ffb8e9e13d897dd93e966b7fe524c34faf239f41869c",
+            "shared-probe": "04a16ce2139a60d70cb1b892498ae60b7a8af548152c48c9638edfbc041be78d",
+            "shared-probe-race": "b1fed938f5d07ea10321d22e16d7105aba70c91bfd808947bbea422a6c7c4818"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 179,
+            "holdoutPasses": 26647,
+            "nominations": 260,
+            "paidLookups": 13453,
+            "promotions": 52,
+            "searchLookups": 10294
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 26619,
+            "nominations": 218,
+            "paidLookups": 13583,
+            "promotions": 47,
+            "searchLookups": 10602
+          },
+          "shared-probe-race": {
+            "changedNominee": 120,
+            "holdoutPasses": 26621,
+            "nominations": 116,
+            "paidLookups": 14020,
+            "promotions": 27,
+            "searchLookups": 11473
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 114,
+            "holdoutPasses": 26624,
+            "nominations": 158,
+            "paidLookups": 9599,
+            "promotions": 7,
+            "searchLookups": 6307
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 26630,
+            "nominations": 132,
+            "paidLookups": 9751,
+            "promotions": 7,
+            "searchLookups": 6527
+          },
+          "shared-probe-race": {
+            "changedNominee": 75,
+            "holdoutPasses": 26628,
+            "nominations": 67,
+            "paidLookups": 10094,
+            "promotions": 1,
+            "searchLookups": 7055
+          }
+        }
+      }
+    }
+  }
+}
