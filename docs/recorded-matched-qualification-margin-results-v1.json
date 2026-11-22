@@ -1,0 +1,6160 @@
+{
+  "plan": {
+    "baseline": "complete-panel/13",
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "candidate": "two-net-qualification-gains",
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "fixedCpoCaps": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "gate": "positive observed margin and nonnegative paired lower endpoint against the strongest affordable native GEPA setting with either qualification gain or retained starts",
+    "gepaVersion": "0.1.4",
+    "minimumQualificationGain": 2,
+    "minimumSearchCap": 6,
+    "nativeQualificationGains": [
+      1,
+      2
+    ],
+    "originalPlanSha256": "cc55f0838666bd296070797947dbe890aff539c33a5ec93b9e2c63864c8f94de",
+    "originalReceiptSha256": "f45d89bace132d6b51bdb2e340e484af544ee22ed40b2e4d7ea110b6d1d3a2e8",
+    "parentPlanSha256": "bb8be9b799bcd694c26f7645d813116d5f243f97439ecc46a9b7ef243ed4743f",
+    "parentReceiptSha256": "cff0abd264ef74d911c329334c3cd4b9ba5a8dc0f3f8c2c77402c849d7d451ce",
+    "primaryCohort": "disjoint-transfer-cohort",
+    "protocol": "recorded-matched-qualification-margin-v1",
+    "scope": "Keep each original GEPA search path and run the one- and two-gain qualification rules with paid incumbent prefix credit. Retain the frozen two-gain CPO result. Sweep both GEPA modes across all original caps. Compare the equally qualified controls and the strongest affordable control across both qualification rules. Also report the subject-specific GEPA hindsight ceiling under the same cohort budget.",
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "recorded_certificate_cost_frontier.py": "d85a2a61a4744000661a0ba4f2df571b37310089551b16864dbc8de5ef3ade9a",
+      "recorded_matched_qualification_margin.py": "efb3d9f610a1d342afb05b0c84f7aa26882a8f16062cf259143c9126195fe1ca",
+      "recorded_qualification_margin.py": "211857f26bea7d43e7a2a94a9edc72afcd61b9715d6619c5746918f146288200"
+    },
+    "transferPlanSha256": "3d9c5c69d9568293087dbd3b794d15fc95a5fa7767fc92ab09e1403653c8f234",
+    "transferReceiptSha256": "e4f2ac401077b83705fa79befa036af71d00fb65e66b1ae625af9900f42b288d"
+  },
+  "planSha256": "4f403d89053e8baef92d69dfa13b5def1de4edd530a514300d1aa65193c3ff82",
+  "providerRequests": 0,
+  "results": {
+    "disjoint-transfer-cohort": {
+      "comparison": {
+        "either": {
+          "bestWithinCost": "gepa-sequential-precheck/16/gain-1",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 56068,
+            "paidLookups": 9320
+          },
+          "cheapestMatching": "gepa-batched-precheck/46/gain-1",
+          "cheapestMatchingPoint": {
+            "holdoutPasses": 56102,
+            "paidLookups": 22828
+          },
+          "holdoutPassDifference": 26,
+          "pairedRange95": [
+            0,
+            44
+          ],
+          "resampledChoices": {
+            "gepa-sequential-precheck/16/gain-1": 2204,
+            "gepa-sequential-precheck/16/gain-2": 779,
+            "retain-start": 1113
+          }
+        },
+        "gain-1": {
+          "bestWithinCost": "gepa-sequential-precheck/16/gain-1",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 56068,
+            "paidLookups": 9320
+          },
+          "cheapestMatching": "gepa-batched-precheck/46/gain-1",
+          "cheapestMatchingPoint": {
+            "holdoutPasses": 56102,
+            "paidLookups": 22828
+          },
+          "holdoutPassDifference": 26,
+          "pairedRange95": [
+            0,
+            45
+          ],
+          "resampledChoices": {
+            "gepa-sequential-precheck/16/gain-1": 2485,
+            "retain-start": 1611
+          }
+        },
+        "gain-2": {
+          "bestWithinCost": "retain-start",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 56065,
+            "paidLookups": 0
+          },
+          "cheapestMatching": null,
+          "cheapestMatchingPoint": null,
+          "holdoutPassDifference": 29,
+          "pairedRange95": [
+            10,
+            46
+          ],
+          "resampledChoices": {
+            "gepa-sequential-precheck/16/gain-2": 1863,
+            "retain-start": 2233
+          }
+        }
+      },
+      "nativeSearchPathsChecked": 12308,
+      "panels": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "nativePathsChecked": 488,
+          "retainedPasses": 854
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "nativePathsChecked": 478,
+          "retainedPasses": 916
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "nativePathsChecked": 506,
+          "retainedPasses": 1559
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "nativePathsChecked": 311,
+          "retainedPasses": 1758
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "nativePathsChecked": 531,
+          "retainedPasses": 1612
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "nativePathsChecked": 532,
+          "retainedPasses": 1602
+        },
+        "high_school_biology/google_flan_ul2": {
+          "nativePathsChecked": 450,
+          "retainedPasses": 2009
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "nativePathsChecked": 282,
+          "retainedPasses": 2594
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "nativePathsChecked": 436,
+          "retainedPasses": 1410
+        },
+        "high_school_geography/google_gemma_7b": {
+          "nativePathsChecked": 408,
+          "retainedPasses": 1520
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "nativePathsChecked": 338,
+          "retainedPasses": 1395
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "nativePathsChecked": 239,
+          "retainedPasses": 1649
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "nativePathsChecked": 450,
+          "retainedPasses": 2591
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "nativePathsChecked": 420,
+          "retainedPasses": 2780
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "nativePathsChecked": 515,
+          "retainedPasses": 1461
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "nativePathsChecked": 475,
+          "retainedPasses": 1437
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "nativePathsChecked": 562,
+          "retainedPasses": 860
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "nativePathsChecked": 520,
+          "retainedPasses": 946
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "nativePathsChecked": 427,
+          "retainedPasses": 2154
+        },
+        "moral_disputes/google_gemma_7b": {
+          "nativePathsChecked": 379,
+          "retainedPasses": 2209
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "nativePathsChecked": 576,
+          "retainedPasses": 2048
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "nativePathsChecked": 545,
+          "retainedPasses": 3722
+        },
+        "professional_medicine/google_flan_ul2": {
+          "nativePathsChecked": 478,
+          "retainedPasses": 1362
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "nativePathsChecked": 259,
+          "retainedPasses": 1834
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "nativePathsChecked": 364,
+          "retainedPasses": 4369
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "nativePathsChecked": 411,
+          "retainedPasses": 4188
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "nativePathsChecked": 240,
+          "retainedPasses": 1672
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "nativePathsChecked": 264,
+          "retainedPasses": 1786
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "nativePathsChecked": 198,
+          "retainedPasses": 835
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "nativePathsChecked": 226,
+          "retainedPasses": 933
+        }
+      },
+      "passedArchiveGate": true,
+      "subjectTunedGepaHindsight": {
+        "holdoutPasses": 56111,
+        "paidLookups": 8368,
+        "settingsBySubject": {
+          "anatomy": "retain-start",
+          "clinical_knowledge": "retain-start",
+          "elementary_mathematics": "gepa-batched-precheck/100/gain-1",
+          "high_school_biology": "retain-start",
+          "high_school_geography": "retain-start",
+          "high_school_government_and_politics": "retain-start",
+          "high_school_macroeconomics": "retain-start",
+          "high_school_microeconomics": "retain-start",
+          "high_school_statistics": "gepa-batched-precheck/40/gain-2",
+          "moral_disputes": "gepa-batched-precheck/44/gain-1",
+          "moral_scenarios": "gepa-batched-precheck/46/gain-1",
+          "professional_medicine": "retain-start",
+          "professional_psychology": "gepa-sequential-precheck/24/gain-1",
+          "sociology": "retain-start",
+          "us_foreign_policy": "retain-start"
+        }
+      },
+      "totals": {
+        "gepa-batched-precheck/10/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/10/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/100/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/100/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/101/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/101/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/102/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/102/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/103/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/103/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/104/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/104/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/105/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/105/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/106/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/106/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/107/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/107/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/108/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/108/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/109/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/109/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/11/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/11/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/110/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/110/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/111/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/111/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/112/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/112/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/113/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/113/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/114/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/114/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/115/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/115/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/116/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/116/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/117/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/117/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/118/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/118/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/119/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/119/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/12/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/12/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/120/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/120/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/121/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/121/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/122/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/122/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/123/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/123/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/124/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/124/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/125/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/125/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/126/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/126/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/127/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/127/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/128/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/128/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/129/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/129/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/13/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/13/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/130/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/130/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/131/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/131/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/132/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/132/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/133/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/133/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/134/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/134/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/135/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/135/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/136/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/136/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/137/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/137/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/138/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/138/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/139/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/139/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/14/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/14/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/140/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/140/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/141/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/141/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/142/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/142/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/143/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/143/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/144/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/144/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/145/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/145/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/146/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/146/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/147/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/147/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/148/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/148/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/149/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/149/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/15/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/15/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/150/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/150/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/151/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/151/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/152/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/152/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/153/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/153/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/154/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/154/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/155/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/155/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/156/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/156/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/157/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/157/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/158/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/158/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/159/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/159/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/16/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/16/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/160/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/160/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/161/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/161/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/162/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/162/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/163/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/163/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/164/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/164/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/165/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/165/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/166/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/166/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/167/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/167/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/168/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/168/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/169/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/169/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/17/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/17/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/170/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/170/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/171/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/171/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/172/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/172/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/173/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/173/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/174/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/174/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/175/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/175/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/176/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/176/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/177/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/177/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/178/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/178/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/179/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/179/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/18/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/18/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/180/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/180/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/19/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/19/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/20/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/20/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/21/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/21/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/22/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/22/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/23/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/23/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/24/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/24/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/25/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/25/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/26/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 12019
+        },
+        "gepa-batched-precheck/26/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11957
+        },
+        "gepa-batched-precheck/27/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 12019
+        },
+        "gepa-batched-precheck/27/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11957
+        },
+        "gepa-batched-precheck/28/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 12019
+        },
+        "gepa-batched-precheck/28/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11957
+        },
+        "gepa-batched-precheck/29/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 12019
+        },
+        "gepa-batched-precheck/29/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11957
+        },
+        "gepa-batched-precheck/30/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 12019
+        },
+        "gepa-batched-precheck/30/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11957
+        },
+        "gepa-batched-precheck/31/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 12019
+        },
+        "gepa-batched-precheck/31/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11957
+        },
+        "gepa-batched-precheck/32/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 12019
+        },
+        "gepa-batched-precheck/32/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11957
+        },
+        "gepa-batched-precheck/33/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 12019
+        },
+        "gepa-batched-precheck/33/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11957
+        },
+        "gepa-batched-precheck/34/gain-1": {
+          "holdoutPasses": 56076,
+          "paidLookups": 15571
+        },
+        "gepa-batched-precheck/34/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 15492
+        },
+        "gepa-batched-precheck/35/gain-1": {
+          "holdoutPasses": 56076,
+          "paidLookups": 15571
+        },
+        "gepa-batched-precheck/35/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 15492
+        },
+        "gepa-batched-precheck/36/gain-1": {
+          "holdoutPasses": 56076,
+          "paidLookups": 15571
+        },
+        "gepa-batched-precheck/36/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 15492
+        },
+        "gepa-batched-precheck/37/gain-1": {
+          "holdoutPasses": 56076,
+          "paidLookups": 15571
+        },
+        "gepa-batched-precheck/37/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 15492
+        },
+        "gepa-batched-precheck/38/gain-1": {
+          "holdoutPasses": 56076,
+          "paidLookups": 15757
+        },
+        "gepa-batched-precheck/38/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 15675
+        },
+        "gepa-batched-precheck/39/gain-1": {
+          "holdoutPasses": 56076,
+          "paidLookups": 15979
+        },
+        "gepa-batched-precheck/39/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 15897
+        },
+        "gepa-batched-precheck/40/gain-1": {
+          "holdoutPasses": 56089,
+          "paidLookups": 19308
+        },
+        "gepa-batched-precheck/40/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 19200
+        },
+        "gepa-batched-precheck/41/gain-1": {
+          "holdoutPasses": 56089,
+          "paidLookups": 19308
+        },
+        "gepa-batched-precheck/41/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 19200
+        },
+        "gepa-batched-precheck/42/gain-1": {
+          "holdoutPasses": 56089,
+          "paidLookups": 19308
+        },
+        "gepa-batched-precheck/42/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 19200
+        },
+        "gepa-batched-precheck/43/gain-1": {
+          "holdoutPasses": 56089,
+          "paidLookups": 19316
+        },
+        "gepa-batched-precheck/43/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 19208
+        },
+        "gepa-batched-precheck/44/gain-1": {
+          "holdoutPasses": 56090,
+          "paidLookups": 19537
+        },
+        "gepa-batched-precheck/44/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 19427
+        },
+        "gepa-batched-precheck/45/gain-1": {
+          "holdoutPasses": 56090,
+          "paidLookups": 19793
+        },
+        "gepa-batched-precheck/45/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 19682
+        },
+        "gepa-batched-precheck/46/gain-1": {
+          "holdoutPasses": 56102,
+          "paidLookups": 22828
+        },
+        "gepa-batched-precheck/46/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 22705
+        },
+        "gepa-batched-precheck/47/gain-1": {
+          "holdoutPasses": 56102,
+          "paidLookups": 22917
+        },
+        "gepa-batched-precheck/47/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 22794
+        },
+        "gepa-batched-precheck/48/gain-1": {
+          "holdoutPasses": 56102,
+          "paidLookups": 22966
+        },
+        "gepa-batched-precheck/48/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 22842
+        },
+        "gepa-batched-precheck/49/gain-1": {
+          "holdoutPasses": 56102,
+          "paidLookups": 22982
+        },
+        "gepa-batched-precheck/49/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 22858
+        },
+        "gepa-batched-precheck/50/gain-1": {
+          "holdoutPasses": 56102,
+          "paidLookups": 23214
+        },
+        "gepa-batched-precheck/50/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23090
+        },
+        "gepa-batched-precheck/51/gain-1": {
+          "holdoutPasses": 56102,
+          "paidLookups": 23536
+        },
+        "gepa-batched-precheck/51/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23410
+        },
+        "gepa-batched-precheck/52/gain-1": {
+          "holdoutPasses": 56102,
+          "paidLookups": 23698
+        },
+        "gepa-batched-precheck/52/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23572
+        },
+        "gepa-batched-precheck/53/gain-1": {
+          "holdoutPasses": 56102,
+          "paidLookups": 23848
+        },
+        "gepa-batched-precheck/53/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23722
+        },
+        "gepa-batched-precheck/54/gain-1": {
+          "holdoutPasses": 56102,
+          "paidLookups": 23878
+        },
+        "gepa-batched-precheck/54/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23750
+        },
+        "gepa-batched-precheck/55/gain-1": {
+          "holdoutPasses": 56101,
+          "paidLookups": 23934
+        },
+        "gepa-batched-precheck/55/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23806
+        },
+        "gepa-batched-precheck/56/gain-1": {
+          "holdoutPasses": 56101,
+          "paidLookups": 23997
+        },
+        "gepa-batched-precheck/56/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23870
+        },
+        "gepa-batched-precheck/57/gain-1": {
+          "holdoutPasses": 56101,
+          "paidLookups": 24035
+        },
+        "gepa-batched-precheck/57/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23908
+        },
+        "gepa-batched-precheck/58/gain-1": {
+          "holdoutPasses": 56101,
+          "paidLookups": 24073
+        },
+        "gepa-batched-precheck/58/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23946
+        },
+        "gepa-batched-precheck/59/gain-1": {
+          "holdoutPasses": 56101,
+          "paidLookups": 24100
+        },
+        "gepa-batched-precheck/59/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23973
+        },
+        "gepa-batched-precheck/6/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/6/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/60/gain-1": {
+          "holdoutPasses": 56101,
+          "paidLookups": 24100
+        },
+        "gepa-batched-precheck/60/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23973
+        },
+        "gepa-batched-precheck/61/gain-1": {
+          "holdoutPasses": 56101,
+          "paidLookups": 24118
+        },
+        "gepa-batched-precheck/61/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23991
+        },
+        "gepa-batched-precheck/62/gain-1": {
+          "holdoutPasses": 56101,
+          "paidLookups": 24118
+        },
+        "gepa-batched-precheck/62/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 23991
+        },
+        "gepa-batched-precheck/63/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/63/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/64/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/64/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/65/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/65/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/66/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/66/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/67/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/67/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/68/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/68/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/69/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/69/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/7/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/7/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/70/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/70/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/71/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/71/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/72/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/72/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/73/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/73/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/74/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/74/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/75/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/75/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/76/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/76/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/77/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/77/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/78/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/78/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/79/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/79/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/8/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/8/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/80/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/80/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/81/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/81/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/82/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/82/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/83/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/83/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/84/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/84/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/85/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/85/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/86/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/86/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/87/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/87/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/88/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/88/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/89/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/89/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/9/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/9/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-batched-precheck/90/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/90/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/91/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/91/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/92/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/92/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/93/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/93/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/94/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/94/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/95/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/95/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/96/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/96/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/97/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/97/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/98/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/98/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-batched-precheck/99/gain-1": {
+          "holdoutPasses": 56106,
+          "paidLookups": 24151
+        },
+        "gepa-batched-precheck/99/gain-2": {
+          "holdoutPasses": 56071,
+          "paidLookups": 24022
+        },
+        "gepa-sequential-precheck/10/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/10/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/100/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/100/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/101/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/101/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/102/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/102/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/103/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/103/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/104/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/104/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/105/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/105/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/106/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/106/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/107/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/107/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/108/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/108/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/109/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/109/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/11/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/11/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/110/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/110/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/111/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/111/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/112/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/112/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/113/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/113/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/114/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/114/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/115/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/115/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/116/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/116/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/117/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/117/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/118/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/118/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/119/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/119/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/12/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/12/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/120/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/120/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/121/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/121/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/122/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/122/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/123/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/123/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/124/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/124/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/125/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/125/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/126/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/126/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/127/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/127/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/128/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/128/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/129/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/129/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/13/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/13/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/130/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/130/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/131/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/131/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/132/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/132/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/133/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/133/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/134/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/134/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/135/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/135/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/136/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/136/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/137/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/137/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/138/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/138/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/139/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/139/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/14/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/14/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/140/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/140/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/141/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/141/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/142/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/142/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/143/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/143/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/144/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/144/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/145/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/145/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/146/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/146/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/147/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/147/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/148/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/148/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/149/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/149/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/15/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/15/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/150/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/150/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/151/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/151/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/152/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/152/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/153/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/153/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/154/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/154/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/155/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/155/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/156/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/156/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/157/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/157/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/158/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/158/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/159/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/159/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/16/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 9320
+        },
+        "gepa-sequential-precheck/16/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 9286
+        },
+        "gepa-sequential-precheck/160/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/160/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/161/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/161/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/162/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/162/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/163/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/163/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/164/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/164/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/165/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/165/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/166/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/166/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/167/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/167/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/168/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/168/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/169/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/169/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/17/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 9320
+        },
+        "gepa-sequential-precheck/17/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 9286
+        },
+        "gepa-sequential-precheck/170/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/170/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/171/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/171/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/172/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/172/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/173/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/173/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/174/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/174/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/175/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/175/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/176/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/176/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/177/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/177/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/178/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/178/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/179/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/179/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/18/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 9320
+        },
+        "gepa-sequential-precheck/18/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 9286
+        },
+        "gepa-sequential-precheck/180/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/180/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/19/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 9320
+        },
+        "gepa-sequential-precheck/19/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 9286
+        },
+        "gepa-sequential-precheck/20/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 11830
+        },
+        "gepa-sequential-precheck/20/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11768
+        },
+        "gepa-sequential-precheck/21/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 11830
+        },
+        "gepa-sequential-precheck/21/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11768
+        },
+        "gepa-sequential-precheck/22/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 11830
+        },
+        "gepa-sequential-precheck/22/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11768
+        },
+        "gepa-sequential-precheck/23/gain-1": {
+          "holdoutPasses": 56068,
+          "paidLookups": 11830
+        },
+        "gepa-sequential-precheck/23/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 11768
+        },
+        "gepa-sequential-precheck/24/gain-1": {
+          "holdoutPasses": 56074,
+          "paidLookups": 14253
+        },
+        "gepa-sequential-precheck/24/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 14164
+        },
+        "gepa-sequential-precheck/25/gain-1": {
+          "holdoutPasses": 56074,
+          "paidLookups": 14342
+        },
+        "gepa-sequential-precheck/25/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 14253
+        },
+        "gepa-sequential-precheck/26/gain-1": {
+          "holdoutPasses": 56074,
+          "paidLookups": 14370
+        },
+        "gepa-sequential-precheck/26/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 14281
+        },
+        "gepa-sequential-precheck/27/gain-1": {
+          "holdoutPasses": 56074,
+          "paidLookups": 14370
+        },
+        "gepa-sequential-precheck/27/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 14281
+        },
+        "gepa-sequential-precheck/28/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 16718
+        },
+        "gepa-sequential-precheck/28/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 16618
+        },
+        "gepa-sequential-precheck/29/gain-1": {
+          "holdoutPasses": 56054,
+          "paidLookups": 16876
+        },
+        "gepa-sequential-precheck/29/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 16776
+        },
+        "gepa-sequential-precheck/30/gain-1": {
+          "holdoutPasses": 56054,
+          "paidLookups": 16939
+        },
+        "gepa-sequential-precheck/30/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 16837
+        },
+        "gepa-sequential-precheck/31/gain-1": {
+          "holdoutPasses": 56054,
+          "paidLookups": 16939
+        },
+        "gepa-sequential-precheck/31/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 16837
+        },
+        "gepa-sequential-precheck/32/gain-1": {
+          "holdoutPasses": 56053,
+          "paidLookups": 19196
+        },
+        "gepa-sequential-precheck/32/gain-2": {
+          "holdoutPasses": 56067,
+          "paidLookups": 19070
+        },
+        "gepa-sequential-precheck/33/gain-1": {
+          "holdoutPasses": 56048,
+          "paidLookups": 19395
+        },
+        "gepa-sequential-precheck/33/gain-2": {
+          "holdoutPasses": 56067,
+          "paidLookups": 19269
+        },
+        "gepa-sequential-precheck/34/gain-1": {
+          "holdoutPasses": 56048,
+          "paidLookups": 19455
+        },
+        "gepa-sequential-precheck/34/gain-2": {
+          "holdoutPasses": 56067,
+          "paidLookups": 19329
+        },
+        "gepa-sequential-precheck/35/gain-1": {
+          "holdoutPasses": 56048,
+          "paidLookups": 19455
+        },
+        "gepa-sequential-precheck/35/gain-2": {
+          "holdoutPasses": 56067,
+          "paidLookups": 19329
+        },
+        "gepa-sequential-precheck/36/gain-1": {
+          "holdoutPasses": 56050,
+          "paidLookups": 20594
+        },
+        "gepa-sequential-precheck/36/gain-2": {
+          "holdoutPasses": 56067,
+          "paidLookups": 20462
+        },
+        "gepa-sequential-precheck/37/gain-1": {
+          "holdoutPasses": 56050,
+          "paidLookups": 20832
+        },
+        "gepa-sequential-precheck/37/gain-2": {
+          "holdoutPasses": 56067,
+          "paidLookups": 20700
+        },
+        "gepa-sequential-precheck/38/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 21897
+        },
+        "gepa-sequential-precheck/38/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 21762
+        },
+        "gepa-sequential-precheck/39/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 21901
+        },
+        "gepa-sequential-precheck/39/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 21766
+        },
+        "gepa-sequential-precheck/40/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 22977
+        },
+        "gepa-sequential-precheck/40/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 22830
+        },
+        "gepa-sequential-precheck/41/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 23236
+        },
+        "gepa-sequential-precheck/41/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 23085
+        },
+        "gepa-sequential-precheck/42/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 23432
+        },
+        "gepa-sequential-precheck/42/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 23276
+        },
+        "gepa-sequential-precheck/43/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 23575
+        },
+        "gepa-sequential-precheck/43/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 23419
+        },
+        "gepa-sequential-precheck/44/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 23742
+        },
+        "gepa-sequential-precheck/44/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 23586
+        },
+        "gepa-sequential-precheck/45/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 23953
+        },
+        "gepa-sequential-precheck/45/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 23796
+        },
+        "gepa-sequential-precheck/46/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24102
+        },
+        "gepa-sequential-precheck/46/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 23945
+        },
+        "gepa-sequential-precheck/47/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24182
+        },
+        "gepa-sequential-precheck/47/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24025
+        },
+        "gepa-sequential-precheck/48/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24269
+        },
+        "gepa-sequential-precheck/48/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24112
+        },
+        "gepa-sequential-precheck/49/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24365
+        },
+        "gepa-sequential-precheck/49/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24208
+        },
+        "gepa-sequential-precheck/50/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24443
+        },
+        "gepa-sequential-precheck/50/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24285
+        },
+        "gepa-sequential-precheck/51/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24478
+        },
+        "gepa-sequential-precheck/51/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24320
+        },
+        "gepa-sequential-precheck/52/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24511
+        },
+        "gepa-sequential-precheck/52/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24353
+        },
+        "gepa-sequential-precheck/53/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24543
+        },
+        "gepa-sequential-precheck/53/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24385
+        },
+        "gepa-sequential-precheck/54/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24554
+        },
+        "gepa-sequential-precheck/54/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24396
+        },
+        "gepa-sequential-precheck/55/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24563
+        },
+        "gepa-sequential-precheck/55/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24405
+        },
+        "gepa-sequential-precheck/56/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24568
+        },
+        "gepa-sequential-precheck/56/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24410
+        },
+        "gepa-sequential-precheck/57/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24578
+        },
+        "gepa-sequential-precheck/57/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24420
+        },
+        "gepa-sequential-precheck/58/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24589
+        },
+        "gepa-sequential-precheck/58/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24431
+        },
+        "gepa-sequential-precheck/59/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24596
+        },
+        "gepa-sequential-precheck/59/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24438
+        },
+        "gepa-sequential-precheck/6/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/6/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/60/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24596
+        },
+        "gepa-sequential-precheck/60/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24438
+        },
+        "gepa-sequential-precheck/61/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/61/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/62/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/62/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/63/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/63/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/64/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/64/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/65/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/65/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/66/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/66/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/67/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/67/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/68/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/68/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/69/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/69/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/7/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/7/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/70/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/70/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/71/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/71/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/72/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/72/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/73/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/73/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/74/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/74/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/75/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/75/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/76/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/76/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/77/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/77/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/78/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/78/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/79/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/79/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/8/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/8/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/80/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/80/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/81/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/81/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/82/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/82/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/83/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/83/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/84/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/84/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/85/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/85/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/86/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/86/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/87/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/87/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/88/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/88/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/89/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/89/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/9/gain-1": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/9/gain-2": {
+          "holdoutPasses": 56065,
+          "paidLookups": 6569
+        },
+        "gepa-sequential-precheck/90/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/90/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/91/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/91/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/92/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/92/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/93/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/93/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/94/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/94/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/95/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/95/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/96/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/96/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/97/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/97/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/98/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/98/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "gepa-sequential-precheck/99/gain-1": {
+          "holdoutPasses": 56051,
+          "paidLookups": 24605
+        },
+        "gepa-sequential-precheck/99/gain-2": {
+          "holdoutPasses": 56068,
+          "paidLookups": 24447
+        },
+        "retain-start": {
+          "holdoutPasses": 56065,
+          "paidLookups": 0
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 56094,
+          "paidLookups": 9395
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "comparison": {
+        "either": {
+          "bestWithinCost": "retain-start",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 26625,
+            "paidLookups": 0
+          },
+          "cheapestMatching": "gepa-sequential-precheck/28/gain-2",
+          "cheapestMatchingPoint": {
+            "holdoutPasses": 26628,
+            "paidLookups": 17629
+          },
+          "holdoutPassDifference": 3,
+          "pairedRange95": [
+            -7,
+            9
+          ],
+          "resampledChoices": {
+            "gepa-sequential-precheck/16/gain-1": 957,
+            "gepa-sequential-precheck/16/gain-2": 1187,
+            "retain-start": 1952
+          }
+        },
+        "gain-1": {
+          "bestWithinCost": "retain-start",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 26625,
+            "paidLookups": 0
+          },
+          "cheapestMatching": "gepa-batched-precheck/51/gain-1",
+          "cheapestMatchingPoint": {
+            "holdoutPasses": 26630,
+            "paidLookups": 25664
+          },
+          "holdoutPassDifference": 3,
+          "pairedRange95": [
+            -6,
+            10
+          ],
+          "resampledChoices": {
+            "gepa-sequential-precheck/16/gain-1": 1280,
+            "retain-start": 2816
+          }
+        },
+        "gain-2": {
+          "bestWithinCost": "retain-start",
+          "bestWithinCostPoint": {
+            "holdoutPasses": 26625,
+            "paidLookups": 0
+          },
+          "cheapestMatching": "gepa-sequential-precheck/28/gain-2",
+          "cheapestMatchingPoint": {
+            "holdoutPasses": 26628,
+            "paidLookups": 17629
+          },
+          "holdoutPassDifference": 3,
+          "pairedRange95": [
+            -6,
+            10
+          ],
+          "resampledChoices": {
+            "gepa-sequential-precheck/16/gain-2": 1692,
+            "retain-start": 2404
+          }
+        }
+      },
+      "nativeSearchPathsChecked": 12748,
+      "panels": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "nativePathsChecked": 576,
+          "retainedPasses": 254
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "nativePathsChecked": 576,
+          "retainedPasses": 336
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "nativePathsChecked": 534,
+          "retainedPasses": 467
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "nativePathsChecked": 534,
+          "retainedPasses": 455
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "nativePathsChecked": 562,
+          "retainedPasses": 235
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "nativePathsChecked": 550,
+          "retainedPasses": 274
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "nativePathsChecked": 543,
+          "retainedPasses": 398
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "nativePathsChecked": 576,
+          "retainedPasses": 327
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "nativePathsChecked": 345,
+          "retainedPasses": 722
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "nativePathsChecked": 313,
+          "retainedPasses": 721
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "nativePathsChecked": 562,
+          "retainedPasses": 1040
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "nativePathsChecked": 527,
+          "retainedPasses": 1314
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "nativePathsChecked": 371,
+          "retainedPasses": 762
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "nativePathsChecked": 439,
+          "retainedPasses": 694
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "nativePathsChecked": 387,
+          "retainedPasses": 1128
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "nativePathsChecked": 413,
+          "retainedPasses": 1084
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "nativePathsChecked": 265,
+          "retainedPasses": 4167
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "nativePathsChecked": 305,
+          "retainedPasses": 3790
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "nativePathsChecked": 534,
+          "retainedPasses": 1056
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "nativePathsChecked": 435,
+          "retainedPasses": 1443
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "nativePathsChecked": 374,
+          "retainedPasses": 863
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "nativePathsChecked": 425,
+          "retainedPasses": 840
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "nativePathsChecked": 458,
+          "retainedPasses": 739
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "nativePathsChecked": 363,
+          "retainedPasses": 842
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "nativePathsChecked": 506,
+          "retainedPasses": 576
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "nativePathsChecked": 290,
+          "retainedPasses": 719
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "nativePathsChecked": 481,
+          "retainedPasses": 737
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "nativePathsChecked": 504,
+          "retainedPasses": 642
+        }
+      },
+      "passedArchiveGate": false,
+      "subjectTunedGepaHindsight": {
+        "holdoutPasses": 26653,
+        "paidLookups": 9048,
+        "settingsBySubject": {
+          "abstract_algebra": "gepa-sequential-precheck/28/gain-1",
+          "business_ethics": "retain-start",
+          "college_mathematics": "gepa-sequential-precheck/24/gain-2",
+          "college_physics": "gepa-batched-precheck/46/gain-1",
+          "computer_security": "retain-start",
+          "conceptual_physics": "gepa-sequential-precheck/20/gain-1",
+          "electrical_engineering": "retain-start",
+          "high_school_european_history": "gepa-sequential-precheck/32/gain-1",
+          "high_school_psychology": "retain-start",
+          "human_aging": "retain-start",
+          "international_law": "gepa-batched-precheck/51/gain-1",
+          "jurisprudence": "retain-start",
+          "management": "retain-start",
+          "public_relations": "retain-start"
+        }
+      },
+      "totals": {
+        "gepa-batched-precheck/10/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/10/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/100/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/100/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/101/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/101/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/102/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/102/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/103/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/103/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/104/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/104/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/105/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/105/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/106/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/106/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/107/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/107/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/108/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/108/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/109/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/109/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/11/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/11/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/110/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/110/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/111/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/111/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/112/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/112/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/113/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/113/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/114/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/114/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/115/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/115/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/116/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/116/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/117/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/117/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/118/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/118/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/119/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/119/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/12/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/12/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/120/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/120/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/121/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/121/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/122/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/122/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/123/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/123/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/124/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/124/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/125/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/125/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/126/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/126/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/127/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/127/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/128/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/128/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/129/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/129/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/13/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/13/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/130/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/130/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/131/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/131/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/132/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/132/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/133/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/133/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/134/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/134/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/135/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/135/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/136/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/136/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/137/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/137/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/138/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/138/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/139/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/139/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/14/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/14/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/140/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/140/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/141/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/141/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/142/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/142/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/143/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/143/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/144/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/144/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/145/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/145/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/146/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/146/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/147/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/147/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/148/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/148/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/149/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/149/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/15/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/15/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/150/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/150/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/151/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/151/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/152/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/152/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/153/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/153/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/154/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/154/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/155/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/155/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/156/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/156/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/157/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/157/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/158/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/158/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/159/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/159/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/16/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/16/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/160/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/160/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/161/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/161/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/162/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/162/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/163/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/163/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/164/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/164/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/165/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/165/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/166/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/166/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/167/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/167/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/168/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/168/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/169/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/169/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/17/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/17/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/170/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/170/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/171/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/171/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/172/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/172/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/173/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/173/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/174/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/174/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/175/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/175/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/176/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/176/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/177/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/177/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/178/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/178/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/179/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/179/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/18/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/18/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/180/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/180/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/19/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/19/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/20/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/20/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/21/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/21/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/22/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/22/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/23/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/23/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/24/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/24/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/25/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/25/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/26/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12655
+        },
+        "gepa-batched-precheck/26/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12574
+        },
+        "gepa-batched-precheck/27/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12655
+        },
+        "gepa-batched-precheck/27/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12574
+        },
+        "gepa-batched-precheck/28/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12655
+        },
+        "gepa-batched-precheck/28/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12574
+        },
+        "gepa-batched-precheck/29/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12655
+        },
+        "gepa-batched-precheck/29/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12574
+        },
+        "gepa-batched-precheck/30/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12655
+        },
+        "gepa-batched-precheck/30/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12574
+        },
+        "gepa-batched-precheck/31/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12655
+        },
+        "gepa-batched-precheck/31/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12574
+        },
+        "gepa-batched-precheck/32/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12655
+        },
+        "gepa-batched-precheck/32/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12574
+        },
+        "gepa-batched-precheck/33/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12655
+        },
+        "gepa-batched-precheck/33/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12574
+        },
+        "gepa-batched-precheck/34/gain-1": {
+          "holdoutPasses": 26621,
+          "paidLookups": 16477
+        },
+        "gepa-batched-precheck/34/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 16356
+        },
+        "gepa-batched-precheck/35/gain-1": {
+          "holdoutPasses": 26621,
+          "paidLookups": 16477
+        },
+        "gepa-batched-precheck/35/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 16356
+        },
+        "gepa-batched-precheck/36/gain-1": {
+          "holdoutPasses": 26621,
+          "paidLookups": 16477
+        },
+        "gepa-batched-precheck/36/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 16356
+        },
+        "gepa-batched-precheck/37/gain-1": {
+          "holdoutPasses": 26621,
+          "paidLookups": 16477
+        },
+        "gepa-batched-precheck/37/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 16356
+        },
+        "gepa-batched-precheck/38/gain-1": {
+          "holdoutPasses": 26621,
+          "paidLookups": 16734
+        },
+        "gepa-batched-precheck/38/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 16613
+        },
+        "gepa-batched-precheck/39/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 17166
+        },
+        "gepa-batched-precheck/39/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 17042
+        },
+        "gepa-batched-precheck/40/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 20739
+        },
+        "gepa-batched-precheck/40/gain-2": {
+          "holdoutPasses": 26622,
+          "paidLookups": 20580
+        },
+        "gepa-batched-precheck/41/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 20739
+        },
+        "gepa-batched-precheck/41/gain-2": {
+          "holdoutPasses": 26622,
+          "paidLookups": 20580
+        },
+        "gepa-batched-precheck/42/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 20751
+        },
+        "gepa-batched-precheck/42/gain-2": {
+          "holdoutPasses": 26622,
+          "paidLookups": 20592
+        },
+        "gepa-batched-precheck/43/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 20789
+        },
+        "gepa-batched-precheck/43/gain-2": {
+          "holdoutPasses": 26622,
+          "paidLookups": 20630
+        },
+        "gepa-batched-precheck/44/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 21058
+        },
+        "gepa-batched-precheck/44/gain-2": {
+          "holdoutPasses": 26622,
+          "paidLookups": 20895
+        },
+        "gepa-batched-precheck/45/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 21464
+        },
+        "gepa-batched-precheck/45/gain-2": {
+          "holdoutPasses": 26622,
+          "paidLookups": 21298
+        },
+        "gepa-batched-precheck/46/gain-1": {
+          "holdoutPasses": 26624,
+          "paidLookups": 24494
+        },
+        "gepa-batched-precheck/46/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 24284
+        },
+        "gepa-batched-precheck/47/gain-1": {
+          "holdoutPasses": 26626,
+          "paidLookups": 24607
+        },
+        "gepa-batched-precheck/47/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 24393
+        },
+        "gepa-batched-precheck/48/gain-1": {
+          "holdoutPasses": 26626,
+          "paidLookups": 24689
+        },
+        "gepa-batched-precheck/48/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 24474
+        },
+        "gepa-batched-precheck/49/gain-1": {
+          "holdoutPasses": 26626,
+          "paidLookups": 24739
+        },
+        "gepa-batched-precheck/49/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 24524
+        },
+        "gepa-batched-precheck/50/gain-1": {
+          "holdoutPasses": 26626,
+          "paidLookups": 25089
+        },
+        "gepa-batched-precheck/50/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 24873
+        },
+        "gepa-batched-precheck/51/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 25664
+        },
+        "gepa-batched-precheck/51/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 25445
+        },
+        "gepa-batched-precheck/52/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 25969
+        },
+        "gepa-batched-precheck/52/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 25746
+        },
+        "gepa-batched-precheck/53/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26122
+        },
+        "gepa-batched-precheck/53/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 25899
+        },
+        "gepa-batched-precheck/54/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26215
+        },
+        "gepa-batched-precheck/54/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 25992
+        },
+        "gepa-batched-precheck/55/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26267
+        },
+        "gepa-batched-precheck/55/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26044
+        },
+        "gepa-batched-precheck/56/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26412
+        },
+        "gepa-batched-precheck/56/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26184
+        },
+        "gepa-batched-precheck/57/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26507
+        },
+        "gepa-batched-precheck/57/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26278
+        },
+        "gepa-batched-precheck/58/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26541
+        },
+        "gepa-batched-precheck/58/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26312
+        },
+        "gepa-batched-precheck/59/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26574
+        },
+        "gepa-batched-precheck/59/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26345
+        },
+        "gepa-batched-precheck/6/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/6/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/60/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26590
+        },
+        "gepa-batched-precheck/60/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26361
+        },
+        "gepa-batched-precheck/61/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26604
+        },
+        "gepa-batched-precheck/61/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26375
+        },
+        "gepa-batched-precheck/62/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26612
+        },
+        "gepa-batched-precheck/62/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26383
+        },
+        "gepa-batched-precheck/63/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26632
+        },
+        "gepa-batched-precheck/63/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26403
+        },
+        "gepa-batched-precheck/64/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26632
+        },
+        "gepa-batched-precheck/64/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26403
+        },
+        "gepa-batched-precheck/65/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26640
+        },
+        "gepa-batched-precheck/65/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26411
+        },
+        "gepa-batched-precheck/66/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26640
+        },
+        "gepa-batched-precheck/66/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26411
+        },
+        "gepa-batched-precheck/67/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/67/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/68/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/68/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/69/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/69/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/7/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/7/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/70/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/70/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/71/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/71/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/72/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/72/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/73/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/73/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/74/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/74/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/75/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/75/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/76/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/76/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/77/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/77/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/78/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/78/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/79/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/79/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/8/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/8/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/80/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/80/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/81/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/81/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/82/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/82/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/83/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/83/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/84/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/84/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/85/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/85/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/86/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/86/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/87/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/87/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/88/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/88/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/89/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/89/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/9/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/9/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-batched-precheck/90/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/90/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/91/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/91/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/92/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/92/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/93/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/93/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/94/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/94/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/95/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/95/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/96/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/96/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/97/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/97/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/98/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/98/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-batched-precheck/99/gain-1": {
+          "holdoutPasses": 26630,
+          "paidLookups": 26646
+        },
+        "gepa-batched-precheck/99/gain-2": {
+          "holdoutPasses": 26624,
+          "paidLookups": 26417
+        },
+        "gepa-sequential-precheck/10/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/10/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/100/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/100/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/101/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/101/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/102/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/102/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/103/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/103/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/104/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/104/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/105/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/105/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/106/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/106/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/107/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/107/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/108/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/108/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/109/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/109/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/11/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/11/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/110/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/110/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/111/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/111/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/112/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/112/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/113/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/113/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/114/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/114/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/115/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/115/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/116/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/116/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/117/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/117/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/118/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/118/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/119/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/119/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/12/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/12/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/120/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/120/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/121/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/121/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/122/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/122/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/123/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/123/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/124/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/124/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/125/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/125/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/126/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/126/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/127/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/127/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/128/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/128/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/129/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/129/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/13/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/13/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/130/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/130/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/131/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/131/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/132/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/132/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/133/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/133/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/134/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/134/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/135/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/135/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/136/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/136/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/137/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/137/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/138/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/138/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/139/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/139/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/14/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/14/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/140/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/140/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/141/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/141/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/142/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/142/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/143/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/143/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/144/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/144/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/145/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/145/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/146/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/146/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/147/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/147/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/148/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/148/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/149/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/149/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/15/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/15/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/150/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/150/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/151/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/151/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/152/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/152/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/153/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/153/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/154/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/154/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/155/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/155/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/156/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/156/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/157/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/157/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/158/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/158/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/159/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/159/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/16/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 9572
+        },
+        "gepa-sequential-precheck/16/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 9531
+        },
+        "gepa-sequential-precheck/160/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/160/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/161/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/161/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/162/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/162/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/163/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/163/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/164/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/164/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/165/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/165/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/166/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/166/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/167/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/167/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/168/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/168/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/169/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/169/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/17/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 9572
+        },
+        "gepa-sequential-precheck/17/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 9531
+        },
+        "gepa-sequential-precheck/170/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/170/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/171/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/171/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/172/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/172/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/173/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/173/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/174/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/174/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/175/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/175/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/176/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/176/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/177/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/177/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/178/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/178/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/179/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/179/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/18/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 9572
+        },
+        "gepa-sequential-precheck/18/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 9531
+        },
+        "gepa-sequential-precheck/180/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/180/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/19/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 9572
+        },
+        "gepa-sequential-precheck/19/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 9531
+        },
+        "gepa-sequential-precheck/20/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12390
+        },
+        "gepa-sequential-precheck/20/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12309
+        },
+        "gepa-sequential-precheck/21/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12390
+        },
+        "gepa-sequential-precheck/21/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12309
+        },
+        "gepa-sequential-precheck/22/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12390
+        },
+        "gepa-sequential-precheck/22/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12309
+        },
+        "gepa-sequential-precheck/23/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 12390
+        },
+        "gepa-sequential-precheck/23/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 12309
+        },
+        "gepa-sequential-precheck/24/gain-1": {
+          "holdoutPasses": 26616,
+          "paidLookups": 15068
+        },
+        "gepa-sequential-precheck/24/gain-2": {
+          "holdoutPasses": 26627,
+          "paidLookups": 14958
+        },
+        "gepa-sequential-precheck/25/gain-1": {
+          "holdoutPasses": 26616,
+          "paidLookups": 15193
+        },
+        "gepa-sequential-precheck/25/gain-2": {
+          "holdoutPasses": 26627,
+          "paidLookups": 15082
+        },
+        "gepa-sequential-precheck/26/gain-1": {
+          "holdoutPasses": 26616,
+          "paidLookups": 15233
+        },
+        "gepa-sequential-precheck/26/gain-2": {
+          "holdoutPasses": 26627,
+          "paidLookups": 15122
+        },
+        "gepa-sequential-precheck/27/gain-1": {
+          "holdoutPasses": 26616,
+          "paidLookups": 15233
+        },
+        "gepa-sequential-precheck/27/gain-2": {
+          "holdoutPasses": 26627,
+          "paidLookups": 15122
+        },
+        "gepa-sequential-precheck/28/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 17781
+        },
+        "gepa-sequential-precheck/28/gain-2": {
+          "holdoutPasses": 26628,
+          "paidLookups": 17629
+        },
+        "gepa-sequential-precheck/29/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 18011
+        },
+        "gepa-sequential-precheck/29/gain-2": {
+          "holdoutPasses": 26628,
+          "paidLookups": 17858
+        },
+        "gepa-sequential-precheck/30/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 18093
+        },
+        "gepa-sequential-precheck/30/gain-2": {
+          "holdoutPasses": 26628,
+          "paidLookups": 17939
+        },
+        "gepa-sequential-precheck/31/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 18093
+        },
+        "gepa-sequential-precheck/31/gain-2": {
+          "holdoutPasses": 26628,
+          "paidLookups": 17939
+        },
+        "gepa-sequential-precheck/32/gain-1": {
+          "holdoutPasses": 26620,
+          "paidLookups": 20330
+        },
+        "gepa-sequential-precheck/32/gain-2": {
+          "holdoutPasses": 26628,
+          "paidLookups": 20148
+        },
+        "gepa-sequential-precheck/33/gain-1": {
+          "holdoutPasses": 26621,
+          "paidLookups": 20711
+        },
+        "gepa-sequential-precheck/33/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 20527
+        },
+        "gepa-sequential-precheck/34/gain-1": {
+          "holdoutPasses": 26621,
+          "paidLookups": 20792
+        },
+        "gepa-sequential-precheck/34/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 20608
+        },
+        "gepa-sequential-precheck/35/gain-1": {
+          "holdoutPasses": 26621,
+          "paidLookups": 20792
+        },
+        "gepa-sequential-precheck/35/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 20608
+        },
+        "gepa-sequential-precheck/36/gain-1": {
+          "holdoutPasses": 26622,
+          "paidLookups": 22049
+        },
+        "gepa-sequential-precheck/36/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 21850
+        },
+        "gepa-sequential-precheck/37/gain-1": {
+          "holdoutPasses": 26622,
+          "paidLookups": 22481
+        },
+        "gepa-sequential-precheck/37/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 22282
+        },
+        "gepa-sequential-precheck/38/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 23516
+        },
+        "gepa-sequential-precheck/38/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 23299
+        },
+        "gepa-sequential-precheck/39/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 23528
+        },
+        "gepa-sequential-precheck/39/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 23311
+        },
+        "gepa-sequential-precheck/40/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 24600
+        },
+        "gepa-sequential-precheck/40/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 24372
+        },
+        "gepa-sequential-precheck/41/gain-1": {
+          "holdoutPasses": 26623,
+          "paidLookups": 24976
+        },
+        "gepa-sequential-precheck/41/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 24745
+        },
+        "gepa-sequential-precheck/42/gain-1": {
+          "holdoutPasses": 26622,
+          "paidLookups": 25227
+        },
+        "gepa-sequential-precheck/42/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 24995
+        },
+        "gepa-sequential-precheck/43/gain-1": {
+          "holdoutPasses": 26622,
+          "paidLookups": 25462
+        },
+        "gepa-sequential-precheck/43/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 25228
+        },
+        "gepa-sequential-precheck/44/gain-1": {
+          "holdoutPasses": 26622,
+          "paidLookups": 25732
+        },
+        "gepa-sequential-precheck/44/gain-2": {
+          "holdoutPasses": 26629,
+          "paidLookups": 25493
+        },
+        "gepa-sequential-precheck/45/gain-1": {
+          "holdoutPasses": 26618,
+          "paidLookups": 25998
+        },
+        "gepa-sequential-precheck/45/gain-2": {
+          "holdoutPasses": 26627,
+          "paidLookups": 25758
+        },
+        "gepa-sequential-precheck/46/gain-1": {
+          "holdoutPasses": 26614,
+          "paidLookups": 26266
+        },
+        "gepa-sequential-precheck/46/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26027
+        },
+        "gepa-sequential-precheck/47/gain-1": {
+          "holdoutPasses": 26614,
+          "paidLookups": 26462
+        },
+        "gepa-sequential-precheck/47/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26221
+        },
+        "gepa-sequential-precheck/48/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 26631
+        },
+        "gepa-sequential-precheck/48/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26386
+        },
+        "gepa-sequential-precheck/49/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 26734
+        },
+        "gepa-sequential-precheck/49/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26489
+        },
+        "gepa-sequential-precheck/50/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 26819
+        },
+        "gepa-sequential-precheck/50/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26574
+        },
+        "gepa-sequential-precheck/51/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 26910
+        },
+        "gepa-sequential-precheck/51/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26664
+        },
+        "gepa-sequential-precheck/52/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 26961
+        },
+        "gepa-sequential-precheck/52/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26715
+        },
+        "gepa-sequential-precheck/53/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27011
+        },
+        "gepa-sequential-precheck/53/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26765
+        },
+        "gepa-sequential-precheck/54/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27042
+        },
+        "gepa-sequential-precheck/54/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26796
+        },
+        "gepa-sequential-precheck/55/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27052
+        },
+        "gepa-sequential-precheck/55/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26806
+        },
+        "gepa-sequential-precheck/56/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27059
+        },
+        "gepa-sequential-precheck/56/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26813
+        },
+        "gepa-sequential-precheck/57/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27074
+        },
+        "gepa-sequential-precheck/57/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26828
+        },
+        "gepa-sequential-precheck/58/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27087
+        },
+        "gepa-sequential-precheck/58/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26841
+        },
+        "gepa-sequential-precheck/59/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27103
+        },
+        "gepa-sequential-precheck/59/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26856
+        },
+        "gepa-sequential-precheck/6/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/6/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/60/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27103
+        },
+        "gepa-sequential-precheck/60/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26856
+        },
+        "gepa-sequential-precheck/61/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27111
+        },
+        "gepa-sequential-precheck/61/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26864
+        },
+        "gepa-sequential-precheck/62/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27111
+        },
+        "gepa-sequential-precheck/62/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26864
+        },
+        "gepa-sequential-precheck/63/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27111
+        },
+        "gepa-sequential-precheck/63/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26864
+        },
+        "gepa-sequential-precheck/64/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27111
+        },
+        "gepa-sequential-precheck/64/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26864
+        },
+        "gepa-sequential-precheck/65/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27111
+        },
+        "gepa-sequential-precheck/65/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26864
+        },
+        "gepa-sequential-precheck/66/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/66/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/67/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/67/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/68/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/68/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/69/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/69/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/7/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/7/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/70/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/70/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/71/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/71/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/72/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/72/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/73/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/73/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/74/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/74/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/75/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/75/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/76/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/76/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/77/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/77/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/78/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/78/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/79/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/79/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/8/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/8/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/80/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/80/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/81/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/81/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/82/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/82/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/83/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/83/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/84/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/84/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/85/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/85/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/86/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/86/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/87/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/87/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/88/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/88/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/89/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/89/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/9/gain-1": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/9/gain-2": {
+          "holdoutPasses": 26625,
+          "paidLookups": 6430
+        },
+        "gepa-sequential-precheck/90/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/90/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/91/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/91/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/92/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/92/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/93/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/93/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/94/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/94/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/95/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/95/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/96/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/96/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/97/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/97/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/98/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/98/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "gepa-sequential-precheck/99/gain-1": {
+          "holdoutPasses": 26615,
+          "paidLookups": 27115
+        },
+        "gepa-sequential-precheck/99/gain-2": {
+          "holdoutPasses": 26623,
+          "paidLookups": 26868
+        },
+        "retain-start": {
+          "holdoutPasses": 26625,
+          "paidLookups": 0
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 26628,
+          "paidLookups": 10001
+        }
+      }
+    }
+  }
+}

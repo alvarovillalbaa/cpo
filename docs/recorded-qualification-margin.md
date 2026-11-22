@@ -11,6 +11,8 @@ The incumbent precheck and paid-prefix credit remain in use. Expected-cost sched
 
 The stricter proof added 15 held-out passes on each cohort and saved 453 qualification lookups in total. The 29 vetoes on the earlier cohort recovered 34 passes and gave up 19. The 16 on the transfer cohort recovered 37 and gave up 22. On the transfer cohort the two-gain screen led sequential GEPA at cap 16 by 26 passes for 75 more lookups, with a paired 95% range of zero to +45. The range against the strongest affordable control crossed zero on both cohorts. Fresh-model performance remains unverified. [Full results and per-panel traces](recorded-qualification-margin-results-v1.json)
 
+A follow-up gave both GEPA modes the same two-gain rule. The transfer cohort cleared the fixed-setting GEPA gate when the control could use either rule. [Matched qualification comparison](recorded-matched-qualification-margin.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.
