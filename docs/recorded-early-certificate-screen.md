@@ -14,6 +14,8 @@ The primary policy uses the minimum-proof reserve at cap 13. The gate requires a
 
 At cap 13, the minimum-proof reserve gained 11 passes and saved 253 lookups versus the original exact race. It missed the gate against retaining the starts, which scored 26,625 at zero cost. The wider probe spent 1,197 more lookups on screening than the complete-panel reserve and used 1,449 fewer on certificates. Only four candidates made it through independent qualification. At cap 32, both reserves could screen the entire roster and produced identical decisions. The exact race at cap 29 led by 17 passes and spent 168 fewer lookups. Fresh-model performance remains unverified. [Full results and matched comparisons](recorded-early-certificate-screen-results-v1.json)
 
+A follow-up reserved space for one failed evaluation and tested it on disjoint MMLU subjects and model checkpoints. It missed the matched-budget transfer gate. [One-failure reserve transfer](recorded-one-failure-screen-transfer.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.
