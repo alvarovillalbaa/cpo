@@ -27,6 +27,8 @@ Cap 13 promoted 32 times. The full-pool race promoted 72 times and gained 54 pas
 
 The 45 extra promotions supplied most of the full-pool gain. About 90% of the extra cost fell in trials whose deployment stayed the same. This comparison observes the outcome after both paths ran. The candidate's fresh-model performance remains unverified. [Replay runner](../benchmarks/recorded_low_cap_mmlu_transfer.py)
 
+A follow-up tested two ways to extend cap 13 before qualification. The paid validation signal reached nine of the 45 extra promotions and missed the matched-budget gate. [Continuation replay](recorded-paid-validation-continuation.md)
+
 ## Reproduce
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel.
