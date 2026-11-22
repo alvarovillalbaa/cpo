@@ -47,7 +47,7 @@ The replay compares cap-19 CPO with both native GEPA modes and all three publish
 | Disjoint MMLU | 56,094 / 12,933 | +23 [−16, 56] | 56,094 / 9,017 | +29 [10, 46] |
 | Earlier MMLU | 26,619 / 13,739 | −9 [−40, 19] | 26,630 / 9,831 | +5 [−4, 11] |
 
-Ten of sixteen comparisons passed. Retaining starts was the strongest affordable control for both two-gain MMLU comparisons. The cap-19 analysis compares one setting pooled across each cohort. It leaves per-subject hindsight and fresh-model performance unverified.
+Ten of sixteen comparisons passed. Retaining starts was the strongest affordable control for both two-gain MMLU comparisons. The cap-19 analysis compares one setting pooled across each cohort. A separate replay gives GEPA a setting per subject under the same CPO budgets. [Subject-tuned GEPA comparison](deferred-certificate-subject-ceiling.md)
 
 ## Reproduce lookup savings
 

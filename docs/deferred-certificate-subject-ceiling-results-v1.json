@@ -1,0 +1,2174 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "parentPlanSha256": "4cbd3748ee07bc159b33418627aef06145712bd82e1970acddf423b0c9b1b7d9",
+    "parentReceiptSha256": "c8dd4548189087fdecbfc8a7b43edc647e8361e19cf7fcfb9a5bea02652b4e05",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "deferred-certificate-subject-ceiling-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Use all native settings, including settings unaffordable across the full cohort, when assigning one setting per subject. Match total search and qualification lookups to CPO. Share the native search between qualification variants only when its inputs and requests match. Reproduce all earlier native totals and subject ceilings before calculating the full-roster ceiling.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "deferred_certificate_subject_ceiling.py": "33b536ecddaad5d4a312271ebbacb640ad86b1e68c7a4faf8a74ec991e466236",
+      "gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "recorded_certificate_cost_frontier.py": "d85a2a61a4744000661a0ba4f2df571b37310089551b16864dbc8de5ef3ade9a",
+      "recorded_deferred_certificate_gepa_frontier.py": "34d9fa8a3ba746cd61e83a0c48af4cca9ccb0720ac717fab069a3e0249adefa7",
+      "recorded_matched_qualification_margin.py": "efb3d9f610a1d342afb05b0c84f7aa26882a8f16062cf259143c9126195fe1ca",
+      "recorded_math_roster_ceiling.py": "2d76071657b3b168ba64525841311d77c80eceb4d004805f87be792f4c46e287",
+      "recorded_validation_tail_language_frontier.py": "131c23bb5dc4790df4692e8a98e1d7557a58e25b1ed66322999c43e8ab49d1a4",
+      "threshold_precheck_gepa_frontier.py": "d7e56c18311193a116add970a45b6fa36623f2a95bc1c6a5885a00dc69a3a41b"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "86c7519f36607d023c02e984daa940ffe070fe8d5fbd29b50474ace78b34d3f0",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "bySubject": {
+            "bbh-disambiguation_qa": {
+              "cpo": {
+                "holdoutPasses": 792,
+                "paidLookups": 1134
+              },
+              "gepa": {
+                "holdoutPasses": 838,
+                "paidLookups": 2621
+              },
+              "gepaSetting": "gepa-sequential-precheck/48/gain-1"
+            },
+            "bbh-formal_fallacies": {
+              "cpo": {
+                "holdoutPasses": 358,
+                "paidLookups": 1189
+              },
+              "gepa": {
+                "holdoutPasses": 397,
+                "paidLookups": 2219
+              },
+              "gepaSetting": "gepa-batched-precheck/46/gain-1"
+            },
+            "bbh-geometric_shapes": {
+              "cpo": {
+                "holdoutPasses": 432,
+                "paidLookups": 1231
+              },
+              "gepa": {
+                "holdoutPasses": 415,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-hyperbaton": {
+              "cpo": {
+                "holdoutPasses": 1073,
+                "paidLookups": 1026
+              },
+              "gepa": {
+                "holdoutPasses": 1020,
+                "paidLookups": 1116
+              },
+              "gepaSetting": "gepa-batched-precheck/26/gain-1"
+            },
+            "bbh-logical_deduction_five_objects": {
+              "cpo": {
+                "holdoutPasses": 528,
+                "paidLookups": 1225
+              },
+              "gepa": {
+                "holdoutPasses": 471,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-logical_deduction_seven_objects": {
+              "cpo": {
+                "holdoutPasses": 324,
+                "paidLookups": 1246
+              },
+              "gepa": {
+                "holdoutPasses": 311,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-logical_deduction_three_objects": {
+              "cpo": {
+                "holdoutPasses": 699,
+                "paidLookups": 1191
+              },
+              "gepa": {
+                "holdoutPasses": 760,
+                "paidLookups": 2282
+              },
+              "gepaSetting": "gepa-sequential-precheck/38/gain-1"
+            },
+            "bbh-movie_recommendation": {
+              "cpo": {
+                "holdoutPasses": 894,
+                "paidLookups": 1047
+              },
+              "gepa": {
+                "holdoutPasses": 988,
+                "paidLookups": 1977
+              },
+              "gepaSetting": "gepa-batched-precheck/45/gain-1"
+            },
+            "bbh-navigate": {
+              "cpo": {
+                "holdoutPasses": 823,
+                "paidLookups": 1122
+              },
+              "gepa": {
+                "holdoutPasses": 883,
+                "paidLookups": 1800
+              },
+              "gepaSetting": "gepa-batched-precheck/40/gain-1"
+            },
+            "bbh-penguins_in_a_table": {
+              "cpo": {
+                "holdoutPasses": 415,
+                "paidLookups": 1179
+              },
+              "gepa": {
+                "holdoutPasses": 400,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-ruin_names": {
+              "cpo": {
+                "holdoutPasses": 672,
+                "paidLookups": 1214
+              },
+              "gepa": {
+                "holdoutPasses": 679,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-salient_translation_error_detection": {
+              "cpo": {
+                "holdoutPasses": 453,
+                "paidLookups": 1202
+              },
+              "gepa": {
+                "holdoutPasses": 419,
+                "paidLookups": 1575
+              },
+              "gepaSetting": "gepa-sequential-precheck/29/gain-1"
+            },
+            "bbh-snarks": {
+              "cpo": {
+                "holdoutPasses": 996,
+                "paidLookups": 1112
+              },
+              "gepa": {
+                "holdoutPasses": 978,
+                "paidLookups": 1061
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-1"
+            },
+            "bbh-sports_understanding": {
+              "cpo": {
+                "holdoutPasses": 1089,
+                "paidLookups": 1028
+              },
+              "gepa": {
+                "holdoutPasses": 1091,
+                "paidLookups": 1494
+              },
+              "gepaSetting": "gepa-batched-precheck/34/gain-1"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 9548,
+            "paidLookups": 16146
+          },
+          "gepa": {
+            "holdoutPasses": 9650,
+            "paidLookups": 16145,
+            "settingsBySubject": {
+              "bbh-disambiguation_qa": "gepa-sequential-precheck/48/gain-1",
+              "bbh-formal_fallacies": "gepa-batched-precheck/46/gain-1",
+              "bbh-geometric_shapes": "retain-start",
+              "bbh-hyperbaton": "gepa-batched-precheck/26/gain-1",
+              "bbh-logical_deduction_five_objects": "retain-start",
+              "bbh-logical_deduction_seven_objects": "retain-start",
+              "bbh-logical_deduction_three_objects": "gepa-sequential-precheck/38/gain-1",
+              "bbh-movie_recommendation": "gepa-batched-precheck/45/gain-1",
+              "bbh-navigate": "gepa-batched-precheck/40/gain-1",
+              "bbh-penguins_in_a_table": "retain-start",
+              "bbh-ruin_names": "retain-start",
+              "bbh-salient_translation_error_detection": "gepa-sequential-precheck/29/gain-1",
+              "bbh-snarks": "gepa-sequential-precheck/20/gain-1",
+              "bbh-sports_understanding": "gepa-batched-precheck/34/gain-1"
+            }
+          },
+          "holdoutPassDifference": -102
+        },
+        "cap-19/gain-2": {
+          "bySubject": {
+            "bbh-disambiguation_qa": {
+              "cpo": {
+                "holdoutPasses": 741,
+                "paidLookups": 1033
+              },
+              "gepa": {
+                "holdoutPasses": 838,
+                "paidLookups": 2621
+              },
+              "gepaSetting": "gepa-sequential-precheck/48/gain-1"
+            },
+            "bbh-formal_fallacies": {
+              "cpo": {
+                "holdoutPasses": 308,
+                "paidLookups": 1187
+              },
+              "gepa": {
+                "holdoutPasses": 364,
+                "paidLookups": 1468
+              },
+              "gepaSetting": "gepa-batched-precheck/34/gain-1"
+            },
+            "bbh-geometric_shapes": {
+              "cpo": {
+                "holdoutPasses": 415,
+                "paidLookups": 1238
+              },
+              "gepa": {
+                "holdoutPasses": 415,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-hyperbaton": {
+              "cpo": {
+                "holdoutPasses": 997,
+                "paidLookups": 770
+              },
+              "gepa": {
+                "holdoutPasses": 1020,
+                "paidLookups": 1116
+              },
+              "gepaSetting": "gepa-batched-precheck/26/gain-1"
+            },
+            "bbh-logical_deduction_five_objects": {
+              "cpo": {
+                "holdoutPasses": 493,
+                "paidLookups": 1254
+              },
+              "gepa": {
+                "holdoutPasses": 471,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-logical_deduction_seven_objects": {
+              "cpo": {
+                "holdoutPasses": 310,
+                "paidLookups": 1297
+              },
+              "gepa": {
+                "holdoutPasses": 311,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-logical_deduction_three_objects": {
+              "cpo": {
+                "holdoutPasses": 626,
+                "paidLookups": 1127
+              },
+              "gepa": {
+                "holdoutPasses": 760,
+                "paidLookups": 2282
+              },
+              "gepaSetting": "gepa-sequential-precheck/38/gain-1"
+            },
+            "bbh-movie_recommendation": {
+              "cpo": {
+                "holdoutPasses": 857,
+                "paidLookups": 997
+              },
+              "gepa": {
+                "holdoutPasses": 988,
+                "paidLookups": 1977
+              },
+              "gepaSetting": "gepa-batched-precheck/45/gain-1"
+            },
+            "bbh-navigate": {
+              "cpo": {
+                "holdoutPasses": 792,
+                "paidLookups": 867
+              },
+              "gepa": {
+                "holdoutPasses": 883,
+                "paidLookups": 1800
+              },
+              "gepaSetting": "gepa-batched-precheck/40/gain-1"
+            },
+            "bbh-penguins_in_a_table": {
+              "cpo": {
+                "holdoutPasses": 396,
+                "paidLookups": 1194
+              },
+              "gepa": {
+                "holdoutPasses": 400,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-ruin_names": {
+              "cpo": {
+                "holdoutPasses": 679,
+                "paidLookups": 1215
+              },
+              "gepa": {
+                "holdoutPasses": 679,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-salient_translation_error_detection": {
+              "cpo": {
+                "holdoutPasses": 382,
+                "paidLookups": 1244
+              },
+              "gepa": {
+                "holdoutPasses": 407,
+                "paidLookups": 1289
+              },
+              "gepaSetting": "gepa-sequential-precheck/24/gain-1"
+            },
+            "bbh-snarks": {
+              "cpo": {
+                "holdoutPasses": 962,
+                "paidLookups": 921
+              },
+              "gepa": {
+                "holdoutPasses": 978,
+                "paidLookups": 1061
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-1"
+            },
+            "bbh-sports_understanding": {
+              "cpo": {
+                "holdoutPasses": 1040,
+                "paidLookups": 805
+              },
+              "gepa": {
+                "holdoutPasses": 1091,
+                "paidLookups": 1494
+              },
+              "gepaSetting": "gepa-batched-precheck/34/gain-1"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 8998,
+            "paidLookups": 15149
+          },
+          "gepa": {
+            "holdoutPasses": 9605,
+            "paidLookups": 15108,
+            "settingsBySubject": {
+              "bbh-disambiguation_qa": "gepa-sequential-precheck/48/gain-1",
+              "bbh-formal_fallacies": "gepa-batched-precheck/34/gain-1",
+              "bbh-geometric_shapes": "retain-start",
+              "bbh-hyperbaton": "gepa-batched-precheck/26/gain-1",
+              "bbh-logical_deduction_five_objects": "retain-start",
+              "bbh-logical_deduction_seven_objects": "retain-start",
+              "bbh-logical_deduction_three_objects": "gepa-sequential-precheck/38/gain-1",
+              "bbh-movie_recommendation": "gepa-batched-precheck/45/gain-1",
+              "bbh-navigate": "gepa-batched-precheck/40/gain-1",
+              "bbh-penguins_in_a_table": "retain-start",
+              "bbh-ruin_names": "retain-start",
+              "bbh-salient_translation_error_detection": "gepa-sequential-precheck/24/gain-1",
+              "bbh-snarks": "gepa-sequential-precheck/20/gain-1",
+              "bbh-sports_understanding": "gepa-batched-precheck/34/gain-1"
+            }
+          },
+          "holdoutPassDifference": -607
+        }
+      },
+      "nativeSettings": 1050,
+      "subjectTotalsSha256": "f0f011bcb1aef35e53ba1aeb72c0ebd83435ab26f14e83d6a9fb9ba8d9e57745",
+      "wrappedPaths": {
+        "gain-1": 15574,
+        "gain-2": 15574,
+        "gain-2-threshold-precheck": 14166
+      }
+    },
+    "BBH/new-task": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "bySubject": {
+            "bbh-causal_judgement": {
+              "cpo": {
+                "holdoutPasses": 591,
+                "paidLookups": 1123
+              },
+              "gepa": {
+                "holdoutPasses": 590,
+                "paidLookups": 959
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-1"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 591,
+            "paidLookups": 1123
+          },
+          "gepa": {
+            "holdoutPasses": 590,
+            "paidLookups": 959,
+            "settingsBySubject": {
+              "bbh-causal_judgement": "gepa-sequential-precheck/20/gain-1"
+            }
+          },
+          "holdoutPassDifference": 1
+        },
+        "cap-19/gain-2": {
+          "bySubject": {
+            "bbh-causal_judgement": {
+              "cpo": {
+                "holdoutPasses": 569,
+                "paidLookups": 1016
+              },
+              "gepa": {
+                "holdoutPasses": 590,
+                "paidLookups": 959
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-1"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 569,
+            "paidLookups": 1016
+          },
+          "gepa": {
+            "holdoutPasses": 590,
+            "paidLookups": 959,
+            "settingsBySubject": {
+              "bbh-causal_judgement": "gepa-sequential-precheck/20/gain-1"
+            }
+          },
+          "holdoutPassDifference": -21
+        }
+      },
+      "nativeSettings": 1050,
+      "subjectTotalsSha256": "f488763d9addf04392044f9c30035921c4ab655ab58fab4cd899be5c5deff5b9",
+      "wrappedPaths": {
+        "gain-1": 1001,
+        "gain-2": 1001,
+        "gain-2-threshold-precheck": 889
+      }
+    },
+    "BBH/seen-task": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "bySubject": {
+            "bbh-disambiguation_qa": {
+              "cpo": {
+                "holdoutPasses": 922,
+                "paidLookups": 959
+              },
+              "gepa": {
+                "holdoutPasses": 988,
+                "paidLookups": 2024
+              },
+              "gepaSetting": "gepa-sequential-precheck/51/gain-1"
+            },
+            "bbh-formal_fallacies": {
+              "cpo": {
+                "holdoutPasses": 472,
+                "paidLookups": 1195
+              },
+              "gepa": {
+                "holdoutPasses": 475,
+                "paidLookups": 2201
+              },
+              "gepaSetting": "gepa-batched-precheck/59/gain-1"
+            },
+            "bbh-geometric_shapes": {
+              "cpo": {
+                "holdoutPasses": 307,
+                "paidLookups": 1247
+              },
+              "gepa": {
+                "holdoutPasses": 306,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-hyperbaton": {
+              "cpo": {
+                "holdoutPasses": 1007,
+                "paidLookups": 960
+              },
+              "gepa": {
+                "holdoutPasses": 1007,
+                "paidLookups": 2532
+              },
+              "gepaSetting": "gepa-sequential-precheck/56/gain-1"
+            },
+            "bbh-logical_deduction_five_objects": {
+              "cpo": {
+                "holdoutPasses": 580,
+                "paidLookups": 1255
+              },
+              "gepa": {
+                "holdoutPasses": 581,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-navigate": {
+              "cpo": {
+                "holdoutPasses": 503,
+                "paidLookups": 1126
+              },
+              "gepa": {
+                "holdoutPasses": 500,
+                "paidLookups": 935
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-2-threshold-precheck"
+            },
+            "bbh-penguins_in_a_table": {
+              "cpo": {
+                "holdoutPasses": 458,
+                "paidLookups": 1201
+              },
+              "gepa": {
+                "holdoutPasses": 457,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-sports_understanding": {
+              "cpo": {
+                "holdoutPasses": 594,
+                "paidLookups": 1155
+              },
+              "gepa": {
+                "holdoutPasses": 603,
+                "paidLookups": 1263
+              },
+              "gepaSetting": "gepa-sequential-precheck/24/gain-1"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 4843,
+            "paidLookups": 9098
+          },
+          "gepa": {
+            "holdoutPasses": 4917,
+            "paidLookups": 8955,
+            "settingsBySubject": {
+              "bbh-disambiguation_qa": "gepa-sequential-precheck/51/gain-1",
+              "bbh-formal_fallacies": "gepa-batched-precheck/59/gain-1",
+              "bbh-geometric_shapes": "retain-start",
+              "bbh-hyperbaton": "gepa-sequential-precheck/56/gain-1",
+              "bbh-logical_deduction_five_objects": "retain-start",
+              "bbh-navigate": "gepa-sequential-precheck/20/gain-2-threshold-precheck",
+              "bbh-penguins_in_a_table": "retain-start",
+              "bbh-sports_understanding": "gepa-sequential-precheck/24/gain-1"
+            }
+          },
+          "holdoutPassDifference": -74
+        },
+        "cap-19/gain-2": {
+          "bySubject": {
+            "bbh-disambiguation_qa": {
+              "cpo": {
+                "holdoutPasses": 908,
+                "paidLookups": 850
+              },
+              "gepa": {
+                "holdoutPasses": 988,
+                "paidLookups": 2024
+              },
+              "gepaSetting": "gepa-sequential-precheck/51/gain-1"
+            },
+            "bbh-formal_fallacies": {
+              "cpo": {
+                "holdoutPasses": 468,
+                "paidLookups": 1065
+              },
+              "gepa": {
+                "holdoutPasses": 475,
+                "paidLookups": 2201
+              },
+              "gepaSetting": "gepa-batched-precheck/59/gain-1"
+            },
+            "bbh-geometric_shapes": {
+              "cpo": {
+                "holdoutPasses": 306,
+                "paidLookups": 1270
+              },
+              "gepa": {
+                "holdoutPasses": 306,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-hyperbaton": {
+              "cpo": {
+                "holdoutPasses": 967,
+                "paidLookups": 765
+              },
+              "gepa": {
+                "holdoutPasses": 1003,
+                "paidLookups": 2249
+              },
+              "gepaSetting": "gepa-sequential-precheck/44/gain-1"
+            },
+            "bbh-logical_deduction_five_objects": {
+              "cpo": {
+                "holdoutPasses": 581,
+                "paidLookups": 1216
+              },
+              "gepa": {
+                "holdoutPasses": 581,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-navigate": {
+              "cpo": {
+                "holdoutPasses": 508,
+                "paidLookups": 1048
+              },
+              "gepa": {
+                "holdoutPasses": 500,
+                "paidLookups": 935
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-2-threshold-precheck"
+            },
+            "bbh-penguins_in_a_table": {
+              "cpo": {
+                "holdoutPasses": 456,
+                "paidLookups": 1213
+              },
+              "gepa": {
+                "holdoutPasses": 457,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "bbh-sports_understanding": {
+              "cpo": {
+                "holdoutPasses": 596,
+                "paidLookups": 1012
+              },
+              "gepa": {
+                "holdoutPasses": 597,
+                "paidLookups": 1019
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-1"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 4790,
+            "paidLookups": 8439
+          },
+          "gepa": {
+            "holdoutPasses": 4907,
+            "paidLookups": 8428,
+            "settingsBySubject": {
+              "bbh-disambiguation_qa": "gepa-sequential-precheck/51/gain-1",
+              "bbh-formal_fallacies": "gepa-batched-precheck/59/gain-1",
+              "bbh-geometric_shapes": "retain-start",
+              "bbh-hyperbaton": "gepa-sequential-precheck/44/gain-1",
+              "bbh-logical_deduction_five_objects": "retain-start",
+              "bbh-navigate": "gepa-sequential-precheck/20/gain-2-threshold-precheck",
+              "bbh-penguins_in_a_table": "retain-start",
+              "bbh-sports_understanding": "gepa-sequential-precheck/20/gain-1"
+            }
+          },
+          "holdoutPassDifference": -117
+        }
+      },
+      "nativeSettings": 1050,
+      "subjectTotalsSha256": "1872410d3c9e8bb6d2f6bd74c54082021f896440890933aa122b14988579424a",
+      "wrappedPaths": {
+        "gain-1": 8668,
+        "gain-2": 8668,
+        "gain-2-threshold-precheck": 7762
+      }
+    },
+    "LMentry": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "bySubject": {
+            "lmentry-all_words_from_category": {
+              "cpo": {
+                "holdoutPasses": 1242,
+                "paidLookups": 851
+              },
+              "gepa": {
+                "holdoutPasses": 1199,
+                "paidLookups": 991
+              },
+              "gepaSetting": "gepa-batched-precheck/34/gain-2-threshold-precheck"
+            },
+            "lmentry-any_words_from_category": {
+              "cpo": {
+                "holdoutPasses": 979,
+                "paidLookups": 1072
+              },
+              "gepa": {
+                "holdoutPasses": 1004,
+                "paidLookups": 1351
+              },
+              "gepaSetting": "gepa-sequential-precheck/24/gain-1"
+            },
+            "lmentry-first_alphabetically": {
+              "cpo": {
+                "holdoutPasses": 762,
+                "paidLookups": 1153
+              },
+              "gepa": {
+                "holdoutPasses": 827,
+                "paidLookups": 1883
+              },
+              "gepaSetting": "gepa-sequential-precheck/32/gain-1"
+            },
+            "lmentry-homophones": {
+              "cpo": {
+                "holdoutPasses": 363,
+                "paidLookups": 1181
+              },
+              "gepa": {
+                "holdoutPasses": 221,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "lmentry-less_letters": {
+              "cpo": {
+                "holdoutPasses": 738,
+                "paidLookups": 1054
+              },
+              "gepa": {
+                "holdoutPasses": 818,
+                "paidLookups": 2066
+              },
+              "gepaSetting": "gepa-sequential-precheck/36/gain-1"
+            },
+            "lmentry-more_letters": {
+              "cpo": {
+                "holdoutPasses": 832,
+                "paidLookups": 1040
+              },
+              "gepa": {
+                "holdoutPasses": 886,
+                "paidLookups": 2485
+              },
+              "gepaSetting": "gepa-batched-precheck/51/gain-1"
+            },
+            "lmentry-rhyming_word": {
+              "cpo": {
+                "holdoutPasses": 418,
+                "paidLookups": 1199
+              },
+              "gepa": {
+                "holdoutPasses": 232,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "lmentry-word_before": {
+              "cpo": {
+                "holdoutPasses": 316,
+                "paidLookups": 1231
+              },
+              "gepa": {
+                "holdoutPasses": 237,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 5650,
+            "paidLookups": 8781
+          },
+          "gepa": {
+            "holdoutPasses": 5424,
+            "paidLookups": 8776,
+            "settingsBySubject": {
+              "lmentry-all_words_from_category": "gepa-batched-precheck/34/gain-2-threshold-precheck",
+              "lmentry-any_words_from_category": "gepa-sequential-precheck/24/gain-1",
+              "lmentry-first_alphabetically": "gepa-sequential-precheck/32/gain-1",
+              "lmentry-homophones": "retain-start",
+              "lmentry-less_letters": "gepa-sequential-precheck/36/gain-1",
+              "lmentry-more_letters": "gepa-batched-precheck/51/gain-1",
+              "lmentry-rhyming_word": "retain-start",
+              "lmentry-word_before": "retain-start"
+            }
+          },
+          "holdoutPassDifference": 226
+        },
+        "cap-19/gain-2": {
+          "bySubject": {
+            "lmentry-all_words_from_category": {
+              "cpo": {
+                "holdoutPasses": 1202,
+                "paidLookups": 662
+              },
+              "gepa": {
+                "holdoutPasses": 1199,
+                "paidLookups": 991
+              },
+              "gepaSetting": "gepa-batched-precheck/34/gain-2-threshold-precheck"
+            },
+            "lmentry-any_words_from_category": {
+              "cpo": {
+                "holdoutPasses": 945,
+                "paidLookups": 898
+              },
+              "gepa": {
+                "holdoutPasses": 1004,
+                "paidLookups": 1351
+              },
+              "gepaSetting": "gepa-sequential-precheck/24/gain-1"
+            },
+            "lmentry-first_alphabetically": {
+              "cpo": {
+                "holdoutPasses": 671,
+                "paidLookups": 1154
+              },
+              "gepa": {
+                "holdoutPasses": 827,
+                "paidLookups": 1883
+              },
+              "gepaSetting": "gepa-sequential-precheck/32/gain-1"
+            },
+            "lmentry-homophones": {
+              "cpo": {
+                "holdoutPasses": 284,
+                "paidLookups": 1201
+              },
+              "gepa": {
+                "holdoutPasses": 221,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "lmentry-less_letters": {
+              "cpo": {
+                "holdoutPasses": 690,
+                "paidLookups": 1003
+              },
+              "gepa": {
+                "holdoutPasses": 782,
+                "paidLookups": 1639
+              },
+              "gepaSetting": "gepa-sequential-precheck/28/gain-1"
+            },
+            "lmentry-more_letters": {
+              "cpo": {
+                "holdoutPasses": 796,
+                "paidLookups": 995
+              },
+              "gepa": {
+                "holdoutPasses": 886,
+                "paidLookups": 2485
+              },
+              "gepaSetting": "gepa-batched-precheck/51/gain-1"
+            },
+            "lmentry-rhyming_word": {
+              "cpo": {
+                "holdoutPasses": 333,
+                "paidLookups": 1227
+              },
+              "gepa": {
+                "holdoutPasses": 232,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "lmentry-word_before": {
+              "cpo": {
+                "holdoutPasses": 271,
+                "paidLookups": 1246
+              },
+              "gepa": {
+                "holdoutPasses": 237,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 5192,
+            "paidLookups": 8386
+          },
+          "gepa": {
+            "holdoutPasses": 5388,
+            "paidLookups": 8349,
+            "settingsBySubject": {
+              "lmentry-all_words_from_category": "gepa-batched-precheck/34/gain-2-threshold-precheck",
+              "lmentry-any_words_from_category": "gepa-sequential-precheck/24/gain-1",
+              "lmentry-first_alphabetically": "gepa-sequential-precheck/32/gain-1",
+              "lmentry-homophones": "retain-start",
+              "lmentry-less_letters": "gepa-sequential-precheck/28/gain-1",
+              "lmentry-more_letters": "gepa-batched-precheck/51/gain-1",
+              "lmentry-rhyming_word": "retain-start",
+              "lmentry-word_before": "retain-start"
+            }
+          },
+          "holdoutPassDifference": -196
+        }
+      },
+      "nativeSettings": 1050,
+      "subjectTotalsSha256": "cba25489be7bc0533ea63361a3ba3b9f734eca55e5bf0864448343fa1ec69149",
+      "wrappedPaths": {
+        "gain-1": 8792,
+        "gain-2": 8792,
+        "gain-2-threshold-precheck": 8122
+      }
+    },
+    "LMentry/new-task": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "bySubject": {
+            "lmentry-ends_with_word": {
+              "cpo": {
+                "holdoutPasses": 263,
+                "paidLookups": 1170
+              },
+              "gepa": {
+                "holdoutPasses": 233,
+                "paidLookups": 1000
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-1"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 263,
+            "paidLookups": 1170
+          },
+          "gepa": {
+            "holdoutPasses": 233,
+            "paidLookups": 1000,
+            "settingsBySubject": {
+              "lmentry-ends_with_word": "gepa-sequential-precheck/20/gain-1"
+            }
+          },
+          "holdoutPassDifference": 30
+        },
+        "cap-19/gain-2": {
+          "bySubject": {
+            "lmentry-ends_with_word": {
+              "cpo": {
+                "holdoutPasses": 256,
+                "paidLookups": 1186
+              },
+              "gepa": {
+                "holdoutPasses": 233,
+                "paidLookups": 1000
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-1"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 256,
+            "paidLookups": 1186
+          },
+          "gepa": {
+            "holdoutPasses": 233,
+            "paidLookups": 1000,
+            "settingsBySubject": {
+              "lmentry-ends_with_word": "gepa-sequential-precheck/20/gain-1"
+            }
+          },
+          "holdoutPassDifference": 23
+        }
+      },
+      "nativeSettings": 1050,
+      "subjectTotalsSha256": "9e811b2e157363f5e7217b87539ab0f59d2c20912034e510d81f20a46eb5cc2f",
+      "wrappedPaths": {
+        "gain-1": 1120,
+        "gain-2": 1120,
+        "gain-2-threshold-precheck": 1120
+      }
+    },
+    "LMentry/seen-task": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "bySubject": {
+            "lmentry-all_words_from_category": {
+              "cpo": {
+                "holdoutPasses": 1219,
+                "paidLookups": 885
+              },
+              "gepa": {
+                "holdoutPasses": 1181,
+                "paidLookups": 1087
+              },
+              "gepaSetting": "gepa-sequential-precheck/32/gain-2-threshold-precheck"
+            },
+            "lmentry-any_words_from_category": {
+              "cpo": {
+                "holdoutPasses": 1096,
+                "paidLookups": 1096
+              },
+              "gepa": {
+                "holdoutPasses": 938,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "lmentry-first_alphabetically": {
+              "cpo": {
+                "holdoutPasses": 848,
+                "paidLookups": 1127
+              },
+              "gepa": {
+                "holdoutPasses": 835,
+                "paidLookups": 1133
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-1"
+            },
+            "lmentry-less_letters": {
+              "cpo": {
+                "holdoutPasses": 737,
+                "paidLookups": 1010
+              },
+              "gepa": {
+                "holdoutPasses": 762,
+                "paidLookups": 2111
+              },
+              "gepaSetting": "gepa-batched-precheck/46/gain-1"
+            },
+            "lmentry-more_letters": {
+              "cpo": {
+                "holdoutPasses": 909,
+                "paidLookups": 977
+              },
+              "gepa": {
+                "holdoutPasses": 933,
+                "paidLookups": 1764
+              },
+              "gepaSetting": "gepa-sequential-precheck/47/gain-2-threshold-precheck"
+            },
+            "lmentry-rhyming_word": {
+              "cpo": {
+                "holdoutPasses": 498,
+                "paidLookups": 1079
+              },
+              "gepa": {
+                "holdoutPasses": 468,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 5307,
+            "paidLookups": 6174
+          },
+          "gepa": {
+            "holdoutPasses": 5117,
+            "paidLookups": 6095,
+            "settingsBySubject": {
+              "lmentry-all_words_from_category": "gepa-sequential-precheck/32/gain-2-threshold-precheck",
+              "lmentry-any_words_from_category": "retain-start",
+              "lmentry-first_alphabetically": "gepa-sequential-precheck/20/gain-1",
+              "lmentry-less_letters": "gepa-batched-precheck/46/gain-1",
+              "lmentry-more_letters": "gepa-sequential-precheck/47/gain-2-threshold-precheck",
+              "lmentry-rhyming_word": "retain-start"
+            }
+          },
+          "holdoutPassDifference": 190
+        },
+        "cap-19/gain-2": {
+          "bySubject": {
+            "lmentry-all_words_from_category": {
+              "cpo": {
+                "holdoutPasses": 1168,
+                "paidLookups": 656
+              },
+              "gepa": {
+                "holdoutPasses": 1154,
+                "paidLookups": 943
+              },
+              "gepaSetting": "gepa-batched-precheck/34/gain-2-threshold-precheck"
+            },
+            "lmentry-any_words_from_category": {
+              "cpo": {
+                "holdoutPasses": 1028,
+                "paidLookups": 918
+              },
+              "gepa": {
+                "holdoutPasses": 938,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "lmentry-first_alphabetically": {
+              "cpo": {
+                "holdoutPasses": 784,
+                "paidLookups": 1084
+              },
+              "gepa": {
+                "holdoutPasses": 888,
+                "paidLookups": 1544
+              },
+              "gepaSetting": "gepa-batched-precheck/34/gain-1"
+            },
+            "lmentry-less_letters": {
+              "cpo": {
+                "holdoutPasses": 657,
+                "paidLookups": 885
+              },
+              "gepa": {
+                "holdoutPasses": 655,
+                "paidLookups": 1267
+              },
+              "gepaSetting": "gepa-sequential-precheck/24/gain-1"
+            },
+            "lmentry-more_letters": {
+              "cpo": {
+                "holdoutPasses": 850,
+                "paidLookups": 786
+              },
+              "gepa": {
+                "holdoutPasses": 915,
+                "paidLookups": 1642
+              },
+              "gepaSetting": "gepa-sequential-precheck/43/gain-2-threshold-precheck"
+            },
+            "lmentry-rhyming_word": {
+              "cpo": {
+                "holdoutPasses": 476,
+                "paidLookups": 1073
+              },
+              "gepa": {
+                "holdoutPasses": 468,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 4963,
+            "paidLookups": 5402
+          },
+          "gepa": {
+            "holdoutPasses": 5018,
+            "paidLookups": 5396,
+            "settingsBySubject": {
+              "lmentry-all_words_from_category": "gepa-batched-precheck/34/gain-2-threshold-precheck",
+              "lmentry-any_words_from_category": "retain-start",
+              "lmentry-first_alphabetically": "gepa-batched-precheck/34/gain-1",
+              "lmentry-less_letters": "gepa-sequential-precheck/24/gain-1",
+              "lmentry-more_letters": "gepa-sequential-precheck/43/gain-2-threshold-precheck",
+              "lmentry-rhyming_word": "retain-start"
+            }
+          },
+          "holdoutPassDifference": -55
+        }
+      },
+      "nativeSettings": 1050,
+      "subjectTotalsSha256": "b91f3eb6cbb6fae49d7a4652c12b1296100c47a99ec090ba6db31f6a48144ea2",
+      "wrappedPaths": {
+        "gain-1": 6090,
+        "gain-2": 6090,
+        "gain-2-threshold-precheck": 5176
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "bySubject": {
+            "anatomy": {
+              "cpo": {
+                "holdoutPasses": 1770,
+                "paidLookups": 976
+              },
+              "gepa": {
+                "holdoutPasses": 1772,
+                "paidLookups": 1003
+              },
+              "gepaSetting": "gepa-sequential-precheck/32/gain-2-threshold-precheck"
+            },
+            "clinical_knowledge": {
+              "cpo": {
+                "holdoutPasses": 3318,
+                "paidLookups": 863
+              },
+              "gepa": {
+                "holdoutPasses": 3317,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "elementary_mathematics": {
+              "cpo": {
+                "holdoutPasses": 3228,
+                "paidLookups": 1144
+              },
+              "gepa": {
+                "holdoutPasses": 3218,
+                "paidLookups": 2290
+              },
+              "gepaSetting": "gepa-batched-precheck/100/gain-1"
+            },
+            "high_school_biology": {
+              "cpo": {
+                "holdoutPasses": 4604,
+                "paidLookups": 754
+              },
+              "gepa": {
+                "holdoutPasses": 4603,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "high_school_geography": {
+              "cpo": {
+                "holdoutPasses": 2928,
+                "paidLookups": 871
+              },
+              "gepa": {
+                "holdoutPasses": 2930,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "high_school_government_and_politics": {
+              "cpo": {
+                "holdoutPasses": 3041,
+                "paidLookups": 624
+              },
+              "gepa": {
+                "holdoutPasses": 3044,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "high_school_macroeconomics": {
+              "cpo": {
+                "holdoutPasses": 5365,
+                "paidLookups": 927
+              },
+              "gepa": {
+                "holdoutPasses": 5372,
+                "paidLookups": 908
+              },
+              "gepaSetting": "gepa-sequential-precheck/38/gain-2-threshold-precheck"
+            },
+            "high_school_microeconomics": {
+              "cpo": {
+                "holdoutPasses": 2902,
+                "paidLookups": 970
+              },
+              "gepa": {
+                "holdoutPasses": 2900,
+                "paidLookups": 1588
+              },
+              "gepaSetting": "gepa-batched-precheck/40/gain-1"
+            },
+            "high_school_statistics": {
+              "cpo": {
+                "holdoutPasses": 1802,
+                "paidLookups": 1105
+              },
+              "gepa": {
+                "holdoutPasses": 1812,
+                "paidLookups": 1430
+              },
+              "gepaSetting": "gepa-batched-precheck/40/gain-2-threshold-precheck"
+            },
+            "moral_disputes": {
+              "cpo": {
+                "holdoutPasses": 4367,
+                "paidLookups": 858
+              },
+              "gepa": {
+                "holdoutPasses": 4373,
+                "paidLookups": 1299
+              },
+              "gepaSetting": "gepa-batched-precheck/44/gain-1"
+            },
+            "moral_scenarios": {
+              "cpo": {
+                "holdoutPasses": 5795,
+                "paidLookups": 1186
+              },
+              "gepa": {
+                "holdoutPasses": 5786,
+                "paidLookups": 2111
+              },
+              "gepaSetting": "gepa-batched-precheck/46/gain-1"
+            },
+            "professional_medicine": {
+              "cpo": {
+                "holdoutPasses": 3192,
+                "paidLookups": 786
+              },
+              "gepa": {
+                "holdoutPasses": 3196,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "professional_psychology": {
+              "cpo": {
+                "holdoutPasses": 8556,
+                "paidLookups": 841
+              },
+              "gepa": {
+                "holdoutPasses": 8567,
+                "paidLookups": 949
+              },
+              "gepaSetting": "gepa-sequential-precheck/24/gain-1"
+            },
+            "sociology": {
+              "cpo": {
+                "holdoutPasses": 3458,
+                "paidLookups": 552
+              },
+              "gepa": {
+                "holdoutPasses": 3458,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "us_foreign_policy": {
+              "cpo": {
+                "holdoutPasses": 1768,
+                "paidLookups": 476
+              },
+              "gepa": {
+                "holdoutPasses": 1768,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 56094,
+            "paidLookups": 12933
+          },
+          "gepa": {
+            "holdoutPasses": 56116,
+            "paidLookups": 11578,
+            "settingsBySubject": {
+              "anatomy": "gepa-sequential-precheck/32/gain-2-threshold-precheck",
+              "clinical_knowledge": "retain-start",
+              "elementary_mathematics": "gepa-batched-precheck/100/gain-1",
+              "high_school_biology": "retain-start",
+              "high_school_geography": "retain-start",
+              "high_school_government_and_politics": "retain-start",
+              "high_school_macroeconomics": "gepa-sequential-precheck/38/gain-2-threshold-precheck",
+              "high_school_microeconomics": "gepa-batched-precheck/40/gain-1",
+              "high_school_statistics": "gepa-batched-precheck/40/gain-2-threshold-precheck",
+              "moral_disputes": "gepa-batched-precheck/44/gain-1",
+              "moral_scenarios": "gepa-batched-precheck/46/gain-1",
+              "professional_medicine": "retain-start",
+              "professional_psychology": "gepa-sequential-precheck/24/gain-1",
+              "sociology": "retain-start",
+              "us_foreign_policy": "retain-start"
+            }
+          },
+          "holdoutPassDifference": -22
+        },
+        "cap-19/gain-2": {
+          "bySubject": {
+            "anatomy": {
+              "cpo": {
+                "holdoutPasses": 1770,
+                "paidLookups": 664
+              },
+              "gepa": {
+                "holdoutPasses": 1772,
+                "paidLookups": 1003
+              },
+              "gepaSetting": "gepa-sequential-precheck/32/gain-2-threshold-precheck"
+            },
+            "clinical_knowledge": {
+              "cpo": {
+                "holdoutPasses": 3317,
+                "paidLookups": 545
+              },
+              "gepa": {
+                "holdoutPasses": 3317,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "elementary_mathematics": {
+              "cpo": {
+                "holdoutPasses": 3214,
+                "paidLookups": 1041
+              },
+              "gepa": {
+                "holdoutPasses": 3216,
+                "paidLookups": 1248
+              },
+              "gepaSetting": "gepa-sequential-precheck/24/gain-1"
+            },
+            "high_school_biology": {
+              "cpo": {
+                "holdoutPasses": 4603,
+                "paidLookups": 462
+              },
+              "gepa": {
+                "holdoutPasses": 4603,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "high_school_geography": {
+              "cpo": {
+                "holdoutPasses": 2930,
+                "paidLookups": 527
+              },
+              "gepa": {
+                "holdoutPasses": 2930,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "high_school_government_and_politics": {
+              "cpo": {
+                "holdoutPasses": 3044,
+                "paidLookups": 345
+              },
+              "gepa": {
+                "holdoutPasses": 3044,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "high_school_macroeconomics": {
+              "cpo": {
+                "holdoutPasses": 5371,
+                "paidLookups": 568
+              },
+              "gepa": {
+                "holdoutPasses": 5372,
+                "paidLookups": 908
+              },
+              "gepaSetting": "gepa-sequential-precheck/38/gain-2-threshold-precheck"
+            },
+            "high_school_microeconomics": {
+              "cpo": {
+                "holdoutPasses": 2898,
+                "paidLookups": 741
+              },
+              "gepa": {
+                "holdoutPasses": 2898,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "high_school_statistics": {
+              "cpo": {
+                "holdoutPasses": 1810,
+                "paidLookups": 927
+              },
+              "gepa": {
+                "holdoutPasses": 1812,
+                "paidLookups": 1430
+              },
+              "gepaSetting": "gepa-batched-precheck/40/gain-2-threshold-precheck"
+            },
+            "moral_disputes": {
+              "cpo": {
+                "holdoutPasses": 4363,
+                "paidLookups": 560
+              },
+              "gepa": {
+                "holdoutPasses": 4373,
+                "paidLookups": 1299
+              },
+              "gepaSetting": "gepa-batched-precheck/44/gain-1"
+            },
+            "moral_scenarios": {
+              "cpo": {
+                "holdoutPasses": 5795,
+                "paidLookups": 1106
+              },
+              "gepa": {
+                "holdoutPasses": 5786,
+                "paidLookups": 2111
+              },
+              "gepaSetting": "gepa-batched-precheck/46/gain-1"
+            },
+            "professional_medicine": {
+              "cpo": {
+                "holdoutPasses": 3196,
+                "paidLookups": 516
+              },
+              "gepa": {
+                "holdoutPasses": 3196,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "professional_psychology": {
+              "cpo": {
+                "holdoutPasses": 8557,
+                "paidLookups": 451
+              },
+              "gepa": {
+                "holdoutPasses": 8567,
+                "paidLookups": 949
+              },
+              "gepaSetting": "gepa-sequential-precheck/24/gain-1"
+            },
+            "sociology": {
+              "cpo": {
+                "holdoutPasses": 3458,
+                "paidLookups": 342
+              },
+              "gepa": {
+                "holdoutPasses": 3458,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "us_foreign_policy": {
+              "cpo": {
+                "holdoutPasses": 1768,
+                "paidLookups": 222
+              },
+              "gepa": {
+                "holdoutPasses": 1768,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 56094,
+            "paidLookups": 9017
+          },
+          "gepa": {
+            "holdoutPasses": 56112,
+            "paidLookups": 8948,
+            "settingsBySubject": {
+              "anatomy": "gepa-sequential-precheck/32/gain-2-threshold-precheck",
+              "clinical_knowledge": "retain-start",
+              "elementary_mathematics": "gepa-sequential-precheck/24/gain-1",
+              "high_school_biology": "retain-start",
+              "high_school_geography": "retain-start",
+              "high_school_government_and_politics": "retain-start",
+              "high_school_macroeconomics": "gepa-sequential-precheck/38/gain-2-threshold-precheck",
+              "high_school_microeconomics": "retain-start",
+              "high_school_statistics": "gepa-batched-precheck/40/gain-2-threshold-precheck",
+              "moral_disputes": "gepa-batched-precheck/44/gain-1",
+              "moral_scenarios": "gepa-batched-precheck/46/gain-1",
+              "professional_medicine": "retain-start",
+              "professional_psychology": "gepa-sequential-precheck/24/gain-1",
+              "sociology": "retain-start",
+              "us_foreign_policy": "retain-start"
+            }
+          },
+          "holdoutPassDifference": -18
+        }
+      },
+      "nativeSettings": 1050,
+      "subjectTotalsSha256": "96ae6a5aa5334e9710a425333ae48df5afc8f8c8468bfe4ca17ec2919469918a",
+      "wrappedPaths": {
+        "gain-1": 12308,
+        "gain-2": 12308,
+        "gain-2-threshold-precheck": 8796
+      }
+    },
+    "earlier-screen-cohort": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "bySubject": {
+            "abstract_algebra": {
+              "cpo": {
+                "holdoutPasses": 593,
+                "paidLookups": 1207
+              },
+              "gepa": {
+                "holdoutPasses": 594,
+                "paidLookups": 1538
+              },
+              "gepaSetting": "gepa-sequential-precheck/28/gain-1"
+            },
+            "business_ethics": {
+              "cpo": {
+                "holdoutPasses": 919,
+                "paidLookups": 1081
+              },
+              "gepa": {
+                "holdoutPasses": 922,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "college_mathematics": {
+              "cpo": {
+                "holdoutPasses": 500,
+                "paidLookups": 1204
+              },
+              "gepa": {
+                "holdoutPasses": 511,
+                "paidLookups": 1265
+              },
+              "gepaSetting": "gepa-sequential-precheck/24/gain-2-threshold-precheck"
+            },
+            "college_physics": {
+              "cpo": {
+                "holdoutPasses": 730,
+                "paidLookups": 1273
+              },
+              "gepa": {
+                "holdoutPasses": 731,
+                "paidLookups": 2243
+              },
+              "gepaSetting": "gepa-batched-precheck/46/gain-1"
+            },
+            "computer_security": {
+              "cpo": {
+                "holdoutPasses": 1442,
+                "paidLookups": 764
+              },
+              "gepa": {
+                "holdoutPasses": 1443,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "conceptual_physics": {
+              "cpo": {
+                "holdoutPasses": 2359,
+                "paidLookups": 1112
+              },
+              "gepa": {
+                "holdoutPasses": 2356,
+                "paidLookups": 1002
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-1"
+            },
+            "electrical_engineering": {
+              "cpo": {
+                "holdoutPasses": 1456,
+                "paidLookups": 891
+              },
+              "gepa": {
+                "holdoutPasses": 1456,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "high_school_european_history": {
+              "cpo": {
+                "holdoutPasses": 2222,
+                "paidLookups": 874
+              },
+              "gepa": {
+                "holdoutPasses": 2223,
+                "paidLookups": 1311
+              },
+              "gepaSetting": "gepa-sequential-precheck/32/gain-1"
+            },
+            "high_school_psychology": {
+              "cpo": {
+                "holdoutPasses": 7952,
+                "paidLookups": 658
+              },
+              "gepa": {
+                "holdoutPasses": 7957,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "human_aging": {
+              "cpo": {
+                "holdoutPasses": 2503,
+                "paidLookups": 1002
+              },
+              "gepa": {
+                "holdoutPasses": 2500,
+                "paidLookups": 1870
+              },
+              "gepaSetting": "gepa-batched-precheck/46/gain-1"
+            },
+            "international_law": {
+              "cpo": {
+                "holdoutPasses": 1697,
+                "paidLookups": 841
+              },
+              "gepa": {
+                "holdoutPasses": 1706,
+                "paidLookups": 1619
+              },
+              "gepaSetting": "gepa-batched-precheck/51/gain-1"
+            },
+            "jurisprudence": {
+              "cpo": {
+                "holdoutPasses": 1583,
+                "paidLookups": 915
+              },
+              "gepa": {
+                "holdoutPasses": 1581,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "management": {
+              "cpo": {
+                "holdoutPasses": 1285,
+                "paidLookups": 867
+              },
+              "gepa": {
+                "holdoutPasses": 1295,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "public_relations": {
+              "cpo": {
+                "holdoutPasses": 1378,
+                "paidLookups": 1050
+              },
+              "gepa": {
+                "holdoutPasses": 1379,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 26619,
+            "paidLookups": 13739
+          },
+          "gepa": {
+            "holdoutPasses": 26654,
+            "paidLookups": 10848,
+            "settingsBySubject": {
+              "abstract_algebra": "gepa-sequential-precheck/28/gain-1",
+              "business_ethics": "retain-start",
+              "college_mathematics": "gepa-sequential-precheck/24/gain-2-threshold-precheck",
+              "college_physics": "gepa-batched-precheck/46/gain-1",
+              "computer_security": "retain-start",
+              "conceptual_physics": "gepa-sequential-precheck/20/gain-1",
+              "electrical_engineering": "retain-start",
+              "high_school_european_history": "gepa-sequential-precheck/32/gain-1",
+              "high_school_psychology": "retain-start",
+              "human_aging": "gepa-batched-precheck/46/gain-1",
+              "international_law": "gepa-batched-precheck/51/gain-1",
+              "jurisprudence": "retain-start",
+              "management": "retain-start",
+              "public_relations": "retain-start"
+            }
+          },
+          "holdoutPassDifference": -35
+        },
+        "cap-19/gain-2": {
+          "bySubject": {
+            "abstract_algebra": {
+              "cpo": {
+                "holdoutPasses": 590,
+                "paidLookups": 1243
+              },
+              "gepa": {
+                "holdoutPasses": 594,
+                "paidLookups": 1538
+              },
+              "gepaSetting": "gepa-sequential-precheck/28/gain-1"
+            },
+            "business_ethics": {
+              "cpo": {
+                "holdoutPasses": 922,
+                "paidLookups": 759
+              },
+              "gepa": {
+                "holdoutPasses": 922,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "college_mathematics": {
+              "cpo": {
+                "holdoutPasses": 509,
+                "paidLookups": 1126
+              },
+              "gepa": {
+                "holdoutPasses": 511,
+                "paidLookups": 1265
+              },
+              "gepaSetting": "gepa-sequential-precheck/24/gain-2-threshold-precheck"
+            },
+            "college_physics": {
+              "cpo": {
+                "holdoutPasses": 728,
+                "paidLookups": 1073
+              },
+              "gepa": {
+                "holdoutPasses": 731,
+                "paidLookups": 2243
+              },
+              "gepaSetting": "gepa-batched-precheck/46/gain-1"
+            },
+            "computer_security": {
+              "cpo": {
+                "holdoutPasses": 1443,
+                "paidLookups": 411
+              },
+              "gepa": {
+                "holdoutPasses": 1443,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "conceptual_physics": {
+              "cpo": {
+                "holdoutPasses": 2354,
+                "paidLookups": 920
+              },
+              "gepa": {
+                "holdoutPasses": 2356,
+                "paidLookups": 1002
+              },
+              "gepaSetting": "gepa-sequential-precheck/20/gain-1"
+            },
+            "electrical_engineering": {
+              "cpo": {
+                "holdoutPasses": 1457,
+                "paidLookups": 549
+              },
+              "gepa": {
+                "holdoutPasses": 1456,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "high_school_european_history": {
+              "cpo": {
+                "holdoutPasses": 2215,
+                "paidLookups": 564
+              },
+              "gepa": {
+                "holdoutPasses": 2223,
+                "paidLookups": 1311
+              },
+              "gepaSetting": "gepa-sequential-precheck/32/gain-1"
+            },
+            "high_school_psychology": {
+              "cpo": {
+                "holdoutPasses": 7957,
+                "paidLookups": 264
+              },
+              "gepa": {
+                "holdoutPasses": 7957,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "human_aging": {
+              "cpo": {
+                "holdoutPasses": 2499,
+                "paidLookups": 618
+              },
+              "gepa": {
+                "holdoutPasses": 2499,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "international_law": {
+              "cpo": {
+                "holdoutPasses": 1702,
+                "paidLookups": 478
+              },
+              "gepa": {
+                "holdoutPasses": 1706,
+                "paidLookups": 1619
+              },
+              "gepaSetting": "gepa-batched-precheck/51/gain-1"
+            },
+            "jurisprudence": {
+              "cpo": {
+                "holdoutPasses": 1581,
+                "paidLookups": 510
+              },
+              "gepa": {
+                "holdoutPasses": 1581,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "management": {
+              "cpo": {
+                "holdoutPasses": 1295,
+                "paidLookups": 617
+              },
+              "gepa": {
+                "holdoutPasses": 1295,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            },
+            "public_relations": {
+              "cpo": {
+                "holdoutPasses": 1378,
+                "paidLookups": 699
+              },
+              "gepa": {
+                "holdoutPasses": 1379,
+                "paidLookups": 0
+              },
+              "gepaSetting": "retain-start"
+            }
+          },
+          "cpo": {
+            "holdoutPasses": 26630,
+            "paidLookups": 9831
+          },
+          "gepa": {
+            "holdoutPasses": 26653,
+            "paidLookups": 8978,
+            "settingsBySubject": {
+              "abstract_algebra": "gepa-sequential-precheck/28/gain-1",
+              "business_ethics": "retain-start",
+              "college_mathematics": "gepa-sequential-precheck/24/gain-2-threshold-precheck",
+              "college_physics": "gepa-batched-precheck/46/gain-1",
+              "computer_security": "retain-start",
+              "conceptual_physics": "gepa-sequential-precheck/20/gain-1",
+              "electrical_engineering": "retain-start",
+              "high_school_european_history": "gepa-sequential-precheck/32/gain-1",
+              "high_school_psychology": "retain-start",
+              "human_aging": "retain-start",
+              "international_law": "gepa-batched-precheck/51/gain-1",
+              "jurisprudence": "retain-start",
+              "management": "retain-start",
+              "public_relations": "retain-start"
+            }
+          },
+          "holdoutPassDifference": -23
+        }
+      },
+      "nativeSettings": 1050,
+      "subjectTotalsSha256": "aee32d90820aee204f73b457ac28fdca48d6e30ef0afdd0090431523b33ed4f8",
+      "wrappedPaths": {
+        "gain-1": 12748,
+        "gain-2": 12748,
+        "gain-2-threshold-precheck": 9286
+      }
+    }
+  }
+}
