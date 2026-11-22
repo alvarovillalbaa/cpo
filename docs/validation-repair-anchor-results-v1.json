@@ -1,0 +1,3780 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "certifiedReceiptSha256": "2e358d1681804fc3987cae14272e9e6f2ba16c1624b26dfd4f1a1b0a76712241",
+    "challengers": 8,
+    "cohorts": [
+      "BBH",
+      "LMentry",
+      "BBH/seen-task",
+      "LMentry/seen-task",
+      "BBH/new-task",
+      "LMentry/new-task",
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "The primary policy must beat the affordable split-safe GEPA bound or equal its score at lower cost on both MMLU cohorts at one gain. For a paired improvement claim, the case-resampled lower endpoint against that control must be positive.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaValidationWidths": {
+      "split-safe-six": 6,
+      "split-safe-three": 3
+    },
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "04fcbf15154f7dc92c65e3df619572b4c229173379534355924cb9c71f30118e",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "parentResultSha256": {
+      "BBH": "818c79dccdc6c92b9cf8d096a4fece76ed6910765e841d6a6f88db9b0f4b69f3",
+      "BBH/new-task": "7ffd1fb082bde28bf41989de935f2d960429dd43d5062b87c590a7ef09a23462",
+      "BBH/seen-task": "0526f1cefde090232fff4538b230dfc7eab146201e9eed427b47ed4a548ba18e",
+      "LMentry": "f849048d65f5d59e625472b7b92954ebd5e1ab1fc5ff35313b95b0a339992bd1",
+      "LMentry/new-task": "35809d042423f5907887ca915f2a72f8ad9ae425885933f8c30435346f974954",
+      "LMentry/seen-task": "7398fab10d6fd1d47058ff83310ccd48a1d79b6b89099860225a09b21efb48a3",
+      "disjoint-transfer-cohort": "4d03a0543cafe5a6d7c17563e6088b498f62e0397c3f16cd8ffd7224612af2c0",
+      "earlier-screen-cohort": "e36bca05ca53ba6ffae676788f2bc950f09daca370e4ff7df788db49fd12ed10"
+    },
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "policies": {
+      "deep/gain": [
+        "deep",
+        1
+      ],
+      "deep/nonloss": [
+        "deep",
+        0
+      ],
+      "wide/gain": [
+        "wide",
+        1
+      ],
+      "wide/nonloss": [
+        "wide",
+        0
+      ]
+    },
+    "policy": "wide/nonloss",
+    "primary": "four-repair-cut",
+    "primaryCohorts": [
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "protocol": "validation-repair-anchor-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "repairs": {
+      "four-repair-cut": 4,
+      "single-repair": 1
+    },
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "runnerSha256": "a07d8c86b3669c6da0780566faf5ba3cedec80658f4fde23795b695f8384effd",
+    "scope": "Open shared validation on the first paid incumbent miss. Compare the first repair with a common second case among the first four repairs when it can be fully funded. Use the incumbent precheck, original independent qualification and case splits. Audit the recent certified-wide result and directly reproduce the published one-gain split-safe GEPA winners on MMLU. Test fixed alternatives on all eight cohorts.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "shortlistSourceSha256": {
+      "certified_shared_validation.py": "f750685ab1dfe3b86716be661fbfb0d212589241ac7b6da825502348372ec0b4",
+      "certified_shared_validation_cycle.py": "f4716cee84c1853c69258c37a0021db3434bf22737bbc13300b2179cf1c3aabb"
+    },
+    "sourceSha256": {
+      "budgeted_shared_panel_search.py": "75fa87af6359da13c2ebbb0a54ffc7c8eb0f79e2c68930b5dfb57e7e6dacfdea",
+      "gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "shared_validation_split_safe_transfer.py": "e7cf20c0d55f15a6dcd384bce12aae6daca7049776141a74d1da66cc44fade63"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "67cd20e8e72c4b5c5d6d2e6bdc381fa9aa515f648fdbd4337632d8c872b0581f",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "certifiedWideVsPublishedGepa": {},
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 282,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 9676,
+              "upperPasses": 9745
+            },
+            "holdoutPasses": 9840,
+            "nominees": 823,
+            "openSearches": 873,
+            "paidLookups": 18788,
+            "qualificationLookups": 5370,
+            "searchLookups": 13418
+          },
+          "four-repair-cut": {
+            "deployments": 191,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            },
+            "holdoutPasses": 9481,
+            "nominees": 392,
+            "openSearches": 873,
+            "paidLookups": 12007,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -359,
+              "pairedRange95": [
+                -426,
+                -296
+              ]
+            },
+            "qualificationLookups": 3406,
+            "searchLookups": 8601
+          },
+          "single-repair": {
+            "deployments": 183,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            },
+            "holdoutPasses": 9408,
+            "nominees": 392,
+            "openSearches": 873,
+            "paidLookups": 9647,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -432,
+              "pairedRange95": [
+                -504,
+                -361
+              ]
+            },
+            "qualificationLookups": 3450,
+            "searchLookups": 6197
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 94,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            },
+            "holdoutPasses": 9188,
+            "nominees": 724,
+            "openSearches": 769,
+            "paidLookups": 16730,
+            "qualificationLookups": 4836,
+            "searchLookups": 11894
+          },
+          "four-repair-cut": {
+            "deployments": 71,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            },
+            "holdoutPasses": 9016,
+            "nominees": 341,
+            "openSearches": 769,
+            "paidLookups": 11264,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -172,
+              "pairedRange95": [
+                -211,
+                -132
+              ]
+            },
+            "qualificationLookups": 3730,
+            "searchLookups": 7534
+          },
+          "single-repair": {
+            "deployments": 65,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            },
+            "holdoutPasses": 8942,
+            "nominees": 341,
+            "openSearches": 769,
+            "paidLookups": 9177,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -246,
+              "pairedRange95": [
+                -293,
+                -200
+              ]
+            },
+            "qualificationLookups": 3759,
+            "searchLookups": 5418
+          }
+        }
+      },
+      "oneGainNativeBySubject": {},
+      "repairVsCertifiedByDeployment": {
+        "cap-19/gain-1": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": -110,
+              "passDifference": -19,
+              "paths": 24
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -1308,
+              "passDifference": -396,
+              "paths": 113
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -79,
+              "passDifference": 56,
+              "paths": 22
+            },
+            "same-deployment": {
+              "lookupDifference": -5284,
+              "passDifference": 0,
+              "paths": 737
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -379,
+              "passDifference": -61,
+              "paths": 35
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -1472,
+              "passDifference": -429,
+              "paths": 123
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -214,
+              "passDifference": 58,
+              "paths": 24
+            },
+            "same-deployment": {
+              "lookupDifference": -7076,
+              "passDifference": 0,
+              "paths": 714
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": -31,
+              "passDifference": -8,
+              "paths": 7
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -344,
+              "passDifference": -202,
+              "paths": 31
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -28,
+              "passDifference": 38,
+              "paths": 8
+            },
+            "same-deployment": {
+              "lookupDifference": -5063,
+              "passDifference": 0,
+              "paths": 850
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -118,
+              "passDifference": -22,
+              "paths": 10
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -463,
+              "passDifference": -262,
+              "paths": 38
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -76,
+              "passDifference": 38,
+              "paths": 9
+            },
+            "same-deployment": {
+              "lookupDifference": -6896,
+              "passDifference": 0,
+              "paths": 839
+            }
+          }
+        }
+      },
+      "retainedStartPasses": 8425,
+      "traceHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "413ea19daee27ba97c4d6eaba75452cee7c874feb0bb258850b40d81b3e02539",
+            "four-repair-cut": "fead49ded8b942820623af0518dfc33cc8a8396cdd34ceaced980b4434a3872b",
+            "single-repair": "bb8d6bc58aa75bfbcba7706000737cb39c2f1188d64c827d5a293e95fbffbe76"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "c60be75a46a39f7f4e798ee8cdafeab022fb23158f3901ebb924469b8404f3b7",
+            "four-repair-cut": "4d0c7270591625cf915c094a4d67e1e8b1051dae93f9f04c38837f7820655931",
+            "single-repair": "796fa3423f932c00d0bd1464a216f80511d889bbbe4106e2cc5e6ba17cb6cde7"
+          }
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "67e731b0b84b3b4e46fc20705860429ac4ff9af67c581bb66419aeb94b64b42e",
+            "four-repair-cut": "7acc7b15d0befc9be84d212525079c80bb2f57ce4609e1d850fa343350e70aa8",
+            "single-repair": "bd2417b0c79c415068702ffb6716d69ad51433fa5b0b22283379fde2669bff6d"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "4a69ae3d07320a023bc4c3d6b5db6cb632efe25ea4c2e41f75abd63c29431a05",
+            "four-repair-cut": "5aed068f657cb9a6dff3dfc90da5be84fad9bb6924424df309033eaac31bbd1c",
+            "single-repair": "3ab25f8bede707915047036fbe3ccab846deb45496daad7c0d721b832b7ec758"
+          }
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a7dcf6d1faa5239013cbecd0a385b0a9f3af9c136efd6aab9b5e1b20d83c61df",
+            "four-repair-cut": "616b897e3f8a2d8bd91683bf06ae74fe3fb8419a5d1339d1e3624d6c35a6b96f",
+            "single-repair": "09c50d7af0ce432c22e2fc293c8b28b4f6abf774a5b23cf6be7649a606b6e683"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "e4531b8a2fbe2b16537842f2e21d8d06c7048c3ccedd35252fb00014f618c012",
+            "four-repair-cut": "5e90a4f3defb6adc915dca16a1aa1205e8506731e4b01e0159c0c3696a7b809d",
+            "single-repair": "df2b5ec36d8c3dee1748d53ee9d8e3472b128534010fba2c9b134eb994db11da"
+          }
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "d04cdd95b5071c1fcb35cf2a53921a44fd8fdbb5fe6dbecbeab8f3b877498bdc",
+            "four-repair-cut": "d5c14b7daffc36d9acb6e8c006183675670e54abf3cf373b4f12343cc2c83bec",
+            "single-repair": "7a17e39f28a4aee54bfbf2be2d0abec8dd3d132f635599462370d44a4fc3fdf8"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f4a4277dc91b43e274c62ee4bda5dfb1c0beb28a7a720f7f5970c4d8d63b739d",
+            "four-repair-cut": "06c4f680b042e8a831987b06ccb96db4227a7194c349c0446214324637bda751",
+            "single-repair": "3cec4f346bdeec3bab00712b85a69d4f2e8e79c1a7555fee73cfd1b22a64795e"
+          }
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "620eeef8640fd7578ffbcf83e62cc26f54a89f97310eba30fbf2956219c66496",
+            "four-repair-cut": "5e82f5f368428b867b671d5459da998b5d054a83465d7c727e7c19acf7fbf304",
+            "single-repair": "b544e5a0cffd47315793f46a69fc40e930cee8e2e92806f9f15ad239b4a53899"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8c50caf0995bf9eee64d36b730a4450ef90ea4a94f245adf1e0f06beaaa9f25f",
+            "four-repair-cut": "efc7dfbc6661b8a770bd4b2dab44027732910a13cac94c4b89c33d55686a27ed",
+            "single-repair": "d836ee35d19f75e9b18ab8a62ceff9139a0661556d979fe9de8456200bbe7bf1"
+          }
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "ff0947707627eb226c27056a6b464fba6dee96121fed0b2708fecb6e1e543aa5",
+            "four-repair-cut": "257c0217d9d566f6bdefba1879e5d3fb97e1f2696fd5c19b145e6bf20b01a90c",
+            "single-repair": "602786584c2fb8d625a3b0cc25ac0855c98ea171bb6b005bc5dc6952a7605240"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "02750a6842cbef6ffccfcf22fc0470b351e846222973b54bc47bcddef21fdf09",
+            "four-repair-cut": "3fb0182e770eea76a86ab04c054bf5f24e75baceee49154239c613a32ef51857",
+            "single-repair": "27fd58c31748874b025f99d60e1ca69280c91ed43af5ed3a44e016254311a318"
+          }
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "35d2ad0c939698265cd75a1bf4d2ef95da0a6687e14b4d904c4431ea78bd87c8",
+            "four-repair-cut": "f8b0df1f62928f393fe4931e165ce3e247d37237b7ffebe4db0b9b9f31a4ede2",
+            "single-repair": "99296e70f108ca1efb0dc11bfc0280729475fced831305dc1333a7ddc8a55156"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ed1294fd61f6f2f1b35ad4e70a4714c03d71e741db7048fe2a1fa8e56762d06c",
+            "four-repair-cut": "974d92f15f95f04a425b798d2a0b0a82a568383633e3728c6da0e2020df86125",
+            "single-repair": "2d105de94efb1a9931a0f66268e9e482657a2ca15498ae782739ee0392dbf596"
+          }
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f651f4abd49f339a3d9421394e3032b3d9bdcf8d9bcdf9e7c2e409d761039045",
+            "four-repair-cut": "80616c710e6d319804fc987f7a124114ef6048d9b9eb616a2eaa32e5d2b86438",
+            "single-repair": "b8168918a834b84847b8532e0dd43ff49eec9e08f0abd483ae2f0a919fe36788"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "285ae09582ff35a3ae51e7002382a5c89d77a8dcdba81c474ead7daf9884e052",
+            "four-repair-cut": "0145b8cadb6f8cb6535745fa857d4c7d451f5c3efa778ae64a3f597d85de0d48",
+            "single-repair": "ddda50439e9b199bd7ae5273790accefc9462bb342e9cc75e43649dc9f100e32"
+          }
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "39a93fa8145e4b10c42efa48dbf75d45be675c36f80ab1d8c4fbae0e65e980c7",
+            "four-repair-cut": "844217d9f098b38497fd58d3d2e8627a81cd76e6e69675bf00e42ec68ff771fa",
+            "single-repair": "2befd1aebedb6edb656eaf7807d0f65407123269f293eca00a923ba169dc0c7f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "b08e301f51ba084e54d00e1d792fde0bbf14020f4b1e2061252e74d4636c7652",
+            "four-repair-cut": "1b1cca1b3a94a8a79ad7cc550e80276604a3e36f8803ee588fa3ab5422f2cfa2",
+            "single-repair": "6c92cc1e0aba7252cd94fc6afa5f935ebeb036860366d6ac83f176e175e79ad9"
+          }
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "b2e972b3c95de1a545122b5386e145cbe5a43586efb9b61b5e44702e84a04b05",
+            "four-repair-cut": "64881cb63d8a28081759459a661164a56dc85adadcf9633c21844b31e17f7e27",
+            "single-repair": "f63f07ab4d47de2fcad583a640bfe5cbf30e706210009c03d483eb37d78b2180"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "463a4fc6273492d7ec783950abc77e0cfc622945fd95ee5acfeb295004b450f0",
+            "four-repair-cut": "245eeb64df79025006a8464aa73cea4fee777ad9f2aea19086e4f006aac37731",
+            "single-repair": "9803acc072276a22b5c698b1fd07996877e5004c0851058f56f4aeb8def10664"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f09eb7056f3c270d4bdb66e6118dbb3aa401847ed0045a9a02ff78171b7cf5df",
+            "four-repair-cut": "ad43290dc8301e02809f1ab1843d4f5adb4c9643f2638dfbe923378eacc94796",
+            "single-repair": "921b3d9808cdf048c6d1d16186cc45ee2df98f7254bbe89b86cb567308b2bf43"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "4c9987c916c4033f21df921452fb8775591f9ab48fdd2b58e21db63979144d98",
+            "four-repair-cut": "3ddf6415342306b3283e77de25125b97cf4bc30f25cd56f68c19ff474d30666f",
+            "single-repair": "006b0aa8b3462159813be89827cc1effbcc9a80db94838308ec4c499aa58b3ee"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "360161448a3b376613bd3873b049c9b3ed5d7a88030a198aa99e6a0e2473c98c",
+            "four-repair-cut": "617fe922b67fb4fe590178ee8a29b964299f5f28c31931ecf30d31fad175841e",
+            "single-repair": "2e504c3a7335bee36ddbfb6807cf608c72c6e30bac7b2675b7d8931f5e768f82"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "24f91402535f10043b7bdd2e3185bed9ad17e7bb862af7f13aaad48709fee518",
+            "four-repair-cut": "680bc67076eb8c2f36369cd1e3343dac3da4f5169962f583631461af1b97e749",
+            "single-repair": "53a303a99c6480f001cb412f0348973e067ccd9d456c57b5bee01d432e8ec3e9"
+          }
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "5a1c550161699202c0ff42c2c8703e90c98a7245f5a9a93977891db677da2b0d",
+            "four-repair-cut": "105a0c57ff1f0a2ba628b24f1cc3bb5b98aea79862ae0e924553b28b9e43d99b",
+            "single-repair": "b24fa3154babe549f5d875d3c17f4bee28554ea2513fb3a005e88426a40d06d1"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a2e7ab9eabf0469c6ec544566a879458c1181eac39276289a54748b43ca7bf96",
+            "four-repair-cut": "85306424853788c9f746df0950ebcafeca7cedb3d61a82f7afcd5c58d000b050",
+            "single-repair": "5402b96be5ff7fc791ee0cdaf22e0a26e14b1724ce14a538616e65504e0459f3"
+          }
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f22ca74ced7bffcf083ebed27f994b146699d816e2fbf8764a1541828e68130d",
+            "four-repair-cut": "813e5f6d10fb9f63392c40e875633cb23edd20d3e5d1577c2e40a2e425beb2b9",
+            "single-repair": "e981ab5c637c945e22975d70e85334e2c548bd685f1322deaf3d5fd981566304"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ee27994729ee96dd6ce523eb2b91c556510c0bfa8219eddce8ee961a2a165dcd",
+            "four-repair-cut": "05633f08cd4a95ae0a0d567129ff274903583553dee13ca782085f1472109e67",
+            "single-repair": "4b85333960c784bf002f1530305d3946f42f41173e3e53e2162a70d99264d3a6"
+          }
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "c1959d4e4f7214f40ce79ed4f9168d96a45d01bcaa71ce889b793a62bedb4393",
+            "four-repair-cut": "31c99cdd1062d6a696c647982d5bd6f07c034c29e6eef306702b4a41a9a062fe",
+            "single-repair": "997e2a770a9a9045d140fe0a6679122f0b568791fee33e916edb9708ec7759ba"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8756ccbaabf0f593847a3a55ea9320e2b2fc92c42ff45798d2bebc35e2cf1878",
+            "four-repair-cut": "781c22048b96815a3f94e5098219c5914658de8600b440e0eb1b763294e1b0d4",
+            "single-repair": "f4e5412c892f76714d0b60ba537d69d837803b2f89d58113716e0bfe6b263c07"
+          }
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "174dfecb5a70d84ec67374e19ece2bbe8fe0ad00ab8c6d8816bfc14c877d3bbe",
+            "four-repair-cut": "e74a27e8d7ca201fd9964bef73ca108ba94bc5b0aebf6dfee12734a1f68ba3d9",
+            "single-repair": "561d5024746d53f3ceedf8239fc130b34839fc8f6d0facd83774bb70dca13c9d"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "752fe32dc30f5d0a08b44b5f2fc84ee39b145a786ed036187fcac91198a31db5",
+            "four-repair-cut": "dc5c3f46d0d9856952e2fbd8886f94f30e808f909c52af55474ad661800bafa9",
+            "single-repair": "a8baa22b900628bd299c12f0aa4ad74b11f9455ce76c7e7b1c13eafa97bc2e60"
+          }
+        },
+        "bbh-navigate/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "641d3b0dcbf5d51cf86fa19c6251870f85c123debf21003be862766e52434bb7",
+            "four-repair-cut": "82d24f311abc6d2b5aee251b6032f97b5251d8e607b4faa94498b1ba4d3f9c04",
+            "single-repair": "5d9510a3d1abba31f7846aeb00572c7a89bff4b1d8f517695de3a9890ed81314"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "0f4298494c3971bb6ca2dacc1d1977f9e1e70322b794f951553126f0f2e4b92e",
+            "four-repair-cut": "042799872def85b1c7582d98a21d290d916f0a2696a2e039cc119cdb2abe9d8e",
+            "single-repair": "5f0692a6f6a41674462485a65e53e17a6f0a36435c0fcbf08cf2437c5fc63790"
+          }
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "8b5b9967fbbeb21c9407060a0668e7a57916028aed88a8dcbae11317e16df1f4",
+            "four-repair-cut": "3a6709b302d137a25b1829d32546e61eed205ceb7f3d1153e615171d5133c1c3",
+            "single-repair": "f53aba8329c0577ddcc50c66da0e7781a24d5b32bcbd362978c3dede23c16411"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7a857dd2e6d33fe1d35a7263bc6405995844b183717ecf3eec2eb7f55b6bb5c2",
+            "four-repair-cut": "d158d6fb62169093532432f0d4abdd9735525fdacfd078cd689ccfaef8cf8a62",
+            "single-repair": "6e8b1ea43ab76cd9b9c6e2076db641c0684c6a458dc39f609acf4ea5a5e1566b"
+          }
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "8feb55ce63be776e21f682c922199926fe85301e7e02aaa0b9770053188c441a",
+            "four-repair-cut": "73eacd4fea6925dfd50aaf61849a589dcd0b31f0b5bda708af6504039faad2ee",
+            "single-repair": "e198abdccc1531486aa42e892783a3ab73e836673e346142df96993efc023366"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7aa757cac1f20b0edbad99e23b1d2ca137b49b71d8856e417d8df45b55c3aef0",
+            "four-repair-cut": "2d58b793998c2241ae1f0ff49524953a5b458e9eef173c8538aacdaf3474fdb3",
+            "single-repair": "6dbd17ff31d37cf14e441d3f422a08b89810516723cc953839d2e950ebadd69e"
+          }
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "2a19bd353a952c00ab89c965ca9c3cdc0f8cf5172553d3fb8b041626fe1f47ca",
+            "four-repair-cut": "7a59dc21b82ff01e94385e19dfe3176b777ae13983ba5c5beb38907f57f9c8da",
+            "single-repair": "908397fb732ca12a43d74bb14a10f29349038dce24a81eb4920b25651b81e482"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "481f56919865d6e97963a5b1fb9b0eecf25e9966e014efc91f86bb15f250ebce",
+            "four-repair-cut": "d6f017b85f746f0038626e4244fafea5f0607c0613ba83f440f791a7e8e9b4b0",
+            "single-repair": "125d07fa8c47c152c389da77c10b258efc4980866f609366f31bd57cbee0bead"
+          }
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "c170dc10b649bcf77602b4fe57cb523e8b4d036c6f3b95fb925567bf91fe5fbc",
+            "four-repair-cut": "95553f4757bfff8908b46468778bca35e3f4127057473aadc6e9b99bcd3a629a",
+            "single-repair": "a3ff8657b70c9955796e575a0d49a89a3250a15f0d22598f974d595022784d06"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ad3012cc8a82d80ea8b49ed0cfd368383e8553b27136d74c1e9f10579f865544",
+            "four-repair-cut": "cf4fb58ef8e66fed4e7bab7cbbaa1a6c4f11d9becdaca1d78708e8fabb4e8aa9",
+            "single-repair": "8d521106daa82b2943d8fbf11721eb30aad0d744224d851b76611db416daa7f2"
+          }
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "c69a360897c74dbb3e561a89477f953a0010eedbceae1a515b6b05c3923013ed",
+            "four-repair-cut": "f4568299637e372b18f9977fe5f11f75496ae3dd7a7346e2352833f49b7ab436",
+            "single-repair": "36a6b4d1c168a6a766a7012ebbae597a37b20d9ae4c8b53d7ec78e8317fed9bb"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8e02f02476b45390a6d24defeafa31d9db2628e51ef4c77ad3db6f2419879318",
+            "four-repair-cut": "c1c742d123237fb89778510ea39a2984ba6634941af16e22cda8fd3c0601a337",
+            "single-repair": "f46e089eb6c047aad4b34b6d9e533b88cc2afd173327bb14a6bae9da9c8347fe"
+          }
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "250cd777d7b296fed2f5c17fc557e9530ae85473570958910dfef50099957081",
+            "four-repair-cut": "e12e02e3568f2f150bc1e6d64a4cf5435e871c4fa8137858a5406a5a20ee2ba8",
+            "single-repair": "09afdabe292ae8740a6a40e342254cdc6a7a6bd9be840fa70cf2601ab98b045c"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "b977ad4374fc5d899dc3a32e2d44fc755ce22120337f141c3db99c0e194c17bc",
+            "four-repair-cut": "faa23623e1b26e4670cb8233695d71b08f131cd5eb0839ce41654601859ca65d",
+            "single-repair": "8a1cc31f80d5249ee6b517e66d68ff846e31310049856947a7a7154225d5bd82"
+          }
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "0ba58040604372d6d1184613d911c74d7d94f98ffeca1fa33752f55a8e6e4247",
+            "four-repair-cut": "dc91ec953529d39285107a28e15a11c4e1059555cf8e1cc3959d34ab33c70d7f",
+            "single-repair": "e5774d16bae46ec7305c895c09d1ab77b914fa34f85c166d2942971566218fbc"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "9235e4eb4ea740ab2078e7807ba8b7090eb957f8d82a8e82b420b98e34f74641",
+            "four-repair-cut": "e32b40da2fa7b785ff4d592a011176e4a6e49d53b64e0fe76fb0864fb012a0fa",
+            "single-repair": "7afbe6f82a3d5d407b799e44d1f6be0d21484112515e8541285fed5ad257020b"
+          }
+        },
+        "bbh-snarks/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "8a239161589abf15fa88fcbdadec3d2b3d19a2afe8e796fe911950de723c0a0a",
+            "four-repair-cut": "c6c8c1733de8c4743d06c16f78227b110a4bf9a6a6bd8ca4fa472433e5a8e5dc",
+            "single-repair": "8d55529f667ee573f60afbd8f6d7f4ad8ca105e18dafbe8b61dba02b608272f0"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "797e9d24abeb0599c8c1e6851f9f3433ee52835d88551336d1302055e521a346",
+            "four-repair-cut": "f0d42deae621af6b2cdcac0f91666e2d0a783d47cbc3f3ebc04a58b45a6831e8",
+            "single-repair": "bd605056bcadc025ea4e1ea9e2954ce77f36f56ec237a7eeeab75bab2db26e25"
+          }
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "5604e13133c56daa54ac02e74a448de9a12889301933da50502211612890ee38",
+            "four-repair-cut": "a98b14a6d8eccbb18f2f2dcdd4bcb242b5cfdd0650d2a8012a60c88a1d5955fd",
+            "single-repair": "0d884e8888dbb18a07a7f81eee2153edab42b92db7082e4790f9286ffcce5ced"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d18132dde7724afde89913876fbfc6bbbc191e55a128b6a14cbe9b62e904b557",
+            "four-repair-cut": "7ae41e2658ee965849a25ee0f88b214017fb3e08838cf6b692c6d292ee1b1a9c",
+            "single-repair": "d2cb940d49d7227bb29a114c3f5307ceaeceebc5583b6941ba647663a84afd9e"
+          }
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f277220759f7c9add34dbd32f2d3cf7d2404f916e3501dc9e8f4b7343c3fac80",
+            "four-repair-cut": "d24bfa03d1858d57cad05f7084e2571a911d2944bc128106a9a7070abe34f492",
+            "single-repair": "a5d381e5fdddedefe288f760490d9987df146b3d38a2cab850b6027b4d2c0a47"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8a31b853a106da5601c515e46c79c71036a4fdba2aacf053f4f5ab0d532043aa",
+            "four-repair-cut": "a1dbda8b59a91036630360fa9d900ce4762a5f74709a7f2cb36b5a337f57739b",
+            "single-repair": "48f6c9b85a45ec0d1806cccf992877968e41631288052ada020c8fdf8c0620a9"
+          }
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "2a026f0eed561ddfc03cdaa2722b65592b6f945df91948dbb715112cdbaa7522",
+            "four-repair-cut": "dd6f232ab98381f5ac513bfab20449528844f80a0a4552dd7eda855ea22e9f7a",
+            "single-repair": "e75b994df51bb8e2e264b0c20644e7d5e811c050f2514d3c4d8c152a7ee11ffc"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "179584500506e768c6f012f1ab377c1462191630bcbe3c7a8b4a92edc81a34b8",
+            "four-repair-cut": "5c1d51bbce86e609c94b31b12b4a7903a3e25535f9b3e99b76443bb929d44c16",
+            "single-repair": "369e8544a4830e97a0aa5c09ec35fd428d3dd69e700b1fa3d2125e5f0c1ca8d7"
+          }
+        }
+      }
+    },
+    "BBH/new-task": {
+      "certifiedWideVsPublishedGepa": {},
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 11,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 590,
+              "upperPasses": 592
+            },
+            "holdoutPasses": 620,
+            "nominees": 56,
+            "openSearches": 58,
+            "paidLookups": 1209,
+            "qualificationLookups": 355,
+            "searchLookups": 854
+          },
+          "four-repair-cut": {
+            "deployments": 5,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 568,
+              "upperPasses": 590
+            },
+            "holdoutPasses": 574,
+            "nominees": 18,
+            "openSearches": 58,
+            "paidLookups": 759,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -46,
+              "pairedRange95": [
+                -62,
+                -31
+              ]
+            },
+            "qualificationLookups": 196,
+            "searchLookups": 563
+          },
+          "single-repair": {
+            "deployments": 5,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 568,
+              "upperPasses": 590
+            },
+            "holdoutPasses": 574,
+            "nominees": 18,
+            "openSearches": 58,
+            "paidLookups": 669,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -46,
+              "pairedRange95": [
+                -62,
+                -31
+              ]
+            },
+            "qualificationLookups": 206,
+            "searchLookups": 463
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 2,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 590,
+              "upperPasses": 590
+            },
+            "holdoutPasses": 581,
+            "nominees": 48,
+            "openSearches": 50,
+            "paidLookups": 1074,
+            "qualificationLookups": 317,
+            "searchLookups": 757
+          },
+          "four-repair-cut": {
+            "deployments": 1,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 568,
+              "upperPasses": 590
+            },
+            "holdoutPasses": 569,
+            "nominees": 15,
+            "openSearches": 50,
+            "paidLookups": 689,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -12,
+              "pairedRange95": [
+                -17,
+                -7
+              ]
+            },
+            "qualificationLookups": 218,
+            "searchLookups": 471
+          },
+          "single-repair": {
+            "deployments": 1,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 568,
+              "upperPasses": 590
+            },
+            "holdoutPasses": 569,
+            "nominees": 15,
+            "openSearches": 50,
+            "paidLookups": 602,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -12,
+              "pairedRange95": [
+                -17,
+                -7
+              ]
+            },
+            "qualificationLookups": 221,
+            "searchLookups": 381
+          }
+        }
+      },
+      "oneGainNativeBySubject": {},
+      "repairVsCertifiedByDeployment": {
+        "cap-19/gain-1": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": -3,
+              "passDifference": -8,
+              "paths": 1
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -70,
+              "passDifference": -37,
+              "paths": 7
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": 3,
+              "passDifference": -1,
+              "paths": 1
+            },
+            "same-deployment": {
+              "lookupDifference": -380,
+              "passDifference": 0,
+              "paths": 55
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -10,
+              "passDifference": -8,
+              "paths": 1
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -70,
+              "passDifference": -37,
+              "paths": 7
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": 3,
+              "passDifference": -1,
+              "paths": 1
+            },
+            "same-deployment": {
+              "lookupDifference": -463,
+              "passDifference": 0,
+              "paths": 55
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "four-repair-cut": {
+            "only-certified-promoted": {
+              "lookupDifference": -6,
+              "passDifference": -12,
+              "paths": 1
+            },
+            "same-deployment": {
+              "lookupDifference": -379,
+              "passDifference": 0,
+              "paths": 63
+            }
+          },
+          "single-repair": {
+            "only-certified-promoted": {
+              "lookupDifference": -11,
+              "passDifference": -12,
+              "paths": 1
+            },
+            "same-deployment": {
+              "lookupDifference": -461,
+              "passDifference": 0,
+              "paths": 63
+            }
+          }
+        }
+      },
+      "retainedStartPasses": 568,
+      "traceHashes": {
+        "bbh-causal_judgement/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "ce258ddc0e36b6b78566c652ad0016aeca58248e4f7a9fd7443eef4b2e2b442f",
+            "four-repair-cut": "7c2a795b442dcb4747daeec507ba3d4781a454205ab5de83bb0771e87d216a6e",
+            "single-repair": "11e55c2e0f7fa0dfe3e4030c24faffaa30ce997c3a3f1dc294c6cb61f3e596ff"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d97c30270b70e5f7f300a6ecf0d8a48e6ccfa66effb16d57a965f61433b32e07",
+            "four-repair-cut": "78f3cc55d22b588f9866cf6663e2f61b6f166792c3235438198b32042546a416",
+            "single-repair": "09cc939805bcae8dc9083600f015adf67f208584177d43d09cd5086ed6549956"
+          }
+        },
+        "bbh-causal_judgement/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a622712d066cc82052c9d49c3bb2baff0dc94f31b760429afbe32cda3cb5e67b",
+            "four-repair-cut": "ce998a8b53d850fdf67c52e73b1f3718d5ac9d0d4d9f22d3905aa438f435edbd",
+            "single-repair": "24ed4e635ad96d8da77cf14bff97f93a4a6f04cf8d5a7bd83902402bf8469353"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "91ec3baaf2a42f4d3a809e9441cc5b65120ec7c77f636c03a182c5283d72c7a9",
+            "four-repair-cut": "3c3b9d22914b4648f13302afa11d09ac86f56ee9ae82c3c91da5af58d0ce8c24",
+            "single-repair": "2d9bea97deae54eaf6c873534c98cb0e7da9779ed131bb100dc5b7090325f8e5"
+          }
+        }
+      }
+    },
+    "BBH/seen-task": {
+      "certifiedWideVsPublishedGepa": {},
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 110,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4920,
+              "upperPasses": 4920
+            },
+            "holdoutPasses": 4901,
+            "nominees": 457,
+            "openSearches": 482,
+            "paidLookups": 10306,
+            "qualificationLookups": 2849,
+            "searchLookups": 7457
+          },
+          "four-repair-cut": {
+            "deployments": 71,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            },
+            "holdoutPasses": 4784,
+            "nominees": 183,
+            "openSearches": 482,
+            "paidLookups": 6406,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -117,
+              "pairedRange95": [
+                -154,
+                -77
+              ]
+            },
+            "qualificationLookups": 1699,
+            "searchLookups": 4707
+          },
+          "single-repair": {
+            "deployments": 68,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            },
+            "holdoutPasses": 4758,
+            "nominees": 183,
+            "openSearches": 482,
+            "paidLookups": 5334,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -143,
+              "pairedRange95": [
+                -184,
+                -100
+              ]
+            },
+            "qualificationLookups": 1721,
+            "searchLookups": 3613
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 39,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            },
+            "holdoutPasses": 4806,
+            "nominees": 393,
+            "openSearches": 414,
+            "paidLookups": 9103,
+            "qualificationLookups": 2569,
+            "searchLookups": 6534
+          },
+          "four-repair-cut": {
+            "deployments": 33,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            },
+            "holdoutPasses": 4747,
+            "nominees": 142,
+            "openSearches": 414,
+            "paidLookups": 5845,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -59,
+              "pairedRange95": [
+                -89,
+                -26
+              ]
+            },
+            "qualificationLookups": 1850,
+            "searchLookups": 3995
+          },
+          "single-repair": {
+            "deployments": 31,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            },
+            "holdoutPasses": 4741,
+            "nominees": 142,
+            "openSearches": 414,
+            "paidLookups": 5021,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -65,
+              "pairedRange95": [
+                -98,
+                -29
+              ]
+            },
+            "qualificationLookups": 1864,
+            "searchLookups": 3157
+          }
+        }
+      },
+      "oneGainNativeBySubject": {},
+      "repairVsCertifiedByDeployment": {
+        "cap-19/gain-1": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": -39,
+              "passDifference": 14,
+              "paths": 11
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -480,
+              "passDifference": -126,
+              "paths": 44
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -6,
+              "passDifference": -5,
+              "paths": 5
+            },
+            "same-deployment": {
+              "lookupDifference": -3375,
+              "passDifference": 0,
+              "paths": 452
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -139,
+              "passDifference": -5,
+              "paths": 13
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -555,
+              "passDifference": -140,
+              "paths": 49
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -60,
+              "passDifference": 2,
+              "paths": 7
+            },
+            "same-deployment": {
+              "lookupDifference": -4218,
+              "passDifference": 0,
+              "paths": 443
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": -10,
+              "passDifference": -4,
+              "paths": 3
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -114,
+              "passDifference": -81,
+              "paths": 11
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -11,
+              "passDifference": 26,
+              "paths": 5
+            },
+            "same-deployment": {
+              "lookupDifference": -3123,
+              "passDifference": 0,
+              "paths": 493
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -30,
+              "passDifference": -4,
+              "paths": 3
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -161,
+              "passDifference": -103,
+              "paths": 14
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -58,
+              "passDifference": 42,
+              "paths": 6
+            },
+            "same-deployment": {
+              "lookupDifference": -3833,
+              "passDifference": 0,
+              "paths": 489
+            }
+          }
+        }
+      },
+      "retainedStartPasses": 4502,
+      "traceHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "61a32b33ada1237ced525987588bf3f7fb6ef8762f32e565cba08425396b3247",
+            "four-repair-cut": "ee4a116f30dc6d2c02e0c989b027bb0c4be68f876f48e7ef54432895d8580bd9",
+            "single-repair": "4a23b8e71ed8b2c8ed6c1cd510fed95774e02f6ca44d2e11a4c63b60e6512e85"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a4a79eb8d7723657820b4208ca8455cd584951fb583b6376b5a821a3c50bc9a6",
+            "four-repair-cut": "deb357f079cef0ae25dadf7fde277b7240d46e3dd7579bdb7b93048c49ce6fdc",
+            "single-repair": "367ab35f4323ba34c2e5a1784e5f51af10c50b9cd1572ea80360f50da095ac90"
+          }
+        },
+        "bbh-disambiguation_qa/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a121793b03c7d2c20dc9aa68e1230413f369eee042395661a1b88c0058833cde",
+            "four-repair-cut": "ddfbf25e70a0b693d766357ea3ed44a118ac386fd56ea0815c3ef713fa27612f",
+            "single-repair": "0a5f395c8f6730ce2fe5b508c2425680ff6f5db94ca677193dc9fb337e622ec3"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1b62c76ce2aeecbb53aa46a945196159e86b1b9126d96ee20d9646ba23b3f6d0",
+            "four-repair-cut": "8d3bbd1dfc0617432945de8def90a66c856d35ac6a766b712bf9c7877c1ae4cd",
+            "single-repair": "d5159eacffaee12574d78faf499f836e5432e79298a5e32acd8a47edc0b9a3fd"
+          }
+        },
+        "bbh-formal_fallacies/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "6d419336f3ae58f888202f4d3fe351b29ddc6e3e3157980dbec33be54145eeb8",
+            "four-repair-cut": "f7f0181f4d14742b304ce8ef03317aa1d84d0b5c1c88626cf0c4b670c8b35653",
+            "single-repair": "be6ae8a6a990c54f29f2c0db3d713a292f4d26740bde58cd0608aa58da74b4ea"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1619cf02d739383d44b4678ef201808eb2222c9641e3e23efaa70be9ffcdd9d4",
+            "four-repair-cut": "1b2e214925656a4c876580b4ea6d6907307e4f9a1f92cbf55589f9b63827dd02",
+            "single-repair": "25d256498f983f60d5490234f0b14dc4e3614bfd6e7825ba32ad6e50c2839b93"
+          }
+        },
+        "bbh-formal_fallacies/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "ec8c7dc3c58ecea3b80267da76cdf4606583eacb5c18eabcc2289f59c7cfcb7e",
+            "four-repair-cut": "0da76e26cf37893961dc878c7a0467507c37329aa7a79f4d4699d6bc92420935",
+            "single-repair": "0da76e26cf37893961dc878c7a0467507c37329aa7a79f4d4699d6bc92420935"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "aee5f3fe52cd8700af2c98594f81ae0546587aa82b5414cb78b1155b7348bba7",
+            "four-repair-cut": "8dd47c806b3c20f1f141316c9e25b68f1d5c12571c8f75563f7673a3ed3f01fb",
+            "single-repair": "8dd47c806b3c20f1f141316c9e25b68f1d5c12571c8f75563f7673a3ed3f01fb"
+          }
+        },
+        "bbh-geometric_shapes/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "663a9559869aa3c2b2ce0f59b680369e68636d726b13cd8b368d66e6e44a45d7",
+            "four-repair-cut": "3c1c769d52c8584f161530ee002604e95b6538881af18b8c27bd491b80819e60",
+            "single-repair": "f371a4290c2f324fcb3d9c34ee1ece5d543843e954d33ef58c35e250c545ce48"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "aa20e09cb24641b4fdd167002ca44b20370413a406c84e3802e5f2fb83fb7dee",
+            "four-repair-cut": "18746d01c53dcefbcb5e0df65bf48deab738e3f1f06a5ce6d288ec46526ccfaa",
+            "single-repair": "0f25e24702805783079bdd1b49104ddd7e30a1a4a9b823954ecb17b27a5fca25"
+          }
+        },
+        "bbh-geometric_shapes/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "4b839411da80422332485b57a9d6192c5457eb8d47014f973940b2a8b2351406",
+            "four-repair-cut": "f02373bf982e55afc091aac5c1ea0c788f34bbe6a7f4e5e39c2888e70fbdd6df",
+            "single-repair": "c224fcb3ef298a9bc3041183817d3b6d30b5c05dafb749453ea963bfb0b6d22a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a2c78f49912210e52f156b336b33327ac0ff9659bdcb48b6faa61f60bc9c92d6",
+            "four-repair-cut": "64a63d4005fb7edee7a2fbf05361681922fc05ab853eda5d7ea88966e74fa4e5",
+            "single-repair": "5735d99df16d7717648f53c2bac846ebdc4a62176a131f74fbdc4884cace6443"
+          }
+        },
+        "bbh-hyperbaton/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "a64292aeb026d8a7b0dd9e5423635f35574b92be95e5852ba6f6e4addb43f09e",
+            "four-repair-cut": "83c0a00d6a4c2112a5f95c802537a041eda1c7c51fa435660e6e538c234dc5d8",
+            "single-repair": "f557d79e4e055077543a24031ca377dc1dac42c0fd50482654cf0ec7b925eb9c"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "aae675d61eaf24c8b7ea351c801fcdb76303f8f71b6ae8d844dc0c77e482a4ee",
+            "four-repair-cut": "7a5efb75c74e0a8b14d7b61e3df36188b9afe874be3c0d616e61c079c9210e33",
+            "single-repair": "e44dd762102292e0a179b8d7acc3f128f275a5223a8bf6d213a6c2407d6541e8"
+          }
+        },
+        "bbh-hyperbaton/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "7f6e3f1b192fc64dc1f05fa7e1e99f4db357100b179161b3a30000ba607a8615",
+            "four-repair-cut": "76ff1f6b89d9bd8bccdbb8f161a08b3e3eb7ee629e6ba932f684320574cd72c4",
+            "single-repair": "e9aa819dfb6d9825bd7b3ae301bce676a73437c60f5efbb76fac8c246a2b8c51"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f79320628c108d5e56b1bd3f78efef7ce169ad1943572b8419fa4f89a5dbf6df",
+            "four-repair-cut": "645870d790a8f2e371944c53bdad3b90d8921cd6fd5b1e378816f1d42032993f",
+            "single-repair": "96b799c7bced6478a03efb149b247efde05ae7daf0619439a424d30c661c13ab"
+          }
+        },
+        "bbh-logical_deduction_five_objects/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "34609ffbfd0e13542c6b4c2aa77da14c54309b3dc21464d5f883661ad7a3f6ee",
+            "four-repair-cut": "b858518829b85a79f831d7511cd9222e559970181807c64fc51f64c53e0a5e54",
+            "single-repair": "1964883d6aa726b4ab7efe93e612f2503faf32f47bad8820e7bc03411c1e072b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "b39638de3b259dcd95194442c2b5818c6557eb56f761cea7669d192920726646",
+            "four-repair-cut": "98da60f54b1e41f0bf8db42367db787e5b3a412d81265db135b8dab69daa64d8",
+            "single-repair": "28f1669510722fc716438c2b068d0437e9143c2645a210e169ba249aa0f49a8e"
+          }
+        },
+        "bbh-logical_deduction_five_objects/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "e24395bca024cfa11c42f033f7bbbde22cac72251a1b6fef6537fafe3a1bdb07",
+            "four-repair-cut": "c4c237bb52e004baa433c69aed284a44df8a3dc43d3d8e821bee22b7c8867afe",
+            "single-repair": "ebef34d814895a35c5dda56975219aea95511c13814ab0014103eff55a90e67f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ffa6b9f2a0e3defddf1641469e6f735207a6e49ad9abe03f6b060ce69a84a017",
+            "four-repair-cut": "9ab357a5946f5cbef53e81d01c5c36dd7eda0d57927d20e849462f9d06bdbd8a",
+            "single-repair": "d98ac6451196c4eee26ab3b82b358dfa42181167a8f465b581d83fa3bb4902c3"
+          }
+        },
+        "bbh-navigate/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "3cc4698882c107b729ad0d0d708317a68a05ee94df992f9d461ccd4e53c1d8ae",
+            "four-repair-cut": "8680ea98b62ea5b61803150d086e4e47415f7594eb9cd58571637c18569ecf06",
+            "single-repair": "70337c2461bac358ab9bd549e2780ef9e26a54ba255e0eb3abd723c21f9e08e2"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "4f69c0450d7fc06ee45761cdcd143aaae97fe89595605693b5b54bddcbb2ab3a",
+            "four-repair-cut": "0efffc880061350a4725972492f56a57c71ce1950db7143f8b027d5fc21b3b94",
+            "single-repair": "c7ed97374999b410268477a6fedf87eb21b0120d44dfaa37227ae40079bd0780"
+          }
+        },
+        "bbh-navigate/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "ff9933ead8a27e771a8656401815f91f5c59ebc97a26c0f2c309f84fd1dafff4",
+            "four-repair-cut": "0ea1971fbb09f93c0561ef73d60c6037ec2d6c72f628f69d6c817a5ad06c462d",
+            "single-repair": "40410dfca808e50a4b6ecc34183f32e7196688307cde03080e51a2e88af5ab7d"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f155377d5f48490a32e58b70c2aa4953a6a6a71d3b1b3537a2bf97a1f8d22efd",
+            "four-repair-cut": "790d42193e3e7a04d05b53f43c0879648524b0eef9cc5ff7348aedf129839b39",
+            "single-repair": "ac75e6b067c851bed364b2dfa5f379d35700c685f7c214c357fb584753a4496d"
+          }
+        },
+        "bbh-penguins_in_a_table/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "78fd53b5e512bb37a76cd329b82e8e758024d0b8687382e7289339e8323bdd4a",
+            "four-repair-cut": "57246dde20a6d08a58c76ec012d015f632eecee1ba3430843a5c0f1218b65577",
+            "single-repair": "85f143b1a7de5f87cf51821294b6f038bb9e3a73e826d1a571fe138085b2281d"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "2af4d5ff287ee5aa7d27e0a62821d3e02823ac072b5661a0803749e457977d80",
+            "four-repair-cut": "ee811d04e7bc66eba96ff92acfd7c493ecb199c550ca549d29df299bc2321310",
+            "single-repair": "ee117afb28d0371482a7070b1d3aa21214be72377b62e6a6eac4a69a52e703ba"
+          }
+        },
+        "bbh-penguins_in_a_table/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "3cff6a2a22a97dcd5b62ae833ebd19e5b30a2a59367102c272ec8753f1efce5f",
+            "four-repair-cut": "e54b2b4da2feb98887cefa66f7252991acbe73a7fcdf8a97ff72bb0c48367f5d",
+            "single-repair": "4c1d97cf367d7682b0f5181825599d5f503acd57d2e125440d5f7f5e54de98d4"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f9368403dbd2780fafb62b6c3e0f3d9b8d30e9d704a699c8e258a7a07c312dfa",
+            "four-repair-cut": "515cdb12a0e820e6bc9ca21c1b6e06f70eca2ff79fa2a23816a7ee9d8cf18780",
+            "single-repair": "ec004b9735f01cb8f4e5f705ab7b2add002a45eec32f06c56d1ca2f98e360314"
+          }
+        },
+        "bbh-sports_understanding/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "1be77a1413403f41eddaf02073816a2e9e3d18ce93f9fc10f7ace642f9c61047",
+            "four-repair-cut": "2dbf25aaafd473fa9e7c324745b083308f6fc94114de8c5578659de81c8dee75",
+            "single-repair": "1018e0334824a73c3112a4c430728f6168144924bacdaa0a4c60ccecd9af4a17"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "314452a11ab1798527bfe9ecb3317dc71b6bca764df76f15e4ead58bb51fc16a",
+            "four-repair-cut": "56561f59d068f9474ff3513fc24146252af362e43f26a18829605c7403635678",
+            "single-repair": "f98dcf766a12bdc4f8c44e17dc6ff3423dcc7b813795c0d7c59fdcce860ebfaa"
+          }
+        },
+        "bbh-sports_understanding/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "414d3bbff6a7125d611e44997ab34696a9295047c5bfce769fa291636b35fd4e",
+            "four-repair-cut": "0cd0f44f6166905b35be729bb86e0dfed07da633cbd0dc1b2bf895768eafe8d6",
+            "single-repair": "509bdafcfaec2c263f8dd31de646a71665cec7aa57a064564f3dc44ced801af5"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8f51bf01c5242715ac151af84680c589c2860fa2c53c7aa78b72d4dd8f904dba",
+            "four-repair-cut": "6a7acbf29face0ca8810a69364ef0192698e2af0614b21f92c28b96abacd6943",
+            "single-repair": "2aba114fef7c464d4e42e8f62879b7d9b5036075056826d4f371a3fca25db50d"
+          }
+        }
+      }
+    },
+    "LMentry": {
+      "certifiedWideVsPublishedGepa": {},
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 235,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 5598,
+              "upperPasses": 5674
+            },
+            "holdoutPasses": 6078,
+            "nominees": 461,
+            "openSearches": 493,
+            "paidLookups": 10666,
+            "qualificationLookups": 3010,
+            "searchLookups": 7656
+          },
+          "four-repair-cut": {
+            "deployments": 169,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            },
+            "holdoutPasses": 5596,
+            "nominees": 295,
+            "openSearches": 493,
+            "paidLookups": 7182,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -482,
+              "pairedRange95": [
+                -545,
+                -421
+              ]
+            },
+            "qualificationLookups": 2232,
+            "searchLookups": 4950
+          },
+          "single-repair": {
+            "deployments": 160,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            },
+            "holdoutPasses": 5474,
+            "nominees": 295,
+            "openSearches": 493,
+            "paidLookups": 5432,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -604,
+              "pairedRange95": [
+                -682,
+                -530
+              ]
+            },
+            "qualificationLookups": 2270,
+            "searchLookups": 3162
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 125,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            },
+            "holdoutPasses": 5435,
+            "nominees": 410,
+            "openSearches": 441,
+            "paidLookups": 9756,
+            "qualificationLookups": 2853,
+            "searchLookups": 6903
+          },
+          "four-repair-cut": {
+            "deployments": 94,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            },
+            "holdoutPasses": 5143,
+            "nominees": 261,
+            "openSearches": 441,
+            "paidLookups": 6811,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -292,
+              "pairedRange95": [
+                -336,
+                -248
+              ]
+            },
+            "qualificationLookups": 2405,
+            "searchLookups": 4406
+          },
+          "single-repair": {
+            "deployments": 88,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            },
+            "holdoutPasses": 5096,
+            "nominees": 261,
+            "openSearches": 441,
+            "paidLookups": 5285,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -339,
+              "pairedRange95": [
+                -395,
+                -285
+              ]
+            },
+            "qualificationLookups": 2429,
+            "searchLookups": 2856
+          }
+        }
+      },
+      "oneGainNativeBySubject": {},
+      "repairVsCertifiedByDeployment": {
+        "cap-19/gain-1": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": -118,
+              "passDifference": -42,
+              "paths": 21
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -764,
+              "passDifference": -458,
+              "paths": 72
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -9,
+              "passDifference": 18,
+              "paths": 6
+            },
+            "same-deployment": {
+              "lookupDifference": -2593,
+              "passDifference": 0,
+              "paths": 413
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -375,
+              "passDifference": -44,
+              "paths": 34
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -938,
+              "passDifference": -583,
+              "paths": 82
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -52,
+              "passDifference": 23,
+              "paths": 7
+            },
+            "same-deployment": {
+              "lookupDifference": -3869,
+              "passDifference": 0,
+              "paths": 389
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": -35,
+              "passDifference": -12,
+              "paths": 6
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -362,
+              "passDifference": -323,
+              "paths": 36
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -27,
+              "passDifference": 43,
+              "paths": 5
+            },
+            "same-deployment": {
+              "lookupDifference": -2521,
+              "passDifference": 0,
+              "paths": 465
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -150,
+              "passDifference": 7,
+              "paths": 13
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -503,
+              "passDifference": -393,
+              "paths": 44
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -68,
+              "passDifference": 47,
+              "paths": 7
+            },
+            "same-deployment": {
+              "lookupDifference": -3750,
+              "passDifference": 0,
+              "paths": 448
+            }
+          }
+        }
+      },
+      "retainedStartPasses": 4093,
+      "traceHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "dda21e68c48ffa25e0b974309bba0aed148c7cc7f4c0f7fc5ea1b7dd4212484c",
+            "four-repair-cut": "111cb6ba4f1df16a958464cf6651c37d8cd7094feed891b7048c12cad0a10a23",
+            "single-repair": "b594502a0ad525c68449ca7f6df29b6b9ab70097c9c66ee8ee882df8df29fdce"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8f6f5d4551530ff0cdd5442e1438754395073bb5e9712021531e2b92de858cb9",
+            "four-repair-cut": "a0c938446b96a23e2a77867183d1cfa6ce1c1b553cd066f6ca8c81e1c1b43027",
+            "single-repair": "8f5921d4ba55598a1f3453b1a6a883c1b3f6586f34ddc1c90c9e6423e82ccf09"
+          }
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "28337681af49fef2fc0cd7aac80376bd0bc067b88e09d3281d52f0d6fd55b319",
+            "four-repair-cut": "aa8747632e6bdcd8cc071380752e05a8ff796f0aa1fc3931d4fbce4dcbce4896",
+            "single-repair": "d4f571b2d292acf1e9db1132cd888c259e89adb3f8dacbc72d33d73aadad32db"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "3a6b32029d428054427304c05cd1ac7a31d0aa4524070f16e5649ccf279ee818",
+            "four-repair-cut": "196292cbc68258decb452c9e5a7c24583a11df84b56f5a19e607636bd6e8dd1e",
+            "single-repair": "6dbe918c19967f43b6db0b7f1e2fcdd2bfe1dce0bea69c2f6467814d49cf6225"
+          }
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "4ce36b39c4b72f8e4347c4b852c4796872bf6776c00465b5f24094b70c7fa9dd",
+            "four-repair-cut": "4f4596afc63af98fdd93ec279abaa24639d0a6fe2e38cd2542ffa7909b0e9040",
+            "single-repair": "92ddfbcd325f202b813f72ffe6a17d77d69e2a17e11320b741c26d55e36f694e"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "44cf4713ba09b42f18492ec22093dc41a26bdecc833b231218edcad53f45b672",
+            "four-repair-cut": "3eec8d69e7f39ae3f29d894b363770408c45f0f3a89e03ce3654eb76085802e5",
+            "single-repair": "a88c85cc4135b7264acbc651c63405a0801fd2c9bd871c1a148ca0dfc031af64"
+          }
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "2ebe4aa6d168b1d333401655ba0be504c2db38e28785a32bbf5c175c0c978302",
+            "four-repair-cut": "5dd4a85d28214c302590be3f46f9c0b238dde342234663e4b55403397ef281c2",
+            "single-repair": "82766fde222208578c63fba9ff04b5deb4a7a8eb9d36404798006ada312f08b6"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "6db41b9b98a9cbf0639de8637260d73563f1a13dbba93a2f6daeba36217e055b",
+            "four-repair-cut": "5a2661ef4f7c8cc70487a3c2c5efb4bf7ca2d7645268b5f8ed6f239c28343f84",
+            "single-repair": "5a2b5fb10f43930555a6566dc855b3dc22828f9a6d30a2cd120c6cd67b723dd8"
+          }
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "e1d1fd199bef0bf5dfc7a96c8d2a2366617b199a843687bb5f116d76535fbaf9",
+            "four-repair-cut": "68c10263a2d1cb76a7cbde8e3cc11bbfb7bb244276ebc5fb180970cc7936f714",
+            "single-repair": "5fc153ad052faa673780d3311658cc66ce83cefa9b478c890d4c31c6524d6798"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "08a3373a2a0128b7a40c62295825f90046a841bab68d8270e16e96967c3bccd6",
+            "four-repair-cut": "29d28266732572d8a11f29c4681857cb3b1b1aa1fcfd25a1705085c15efbab37",
+            "single-repair": "4d8c1f02228dc7a80178b9b5c9776efdfe29fb1548a7b01d4d00d2335c60525d"
+          }
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "2a236aa8954b59f826f1129211db3ac7daa26a62501e5940614f1e30e512f3ae",
+            "four-repair-cut": "2e0cdd2ec8f7fc4c406f05bff36ca2141ecebd90a04df997fd044fe69a157a3f",
+            "single-repair": "0a7c1032f22c13ad63f318a65631212a5ad2262bf698f3418db812bd51189ba8"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a89a41cb5dcef8c6e3f52320912cc83da77e501ddd7389333ed3e18b55268524",
+            "four-repair-cut": "734607cdffcb133b9e86f80185cb22f67e113907283c8171ec6f40f6af1701ca",
+            "single-repair": "283e96567c29e184df544f59f80dbd1487fc5a49978cc583f89d71f45df7db65"
+          }
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "5bb15c8be41420603108b5082a4b32149cc817947c3542bb1e66e547cff01227",
+            "four-repair-cut": "b3f877bb027290ba1815f0f2b101664d005f5bc31cef963177642867aa7015d3",
+            "single-repair": "5440d58e3c4ae6ef5eaa11e5ff8b3eead591af31f1e1111e75f22a94c9d6f76b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "2cddee2acf1570182e06535b9a2d4ecb9d86300dce2bd56a000a499889d862fe",
+            "four-repair-cut": "bef24ebbd673c552abd66ca5ab9bb8a5a0401179bf75d2f8ba222659bfdbcf51",
+            "single-repair": "e201acfd4b42a38b8bdf1940e846f16a27d23ba1f2648e0a8a44139b59f9d8f9"
+          }
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "30deefbe8cab1f1b82d3491681aa7467e12d95dcf09d4a84ba09cc67348decd2",
+            "four-repair-cut": "4494c762869f61d57e94e7f91cf950316a1349d64185dd65004a13ad501e945d",
+            "single-repair": "1e25dba34591aad7b0715cbdb7223ed32210fd834708aaecbe7831514a85fcde"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "3cbb08de9ccce00c9209c9b7a58e47f1654d836561bbfc36eaf03d1661a117e1",
+            "four-repair-cut": "73b35e618dade555402314c9cc35b9467647d9580e33d1b4afc7b0b6aafb1129",
+            "single-repair": "76126cced399992b723fdca2e1839d54e3e0c0eccdeec1c985c5faea6017811c"
+          }
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "36d54f2141292d40296aaf823c87e5d7c559adac965d2d1c79e5a71b6fec50e8",
+            "four-repair-cut": "962eec2daebbfed61d56f28d144ebe16eabdb9de27c9327dc7008747feb9d29a",
+            "single-repair": "4ab978be22ffb9491bdeba54f646320f071e07ac3e0e169bc045ed1525abde17"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8bd530e62b9d2b09bd1154b76fe43226d3879292a45bf265f8e930182f4d77ba",
+            "four-repair-cut": "ff32ba65826054906fe973870a924505ee305ff1972f61d4225ae9f92dd08f6b",
+            "single-repair": "0a466f36a4e09f08ae237a4343cb40060aea30362a7d3081e1834e287c45f7af"
+          }
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "767c52c431d4cb3a8388d3012895e1ee88e1d8f7cdf151495aba31b1fc51626d",
+            "four-repair-cut": "3912914a1d2dc123b017d2b1a5c8544a55546aa556ac76211cabc0caa853a3b8",
+            "single-repair": "5923dd17a33875a4d02aad18465e43f0abb676549f6f71da55c52a6bcfa4a8ec"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8eceee1e1f2f76121ca2aad76c8675c3f5d4c10af1561092e56654c83fd08d85",
+            "four-repair-cut": "df889509d2eb69365be201f29621c2e0133461257abf5e491518f80f85821acc",
+            "single-repair": "f97770e9a0315684a611e5e27edc5207570cf24c308312b058db53812711c096"
+          }
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f7b14df8045ab51f42e0fe7467042c9ed625eab16633cd00aa446407699f2c35",
+            "four-repair-cut": "16daafeb58463a70cecb0283a9da75bee6bd3923b7bff7438f06ba1850a61830",
+            "single-repair": "a7c1219f8ecc26efdd8f67b259740e62a999dcd5c59cf0a348eaf32cb820cdd8"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "483bc49290dc2856c1e470e2de49c13ada8c8d6c97fa9ea810c5b189fb0ed1bd",
+            "four-repair-cut": "541b547c021abacf8be2232aa1bf41f24621742eeec2bf74d556e51eb6c0fcad",
+            "single-repair": "e7ca8d607de1957ad1a9471017c8e75817be71cfff94389eb30cca4f4cdf0f2d"
+          }
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "ae7d63532df1a3c5eaad39f2fa49c1e2f5156365c1e4f97992b94a961a66216e",
+            "four-repair-cut": "d7e67f23c61add1a052f723fd2bf62ec8c4f1e69ca3f29002b002dd1d5a6618d",
+            "single-repair": "b152d61ab52c72de21457065331371c4ca2d293553ee485616e9fe942cecd270"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ce0fdcaf2fe35296fe1c3d318a0bc96d4d132ea229f68fd347a7e412e34525ff",
+            "four-repair-cut": "c2d9705602da50610f2a5fed2c25cd4fda97b4554a7fd26974e53f9f263f5e3d",
+            "single-repair": "a6138928307de974bbcce6d910420ba09948ee710d7d073064ad325c0a17bc52"
+          }
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "10c712935531b1cea40fdaf27d96fb30cdf76e6d86d45f82ca61a78cef7ea869",
+            "four-repair-cut": "878dde3aa7a097b634b08f739fbb5dcf5791e35c127b8c3f7866c35a65dffedb",
+            "single-repair": "1e2248bd736a5ff22ac0495a0b50b15cd256ed06a4384b10aa112dc9a97ad1d1"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "5356a52380cd6258f1f4b084792edb65c0701fc159b3e1766579674cae236fb5",
+            "four-repair-cut": "9583f3cbcd14b730336f6e202bf1b76f919ff711763476ff3f5b3d505301151a",
+            "single-repair": "9e8180b6bff1fe75faa505e609b588bfc29ffc7c16170c092b6a70caf7af5832"
+          }
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "0e91eb37626edfefe59f4b9907bb59bab99a20c89cb5d53ddd4759beeb145cf5",
+            "four-repair-cut": "f1d4dd013210e20227729bbee8cd36379b792faef2d9a8fe02f3b45e1a2bdbad",
+            "single-repair": "741ac2d74e9a8c895a7295e8f8039451b63a4255cd78ce88b582cf0a75128bd9"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "15c7ae3ddf8e07559110ad209570a5cc706e96460783faa6957dcc5703efe1b3",
+            "four-repair-cut": "b9938a2f77e7c99c0c3aebaffa2c33d114a7ff68f95eb2255885abe2a3e0ec5a",
+            "single-repair": "d3e47d3f1c8eea7c711ee2e6ac535e08ee12aa992adcf2eace005cef3c666dd7"
+          }
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "620b47819cc15b899deee6b552cf1ae8058844d48856b192dc98843033a9c46f",
+            "four-repair-cut": "0cd17d8fb3d9f0a2a1c599653552f799ffed6a6cb7276eaf5fbf53828fc0f67f",
+            "single-repair": "ae6d1611cd4d4de4156a5c4198553c7fd6e240e5acdb5d0a692fb94e3059e131"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1b0f11b1a9408f14304e9b2b937f02b6a0308d335aeea3588627cd503bd88654",
+            "four-repair-cut": "e38e4e1e56aa46c2ae8bcacb28ff06a66ecf798cd02732a50f242ec309a70b23",
+            "single-repair": "6243eb86cdfc0b7a7bdfcf0cc94a0fa2e69db84497a34631ade7744c97c87005"
+          }
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "753b67dcf6f4b91f9c78fae04d0892bec0f209d8a5f62f534c3cd9ca225a0abe",
+            "four-repair-cut": "d9c87d80952cb6905cd17519e2d3deb3d5c05b9096ef3023d6cdd8a1be165685",
+            "single-repair": "aa7a3addb58ca256990129271c70631791449da5ff840198fc5bca34747ac5f5"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "dd0ba9362ca9461b1164294324f087ff8ff8c17d183814d9a5d6fa3b65ef39d6",
+            "four-repair-cut": "86cc22127378af5ca8f4924d31c8aee187d9694c6cfa8254b93923129bef4ddf",
+            "single-repair": "aaa1b32813fc7c7e980824e505b090a3dd4036e7f12355864e84e4569544c953"
+          }
+        }
+      }
+    },
+    "LMentry/new-task": {
+      "certifiedWideVsPublishedGepa": {},
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 22,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 278,
+              "upperPasses": 278
+            },
+            "holdoutPasses": 315,
+            "nominees": 63,
+            "openSearches": 64,
+            "paidLookups": 1425,
+            "qualificationLookups": 377,
+            "searchLookups": 1048
+          },
+          "four-repair-cut": {
+            "deployments": 15,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 161,
+              "upperPasses": 278
+            },
+            "holdoutPasses": 314,
+            "nominees": 42,
+            "openSearches": 64,
+            "paidLookups": 926,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -1,
+              "pairedRange95": [
+                -12,
+                9
+              ]
+            },
+            "qualificationLookups": 307,
+            "searchLookups": 619
+          },
+          "single-repair": {
+            "deployments": 12,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 161,
+              "upperPasses": 278
+            },
+            "holdoutPasses": 261,
+            "nominees": 42,
+            "openSearches": 64,
+            "paidLookups": 723,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -54,
+              "pairedRange95": [
+                -67,
+                -42
+              ]
+            },
+            "qualificationLookups": 318,
+            "searchLookups": 405
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 9,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 278,
+              "upperPasses": 278
+            },
+            "holdoutPasses": 303,
+            "nominees": 63,
+            "openSearches": 64,
+            "paidLookups": 1412,
+            "qualificationLookups": 364,
+            "searchLookups": 1048
+          },
+          "four-repair-cut": {
+            "deployments": 9,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 161,
+              "upperPasses": 278
+            },
+            "holdoutPasses": 303,
+            "nominees": 42,
+            "openSearches": 64,
+            "paidLookups": 945,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "qualificationLookups": 326,
+            "searchLookups": 619
+          },
+          "single-repair": {
+            "deployments": 7,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 161,
+              "upperPasses": 278
+            },
+            "holdoutPasses": 256,
+            "nominees": 42,
+            "openSearches": 64,
+            "paidLookups": 733,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -47,
+              "pairedRange95": [
+                -53,
+                -41
+              ]
+            },
+            "qualificationLookups": 328,
+            "searchLookups": 405
+          }
+        }
+      },
+      "oneGainNativeBySubject": {},
+      "repairVsCertifiedByDeployment": {
+        "cap-19/gain-1": {
+          "four-repair-cut": {
+            "only-certified-promoted": {
+              "lookupDifference": -80,
+              "passDifference": -1,
+              "paths": 7
+            },
+            "same-deployment": {
+              "lookupDifference": -419,
+              "passDifference": 0,
+              "paths": 57
+            }
+          },
+          "single-repair": {
+            "only-certified-promoted": {
+              "lookupDifference": -115,
+              "passDifference": -54,
+              "paths": 10
+            },
+            "same-deployment": {
+              "lookupDifference": -587,
+              "passDifference": 0,
+              "paths": 54
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "four-repair-cut": {
+            "same-deployment": {
+              "lookupDifference": -467,
+              "passDifference": 0,
+              "paths": 64
+            }
+          },
+          "single-repair": {
+            "only-certified-promoted": {
+              "lookupDifference": -26,
+              "passDifference": -47,
+              "paths": 2
+            },
+            "same-deployment": {
+              "lookupDifference": -653,
+              "passDifference": 0,
+              "paths": 62
+            }
+          }
+        }
+      },
+      "retainedStartPasses": 161,
+      "traceHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "e5337b8d46ad0bdbb0ff4faa8b0dd4576f7cc17b95e74bee227233159cd1551b",
+            "four-repair-cut": "976dcb26f7c185bede4de8134ae5c3e4cd9ad6696417d025904f0f04b9413591",
+            "single-repair": "799e5f66bbb617171823dfefc8c2808234cb3ecf2fb9027d65d17052bca5b70d"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "cf3f28217c42889d77108dd363738845e61a38630de02c915fb2430d94a0ba52",
+            "four-repair-cut": "a02cc2dbff977ccbd3a7993c7dd33536cb226f9922faa76d6115be108850baed",
+            "single-repair": "67c02ce539ef160072274213498b746eab9a221f4df5a654785533e3852d2d9d"
+          }
+        },
+        "lmentry-ends_with_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a0d1d086950802d64441983c34cf01c8ef399b02bb3123eefc265560113d0b85",
+            "four-repair-cut": "d022596b7b0d628491feeacf25b3eb5f4a6f79dba5da2ffec38f562bc8d19333",
+            "single-repair": "e7ade9e0552790c7288c56582d463005a23d74649060b3134003d2d714def232"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8a3e76b111529ee7e13cf95a28f43ab980766a0df9a11510fa1b67d0ffdb6a66",
+            "four-repair-cut": "285b7c437fe9886662f9a48fd924d082da392848489007c080a2a716c3b03632",
+            "single-repair": "a1b90cc5f5df4476279c9752129cfc888cc22f609e98a238b54f16d30cd99049"
+          }
+        }
+      }
+    },
+    "LMentry/seen-task": {
+      "certifiedWideVsPublishedGepa": {},
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 139,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 5248,
+              "upperPasses": 5404
+            },
+            "holdoutPasses": 5546,
+            "nominees": 323,
+            "openSearches": 342,
+            "paidLookups": 7271,
+            "qualificationLookups": 2217,
+            "searchLookups": 5054
+          },
+          "four-repair-cut": {
+            "deployments": 120,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            },
+            "holdoutPasses": 5328,
+            "nominees": 223,
+            "openSearches": 342,
+            "paidLookups": 5207,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -218,
+              "pairedRange95": [
+                -270,
+                -166
+              ]
+            },
+            "qualificationLookups": 1788,
+            "searchLookups": 3419
+          },
+          "single-repair": {
+            "deployments": 115,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            },
+            "holdoutPasses": 5206,
+            "nominees": 223,
+            "openSearches": 342,
+            "paidLookups": 3910,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -340,
+              "pairedRange95": [
+                -397,
+                -283
+              ]
+            },
+            "qualificationLookups": 1798,
+            "searchLookups": 2112
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 65,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            },
+            "holdoutPasses": 5117,
+            "nominees": 258,
+            "openSearches": 271,
+            "paidLookups": 6051,
+            "qualificationLookups": 1975,
+            "searchLookups": 4076
+          },
+          "four-repair-cut": {
+            "deployments": 55,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            },
+            "holdoutPasses": 4939,
+            "nominees": 169,
+            "openSearches": 271,
+            "paidLookups": 4407,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -178,
+              "pairedRange95": [
+                -211,
+                -146
+              ]
+            },
+            "qualificationLookups": 1724,
+            "searchLookups": 2683
+          },
+          "single-repair": {
+            "deployments": 54,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            },
+            "holdoutPasses": 4905,
+            "nominees": 169,
+            "openSearches": 271,
+            "paidLookups": 3441,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -212,
+              "pairedRange95": [
+                -248,
+                -173
+              ]
+            },
+            "qualificationLookups": 1740,
+            "searchLookups": 1701
+          }
+        }
+      },
+      "oneGainNativeBySubject": {},
+      "repairVsCertifiedByDeployment": {
+        "cap-19/gain-1": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": -47,
+              "passDifference": -23,
+              "paths": 12
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -358,
+              "passDifference": -271,
+              "paths": 35
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -17,
+              "passDifference": 76,
+              "paths": 16
+            },
+            "same-deployment": {
+              "lookupDifference": -1642,
+              "passDifference": 0,
+              "paths": 321
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -211,
+              "passDifference": -88,
+              "paths": 20
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -450,
+              "passDifference": -299,
+              "paths": 40
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -73,
+              "passDifference": 47,
+              "paths": 16
+            },
+            "same-deployment": {
+              "lookupDifference": -2627,
+              "passDifference": 0,
+              "paths": 308
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": -11,
+              "passDifference": -9,
+              "paths": 3
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -128,
+              "passDifference": -208,
+              "paths": 13
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -10,
+              "passDifference": 39,
+              "paths": 3
+            },
+            "same-deployment": {
+              "lookupDifference": -1495,
+              "passDifference": 0,
+              "paths": 365
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -61,
+              "passDifference": -32,
+              "paths": 6
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -188,
+              "passDifference": -212,
+              "paths": 15
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -43,
+              "passDifference": 32,
+              "paths": 4
+            },
+            "same-deployment": {
+              "lookupDifference": -2318,
+              "passDifference": 0,
+              "paths": 359
+            }
+          }
+        }
+      },
+      "retainedStartPasses": 4258,
+      "traceHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "9b3bc1dc8d1c1ead653566ab69b4df0540770b7db5fca343d08bd2612e7a5e57",
+            "four-repair-cut": "15b7bf6116cca044a1b22a669fd420d1d911130567e3922ebb993dcd3c54341b",
+            "single-repair": "8eef71cae4d323176a34e99ec4fa92c0acf484a7342e1ee9d340e4070718ce61"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "3439ce6d960844146e4ff8837284355220844b8782df0779caf1c7d4a021450a",
+            "four-repair-cut": "dca3bb85ad21d623ab6781efacaebf65acfff73c38c106edc4cfcc00c5d5cf89",
+            "single-repair": "aedc2c3d0d72627ed5cb59521289133e22eeae634e655b42b3003f1f4bfcd13a"
+          }
+        },
+        "lmentry-all_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "99afee5cc3b8e879c4710e4eaf0aaa0de75a2af184f48bec8b7cf1a1dd5c4322",
+            "four-repair-cut": "5985ac9ee98fa36148f6585aa32d5f9820e185c1cbdc1d6573db6e36a07bff9b",
+            "single-repair": "cef46595a4b64104cfcb46b6126390463e2053a5751b5e57e0f0b78e9b59aec6"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "91c7e1a5ea24b121e8b3a0e9cd9da25e65f4a4385a86c2dfa81123906ec8de51",
+            "four-repair-cut": "2cfde0289fddb3f7563365fb8d3c92f57b91b69ab5c466dd1b79ac52bb332b25",
+            "single-repair": "eea99bfa1b04f95a3c8a4225fdef65fbce456d62a044524490e9323232e37406"
+          }
+        },
+        "lmentry-any_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "0328b4649c8808073d898141efc049519c5cb8eee6b3abc7881112953b51f086",
+            "four-repair-cut": "03693fec8774a8845c74ccb1e79836e719cf67a88d619c920596b650d532142b",
+            "single-repair": "3c4b3d93169131982313ab7bf7876a54ae586d07603f84c59186357533ecff7e"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "c455de7e8db440b09768c55c078d2c2007d1ec567460d21082d92e25c7705771",
+            "four-repair-cut": "39cc548a70fe4ec73db35ac97c645b285ac7b72c6b6117da8ac9d2a07c21e88b",
+            "single-repair": "0aab37c7bc46a7358e078c01f21e5169367bb4bf5a6664390f612f762b34cfc4"
+          }
+        },
+        "lmentry-any_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "9e68140f63ce1f536749dfdeb704138c281ff97773615ad754752091fd1bd593",
+            "four-repair-cut": "88db4c724631e39f6f81e5bf9f969a4559a18a0ff6096a89b03c911b9ee01ab6",
+            "single-repair": "9cb223668c1dedfa96fcae69b5f38f2dadb8734fb560c6994f9f8a34cf9311c4"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "95b1cb2848a7ef394e115bf00919928c09abb21bf7833c4b4ebbc0924e20b1d8",
+            "four-repair-cut": "82040ad5c700953ca016813d142d50b0782039dbd92e3d591cc0b40f129d4b11",
+            "single-repair": "096485edf4441fe1b62e8daef28d7ca8a6aad5ff8c0da2edc7f3a52d39fd2fee"
+          }
+        },
+        "lmentry-first_alphabetically/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "91092625e46fba3937250798b53ca5fad24913a8bc5d52548c5892e85e18b627",
+            "four-repair-cut": "9d6bb084167efecc801e00757905429cab9160cf51d5c69c764e7770134f1f34",
+            "single-repair": "1ea40394e5a6a260d8f3b1be07f21fa8163e7a8968a72b230486a8fa6565733b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d7d8e062dd4a08b044bad05b5eb199f9a1923c673cb41597b82e63bd5f202269",
+            "four-repair-cut": "bdae77ed429e8b7ca13265cf03c8acf594139b02436eaa04844f6c6ceba0e737",
+            "single-repair": "f747636613664c95db2652cdc1bce515b80a68547fc063c51029335d1e825f3a"
+          }
+        },
+        "lmentry-first_alphabetically/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "479505dadac295a9b07d87b18f9ded1559a9f647368a67a711eaa5ec4820ca3a",
+            "four-repair-cut": "f8f1b810bbf15111566a8a6cfb1336c6d52350564fd49bad43a6376c0eb5bd46",
+            "single-repair": "b9271adc3964568ad1e294ed221881d900e089a869e73deadcd96c5642de9b07"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "21c9e3e32bec57a42d8fe13e3e17bde7d2af2ee7fe8b247e1db0d29372ec81fe",
+            "four-repair-cut": "34ddacf2414ca9c9cdde3cb95775baa2af6891fe2c9c0c6bc741cea5cb51c551",
+            "single-repair": "4551870c2dbe2b453303842037aa02a5fdb9f46f0d3329b75f0b5ff51a3c4dc7"
+          }
+        },
+        "lmentry-less_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "e999c2c5cd48cc8588bd6d2859ee2dbf4c43b45cb9b272fcaf646de90895c9b4",
+            "four-repair-cut": "2a4cdba1c200e16d34f955d9c2dfff8f1c0d6d96f8e5cdb7137d190e13a7ed40",
+            "single-repair": "2eee460394106cfb5456a634fac369afef3d0a8efa11b9c066627ae64fd3c080"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "5bd0dfaae44c1abe54ed675e08598f1bcee6abf9074ce88ef06a32d0abf5749c",
+            "four-repair-cut": "ee89d745c70f0767a3427aac03a70c1c911f9a998b65333c2318d95ea2a8a406",
+            "single-repair": "9d7ba2a8378e9c9f1b803bb975cd22dbc15653689a06347c9bff35657ba9ec5a"
+          }
+        },
+        "lmentry-less_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "16e1e3cf4eccda418dce0b400c82b3434c290d23bc80cf1897d6f29c3603daf5",
+            "four-repair-cut": "2c764b36f9ebad52091e53ccbe8e8483b8c1fcc3ef74c5984a68a3f88ce1050f",
+            "single-repair": "045c6d383a8eb2ffa1b093a084cc690d2b2090d04ddbd8d7c5e7d86ca0ab5dfc"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "cd79bbdf8b080834e5aa423a2282e056566feb46eadd56a1c46a4efb2b143cb8",
+            "four-repair-cut": "7b4b0119d6232435452d4629177bca35fd3142a60f58335ccf981baceda5d361",
+            "single-repair": "7a61c25cc29f2401657a4a130112564a9a7e9b0b69aadbdb5bd52070f5bff49e"
+          }
+        },
+        "lmentry-more_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "8fc8cee9974686b628e34df7ad8f0670a4cb9c0c0814d465ca2133b0dac27771",
+            "four-repair-cut": "cc4e54ac86a15abfae7a3061b531078c443390f686931b6b0f1f8189f3d19ebb",
+            "single-repair": "33863c2fc10931298185f2518ef9bbe9f4a98ce7353f2a4b61b1399b36c257a1"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "24358c3fcedb0c377582ccd851dd674e14845b026ea8e9ebf967bd2a9acfa914",
+            "four-repair-cut": "70457f4cd81089bdeaac9414bbf8bc86ced25b1e771d0c6410f224b6a5f74a6d",
+            "single-repair": "56081a99219ed7bce010ca97d0dc8980d65209b1696f5350a407f1ee1e4b5db6"
+          }
+        },
+        "lmentry-more_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "391276e3d1f40ec5d5be5cbbe98f576a0d9dbadc92683e3f5e88f98b6da06b2d",
+            "four-repair-cut": "f18cf9a66c5d46792c281a70e1a4fd51392ea98aaf0ce0fe4b596dffa3127dc4",
+            "single-repair": "2da8bd5eab838c3a83612366b5e98dd5c61ed70ab6fea9da284700058d270256"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "77370fe84362be6eaf628380f774cefae7a302d7f0a47b3b56e292c2e5d2fba6",
+            "four-repair-cut": "e97372851d35e5f7f7e0e20a51989797e7a3ed89f06f5190026cd45e8ad879c0",
+            "single-repair": "107c401c985780b743ff08712fc0dd0f8ca3577ac1e82b12f96989e4be0e500c"
+          }
+        },
+        "lmentry-rhyming_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "7508ec74d0255bab64c7f48a298e344ff56722c599ad67e40d6de5a601fd9fda",
+            "four-repair-cut": "f1dd33369f298120b4a86eee98043b188666d1126a0c6f846c97b5a359b1b6c3",
+            "single-repair": "537eb8e9b9efb9e6b375214f26b06a8dc1ca33fa519face2d74ca9780b9ab102"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8fe03be3ffd06f0f35e9213845470bde95685f41821a3e0aff9d79cb2f73227b",
+            "four-repair-cut": "738545992d676c36480c0623158dc0e551e739dec692a66ada9d2997c601506b",
+            "single-repair": "2428ab7e725ce42eab93a5916f992efe7b6752daabb0dce15dc76d94a56d62b5"
+          }
+        },
+        "lmentry-rhyming_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "868641b03383d791be7084161270097f113676044c44977940227cd4a5fce9b4",
+            "four-repair-cut": "776eca49e02f3c6f4e49db837db03d756c4169cfb916db16956bc3455ec94620",
+            "single-repair": "c4badbe07707d256af4ab0283917f02b722317346dfd0e4cc13d52721d53886e"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "9d383b3215564916599917d718009233ffb444ab34dc1a65bcf5c0fd9f061e14",
+            "four-repair-cut": "0107015ef77f6f4c16cc3f59ee34cc5e55ad93443a08fe0a9641e9aca8d57676",
+            "single-repair": "3f00e6cdfd1f71ba8fcf28de3f3acb1f506debc549dd02f3b5b85511ca918b5a"
+          }
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "certifiedWideVsPublishedGepa": {
+        "both-promoted": {
+          "certifiedLookups": 81,
+          "gepaLookups": 133,
+          "gepaPassDifference": -15,
+          "paths": 4
+        },
+        "cpo-proof-rejected": {
+          "certifiedLookups": 23,
+          "gepaLookups": 34,
+          "gepaPassDifference": 4,
+          "paths": 1
+        },
+        "gepa-retained": {
+          "certifiedLookups": 1900,
+          "gepaLookups": 838,
+          "gepaPassDifference": 66,
+          "paths": 96
+        },
+        "same-deployment": {
+          "certifiedLookups": 11938,
+          "gepaLookups": 5809,
+          "gepaPassDifference": 0,
+          "paths": 859
+        }
+      },
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 102,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "holdoutPasses": 56034,
+            "nominees": 679,
+            "openSearches": 695,
+            "paidLookups": 13942,
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -55,
+              "pairedRange95": [
+                -121,
+                11
+              ]
+            },
+            "qualificationLookups": 5191,
+            "searchLookups": 8751
+          },
+          "four-repair-cut": {
+            "deployments": 38,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "holdoutPasses": 56081,
+            "nominees": 159,
+            "openSearches": 695,
+            "paidLookups": 10042,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 47,
+              "pairedRange95": [
+                -12,
+                104
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -8,
+              "pairedRange95": [
+                -54,
+                40
+              ]
+            },
+            "qualificationLookups": 3122,
+            "searchLookups": 6920
+          },
+          "single-repair": {
+            "deployments": 38,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "holdoutPasses": 56080,
+            "nominees": 159,
+            "openSearches": 695,
+            "paidLookups": 9195,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 46,
+              "pairedRange95": [
+                -15,
+                105
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -9,
+              "pairedRange95": [
+                -54,
+                36
+              ]
+            },
+            "qualificationLookups": 3161,
+            "searchLookups": 6034
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 7,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "holdoutPasses": 56084,
+            "nominees": 370,
+            "openSearches": 382,
+            "paidLookups": 8977,
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -5,
+              "pairedRange95": [
+                -31,
+                22
+              ]
+            },
+            "qualificationLookups": 4007,
+            "searchLookups": 4970
+          },
+          "four-repair-cut": {
+            "deployments": 4,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "holdoutPasses": 56090,
+            "nominees": 94,
+            "openSearches": 382,
+            "paidLookups": 7227,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 6,
+              "pairedRange95": [
+                -2,
+                14
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": 1,
+              "pairedRange95": [
+                -24,
+                27
+              ]
+            },
+            "qualificationLookups": 3359,
+            "searchLookups": 3868
+          },
+          "single-repair": {
+            "deployments": 3,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 56065,
+              "upperPasses": 56089
+            },
+            "holdoutPasses": 56091,
+            "nominees": 94,
+            "openSearches": 382,
+            "paidLookups": 6703,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 7,
+              "pairedRange95": [
+                -4,
+                18
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": 2,
+              "pairedRange95": [
+                -22,
+                27
+              ]
+            },
+            "qualificationLookups": 3358,
+            "searchLookups": 3345
+          }
+        }
+      },
+      "oneGainNativeBySubject": {
+        "anatomy": {
+          "holdoutPasses": 1770,
+          "paidLookups": 0
+        },
+        "clinical_knowledge": {
+          "holdoutPasses": 3318,
+          "paidLookups": 1026
+        },
+        "elementary_mathematics": {
+          "holdoutPasses": 3219,
+          "paidLookups": 1888
+        },
+        "high_school_biology": {
+          "holdoutPasses": 4603,
+          "paidLookups": 0
+        },
+        "high_school_geography": {
+          "holdoutPasses": 2930,
+          "paidLookups": 0
+        },
+        "high_school_government_and_politics": {
+          "holdoutPasses": 3044,
+          "paidLookups": 0
+        },
+        "high_school_macroeconomics": {
+          "holdoutPasses": 5371,
+          "paidLookups": 0
+        },
+        "high_school_microeconomics": {
+          "holdoutPasses": 2899,
+          "paidLookups": 1433
+        },
+        "high_school_statistics": {
+          "holdoutPasses": 1806,
+          "paidLookups": 0
+        },
+        "moral_disputes": {
+          "holdoutPasses": 4369,
+          "paidLookups": 436
+        },
+        "moral_scenarios": {
+          "holdoutPasses": 5776,
+          "paidLookups": 1420
+        },
+        "professional_medicine": {
+          "holdoutPasses": 3196,
+          "paidLookups": 0
+        },
+        "professional_psychology": {
+          "holdoutPasses": 8562,
+          "paidLookups": 611
+        },
+        "sociology": {
+          "holdoutPasses": 3458,
+          "paidLookups": 0
+        },
+        "us_foreign_policy": {
+          "holdoutPasses": 1768,
+          "paidLookups": 0
+        }
+      },
+      "repairVsCertifiedByDeployment": {
+        "cap-19/gain-1": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": 0,
+              "passDifference": -16,
+              "paths": 7
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -582,
+              "passDifference": 59,
+              "paths": 70
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": 0,
+              "passDifference": 4,
+              "paths": 6
+            },
+            "same-deployment": {
+              "lookupDifference": -3318,
+              "passDifference": 0,
+              "paths": 877
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -57,
+              "passDifference": -17,
+              "paths": 10
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -595,
+              "passDifference": 64,
+              "paths": 71
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -42,
+              "passDifference": -1,
+              "paths": 7
+            },
+            "same-deployment": {
+              "lookupDifference": -4053,
+              "passDifference": 0,
+              "paths": 872
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "four-repair-cut": {
+            "only-certified-promoted": {
+              "lookupDifference": -21,
+              "passDifference": 6,
+              "paths": 3
+            },
+            "same-deployment": {
+              "lookupDifference": -1729,
+              "passDifference": 0,
+              "paths": 957
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -10,
+              "passDifference": -3,
+              "paths": 1
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -36,
+              "passDifference": 10,
+              "paths": 4
+            },
+            "same-deployment": {
+              "lookupDifference": -2228,
+              "passDifference": 0,
+              "paths": 955
+            }
+          }
+        }
+      },
+      "retainedStartPasses": 56065,
+      "traceHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "477ec4f81074fa69992ccd77c6b4864f157545bf671fab141e546dce6efcf9fb",
+            "four-repair-cut": "53f05ebe57d2ee7e70b2ca5d415903f7759b1ae33f228efd8fe649c600ea5564",
+            "single-repair": "2af03047c2c7d967c3b1026b83d5318ad175d76ff3a59daea499e75e96cd65fa"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "66347c1cb1fbeae9e79ceaa4b862778f2757b5b4edb183c7ac1d4d056d81254b",
+            "four-repair-cut": "6da24fd854be45b521da4db16b69b7b56ab56b18ba8c4a3bbe4cbdcf35afd243",
+            "single-repair": "aebcc1582aae6f2fed5de10564624cef22f762cd5e59b088ee187dad4054152c"
+          }
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "db8c7a0232b2e71c3b72e033e01454163e8d581f821a38b82c09f0e38fe255a2",
+            "four-repair-cut": "5f8a97bc9c0a0d0fe40fdb7d687255888e069c510f51ee7a052e059132f6f586",
+            "single-repair": "a7ad70b7468dec722121ab7885f8d6c9a085b85e3b6eae0aa02e788071862272"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "e09d687d0a661aff5708540d1ab838bdb3da18a253a9ba4135c7660d2f1fbc1a",
+            "four-repair-cut": "e263baa90aa31d8c66fe25f25f99235f79d0d735c89c5f19a5d53d2bd92e2ba2",
+            "single-repair": "09f1bddfaeb3f6f9c12a160d238e660ee3ad73004d5b9f22b8b809e6614e9d09"
+          }
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "certified-wide": "722a3a12095dfc538076fb39e6fe1eb0078dd181c736d14e070d9b5b79702ae8",
+            "four-repair-cut": "b36c5473803ef436305f0e7693dc1ae1d0bdbd6db3178499cb72a52cf7fdbcc5",
+            "single-repair": "a68acd0ca1fa31dcb33bcfa071c807d5b533c6dfbf873a24983aa4fecd89a9dd"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "b965f5268cfa6c92d5b3b2f8e5212cb7313ca641a7c4d71c11e76e2de7498daf",
+            "four-repair-cut": "50a2fe2c938ab4585c841e6bf097d1b58951bcdc8e66716b95e7b72762dd46ec",
+            "single-repair": "8d7cf2a0dac288c7d8b9951333538b9f72ff37a2908c1b59f28c5dae82dcb4ea"
+          }
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "4e99347c04ff2c7eee365fe11a3075b05443a6e7673656d1865029d163a580d2",
+            "four-repair-cut": "7da8a19751192c2ce63db36ab22bad2c29019a014ed9d46dac330d4b6fc9d834",
+            "single-repair": "33ebc3bbbf0b9c4133c807c1494887b84bf4bf11384c9894c8538848812539b5"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "61968f409a7d30b8b22c4d0d6a9836b905814fa4cde86c51f924ae61a5856542",
+            "four-repair-cut": "b87d9b9e73709fb67ae5b87eb43231a6681150ae848e8b0b49b8e243eeeca05c",
+            "single-repair": "34f06af868727e383481a40c741636ba38c63af3c5b8da1ad5889970ca6de286"
+          }
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "1ee5bf6e1a5d06a6e8329014d1c773d3d50a617e3cc1285ef8aec08b0a376f5b",
+            "four-repair-cut": "bad78d67a5ede147469a450ca585475a021cc0ef40e53648f744f01f2c70a37d",
+            "single-repair": "4e56b4b7096b225f8a0a22222b6e9d588973e642b5c07e6580871b3ea5e28e9f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "51723981acb696007d007400e1b0c6ed84506d062d1da65bc3e91cc138ba98fa",
+            "four-repair-cut": "0a14cf14dcf0261aec19dcdafa72fbd7ad9b92a606492f728e59dea83075c049",
+            "single-repair": "91e7c2582c4534688362fb20be84f6abe8c8276bbe913ee1491cb48cb7d04f40"
+          }
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "dd65fd0f1adfcb506bb440e7fa087501445d391bf2bf386405cfc0c1c09845b6",
+            "four-repair-cut": "99ebbcc9570feba5fc8a605bfee5eea571daa699cf721571d2b37eb431cb7e04",
+            "single-repair": "c03b518311d0ecc35e89e234804540c4703b3dffab37e267208ddd459815d533"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "350d0319f65c34642ea233f4ad59f18401b5e4d36afe231a005d6dddcce3e0be",
+            "four-repair-cut": "8184dcdd2649b22aebe0473396111e9fd1052b21de4cd599c304ee1d29d21351",
+            "single-repair": "509400e864e0048520caecc1baafe154fa697656051a4a6a33e4e88beec96b3d"
+          }
+        },
+        "high_school_biology/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "certified-wide": "950fa1ce0a8fb5fa52677736d9ec2346ddea14d0cac6de3d6f79cb7cd825ef77",
+            "four-repair-cut": "56ee8cbd068ee77c2dfd8be671ab74e4687b4d22780680868c230630ca038fd3",
+            "single-repair": "eff5a0648415672a0435d1ab67631381c2911337855a9e24edfdee698c5fa8f5"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "e363d5dfee73b6b913952b7e7a8af7d48917e52f500548378a8794a594bdac5d",
+            "four-repair-cut": "55192688a3208b7d50d8e93bcec0f1834bbcd659e895e6316a22dc3a323430f5",
+            "single-repair": "78628da6d3b9631d8ea5e531c2910adb1effded65434ceed9616104dfb3e9974"
+          }
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "f217d4bb81efa6e0f4575823a0da7354a28362f53dc990d21e59e650f1605085",
+            "four-repair-cut": "9643a65cd290c78ad015717a8e7b8cb611b0cb50f799bcda76c18266901333af",
+            "single-repair": "4ce5bc722b1c50e4782ec2b7fcf4ac021832a87d6ffc01664bcbeb8d69c10dbd"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d4c5292aa6a4ec5c73c64e70e6a13fcafd9febed8a72a7e9d0beaaf94939778a",
+            "four-repair-cut": "ce8b85a491a2690ed8d7479cdb2f551086b1fef2e93378ce37d9d5684b3ada98",
+            "single-repair": "7b07457732e566ecea6a86441f8e57f831c75fbaa1d8c893ca1a60fb12c4732e"
+          }
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "certified-wide": "0788d45d00e972a2abfa65068e8694060a15ff005bc7e6a5cc2506558036ac69",
+            "four-repair-cut": "5c7a0a585db866aae761300c7bcf705d9628dc7eaf9ddfaa13ff32bcba6b9929",
+            "single-repair": "0c5b7377a9f25f2f78d85f2472044df11ea355b102f6f4201ca2d0f6f538801d"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "cb1dd919a648361ccfb067e24d9a2b51f6673365a57c18f87a6dd33ead054750",
+            "four-repair-cut": "6f1b8a0ac1d1f2ae7c956a2860d28a8a0caefd1d999169cb03bb5713c7c7c241",
+            "single-repair": "3ac6ffb9455449a3f23f25d69eff0a77327c7d269aab78f5ff2af6675a98e663"
+          }
+        },
+        "high_school_geography/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "cb5f1619c7422e06b1115fd92428842e53d6410ec8710eae7c19633edcde5db8",
+            "four-repair-cut": "070445e7578200005b520cc9c17a29e8da7c1e5945c937a5ca86231087f80c05",
+            "single-repair": "d6fbbf2165780dc848958730e40749ce30e1253e87a3de42ab396cc3b5f2a3cc"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8f4472f1df666318c91f79bd3dca174cd8b4f142bf23ceebd6cc89fd38566fa1",
+            "four-repair-cut": "7c6093a67559d151a378888009ef0af37d28ae46b8f8f937b148c496b0096e38",
+            "single-repair": "ef07367df3b20c17eca5ce0dee4547cc0c5c122c637dfa2e0eccc8d0f0602173"
+          }
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "certified-wide": "74db3af18e40b7ce287fe20be65b5868505d5a74c5f63222fef60350b2afe629",
+            "four-repair-cut": "c0a2d1d3014fbe8a14ba40f160c0a5c6591495c95606d32e62ff71ab4de181f2",
+            "single-repair": "d301859fae8de854fc35c9c077f9cf1102cd1b73eb4a6b3f5ebda9825d1f7c57"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f41ef1c8e3185a5954f75fa129a70df052249390e6656ea023808d4d19ca7206",
+            "four-repair-cut": "87bcf97f9383455825c486bc7a71bfdff83d5f5813cb76c1b6fdc7178d10ff2b",
+            "single-repair": "5f18ae4b9f7ddcbbad0a5d4447f553563433f82ec3beffba1616f23711eb6980"
+          }
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a2f924340b8aac0a94db9104ab6839889900e46c95b536c4613392a20337b987",
+            "four-repair-cut": "2a430561e1e7ba562e9aebaa1aa1b33ad5fe1682f43c90a4790552bfcc8d01b1",
+            "single-repair": "18ff5b2a23e4b2c35b140f4c9d59b1f8bba519402870de83f5c90ca0f461333a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7d9f77dfd9c9d02c064e97692be2dd9cf1c6263c6212a98e1740bcb4eceb091d",
+            "four-repair-cut": "d02752fd6eaaa5e70aee29f3c91497f6548b30549f83fa2f21b4993e3d7e6f7e",
+            "single-repair": "9e99417de69ecfcbc37633a27e7ab1974d10782a45e405ce5f146bbcb22d25d7"
+          }
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "46fc3d557648fea15615cfa83f294f0439f17b51b5aa8c2bff7e4faa3d1df519",
+            "four-repair-cut": "2c2b1ab2a699515a16fd1694af55be34eb774a83bcbf1a8e686050cc3e794c27",
+            "single-repair": "30437c02d5919c08341d89926f04f851f4c0347747728495710cad790218d021"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "260d057159863028fe48453b54f53df5e350b0b4656fe2098be772d5e7881e04",
+            "four-repair-cut": "8dbf3081cc6ce04a9ef42e594b292476d7d0d2227c2c744ad5a8d35fa7c24557",
+            "single-repair": "2fbe7cd6887d797304bb8fa53c9bf4d396ff86089b8e27a6eebc0422f185b683"
+          }
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f9fa3e08a81d13e42458da3392b06052917afadd6390219ed182630f3d8021c9",
+            "four-repair-cut": "e34b5009f4fc176d0e73aad0a5de927f9b1536b29431b06d05bf8b9394d27e69",
+            "single-repair": "56894c2a76e4216100f5256b685a732c82aa0941cefb693aa876c0aae7c75724"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a444be214dd8edf564ebed3986da021df0f2c745838588e50d1ff7275cc6a4a4",
+            "four-repair-cut": "c70fe32f5f2ab69898a2c02ff85fee57930bd90fec78d2a41f263d15202a56d5",
+            "single-repair": "c70fe32f5f2ab69898a2c02ff85fee57930bd90fec78d2a41f263d15202a56d5"
+          }
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "certified-wide": "1ba638e9a924274e9cb358d768abba41ac0dac2a0a840ce1ce641907d78bb79d",
+            "four-repair-cut": "7dcc9df5cd547a9b77db2dce1b096c98e7915749867b33d14abbebfce5401dfb",
+            "single-repair": "e82bf0a9f62653c0945fd9ed87290a9d12ff9d3d40386b3428b5f175bf108048"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f7396953bdda8827504c29f79c5542892b55ff0becd39b4583cd05d88d942c80",
+            "four-repair-cut": "9f21f5be46cb39b333a2ca5f88ac656d4bdbb92392cebf2089e5488238f40a95",
+            "single-repair": "d894ab847567bbd94430e072b14b62b0b4f75da9bc0c5745f5ed02843d5f45d6"
+          }
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "e632bc194dd1b38523cdca988f3abc898346352bc94fd5a6638561c5dc31789c",
+            "four-repair-cut": "8bcb5d864e9166b9b733a84995d72f63d1372a2f619900693a3f019fffdb7018",
+            "single-repair": "98d01caef5c3119e0d9f0a1bc16a9042e17a63975d77d94cc12a1bb06e54c28e"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "172e1da0bf8fbe0320a8e04c6f40afa1a97f22be7a259c5ea48be334aa312455",
+            "four-repair-cut": "89f002b11d8c4cabed32820fec16e8679352def250d8f47d6f52a8a9bb252231",
+            "single-repair": "cce4b6de3eac2fc623288eb01456b209c2cea5a60be3942caac098dc03176267"
+          }
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "certified-wide": "eecf4938cbeca24c770a5055888c4ab10c1e2ef8246d91d31de39e98b0959f81",
+            "four-repair-cut": "e48c6b3ce8cdfdc6aeb1708c69c0a86ea56783ea254bba3a8d8e4861d7da8197",
+            "single-repair": "16e47e9955470c68bf8dee436933afc90a50b15082434cef3e30905cb37cf7fe"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "9848a1a8ddb623b6bf4d7f7435293ac4a188582b2d854167a78bcb32bdb79348",
+            "four-repair-cut": "d09df378a0157ee90d1e64ce610a9ed7d24239fcc328ff5f5342b34659a62a4e",
+            "single-repair": "ed7c8c23cd9f92516a1e72e62b6f813909bf24cd6cdb129f9aa3c03557b2eccf"
+          }
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "ebfceda87fa7b63efdad11e3a41eab33a10d193dd41259566dde5be6740d42d5",
+            "four-repair-cut": "96a3d690c881ea5c2a2299437b5c4b5279516b7ec87abda14dd2270e968211a6",
+            "single-repair": "e46dd85dcf568d1676e014ea78187a30956fe98c937b3decce68fa341b29496c"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "db82e71b3169cba08e1e63d9f2504c3e2609b6d604c1863cbf6f725b476a8413",
+            "four-repair-cut": "771e9594dcbcfe306003c2d832070190f1496d05f3e554cf99005c47ad82bd4f",
+            "single-repair": "5e7a3c5eccfe077798aed6f4550efd13909d5ee29198ca48fa8aa619c65f33f8"
+          }
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "certified-wide": "6293fd4b74702d6b8dfcfd50edd0e3035f365a214e854d6bd5c123ea334e7754",
+            "four-repair-cut": "7c9029214178d5476993ce73022ed5d52512f0c92fc523ebcb2aaa6cef37f6d9",
+            "single-repair": "69d77a4d6ce5498a41057e81556df4e3825a89e766e5c6affc2af5768ffd5df9"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "791dbb2023b9fdb7054e048478451d17b225caf4358a43b64f8440eb4d3d758a",
+            "four-repair-cut": "3aa9ce6084381ab4b2ffff8575c602631016bfec4b080b5bf76d722803ab295a",
+            "single-repair": "4b6ef8527cc764982baffdb7b7a0c907d7bff55db50f8b384fac17c85b2f75b3"
+          }
+        },
+        "moral_disputes/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "2e49b4285b331f8f5d570287469aaae44c8f133469dc7f962d8566b5bf4d422f",
+            "four-repair-cut": "9c778eb68f8a111446919ce8c656b6cd07c29fedff6d2e7f914c173ef605fb30",
+            "single-repair": "8fd2122c3c7e159c5d6fa9e139d07f3fb437c4c54be46acc25d2380a85583f4b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ac4401b28285c8024d38db251aed4d67880c194dea7f74541f15ccc8a15c7d20",
+            "four-repair-cut": "f6b8e838da0730406d4d58028217457ca8f60528a07a96cf5cccea8458353a0c",
+            "single-repair": "39bca97a7ed006cc115954d7b911eb69c115e479a8c28b34a74abfb85bf002cc"
+          }
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "certified-wide": "58831aa90f3ba04945f5bbb45889dfd1350f4e3af0cf7c30cc2d10c0f1eddeae",
+            "four-repair-cut": "c9fda732a72d5bbb42dce7b003a8df228110fefdd3481affcc2702e650d485d6",
+            "single-repair": "c9fda732a72d5bbb42dce7b003a8df228110fefdd3481affcc2702e650d485d6"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7ab0e901dd15f51cc66dab60125a8a960f20e719df36c4c2bfb7977a4d0be96b",
+            "four-repair-cut": "7de7510e138ec8304ff1728cba340725f350c55b34b6b6553f06d733eda515e3",
+            "single-repair": "7de7510e138ec8304ff1728cba340725f350c55b34b6b6553f06d733eda515e3"
+          }
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "1d31ddb3e2d862cd4cbac4318a5eb21db99b32989e445ed0ae66b10b429e556e",
+            "four-repair-cut": "956efc788059ef6a4fef93b070d2e113a2c3401f3d3d6f4177a340e30c760655",
+            "single-repair": "4848cfc304fed6016ac0a119b3afd86d7188bb84da120410af34b3c7292d991c"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "dcebf862119b6ce6c98b4649008578e87a60018fde82eb41a35cbed1703c6d09",
+            "four-repair-cut": "e5f7b2555e38d0184b3f40ab61f6dc517cf4198c41a21dce6e1a120155adf7b1",
+            "single-repair": "a6fd62eb339c161ebd93e0986abd06ed2bbe26b5fc174b2a5205b9d5532af5ef"
+          }
+        },
+        "professional_medicine/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "certified-wide": "dda85eb39f106351e4e421f7c6f627ee25640367282719a0ad5080d03aa6e230",
+            "four-repair-cut": "4f7adfbb085643e42d937c77bb8b8ea005514b230bd7642b786c9c692a830153",
+            "single-repair": "e628d8201bb93ddf74fbf9893f03b4a12e0670b9c6ec86f3f2fc188395a15522"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d567e1067efd0e1707499b83185952798d7daf85229ab775074d733676ffd66e",
+            "four-repair-cut": "b79b2f960d883e307de53bf4ac44c1899a52f54e84623f2ff2db6ad6e5fd36a3",
+            "single-repair": "3f95d888e19d5f95442ff8c21936e471987104c2ac606bd2968abf4320ee80fb"
+          }
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "85a3e01e5959ff732050cc539cf3a4afd2eb4d273b9e45c1210b11be8bd0f109",
+            "four-repair-cut": "273543b442c6ed45cd999a2e483d488c8c1d260f32a56758c0769a4a6494bd7c",
+            "single-repair": "34a1bd667c2357873cca55d4d04e9505d8d9824f3e722f65516df95791569d33"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "66e53d9105287751ec7ab337df874a7dce980602979d0b476d6dbbbc0fc3f4b0",
+            "four-repair-cut": "5c3d1c14faaf93e702e448a0d6c5209968735f2a731b7d546442e4cd110fdadd",
+            "single-repair": "3a635febc91c4c301f0ad5fc107f9eecde08f36947db6baaf742efcbfe85576b"
+          }
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "fdc77da33f6ac8cba0aca574a3a25a992282a2e36c75b756061740a91d3101e2",
+            "four-repair-cut": "2d315bc5413cb0fca669d681b42f5e84a5d9a3e045d98cd9e295cb2f578cd699",
+            "single-repair": "4b4c70084f9b2bdf81bfaadcf3d08e35104ed0dd99c8e53d2b65172d0681ce46"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ce90351f4ded741ba28022649e073ac950a0f0111c4b49783281e030c956c7a8",
+            "four-repair-cut": "510ab38af31f646a0f1c4e60ae07d975554d6100a4b1b700feb8c12c461f49aa",
+            "single-repair": "e65a94a0dedfb722e9414ab740cf9fd406d773aea8b73f28fe267df0071bb290"
+          }
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "755a20fc3dde596cb3d98d2bb8d40d50a9df5025a12df7b566fb6ef65e31f247",
+            "four-repair-cut": "cdb4c8446f8641f34f54f4e7617f2645570de340a5cb8caaa5338c84c5871d1c",
+            "single-repair": "47dd3806e32f8f2e9545bbfbb6b6e8e28a718edad4e9a8bf617e459a32694599"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "eb69510060a480d79a4ab7424f130281b83ea0852be608ca1a8b7d79a227eac8",
+            "four-repair-cut": "fa23324a41aaac456de5e26851525537182d625360cdd5a26a2abf8e87d92110",
+            "single-repair": "739ddebbd94dcf77cedd3f3d3f91384dd3fa7b3c31657af7f0f9f7dfcd815b94"
+          }
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "65edf81a296c341188af057c6295117954460e1f50bc0b70142abad4351e13cc",
+            "four-repair-cut": "26a5b7dd66d3666c47590c9a875922fc91798a886042f71346d5bc6dc6d5d027",
+            "single-repair": "26a5b7dd66d3666c47590c9a875922fc91798a886042f71346d5bc6dc6d5d027"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "71f24768f75aa92480d7a13457497fabc57012dd8d28eec4230d0f02768c2cd5",
+            "four-repair-cut": "f0203dfb6dd20be316f0166edd2d568a0051db8f1b11cfdfd326e4c3e8c66587",
+            "single-repair": "f0203dfb6dd20be316f0166edd2d568a0051db8f1b11cfdfd326e4c3e8c66587"
+          }
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a8d1002cedf24dd3079373143a1a17d3a8a909e721293468deca97d26761b8e7",
+            "four-repair-cut": "3d4719aa4c9aa99f6f45e81fca5c39c466c63a04e6cc9d1553d0abdc53b2a8cf",
+            "single-repair": "60ed5fe7e287a90e520968a6f4aef30ea1ac06d47fe17bf3a4e150f258f0572c"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "03852a89cb1f9c97e06e90b9467b2f99fed798efbc8773febbc843b779a0f0a3",
+            "four-repair-cut": "961d4c5d3f0e2a90fa0294c84798a1641a20bbfb0036c99729a0d5b8c276c5b6",
+            "single-repair": "2e66330c4e8119cd6968a7906829932ee9128aaf837cb42536dc94295783a894"
+          }
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "f70ce6db77fe9904cd7b297b61b52b97aa33eacee278d9eba4122ca91d9234b5",
+            "four-repair-cut": "e14d654429323af7a2cb88f96793ae91baf51cec7e65161b783127fd345e5107",
+            "single-repair": "13f4e6a460c019d2550c8a07c0fbd0d144b134f8966bc03a8f0091d76bab0d89"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "four-repair-cut": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "single-repair": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+          }
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "0bc7b7abe08df6effc4b72328b03b68bd4cbe1669428fc99d8cc56b138d1d101",
+            "four-repair-cut": "d735cf3bc11bd486410d56e3281572fc4977190ae773bac7b74e672fd12da322",
+            "single-repair": "926c54e4dcd2f704f44a147cffded7c38848178bdbe2ff7887144a93cd754cba"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "3aff26905ea25362a299a3bd5b7da1a264b71d2b5ff9b0cfe056b1492026c9ed",
+            "four-repair-cut": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "single-repair": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2"
+          }
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "certifiedWideVsPublishedGepa": {
+        "both-promoted": {
+          "certifiedLookups": 86,
+          "gepaLookups": 136,
+          "gepaPassDifference": 5,
+          "paths": 4
+        },
+        "cpo-proof-rejected": {
+          "certifiedLookups": 67,
+          "gepaLookups": 99,
+          "gepaPassDifference": 10,
+          "paths": 3
+        },
+        "gepa-retained": {
+          "certifiedLookups": 2334,
+          "gepaLookups": 1373,
+          "gepaPassDifference": -7,
+          "paths": 114
+        },
+        "no-cpo-nominee": {
+          "certifiedLookups": 19,
+          "gepaLookups": 35,
+          "gepaPassDifference": 5,
+          "paths": 1
+        },
+        "same-deployment": {
+          "certifiedLookups": 12226,
+          "gepaLookups": 6931,
+          "gepaPassDifference": 0,
+          "paths": 774
+        }
+      },
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 121,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            },
+            "holdoutPasses": 26642,
+            "nominees": 705,
+            "openSearches": 728,
+            "paidLookups": 14732,
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -13,
+              "pairedRange95": [
+                -59,
+                34
+              ]
+            },
+            "qualificationLookups": 5045,
+            "searchLookups": 9687
+          },
+          "four-repair-cut": {
+            "deployments": 41,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            },
+            "holdoutPasses": 26637,
+            "nominees": 201,
+            "openSearches": 728,
+            "paidLookups": 10145,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -5,
+              "pairedRange95": [
+                -44,
+                34
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -18,
+              "pairedRange95": [
+                -45,
+                9
+              ]
+            },
+            "qualificationLookups": 2989,
+            "searchLookups": 7156
+          },
+          "single-repair": {
+            "deployments": 43,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            },
+            "holdoutPasses": 26635,
+            "nominees": 201,
+            "openSearches": 728,
+            "paidLookups": 9061,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -7,
+              "pairedRange95": [
+                -47,
+                33
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -20,
+              "pairedRange95": [
+                -48,
+                9
+              ]
+            },
+            "qualificationLookups": 3019,
+            "searchLookups": 6042
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 14,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            },
+            "holdoutPasses": 26632,
+            "nominees": 422,
+            "openSearches": 436,
+            "paidLookups": 9931,
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -23,
+              "pairedRange95": [
+                -43,
+                -2
+              ]
+            },
+            "qualificationLookups": 3957,
+            "searchLookups": 5974
+          },
+          "four-repair-cut": {
+            "deployments": 6,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 26625,
+              "upperPasses": 26655
+            },
+            "holdoutPasses": 26633,
+            "nominees": 122,
+            "openSearches": 436,
+            "paidLookups": 7512,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 1,
+              "pairedRange95": [
+                -12,
+                14
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -22,
+              "pairedRange95": [
+                -39,
+                -5
+              ]
+            },
+            "qualificationLookups": 3205,
+            "searchLookups": 4307
+          },
+          "single-repair": {
+            "deployments": 6,
+            "gepaPassBoundsAtOwnBudget": {
+              "lowerPasses": 26625,
+              "upperPasses": 26655
+            },
+            "holdoutPasses": 26633,
+            "nominees": 122,
+            "openSearches": 436,
+            "paidLookups": 6841,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 1,
+              "pairedRange95": [
+                -12,
+                14
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -22,
+              "pairedRange95": [
+                -39,
+                -5
+              ]
+            },
+            "qualificationLookups": 3207,
+            "searchLookups": 3634
+          }
+        }
+      },
+      "oneGainNativeBySubject": {
+        "abstract_algebra": {
+          "holdoutPasses": 595,
+          "paidLookups": 1527
+        },
+        "business_ethics": {
+          "holdoutPasses": 922,
+          "paidLookups": 0
+        },
+        "college_mathematics": {
+          "holdoutPasses": 511,
+          "paidLookups": 1045
+        },
+        "college_physics": {
+          "holdoutPasses": 730,
+          "paidLookups": 1946
+        },
+        "computer_security": {
+          "holdoutPasses": 1443,
+          "paidLookups": 0
+        },
+        "conceptual_physics": {
+          "holdoutPasses": 2356,
+          "paidLookups": 745
+        },
+        "electrical_engineering": {
+          "holdoutPasses": 1456,
+          "paidLookups": 0
+        },
+        "high_school_european_history": {
+          "holdoutPasses": 2222,
+          "paidLookups": 886
+        },
+        "high_school_psychology": {
+          "holdoutPasses": 7962,
+          "paidLookups": 570
+        },
+        "human_aging": {
+          "holdoutPasses": 2500,
+          "paidLookups": 1855
+        },
+        "international_law": {
+          "holdoutPasses": 1703,
+          "paidLookups": 0
+        },
+        "jurisprudence": {
+          "holdoutPasses": 1581,
+          "paidLookups": 0
+        },
+        "management": {
+          "holdoutPasses": 1295,
+          "paidLookups": 0
+        },
+        "public_relations": {
+          "holdoutPasses": 1379,
+          "paidLookups": 0
+        }
+      },
+      "repairVsCertifiedByDeployment": {
+        "cap-19/gain-1": {
+          "four-repair-cut": {
+            "both-promoted": {
+              "lookupDifference": 6,
+              "passDifference": 1,
+              "paths": 7
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -810,
+              "passDifference": -6,
+              "paths": 85
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": 2,
+              "passDifference": 0,
+              "paths": 5
+            },
+            "same-deployment": {
+              "lookupDifference": -3785,
+              "passDifference": 0,
+              "paths": 799
+            }
+          },
+          "single-repair": {
+            "both-promoted": {
+              "lookupDifference": -29,
+              "passDifference": 1,
+              "paths": 7
+            },
+            "only-certified-promoted": {
+              "lookupDifference": -817,
+              "passDifference": -6,
+              "paths": 85
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -28,
+              "passDifference": -2,
+              "paths": 7
+            },
+            "same-deployment": {
+              "lookupDifference": -4797,
+              "passDifference": 0,
+              "paths": 797
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "four-repair-cut": {
+            "only-certified-promoted": {
+              "lookupDifference": -90,
+              "passDifference": -2,
+              "paths": 9
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -7,
+              "passDifference": 3,
+              "paths": 1
+            },
+            "same-deployment": {
+              "lookupDifference": -2322,
+              "passDifference": 0,
+              "paths": 886
+            }
+          },
+          "single-repair": {
+            "only-certified-promoted": {
+              "lookupDifference": -90,
+              "passDifference": -2,
+              "paths": 9
+            },
+            "only-repair-policy-promoted": {
+              "lookupDifference": -12,
+              "passDifference": 3,
+              "paths": 1
+            },
+            "same-deployment": {
+              "lookupDifference": -2988,
+              "passDifference": 0,
+              "paths": 886
+            }
+          }
+        }
+      },
+      "retainedStartPasses": 26625,
+      "traceHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "a9d5541d4e233e88242df11294d0c1c7b8782aaef33f0f12a91db65fead71188",
+            "four-repair-cut": "d9261f5c3a8e669955bf67f0736206b66e1145e407538d3f77b6f1fa070fa4f5",
+            "single-repair": "fb8033bc1d58fefc003803613cdb5d67a16ad9ab02a6850bf7f9c69fa0902d7b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a4725a063d328d17da924cadebd9bd8991fe416ddf0871a7ead1eebaaad62df8",
+            "four-repair-cut": "c585f1af5afa03c1fe5e7b76e28ec815e4269ed5e52a5e1701aad29912b2fcca",
+            "single-repair": "5a0c5d35fe4a4393ee8cbae9c87b4ed8e511f83d2e2e838397c0995e8663b9af"
+          }
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "87af491a984e9fbd005d662232df35f6f898f5e4610510a8a3e66a5bad40107b",
+            "four-repair-cut": "5ca0ce8c09cbf0aa05113b97029f0dfda03c37c738514d36ae45a02eb43df881",
+            "single-repair": "201418c65f5c87a14e031f84eea8aca61a3aad7538011fe6d8ecbe72f6197d1f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "58a3a7c091c3395ae6a165bf9e6576660cb84162aa92a76fe6666bc8e72a3460",
+            "four-repair-cut": "36dac3465d1031935af425c228fa8124544546bbcd0fb6cb96f3473058554644",
+            "single-repair": "138eae2350d43bd490a600437b1d9c01bfd39b72383a992a4d29abafd3d0faa7"
+          }
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "1a9cdf2cb15859f409cf6bc943412a1c434e8a42844512124e66041bfff0ecaa",
+            "four-repair-cut": "a344f3bb399c4db9961456eee7f9d02606102db9c8b93a592863b53c99b4d5a1",
+            "single-repair": "c078e048fcc701d2d6da92998c8a2889376fa0adbe649bed0b5b0007bbdb19f9"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1ed8d73ac5dda4bacf5b899f2489635fc0656cee82c997bd18bd4b700b977a10",
+            "four-repair-cut": "3d2fe5046559772d1de2ca330acd010316ffb41c6ea25948efc527d31fa19406",
+            "single-repair": "0a2ecc499581f5fecf4ff50f4c9ff0ae31e157bcb2bf18767d06cf6574f387dd"
+          }
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "4aa37604959fdb0bd9cfdad6cb2dcf7c68e5210356e0af2284331015a9795598",
+            "four-repair-cut": "4af5eea2aa22a484f5cb0d4cfe8908b4413994d432f2f44157f46779a8f08ed1",
+            "single-repair": "cb61352691d606d716c3790a0b1e998b7bf67ecc6403571de65e1a1d102e5a7a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "dd8af9c950b541890925d1b44d3df97bf563f34490b1009f9c32f0d4b39cf669",
+            "four-repair-cut": "606312e538a2d83cb4c2496f7d37b2ca139ea4779c0c5e589d3aff69921e2c18",
+            "single-repair": "5ffe7176b7577838fec0a6bff0906f0bd2cbd873e7d999affe97392f267069c5"
+          }
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "2e21f24fb3f41327417f5c20a197b1e2176931cb8cdc6ecd9b395e2be66f0e8b",
+            "four-repair-cut": "492ab791d30018e37124c06c2f65524766cc1314c3484f7bacd66ffe168ca4e8",
+            "single-repair": "b060cdd7a59d686069a1f46dd4be95feb72f91232d5e73e2b806acfd548934d3"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ec9c424d3856cdcae02837a57edfb4049ecad265e3b11fe24bf5bbe3ebac2446",
+            "four-repair-cut": "83c629b4410182fe99c6184ca07e648f4d357a5ad86e4d1eaa852a6b2998e49c",
+            "single-repair": "166717a15d008a309f26863b221a4e67f669f847f68aa54dac10500262a6d704"
+          }
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "1bc01b5034af518d558cb8103738732073e73833f333cc0db9658f67218b5afa",
+            "four-repair-cut": "3f16758f1a8fe4425b48423567b0beee315631765947f6f15d866e5fcae37dd8",
+            "single-repair": "973593809ac815e512575ea5d4b14a569946e8541fb57e41165cfeeacadf37ec"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ca55c752e4481fd5f1bc028eefecd6def791182272a5837622ca1f19ace6d972",
+            "four-repair-cut": "dd64484bc8498de1117683be07d4dc7673bc29fb83064034f5f196c159f2403f",
+            "single-repair": "561439286843bb65910e1d906a2404f87e88106de622ed5aaa76b4aaf1dce017"
+          }
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "b0b6c000500fb500f949ac5bb3f536c166136c533410f9c42fe739b6a4fb9649",
+            "four-repair-cut": "d6edc4aea485af017a6899364240a31588a2bbe3f5d5f63cb67b7d9d0153af71",
+            "single-repair": "cd830b8645d7f2526ecd73bb3de2199004ff51a2d265a901dd2cf87938ff4825"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "4b9b68136fc7d4ecbb475e7179ab4f52ff60cdb407bb8993343f51e6681106dc",
+            "four-repair-cut": "a57c0e61f4c46786549843551692bdf12873f4c05536fad11d9f8fcb037518f2",
+            "single-repair": "80532fa1e74d28d211c8f38a6ee76b9723b289ac1700f94eee8a9d6efcd12e2d"
+          }
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "81d5a2b0b118b120b4594484e8f109834535218e96a79965e7b2d72a89185036",
+            "four-repair-cut": "6ba24913127d600fb4b437e0a1953f79d0f23383c36ae84c1fcf521fc78ca1af",
+            "single-repair": "ebbd102134f1b9991559329e582e78f386eaca25e3e449e637f03355fdf42c0b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7c1e63d29c751f64208bc8cc4ffb60f59e11dcc1141b2a7a6ab81a44415d3ebc",
+            "four-repair-cut": "d3944a44a2a421c656c84a315facce77e2f0ed4cddb4eeb00b19379a63c1af7c",
+            "single-repair": "6a1a385c6516305679d7e3e71d7432af1d45d9e27c8861172b7e4a95269264ee"
+          }
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "70b517c5b033386eab90414374243f3fdefe2445ab5ec8adc746dfd03f734b85",
+            "four-repair-cut": "df169d42056138989141543fc1b81327627984b04ac813c472d0e271a16e96c8",
+            "single-repair": "d7a4a49ab2bdd24228a09de6a2fb02afc13579e272939f582f707c540706615e"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f811f3b76e0bf48586bba21e8810b24ed2dac2d8825bef25028dab35066bdd81",
+            "four-repair-cut": "147347186b54037afee02b2547b68fc8487cc10e81bb9fa458a90b3aca20a180",
+            "single-repair": "0cab610286a67fb13ffda2a0df31d1b8458b1e1a827e7128c1d6e26d23cdf7af"
+          }
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "d78b1be50acee36fbec04bf68887f32fb1d517209cc11999dba690fadf4f5860",
+            "four-repair-cut": "48df581653aa2fdb8709b63e676d7f51de5e31576878fea2507d986ab5a20c9f",
+            "single-repair": "102e3f19856e5d1832d15e1da2ccfda29310bd1dcb4e757cccb1c35b953e3693"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8681c5066abdde7a50cac226db82e28de5a166fc5340741af3695743c3c6d5b3",
+            "four-repair-cut": "a97c7fa1749df98591ae2df90e3dedad2c66ff976a59b2c04d7319cb6054a276",
+            "single-repair": "fa2704034ebf8bace28edf94070a329d7b92f4df06abb45b156e82783928013a"
+          }
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "e8a04d423e825b0e3986d04cc6d718a2dcb835f7904a2e4b89dce63ee26b2813",
+            "four-repair-cut": "3e2e42c27d07b190335ac29a583c254376b96d10ad0629a05259d510d3cd080b",
+            "single-repair": "4e34efa0ad1506cbc6d79b66a3e8d4209127cc5e804be1725bb7dd413d15aa58"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ba4880e3b38e53021431ea76400e36f2e28092d99756bc8c620e37457002dd94",
+            "four-repair-cut": "985ff52ba2683b76a8d02a47a63fa2a7870d8c323c1f20e5ac3ca37c2759f66e",
+            "single-repair": "cfbcae233edb7968c610aa8894d7bce13fb3ff6980c7c712569e352d7b6fb20b"
+          }
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "7aa1e78372ce3855a6fc46a392c3300c87a9de481bcb38f2ab1a828bd23fb437",
+            "four-repair-cut": "db90399c41afc9730b0f2547ad9df1576153c57b0800405d9ad42ee1d367d480",
+            "single-repair": "d3919caee69d4de1675e5ffe42fa4f65aea31ab0c8e564fb4535f698be78efb2"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "aef45f1164bda6e92fc273c10013b26069223e7d03d218595cd032a676269fec",
+            "four-repair-cut": "a03ea963390f4dbe464fa1c05e3f8a7f48fc34dc45b1f67c9f1900155ea87ea4",
+            "single-repair": "5ce200f7243f96fe8c13d43e4358e16398e64c540804118c42e029417e5d5b49"
+          }
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "c851164b9c38ac8fb28b055a35307a26607fa2cb27bc8fc4b0107a77296be177",
+            "four-repair-cut": "8e157dda1afa8d8723d21da154a7a3f87339ee350fee9b1d9b2ea3f9937157a5",
+            "single-repair": "7d93564202a825940c5d36cde871087552c6ba6da1e47b60337e55c40b305392"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "32c9f79219675cea26fc6f152c6e330e4619752ca25a29be63aa20ca0decc42a",
+            "four-repair-cut": "164279735e59ca995e048824fd501fc666fc5ecd0c5142ed7758e1422ae79e79",
+            "single-repair": "164279735e59ca995e048824fd501fc666fc5ecd0c5142ed7758e1422ae79e79"
+          }
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "98238a2a525dce8b6b3170faed71f5cb5eaec23b7e0035531cdc84c358678a22",
+            "four-repair-cut": "a6c3146c95174f70822655351d45d517c6deba4ff78d765f72e836a6af00f319",
+            "single-repair": "944cc5869ef24c0a946402f5fe85495eca2b0859c5a2716ed7e23b2b27c3cb21"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7520fbadaec81b17aa237eb27518bfa66a57200b7f51338ebc7e64ee50fe717b",
+            "four-repair-cut": "9fb1ece0197e0369f3e32a6e3f0d842196bbdd59030e2e02d317401e0f79a808",
+            "single-repair": "4620327d4c36d7475e25b1fbc75e1157b1321de157911c200835033df0f90294"
+          }
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "9f8f4051c632e2e46e9ffd31daeda4e0869fc0214988da70c760aa636d65222b",
+            "four-repair-cut": "84c074127cfd40715b14027eba482fc0f96ddf366e502d74bfba9a58cc432e30",
+            "single-repair": "db37a9259be0206f48452999478b75bac1f35f282cdb2ed9f9a43de2a152f0a0"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1754b5e89c8a0c21f016ec5cf0fe7e1f233b403eaa87fa053b141f2557f80e13",
+            "four-repair-cut": "aa11e12c87a30cff8a5a63530bf5718a2ea9a0e5f10110edaafd5434d5d5f00c",
+            "single-repair": "c824759185568ac35b37887cceac2d11e5a86e4c21efe7c31f1dd53f90986297"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "28413d88cd84aa8697284d7d352b22b492de10ec59ecef0fe3ea36071dc25e38",
+            "four-repair-cut": "561a193911a7b5a510a0c930a35e49bd3f8347b0d87a8de0f362880cedbac7ee",
+            "single-repair": "eb01254a8712a80549efa4522006f6ab466c5bf49f4f5b2812cd592a4be61854"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "99a26253d8c7cc425e17a8cdc0e9d633eff0d9febf8421edea34fcd3263c31a1",
+            "four-repair-cut": "3b9c6b3788bc91eb30e988cc3aeceef1fcab04fc46716f0343d36f3483a97dae",
+            "single-repair": "6eb5ec3831b0ee86c30e12b12a6c37e9c5a589d49f9acecc4f4890dfca8e10f0"
+          }
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "9fc1ee0e50068f834054b772a874325e7a697d8e8363b056cad0c0de9d5ee1f2",
+            "four-repair-cut": "ef31313d140b99539799b725f1600161086943bcaf06f283c6bbc713e2e03905",
+            "single-repair": "896e83b0deff4b372899dbbbc96d52b7a8c1159fa70291832a7833c7f223bf6d"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8119d4de1adce479e17dc2eb720a680ef64ba617ee5a071ee3c8c1bf3589e476",
+            "four-repair-cut": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "single-repair": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51"
+          }
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "7e6fcb0eb8ecca992d56d5b0d28a80aaccb1046aaa0b17d061eb1600ebc49b51",
+            "four-repair-cut": "e64e3b7c9dcbdcd039a2409466030f75d78a6a97f1f173a23f34f64ca909f7ac",
+            "single-repair": "9637be8bf4ef630801e8cf892327ec459df1096d6c5c5b2db04f1023442bfff1"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d590ecf13e6fceb2daec81c4c3555aa9f7e90bd680bd112c9ad8956173a111b8",
+            "four-repair-cut": "11c279b9cdba5695363a93cf96dc11ce434c96412a1091d569ffc140d7228fab",
+            "single-repair": "f47c8d7ad5dd075e933be46722b748f45e62e45986afbb165fcd06d0b0fe552f"
+          }
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "f538cd2fed8fb535b5a09a2e6265568cd737307f9b034faa4963dc6c37a084f8",
+            "four-repair-cut": "195d10d92ba5573d89d2ce891dcb05c88e2f0659d4607ea86c73240ca2789d71",
+            "single-repair": "f944e271fb8819a93eebb6875d4c6e80eacb6b2c2e362c6b8e0513ad75d41f7e"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "fc6f435cd853ba6086d0e9f1e69d005f199298b281cefcbd62bdc25cf8b7593e",
+            "four-repair-cut": "e0092a5b4e804d0a61402161407eec6ae1e42d6ba80817d0df4d1a868c6f9b42",
+            "single-repair": "7526457b985197fae3f5090d1b68dc7eb2c96828fdbdd9a58e77de23a4580815"
+          }
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "bbeb197c1db9a43e7a01c6f1627fa1700d98f74f162fc92c866ac4aee55705d0",
+            "four-repair-cut": "72ad8b73683c83055f3e27f3456b538b74194d06b5560386776813d27be01630",
+            "single-repair": "b57616e74a112ad24681396853c0d38a38e9a10d5d51be64f45935ae0f71236b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f1ba95bf6fba2774a4e889a5d16b71fcceaa0efda06096beb51d95b5475372a7",
+            "four-repair-cut": "1422b68ce07162f55584c47fc35c0f63f49f4becfadebc4ead3bd44d328bf98a",
+            "single-repair": "cf39f29a710e96b4970e67ff4defd1b2abfc78fc6f19ef0bb31005ad9d5a394e"
+          }
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "e9ac83d5482f2e672e5e50a39511524ae85c1388c2952097d181b31f4a1df354",
+            "four-repair-cut": "109fd605d9f08bebbed3e8c076e79337857a785e4fe635acf29a2433e5c1a77b",
+            "single-repair": "9f42eb467b78d0966490e7ed1e58e347a588a4a0f3368be3d5d94330984ce97f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "b53354c6bea26ab794a0aee15d399d11f452e678c7ef058c17ae8e706d20d209",
+            "four-repair-cut": "2076c4d080599367a723786a36930fa74afaf7e52dc5eef4596fc92056ea64e7",
+            "single-repair": "3bda0947a06689bea857ce9d32df68e55abd0663ce6fa44e1932759d092234a8"
+          }
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "f4e3980f3c222ba6111b5c6969ad6862365dbf815893f4cb4748a0078e885c98",
+            "four-repair-cut": "dda80eaae862a3b8dbfbdb0f426146da155f94d6cc734aa1929f3ae47fe53f74",
+            "single-repair": "c5394a47b52d660d56793774a5a8a3e6ff20b19e77f09c2d9376dc6f64afa83b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "30be4e3d56b37ad20d5d83ffb40b19227926f49625924b261bbce8d128058467",
+            "four-repair-cut": "398e188719beec7f75621f4e71d1c1a8211acf47eccca8c2bc1794aade5360e3",
+            "single-repair": "9c135cfb01a31efaf604c5fa9f0bf005033f805e622ce061d5f0b4323ea9c5dd"
+          }
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "650223fff467521bfe7ade0db959f0ad71fb03083390ee2c4f308ad81dd00dd9",
+            "four-repair-cut": "52257e9601be47d18675709a663946291dacf1ccafc46492beb05424f299b5da",
+            "single-repair": "779a867782170c0e7a2eddc5ee3e50721460f6a69f09fde1f6b8a86ba5c3a2bc"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1bdf79e06abf3093fe01f283b70eaa4934f6a84b5721bba1a05feda382bb448b",
+            "four-repair-cut": "691f29cd839866f5d1b7cd22d554e13248b0b75856954d4745da18f381812da1",
+            "single-repair": "874b2abe38e5bf9734e7360ccaa83ce448de2b677d963f8c39077273dc8165eb"
+          }
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f5fd890753615db9148fa356d171823581d7cd8592b4aaa198b963bb16b30e71",
+            "four-repair-cut": "d4a50c7b22fa21a6b5f217cbfd38633d68936cceb2b5e81664d3b8c57527c05a",
+            "single-repair": "532cf2414925e3b21645b043e787863b15a8bac7e566bcf499050e1b7efa27ad"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ca8959255598e1f4b6bd1c53f620bcf7636dd98015fe98d842bf034a456f860e",
+            "four-repair-cut": "5160009c0d36c588ef9fad2ce63dfac136e4147f36e996bbdda178531ca5a6cd",
+            "single-repair": "337a8792178bd3f4830e84c5333a7974ded628b3c80d289cd5e52654bc3c0e7a"
+          }
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "653ed5402d6938847471786e3b0adb696d78e1da07bd0fb2e81f6c5a097f75eb",
+            "four-repair-cut": "294161d6222060d5f47895a9bab0a1f2086e79fefd9cce5eb5a6549102726959",
+            "single-repair": "fd0d64c3d8366b3313dffa5ebef73d4e9dbe8dcf9e7e5c9b0004adebb9216637"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ba42e87dd42406e3f2a0c8a95b5fa033d335e286fd26fcb287667253782fa203",
+            "four-repair-cut": "fe456d21b4cd86a167ddac916965ff0e5a31296872a09f1a17207baf152460db",
+            "single-repair": "f0faff69f62c4fb1dd40a73841f3fbca7500fe241c42017c32723c56f4665cc9"
+          }
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "27bef6de5b7a557a72c1490be0deef6e47a69f0c31cafe046c965f6b76687cc8",
+            "four-repair-cut": "32fbed0089ef454f9a714be60fb99ed3264f9a0eec0381a5eb4fcbcdcb49a58f",
+            "single-repair": "d4b9c85b5eaf7aa1da706ed9ab4f031a648c78df40b3810691c38b5da58e6592"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "5e75554def207401ff09c47433d1fe4dabbee92b8681dacccfbc228a539e8e52",
+            "four-repair-cut": "f93d5b921c792de3b7edd51cf07cce2e1d1d08827c5cca841e1bce7b2d8ece83",
+            "single-repair": "d9b94e05e637e7e1ed2d5f7583de7927265f14b04a161c660b2179aff0cac2a9"
+          }
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "4452d7c4a9a8b8e0ecd483f32d0971acda2e40ee56fb6afe21017fb78ba46c8a",
+            "four-repair-cut": "8638e598cf178aabacab1e449e0f37cb165eb6220ec70ad655a4adfbaf0a3241",
+            "single-repair": "483eef317f6efae3ab0b553d48139a16130a8a8f99d1d5bd9f2d9a63d93b313a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "c358156bccf78e38e2cad5ac0bb7bbfb9d3fd6ee399fd4877696b5091848c26d",
+            "four-repair-cut": "799a72867b47fcd6946c91104dad4c707e4d57b2feaeb578c429e96877e9d7e1",
+            "single-repair": "dff0c7852212ad94c666034a5d0c17ba4082a71e9e9d3a59dcfbc8274266addb"
+          }
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "feb87f4968c8ed4488e15224072213e17aa88096768f0a17145c6dc8410b6d27",
+            "four-repair-cut": "8be3a144b430e68963b8458ee95fab6b7514bc7201163438600c5ce9952c7698",
+            "single-repair": "88d832ca28678f6867823f3e2f8f45064b7b35d7545ae1c4960583f71dfdd962"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "4de8e058715b5da43db5625e004bb694a604488f39b4496f38151a61444d8b76",
+            "four-repair-cut": "addf88918d2a91621413b8441a1b99cac9ffe45d79e3f3d7d089f20d3dd601d1",
+            "single-repair": "1d3c105e919d11aa2c7c9f4f2a81cc86e4d8ae72e0e085608252f742ae54b9bd"
+          }
+        }
+      }
+    }
+  }
+}
