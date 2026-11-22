@@ -1,0 +1,3722 @@
+{
+  "plan": {
+    "agreementSourceSha256": "97e5582a43b88a8dc0e9ab2e4cc08abf678994cd892c6f3df6c4333ba46679ce",
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "certifiedReceiptSha256": "2e358d1681804fc3987cae14272e9e6f2ba16c1624b26dfd4f1a1b0a76712241",
+    "challengers": 8,
+    "cohorts": [
+      "BBH",
+      "LMentry",
+      "BBH/seen-task",
+      "LMentry/seen-task",
+      "BBH/new-task",
+      "LMentry/new-task",
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "At one gain on both MMLU cohorts, the primary race must beat the affordable GEPA ceiling and achieve a positive paired lower endpoint against both CPO baselines at no higher lookup cost than incumbent-first.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaValidationWidths": {
+      "split-safe-six": 6,
+      "split-safe-three": 3
+    },
+    "gepaVersion": "0.1.4",
+    "incumbentFirstReceiptSha256": "9e5a822b1215aa31bfb771c0449eac0e040824f7ca5c054dbd7af5f575e60a8e",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "paidRepairReceiptSha256": "1661ef5380888d37fa2aff1c339d3ba1541899591dd895aadac0e46067055ebe",
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedRaceSourceSha256": "2a38cd08bbcb8456b9ed6349f089be71bb95fff8a2fd613260a60f8c5c463d42",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "a7b1279c0325901f3648f6286d4d3e21b257e65a771ade5f888de83c6cb4947b",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "parentResultSha256": {
+      "BBH": "818c79dccdc6c92b9cf8d096a4fece76ed6910765e841d6a6f88db9b0f4b69f3",
+      "BBH/new-task": "7ffd1fb082bde28bf41989de935f2d960429dd43d5062b87c590a7ef09a23462",
+      "BBH/seen-task": "0526f1cefde090232fff4538b230dfc7eab146201e9eed427b47ed4a548ba18e",
+      "LMentry": "f849048d65f5d59e625472b7b92954ebd5e1ab1fc5ff35313b95b0a339992bd1",
+      "LMentry/new-task": "35809d042423f5907887ca915f2a72f8ad9ae425885933f8c30435346f974954",
+      "LMentry/seen-task": "7398fab10d6fd1d47058ff83310ccd48a1d79b6b89099860225a09b21efb48a3",
+      "disjoint-transfer-cohort": "4d03a0543cafe5a6d7c17563e6088b498f62e0397c3f16cd8ffd7224612af2c0",
+      "earlier-screen-cohort": "e36bca05ca53ba6ffae676788f2bc950f09daca370e4ff7df788db49fd12ed10"
+    },
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "policies": [
+      "certified-wide",
+      "require-paid-repair",
+      "seek-repair-in-spare-cap"
+    ],
+    "policy": "wide/nonloss",
+    "primary": "repair-twice-or-preserve",
+    "primaryCohorts": [
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "protocol": "paired-repair-race-v1",
+    "races": {
+      "preserve-one": 1,
+      "repair-twice-or-preserve": 2
+    },
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "repairAnchorReceiptSha256": "b4412eb9955fed5675855af7a8c98022c8e688c8fb4cf57b005425a3bffdf6e0",
+    "repairs": {
+      "four-repair-cut": 4,
+      "single-repair": 1
+    },
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "runnerSha256": "e88861881bfb85f1f1ed89ab612e9f93563a6947877d75d82566cd3395c40fc6",
+    "scope": "Use the first incumbent pass and at most two incumbent misses in the original validation panel. A challenger must repair a miss before purchasing a preservation check. If it fails the preservation case, the two-miss arm can still certify a strict paired gain with two distinct repairs. Use the same precheck and independently qualify one nominee. Keep rosters, roles and margins fixed. Replay the published MMLU GEPA attainers for paired case ranges. Use split-safe budget bounds on all eight cohorts.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "shortlistSourceSha256": {
+      "certified_shared_validation.py": "f750685ab1dfe3b86716be661fbfb0d212589241ac7b6da825502348372ec0b4",
+      "certified_shared_validation_cycle.py": "f4716cee84c1853c69258c37a0021db3434bf22737bbc13300b2179cf1c3aabb"
+    },
+    "sourceSha256": {
+      "budgeted_shared_panel_search.py": "75fa87af6359da13c2ebbb0a54ffc7c8eb0f79e2c68930b5dfb57e7e6dacfdea",
+      "gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "shared_validation_split_safe_transfer.py": "e7cf20c0d55f15a6dcd384bce12aae6daca7049776141a74d1da66cc44fade63"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "77b1c7830f467406e585ba22cea8bffd1414ecc74804a29518922a5a2591e3ac",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "incumbent-first": {
+            "deployments": 207,
+            "holdoutPasses": 9740,
+            "nominees": 431,
+            "paidLookups": 16512,
+            "qualificationLookups": 3520,
+            "searchLookups": 12992,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            }
+          },
+          "preserve-one": {
+            "deployments": 160,
+            "holdoutPasses": 9407,
+            "nominees": 314,
+            "paidLookups": 12119,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -333,
+                "pairedRange95": [
+                  -387,
+                  -279
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": -1,
+                "pairedRange95": [
+                  -46,
+                  44
+                ]
+              }
+            },
+            "qualificationLookups": 3011,
+            "searchLookups": 9108,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 208,
+            "holdoutPasses": 9613,
+            "nominees": 459,
+            "paidLookups": 15876,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -127,
+                "pairedRange95": [
+                  -183,
+                  -74
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 205,
+                "pairedRange95": [
+                  141,
+                  273
+                ]
+              }
+            },
+            "qualificationLookups": 3729,
+            "searchLookups": 12147,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            }
+          },
+          "single-repair": {
+            "deployments": 183,
+            "holdoutPasses": 9408,
+            "nominees": 392,
+            "paidLookups": 9647,
+            "qualificationLookups": 3450,
+            "searchLookups": 6197,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "incumbent-first": {
+            "deployments": 79,
+            "holdoutPasses": 9140,
+            "nominees": 392,
+            "paidLookups": 15414,
+            "qualificationLookups": 3828,
+            "searchLookups": 11586,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            }
+          },
+          "preserve-one": {
+            "deployments": 56,
+            "holdoutPasses": 8929,
+            "nominees": 279,
+            "paidLookups": 11582,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -211,
+                "pairedRange95": [
+                  -248,
+                  -172
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": -13,
+                "pairedRange95": [
+                  -39,
+                  13
+                ]
+              }
+            },
+            "qualificationLookups": 3507,
+            "searchLookups": 8075,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 75,
+            "holdoutPasses": 9048,
+            "nominees": 405,
+            "paidLookups": 14662,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -92,
+                "pairedRange95": [
+                  -131,
+                  -53
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 106,
+                "pairedRange95": [
+                  70,
+                  142
+                ]
+              }
+            },
+            "qualificationLookups": 3929,
+            "searchLookups": 10733,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            }
+          },
+          "single-repair": {
+            "deployments": 65,
+            "holdoutPasses": 8942,
+            "nominees": 341,
+            "paidLookups": 9177,
+            "qualificationLookups": 3759,
+            "searchLookups": 5418,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            }
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedStartPasses": 8425,
+      "traceHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "b243eb3abb0f456916258572951a556ca938444b14419cd246b886f0b1d64196",
+            "preserve-one": "ca7cb182ffc616f6cb975ae5ea8fab6a4d53bc592b85b696525fd831d98adbd1",
+            "repair-twice-or-preserve": "2183c6f4511d9a3e79e54d546acd54e775b6f0efe64740bc5bf088ca91723fd8",
+            "single-repair": "bb8d6bc58aa75bfbcba7706000737cb39c2f1188d64c827d5a293e95fbffbe76"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "21cfb91ce9b1f381a71bd92000cb9ae636cba4ca1a061e7ebf9fbcbba7c5ef7e",
+            "preserve-one": "3a7c1459238c86901e653cb4ac4790e6e49263a2a79a06c767274340a9535511",
+            "repair-twice-or-preserve": "64cc54153c4ab79dc2b0b114f10a28b9b632354f611592c155d6def9372e9746",
+            "single-repair": "796fa3423f932c00d0bd1464a216f80511d889bbbe4106e2cc5e6ba17cb6cde7"
+          }
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "006ee1fdd4a63fbdadcab29bca5a0c7d917aef19336b4f5ac8dc826caaa72988",
+            "preserve-one": "0e49650a0bff9514c9c803f4e78feb50483299eeccb1269ae524ff6c86531c65",
+            "repair-twice-or-preserve": "c0b4d3da2a914eb5fb55496d6fda61df38e93beeeb1780e66208289b1922a32c",
+            "single-repair": "bd2417b0c79c415068702ffb6716d69ad51433fa5b0b22283379fde2669bff6d"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "36e06b3dffcac37045618aa97a45910920d8a8e83b4c849d436a1dbfc0ddb38e",
+            "preserve-one": "13b6ecaaaffa5390970873f2c3e70f715ce4f5561ed3e900194d9b423f6241aa",
+            "repair-twice-or-preserve": "69332baf0ce49c1397299a531b4d9736eefec0431a37859147c832f441aed6e1",
+            "single-repair": "3ab25f8bede707915047036fbe3ccab846deb45496daad7c0d721b832b7ec758"
+          }
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "d2450d5944c3800436f0be798e4cecfa3c779409d3f19643f7ff9384b35d741a",
+            "preserve-one": "ac4e861426d1a2cc122e6c6159125a38e578e6cee90faa9d8c6a981a11fa101d",
+            "repair-twice-or-preserve": "c1881b20b00dc597d9e1a092ea971117c5cba98d0aa067a16f07930ce2712b0e",
+            "single-repair": "09c50d7af0ce432c22e2fc293c8b28b4f6abf774a5b23cf6be7649a606b6e683"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "92d232f770a50b174a5f521d8ad82eb7044d81ae267196da9e4b8e03a54f6b92",
+            "preserve-one": "6f0edddad967a3af166f2615796a254800fb45bbe5a04b1fbc8ffcd69c75d752",
+            "repair-twice-or-preserve": "7512d19c9709dbcff07945f5266883783cfa57d08ce896f5af4db7dde10860fd",
+            "single-repair": "df2b5ec36d8c3dee1748d53ee9d8e3472b128534010fba2c9b134eb994db11da"
+          }
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "aa93e80d0a2c25dad2e5b2519a85e481b05f1609da39d4e7eaae0025e1cd9817",
+            "preserve-one": "6dff034b3bc33fe61cfb8510439063437bdf534f7d5ceeb055226ff44e461913",
+            "repair-twice-or-preserve": "7bf606510c74dd37a162817a7ff3650164eed9ba17aac12e2f9722f9088d69dc",
+            "single-repair": "7a17e39f28a4aee54bfbf2be2d0abec8dd3d132f635599462370d44a4fc3fdf8"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "f6208b02947dc8d3a9fc2ebc8b22c0a9eeefe0a6e8da85e87f1a5e5de2896a5e",
+            "preserve-one": "ff1ca064717624accbc67775737d56692d60f3c52841a913f995a7fe3f06d316",
+            "repair-twice-or-preserve": "4e8179d57e66ae864f8076e4d00ec3d757e566aa32c90b3ceedece79d01a4440",
+            "single-repair": "3cec4f346bdeec3bab00712b85a69d4f2e8e79c1a7555fee73cfd1b22a64795e"
+          }
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "0c7492752064d472d98d74a9492d2d8c082a13b24604570e9520505c5d36a739",
+            "preserve-one": "064419b57c01d940fc6935696575c2f4590a3386845d9218aa1344390aa42238",
+            "repair-twice-or-preserve": "b1bc6a55f294990af2efd3f31b9598a8f21b2e4c1c945eadd3a75316d84c86c1",
+            "single-repair": "b544e5a0cffd47315793f46a69fc40e930cee8e2e92806f9f15ad239b4a53899"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "67ebd01a15967e4fe89439732607b4e709e15c11d92acea6ea4c0594b5f2717a",
+            "preserve-one": "0e2cb9ccfff790af9dab6d03502265cdeb0354a5f3f44bfa77d3c4c1010c5f35",
+            "repair-twice-or-preserve": "e9787e6638f9088738804f29039dd26b9d4837723f84763c6e15be70c5acb695",
+            "single-repair": "d836ee35d19f75e9b18ab8a62ceff9139a0661556d979fe9de8456200bbe7bf1"
+          }
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "adcd8899531dd2bf269174ebf594fa8d73abe5e816d9bbf31936dd6392b90826",
+            "preserve-one": "93bcb886ab51884036cd9a692ab30e3d2a2de25a2dc710bd2aacd6f7eeaaf170",
+            "repair-twice-or-preserve": "791d96595df7a6be9dafb16a1ea3d03ec322531d1de64deba0b313bd889e8b9d",
+            "single-repair": "602786584c2fb8d625a3b0cc25ac0855c98ea171bb6b005bc5dc6952a7605240"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d578ef2ed60363e31d6c8a7f34146f821c0fd6d40fae2845d19e865c1b43c107",
+            "preserve-one": "d6a7be65fae702c9dba509e3e4871dbedd7ff97ee747776ca63f0417f5484db8",
+            "repair-twice-or-preserve": "1b61ba2f20861a01484fa21a3f0ac06214c26cbbbe08c43df16be02af3dff6ec",
+            "single-repair": "27fd58c31748874b025f99d60e1ca69280c91ed43af5ed3a44e016254311a318"
+          }
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "223ff676ae6796e7e3df9f44f3868bfdfe530ab23c97c794d01b76682c6cf415",
+            "preserve-one": "999baa2b4b0924b9e1bde5cb7ae1a923b7c979ae082101d1f95219aef4e740dc",
+            "repair-twice-or-preserve": "32adf4d01ce9ff829fe939def7ee9599915fd59865c4b8cd4a7ff3838f197a80",
+            "single-repair": "99296e70f108ca1efb0dc11bfc0280729475fced831305dc1333a7ddc8a55156"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "1d57f9f1c57316c585e92314bba7f06e2589337327e3ddd7a134d712e80cae02",
+            "preserve-one": "e2067f48e9119d123c9ede8b01392d326b85c10ee44ffbfb4ba6f36a56198bb6",
+            "repair-twice-or-preserve": "b51e95cdd5ffcd60b161774ece25a5073c36ae958b548ab9ebb24fe1502429bb",
+            "single-repair": "2d105de94efb1a9931a0f66268e9e482657a2ca15498ae782739ee0392dbf596"
+          }
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "09d87653bba8a88a4d2d74136a8888d3cb66d4069e37d45512d455e5b8d4d678",
+            "preserve-one": "7d305515f882ed4418ad7c0d9487c1eec8d42f1240cff8727aad0ab978e17df3",
+            "repair-twice-or-preserve": "b0c241ed874f06b3bbcc7dae27c4f612555a77f33b11a08787df5dab8a2251ee",
+            "single-repair": "b8168918a834b84847b8532e0dd43ff49eec9e08f0abd483ae2f0a919fe36788"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "6f1f8b7d4a5be744a482feba7efd5bfaa89e8251aa880984202ec6fd0e82ad11",
+            "preserve-one": "39e6b4c9a906a0d4dfffe133c9446a2619003a5ae31c61367a4308367847a5e5",
+            "repair-twice-or-preserve": "9112d4a6460c127b42dc6ccd24d2d5d7927c1ff4b46ed61dc5fd619a8e194e35",
+            "single-repair": "ddda50439e9b199bd7ae5273790accefc9462bb342e9cc75e43649dc9f100e32"
+          }
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "c57082fed54745a95383460b3c2d36f3b2ad3383281cf99b86349f487e6c80b2",
+            "preserve-one": "4cfc1ea2334ad50332e791daf9d0d9fa503ba81b1ccb9339fdbb05ab8767e521",
+            "repair-twice-or-preserve": "d062f6aa8ec8f5871e11a764e69634eb4a57c1ea840dffd5de3367829daaeb5d",
+            "single-repair": "2befd1aebedb6edb656eaf7807d0f65407123269f293eca00a923ba169dc0c7f"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "cbd43ab192fadfc743dd6c3e62c77a69ccde639ddd25dd45930be8a283d55e03",
+            "preserve-one": "a06c781b5b6ff8d817d16d53e185d295c44af5fd22ab38d6990e1bdf01060142",
+            "repair-twice-or-preserve": "148e2013edb4cd88efcb5df172b7b65af40cbfbdd48da7dccbc57d3e40b91ca1",
+            "single-repair": "6c92cc1e0aba7252cd94fc6afa5f935ebeb036860366d6ac83f176e175e79ad9"
+          }
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "3d981372dd4440d0d1a6c2c5ead19bde47527265575b6bc256a7aace4424c70b",
+            "preserve-one": "8b130db75b727a399de22a80a54ac833a2c8d43710e744d0ebe0894d2dd4a705",
+            "repair-twice-or-preserve": "e8ee4c43885d5f3a4478569aa7ae10a1a84e4a8881a77688b46bcb570b3aa297",
+            "single-repair": "f63f07ab4d47de2fcad583a640bfe5cbf30e706210009c03d483eb37d78b2180"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "b0912e59591c103e2f185af189cb025676df9697c84af711ade64db244cc4255",
+            "preserve-one": "897fbd3e83d85bc1b26dd6cccd7369124cbb90dfb25f6df8189db0e93183e957",
+            "repair-twice-or-preserve": "4f82c8f3242819197f3cd1828c697fdf14cafb97d99738b36291135936d44025",
+            "single-repair": "9803acc072276a22b5c698b1fd07996877e5004c0851058f56f4aeb8def10664"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "187e633af2c18e599cb1f62967b5268e7ba6dfd7061cf85d14e9bf3a1a62d9a6",
+            "preserve-one": "25b41a7bf0f4828f359723f1402d51ae9822afc50840dcc0faaad57a986e4f5e",
+            "repair-twice-or-preserve": "e3f52ed98351b8ae00cfbb31bb122f432f929bf7728503546e51d84d33f30160",
+            "single-repair": "921b3d9808cdf048c6d1d16186cc45ee2df98f7254bbe89b86cb567308b2bf43"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "6c748d0fc60b83f7f69e1fff64dba136b6de057db1d91c49fc1598b3212b78a6",
+            "preserve-one": "2bd5c308afb64c749bffe4c001c3a94a9143b67845c6048bd40bc522543d85a1",
+            "repair-twice-or-preserve": "a65f30be5e53e1ba860f431f0c505f68e1908df5208d8adcc2664d2a50366b7b",
+            "single-repair": "006b0aa8b3462159813be89827cc1effbcc9a80db94838308ec4c499aa58b3ee"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "2fcadd8622328df8e85ac008fbc1651932cce3a87dc6a6a4744ef50738cc0ccb",
+            "preserve-one": "23cdb85d1fdddeef18112d4435659ec040386a5c89c3c8e7858c9f7c0282a676",
+            "repair-twice-or-preserve": "4d7ef00060b27f3fae4b4bc5219d3de2e0e638dd2614d9ed7f2157a661ef254c",
+            "single-repair": "2e504c3a7335bee36ddbfb6807cf608c72c6e30bac7b2675b7d8931f5e768f82"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "1962caa779f8154e5b14ac749b900cd968d60b93d4feab39e1bc0018f27041f6",
+            "preserve-one": "9e57727c28264cd8d16ccee97b6c0957e831352dc452b790802938f0a05599c4",
+            "repair-twice-or-preserve": "338409723b7db8be9b737aa3e551ed4419aa25cecd642e09f4bd087660366f8a",
+            "single-repair": "53a303a99c6480f001cb412f0348973e067ccd9d456c57b5bee01d432e8ec3e9"
+          }
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "24bb526e55808d8b043dabd1e8c7241ce6e71c45a296c3d5c8a2491fb992cbdb",
+            "preserve-one": "5193e59f6353918fe1f9b82387d46f57895b641a95251ab97c2dda8314a945e2",
+            "repair-twice-or-preserve": "5ad944d26ff8cc69fb2566cb798ba3aeb94cb8bf7947dee6e5291253019a3ae9",
+            "single-repair": "b24fa3154babe549f5d875d3c17f4bee28554ea2513fb3a005e88426a40d06d1"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "ac054d25faa22ae9bddc4926e6fb2258fac1fe71f15f4b92a0098e0df8b0a3ea",
+            "preserve-one": "4dc2eb3b591765a1da486e0cb0274b83736c82c7d188caefd8fffdc2f6962fc4",
+            "repair-twice-or-preserve": "68714217217a8db3cc638e1c94655b4a5ed0926b54aacc0163fdf7e9291858cf",
+            "single-repair": "5402b96be5ff7fc791ee0cdaf22e0a26e14b1724ce14a538616e65504e0459f3"
+          }
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "38fc1541bac0a6a080adc12ce13305dd0b9d4237cecd92f2a2b7ef1b8185ce1c",
+            "preserve-one": "69f224f26a9da1a38cfd8dacbc3a4c9f82037817d28b51ad59557d6fdc4d4153",
+            "repair-twice-or-preserve": "6d1151e47569ea3eb7a8c5d0b3a7daf35dabbb216ec83281cd3a069fab6d30af",
+            "single-repair": "e981ab5c637c945e22975d70e85334e2c548bd685f1322deaf3d5fd981566304"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "6cb4b72e2ed9de5e8bf9eb07139532c5485d54bc0c7ee37309e7889562a19e0f",
+            "preserve-one": "86bdf888c9ae10c1402897b2b0f07a901332a88f3efdfc154ddd74eb72265b55",
+            "repair-twice-or-preserve": "d232f6863a267d81c3c399c55a87ef72412b0dea0929190dbd9a22ac25c192b3",
+            "single-repair": "4b85333960c784bf002f1530305d3946f42f41173e3e53e2162a70d99264d3a6"
+          }
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "05c71970584c6a3b2f0dc93e0c7e338fcd4a82f698965264e3976527bc97c452",
+            "preserve-one": "5b3faccb8d8e43798a573b074f886429e81712cedd405cabdaffff351805c79a",
+            "repair-twice-or-preserve": "7d6374398b8dca0b98853bbe70a0d69c3af79a1326412b4492e0bd7ba3bb2845",
+            "single-repair": "997e2a770a9a9045d140fe0a6679122f0b568791fee33e916edb9708ec7759ba"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "594b56a56978a6c865cf2bf8e60303a78f2ef7ab88251c123e375cbadcff76be",
+            "preserve-one": "7fbcbfa09bc893586abd3b6f498379199be2df1ee0bbcf2373fb56d95714aa82",
+            "repair-twice-or-preserve": "52cb94e883bda988252ee4bdf90ba584441aebfdf48f046bcc8eb48d22049087",
+            "single-repair": "f4e5412c892f76714d0b60ba537d69d837803b2f89d58113716e0bfe6b263c07"
+          }
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "3901d5b96aeb3a1e1047e373551f44c16eb6478271dc154310c14bdc065d3c72",
+            "preserve-one": "9721c02a57f3a7fe164c08e5db8bd532f22eb402d49c0ec0aa1c39d87fbba175",
+            "repair-twice-or-preserve": "4783c06779a7b4da637ab7bfe991ddc9ae18fa79469500ef6ce0b6dc170204e9",
+            "single-repair": "561d5024746d53f3ceedf8239fc130b34839fc8f6d0facd83774bb70dca13c9d"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "7086db14c9378e874cc6d0b016b09cfd062db26b16b6ddbb1df1a1656d5672be",
+            "preserve-one": "78125382c26e8ebe23aa8edccb4a17b9b3b4c023cfb6efcb974203f11862b304",
+            "repair-twice-or-preserve": "69ff14620c6c08746e3f01533b48f2e72f98fefcb663361492eb019605350596",
+            "single-repair": "a8baa22b900628bd299c12f0aa4ad74b11f9455ce76c7e7b1c13eafa97bc2e60"
+          }
+        },
+        "bbh-navigate/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "f7aaeb7346a9452f2c4503a273f1e4767e0f86a9b1b2c46ae483a4936975ce2e",
+            "preserve-one": "7648668002a53b66a9f68957f8b98cfa68aefb7746035f8e1020087a328c08c7",
+            "repair-twice-or-preserve": "37bd3f18893678a228fed5eca96417a667cd4203054cec37a2f06a415a035f07",
+            "single-repair": "5d9510a3d1abba31f7846aeb00572c7a89bff4b1d8f517695de3a9890ed81314"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "3e8bb3a2ff3ce74fe7f1ceaafc3cc6adfb9e6195e6330f80d45aaaa253e84da4",
+            "preserve-one": "9982b419c50611b08e16fb2c9369c2a388e7d58c4162a384300e777800f80ddd",
+            "repair-twice-or-preserve": "833dd06069d6e18b460a65d6dc3b9ee08a88d6b66c287b5a3f5451ce9d7eb630",
+            "single-repair": "5f0692a6f6a41674462485a65e53e17a6f0a36435c0fcbf08cf2437c5fc63790"
+          }
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "972ecc5b46dc721ab411312d9e098f7e7efec215754947a8889733611fdb8af8",
+            "preserve-one": "45430626d2655ccdbf18e85e2edb35292946ff5e4f84a22abb959b76e731b30e",
+            "repair-twice-or-preserve": "5da514a598acec12f71ea19950b73fdea4f9d844b0c50c8f53016681ad9b63ab",
+            "single-repair": "f53aba8329c0577ddcc50c66da0e7781a24d5b32bcbd362978c3dede23c16411"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "880bb2de18b98ce8d43d43186ee2ffa4599f18f5a39ec4f55c0fac6e7fdc3765",
+            "preserve-one": "79d76cefcae77beac63496268e37817fad12f66999d45c9c994b2896b7bb5e8f",
+            "repair-twice-or-preserve": "1e6279676fa16e23b6ec9e5e0f2cd4862239cc20111c4ba1adb88656b2910e10",
+            "single-repair": "6e8b1ea43ab76cd9b9c6e2076db641c0684c6a458dc39f609acf4ea5a5e1566b"
+          }
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "73da72f76dc08b452033bc0bac9d744f38108d96aa3f794854956951e2ce3018",
+            "preserve-one": "93ea5e94c9a10fce0951bf48050af2242286a8a00591942cb78b913ee30f9000",
+            "repair-twice-or-preserve": "8598aa6b5626ee78ba8a8d21721cdb7300f55b634787b89e7a66452384ed8302",
+            "single-repair": "e198abdccc1531486aa42e892783a3ab73e836673e346142df96993efc023366"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "caa257d5593a6f1b8d0ad8a8459a4bfd1b67469c0dee483f30ff32c789a500c7",
+            "preserve-one": "268e281f914839a1d7c0ca1db83e5d9f4d967ac3e442d524cc5ed7cec82cd500",
+            "repair-twice-or-preserve": "a92b6f2bb6a4fb33cba8f3a7ae10dbc4dd27288836bd711405494d52f204ef0e",
+            "single-repair": "6dbd17ff31d37cf14e441d3f422a08b89810516723cc953839d2e950ebadd69e"
+          }
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "08ddb45fdcb32d468a1cd6f4ae6708259cca65e520571c67b07ce56bb3a36916",
+            "preserve-one": "0cdd3f56a0641df22634a7d8b800d4384352191932d3016f21669323e3b29307",
+            "repair-twice-or-preserve": "47ec80cd7c4a3e440f74f2fda1ba8e444c06104d3c21c7fbd950cb6827cafe79",
+            "single-repair": "908397fb732ca12a43d74bb14a10f29349038dce24a81eb4920b25651b81e482"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "c97ab3c22cfbf6deeca45482309a5d575ee8b477a0f32e3d9fb3592890ac7eff",
+            "preserve-one": "30a782943926d16ca039baf2727fb07e21b834b4923a66b8aacfac893350bf45",
+            "repair-twice-or-preserve": "971709f8be2300b93152689c694798d5791d3a6b68d98513e4bd8de0b0861754",
+            "single-repair": "125d07fa8c47c152c389da77c10b258efc4980866f609366f31bd57cbee0bead"
+          }
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "909a910bb71aef0dabbfda599bc9bec57d566306ac53a77110461775921bb03f",
+            "preserve-one": "ab1f029ed8c473c8059098b1515b87f0a09e8f0f4e9da1ebe8a9eb341b60e2fb",
+            "repair-twice-or-preserve": "e5fb92cb026cc72a747b38fc2779fc5fa670cd89f722285e5486dedab7a7fe54",
+            "single-repair": "a3ff8657b70c9955796e575a0d49a89a3250a15f0d22598f974d595022784d06"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "17a24757eecf356dd76eaf28eabd337546b3872cdbec9ab9e37823157d8850d5",
+            "preserve-one": "feb97758bd3002906c9e9190850c73a64ce5e4933db2a443105fde30c27a2735",
+            "repair-twice-or-preserve": "a0f68d36ddd5b54d6b43edfebab34073f425d3098dc3dbe47609d9a9832f5f07",
+            "single-repair": "8d521106daa82b2943d8fbf11721eb30aad0d744224d851b76611db416daa7f2"
+          }
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "d4b955cabee3070dd85ed7d5855885b3d1377167e87ed4ad1c46ea79729bea50",
+            "preserve-one": "d342ef41b1e945ca860b23167e7987477902b14f84b0aa0c16575de55e2447b1",
+            "repair-twice-or-preserve": "448123ac3edd6a5b2303f41d06bbdce0d9725ffbcc181f2e403b60ebbaab587d",
+            "single-repair": "36a6b4d1c168a6a766a7012ebbae597a37b20d9ae4c8b53d7ec78e8317fed9bb"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "85daf268e55260ff8a3c44ac7354724af2b56a530a7db4b515e8cf8f3248ac5f",
+            "preserve-one": "5af52a60e1f72d6184f16eb786d65bbcf23e01e51e49df4c2268bd722ab4bf81",
+            "repair-twice-or-preserve": "4dc28ad00c1300598127d526f968773e90b623a91c8be2ebdbad4e08a51c8725",
+            "single-repair": "f46e089eb6c047aad4b34b6d9e533b88cc2afd173327bb14a6bae9da9c8347fe"
+          }
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "cc9ac8339011de2891262e5b0886c8723da3954cdb9baf5ad021a5850c149b57",
+            "preserve-one": "5d1b1ccb77e3cde1c27870b99eae9e5e99fcaaa0c873c4a50e9d13f2dde4231c",
+            "repair-twice-or-preserve": "8f95a948fe6454dbc56183391678aa5ca6aefcf42257017c30772dd70dc3d5e2",
+            "single-repair": "09afdabe292ae8740a6a40e342254cdc6a7a6bd9be840fa70cf2601ab98b045c"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "550169f8d7d9aa145b3e5b1b177554bcfd5ea8121e9a89587bbd37ff7f883d8d",
+            "preserve-one": "0608fd4690934facc65a30cf45d1035fdd303083d2b654a6ee618fa287dd7a8c",
+            "repair-twice-or-preserve": "9dce11fca0b10f21c6ade07678e26232150a22fcd8da20e1bf3b163f324911b0",
+            "single-repair": "8a1cc31f80d5249ee6b517e66d68ff846e31310049856947a7a7154225d5bd82"
+          }
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "c4b6973181895b3ad19e315a8599765f5b92a619a99ab3ac2ebeaa55ce0ae76d",
+            "preserve-one": "8dad17f4c09b1c05177efa9746a5c915d2af0bab42c1e2df97bbf6ea563bab2c",
+            "repair-twice-or-preserve": "ba5882dc9ce37fa15a7ae3c8000212be3114763d957e7644dbf02b65b30d68d5",
+            "single-repair": "e5774d16bae46ec7305c895c09d1ab77b914fa34f85c166d2942971566218fbc"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d3d990f86962338e30746bbff2e5ee87c5d9726f4aba8f6e49fabb845cf8b1db",
+            "preserve-one": "9cbd6b546bbe352ae906473330d15d0a846b6ac33dfd59b8a46bb6a7861bbb97",
+            "repair-twice-or-preserve": "205807f1f8ac1a7a2e578e8a3e39e0c3b4e795c6d1b3a69fd337783e32e3861b",
+            "single-repair": "7afbe6f82a3d5d407b799e44d1f6be0d21484112515e8541285fed5ad257020b"
+          }
+        },
+        "bbh-snarks/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "623dabb05d72d94cf5e079d5adf8e2f803ff68dd15b0d459b1dbbf6d4464486c",
+            "preserve-one": "bdf7ffbe0ca54968bd0c80223a8abcf0a8988dd4e276fa72396a7751fcdd91ce",
+            "repair-twice-or-preserve": "7a03fdc121c806fbfb733a4b7e5b706708563768bf4956978870b490071aaef4",
+            "single-repair": "8d55529f667ee573f60afbd8f6d7f4ad8ca105e18dafbe8b61dba02b608272f0"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "97d7a2d9913de7f25cabe6999732ca4d459ef22989eac6836d2c191d02ef4d0e",
+            "preserve-one": "39e8ce6c0601e6497c46504b7a9e6dd169573cbbb9131936e9d923a26c59c051",
+            "repair-twice-or-preserve": "a79fbb7a0457ed71d76bf5c245f8dcd8c79d5587129fc46e61486e23c95c8ff7",
+            "single-repair": "bd605056bcadc025ea4e1ea9e2954ce77f36f56ec237a7eeeab75bab2db26e25"
+          }
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "c93a1bd2612243c4eeaf238a3295eecdb4464b4e6787063e93ef3ef5914aed1a",
+            "preserve-one": "3cb0b89c1e9e6bd32fa9e8b79d922dd9e822343a8852eaa9dfbd64bc270712c5",
+            "repair-twice-or-preserve": "f39400a3e52e8982423f88eec09e42da83458167d7a72554012c86934caddc5f",
+            "single-repair": "0d884e8888dbb18a07a7f81eee2153edab42b92db7082e4790f9286ffcce5ced"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "21bab31e01137beac7103749e64be8e908635fbb9a60c24700cc58265cb2e008",
+            "preserve-one": "bd5f70126dc825a877d9197e79793ee6bd0ee36e71fd9e6e26f95d5b8afe2808",
+            "repair-twice-or-preserve": "b65fe9127504e5d1b7609b1a78448cf84029bda08905f10228284758273e5118",
+            "single-repair": "d2cb940d49d7227bb29a114c3f5307ceaeceebc5583b6941ba647663a84afd9e"
+          }
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "be82b84cb101831e5456bdc31810dd0c992202095d01e5783c8af23e40b3ed2c",
+            "preserve-one": "e22b4441898974e156fb9110692eb25153980cd0435a1244d70b8ef4a30fbffd",
+            "repair-twice-or-preserve": "a9c5be2481425e4cc413946e5e9e312671c4e970a6b667617d066ef543eaa9eb",
+            "single-repair": "a5d381e5fdddedefe288f760490d9987df146b3d38a2cab850b6027b4d2c0a47"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "2509ab9cd043c1b51740f193e693ab3d750a234ae4923cad894500272da2a334",
+            "preserve-one": "05ab2021f6c46bf1d52b16a563457bd2ea6056e580661696c9d17f81e4630d8b",
+            "repair-twice-or-preserve": "ffdcaf1d4c00ae1746af3d0c417af7963c26fd631ae5947afe3d993db33516f1",
+            "single-repair": "48f6c9b85a45ec0d1806cccf992877968e41631288052ada020c8fdf8c0620a9"
+          }
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "3df807943a9c9a98a4bc341165cdabeaaca174b584dcedfc813e45a6b0b47a9d",
+            "preserve-one": "319b190d71ac20fbfc3cdaacefe70a9a93a9aced12764468427c2ca226cbd16c",
+            "repair-twice-or-preserve": "88ba0be1ee0d507dbf58fff65ea5f7ec7353a92bfd2414b11f118d2b3f51ec22",
+            "single-repair": "e75b994df51bb8e2e264b0c20644e7d5e811c050f2514d3c4d8c152a7ee11ffc"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "318e6789e876e25cb337895d7132579e7f480f5186b22b04e5276766bbb014c7",
+            "preserve-one": "c23f0972d16e7b5b4a006a8fc76be3c4871ec4308af711028965a620db700593",
+            "repair-twice-or-preserve": "94eff511e7bf6d8082360919de97b2f353fd8194f1385c26ceb8719185bb7225",
+            "single-repair": "369e8544a4830e97a0aa5c09ec35fd428d3dd69e700b1fa3d2125e5f0c1ca8d7"
+          }
+        }
+      }
+    },
+    "BBH/new-task": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "incumbent-first": {
+            "deployments": 6,
+            "holdoutPasses": 603,
+            "nominees": 19,
+            "paidLookups": 972,
+            "qualificationLookups": 195,
+            "searchLookups": 777,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 590,
+              "upperPasses": 590
+            }
+          },
+          "preserve-one": {
+            "deployments": 5,
+            "holdoutPasses": 574,
+            "nominees": 16,
+            "paidLookups": 824,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -29,
+                "pairedRange95": [
+                  -42,
+                  -17
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 0,
+                "pairedRange95": [
+                  0,
+                  0
+                ]
+              }
+            },
+            "qualificationLookups": 182,
+            "searchLookups": 642,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 568,
+              "upperPasses": 590
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 7,
+            "holdoutPasses": 590,
+            "nominees": 27,
+            "paidLookups": 1044,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -13,
+                "pairedRange95": [
+                  -20,
+                  -6
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 16,
+                "pairedRange95": [
+                  8,
+                  24
+                ]
+              }
+            },
+            "qualificationLookups": 233,
+            "searchLookups": 811,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 590,
+              "upperPasses": 590
+            }
+          },
+          "single-repair": {
+            "deployments": 5,
+            "holdoutPasses": 574,
+            "nominees": 18,
+            "paidLookups": 669,
+            "qualificationLookups": 206,
+            "searchLookups": 463,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 568,
+              "upperPasses": 590
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "incumbent-first": {
+            "deployments": 2,
+            "holdoutPasses": 581,
+            "nominees": 18,
+            "paidLookups": 934,
+            "qualificationLookups": 232,
+            "searchLookups": 702,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 568,
+              "upperPasses": 590
+            }
+          },
+          "preserve-one": {
+            "deployments": 1,
+            "holdoutPasses": 569,
+            "nominees": 13,
+            "paidLookups": 768,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -12,
+                "pairedRange95": [
+                  -17,
+                  -7
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 0,
+                "pairedRange95": [
+                  0,
+                  0
+                ]
+              }
+            },
+            "qualificationLookups": 213,
+            "searchLookups": 555,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 568,
+              "upperPasses": 590
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 1,
+            "holdoutPasses": 569,
+            "nominees": 22,
+            "paidLookups": 945,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -12,
+                "pairedRange95": [
+                  -17,
+                  -7
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 0,
+                "pairedRange95": [
+                  0,
+                  0
+                ]
+              }
+            },
+            "qualificationLookups": 239,
+            "searchLookups": 706,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 568,
+              "upperPasses": 590
+            }
+          },
+          "single-repair": {
+            "deployments": 1,
+            "holdoutPasses": 569,
+            "nominees": 15,
+            "paidLookups": 602,
+            "qualificationLookups": 221,
+            "searchLookups": 381,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 568,
+              "upperPasses": 590
+            }
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedStartPasses": 568,
+      "traceHashes": {
+        "bbh-causal_judgement/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "b0a6d1c46da8c97fa7905f284d3b86d1c1f4067bbe12558f19f325b1f881e7fa",
+            "preserve-one": "694ff325c9fe910fb8d747d0094cd31fabc147f7130f1e068de6e4ac58f09f2e",
+            "repair-twice-or-preserve": "f14f114a0dd548394d01da81fe14578e56eb0cec34dfabc2d62821cdeb377e29",
+            "single-repair": "11e55c2e0f7fa0dfe3e4030c24faffaa30ce997c3a3f1dc294c6cb61f3e596ff"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "b3675e936dc0c67640ebc51550e7595a31ac914fd82a932b8581b001abdcdd93",
+            "preserve-one": "a59dafdac000d4bf65725af30e0dc45a594ea723c00e887222c276a3f95edc42",
+            "repair-twice-or-preserve": "cc8fd5c70353acb4843ee40c6816d43cf3eba17bfddfbe92fbd856abd44d7e1f",
+            "single-repair": "09cc939805bcae8dc9083600f015adf67f208584177d43d09cd5086ed6549956"
+          }
+        },
+        "bbh-causal_judgement/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "bc088dd61f43f7508ab358523ef90e1c44cb7d92cc43b7d0207f4d3455ebbc4b",
+            "preserve-one": "da1cfa88db16e665bb76a33a73450a1c4e0b6287ada765282d304bb7efa84f3c",
+            "repair-twice-or-preserve": "290ee031d1810e0ea6b661b6bf8cfab7139032e42cf9fd7c39169f135014a1e0",
+            "single-repair": "24ed4e635ad96d8da77cf14bff97f93a4a6f04cf8d5a7bd83902402bf8469353"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "5e2ce99bb77cc4f03fe55b649a3f1e3a7b7eec2e0fa49861f801ad4c4f1ad01c",
+            "preserve-one": "326a6fc4736330af21647618112f38415c462ab85d14129363e7e4c01e340265",
+            "repair-twice-or-preserve": "f6de1e5d0b4069cd59b0b41002e09ad56542f5ee232ea1080bf7e1471c6bf27e",
+            "single-repair": "2d9bea97deae54eaf6c873534c98cb0e7da9779ed131bb100dc5b7090325f8e5"
+          }
+        }
+      }
+    },
+    "BBH/seen-task": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "incumbent-first": {
+            "deployments": 71,
+            "holdoutPasses": 4844,
+            "nominees": 187,
+            "paidLookups": 8864,
+            "qualificationLookups": 1664,
+            "searchLookups": 7200,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            }
+          },
+          "preserve-one": {
+            "deployments": 61,
+            "holdoutPasses": 4772,
+            "nominees": 148,
+            "paidLookups": 6928,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -72,
+                "pairedRange95": [
+                  -106,
+                  -38
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 14,
+                "pairedRange95": [
+                  -12,
+                  38
+                ]
+              }
+            },
+            "qualificationLookups": 1527,
+            "searchLookups": 5401,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 72,
+            "holdoutPasses": 4798,
+            "nominees": 197,
+            "paidLookups": 9068,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -46,
+                "pairedRange95": [
+                  -81,
+                  -11
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 40,
+                "pairedRange95": [
+                  3,
+                  77
+                ]
+              }
+            },
+            "qualificationLookups": 1718,
+            "searchLookups": 7350,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            }
+          },
+          "single-repair": {
+            "deployments": 68,
+            "holdoutPasses": 4758,
+            "nominees": 183,
+            "paidLookups": 5334,
+            "qualificationLookups": 1721,
+            "searchLookups": 3613,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "incumbent-first": {
+            "deployments": 34,
+            "holdoutPasses": 4798,
+            "nominees": 154,
+            "paidLookups": 8244,
+            "qualificationLookups": 1854,
+            "searchLookups": 6390,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            }
+          },
+          "preserve-one": {
+            "deployments": 28,
+            "holdoutPasses": 4753,
+            "nominees": 116,
+            "paidLookups": 6533,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -45,
+                "pairedRange95": [
+                  -74,
+                  -16
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 12,
+                "pairedRange95": [
+                  -4,
+                  28
+                ]
+              }
+            },
+            "qualificationLookups": 1759,
+            "searchLookups": 4774,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 31,
+            "holdoutPasses": 4772,
+            "nominees": 153,
+            "paidLookups": 8382,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -26,
+                "pairedRange95": [
+                  -52,
+                  -1
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 31,
+                "pairedRange95": [
+                  0,
+                  61
+                ]
+              }
+            },
+            "qualificationLookups": 1864,
+            "searchLookups": 6518,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            }
+          },
+          "single-repair": {
+            "deployments": 31,
+            "holdoutPasses": 4741,
+            "nominees": 142,
+            "paidLookups": 5021,
+            "qualificationLookups": 1864,
+            "searchLookups": 3157,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            }
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedStartPasses": 4502,
+      "traceHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "590261a0b295a25b08e524934207b7601a4f47dfaa68bd136d58581fb3fc4fe8",
+            "preserve-one": "2fb676afe8eb7025759658598f576f1537b95e18c797f3d085f0f63b17495e74",
+            "repair-twice-or-preserve": "d0344d83872202df75fdefa3f75a8b1015abb4a86b6a73224f1869b23a1cd947",
+            "single-repair": "4a23b8e71ed8b2c8ed6c1cd510fed95774e02f6ca44d2e11a4c63b60e6512e85"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "79f1bebce218d187f8a2dbbf4aab89e4ba72da9885b783245c39e013bbfa0f84",
+            "preserve-one": "a79fa6ca3368adb6a85b82ca6c8c9eebc921f01fbb69ee07e15784e148dd2c1d",
+            "repair-twice-or-preserve": "34afc120e0616c3185231bb0ad1fe6b1ed923ecf30e5851919ab263ddb405d9d",
+            "single-repair": "367ab35f4323ba34c2e5a1784e5f51af10c50b9cd1572ea80360f50da095ac90"
+          }
+        },
+        "bbh-disambiguation_qa/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "f3941eaef493457545cf380b6f710d852d3bf7d717612cb8471f235f6e2c2c85",
+            "preserve-one": "9ffd4be7e4adff7945c0f9fab24b7e1edc1d50f34abe8154ab34e968e1b4ea21",
+            "repair-twice-or-preserve": "4d88aae40d8b1e1e2b11438fdfd12a35bf2333e6d923379fc137ffc156f44552",
+            "single-repair": "0a5f395c8f6730ce2fe5b508c2425680ff6f5db94ca677193dc9fb337e622ec3"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "e8cceb5bc2af1d02f418847031908eb5850314ca11999c240d4fb29c23f48991",
+            "preserve-one": "f7ee4c1894bf5e688337ceb37a366bae1e5cbd39318d0e7a9fe2bc761ed9a2b5",
+            "repair-twice-or-preserve": "a1d7d4ed3d5ed9fdca9757af083fe0f6716217efe7fc7eae1958741997e41133",
+            "single-repair": "d5159eacffaee12574d78faf499f836e5432e79298a5e32acd8a47edc0b9a3fd"
+          }
+        },
+        "bbh-formal_fallacies/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "adf0b10aa5b95ed28b84d9d12b71a1c1fb875db347d2f51c24571d6a1429a05e",
+            "preserve-one": "246f034030fb9bd711e07b20b41be9b3e3472c5d9ff414a8b08c837ec5903539",
+            "repair-twice-or-preserve": "2bc6dea4cc40fb460f86640369d92e7c0e093ccce2d6ccc582a7fa2167d1a033",
+            "single-repair": "be6ae8a6a990c54f29f2c0db3d713a292f4d26740bde58cd0608aa58da74b4ea"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "9eae208256dcd09c34d252739edd5cc50f1a1750904f514a4ae2c7ad91266287",
+            "preserve-one": "9c90f75c3f2420b78f83584b0a2020180db54e49ec9c36107652ece27ae05121",
+            "repair-twice-or-preserve": "74a40f709b70c92e38716fdeee01e73a8884d78534a9d1a14e0b08c533f52002",
+            "single-repair": "25d256498f983f60d5490234f0b14dc4e3614bfd6e7825ba32ad6e50c2839b93"
+          }
+        },
+        "bbh-formal_fallacies/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "76dd29b007dbbb722d95395a0c2559d7b4ab086c4ff314ed7d0c479ea797679c",
+            "preserve-one": "5ba1fc85c47e14f0c8fd90ccb6aa1dd85d5951c55dfc038ba7e7478a23b1a21f",
+            "repair-twice-or-preserve": "cd454f17e15abd406740d2767be314b2592dfe4cf8bb0332e1d0abe8782a2e0a",
+            "single-repair": "0da76e26cf37893961dc878c7a0467507c37329aa7a79f4d4699d6bc92420935"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "55d34d0925f390a780fdf7057d02b484ed0cfd9613158e43097300973961692e",
+            "preserve-one": "c38184ae70adf6e207c5e325d9a43c2b912e33a22ebf99dcb1c306ab52a05d9c",
+            "repair-twice-or-preserve": "d1b2cc9d870570c2c9a7097b2471329710a6cd39e2aeb7339cb95c9571e4b39f",
+            "single-repair": "8dd47c806b3c20f1f141316c9e25b68f1d5c12571c8f75563f7673a3ed3f01fb"
+          }
+        },
+        "bbh-geometric_shapes/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "5f7edcc807cbaf18c4eefea74a9049e986774785553ab684a3051d094ed2367d",
+            "preserve-one": "cfa1f44493ab3ef0d5bc8dd489ccc81405eab586be6350745b9802139252f8e0",
+            "repair-twice-or-preserve": "dabe2014cdee8bca90219ebe2831c656b9ed4ad912e2036736fb45ca6d140d8e",
+            "single-repair": "f371a4290c2f324fcb3d9c34ee1ece5d543843e954d33ef58c35e250c545ce48"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "89c8423c3978f314e9944ad5c9d7e8049a87e59c0c8720cc22e84952240366a6",
+            "preserve-one": "37bec47424fd734b9e512e664e629459210ebf42e8b88cca6e447f7c5f6613ee",
+            "repair-twice-or-preserve": "3dec40b2a567975433b99bb84320c943171819e67141e7728f17e658d02f191d",
+            "single-repair": "0f25e24702805783079bdd1b49104ddd7e30a1a4a9b823954ecb17b27a5fca25"
+          }
+        },
+        "bbh-geometric_shapes/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "7a4690a38b8530ca0b05cc2f40c6db819341e31224e9b49747ae3e6ea55d6621",
+            "preserve-one": "508bcaa4b51b51a4a1d92e7b9ceb08f277a4448418fccf717235c1dcaa5427af",
+            "repair-twice-or-preserve": "9a4430382fa09e13d28e27d2913566c7d3d3acc94d1bcb327c915ca1deb98f79",
+            "single-repair": "c224fcb3ef298a9bc3041183817d3b6d30b5c05dafb749453ea963bfb0b6d22a"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "c53cbd5d4ac52dba01ccf5eeb4c49d5fc30653bdf9867f571c01382e071b5a0c",
+            "preserve-one": "6af986000c78fd76c2c9f27c3189910e4a25e667a381036ff27812d1c6e13c6b",
+            "repair-twice-or-preserve": "5b504e04f90972a6ade4f0c99d8b9c6fa5aba88fe7ff501de73b84fb3caec545",
+            "single-repair": "5735d99df16d7717648f53c2bac846ebdc4a62176a131f74fbdc4884cace6443"
+          }
+        },
+        "bbh-hyperbaton/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "096537990a991bef13f115d4392ceb4a8da03d4d8cdb301d586bd68148cc5a7d",
+            "preserve-one": "78cd452fb748af2884427a46b8b68c3a25b44b088d5d0333f8d4272ca182cafb",
+            "repair-twice-or-preserve": "6bfb003596eabdd895774979c58f2ca0a19541f7628a0ba21536670ef5d706be",
+            "single-repair": "f557d79e4e055077543a24031ca377dc1dac42c0fd50482654cf0ec7b925eb9c"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "74982cee27e82bb8f69a75732c3153505b1bec591bbe3e75a3a377eb84e6b767",
+            "preserve-one": "e9bca3f2efe608630dd197b570ba6325bdb05e594eb9f2a88ec7c9cff30b4b76",
+            "repair-twice-or-preserve": "7bdb88ed28ddd59fb67d1d4e421965f9281274f8e8cad27e054e45e1b6f887ab",
+            "single-repair": "e44dd762102292e0a179b8d7acc3f128f275a5223a8bf6d213a6c2407d6541e8"
+          }
+        },
+        "bbh-hyperbaton/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "91213c3370dbd2877aac4e8d2d550a3cc226e3378cc0b0b4d7f08fd61a97580a",
+            "preserve-one": "38e062d0d561adf62c894aef264628c64b41b82246e7fdd466e92f8be033b924",
+            "repair-twice-or-preserve": "07877140b8be1ecf058a20ec3f8c13b4de93a845108b1e4c6d7ea0cbae96a81c",
+            "single-repair": "e9aa819dfb6d9825bd7b3ae301bce676a73437c60f5efbb76fac8c246a2b8c51"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "2072d301b6f9775fe12e5bb58c5f0d81497dbf2584156dda894d587e9b146ce1",
+            "preserve-one": "cfe0584ede0e5eb4f6c1469779aea338b2759b1436175f11f13f810ef270fcbe",
+            "repair-twice-or-preserve": "37c82e8fa13cb208939a9ecfc773502062f02a460ea4589867ae5f532574c4b7",
+            "single-repair": "96b799c7bced6478a03efb149b247efde05ae7daf0619439a424d30c661c13ab"
+          }
+        },
+        "bbh-logical_deduction_five_objects/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "c961814dda42a1040048a95e51f7008f94c0571211a6c44ef44504f3b928e276",
+            "preserve-one": "5c63bb1091d77a313418eac9121f53106e1ac8c220bacd90da732b42213f02d3",
+            "repair-twice-or-preserve": "07bd19cf8c8dc89e49f8d674f7f41b84294f479da97a47bf6409fdef4e65f5cc",
+            "single-repair": "1964883d6aa726b4ab7efe93e612f2503faf32f47bad8820e7bc03411c1e072b"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "6be2cf47094bd8097c240f98300a14681373fadfe54368ecda670da35af01e78",
+            "preserve-one": "3271d6ce1b6f6766361272f0ddc65da4496f98450862458065eb09b737cafe50",
+            "repair-twice-or-preserve": "4b141f74e82f056a81c3c49270c6c1263173027010141e2302a623e0cac3336a",
+            "single-repair": "28f1669510722fc716438c2b068d0437e9143c2645a210e169ba249aa0f49a8e"
+          }
+        },
+        "bbh-logical_deduction_five_objects/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "1ed1b322579e3b59f00140b07e26fd274cd451606ac6f260833874817dde53fa",
+            "preserve-one": "5b975b1193c5d5a86e16d4b4af37fdd7a4f8735bbd147692d05159bfa9cc0c4c",
+            "repair-twice-or-preserve": "06d9e294598d68a64054ba4205b100add3f01740baf09d2ce9bf83b139109422",
+            "single-repair": "ebef34d814895a35c5dda56975219aea95511c13814ab0014103eff55a90e67f"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d69c95ee27919d16a0cdfc9cbbcae8464b6794e92a5742fbaeadd6c3789f312b",
+            "preserve-one": "03cea148f62dbcbc937fa5273c834f6f90a4a877e6a0ebf67f291556e2becc1e",
+            "repair-twice-or-preserve": "86959765bcf5f1f7b33750de2a500b9e671a54fc338854bcb5fd87b7c070365a",
+            "single-repair": "d98ac6451196c4eee26ab3b82b358dfa42181167a8f465b581d83fa3bb4902c3"
+          }
+        },
+        "bbh-navigate/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "847aef01c65d75fbc6898c067e005af1d1532876dc034b55960e76dcd2936527",
+            "preserve-one": "d642e526ba94641ff057895808fdfa661605e03418637f0aeb04a6c37a285a04",
+            "repair-twice-or-preserve": "a4f5bdcf698fb0b8ea9e4badf8cc08fba5a7defad72d0ba4f701356fcb536b9e",
+            "single-repair": "70337c2461bac358ab9bd549e2780ef9e26a54ba255e0eb3abd723c21f9e08e2"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "03fdf63933a1b9dcbca0dc46759a09135729882203fcff719d7209f4f9a728ca",
+            "preserve-one": "0d6dd625baa43ce345a4da0f21f08fca2b4ec541409f612bfbcc5f3709165a0f",
+            "repair-twice-or-preserve": "301c1430f374028fc4bff93b084eb542a93fca8aeed82a1aafae505525a95f0a",
+            "single-repair": "c7ed97374999b410268477a6fedf87eb21b0120d44dfaa37227ae40079bd0780"
+          }
+        },
+        "bbh-navigate/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "4c0d929a64536d14c1eee1f9aa864069ee54722aeb049f2105f9b3e612cfb828",
+            "preserve-one": "c1b8ae5956dcabd5711ce61726f6230731d381782ef0919406ccbd55441d644f",
+            "repair-twice-or-preserve": "bd078e5a0e4b50d86dca22e428958b8e87fec8f6d082656879973f9f9595bd07",
+            "single-repair": "40410dfca808e50a4b6ecc34183f32e7196688307cde03080e51a2e88af5ab7d"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d6a4bad54b7d40045f553a640d79c5b74799fc9a90ec82a81905cce0248f5b6a",
+            "preserve-one": "73fc397d4906f1fae7ef01641c70943f2948476cb5923fc54dcfac0382092533",
+            "repair-twice-or-preserve": "362908bec81bff8e2b022da5f267dc08839e5216d269d3e028bc8e074192d14c",
+            "single-repair": "ac75e6b067c851bed364b2dfa5f379d35700c685f7c214c357fb584753a4496d"
+          }
+        },
+        "bbh-penguins_in_a_table/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "369ad93ac25d94ae0c59c36048b018e969d348c1dfdd94322a38dbe9cf452223",
+            "preserve-one": "2f99e41b6a50de2b297d85df4b523427e7970dfd8cdc04a96ed0f20ca6bba64e",
+            "repair-twice-or-preserve": "78e45652d058f23ff0b7d83740c1f4bd66bf0114d5d6eae4c1cda2df434f1551",
+            "single-repair": "85f143b1a7de5f87cf51821294b6f038bb9e3a73e826d1a571fe138085b2281d"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "c75761edc2b2b24e4a40f907a95376097e3fc1f3170ec86681a7e8ba103c288d",
+            "preserve-one": "f3fa3e543cb0dbfa26f4be2a7c4c736d57786e5c4c820dce4f349996699e737a",
+            "repair-twice-or-preserve": "3885f7886f796b113396fda52c1767505c4cb66eca5854cc64326fdae34e22d2",
+            "single-repair": "ee117afb28d0371482a7070b1d3aa21214be72377b62e6a6eac4a69a52e703ba"
+          }
+        },
+        "bbh-penguins_in_a_table/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "b71e46e6803ad00fe1364b3f93a5601a3119a8329de9fca8f7cbc867394a5084",
+            "preserve-one": "6ede7eb1b7404bdfdf4db78ecafdeddc2b87aade16d92ffd5598c813f49cde2a",
+            "repair-twice-or-preserve": "e23b23baf350dad0ca5934b6ff5016491b9ab4bc6b5c31f3a98640a35ba389c0",
+            "single-repair": "4c1d97cf367d7682b0f5181825599d5f503acd57d2e125440d5f7f5e54de98d4"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "b346989ea827efa5c81a4342d8d43a480c41745d70b6efd0fd3fe9be3d19da28",
+            "preserve-one": "9d567be277bc40b7c4b1c22c6d2443c9c97a03b9d645ce3721e716fa6655fb03",
+            "repair-twice-or-preserve": "129566eff62aa6582ac12361b40950e5031d212e97bb135cb773895131899547",
+            "single-repair": "ec004b9735f01cb8f4e5f705ab7b2add002a45eec32f06c56d1ca2f98e360314"
+          }
+        },
+        "bbh-sports_understanding/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "2c045a108f1829b373ff88aca416890352acb130a48339f32b89e82a2ca411a7",
+            "preserve-one": "81a4afc32e73851628b6aab57f63b0feb9b45240423049393156347c6c50db35",
+            "repair-twice-or-preserve": "7b875fb97f908277a5347910a94a577285b7fc040075d69b32769a78ae8fd1c4",
+            "single-repair": "1018e0334824a73c3112a4c430728f6168144924bacdaa0a4c60ccecd9af4a17"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "f4567d9696818c60f1f1dd680ff27f0b5f99950652c6404bcdfb1db56130721e",
+            "preserve-one": "f7b1bee79342d3b127253e5418324391d9b49374680c8c8524a36a2ff9c74763",
+            "repair-twice-or-preserve": "b365490d8c1ae1cf4eae245197c1abe78abcb7460c8e553f6d70b2ca5abae5d6",
+            "single-repair": "f98dcf766a12bdc4f8c44e17dc6ff3423dcc7b813795c0d7c59fdcce860ebfaa"
+          }
+        },
+        "bbh-sports_understanding/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "dd129a6b56b7eef3dae6bd11c6744cb7488c23fc5f5e7fb10e2d27d5c1f7f8f8",
+            "preserve-one": "eb883ae2b31a2d6007a043946c1b9ff4f0692405c23dd88927da518b396cd9dd",
+            "repair-twice-or-preserve": "256cb94a14d30e2b2930ee6af635fe527dfdd1678c92a0370d5b2a70ff1e7e0b",
+            "single-repair": "509bdafcfaec2c263f8dd31de646a71665cec7aa57a064564f3dc44ced801af5"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "2ba035ddfad4634dff6ed78525fdd71452948a9b475b466eb83dbae198fab1bd",
+            "preserve-one": "564bca18e5f0a4933b250e294c48591843c126b8706dc9955b049c1c172c7cb8",
+            "repair-twice-or-preserve": "56359d1521cdeae6cc7024dd49755ec2af4102897c6471419fd7e74119b26360",
+            "single-repair": "2aba114fef7c464d4e42e8f62879b7d9b5036075056826d4f371a3fca25db50d"
+          }
+        }
+      }
+    },
+    "LMentry": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "incumbent-first": {
+            "deployments": 201,
+            "holdoutPasses": 5962,
+            "nominees": 322,
+            "paidLookups": 9827,
+            "qualificationLookups": 2361,
+            "searchLookups": 7466,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            }
+          },
+          "preserve-one": {
+            "deployments": 158,
+            "holdoutPasses": 5519,
+            "nominees": 252,
+            "paidLookups": 7117,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -443,
+                "pairedRange95": [
+                  -516,
+                  -372
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 45,
+                "pairedRange95": [
+                  5,
+                  87
+                ]
+              }
+            },
+            "qualificationLookups": 2039,
+            "searchLookups": 5078,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 184,
+            "holdoutPasses": 5655,
+            "nominees": 318,
+            "paidLookups": 8947,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -307,
+                "pairedRange95": [
+                  -367,
+                  -246
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 181,
+                "pairedRange95": [
+                  131,
+                  232
+                ]
+              }
+            },
+            "qualificationLookups": 2396,
+            "searchLookups": 6551,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            }
+          },
+          "single-repair": {
+            "deployments": 160,
+            "holdoutPasses": 5474,
+            "nominees": 295,
+            "paidLookups": 5432,
+            "qualificationLookups": 2270,
+            "searchLookups": 3162,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "incumbent-first": {
+            "deployments": 112,
+            "holdoutPasses": 5364,
+            "nominees": 294,
+            "paidLookups": 9236,
+            "qualificationLookups": 2472,
+            "searchLookups": 6764,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            }
+          },
+          "preserve-one": {
+            "deployments": 92,
+            "holdoutPasses": 5119,
+            "nominees": 224,
+            "paidLookups": 6896,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -245,
+                "pairedRange95": [
+                  -296,
+                  -195
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 23,
+                "pairedRange95": [
+                  -6,
+                  52
+                ]
+              }
+            },
+            "qualificationLookups": 2292,
+            "searchLookups": 4604,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 93,
+            "holdoutPasses": 5090,
+            "nominees": 283,
+            "paidLookups": 8413,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -274,
+                "pairedRange95": [
+                  -324,
+                  -224
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": -6,
+                "pairedRange95": [
+                  -44,
+                  34
+                ]
+              }
+            },
+            "qualificationLookups": 2500,
+            "searchLookups": 5913,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            }
+          },
+          "single-repair": {
+            "deployments": 88,
+            "holdoutPasses": 5096,
+            "nominees": 261,
+            "paidLookups": 5285,
+            "qualificationLookups": 2429,
+            "searchLookups": 2856,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            }
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedStartPasses": 4093,
+      "traceHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "1029c9d4bfffc271315bc0a45205c8cb48bba7fe4d4c800a3d0acb559bac0ba6",
+            "preserve-one": "3c349d1340f56c01404e8b261c3b14acde566194d801ef4de719f89df4e1cb16",
+            "repair-twice-or-preserve": "c6f43984f6cec887ba1cdca1364afaa71e151339fcdd4dc9c0a72e0fca23f015",
+            "single-repair": "b594502a0ad525c68449ca7f6df29b6b9ab70097c9c66ee8ee882df8df29fdce"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "ff97196696187e1be0b08750202f421d04726cc01dea2f0e24fe9444bced8f02",
+            "preserve-one": "2400a884de865dc9e558ae60d842a9bb2c63dc7533d92b759ecdcc5b382f3b1a",
+            "repair-twice-or-preserve": "9058e4adec029dbfdb8179f807baf99add289879500f2a5122c5660101957963",
+            "single-repair": "8f5921d4ba55598a1f3453b1a6a883c1b3f6586f34ddc1c90c9e6423e82ccf09"
+          }
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "7d1d37b28d286d143517fb92bd294341be4b1eddd82d900f3861a535ffb83986",
+            "preserve-one": "be1d431510ad034f26d61c7680fdd82dba19a969255d9215b363a2a741af76d7",
+            "repair-twice-or-preserve": "11f11590a2ad2aacb0f25aead095aa3217b241f894e604b91050abde8ef516ae",
+            "single-repair": "d4f571b2d292acf1e9db1132cd888c259e89adb3f8dacbc72d33d73aadad32db"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d8b91b523c87e4f0664861d04d321d32c82cc90af33e8a132e536d41b24903b3",
+            "preserve-one": "6f0a75083583eeac2a863bdfbabb161832b50d7e2a6e22ed7d5d8df420aea2a0",
+            "repair-twice-or-preserve": "c05c0922118f44815c85239649924c577b307d2781b2513807b762cde94ef6b6",
+            "single-repair": "6dbe918c19967f43b6db0b7f1e2fcdd2bfe1dce0bea69c2f6467814d49cf6225"
+          }
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "703585de094fe40ed18ab083c3ed2fe29db96397d8e6b709785c44772ef9d95f",
+            "preserve-one": "a2ad0e2b468b9d826db487ba596643fc9da1fe14d8dbb3998ee2a523da5a8364",
+            "repair-twice-or-preserve": "0e5c174457f4ca737674ff8ece07e1d8e78d508459f56aa5dd4ed93b6d5ee905",
+            "single-repair": "92ddfbcd325f202b813f72ffe6a17d77d69e2a17e11320b741c26d55e36f694e"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "cc74c942233964054c957efb7b41af4bf8c6a858cdf0310a825d675cd9bc175b",
+            "preserve-one": "37c48aeb9daa577d8c16b526b8e330cb2ded785994dd6b091e31243b3bffc921",
+            "repair-twice-or-preserve": "d9c3c139e5b6b3a36da7b07743f7b334effd50811fe7aa2463cfb8449b0c7cd4",
+            "single-repair": "a88c85cc4135b7264acbc651c63405a0801fd2c9bd871c1a148ca0dfc031af64"
+          }
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "72f75d641daf0e937af60d84dbe862a73613fbd189cb082d678af7351dd9c7de",
+            "preserve-one": "d4c21cff97b36438d612fe09b08b87f736cb2f785c47313ca3be93bec1624c99",
+            "repair-twice-or-preserve": "c8ee1138cf473cb38e1969b44f6d8c5e0cf1f6e6b36067c2d45e2043099810c1",
+            "single-repair": "82766fde222208578c63fba9ff04b5deb4a7a8eb9d36404798006ada312f08b6"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "db87ced4b3469b95aceeaeaa5e6e52333313cf89f986084c192196fd5515091a",
+            "preserve-one": "d0a9767abbf638593f64014ecd09ab9c4644e73c306189e0c39e606a132b4831",
+            "repair-twice-or-preserve": "87da3da2cc435bebbbd4c2049e677bf02058b07cfbcc59e0707bb2d6c16cac69",
+            "single-repair": "5a2b5fb10f43930555a6566dc855b3dc22828f9a6d30a2cd120c6cd67b723dd8"
+          }
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "dcdfa67cc9826106d22a1adbb1dcf762a239b7a6f9cc73ca104df33111b1e4a0",
+            "preserve-one": "add251e9c360435636f238ee80c1986ee0f83d4fe9a6230ecc34af2baa1bac44",
+            "repair-twice-or-preserve": "d65403244508f2bc189a105b155e4d5584f2932d6aa7417153327d7e00d48b90",
+            "single-repair": "5fc153ad052faa673780d3311658cc66ce83cefa9b478c890d4c31c6524d6798"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "24349bbfdbb9777484fd044b96dddb2affeb2faa26c415b6cedb00ebbab6a324",
+            "preserve-one": "2736546a29d5d86b398a1526afd7d823e60d84a86e915a8ae1b0cb88778f3d97",
+            "repair-twice-or-preserve": "0d9e435477307d95e4fd8429b190a32d6c840e6e9f7904da6fe62b9dade162ef",
+            "single-repair": "4d8c1f02228dc7a80178b9b5c9776efdfe29fb1548a7b01d4d00d2335c60525d"
+          }
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "7d797690bdbc5c082326a6311add609a7fbc59ed31e6175618c0eeecf2a5a5dd",
+            "preserve-one": "ce609de3613d7b4b06df22cb4f73cdf47ce87e5c8a8baa849edb9cadbc6da6cc",
+            "repair-twice-or-preserve": "0acc4b28b7380ade7d26cedff7cc64ec4f48ebfef7cceee8a1590de48687ef0a",
+            "single-repair": "0a7c1032f22c13ad63f318a65631212a5ad2262bf698f3418db812bd51189ba8"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "fd76d4bf47c621e0a81705f44185fe2c62df1a221a18fbfbd20958081c5212dc",
+            "preserve-one": "52d28f4baa8d82e673d88dde7174440ddebe002bacb6f4790a4e9bd570a66784",
+            "repair-twice-or-preserve": "37e0f7b9f1452144fc068a4ef88698caf2df314c4d04808831396fab83edd345",
+            "single-repair": "283e96567c29e184df544f59f80dbd1487fc5a49978cc583f89d71f45df7db65"
+          }
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "832b0120145ddf290c53859d5dd0952b13f8328a3d144810a6895ab1c67a88f7",
+            "preserve-one": "5aa79801d63f471bfa610e5787c8e432bc441aaa9cb025bbf3dbc02cf7342eec",
+            "repair-twice-or-preserve": "47a52ac56629ce355d64bbc0f62c6bd2bc9ce90efe32534c263e7276a005552f",
+            "single-repair": "5440d58e3c4ae6ef5eaa11e5ff8b3eead591af31f1e1111e75f22a94c9d6f76b"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "9c1429f348a91f0b288e30843282654cf4e5ad42e3b885acb0d60e70de95e9c7",
+            "preserve-one": "546190445d5fa14911770a63c1197ce46965c193d2b587a2bff7fe01aad871d6",
+            "repair-twice-or-preserve": "958b7f8119f957cd615e6507f6734659e3e7b27e966694e8ab6faa0686e4ad60",
+            "single-repair": "e201acfd4b42a38b8bdf1940e846f16a27d23ba1f2648e0a8a44139b59f9d8f9"
+          }
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "ac703a99065ae78374bc8bf67bde1ed86b2087e9317ea8b5a8b290be787af764",
+            "preserve-one": "6c4ea75e706722a4c61f3495da01ecc8e68790b17a3d56adf95b8be933360ecc",
+            "repair-twice-or-preserve": "15fba268020acd3391db6ca844a4722b4878980a61c7a30e5d00ea31036fc390",
+            "single-repair": "1e25dba34591aad7b0715cbdb7223ed32210fd834708aaecbe7831514a85fcde"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "f600f694a88d5cbdd9275d83991a02de878a1b74b983c0754fca4fb4243e02b8",
+            "preserve-one": "bcdbf923cb78c05e390304ae11501071cedb4fa2ad1a46e6e188581c89454334",
+            "repair-twice-or-preserve": "cc63fbbebe555f755b2f67d622a7e3ddb39042d4723b1ca85c3bf4ce4cb72946",
+            "single-repair": "76126cced399992b723fdca2e1839d54e3e0c0eccdeec1c985c5faea6017811c"
+          }
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "6468a4eaaa15da3073f57a5e3b43acaeedcee1d4c3156900bccc80986b8dd01a",
+            "preserve-one": "3534dd8033fc858ba1908d16045004052590bc013cf803a0c1a9a9901b0653c1",
+            "repair-twice-or-preserve": "56ac8e8c7bfa95c0ccd88bb99e5992fc4b35db9bd921a5a8ec960bfaa4e40eb9",
+            "single-repair": "4ab978be22ffb9491bdeba54f646320f071e07ac3e0e169bc045ed1525abde17"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "4164cf9badbbb09d32fbdb63e6f8b6122d28e0b997a839faaa22d19653e4f832",
+            "preserve-one": "dcef43e07c2fe1ca939f629b6dfeb54d26657863e3257c6f3989cbd29b907016",
+            "repair-twice-or-preserve": "29d572664648a28bc644e97379e352e6d6d454ebe715e616dfe036afbbb631fd",
+            "single-repair": "0a466f36a4e09f08ae237a4343cb40060aea30362a7d3081e1834e287c45f7af"
+          }
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "3b9216e9f0ea5981e6f24f35a9572d63b1f1487bffdb8aab77d72064eede76c3",
+            "preserve-one": "710e99ec626a1389309aa51b31f84893bc72cb76372702b57e1119e3e6115135",
+            "repair-twice-or-preserve": "6d85e1c037c71ee290c2c42df9486fc268eacc67036aab403b651be2e35bba28",
+            "single-repair": "5923dd17a33875a4d02aad18465e43f0abb676549f6f71da55c52a6bcfa4a8ec"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "6c995019829642d837652b92a3eeeb80f934a19f28895cc207a5111d89c11f74",
+            "preserve-one": "a958344ddaf5ccb4bf13bea04dc9e9f65e3e86d725e10ea27c224b7f59097c7f",
+            "repair-twice-or-preserve": "01c6f0a87c69dd385b4133af58bc4f526891e2e02bf36f9da534572bfbcc9be2",
+            "single-repair": "f97770e9a0315684a611e5e27edc5207570cf24c308312b058db53812711c096"
+          }
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "c9164bf0fbfbe6ad203d41e3889ce5347ed090f4a845cb8b37dc76a4e24faaf5",
+            "preserve-one": "a326f350da1b9e6513a2d0eda5ee640e308d6a43caa2be9bb029cbb3015dc66b",
+            "repair-twice-or-preserve": "8a95f2ee000185970ae20c43c4c746796fd2b4de3b2a21c4fddc3b4d6a0ee1fa",
+            "single-repair": "a7c1219f8ecc26efdd8f67b259740e62a999dcd5c59cf0a348eaf32cb820cdd8"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d82cc085653267f00c75e5a218cc54ee1dc5848b2d46138baddd1f0814adbe51",
+            "preserve-one": "6c231a1421f1f5827b1f5545f8c99a5e9eead60002b487c126ce0740aa88f023",
+            "repair-twice-or-preserve": "a385f85442d164497b4bc2e0de387b3ccfc9af9d11a81b934a89c679eef01aa0",
+            "single-repair": "e7ca8d607de1957ad1a9471017c8e75817be71cfff94389eb30cca4f4cdf0f2d"
+          }
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "670768259e0d675dc81f31dd328c1ccd8427940b1eaaa2005c73bf17bf7c061e",
+            "preserve-one": "656d4d6fe6462abd8e52d34bafda734349e54ea9faa78d2191d864b690f2b464",
+            "repair-twice-or-preserve": "491056f9e360b65df1f25ffe9cd660bd0b649d5981b2ec042e5f5fd5ae1f0707",
+            "single-repair": "b152d61ab52c72de21457065331371c4ca2d293553ee485616e9fe942cecd270"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "832f3d45780baa5254a3c3c332a4440089b6bf42c87a26ee4f78597f4b3b0fce",
+            "preserve-one": "9c760014e12640a28c449ce41154f0367a99469bb5c9694f0ed2f62f24217af6",
+            "repair-twice-or-preserve": "11d7a2fe1d9bb8380e4ad05be7007cbed747210604e7aa03a399c96777ff92ec",
+            "single-repair": "a6138928307de974bbcce6d910420ba09948ee710d7d073064ad325c0a17bc52"
+          }
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "a307b6c3daa7649966cf8eb46b2e582a48461bd9fea1c855ee2c2ffb6b1f1875",
+            "preserve-one": "9f2ac22c4588cfdf3c17fa267a6f1d56fb20aeafcd6253ed6bc737194f9b288a",
+            "repair-twice-or-preserve": "03c0fef7e83c90ccf6668f9170375beed88fbafbe972adaf99c3fab7f7cb042f",
+            "single-repair": "1e2248bd736a5ff22ac0495a0b50b15cd256ed06a4384b10aa112dc9a97ad1d1"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "c2658636c1005d8809c997f56c7e17ca7ed851ffd15063fda479e586e6895ee5",
+            "preserve-one": "b645b0278409e47e566c967a559ac4d9541e1fee0dedee079af8f2099c347190",
+            "repair-twice-or-preserve": "d7aaae8d34e0a315022d2bf39013edb4b65394e85c1e2456bad8a0958c0f5b3d",
+            "single-repair": "9e8180b6bff1fe75faa505e609b588bfc29ffc7c16170c092b6a70caf7af5832"
+          }
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "c0cbed1efc2c342272823bf172285d779803788c4ed00bf9e919bdf7e81c7e23",
+            "preserve-one": "ec348975bd0340afdd50920b72fc30d478634f6719b452ea66da9eb1776f76ab",
+            "repair-twice-or-preserve": "b3fdfa0aa17ebe96cbc4ccd86ff6a24abb1abec0db46e39f49949a1457dd54a9",
+            "single-repair": "741ac2d74e9a8c895a7295e8f8039451b63a4255cd78ce88b582cf0a75128bd9"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "43ffa79294e52ca3adbe448b76788580616936f85435869b4227928925d3fb4d",
+            "preserve-one": "f9bf4ab62d8ba8e1d0a706242dd367c0f2c072869742b68064aa30962c9eb6fe",
+            "repair-twice-or-preserve": "34f222c524b1190b225f2084ace34f4bd8c646711d3d624e4922789fd4321022",
+            "single-repair": "d3e47d3f1c8eea7c711ee2e6ac535e08ee12aa992adcf2eace005cef3c666dd7"
+          }
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "712e429548f1bee4ffad72daa59a518052272301f75ec7895f66829c3b73b3d1",
+            "preserve-one": "720b47daa7c86cebd90455d3009b8e423f64cbee345f6e6e4deebf408f25f349",
+            "repair-twice-or-preserve": "73d63e78c998ed353de32636edcd6a91ec264a4bb47624055a6094ffdf25afc2",
+            "single-repair": "ae6d1611cd4d4de4156a5c4198553c7fd6e240e5acdb5d0a692fb94e3059e131"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "a9753c47632c82f25fd190a184b0b48e2545f054be5260a089d2fbc565069b7e",
+            "preserve-one": "db5fc555b3fa37ef66c4cf12e125b4dd093fff1a3ad3bd7f59a96f6d5e37b641",
+            "repair-twice-or-preserve": "c26ceb33136ab7a572b54a29f3818f04f4acae69f6df1b259ee231a064d58725",
+            "single-repair": "6243eb86cdfc0b7a7bdfcf0cc94a0fa2e69db84497a34631ade7744c97c87005"
+          }
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "fada1493552c67a06124716098d1371eaea18f33d43cebd1f6a4fafb21702cbe",
+            "preserve-one": "ff89b9d26c85b127b247ac18cb07106740abb728e9d50e8fd131ceb2d5e44418",
+            "repair-twice-or-preserve": "0d620e4c484351310f5791ec5c3ddf5f6490998b0c15348d7551ea38fc584200",
+            "single-repair": "aa7a3addb58ca256990129271c70631791449da5ff840198fc5bca34747ac5f5"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "ddf0559e5db33fa9296b5718745d872b0305cd229125f5872e13301c9b623a03",
+            "preserve-one": "35bb86b62a3179172033eb10553f67f614e261ecb59436920d541674ef686178",
+            "repair-twice-or-preserve": "8681f8846f991fe43424c282185331da373053525009dd11f615d157a1525b1b",
+            "single-repair": "aaa1b32813fc7c7e980824e505b090a3dd4036e7f12355864e84e4569544c953"
+          }
+        }
+      }
+    },
+    "LMentry/new-task": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "incumbent-first": {
+            "deployments": 19,
+            "holdoutPasses": 312,
+            "nominees": 45,
+            "paidLookups": 1336,
+            "qualificationLookups": 288,
+            "searchLookups": 1048,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 278,
+              "upperPasses": 278
+            }
+          },
+          "preserve-one": {
+            "deployments": 11,
+            "holdoutPasses": 295,
+            "nominees": 30,
+            "paidLookups": 962,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -17,
+                "pairedRange95": [
+                  -28,
+                  -6
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 34,
+                "pairedRange95": [
+                  27,
+                  41
+                ]
+              }
+            },
+            "qualificationLookups": 245,
+            "searchLookups": 717,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 161,
+              "upperPasses": 278
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 15,
+            "holdoutPasses": 270,
+            "nominees": 37,
+            "paidLookups": 1206,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -42,
+                "pairedRange95": [
+                  -52,
+                  -32
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 9,
+                "pairedRange95": [
+                  -1,
+                  19
+                ]
+              }
+            },
+            "qualificationLookups": 279,
+            "searchLookups": 927,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 161,
+              "upperPasses": 278
+            }
+          },
+          "single-repair": {
+            "deployments": 12,
+            "holdoutPasses": 261,
+            "nominees": 42,
+            "paidLookups": 723,
+            "qualificationLookups": 318,
+            "searchLookups": 405,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 161,
+              "upperPasses": 278
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "incumbent-first": {
+            "deployments": 9,
+            "holdoutPasses": 303,
+            "nominees": 45,
+            "paidLookups": 1356,
+            "qualificationLookups": 308,
+            "searchLookups": 1048,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 278,
+              "upperPasses": 278
+            }
+          },
+          "preserve-one": {
+            "deployments": 7,
+            "holdoutPasses": 281,
+            "nominees": 30,
+            "paidLookups": 993,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -22,
+                "pairedRange95": [
+                  -26,
+                  -17
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 25,
+                "pairedRange95": [
+                  20,
+                  30
+                ]
+              }
+            },
+            "qualificationLookups": 276,
+            "searchLookups": 717,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 161,
+              "upperPasses": 278
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 5,
+            "holdoutPasses": 256,
+            "nominees": 37,
+            "paidLookups": 1224,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -47,
+                "pairedRange95": [
+                  -54,
+                  -40
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 0,
+                "pairedRange95": [
+                  -4,
+                  4
+                ]
+              }
+            },
+            "qualificationLookups": 297,
+            "searchLookups": 927,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 161,
+              "upperPasses": 278
+            }
+          },
+          "single-repair": {
+            "deployments": 7,
+            "holdoutPasses": 256,
+            "nominees": 42,
+            "paidLookups": 733,
+            "qualificationLookups": 328,
+            "searchLookups": 405,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 161,
+              "upperPasses": 278
+            }
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedStartPasses": 161,
+      "traceHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "58e74362823a83027d4d910970432040ff871fe87b76a3b169eace24f9714eff",
+            "preserve-one": "4f9ccb31b9052480bb2d97fbc68bc3d2c29f926289b30e4a7a25bbe9af22df22",
+            "repair-twice-or-preserve": "22041254049de15fd1e32c9380197f791095c095ce152a28f330e9a4974904bd",
+            "single-repair": "799e5f66bbb617171823dfefc8c2808234cb3ecf2fb9027d65d17052bca5b70d"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "b71a35b71322b061872e8131876f273664999aa057448a53bde78833b14d7096",
+            "preserve-one": "d70aa98806f1e6c56003e4681b37d00a0a8b5acb0acd7d0f686e9e73d93f8260",
+            "repair-twice-or-preserve": "18b8ac25fa46eb57b9d4b2f690b749022d10133ac91da7a4dfdc8048dfff90de",
+            "single-repair": "67c02ce539ef160072274213498b746eab9a221f4df5a654785533e3852d2d9d"
+          }
+        },
+        "lmentry-ends_with_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "d929a38820901e32c6392eae45b40d2e08a17b07b351ddb6a561214d053c4e68",
+            "preserve-one": "301d4418e367e70d9ef152d0907e569222ee882d3a5436776ba68abe699f2ee6",
+            "repair-twice-or-preserve": "0145020dbae5fd720cff3739cf8d3d32ca8d8c775bbd1c2779dba6e95f8f89d1",
+            "single-repair": "e7ade9e0552790c7288c56582d463005a23d74649060b3134003d2d714def232"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "cff5ef6745a1c176908f65cec0af4aac2b0e280fcabb31859927cdc4ca48d45c",
+            "preserve-one": "059d427b11a555f898f03cbdc6ff716e59ef24ad9ee47efd7fe0b28a58fb5503",
+            "repair-twice-or-preserve": "03a84a484791de9235a8d906ebd41d3ba6f8b17b08ff2352be27e029fa73c9bd",
+            "single-repair": "a1b90cc5f5df4476279c9752129cfc888cc22f609e98a238b54f16d30cd99049"
+          }
+        }
+      }
+    },
+    "LMentry/seen-task": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "incumbent-first": {
+            "deployments": 118,
+            "holdoutPasses": 5504,
+            "nominees": 208,
+            "paidLookups": 6511,
+            "qualificationLookups": 1705,
+            "searchLookups": 4806,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            }
+          },
+          "preserve-one": {
+            "deployments": 108,
+            "holdoutPasses": 5214,
+            "nominees": 186,
+            "paidLookups": 4988,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -290,
+                "pairedRange95": [
+                  -345,
+                  -236
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 8,
+                "pairedRange95": [
+                  -32,
+                  46
+                ]
+              }
+            },
+            "qualificationLookups": 1617,
+            "searchLookups": 3371,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 131,
+            "holdoutPasses": 5367,
+            "nominees": 234,
+            "paidLookups": 6118,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -137,
+                "pairedRange95": [
+                  -190,
+                  -84
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 161,
+                "pairedRange95": [
+                  114,
+                  209
+                ]
+              }
+            },
+            "qualificationLookups": 1854,
+            "searchLookups": 4264,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            }
+          },
+          "single-repair": {
+            "deployments": 115,
+            "holdoutPasses": 5206,
+            "nominees": 223,
+            "paidLookups": 3910,
+            "qualificationLookups": 1798,
+            "searchLookups": 2112,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "incumbent-first": {
+            "deployments": 62,
+            "holdoutPasses": 5096,
+            "nominees": 169,
+            "paidLookups": 5670,
+            "qualificationLookups": 1723,
+            "searchLookups": 3947,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            }
+          },
+          "preserve-one": {
+            "deployments": 56,
+            "holdoutPasses": 4931,
+            "nominees": 141,
+            "paidLookups": 4377,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -165,
+                "pairedRange95": [
+                  -202,
+                  -127
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 26,
+                "pairedRange95": [
+                  1,
+                  48
+                ]
+              }
+            },
+            "qualificationLookups": 1635,
+            "searchLookups": 2742,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 68,
+            "holdoutPasses": 5042,
+            "nominees": 180,
+            "paidLookups": 5232,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -54,
+                "pairedRange95": [
+                  -87,
+                  -20
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 137,
+                "pairedRange95": [
+                  107,
+                  167
+                ]
+              }
+            },
+            "qualificationLookups": 1770,
+            "searchLookups": 3462,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            }
+          },
+          "single-repair": {
+            "deployments": 54,
+            "holdoutPasses": 4905,
+            "nominees": 169,
+            "paidLookups": 3441,
+            "qualificationLookups": 1740,
+            "searchLookups": 1701,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            }
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedStartPasses": 4258,
+      "traceHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "01b388d288c43922def863480983fc301c34b002074214867eff7c72e1b33c11",
+            "preserve-one": "6b94a50c3cf9a059aa437459c820248c3ed41cf7ff7e19c46f91340d96718a2e",
+            "repair-twice-or-preserve": "1f295443cac8cd6ea63e282d83162e0f08df77b8ae0bce15f61fa121b1fba586",
+            "single-repair": "8eef71cae4d323176a34e99ec4fa92c0acf484a7342e1ee9d340e4070718ce61"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "787e03ad41452da7807122c200ac026887182b2b1a4eb470c9124aac212a064f",
+            "preserve-one": "f679092c5b53c94ebc901f6b5aadd1ed0db06ce90fb41afcdd111553fcb8b125",
+            "repair-twice-or-preserve": "03f19c2280f2bbfcc9b363e85a51e7d9fddc61370c7c414a1164cc30622b7e0c",
+            "single-repair": "aedc2c3d0d72627ed5cb59521289133e22eeae634e655b42b3003f1f4bfcd13a"
+          }
+        },
+        "lmentry-all_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "6d55775529b434b8b3b45d624fd9dfb759410ea59ca076be547f34229972a3d7",
+            "preserve-one": "69db2ea5d2f5dd17b13899ce307ddb8b28300552fb6a7862981694a1f9e5fa33",
+            "repair-twice-or-preserve": "5dda70abc8d81ce5392c8c886b256625d0404ec1d828d34980d5f2caff1eb912",
+            "single-repair": "cef46595a4b64104cfcb46b6126390463e2053a5751b5e57e0f0b78e9b59aec6"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "99130cb0101994d7ac1a1acc48dee6ae1491be07dcba5416ac0a44b660b66afd",
+            "preserve-one": "3935c364c7495fce342c79a8889459a89750cceb2fa26f8682fbf274da0c0372",
+            "repair-twice-or-preserve": "9be26e1da33df5b3c28108a17447885c5c9b287504db67f4cf3f670f343cf2a3",
+            "single-repair": "eea99bfa1b04f95a3c8a4225fdef65fbce456d62a044524490e9323232e37406"
+          }
+        },
+        "lmentry-any_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "ee078dd95ee95415a0cb6f392a599e4513dba2c7faff5c08c7edad2d91ba9e48",
+            "preserve-one": "1b87fc3cf0b44cb29208dfdb5f31ca928dba4ee141b7a2c2965b03a904ae86c9",
+            "repair-twice-or-preserve": "f334ddc078408222ef1a115fe50553ca545bea00fe081a7bcfaa603ae7630587",
+            "single-repair": "3c4b3d93169131982313ab7bf7876a54ae586d07603f84c59186357533ecff7e"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "c808f0123279285244296aa01144cb0dce73155f2c5d16152424f9a25149846c",
+            "preserve-one": "25d8455c75d1c2de98515ff0063184c65330cf1f1187f33b5bee7ad0b727ac43",
+            "repair-twice-or-preserve": "ea74e9b241f0c3d6e32f79c5f47d86c12205ac8cc83e6581d15ef210151bfd7e",
+            "single-repair": "0aab37c7bc46a7358e078c01f21e5169367bb4bf5a6664390f612f762b34cfc4"
+          }
+        },
+        "lmentry-any_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "b7f92896b79069dca069fd19c95fb5ef87da5246c28d6553443732264c080d83",
+            "preserve-one": "eec69826c563a8605928cd002db3ae07e9af2e0c25f2ec43fae839962e5c982e",
+            "repair-twice-or-preserve": "b30ad3bac543025fbe48a9eaf55f90b03dd7f1d7c8119f08d275161195ee0e7d",
+            "single-repair": "9cb223668c1dedfa96fcae69b5f38f2dadb8734fb560c6994f9f8a34cf9311c4"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "eb5d178c260331af7217960ad0567ec19283c1a97a738752ed62e517860c4d6a",
+            "preserve-one": "e17e284e63712ec23ae5d32f78591e5be5e3c6c3ba191ce67d887e3b147ae515",
+            "repair-twice-or-preserve": "0dabc80f5509fba4661740f6e838d571609d7ec96272e02c103108810c93c1ec",
+            "single-repair": "096485edf4441fe1b62e8daef28d7ca8a6aad5ff8c0da2edc7f3a52d39fd2fee"
+          }
+        },
+        "lmentry-first_alphabetically/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "1bf2229293cfdb69587ffad1792e7e016c7dd3bb8a6f36aa2bcb4ce2b949431e",
+            "preserve-one": "0a8b6988fa71592744c8a1ca5141fd2a6dd4ef4775af6a58bd221da348743ba5",
+            "repair-twice-or-preserve": "c8cf39a6c9b3b3ff406c2ec818b69f99cadedd46baa36d9f7639848a79eaa55b",
+            "single-repair": "1ea40394e5a6a260d8f3b1be07f21fa8163e7a8968a72b230486a8fa6565733b"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "3b5de33928c2cff55feab5826cdaffc32ac7c8156dc3854e676e87be4a27a9fc",
+            "preserve-one": "820dc482b7c0a739990bbc3b72756905eeebcd06e3f348041ca4e81046621b7d",
+            "repair-twice-or-preserve": "2571e03d0cdc71bd020519c43b72cd110b3ecb842f50c35bada292747465f686",
+            "single-repair": "f747636613664c95db2652cdc1bce515b80a68547fc063c51029335d1e825f3a"
+          }
+        },
+        "lmentry-first_alphabetically/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "9b82a9c987db3d2ccb71e6532498df4b91a432e1a8216dae435c29cc405c503d",
+            "preserve-one": "7331d10a76ded4b290dff29afe2b8c2350c6470828cb3b0de3384af30dfd53f5",
+            "repair-twice-or-preserve": "f1768e5cd6df1bdc03d12fdc742737c5a9b96ca7cece2787e4c594d70db45adc",
+            "single-repair": "b9271adc3964568ad1e294ed221881d900e089a869e73deadcd96c5642de9b07"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "2b4e34dc95190e3000c2dee5eb4fdfbcc35b6ba3a9f3a397005a17d44e4151d8",
+            "preserve-one": "e4f7ad38ac4dc69a99d899b6035a0438433f4c0eebb25be2a1fe35ffbacac6a9",
+            "repair-twice-or-preserve": "abaee5656929ae10e9fbf22ab86c704f11f84b3d4260e3748601baab69bca7f1",
+            "single-repair": "4551870c2dbe2b453303842037aa02a5fdb9f46f0d3329b75f0b5ff51a3c4dc7"
+          }
+        },
+        "lmentry-less_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "2a7dc98ae7d7680364cfc619d0c9b0ea0e564bf3181e37cfcf9bb322937b3a22",
+            "preserve-one": "b1ebc4ffe81b7e61fada606eb44e500ec877b386435cb63d94088d9e0dc68dd5",
+            "repair-twice-or-preserve": "5c38dfb6549c0bd6fb607aa1729f54a6898bf5366e83330f551e64fc210aa47b",
+            "single-repair": "2eee460394106cfb5456a634fac369afef3d0a8efa11b9c066627ae64fd3c080"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "bfdc6ebad1d0db9e6c59299cf657f3e30459fddea1d41eaa8efb08287508eef5",
+            "preserve-one": "e1a31fbba91d2eaf571fd10e0698c4bac0b66c9c304cb37901c93a97d03d5bf2",
+            "repair-twice-or-preserve": "b342d1e265f31c1e5821dc0ff5a5b654097fd9587c6ab02358076f30fac540db",
+            "single-repair": "9d7ba2a8378e9c9f1b803bb975cd22dbc15653689a06347c9bff35657ba9ec5a"
+          }
+        },
+        "lmentry-less_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "40a0dffeeda973aa4d1d6f229c7dc0e44639b901b030a46f4cccf04abd35a3ff",
+            "preserve-one": "b294eb912469970f31930677e58798e150c67b64197a318e6d59c057779aa3d7",
+            "repair-twice-or-preserve": "1bfa414c7f918cbd1a59e6fa482b72b26587b28b5839e3ec219fd1b9c93b7a86",
+            "single-repair": "045c6d383a8eb2ffa1b093a084cc690d2b2090d04ddbd8d7c5e7d86ca0ab5dfc"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "849d83751492afe9c06a306c32c625852affa76405ffcf53d3c51911906f3f1b",
+            "preserve-one": "fa8e0726aeac89100b53543b1c8aac90f5c4207b302965898f01258663a7aeea",
+            "repair-twice-or-preserve": "27e34a7e8521591068be202b7d3d1d2d77eee6ff646f45bc7aeb2c2ad6dc6e6e",
+            "single-repair": "7a61c25cc29f2401657a4a130112564a9a7e9b0b69aadbdb5bd52070f5bff49e"
+          }
+        },
+        "lmentry-more_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "5dac64372c55906f3aa91ea86df884628f30fd4143a6fab2e0eef999b06ec856",
+            "preserve-one": "3a7a0bf0da693f0eba2cea56f06d5365500c56ade450805a6cefb08a5bc4a6f5",
+            "repair-twice-or-preserve": "4ab11de5fe18f1286f13ff4348d693d7cfdf40c9704f208f869968797a548711",
+            "single-repair": "33863c2fc10931298185f2518ef9bbe9f4a98ce7353f2a4b61b1399b36c257a1"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "ab15f7736f965bf47b4e357057b1711c4b6ff69dcd7170990ecee45423970ac4",
+            "preserve-one": "4f13b4f42f343ecd854fbe1f1520d31bc2a8a974b263b1b43754b19387fcf223",
+            "repair-twice-or-preserve": "e976b421f44a6d9532ae3aba5ae332406b9179f11096c2c0d359bba48846819d",
+            "single-repair": "56081a99219ed7bce010ca97d0dc8980d65209b1696f5350a407f1ee1e4b5db6"
+          }
+        },
+        "lmentry-more_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "70ad6aaf3ad2d232999054d9261b144ebd23d4aa8c9633ed12f16518c21fc9e6",
+            "preserve-one": "bbf3fd8e2744afe854a0f4020eb45c0f01e052d9da0b318c925f3871f9c28f53",
+            "repair-twice-or-preserve": "703ed7d9e9df154e8b6b45024753962273387eda9bb6d1948c4174b5d680556e",
+            "single-repair": "2da8bd5eab838c3a83612366b5e98dd5c61ed70ab6fea9da284700058d270256"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "64cc78adaaace9027243030a1a2a4cb0b756510e8d0c69a8d0b53d03b6fc2ef1",
+            "preserve-one": "0d4252c451d604bf032e86facf909abab9d3399f694c0aec8f0b68a5a0b38d86",
+            "repair-twice-or-preserve": "a56b00a2f760d707f9dd16d638d3ce630887e34739e90755cee9f828173b9917",
+            "single-repair": "107c401c985780b743ff08712fc0dd0f8ca3577ac1e82b12f96989e4be0e500c"
+          }
+        },
+        "lmentry-rhyming_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "de3211b71f849489faa6619778aec356972590984811900893941ef96f764240",
+            "preserve-one": "ee9b7dcdafe538bfce5f2cf4b8582bc90813ca95a36934d966112939d4303c45",
+            "repair-twice-or-preserve": "6e0697594646fc66cc20e2fd53629caaef96fd927d19e9070d5b5f9f434d73d5",
+            "single-repair": "537eb8e9b9efb9e6b375214f26b06a8dc1ca33fa519face2d74ca9780b9ab102"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "27e66d9c774e8a720e34f00b7d4a4ea4440918cdff0dbe697181eff584451454",
+            "preserve-one": "00cae3de59fafd1262b72f6c3d6c9ecb2017480fd9e0f29e5fe7b7fba31aedfe",
+            "repair-twice-or-preserve": "2825fa62f120ab2267ca0af7565fb35ccb2129d09a7dbb8d7524e05230d78f9b",
+            "single-repair": "2428ab7e725ce42eab93a5916f992efe7b6752daabb0dce15dc76d94a56d62b5"
+          }
+        },
+        "lmentry-rhyming_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "7eb9e0d4762deff5df0d61e11796961e73c1e35ce6300cf9ab8bf8b008f6b84f",
+            "preserve-one": "f9b47fc498b1323e6701cb95ea695832fb6a54f3f5ab43865f7c1a114071d960",
+            "repair-twice-or-preserve": "36855cb6cf987676c7811ff12ed5d4aa1d6e110d819fdd57da2bdc93d713c540",
+            "single-repair": "c4badbe07707d256af4ab0283917f02b722317346dfd0e4cc13d52721d53886e"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "e5e0ce69fa3f093975adb5990e5b37f606c47427d852f3ef18b19baaa0be6263",
+            "preserve-one": "97e2c4cacaa428ca7d570e7ae07856c9b223abd725aec056cd093ee023e50f1a",
+            "repair-twice-or-preserve": "4a935daa4001a21d2c1a13281f091798d6bdad2d55f29885ac762823ee0152fd",
+            "single-repair": "3f00e6cdfd1f71ba8fcf28de3f3acb1f506debc549dd02f3b5b85511ca918b5a"
+          }
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "incumbent-first": {
+            "deployments": 30,
+            "holdoutPasses": 56095,
+            "nominees": 133,
+            "paidLookups": 10271,
+            "qualificationLookups": 2990,
+            "searchLookups": 7281,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            }
+          },
+          "preserve-one": {
+            "deployments": 34,
+            "holdoutPasses": 56100,
+            "nominees": 151,
+            "paidLookups": 9696,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": 5,
+                "pairedRange95": [
+                  -25,
+                  34
+                ]
+              },
+              "published-gepa": {
+                "holdoutPassDifference": 11,
+                "pairedRange95": [
+                  -32,
+                  54
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 20,
+                "pairedRange95": [
+                  -2,
+                  41
+                ]
+              }
+            },
+            "qualificationLookups": 3053,
+            "searchLookups": 6643,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 46,
+            "holdoutPasses": 56073,
+            "nominees": 234,
+            "paidLookups": 12785,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -22,
+                "pairedRange95": [
+                  -55,
+                  11
+                ]
+              },
+              "published-gepa": {
+                "holdoutPassDifference": -16,
+                "pairedRange95": [
+                  -60,
+                  28
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": -7,
+                "pairedRange95": [
+                  -43,
+                  29
+                ]
+              }
+            },
+            "qualificationLookups": 3388,
+            "searchLookups": 9397,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            }
+          },
+          "single-repair": {
+            "deployments": 38,
+            "holdoutPasses": 56080,
+            "nominees": 159,
+            "paidLookups": 9195,
+            "qualificationLookups": 3161,
+            "searchLookups": 6034,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "incumbent-first": {
+            "deployments": 4,
+            "holdoutPasses": 56090,
+            "nominees": 83,
+            "paidLookups": 7648,
+            "qualificationLookups": 3319,
+            "searchLookups": 4329,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            }
+          },
+          "preserve-one": {
+            "deployments": 4,
+            "holdoutPasses": 56090,
+            "nominees": 88,
+            "paidLookups": 7083,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": 0,
+                "pairedRange95": [
+                  0,
+                  0
+                ]
+              },
+              "published-gepa": {
+                "holdoutPassDifference": 1,
+                "pairedRange95": [
+                  -24,
+                  27
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": -1,
+                "pairedRange95": [
+                  -8,
+                  6
+                ]
+              }
+            },
+            "qualificationLookups": 3335,
+            "searchLookups": 3748,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 5,
+            "holdoutPasses": 56091,
+            "nominees": 133,
+            "paidLookups": 8912,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": 1,
+                "pairedRange95": [
+                  -2,
+                  5
+                ]
+              },
+              "published-gepa": {
+                "holdoutPassDifference": 2,
+                "pairedRange95": [
+                  -23,
+                  28
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 0,
+                "pairedRange95": [
+                  -8,
+                  8
+                ]
+              }
+            },
+            "qualificationLookups": 3439,
+            "searchLookups": 5473,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            }
+          },
+          "single-repair": {
+            "deployments": 3,
+            "holdoutPasses": 56091,
+            "nominees": 94,
+            "paidLookups": 6703,
+            "qualificationLookups": 3358,
+            "searchLookups": 3345,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 56065,
+              "upperPasses": 56089
+            }
+          }
+        }
+      },
+      "publishedGepaBySubject": {
+        "anatomy": {
+          "holdoutPasses": 1770,
+          "paidLookups": 0
+        },
+        "clinical_knowledge": {
+          "holdoutPasses": 3318,
+          "paidLookups": 1026
+        },
+        "elementary_mathematics": {
+          "holdoutPasses": 3219,
+          "paidLookups": 1888
+        },
+        "high_school_biology": {
+          "holdoutPasses": 4603,
+          "paidLookups": 0
+        },
+        "high_school_geography": {
+          "holdoutPasses": 2930,
+          "paidLookups": 0
+        },
+        "high_school_government_and_politics": {
+          "holdoutPasses": 3044,
+          "paidLookups": 0
+        },
+        "high_school_macroeconomics": {
+          "holdoutPasses": 5371,
+          "paidLookups": 0
+        },
+        "high_school_microeconomics": {
+          "holdoutPasses": 2899,
+          "paidLookups": 1433
+        },
+        "high_school_statistics": {
+          "holdoutPasses": 1806,
+          "paidLookups": 0
+        },
+        "moral_disputes": {
+          "holdoutPasses": 4369,
+          "paidLookups": 436
+        },
+        "moral_scenarios": {
+          "holdoutPasses": 5776,
+          "paidLookups": 1420
+        },
+        "professional_medicine": {
+          "holdoutPasses": 3196,
+          "paidLookups": 0
+        },
+        "professional_psychology": {
+          "holdoutPasses": 8562,
+          "paidLookups": 611
+        },
+        "sociology": {
+          "holdoutPasses": 3458,
+          "paidLookups": 0
+        },
+        "us_foreign_policy": {
+          "holdoutPasses": 1768,
+          "paidLookups": 0
+        }
+      },
+      "retainedStartPasses": 56065,
+      "traceHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "incumbent-first": "20dd744655c0498ec465ddea02c7036e4502227a72609dd57c2a2a67bbf4459e",
+            "preserve-one": "a8aa9efd4d802d4761d1e034b09134a6cef045594129095c6c33e9fe40485cfd",
+            "repair-twice-or-preserve": "b019abe9797de4c2182c3572f48f7b6f926db8f1131d09c4d66cb3805acb1f49",
+            "single-repair": "2af03047c2c7d967c3b1026b83d5318ad175d76ff3a59daea499e75e96cd65fa"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "9436ef27acabcbfcc4adfae943cff8b2ceddc97e7afd5c380a06e96cce45d135",
+            "preserve-one": "d4d7caf217221fe77bfc2f3c4cf0258d28facae3d82a0a75acd38adc3355ffda",
+            "repair-twice-or-preserve": "40d2b3faba26e78f2c63b9c32805221c0ec69b7cc0b7126dd2dd7555286dac35",
+            "single-repair": "aebcc1582aae6f2fed5de10564624cef22f762cd5e59b088ee187dad4054152c"
+          }
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "6565691c81eaef37e76e09b91ad8b3523bf44c42f8f923e05d0bc14c01dc9892",
+            "preserve-one": "d7239d5f9cf9e56985c3e1ea66f6b61ff29ee4b2cfd2ebaef0f14db55d206502",
+            "repair-twice-or-preserve": "413469666a7799bc7266752e1b74cd0cfaa85280e5ef953e6297eebd55a6aede",
+            "single-repair": "a7ad70b7468dec722121ab7885f8d6c9a085b85e3b6eae0aa02e788071862272"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "23e2cba595c4dd560271d42cb669949da65834b7e781b006cbb80e9cb322b584",
+            "preserve-one": "327e5d2094738bcc075cb93fbdf975edeeb9b5ac05f46460541bebfced76b8fc",
+            "repair-twice-or-preserve": "a9e3d2eefadebc8f64999597cd1b728849eae974082797311c86cbf8b26c6ecc",
+            "single-repair": "09f1bddfaeb3f6f9c12a160d238e660ee3ad73004d5b9f22b8b809e6614e9d09"
+          }
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "incumbent-first": "aefd5fa481228e129504cfe8083232fea0fec99df37eebf3e38692ba7937ac4e",
+            "preserve-one": "827e83d21f22ccf3cfe061dcc65191d7b4c987d4fae92fa2570f3c1463c05cf1",
+            "repair-twice-or-preserve": "7d7875bd6f9b199a95c344ce8cd8594b691ef689ff0b70124a2903429b7b2055",
+            "single-repair": "a68acd0ca1fa31dcb33bcfa071c807d5b533c6dfbf873a24983aa4fecd89a9dd"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "e2d192e6e3bebdef207cd4f66de23c46c2e1d7e53aefce4ceba0b965c04435cb",
+            "preserve-one": "61716ce4f02779532e0d36f21eb8d11603391b72f01f06f3fb9a42e4157aebbe",
+            "repair-twice-or-preserve": "fd937955b0d3daac285fa0428940369c9fdb8a914a13156192b8c8579070d6ec",
+            "single-repair": "8d7cf2a0dac288c7d8b9951333538b9f72ff37a2908c1b59f28c5dae82dcb4ea"
+          }
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "incumbent-first": "4feaf8473a2926c9823053eec808281d59a9bf2e1fb77fe36c0c88c7258275cb",
+            "preserve-one": "8e8c868f475b6cc2316ce0470853e2f71adc504138d6b691f099289c5e5cc01a",
+            "repair-twice-or-preserve": "11c044622c22d82a329a50b4b926583e445fd225646ed5148c05af3398662f8d",
+            "single-repair": "33ebc3bbbf0b9c4133c807c1494887b84bf4bf11384c9894c8538848812539b5"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "7f773de1ce4698ce7bd918438f5e364bf7c83bde022b5d08fde1e23697f1cb31",
+            "preserve-one": "68a16165d18a14204eab2f9620d05b8377312464080ae32306a15e4557da7d58",
+            "repair-twice-or-preserve": "115d5b0e25269f4a586d1942aaf1ad6d83f481df9a55836a3664d67defea111d",
+            "single-repair": "34f06af868727e383481a40c741636ba38c63af3c5b8da1ad5889970ca6de286"
+          }
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "incumbent-first": "f06fba9982aaed93d20f77dd8d9bf6637069eb081181be6f44696ed95cfa1de1",
+            "preserve-one": "25aa5deae1fd880dfacae65292d17ee4a13d148ee67b68aa50c1f6bf6a8e7343",
+            "repair-twice-or-preserve": "6dbc717bfd80a0b7c0289da82a2a9df9854193846ca13195fbf9f15b0719a48e",
+            "single-repair": "4e56b4b7096b225f8a0a22222b6e9d588973e642b5c07e6580871b3ea5e28e9f"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "37f3533abcbee416d0672717218b4c096b18676f10232bae5a11ead85fd1ce43",
+            "preserve-one": "9f5a318d6a875b2aab0e14903a826f9d82d03b6a82889095bcdcf259ed9da6b8",
+            "repair-twice-or-preserve": "61ce4b84117192bdbe8de09533b124d4e0fcee590db83c4ca42d3ad0c5e2918c",
+            "single-repair": "91e7c2582c4534688362fb20be84f6abe8c8276bbe913ee1491cb48cb7d04f40"
+          }
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "36a8e703e5f1e2f5849bdc7ef2e35323c556d566627c394290a9c122919eaf41",
+            "preserve-one": "a233a5921c324e60226f0cfb642bbd1f9c4821933ade7c3735f35ccd8f0fbf8b",
+            "repair-twice-or-preserve": "278be8bdd6386a03f1eea10814c7ae8c81435abf57a17b924c1b64d33197e9e7",
+            "single-repair": "c03b518311d0ecc35e89e234804540c4703b3dffab37e267208ddd459815d533"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "479a3c0262f85a450798c9f4be6210361906c5d93348a1e97769ae737a15f212",
+            "preserve-one": "5519c7b1d8a94e8b3adef22053a4647fa31a35b8340024280b2675df2bde548d",
+            "repair-twice-or-preserve": "1517d523e9cdd27cde62fbd5a5507a8cd9ca6562a7ef4bc7a2847ca8d68a6be3",
+            "single-repair": "509400e864e0048520caecc1baafe154fa697656051a4a6a33e4e88beec96b3d"
+          }
+        },
+        "high_school_biology/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "incumbent-first": "b9daef7851691713d242508429c37a63220d3e1304d4030d4133f7fb61d79e30",
+            "preserve-one": "f54e4db4e8332cbc49c7772e03ee9d64fdf5ea0210843d73ff7d9cfa1444b6b1",
+            "repair-twice-or-preserve": "0dc75e4af0b2cfc9e526317becbfa3ad7481e2601fe0d60a82e80769b3f44cfc",
+            "single-repair": "eff5a0648415672a0435d1ab67631381c2911337855a9e24edfdee698c5fa8f5"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "0f9d98b72ad711c0754343d6127acc8b8fab0d878ab02d94edc36d19014a7c63",
+            "preserve-one": "1dda0130f13049b7ef89fa881fd6e7dbd0dde286d41701c257dd5256a9202b4b",
+            "repair-twice-or-preserve": "8303d97176c23dc2d7a2d7e5a9f294a1bd0eb2fc60773c54aca617c17ae3bd4f",
+            "single-repair": "78628da6d3b9631d8ea5e531c2910adb1effded65434ceed9616104dfb3e9974"
+          }
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "incumbent-first": "3b8de1dd2bc1e078658c76299e80a4c9abdef83eb2d3710fe3586549f1f28d52",
+            "preserve-one": "0b52fd4951f48aef99e9cdc7d460ebdc210c081e57f649a4dd45b109315630f5",
+            "repair-twice-or-preserve": "1babb2ffad5fc5e6962c1edb0402d87172fa9f43d2392fa3edd09d1260052708",
+            "single-repair": "4ce5bc722b1c50e4782ec2b7fcf4ac021832a87d6ffc01664bcbeb8d69c10dbd"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "e2dfa2689267957749100d799a83f93388c36ed8fa0ea298d3d1f7e030beb72a",
+            "preserve-one": "2d1f598669f5914f8b0fb1143771349a9c8576e365160c12dd2a65b559570a30",
+            "repair-twice-or-preserve": "6498447f664ab10457aa98fe10df37daeeffc093b0af41dd1b310dd9bfe2a661",
+            "single-repair": "7b07457732e566ecea6a86441f8e57f831c75fbaa1d8c893ca1a60fb12c4732e"
+          }
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "771f1c8c06901c0c0a11cf3c882d467b6f2b3610490c38b2cb234f80f24f6f3a",
+            "preserve-one": "3b684af53b111b1fa9b00d60f1124e33301722f5531f147e56033765dd09ad6d",
+            "repair-twice-or-preserve": "84b8b1fe2183c720d8335ef60d22d6c09b2eb71a82517784f7c24141272900c3",
+            "single-repair": "0c5b7377a9f25f2f78d85f2472044df11ea355b102f6f4201ca2d0f6f538801d"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "728f1eab44f0069f07851da7649ad0ae4958c9beee46b9e07c497935cecd26cc",
+            "preserve-one": "d3cf36e06799471280bbeca93e251a581a8e5de26ce883a2769a9dba771a5268",
+            "repair-twice-or-preserve": "26213d1b25c70bac4515f905923a856b35423d2cd489c6e9a84047de7147e840",
+            "single-repair": "3ac6ffb9455449a3f23f25d69eff0a77327c7d269aab78f5ff2af6675a98e663"
+          }
+        },
+        "high_school_geography/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "bd3c02ca29a5252113fe11c9cf249e722aab3c8d6560cd0a36edc439d4184d29",
+            "preserve-one": "d104eb31f03a627edbcf2f2639005ac9fb8768e9d3c55323d5acd8949bd644c5",
+            "repair-twice-or-preserve": "1445934cd0220e8caaa3e1f822d2773cb2c0a3445b8e84c7f69e9de28ff5ac98",
+            "single-repair": "d6fbbf2165780dc848958730e40749ce30e1253e87a3de42ab396cc3b5f2a3cc"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "e8980aa8578c893c19f8c8df2fd83acbc7a6214f046a5a849563be263defd060",
+            "preserve-one": "14456885eccd69a26de1de5c5b4e4d898d492635d80c0c3e2b169f7ba9d2dfec",
+            "repair-twice-or-preserve": "df303747eca364d23722fa81221c38947588b7619fdda2bf00bcbd3a16846e90",
+            "single-repair": "ef07367df3b20c17eca5ce0dee4547cc0c5c122c637dfa2e0eccc8d0f0602173"
+          }
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "4bcd1090b0559743837625216c3624dc1207b927df40239db65024988fcc5d82",
+            "preserve-one": "348212d21cdb19e0f5c8dc0228d4f6bf0fcca86606521c414fbe119afb650348",
+            "repair-twice-or-preserve": "ada0cf617c534746fb00c1a8d75835067258d4452b7406423b6e75ecc8c66dfd",
+            "single-repair": "d301859fae8de854fc35c9c077f9cf1102cd1b73eb4a6b3f5ebda9825d1f7c57"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "556ff28defd1be39a7bf030f1776cc1a9f299b99ff17d94f439d874a87250d0f",
+            "preserve-one": "646162abaa1e7d42a53f9b2d2f5d6b761d758b0cf00a9cf587d8e6071d4d6eea",
+            "repair-twice-or-preserve": "5b157a91fb6fad376ef5af5f772b6b4a4d54a2efaf995114a37fc743316fde22",
+            "single-repair": "5f18ae4b9f7ddcbbad0a5d4447f553563433f82ec3beffba1616f23711eb6980"
+          }
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "e5eb6dd910645c0ae3d4c9e02e4193e9510051d81fcca8c9314d540674eedc75",
+            "preserve-one": "e5e8d35085e18040a7d4989db8b9a6e55bae79b84355c6e2e3a67e22c399d96b",
+            "repair-twice-or-preserve": "30929967a2d92e65aa9022f920c66acada4104ffad69681141956472bb532801",
+            "single-repair": "18ff5b2a23e4b2c35b140f4c9d59b1f8bba519402870de83f5c90ca0f461333a"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "b8fb44acc8f7b504b1cb3f17d86113f2dd37ccfad042a4dcf4ad91c185f92627",
+            "preserve-one": "52a3a6c3f70d56fc09ec384574d6c6b0e48fabaae1f404d7ca607495165786de",
+            "repair-twice-or-preserve": "238b3807bfa39dcb31d87ba87a28dcf0ea3c5d89c434c200fd2eb953c3e87170",
+            "single-repair": "9e99417de69ecfcbc37633a27e7ab1974d10782a45e405ce5f146bbcb22d25d7"
+          }
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "incumbent-first": "d78861d35766f141c56c3b4041612112e93fdd5f2a6486398d336262ff74470e",
+            "preserve-one": "c2eb29216dda9c4bdf92b522309852449134084baf599076f0ff15b26be7d7df",
+            "repair-twice-or-preserve": "1b3a1045284faa0fdb82a2348f4fca2d247eea6adb323b1e92afc1b4a0d356e2",
+            "single-repair": "30437c02d5919c08341d89926f04f851f4c0347747728495710cad790218d021"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d0b1c7c60071c00101520bbfbf24838564bbaad491ab0ebfd5a889e1df8855f1",
+            "preserve-one": "c1aaabec1855ad20e7d6c31deb161dbc0bd18dcb9a377042fba4e8777399c7e3",
+            "repair-twice-or-preserve": "e2e52667a91f809e54eb39ca8fb90beb009dcabe75450d71502fb7dd2e724862",
+            "single-repair": "2fbe7cd6887d797304bb8fa53c9bf4d396ff86089b8e27a6eebc0422f185b683"
+          }
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "cda4b17fc2bc51a23433024d6cb8fa6c8ca898ac9d91732893b8cf45fadb2391",
+            "preserve-one": "98b33decaf44b203be222b2f89314a666bfd1e72aec01a1fab2d18490086e70e",
+            "repair-twice-or-preserve": "4cd1222a6e9041c3d6ff6ec74e4fca92c4362e56575bded7ae3c1b62cdf31875",
+            "single-repair": "56894c2a76e4216100f5256b685a732c82aa0941cefb693aa876c0aae7c75724"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "4ea7bcb9a6add1d3b00435c79dd3094aa32267de0513cd3b9380cb93ab7c836a",
+            "preserve-one": "eed9271136e6b4380c73c6f54f0af6479107b55c264aadf7425edb307e4616d3",
+            "repair-twice-or-preserve": "df869d4c56ff65bf214b0a3bd1521691ab50e89cdc6ca105c32d0c9c63393538",
+            "single-repair": "c70fe32f5f2ab69898a2c02ff85fee57930bd90fec78d2a41f263d15202a56d5"
+          }
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "2dd2d0b38ee42586706cbea06ebf1654a2bd4787a93bcabcbaccc87386e139ca",
+            "preserve-one": "2044a0eb8d46304b697c366cc99b697cc893445696d1f26225d5f7e05ca970f7",
+            "repair-twice-or-preserve": "657cfdf930c4b6b70b785d28df6918a8a3056dd0f139966315e2d75afc6c60c0",
+            "single-repair": "e82bf0a9f62653c0945fd9ed87290a9d12ff9d3d40386b3428b5f175bf108048"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "4b36aa8d00829528782b47414ea0bd5ce46ab4a13775710cc33faa595f2c56c8",
+            "preserve-one": "6a2179b7a3d13188a1452c1caade6c0a7181b621b9e0e98c0b600ed76fbaa2a4",
+            "repair-twice-or-preserve": "b0e7c20e75e8c2864c0231001b5bcb4422ff111eb51d1905490d2c6c4cad117a",
+            "single-repair": "d894ab847567bbd94430e072b14b62b0b4f75da9bc0c5745f5ed02843d5f45d6"
+          }
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "a067eec5d292d49a5fd590806259d6657f71b63db7ad266531005bc7d0715c4c",
+            "preserve-one": "3fe12d755dbdf2aaae5c5ccf8ccbd8841a1fe03d3a837baa613abee22ff6995c",
+            "repair-twice-or-preserve": "e837381a8d0148397ec41403533240a8a9d93fa87a83dd2fd3bf13d60aa8bdfc",
+            "single-repair": "98d01caef5c3119e0d9f0a1bc16a9042e17a63975d77d94cc12a1bb06e54c28e"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "0f413542d2e7c6468d65e084a9b53a1aa669ac3f5900a1d9a5fa50fded7304b6",
+            "preserve-one": "48844a327d4c4c3b37a8a05807d56702881abe3b90f1264a54d8d63a223059d9",
+            "repair-twice-or-preserve": "ae7e543b94df26f8d5d91aab6e104054de4e7d77e639f48a6134f53389410d31",
+            "single-repair": "cce4b6de3eac2fc623288eb01456b209c2cea5a60be3942caac098dc03176267"
+          }
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "03b62bb743f77ae596bf6272f8259e6572830d9ecf7e3b17692c51f2e741e03d",
+            "preserve-one": "49c62ddca4bf8c932d7b5ab79eea68de94e53f981b9070336d3a2b00073d2791",
+            "repair-twice-or-preserve": "a4b9aadccd40ca718788d612296453b7715b13302d7bb76151e2878257dbdcc2",
+            "single-repair": "16e47e9955470c68bf8dee436933afc90a50b15082434cef3e30905cb37cf7fe"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "5d0f8adf59dd21113cc714f227732a447e50540b97d413a6aca73e24d4673248",
+            "preserve-one": "7c0887c11b7f7d965687210a4ffe32149ef80d91e26433c2d779a85309ecba97",
+            "repair-twice-or-preserve": "910ee7f6229ee743cb2a48073a32ef69d17a5e1dffa306f8ccd91850ea0f9952",
+            "single-repair": "ed7c8c23cd9f92516a1e72e62b6f813909bf24cd6cdb129f9aa3c03557b2eccf"
+          }
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "74ed01460ee5a36f86a949020839bd879cf68489a7966e78525b5a255582a8fc",
+            "preserve-one": "d374b70758873d23fc8d2eac13eb09446843e83ba7c6363e2a81a2c31b2aaa55",
+            "repair-twice-or-preserve": "29e51ddba18647c43e0542cb1c8c77974c6c54489820a5fdcc678d71a758626a",
+            "single-repair": "e46dd85dcf568d1676e014ea78187a30956fe98c937b3decce68fa341b29496c"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "7cf497de21ece59756b0b13c4f912d339b70be3bf0ac325223ba686c259d1b4e",
+            "preserve-one": "36faf0752c5b9634aa2c15a2bb3f36ad7348386d48119cd89a9b54d7b749429a",
+            "repair-twice-or-preserve": "919bf414a7511bac70983794f77721cc6b4e6673c6cbcfac8cfa900be69f4815",
+            "single-repair": "5e7a3c5eccfe077798aed6f4550efd13909d5ee29198ca48fa8aa619c65f33f8"
+          }
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "incumbent-first": "51a9f05439aca2566817865e81418070d323c56ef0718146616404f3729cbf38",
+            "preserve-one": "5e9cbd2b5b8b1b64a980c29a11d50b29995a12bf3e414c2c95f21c9c8d20533d",
+            "repair-twice-or-preserve": "43b43456c2e37f370b15d0ef014c3d59e77d5de2c3ded5557ae88d47c81c00f8",
+            "single-repair": "69d77a4d6ce5498a41057e81556df4e3825a89e766e5c6affc2af5768ffd5df9"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "b8dc5afd8166cc4f0b997ec571e89ebb3ae7e92208701109a7019adfab9ebc11",
+            "preserve-one": "9502a17207f1a4dd1b33e10575e615fe29461a88f3eeb72706d2a0418554623a",
+            "repair-twice-or-preserve": "3b5154f57a48472015503ccad73d47549bb735e45b15f22de4b0642fa91738bc",
+            "single-repair": "4b6ef8527cc764982baffdb7b7a0c907d7bff55db50f8b384fac17c85b2f75b3"
+          }
+        },
+        "moral_disputes/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "f0f23cfe6160a556a511962a9824a20d2f45328246e891914aa903cd39cedf04",
+            "preserve-one": "06b03de8a535b28c40e53c0a00f4a0d1bef5c142e0a54bcc2580bb962ebd98cb",
+            "repair-twice-or-preserve": "ef9e1bf595421028544504bdaf7cbb31656f78e6c7435cf6d02e5c8c3183cc6d",
+            "single-repair": "8fd2122c3c7e159c5d6fa9e139d07f3fb437c4c54be46acc25d2380a85583f4b"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "e3de8b4bcbf2bdc97941456a7bd70b7dec551fc3614226abd0ef958d9c0abe56",
+            "preserve-one": "c888a8678bcacb0e0d041f5229bed71e2952add4f0c24f533125924cb1e11c3d",
+            "repair-twice-or-preserve": "85ed2fe882fb8119620a9e3cbdb94e49e846d207a6d5a2b2bcc9af156d60edf5",
+            "single-repair": "39bca97a7ed006cc115954d7b911eb69c115e479a8c28b34a74abfb85bf002cc"
+          }
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "incumbent-first": "fee9f8b5e490f512183c149a964cd9ca0da42bb016af027fa6037fd9221fefbd",
+            "preserve-one": "af7221373d3c315aa07e947c07a35b2e3c4a2379f888ac3a2bb57a95eb7f9569",
+            "repair-twice-or-preserve": "4896baaa08ec5865906ff85e6706404c86c3896924ad6e1419c694355c00bedd",
+            "single-repair": "c9fda732a72d5bbb42dce7b003a8df228110fefdd3481affcc2702e650d485d6"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "04ece3f5eef2e1e7ba433e30950730a111ddd9eb4fff2309fa2edaa5e78ae7df",
+            "preserve-one": "32517768001e2c1944dc05286ae3e878ebb44a637715994e5d4948c5b59f9b09",
+            "repair-twice-or-preserve": "887136d306d624843d0f6be818d0657aa79419785ade5d9f63829380786683e8",
+            "single-repair": "7de7510e138ec8304ff1728cba340725f350c55b34b6b6553f06d733eda515e3"
+          }
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "incumbent-first": "c472dbc4893b20467cc225f3cb55506abc7c5a59e3dac6d84eaa9f5662da63c1",
+            "preserve-one": "eea4b2de264cd0e583233c740089ecde11d3b16a27d2510a12d06451d642f0ac",
+            "repair-twice-or-preserve": "c7441bb9b687217f61e0096d678c36f79dc31f9bab074beea63077b934fed16b",
+            "single-repair": "4848cfc304fed6016ac0a119b3afd86d7188bb84da120410af34b3c7292d991c"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "89276fd96a6cfa44d3b01b596b2a7ab1a5fc7b635d43379a7e4eaf3b9c9b34c2",
+            "preserve-one": "2cb4badb3435d08220ac4a62be13765b6a084734f2962a90182b0e0c1d3c755d",
+            "repair-twice-or-preserve": "ce5ad0180d36d2d39187bce1ecfdbfc13162782e2e212c1813be3a047d8ff498",
+            "single-repair": "a6fd62eb339c161ebd93e0986abd06ed2bbe26b5fc174b2a5205b9d5532af5ef"
+          }
+        },
+        "professional_medicine/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "incumbent-first": "8f5bb819021a0cc19db06661fd372a9c33c8d95af3e307bf0f11c684943c0de4",
+            "preserve-one": "b64fc9ac269a6f0a919bbc66eb27de1d80060e46cdf7e5c0822dbbc00de67947",
+            "repair-twice-or-preserve": "f2bff99e9b289b0ab58fcaade2046094b8be2485f60ac74ec5f2eab08a1b3e6c",
+            "single-repair": "e628d8201bb93ddf74fbf9893f03b4a12e0670b9c6ec86f3f2fc188395a15522"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "8e90a8481fbe0a034f51c263f81b8b0e14d3711a2cbfc8910865c3ed2f61f021",
+            "preserve-one": "6c262fc4c2db820bf40fc7843091830f459bc20ab0e25d4eccb96626954f4a0c",
+            "repair-twice-or-preserve": "3c67471379de6fc8b904ec8d16ddd1d267a7090b245e3452ce6422ce47cda8b4",
+            "single-repair": "3f95d888e19d5f95442ff8c21936e471987104c2ac606bd2968abf4320ee80fb"
+          }
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "incumbent-first": "280ce5446cac4ab615bf7de78f13c546c7770960da8a5b08f9689706455d1bb2",
+            "preserve-one": "7da061fc4241b2952ef887c85280243c4623378ab6639118b4ebe1d79e290310",
+            "repair-twice-or-preserve": "9149f9e718de8d1144aeef558ab5a1fa68d9bc1cad53036e1ba2c45569557030",
+            "single-repair": "34a1bd667c2357873cca55d4d04e9505d8d9824f3e722f65516df95791569d33"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "e5e2e7769ea55ae6090b2238b15ba5beb53dfec3781450f2c29b5d9e97773600",
+            "preserve-one": "94963df23248eff7681fcaf22f55297de5952c62b0bb36c2c2f5bb9ecb006891",
+            "repair-twice-or-preserve": "b9166860a734d1c9433378b877ce7217ef4025573385df869992fe405fbec7a8",
+            "single-repair": "3a635febc91c4c301f0ad5fc107f9eecde08f36947db6baaf742efcbfe85576b"
+          }
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "incumbent-first": "96f9bdee515dc43232d347d2760c874dc08babab796004cf18862d6cb0adb63e",
+            "preserve-one": "2f4ac59e9f69100ad89752760684d6ef05c8ea517e7e7158e1ad51003425ebfa",
+            "repair-twice-or-preserve": "74867e6d2c64b17820db006673c64a153c09e59fea56c69697f5b73793f9ca2a",
+            "single-repair": "4b4c70084f9b2bdf81bfaadcf3d08e35104ed0dd99c8e53d2b65172d0681ce46"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "132cd25f16d33ed43e85df8bfc46d6d7714303aeb3c4e2b8e59d3bf36f3a1062",
+            "preserve-one": "cd5eef8b8c66c688be10d59a0cdea4bbcee97842940fd28e9a5b19397e003af8",
+            "repair-twice-or-preserve": "6186a820fa5bdb869b1f5b39ba160a89b8018caf502afea5a1722496622c4123",
+            "single-repair": "e65a94a0dedfb722e9414ab740cf9fd406d773aea8b73f28fe267df0071bb290"
+          }
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "a0bda0fd3dfe6c1fc6fee61ff1f1bdcb0d0b7d6b17043c297f6855df92882e67",
+            "preserve-one": "e3c508729ee5a579adca921a7162167891867dddb20ecfb1b16c5a28190748d2",
+            "repair-twice-or-preserve": "a3cfa56a500ee9a8b571c9bcb2da59dd1aa5451bbacd965982dfbfc68b613890",
+            "single-repair": "47dd3806e32f8f2e9545bbfbb6b6e8e28a718edad4e9a8bf617e459a32694599"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "dbe585f68ce3c6f548c1999b6085a81b5a7ae9c5756b41f7dabfe83ba1b61d6c",
+            "preserve-one": "04e25893fccc72cf2be98b1f1eb5f365c8ad8637c368f08d9d60817acd5ae438",
+            "repair-twice-or-preserve": "2ebb58dd9feb7394febcb46cb06ecd660754d69264e1acea43210790f24e0b32",
+            "single-repair": "739ddebbd94dcf77cedd3f3d3f91384dd3fa7b3c31657af7f0f9f7dfcd815b94"
+          }
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "incumbent-first": "ea1fb3b2a6a8b6b29b423429dd1bbde372a00507cb78bf4fbbf6b3d796c5ff90",
+            "preserve-one": "3dee1d032ff6b8531a305be716742bedcdc9a6cd56251703d59f1fb0fc26f495",
+            "repair-twice-or-preserve": "309fed7b12feb41e31edf242f5773c15c769c4e0beef531efb23de001977b502",
+            "single-repair": "26a5b7dd66d3666c47590c9a875922fc91798a886042f71346d5bc6dc6d5d027"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "e08587f6471c96cd19bce1403bc190ab609cc5d79ba375b2fb0d5da471a24887",
+            "preserve-one": "f0203dfb6dd20be316f0166edd2d568a0051db8f1b11cfdfd326e4c3e8c66587",
+            "repair-twice-or-preserve": "44a1382459ebb4b918aa8a4bed7c3fd16660adac8d5764ffef9c199a5e0ee4c2",
+            "single-repair": "f0203dfb6dd20be316f0166edd2d568a0051db8f1b11cfdfd326e4c3e8c66587"
+          }
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "f3901143ddfc4b8231fa66fda86be496d07f7914612c556d9d058c789b3852ea",
+            "preserve-one": "c3e31e2f0e60347b6cb0e47139e89bd2718cf2794f5c4c8d42c8c767e692038f",
+            "repair-twice-or-preserve": "e8ba3bf7c1ac75d36536f6de4f525dd5f9cf37f3a71c7be8d88af0e74650e270",
+            "single-repair": "60ed5fe7e287a90e520968a6f4aef30ea1ac06d47fe17bf3a4e150f258f0572c"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d605e5d1ebf48c68990a263690e45f099bbe21cf9e817f2e617bbe6ea743d3c3",
+            "preserve-one": "052cc3eda51244c43d78a85b2267af64d585bc27c06bf6d87dccae11e3f6ea98",
+            "repair-twice-or-preserve": "ce483eed7f8e4e53cbd88cd05de1fe239fa1931a3ee2bfaca568822ff1c0e069",
+            "single-repair": "2e66330c4e8119cd6968a7906829932ee9128aaf837cb42536dc94295783a894"
+          }
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "incumbent-first": "c3cad1ada58e1c7a2cae21f34cf555710ea1fd03d1cff08d46f37afc77a81397",
+            "preserve-one": "c7824c761c7df3be52e4600494c3916cd073e20a43d418ace00c73e6ca95b5ba",
+            "repair-twice-or-preserve": "9f5087323251e97ca5b07eee7bc91f3f8483e2949a64b3efb302ae0ff025a119",
+            "single-repair": "13f4e6a460c019d2550c8a07c0fbd0d144b134f8966bc03a8f0091d76bab0d89"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "preserve-one": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "repair-twice-or-preserve": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "single-repair": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+          }
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "09e1d9b145732a6a64fec8d44bda3102c7bed2e4e9b905cf852084acf1f87812",
+            "preserve-one": "bd2464cf01c4e66c33195f78bba4018eda221a60a136a15e2b72b1d7ae59af15",
+            "repair-twice-or-preserve": "58a69414696e857f7f297733fefb0138aed4454a9709042f8507740bf9d175c5",
+            "single-repair": "926c54e4dcd2f704f44a147cffded7c38848178bdbe2ff7887144a93cd754cba"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "201d47b8ee4f92429fc491c0df7a9e7316a8e43748980c7f277b54b71b4e8ca2",
+            "preserve-one": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "repair-twice-or-preserve": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "single-repair": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2"
+          }
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "comparisons": {
+        "cap-19/gain-1": {
+          "incumbent-first": {
+            "deployments": 40,
+            "holdoutPasses": 26646,
+            "nominees": 186,
+            "paidLookups": 11435,
+            "qualificationLookups": 2882,
+            "searchLookups": 8553,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            }
+          },
+          "preserve-one": {
+            "deployments": 39,
+            "holdoutPasses": 26637,
+            "nominees": 187,
+            "paidLookups": 9876,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -9,
+                "pairedRange95": [
+                  -29,
+                  13
+                ]
+              },
+              "published-gepa": {
+                "holdoutPassDifference": -18,
+                "pairedRange95": [
+                  -43,
+                  8
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 2,
+                "pairedRange95": [
+                  -8,
+                  11
+                ]
+              }
+            },
+            "qualificationLookups": 2910,
+            "searchLookups": 6966,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 68,
+            "holdoutPasses": 26653,
+            "nominees": 289,
+            "paidLookups": 13371,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": 7,
+                "pairedRange95": [
+                  -22,
+                  37
+                ]
+              },
+              "published-gepa": {
+                "holdoutPassDifference": -2,
+                "pairedRange95": [
+                  -39,
+                  36
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": 18,
+                "pairedRange95": [
+                  -11,
+                  47
+                ]
+              }
+            },
+            "qualificationLookups": 3337,
+            "searchLookups": 10034,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            }
+          },
+          "single-repair": {
+            "deployments": 43,
+            "holdoutPasses": 26635,
+            "nominees": 201,
+            "paidLookups": 9061,
+            "qualificationLookups": 3019,
+            "searchLookups": 6042,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            }
+          }
+        },
+        "cap-19/gain-2": {
+          "incumbent-first": {
+            "deployments": 7,
+            "holdoutPasses": 26633,
+            "nominees": 119,
+            "paidLookups": 8624,
+            "qualificationLookups": 3193,
+            "searchLookups": 5431,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            }
+          },
+          "preserve-one": {
+            "deployments": 5,
+            "holdoutPasses": 26630,
+            "nominees": 110,
+            "paidLookups": 7461,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -3,
+                "pairedRange95": [
+                  -11,
+                  4
+                ]
+              },
+              "published-gepa": {
+                "holdoutPassDifference": -25,
+                "pairedRange95": [
+                  -39,
+                  -11
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": -3,
+                "pairedRange95": [
+                  -9,
+                  3
+                ]
+              }
+            },
+            "qualificationLookups": 3168,
+            "searchLookups": 4293,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 26625,
+              "upperPasses": 26655
+            }
+          },
+          "repair-twice-or-preserve": {
+            "deployments": 9,
+            "holdoutPasses": 26632,
+            "nominees": 170,
+            "paidLookups": 9551,
+            "pairedDifferences": {
+              "incumbent-first": {
+                "holdoutPassDifference": -1,
+                "pairedRange95": [
+                  -8,
+                  6
+                ]
+              },
+              "published-gepa": {
+                "holdoutPassDifference": -23,
+                "pairedRange95": [
+                  -41,
+                  -4
+                ]
+              },
+              "single-repair": {
+                "holdoutPassDifference": -1,
+                "pairedRange95": [
+                  -13,
+                  11
+                ]
+              }
+            },
+            "qualificationLookups": 3318,
+            "searchLookups": 6233,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            }
+          },
+          "single-repair": {
+            "deployments": 6,
+            "holdoutPasses": 26633,
+            "nominees": 122,
+            "paidLookups": 6841,
+            "qualificationLookups": 3207,
+            "searchLookups": 3634,
+            "splitSafeGepaBounds": {
+              "lowerPasses": 26625,
+              "upperPasses": 26655
+            }
+          }
+        }
+      },
+      "publishedGepaBySubject": {
+        "abstract_algebra": {
+          "holdoutPasses": 595,
+          "paidLookups": 1527
+        },
+        "business_ethics": {
+          "holdoutPasses": 922,
+          "paidLookups": 0
+        },
+        "college_mathematics": {
+          "holdoutPasses": 511,
+          "paidLookups": 1045
+        },
+        "college_physics": {
+          "holdoutPasses": 730,
+          "paidLookups": 1946
+        },
+        "computer_security": {
+          "holdoutPasses": 1443,
+          "paidLookups": 0
+        },
+        "conceptual_physics": {
+          "holdoutPasses": 2356,
+          "paidLookups": 745
+        },
+        "electrical_engineering": {
+          "holdoutPasses": 1456,
+          "paidLookups": 0
+        },
+        "high_school_european_history": {
+          "holdoutPasses": 2222,
+          "paidLookups": 886
+        },
+        "high_school_psychology": {
+          "holdoutPasses": 7962,
+          "paidLookups": 570
+        },
+        "human_aging": {
+          "holdoutPasses": 2500,
+          "paidLookups": 1855
+        },
+        "international_law": {
+          "holdoutPasses": 1703,
+          "paidLookups": 0
+        },
+        "jurisprudence": {
+          "holdoutPasses": 1581,
+          "paidLookups": 0
+        },
+        "management": {
+          "holdoutPasses": 1295,
+          "paidLookups": 0
+        },
+        "public_relations": {
+          "holdoutPasses": 1379,
+          "paidLookups": 0
+        }
+      },
+      "retainedStartPasses": 26625,
+      "traceHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "3738accb398db786d167aec6c7527b5337647e34c3337daf3210e37f2bb94f44",
+            "preserve-one": "acf09bc52f5ebbdd9c5f327da76b0ba488ca3385da00e977cfb97de448804f5d",
+            "repair-twice-or-preserve": "3f73702f406f4a8e2aa88066fc1ff167f890f7386eecc121b25537500c89c692",
+            "single-repair": "fb8033bc1d58fefc003803613cdb5d67a16ad9ab02a6850bf7f9c69fa0902d7b"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "983d4b3491ed64df5b7e540c328ea9148e301a002eac412540606d954d61eec6",
+            "preserve-one": "b966778825b0fb8ef68b17a754a402978ea28860cffcd8cc8ef03b227324f7ef",
+            "repair-twice-or-preserve": "4109006ab3a3b680e92308d406864c196e9a8779eebfb58831612cff77ffb226",
+            "single-repair": "5a0c5d35fe4a4393ee8cbae9c87b4ed8e511f83d2e2e838397c0995e8663b9af"
+          }
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "f67663133ad57d04c54a0ce096c101adb848b9fdcb582cefae045f630fb2b235",
+            "preserve-one": "71462659743657e6bb49faee835091daf548a07ec9790a4593d91b9a97e4d3ca",
+            "repair-twice-or-preserve": "a9fba7ef3b00d4acd869c2a9a32e3d91880e29e4e5f3f9f8adfaeb858524de82",
+            "single-repair": "201418c65f5c87a14e031f84eea8aca61a3aad7538011fe6d8ecbe72f6197d1f"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "ae63e7f017cc96b2670542b5c2567e154ecfaf95895ac6c05b43311bdee74c88",
+            "preserve-one": "beba0cd1fd0ebb9d72a39eb3355d3a0fcc04f4c9c8e6e62fd1fabf853c1dd476",
+            "repair-twice-or-preserve": "4a3beba34b6ddac55264def3f0cb056a37401dd51cc2cde4961ed75a87eb52de",
+            "single-repair": "138eae2350d43bd490a600437b1d9c01bfd39b72383a992a4d29abafd3d0faa7"
+          }
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "f66b8a158e9ddb9ecc71e74a54c04fc9486ce4492dc35dc710e49e54bd842330",
+            "preserve-one": "d0131f50dd8e4d9a0a3cf3a3670230930ea2fb1150cd3ae24afcd13c3cfaf147",
+            "repair-twice-or-preserve": "e989fc7831e67fd5e9f4b17eaa9c31e28ea18b835f96111c1a9e7290b8b56cf8",
+            "single-repair": "c078e048fcc701d2d6da92998c8a2889376fa0adbe649bed0b5b0007bbdb19f9"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "c3b2d78438ab57c7efa98621881fbdcce21553c1fcb38f638a865290a9c33b0d",
+            "preserve-one": "0c28c62cdab734781861d196be0f732638fe44aa4fb2f6386dd775281e6f52a1",
+            "repair-twice-or-preserve": "196a74610721e822ee9f778b922b1deb2e00b5bc49e064076f3f832543f0883a",
+            "single-repair": "0a2ecc499581f5fecf4ff50f4c9ff0ae31e157bcb2bf18767d06cf6574f387dd"
+          }
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "e919c5c643f5eb6ffaea8ab340a70476d6fe58ffdcaaa0e7025b91a804190f14",
+            "preserve-one": "72ba861afbcf92a83e7ef17151c8ee9c4b153d95b927f7d900eff15804f8bd18",
+            "repair-twice-or-preserve": "66407e472c12f0a80296e5c858bda69dc1db78d8e2fff7bcda064cb945a0a108",
+            "single-repair": "cb61352691d606d716c3790a0b1e998b7bf67ecc6403571de65e1a1d102e5a7a"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "7e30803bc49035c979734e39ca32b052506981176b9c54e76c673d68ed325d62",
+            "preserve-one": "dc7bf6592cb14c95fb89579ae02aa56114b0675f3105c48dcdd87a98574134ba",
+            "repair-twice-or-preserve": "ae86d57c947928877272edcc6da1a126ffb4728f5c9ab900b1b91aee48c2538b",
+            "single-repair": "5ffe7176b7577838fec0a6bff0906f0bd2cbd873e7d999affe97392f267069c5"
+          }
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "62729ff387cd3fd45d9b4eaf5786e54b7fb29025ddeb9228a23c386056c1290c",
+            "preserve-one": "b81bd7d9d03e5c17349208401b0dc05f0b9e858f5f5011285aae557bb05c1391",
+            "repair-twice-or-preserve": "b414b9af358689992efeec2addb42bccda7d171f56fcedd2a2f618aa6458e209",
+            "single-repair": "b060cdd7a59d686069a1f46dd4be95feb72f91232d5e73e2b806acfd548934d3"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "e28b2d10a897cb0231e55d8a948e11c0475de75ec33a04a9240fb3719b0f439d",
+            "preserve-one": "7a5f7673bb8bcc005904a0f68c0e39dfd73a1a675d096772fdc712cc928cfeb0",
+            "repair-twice-or-preserve": "4620d03296cd4d0dc05c3c5b690358a495bc8fdef5e28c5c0d42e074d723519c",
+            "single-repair": "166717a15d008a309f26863b221a4e67f669f847f68aa54dac10500262a6d704"
+          }
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "22fb4f51182ace0896a5f2e3c89079287ac3040c7cf04a2885c07bc7fd5b6338",
+            "preserve-one": "cad055e7aea1d4a20545d591eb422282611960ff8a2fa4af6e63aa61df16407a",
+            "repair-twice-or-preserve": "9e91d872b28568b0473bd285f97ddb97e862d2f93afc77546d0d4d8a48ee1841",
+            "single-repair": "973593809ac815e512575ea5d4b14a569946e8541fb57e41165cfeeacadf37ec"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "65015af9fa013b2d32cd51bd48d5427853faff574c498786f59334df581840ab",
+            "preserve-one": "ef06999c93c24876710a7c1b17546f387ddb6e0b4489ed8a914653e0846dfc5b",
+            "repair-twice-or-preserve": "1f19aec39a0e1be92ff7a01a90e231bc693a2e3e47f51b8afe385e270531eb3f",
+            "single-repair": "561439286843bb65910e1d906a2404f87e88106de622ed5aaa76b4aaf1dce017"
+          }
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "b28867ad37510a1fe914995382f3b51840a415b0a2f3f95dc8ef7c906e7ed838",
+            "preserve-one": "22e13cf83db3cdd7fff885f864636317dd923857dc28a55f6936d140e2985775",
+            "repair-twice-or-preserve": "f2879442e39e41f336f95d200d7f53551848e00d6f4dee2ebb91fd34c637b5bd",
+            "single-repair": "cd830b8645d7f2526ecd73bb3de2199004ff51a2d265a901dd2cf87938ff4825"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "8a78b0ec84acc22f94f32fabde124e5790387e1eec7a9fc36749d73b18ac9282",
+            "preserve-one": "8f9345ff45870a79aa8fe1531f4fefb64776f68a330e261240d7535a4d69dcfa",
+            "repair-twice-or-preserve": "23c5c3947cec660284d19a843d6033af1b10ea3975396c43e30f4acd310322f2",
+            "single-repair": "80532fa1e74d28d211c8f38a6ee76b9723b289ac1700f94eee8a9d6efcd12e2d"
+          }
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "incumbent-first": "18d652b5276655e0f4b5b6ffa7a02d7de0dc7970927a44580d9f47e2ada15d85",
+            "preserve-one": "42e061a95c5701e66f78b152ba2e0ce4ba1d2a1c25f95830047f2d5ac6e14c95",
+            "repair-twice-or-preserve": "d68afad014e49d337c55abce1226139fd2c53f7240ed0ed155414559ffe224c9",
+            "single-repair": "ebbd102134f1b9991559329e582e78f386eaca25e3e449e637f03355fdf42c0b"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "9e493f9664115f352627036f2f19c736c417ca6af15b3bb6bbe9f720a3386c12",
+            "preserve-one": "60e7fa31e4c0215e076fb10ef3c47ed2c5df6caee104422d9e8ec3ae33d1ede0",
+            "repair-twice-or-preserve": "ee999cbc3b01535424ff10b95874d681086d63c07fbfdfab2160ed736a970412",
+            "single-repair": "6a1a385c6516305679d7e3e71d7432af1d45d9e27c8861172b7e4a95269264ee"
+          }
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "93e3bd8d35956c020520d666c7ddcc44c3a590a5d1b25984a6653a9335227f52",
+            "preserve-one": "615b4c9ba21214ac642046716269dad886b111056e62fa8e3a5e1a839c230a00",
+            "repair-twice-or-preserve": "79e5a23fd1cb409f3b187a41cde7c6a0430b7b8d7c1d35b4e1330fcaafc6e8e1",
+            "single-repair": "d7a4a49ab2bdd24228a09de6a2fb02afc13579e272939f582f707c540706615e"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "cc9aee64b54c8a543f8981b39d97c370a216411ed3eac27f182e1cfd36f1db25",
+            "preserve-one": "587dc9e11a929597eb0e6908c573db96d8b41c05d5ef1d84cf3a636aa6e2c833",
+            "repair-twice-or-preserve": "85b553e8244e9c53402c0b1762c79d85ede0a552d67a3c3a723d21c016cf0ff7",
+            "single-repair": "0cab610286a67fb13ffda2a0df31d1b8458b1e1a827e7128c1d6e26d23cdf7af"
+          }
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "incumbent-first": "5f4090bfa1f9c6a075a007a96c3513721d95fb50b4ce7d2a752916a783bfa7ed",
+            "preserve-one": "959fedd75d86d0c7caec58d1be1f43043f18c3592a72b6061fa33331645f9742",
+            "repair-twice-or-preserve": "03451b41d08496f8edb7c7f9a093e21f9c14a4c01635ecff8adf7dad68652166",
+            "single-repair": "102e3f19856e5d1832d15e1da2ccfda29310bd1dcb4e757cccb1c35b953e3693"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d56da48751b65c24269f347c209dfc7e0c67cc7eceeeb2938d1f6379f7e0e397",
+            "preserve-one": "d7215d6ff9ee6c508d3ede4c06b1de39996cd2dfc3779799d6e3a5293b578439",
+            "repair-twice-or-preserve": "37d39858e9c7e588a8f54ce90a951077dbfe398a17d41a500fd5ad6a534ef2c7",
+            "single-repair": "fa2704034ebf8bace28edf94070a329d7b92f4df06abb45b156e82783928013a"
+          }
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "8be27b4fe5193227ee3af655b1698ad0ad5f1d3b59c1d63005b4e224191fdb83",
+            "preserve-one": "50a4df64a8c482ec8447fe23d76ee9325f0bdd0880baed816901601f6029b8cd",
+            "repair-twice-or-preserve": "1c1ae9d2dde5b6f1ad0a5a97996d2a258ad9b0b51927bcdb66fe7817eef67ade",
+            "single-repair": "4e34efa0ad1506cbc6d79b66a3e8d4209127cc5e804be1725bb7dd413d15aa58"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d1dbe1a8b9b6a490a091870ee3f891b28e2572ec15e071c60913c17d5c53ea77",
+            "preserve-one": "01575d250edd091ecad684bd9fec419b446adccffbde686b2c63348d62495762",
+            "repair-twice-or-preserve": "23a2f1aab5d97f40df96456df2d874934b9788156e819e954740febba5718ce0",
+            "single-repair": "cfbcae233edb7968c610aa8894d7bce13fb3ff6980c7c712569e352d7b6fb20b"
+          }
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "254104297bc793f991762d6a58a7e02f04b2f7b43e762577dd56eb680974bb4b",
+            "preserve-one": "8b8c941359d3d436e52d7a0088b0927f95694eb5ebdeb9581ad8f346b59015d4",
+            "repair-twice-or-preserve": "447ad91fe11e0b9c970c2437275a837c3bac15b36c451b9d4415d54c7072f028",
+            "single-repair": "d3919caee69d4de1675e5ffe42fa4f65aea31ab0c8e564fb4535f698be78efb2"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "6aeea9f1f3ad59fbe4a8017995f6578c8bee2235730c7f675f4546200f0b2b70",
+            "preserve-one": "63a46be6cf830887b083d52fae22aa8a277269c0e6f7e2e17b39835991a644ff",
+            "repair-twice-or-preserve": "60ccd56693d6e4db2f0a932a7cc5da95e3a8ab42ef2b2215c30c749645477efc",
+            "single-repair": "5ce200f7243f96fe8c13d43e4358e16398e64c540804118c42e029417e5d5b49"
+          }
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "ba30cdbde47fa0caee1728fb767c7088d3ca7bd3cdc3ce9a266af589ded8237b",
+            "preserve-one": "b0d513844c2111d2c2b8095c3e253ef78770b1e0ebec090af1c815c1a7cd744b",
+            "repair-twice-or-preserve": "f7860b641bfd09c8b2a03d41ae05f9f152d3f7b185810f21327d7c83a86758f3",
+            "single-repair": "7d93564202a825940c5d36cde871087552c6ba6da1e47b60337e55c40b305392"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "202aba4442fe28284eedb9bf8334ca16f66544227f04bd2679cb369acc84da9a",
+            "preserve-one": "98a864f8685523251a82c8705a4ccdf4975c91e4adaaf794fc39da9ee0821eaf",
+            "repair-twice-or-preserve": "6893016f0e0ac3c26f20f851f20ddb098a17c62e6eb9b6ab0a1f9dec0ba9cb38",
+            "single-repair": "164279735e59ca995e048824fd501fc666fc5ecd0c5142ed7758e1422ae79e79"
+          }
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "incumbent-first": "1844a5d1fb6e220ed21134946876f3f79bebee42386655c1d0c78709acdcda03",
+            "preserve-one": "5fc00f62ca923093af0fe66e70e98c668895179fe3111634ccda2f656bfb5b59",
+            "repair-twice-or-preserve": "ee4e8e751e09d3e0e1789a6118f2b5fc30dabcda9897a82e0f1ef60785e72dab",
+            "single-repair": "944cc5869ef24c0a946402f5fe85495eca2b0859c5a2716ed7e23b2b27c3cb21"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "93703a2cbd9374c87285203017ff1e8497c523189344ad8e7575ee0a3b97a7aa",
+            "preserve-one": "faa2b208a81f5593f3f8afd5058e28085d5f95b987b6bfc68a12a4e5bd4773fc",
+            "repair-twice-or-preserve": "20854d03359562961b0e685cf1a134262840034772aca3217492637203c2b7f8",
+            "single-repair": "4620327d4c36d7475e25b1fbc75e1157b1321de157911c200835033df0f90294"
+          }
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "27fef8aecdd8386e3a6eef24b2396f007e2ef9d7dc30a673df64cba069eda226",
+            "preserve-one": "c438cb8ed1beede0878839558985d3677c9916c8e3f8fe138780526afdb40226",
+            "repair-twice-or-preserve": "8773f48fba4e3d293c56f93266c82032be72fad36870d9c5cbb1cac0d00d4c1a",
+            "single-repair": "db37a9259be0206f48452999478b75bac1f35f282cdb2ed9f9a43de2a152f0a0"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "5493388eac4499cfafd0c403933be167ef595692c9c46e3f9b500447bb1e2605",
+            "preserve-one": "666f2372b8e311e5dca365f214bfb23ddeac64ebe0a002417beef14963b13995",
+            "repair-twice-or-preserve": "b7610cd12483587293c93975dcd5381ebf892d5bd165ec927a8cbdbb127df79d",
+            "single-repair": "c824759185568ac35b37887cceac2d11e5a86e4c21efe7c31f1dd53f90986297"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "incumbent-first": "b76e52e710f4c9bf26710860274b3dc4419c46874be734c24e1c514dd2ace28c",
+            "preserve-one": "e8e5e588e04a8e8d176617776be6e93729e68c388e59f8453adfc3e036bd0b73",
+            "repair-twice-or-preserve": "b1685b578781f403a46f0f17a6f01e7baddc2bb6b6529ff1281cc298e2e0bcb9",
+            "single-repair": "eb01254a8712a80549efa4522006f6ab466c5bf49f4f5b2812cd592a4be61854"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "5ae81f53f15927914e9fab3b1079e1791553fbeaa2643e207147a73343358d41",
+            "preserve-one": "fbcf2fd92950881de172f2ebc0303a314dc5aad3095d69a2e051442460c62b23",
+            "repair-twice-or-preserve": "8749cb73d306e1144c7cb4837cf34fe3893e87bfd73dbe3f8c70a8172d89656d",
+            "single-repair": "6eb5ec3831b0ee86c30e12b12a6c37e9c5a589d49f9acecc4f4890dfca8e10f0"
+          }
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "91dc464a15dfa7fc5d6de8cf1e4c0226b4d9c6e5d6ded5b4d1589f0224faee08",
+            "preserve-one": "1d511e855dff6bad2922c5164a666eca518123ad8ead20377f08e851ba148434",
+            "repair-twice-or-preserve": "6eaf2df8ecdda3e5bee3066f95d6fca6d0796f348c6366747b7eaa41e2149702",
+            "single-repair": "896e83b0deff4b372899dbbbc96d52b7a8c1159fa70291832a7833c7f223bf6d"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "fa784cf869fd2f5ea2cb9f8611307b14823105244019f32d6ff2f754b92f8db7",
+            "preserve-one": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "repair-twice-or-preserve": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "single-repair": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51"
+          }
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "incumbent-first": "c928edcd8cae86ef477726cb0fcbdde7cb973328ac9c957150e78750d2a2c90e",
+            "preserve-one": "0f8e76ad8c170cfb46cdb5c5c7ccced0a0f1159aa5081c02fa38cbec91a785c3",
+            "repair-twice-or-preserve": "d5f8137ed21c17853e1cef840bdabb6b57c0bec8573ed652b91d72d20f3dc97f",
+            "single-repair": "9637be8bf4ef630801e8cf892327ec459df1096d6c5c5b2db04f1023442bfff1"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "aee579cae327ada6d578e3ea3dc758f754f0c86237ef62cdf871d51756c312ae",
+            "preserve-one": "174f7aaf0abd426123a3aaf9fd63539ed257f027c32e1c42213fc63a4d29e317",
+            "repair-twice-or-preserve": "a9347ada8aa6977981de6332ff46944f78059b10c928aaa931672815d1d504b5",
+            "single-repair": "f47c8d7ad5dd075e933be46722b748f45e62e45986afbb165fcd06d0b0fe552f"
+          }
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "bd77c6cfbc0c7841a7fbec70a85eb7890cacdce64c15f2f1f32b1c3dc9998058",
+            "preserve-one": "a4f050eab1f116984731382f5e9e751a08dadc64e8396727b117ecd5adc38a42",
+            "repair-twice-or-preserve": "ba08a7df42babefca54778db78e29cedbfd98b636b2d5c1e61479b8dd68b5ce8",
+            "single-repair": "f944e271fb8819a93eebb6875d4c6e80eacb6b2c2e362c6b8e0513ad75d41f7e"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "748255e3d7fd382546cc10292021fd7eef4c541cc0b945b9c718f7398ed0d75c",
+            "preserve-one": "00b7bb5d50735c1fef037abddb6b00d5388944a13bd0ff4594cd2618c1558c80",
+            "repair-twice-or-preserve": "3b63f51d7b59319eec6422d3e42ed74cccfa734f4357206adaa2b2528f8a331d",
+            "single-repair": "7526457b985197fae3f5090d1b68dc7eb2c96828fdbdd9a58e77de23a4580815"
+          }
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "925927e3580de9a01580fd1da8e9b3170bd29d1d21d4309fe6b2d2a28453a1e2",
+            "preserve-one": "c4eb5356c66515f28c659c3b55f8835794d600f2a96b832d47e03a7718d5be48",
+            "repair-twice-or-preserve": "63f6636a2b577be0f7b580febaa63a32d9705ac6428e99cc838c758c5fbed8bb",
+            "single-repair": "b57616e74a112ad24681396853c0d38a38e9a10d5d51be64f45935ae0f71236b"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "3d6e2cc6bb690d1f8da2ffcea0e16c7edef1194b5cdd927d3bcf4b574082ed97",
+            "preserve-one": "b0fe2b3dfef375b43c6979f2ade97b7903d4b33aaf246bbc54c56923be8f1ef0",
+            "repair-twice-or-preserve": "7694f2fae133aa586818a3b181e30ac4be47cc985c5ee4ebf16b3bf0424fe8e7",
+            "single-repair": "cf39f29a710e96b4970e67ff4defd1b2abfc78fc6f19ef0bb31005ad9d5a394e"
+          }
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "b892b0bff289919ed2f2c0b2bb6cee3c6ae3430fccf76f2711b6b9716c1a9aa5",
+            "preserve-one": "b42b54104f88b5d3edf4502f2190ad3ef3a4b4dd4fff919080f9295aee164d4a",
+            "repair-twice-or-preserve": "d7015ba19391e5d3acce4fcc230bbec94aea1ac228dc0673b49213ffed9954ce",
+            "single-repair": "9f42eb467b78d0966490e7ed1e58e347a588a4a0f3368be3d5d94330984ce97f"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "6cb7a6a45e201041deeef05448324740f593d2161c49cdabcfa445c7c847588a",
+            "preserve-one": "0047aebacb45a7b01ea68af12c63137daefb457d7582144a454fc219cf5e1c1c",
+            "repair-twice-or-preserve": "8cdd283646753bf96ee42bae9d07ea1cc3a8f3f2e8d409aec21978ee0948d6ee",
+            "single-repair": "3bda0947a06689bea857ce9d32df68e55abd0663ce6fa44e1932759d092234a8"
+          }
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "incumbent-first": "b884f5e43a2cc83aae2ce0bd79fabf0c5d59d86c920efcc65bf8e3776aca1a26",
+            "preserve-one": "bae87440cb4544c6a3b579f05f2ee76222a9ef02562be4aafd246bb524b24734",
+            "repair-twice-or-preserve": "10753dd764e839261916a94e679756ab83fe7d9a7999c0eca4ef9a32b931bb9b",
+            "single-repair": "c5394a47b52d660d56793774a5a8a3e6ff20b19e77f09c2d9376dc6f64afa83b"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "9fbd25be8dec16f8b79e5a4990ef5f03169ed01f4be72cb53694a085cd71a303",
+            "preserve-one": "a61039c7c192af584349383769b6d59e81c5a07206ba8e4454502710fb7c18fc",
+            "repair-twice-or-preserve": "aaffdee534b732dc23b14b52a18f088b380eb9af31ea0d312c09eb253a270332",
+            "single-repair": "9c135cfb01a31efaf604c5fa9f0bf005033f805e622ce061d5f0b4323ea9c5dd"
+          }
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "4d59753061d624c5c0386a982a612104f3460be0fde9de77c05059a12a1d9efa",
+            "preserve-one": "08824e39f920c2d8f6f1d50ab0d5cc6352cbe3b47dbd6a2c282f32ad39a5b9ae",
+            "repair-twice-or-preserve": "a60eee286395481b435ec8b76bbd0239e12fc7253bcac484c4d46e620bd60071",
+            "single-repair": "779a867782170c0e7a2eddc5ee3e50721460f6a69f09fde1f6b8a86ba5c3a2bc"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "0a014cbbbd8d4bd7340006ebfaaafb1df13463df1da7decf5876e03f65e07423",
+            "preserve-one": "e26a75855042abc9d9ed9012e6c4998510cf6e8c48b9d7af3573d0c288c28b9b",
+            "repair-twice-or-preserve": "9047cb6f37d75174d0c15d3bbacef11bafbb27ee40f2436e9aae4432cc31b7c6",
+            "single-repair": "874b2abe38e5bf9734e7360ccaa83ce448de2b677d963f8c39077273dc8165eb"
+          }
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "482dc30227b1b5883e1be50c776f3f14760964ddf19cbfee7430f49d472266d1",
+            "preserve-one": "8a45743a6c71faf549babbfbe8ae0c78f3174d8657b68d3c39925d420b28c1bc",
+            "repair-twice-or-preserve": "2f58d325a9ce7606a41db1f53730aedd557b6bd2e074ecc29dd0e2a33454f91b",
+            "single-repair": "532cf2414925e3b21645b043e787863b15a8bac7e566bcf499050e1b7efa27ad"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "731fd307efe775e23f27ecc84ff08d33fd1f9dc5ce6e8bdb9ee6aa260574a85d",
+            "preserve-one": "11936f8637891012ff5cfad7c8b3ba1211fe6fac58553553ddbee2126a2192bb",
+            "repair-twice-or-preserve": "cc54e805fb1cbc2d0f207465d119690b5e5f9bf95ea6fdd689aa9fb273e2931d",
+            "single-repair": "337a8792178bd3f4830e84c5333a7974ded628b3c80d289cd5e52654bc3c0e7a"
+          }
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "c849e68184cada6dafaf07df7b388116b38256507124efdad3d2605bd591f872",
+            "preserve-one": "28eb6766ecf219cdfcc48a7a3d4e234d2237e23fcf529db23d1569ac4de8840d",
+            "repair-twice-or-preserve": "9e71d73b9c4ee3641faebc9eaf5e93e8fe2b54d0a78e09155bb3ae0f04b7b9eb",
+            "single-repair": "fd0d64c3d8366b3313dffa5ebef73d4e9dbe8dcf9e7e5c9b0004adebb9216637"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "78413fc2cfe817b074b45e6a72184ddc1b64338b91617f6fed1645e051122cfc",
+            "preserve-one": "5aa7edfedbfe2c48c74c099a32d0ea0261c195927caef3ae43ad8220f632cf63",
+            "repair-twice-or-preserve": "2c8b2af45c92d8705a3612892bd8da43e24180db6b97425d5917981a95890285",
+            "single-repair": "f0faff69f62c4fb1dd40a73841f3fbca7500fe241c42017c32723c56f4665cc9"
+          }
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "incumbent-first": "07ef9758eaa069a06da9b77c53b49107080e70e7e70d114552f8c50241735776",
+            "preserve-one": "16ec16b38b3159190511003f28fd4449a9f893cb12a49c99c6c74cbfba0989aa",
+            "repair-twice-or-preserve": "32bcbf82672990791f7a0d99fd80d431ab421e70b714fb5d4a5ffeded1d63074",
+            "single-repair": "d4b9c85b5eaf7aa1da706ed9ab4f031a648c78df40b3810691c38b5da58e6592"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "3f303c4c1fe420ac2243d0e63a85f3d704aa09ad6b7867a471f1eec27162b17b",
+            "preserve-one": "b3072257799a7fbb39bb7891a84f4f42670c086866aadc03da7e3dc94b77bced",
+            "repair-twice-or-preserve": "a0da1af65f0076b1f0e1f2de0ddcf6672a849652a950d9df1e2dcffb3e3e049c",
+            "single-repair": "d9b94e05e637e7e1ed2d5f7583de7927265f14b04a161c660b2179aff0cac2a9"
+          }
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "incumbent-first": "ba8fc57038738f3ef87bc9ef9e0ae885e9319e795f57995f716b03fc256ce816",
+            "preserve-one": "745a0bf666fccb3a5b16e312dfef8cbf0adf6a6011d6005f636f915757c603c6",
+            "repair-twice-or-preserve": "bc240b7ef3c9574e17523c25652d7121521e405acd7518df2572ca24bf856cdc",
+            "single-repair": "483eef317f6efae3ab0b553d48139a16130a8a8f99d1d5bd9f2d9a63d93b313a"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "2e4e2d3d89a97254dd99abb7a2fd6e17654307d32a82e908d5ca651cd295676c",
+            "preserve-one": "104b976824f9cde25fd48c45505911d543fbb8eb4eb9f8e8674ceb6f67eae0dd",
+            "repair-twice-or-preserve": "6123dee4fdf7efc3fad44a40c51a64170c2bf7231e4b7a0e82775234d39db873",
+            "single-repair": "dff0c7852212ad94c666034a5d0c17ba4082a71e9e9d3a59dcfbc8274266addb"
+          }
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "incumbent-first": "8a1f35a819073cb2d630191fe4e3127314963f5e1392353eb9a8db5562e72877",
+            "preserve-one": "96c6da6ba134e0cfbafe00b6460ec22761593f8d2c062f90e6e38a0398110230",
+            "repair-twice-or-preserve": "338271626559aeaa8896b8c190c1407bfb47ca08564f056e3ee32ebfd182d95a",
+            "single-repair": "88d832ca28678f6867823f3e2f8f45064b7b35d7545ae1c4960583f71dfdd962"
+          },
+          "cap-19/gain-2": {
+            "incumbent-first": "d67db31c790cd40f86a7dd69709a17a98ea6d88a0b96338a0a20452fb923a626",
+            "preserve-one": "f89e24dee8471ee54540ce35373adbb4dc4244c33e389b9341a63f2b907ac17d",
+            "repair-twice-or-preserve": "0ed48e1dd24234c4195a2eecb1eda790a0ac4d67a7eaee1faf44cb7e97457f25",
+            "single-repair": "1d3c105e919d11aa2c7c9f4f2a81cc86e4d8ae72e0e085608252f742ae54b9bd"
+          }
+        }
+      }
+    }
+  }
+}
