@@ -1,0 +1,3152 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "retention-first",
+      "retention-defer",
+      "gain-defer"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "9348cf4b424da11c65e1c144332f86089418f9ffd307e9709da76d8d96b47ad0",
+    "parentReceiptSha256": "476e3eb08541a1dd4a078794d5aab90fa5a8a844d7d5124fb283382fdc9f44e1",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "deferred-certificate-second-witness-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Use the shared first probe and full nominal reservation. On each positive probe, spend the next proof read on the first incumbent pass or the next incumbent miss. For the defer arms, move a challenger that fails this second case behind later positive probes but ahead of shared-probe misses. Reuse the measured rows. The retention-first control buys the same type of second case and keeps nominee priority. Keep the exact validation and independent qualification gates.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": "c8118d7b11fbca242669d92fb23a24ec53e23c6272dac7e41503d318fa6d1985",
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "9435398f8048349f3c012bf37b159729ee8a93ae3f28bb7a36ce004da73ec18e",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "anchorTotals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 274,
+            "holdoutPasses": 9570,
+            "nominations": 394,
+            "paidLookups": 15786,
+            "promotions": 185,
+            "searchLookups": 12378
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 9548,
+            "nominations": 358,
+            "paidLookups": 16083,
+            "promotions": 181,
+            "searchLookups": 12920
+          },
+          "shared-probe-race": {
+            "changedNominee": 167,
+            "holdoutPasses": 9500,
+            "nominations": 286,
+            "paidLookups": 17649,
+            "promotions": 150,
+            "searchLookups": 14841
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 249,
+            "holdoutPasses": 9013,
+            "nominations": 357,
+            "paidLookups": 14735,
+            "promotions": 68,
+            "searchLookups": 10936
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 8998,
+            "nominations": 322,
+            "paidLookups": 15062,
+            "promotions": 65,
+            "searchLookups": 11415
+          },
+          "shared-probe-race": {
+            "changedNominee": 154,
+            "holdoutPasses": 9010,
+            "nominations": 257,
+            "paidLookups": 16541,
+            "promotions": 61,
+            "searchLookups": 13102
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "1a7ce0413c5cba6c63e43320b0d6015d54075105ded7d10266125a2b16a9354e",
+            "retention-defer": "b6ffd32ebe93d9e7d8ffaeed35e33d846f56ba8012f7da411fdfb900e13781c2",
+            "retention-first": "30dac67b0dce03dce4cfe64bab17d5fb747275d07dd01ec68c8060073297a0f2",
+            "shared-probe": "5e0f47e07a9cd8269b75f0db979a4f494f228d822bf1fb198d4a6140e3f88d74"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "7ec39e97b6a14bbac991bd78f6f901773036a1b0d0254bb2e9d8d69410812b86",
+            "retention-defer": "f8381766e2ee933241f30d8270dd5a395f13e5645095ab10860d091522997377",
+            "retention-first": "6601bc02e2ee44729e04e2e6ef27e5b3923c519c668d39da9d76521c9c9c1c93",
+            "shared-probe": "44d2b9c0a658f794504886589fdfa7f962663a467a88bb0ba2050913a14b9a5d"
+          }
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "f98a19c6020f38a2d70e73d4b94997807dd4afc52eaf75ed16b42acd8eff4126",
+            "retention-defer": "9158bfabea0e07c84982f9705e0404839861c483263ba15c241ecea743cb17b7",
+            "retention-first": "63ca8432e1e0386e2206b6b9722987889bc7c29abfa654354c8a9e54b4d7d0bd",
+            "shared-probe": "763e4b40e299a39d81ff6a62dd92bbc33345ecacf06c2dccbf16a647a4d971a0"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "e237c7dad10fb26da390870e6a95571d0854f4a8e2421f7aea832aa50e893cfe",
+            "retention-defer": "935e0a2a10289b8c0db0c56eefdc537284be33ae146ab59f68e1a6988c8e1d2e",
+            "retention-first": "933c8d62e5c6d9638a3d30431aab1b902c15663f95b63902ec82102b7da6e07c",
+            "shared-probe": "0d3e3cbb63b8e5fbbb52d8c0edb7ea31da448630aef6455723c3049bfc345dd0"
+          }
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "95efd8b7aa37826ddf9175c1a050395a2ef02fbd13263504dfb1d9b138625faa",
+            "retention-defer": "95efd8b7aa37826ddf9175c1a050395a2ef02fbd13263504dfb1d9b138625faa",
+            "retention-first": "95efd8b7aa37826ddf9175c1a050395a2ef02fbd13263504dfb1d9b138625faa",
+            "shared-probe": "95efd8b7aa37826ddf9175c1a050395a2ef02fbd13263504dfb1d9b138625faa"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "8b68f6b1f05290e7a518767d0141faeb200502d0f4f187df0793c9d79ac338bd",
+            "retention-defer": "8b68f6b1f05290e7a518767d0141faeb200502d0f4f187df0793c9d79ac338bd",
+            "retention-first": "8b68f6b1f05290e7a518767d0141faeb200502d0f4f187df0793c9d79ac338bd",
+            "shared-probe": "8b68f6b1f05290e7a518767d0141faeb200502d0f4f187df0793c9d79ac338bd"
+          }
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "e2af73785d365898b1d4716310ba76765ba2daa5c91ca4e9842150505a2961da",
+            "retention-defer": "07e38a6611fb0dfa2f13b45f1a3be0c46dcfd556f7715412e74a95753be37684",
+            "retention-first": "aed953d06d03ccf8e539981945af43ff12e941a03975df256f67ef48f41ea006",
+            "shared-probe": "6282edfa25579cf72896f597dabddc9e7c719a0b297b5d9ca6da2c1aa8e48a10"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "ce8eb413228b89811ed7af428510bbd032e324206f5b004ddab29cbacf1cd88d",
+            "retention-defer": "3c4a26fc42e1ac7d2c3d820ac0095f56ad87b6b1914dc13a8fe1c531bfaaca7e",
+            "retention-first": "9ef4538e6b0af686bb1391bfd8656184b03f236d9ccff9ac43c73cbe00c2150d",
+            "shared-probe": "18526456103010d32ecb3194f33ad389c0174cb9d9c3bdd04f8df14d13f21a64"
+          }
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "e3baa7889f70952f6c008c7c637069738745c8ab218353b792fd1f1abe8a3a2d",
+            "retention-defer": "6bbf03c1564d513fcbf32c3e246f39bc5da40d392502cd1a843bce2745d02fc4",
+            "retention-first": "8d8e479124a4163f68b521d8d659920c6bfd7186f8cd1d84cc72901c7e1c35ed",
+            "shared-probe": "74f24aa5f6d629a67be59830b944098fe0326051a4263944e3d5e0fcd7b23336"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "a81f8aee972b137ca28a6a366ed70d84db54d3fd3d1a3d26935ffeff07ead984",
+            "retention-defer": "b64f6dddc6721010b4c176108d879441ac1e621933f337dfd943e40f0d82f2ff",
+            "retention-first": "66500fa7e452c74d98466a873b71f821f1b91c7ad057bf1c241a62bf2e8e517d",
+            "shared-probe": "4d8be6e55738c955c92f3fbd22841c7c0662624a6fb43bf3d6678258607471dc"
+          }
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "8b297b868070e512e2874ae4123b6889890861b93a521ec451b4d897edfab7aa",
+            "retention-defer": "6fdef3ae04791840c500d5f01fe34db4d80f643422a89836841cafbc02fc29b4",
+            "retention-first": "a799e76130ca75144ce25d9eb93cf64c40dcadd7b05a9c8dd76a1340b3a9ca46",
+            "shared-probe": "c2e9c6954ea5b39a3f19ccf9f89284e92410a77cc87cdd25a4a17663d8795722"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "6c7f28aeadb656fc0f568139d1e17d0f9cb3ed4c99b9c93ac22eb224f7797b84",
+            "retention-defer": "5e27b0c8e2cf51d36ae3c3f70722e338c01c50484035d1b2472b8b8838c5b9a7",
+            "retention-first": "9f9651f856e06fcb22752b2eba5ffddc1943426424a7c41f60fde34132f1eb3b",
+            "shared-probe": "ca12933226ede915a8657c78a95450381cebe42d081d47cd547c0a5e258ce77c"
+          }
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "b97e4dc12ed7207a5692e0b63c8156c84851751a8de550b323f2e9126207faff",
+            "retention-defer": "b61fb741f13e30436026b42c721028b046f218903c1cf3fd18a89f1de967ad74",
+            "retention-first": "2e1efca39560fa66766fc7051deac1fec17483602d2b9107128b9677a14ff779",
+            "shared-probe": "afa3db6b4a6d5995dfdbd50ffa026f27da92c403e12d5a409d309a1e2c123595"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "406db544e169b87d426df378430922da6cf3d2e290c76c775e23496109b01617",
+            "retention-defer": "244ce36b4f4719d982be7c61c622336ca931468d145bb1b5fd8a4dc77a391c1a",
+            "retention-first": "10b90a7e0bd2edf9f4a1ee9e7a460a4e2dbab16cccf282b36e25af31e8205b34",
+            "shared-probe": "ebf2109605360c2ace8cff75f6e86f87ed11438673813c30d4d5eeecdd6d52bc"
+          }
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "a277487219ec22bb03fce459ccbdbb509738048152939e31f43fd87a3136a253",
+            "retention-defer": "7eb5fe254a4982a04e082ed3d70f6ea37f5f38cecb724f4007a5c16ca3b14ad2",
+            "retention-first": "1eea3e1d7496e3563d021a5594cd2a1af054f7a1e86d9212d60ad107bed9129f",
+            "shared-probe": "1a2d0b66ad0083da11d4dcdb910d46145efde6904fd859c67ee88dca7b573bc6"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "aa502a55f2b6d2395d74149d781d3292c4520f82185e26cc01cbf54f44bb8abc",
+            "retention-defer": "19bc7323705279590e23308cd182ef8362696b0bd8519c7368151480877e1c9f",
+            "retention-first": "b089b8d44089ef1c4b37a8ea380a9a1c4e336f8baa649183516972f50379928d",
+            "shared-probe": "566abb0a132db3983bf8e5999bb8364edab4c371d9a8461ec4d6162bde6c95ce"
+          }
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "d2fc1645e49d3ff4b2c0a0f1345ef3a6f38976c3322ed0ea6ca482f6fa7b2efc",
+            "retention-defer": "93b067a3d7b4819b489d524ddb80bbd3fe33f0b2f1a847f3a13d6f5e80dfbe3e",
+            "retention-first": "9fb0081ab3ad4bb4055a714266da9df4a5236b8690d683624f79368484fc8cdb",
+            "shared-probe": "c3b249ef3feae32d385d925368ccf162e044fa93a1e9680a7ae4abbaa6e67ee1"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "d2b2a494ffe7b60317bb2a830fa493e4ea5d122999cbc91704a5bdf65865deda",
+            "retention-defer": "f68c69f24dbef2d022078721b5b7a6b6650b4cf09124aab70d9561b1aca87e84",
+            "retention-first": "03c1ea5f20b8db48b05ee1d95f2c5510bb6ddc7ca565955d4ab64ac077a300bd",
+            "shared-probe": "61179a4432ac1f40f9d5a03c77623a7f0f66446e3e270a1c73695b9c5acb6c27"
+          }
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "44ecea20dbaab00beedc3eb3a3f57465bffca39864540d5f1fdf2602f6a76324",
+            "retention-defer": "f09f0ce6d680e022ec2ccb2d0612b4ad58354c0d91f4df743b1bf390b79bd5a4",
+            "retention-first": "da27cfb2528ee6f84a905a4edf16e0e9e05fc8eeb8d34dc136c6523e69d79cb9",
+            "shared-probe": "43988786e7732cb817e43370774ea6328ca0f1039809f4e3369bb5306708ad3f"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "901f833101b58f43acda0becf3db3f7eb828778ba0b8c93d36f793410f30c424",
+            "retention-defer": "af4263899da8af3cf4c9c00331e222fb6ebf629b77100938a74ec1243f320c70",
+            "retention-first": "dc0c4e05a52c0ebf1b8d02083e68194b85777bafce7af432634d51fab641bdf2",
+            "shared-probe": "81a17443a5cae274d2263ee711fb4b67a568c6794918ccec366bee3be5553bd2"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "fe47c015bdfa3881e1a1167a0fe7dd1eca3473ac17fd1b597c8a0c40eccd1e40",
+            "retention-defer": "a9e148fe98264ad62a02511b8f6edb47f00d308df349f4f48799cf7bd291975f",
+            "retention-first": "81b75ad41a23ed20ea04bd60096333a6918a33a1a595dd6633b07e0779b2aadb",
+            "shared-probe": "05da453dc0cf186c6a5d165cb938a5b552d4eda7f2b0439dbe32846270777839"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "37b05a53db29ffb5e207b5d5e16d7bc5b69cde38f8d31689b99d6ecc972c22c9",
+            "retention-defer": "fd002a33002393ae58dcbf55e546724c95720cc85e7e3bd872537163a7666562",
+            "retention-first": "73c0c902af651b172425f7dcb01cac8fbe4e1ff1cb5db4c3602c29781da3905e",
+            "shared-probe": "a424b86176d0eb3516a09dadba2cb59c65f96b7c8ea32abc478c1a60979dd794"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "b482df34d4577d60d7e8a9befcca3e32e0a4b476670dd7dee46c8a55b0913646",
+            "retention-defer": "dc7856430b2a37555eb58802e784eff08056ed92a2b2830a3311e13feae19039",
+            "retention-first": "c16adba877cdac4e5ee9730b3a10bee8999702a4ce528e84c20c30eb0ccb52e8",
+            "shared-probe": "719c95dd85cdfeaadf718e021f5272c743fe7314216858d5061c68a238be1fdb"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "de4b14e076cd37fedae774e1543933dc865274c191ec5f79d28a0f4a621bb6b1",
+            "retention-defer": "958251eade908f9e635ccb4d96314af664c234b55c2f2dccd925755a297bd8eb",
+            "retention-first": "b345fd7e8d7245e14386c604c8ecd40f77b2912704fcabb812f340f0c409577d",
+            "shared-probe": "35fc2b0fd748da21d57423b690776be965bd9ffddcb667150fa0f547dc4327b8"
+          }
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "ff5e7183c53e1c2bf80ca5e8d4d00a83d1d934e0e231323633f69b641af22d59",
+            "retention-defer": "f8d85949e1dea27ad0de069b61caaa5096d38c479f0dccafd9c0c40020b0ec10",
+            "retention-first": "c5a3ca5d18f4fe4650d1419e2c52e21513727064c8afc9ddebf59b16a2e52438",
+            "shared-probe": "dd6a660f0b94668419b48bc2c1fe97aaa8b204bec6687ba62f31efe6aecb2848"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "84fd70cbc37ec3395b1468f5f097c996403a7b595af017347f9fbda151390976",
+            "retention-defer": "fd9564cac35685b337cdd7627cb389c35f2e02a448a1218f8c5ec6784d722ceb",
+            "retention-first": "b623d04fce1ecb4aa2bb316461a0edb5dd5bec7f0b98878fc7756d63ec8418f3",
+            "shared-probe": "42339d53320356fef9b8a8351083ea2c904ddcd1807714617e675e4c0a405c3c"
+          }
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "53677a18bae876a497245bb1f2af36ff8c01f937c4aac8e99dda06aaeeb8d870",
+            "retention-defer": "91147a29d0c657d9762c9c8c9ca0190d654a8e244a28205db6e6c7896f92c716",
+            "retention-first": "adf9459d648a4ffe62f9205b8894b6308bdc1e5dac58fdf87d9d88af317806d5",
+            "shared-probe": "155bd969b367f629a2b6bb61ae3713efae6f91c7dddbaafa63dd93d867cfbc09"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "d5d07d0db7d1f9abfa4585c70f62d1f98a81358a0205fde29cfb1e1b1dc2ec08",
+            "retention-defer": "7bc25f4a4079935cf07d06cae6b82d6881263538c61d5d6628b929756b5fe9c5",
+            "retention-first": "5792f93fc8d36302de7ea1228d71995ab6edd450a95c586f6e705e259b22c16f",
+            "shared-probe": "fce5089b8f6289ab4b9fd5317e042c83ede9c730f407506013bdc15c7d8df42b"
+          }
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "87abbe428de5c9f053f71e4473f9149ba166f8219a75a3e4588335b7b20c8533",
+            "retention-defer": "68ae0775a5c5222afe6f0b7f94874688455e9ba60a646a77f893140886291ff5",
+            "retention-first": "30b0a6e04a27e2cc6ac9865f4c245d949f79be3f814e6d431c4285ef17311678",
+            "shared-probe": "5cd5f5a528108a0a6ef7387e934a07bf9ae08b606732853cdc380e7f97af5eb0"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "4cd75fcb0ddf3e9bb7da4558b03cf9052076497265bd62f8883af22007ff657b",
+            "retention-defer": "031118db8d7db865f94dcd76026335a8934b56ea3350547de68f9ee294ec0958",
+            "retention-first": "2bc0d8c516ddc2ea4d997e2febbf281f2fa7158f918e08f720b20e6d665df3c8",
+            "shared-probe": "6658595b0cd480763f0325181f06d1eba316e936233f241fcc115cb66739ae22"
+          }
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "fccaff9656aae400f5a1b37c8a7067a21027a2e68e2db96400e0a3e5c7adc02f",
+            "retention-defer": "bb29bc77ffda9a23ebf852b3ea480b484fa80bc8d10fbe2d23d05983fde1af04",
+            "retention-first": "922eb1826e039716e11a40723a744418478edac96334e5f9b89d0df8e413e4e5",
+            "shared-probe": "aa215cc16c296ca89b25a3541588b125cb6621860151145fc3d49340f622fcca"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "66c1c434df40a2d28c295b69df4f0d4993c008556e7f1d0b6c6c93ae217fab83",
+            "retention-defer": "8bae821f5e6ef515fb6bcf13ba2558bcdf10aa765e263fd14b06a7151454aba4",
+            "retention-first": "3319dbf5be1b862369d37e9df6d6c97b43122e6ce4f4d4ea1cf47a0ddae5b398",
+            "shared-probe": "e83996f76f67f2970e13bc61a47e3e1a8ef221d64b2d88cad243f04b46f5f5bd"
+          }
+        },
+        "bbh-navigate/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "e621a625ad86cd1ce816d13949eee6c888fb20912505ab9b39904a5d8376f949",
+            "retention-defer": "c614a637f9d3b3e855202a0847cb50ac9dc63cc2e3787393431081203bd6fa10",
+            "retention-first": "0e54a762fad2d695f9f5fafc62c3ae131875b6874201e27dd8fd6ffd966b3cba",
+            "shared-probe": "86fffa313ba085819979e27dbb475b6effafc7c6b20fbf53bcf8de195c91e3d0"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "867c8613e0bd4ed07e344b6706088fa57dd8afab676506c2aea2854b33fb6b5c",
+            "retention-defer": "d5d72b274be89b32ba45d1bdc3c0d277fed5c601514a70a5671a6b1d3d3f6891",
+            "retention-first": "88ef0be83ab7b9e00b2b8f12d30ed7b9571040d22eada49a22322c30185c9d67",
+            "shared-probe": "df1a3f59bcd8cd4425a89e2acb34e92c0bd33588a22825e2053297eb4c097de1"
+          }
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "53c59ad1b85838f7c57ff181204f8bde4530ea84a0f2c59c58556f42aba9d8c2",
+            "retention-defer": "c393f4d4650a1403b19ae451b7d9ec7c8bbc4a098964b4f1931d923338920d87",
+            "retention-first": "d9e3579ac8dd839d8d300a08506550bfd76e82cd049e6ecedca1accb699123d1",
+            "shared-probe": "8ca65cf684dfad30e711cd0b79f01327656838148b971e1c0b2fe99ee74df427"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "2b7f7ed4d3526dbbd006be78363411001321986834b8cdc5c9521da303eacae2",
+            "retention-defer": "caef1b3671c2b9a2b6a68b800250dde912d2e0fd8804aac404d3a6b0a919b64c",
+            "retention-first": "431b608c4d619d133bd6a441c80139e7fb557597f605a8dffce3ec17d70402ac",
+            "shared-probe": "3502bb5d7b15de83e9f51cd0b85d4f016fbe6712e368123933937718fbd8e5eb"
+          }
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "3d5698f77b210da82409dca48901e6566212445f5c60752817ef6121ab876d78",
+            "retention-defer": "5afa968ed4561578214c41751bf3f590b4369c61069d7e2025df946e2467d33d",
+            "retention-first": "58f293cd75930ee79832ce0a6a0b546c2452a97edcca39f67b093634be250718",
+            "shared-probe": "235700ce5b4d6556c76d884f4aac90dcab871d961d8657733732fceed37abd31"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "78d030e1ebfdef1896269f8345cdc1479b975a347db2d24a818dcce08be1d6d6",
+            "retention-defer": "41fdf6cf1a6877651237bb0735e0b30828a7109db6c950fef9eb16e40d635abb",
+            "retention-first": "32c9445da26b24a7e4a823509612574e161b4360b22684270dfd28b306d24bce",
+            "shared-probe": "63a7b708409186eb472896352f031924383dc4613344e5cd4d3f5f4922b9fa78"
+          }
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "c4a7c2c7f5a777080616be924d6813d0d31bc23ccf480e4ff67db4ed303a13af",
+            "retention-defer": "a1dcec68d17bcd53bf1685fdfad1cc14a34b2538ed31c1d8a26ab5f294ecfd78",
+            "retention-first": "5e6b3a079df9ecaefa6dc42ae44fecca7abf59b1f904b757bcd54e7209cb546f",
+            "shared-probe": "1127c449aff908546c987e9632e1837b1a9a229ce32f6f475a4c5e6371fe8cfb"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "53c25553ec59cb1436fca0f27fb2130036e29220f65ad0175612bca08057e0c8",
+            "retention-defer": "bef7d5b75200b7f7a4c6ec33cea287c78e23084935555bbaee94d4ef12121779",
+            "retention-first": "01f2a98c30575935ca2f6973d3e8c77f5c75edae29ea2d86e9d8fae8fb5dfd17",
+            "shared-probe": "6e86b2f23d4afc61e2e5e8a15dadf45be050c57f6911c5aeb98dcd44fdbbd0f6"
+          }
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "8f4d98a30a67c3e847a947608e0bc3b5979a08fa45612edd7e98ef95f24d3e40",
+            "retention-defer": "a568b4fe884dbe7f80cd916c8e681c1a529ba70d911de1a5731311b77a408ac6",
+            "retention-first": "eba1b686447c8dcd788148c356261a1eae793c0bdb2060b72c9e208e04b8f71f",
+            "shared-probe": "634f8df386c1f1c3ca87e0acb1dc9256474dea6c900e0a9b78dfdf72f94dab6d"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "a9c24e20f9f3e8d633262ac0854cfb259f357d473e6b91a1ebf58f26aa0ad7c2",
+            "retention-defer": "627efd85f06fde6afd6335e4215161f98df570d58cff88cac67f13feb831cdd9",
+            "retention-first": "22fae20e14809f0c67ae0e37055aba27b162d19f3a6058f4e90f423effe3e768",
+            "shared-probe": "b0c40e3b8f452eeadd74889657b2d76be8ecc2df4907e35a759d0841c41b18d6"
+          }
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "5c1329deeef2895e516e1f2f0b3c4c34299cc44a4c513e8dc7d856ff19b66fb1",
+            "retention-defer": "b3c27243751eb18d547e7ddfcf5214d03ac242348ab6171a267879cfa8db1550",
+            "retention-first": "31697802bb4fae12d8cf25141b2a2e8f13bc51f2fda4ff60c5548731ffc73091",
+            "shared-probe": "048d76dcf0c4cf7bf14cbdf77b32a8f4b8f887ae0ba8e7c0a2ecfe648ca4c117"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "4a3e98001c79349909a941c4822d8acd0f1848b3de18a828809056fb51aa4064",
+            "retention-defer": "f78dc2b6fdd2fa1637aa39eec81a275121cc5fc36a1eb5123eae8bf042df7c4b",
+            "retention-first": "e0120112500127394eebe467ebebec74a4a6a75d92eaa5f0d58d10ae6ed2141a",
+            "shared-probe": "95dab4e6ba757b9c32604c75099fbf6e8bc9fb2d4bbb37f492a333c1feef3c5a"
+          }
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "a8d35740c5d13d8492d8025cb42ea957c80c5e029b0fa1dfd988f1a292c8554b",
+            "retention-defer": "2e16123024a971ce8115079f9927bd3f93ec031fee7205525ca1828c225a71b7",
+            "retention-first": "2e16123024a971ce8115079f9927bd3f93ec031fee7205525ca1828c225a71b7",
+            "shared-probe": "c51505a18c2f786301f1e269ce104045dd401301e5e24043bee568e1f7c7d85b"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "4409756c9cb58f26bf54e4cf9c1e4ce549663169f311372762dd2bbbfa77163e",
+            "retention-defer": "0486fd959d622d52ec3ef150a4bb2adbfdc770ae8698fa106609cac02de71dec",
+            "retention-first": "0486fd959d622d52ec3ef150a4bb2adbfdc770ae8698fa106609cac02de71dec",
+            "shared-probe": "42eafbe6cbd373575ae4da5530da32cb60c59c1ca7004ef55d75e3ddc9b0935e"
+          }
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "76eb7fb555fdae1d9ef3a20a6a807bdd240c8a913dffa27e0aa25557f098acdd",
+            "retention-defer": "ffa08693ab04d2a1ab348459bef25e2709a943dfa8556a8691ad05d4b0343458",
+            "retention-first": "cef981c62fc07cfe86f515e50ad8376138a0ee52302ce24f74915970c7513054",
+            "shared-probe": "301d27aa2288d028cbcd467bd05adaff177d4312a05a78da5399236624793c55"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "7d72d1999b99b6118e58ac368c9ae16019cd47bf3a276b20d3c8062e4157a73e",
+            "retention-defer": "5610d632cbeb99eef205ccf209a6ea2ccbd7034bf019ccac626ed0cbe560220b",
+            "retention-first": "5cb067d1e5dd19beeeda063d7e54e67f791d5af74eaf13ed9fcb97c0d7a9b9cd",
+            "shared-probe": "618c62cda77cea1cef023bd9c6d896799affbdb52dad6509c5933f1cbd64fdb4"
+          }
+        },
+        "bbh-snarks/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "0211540b2e360312af69a4506775eb954600f1572f4b3cbc642483ddc6ae01d6",
+            "retention-defer": "1f7dc6ca110afe4040a3e835f631694ad1fcedbdb31a7a284ea42df7894b7dbf",
+            "retention-first": "41e39ff3dea83b171a8a995380cf5c391de576ec95ae3fb34aeae15823c459db",
+            "shared-probe": "758831d4e58eccd7403afb8ce7d68451e41d06722839975e319865780bfbe939"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "3603a17b649ab5ef7d0fe693c9f27f83354a5bdd963781e01fddc507ca8a6567",
+            "retention-defer": "bc667ac61c026ed1e0f4dcdecc0c8dab1b090380a01f97b91b0eba12f5b83a8a",
+            "retention-first": "95db2e041df532a3b82e186214b4427b251ef2aee478a9a06e0eebfe90322256",
+            "shared-probe": "d262887b6ee324934ebeeb4df2f737f6fb8c983faeb5b6e259854a580982c65d"
+          }
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "fc1d6a8b4be1175f24451250d1ed3f5b50f76cae7f5837a2642da73c03462d69",
+            "retention-defer": "623899ebe7564959a7d85c6699ee1b9e83165d96ed890609fa487f5b8e11523e",
+            "retention-first": "dc53fcce0c36e31ee0245f1d26b84f67f89e55a246a740dd653ed3cea0eccd6a",
+            "shared-probe": "411abfeafe7f5e7fdb886b78d3a396d94475f8f44083a4098ba1479e983d8261"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "52570094dcbd7c447a612bb6b6ec5d2e45fd7747c194faadfbaf283aebd71bc7",
+            "retention-defer": "8ac4cd3114ee30549a0fb9e640c8e0a5661fbf99f967d0557a96d8d6bb5e31b8",
+            "retention-first": "766a618838189b27f03995341d95f33a02cb7c349fa0a182daeb7bb18bc6b23d",
+            "shared-probe": "cf6ed0a011858cacfe04bef67395e189382c45b3346594ad4efac62f663b8d9c"
+          }
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "d56b0fb57dfe820e588722b3a320e2d7441a953b81735fdb450ae20ffa5c9eb8",
+            "retention-defer": "c4786871753d244bcd1096a7e70ec4dd1b9d41ab07ad4e5a36abf8c6383efee2",
+            "retention-first": "90a2644e60c17dd9d41b0ae298db43b7de91f8396cf55bf3152d950e880185ad",
+            "shared-probe": "44d12b4b1ff92b2a8d5dc5cff9f6e1bef4a197ab0b8d33e5819ffec742c1d17c"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "8cc08a9001d17200007ba104efedc0096c099c641aca5111db1b6e657e534ed4",
+            "retention-defer": "001db91ece97ea22ea6ae1ef58037ecf452fde4eb428069033a8b22d1564db91",
+            "retention-first": "001db91ece97ea22ea6ae1ef58037ecf452fde4eb428069033a8b22d1564db91",
+            "shared-probe": "f5495a4fa5e6f8122e22dc6b9beea121fa7c97f20dd5982a206ed4c05efa701b"
+          }
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "8e8fa9776bb66893e75147adafdd1bf638f062243c360d6b50996644b43ee114",
+            "retention-defer": "f549a5d541d4b6c8c580a74636fb5340a8f120b2874590804d4df0ae0a990eb9",
+            "retention-first": "3382204aef7d49be8af1d14fde8782a40fdb42404279bfd6c5d848e7bb8b2397",
+            "shared-probe": "0f1de5109038ceb7fdecb35fe741398dda742103cdc6c6f221aeb3e5a754b4db"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "973c051889d5da1723cf6c4f64f734e2ddd896c089a220d6ae4ec0f815819964",
+            "retention-defer": "ecad789b0698da0926e166d057d76d3104c5037c17e671dcccf1a8329df11344",
+            "retention-first": "f13eba67ce660afbfb2f4a964320bf6a50f5fe292e1a185a55ff6f8365663523",
+            "shared-probe": "caab82f938157cf3a27495635a37de5c0a3ee06a14ee85a6e42ad817dedf1471"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 9646,
+            "changedDeployment": 30,
+            "changedNominee": 56,
+            "holdoutDifference": 5,
+            "holdoutPasses": 9553,
+            "lookupDifference": 544,
+            "nominations": 335,
+            "paidLookups": 16627,
+            "promotions": 170
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 9646,
+            "changedDeployment": 16,
+            "changedNominee": 22,
+            "holdoutDifference": 33,
+            "holdoutPasses": 9581,
+            "lookupDifference": 235,
+            "nominations": 355,
+            "paidLookups": 16318,
+            "promotions": 179
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 9601,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 9548,
+            "lookupDifference": -92,
+            "nominations": 358,
+            "paidLookups": 15991,
+            "promotions": 181
+          }
+        },
+        "cap-19/gain-2": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 9601,
+            "changedDeployment": 13,
+            "changedNominee": 49,
+            "holdoutDifference": 21,
+            "holdoutPasses": 9019,
+            "lookupDifference": 490,
+            "nominations": 301,
+            "paidLookups": 15552,
+            "promotions": 67
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 9601,
+            "changedDeployment": 7,
+            "changedNominee": 19,
+            "holdoutDifference": 8,
+            "holdoutPasses": 9006,
+            "lookupDifference": 176,
+            "nominations": 317,
+            "paidLookups": 15238,
+            "promotions": 62
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": null,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 8998,
+            "lookupDifference": -97,
+            "nominations": 322,
+            "paidLookups": 14965,
+            "promotions": 65
+          }
+        }
+      }
+    },
+    "BBH/new-task": {
+      "anchorTotals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 13,
+            "holdoutPasses": 624,
+            "nominations": 27,
+            "paidLookups": 1111,
+            "promotions": 7,
+            "searchLookups": 873
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 591,
+            "nominations": 22,
+            "paidLookups": 1118,
+            "promotions": 6,
+            "searchLookups": 906
+          },
+          "shared-probe-race": {
+            "changedNominee": 14,
+            "holdoutPasses": 593,
+            "nominations": 15,
+            "paidLookups": 1158,
+            "promotions": 5,
+            "searchLookups": 981
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 12,
+            "holdoutPasses": 590,
+            "nominations": 24,
+            "paidLookups": 1008,
+            "promotions": 2,
+            "searchLookups": 749
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 569,
+            "nominations": 19,
+            "paidLookups": 1007,
+            "promotions": 1,
+            "searchLookups": 775
+          },
+          "shared-probe-race": {
+            "changedNominee": 12,
+            "holdoutPasses": 569,
+            "nominations": 14,
+            "paidLookups": 1062,
+            "promotions": 1,
+            "searchLookups": 845
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-causal_judgement/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "818ca82127f579d55682046ca4845c2d53e6d7d9ede1ce6f5ebb7c6e6e78be2f",
+            "retention-defer": "95fb1d762e40dd667213bf15bb29d34e0dfb01508e73e06495cca2c1b87c5f52",
+            "retention-first": "31b4a3a0f532c31679d0c8e67a57602085b38b53ae9a399068c6e9a5985df583",
+            "shared-probe": "55bd15f868cf0dbb3cac51deb16b254ef59ed39c0859b6ab16c8fade4521b312"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "0df096c3d29680e9a5b2323855831bd1c5b64bfeabb6bc67a2139bfbfc985267",
+            "retention-defer": "ddbcea811d1fb6bdffc9d16acc1a0f68d6989997cae0b150e410465b0f46c351",
+            "retention-first": "aa1e6ccc1da0db6e4f9aa1dd36b3c0d17c9cac75118c2d9575cacabfe15699bf",
+            "shared-probe": "0d0ebc793fa1a1bf5e2d0df54c99a695a34478249cbcb5955513e48bf905e5bd"
+          }
+        },
+        "bbh-causal_judgement/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "6aa943af5bf61bf6407f5e7318e14ff97fcc8c7b4a2cfc18ab103e4d96b32697",
+            "retention-defer": "d5341dfbc01c7301106725fad93cf0c5f9f0d2dcd778879117553228f18d5e13",
+            "retention-first": "b4c5a6d59c497d60233cd4ff83f771305c2d1fce4856a369670da7809b852265",
+            "shared-probe": "edb4589b39b75bd9be7d93ec2b7256d913221d4ef58b28dae94e0d86710571c0"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "e5da0e66ab70f20056005e1502bbaa4b0ed4593fd4700427ac4f1693fe8acf6b",
+            "retention-defer": "7c5e11dbc2728f776fda5f30c4a8aa53e3e91114b39078cdbcdda3933a7ddc2d",
+            "retention-first": "c222fd85e95ae23e0a328b16f2f4213e4bbd9a1f04b1ea9a798311576b06cc62",
+            "shared-probe": "8b378298d948ea1be3bbdb1c8454c953ed9d1f2ce1bf964a306e665183fd60b2"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 590,
+            "changedDeployment": 0,
+            "changedNominee": 4,
+            "holdoutDifference": 0,
+            "holdoutPasses": 591,
+            "lookupDifference": -10,
+            "nominations": 18,
+            "paidLookups": 1108,
+            "promotions": 6
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 590,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 591,
+            "lookupDifference": 8,
+            "nominations": 22,
+            "paidLookups": 1126,
+            "promotions": 6
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 590,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 591,
+            "lookupDifference": -1,
+            "nominations": 22,
+            "paidLookups": 1117,
+            "promotions": 6
+          }
+        },
+        "cap-19/gain-2": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 590,
+            "changedDeployment": 0,
+            "changedNominee": 3,
+            "holdoutDifference": 0,
+            "holdoutPasses": 569,
+            "lookupDifference": 1,
+            "nominations": 16,
+            "paidLookups": 1008,
+            "promotions": 1
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 590,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 569,
+            "lookupDifference": 7,
+            "nominations": 19,
+            "paidLookups": 1014,
+            "promotions": 1
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 590,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 569,
+            "lookupDifference": -2,
+            "nominations": 19,
+            "paidLookups": 1005,
+            "promotions": 1
+          }
+        }
+      }
+    },
+    "BBH/seen-task": {
+      "anchorTotals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 122,
+            "holdoutPasses": 4854,
+            "nominations": 172,
+            "paidLookups": 8924,
+            "promotions": 59,
+            "searchLookups": 7317
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 4843,
+            "nominations": 164,
+            "paidLookups": 9059,
+            "promotions": 55,
+            "searchLookups": 7504
+          },
+          "shared-probe-race": {
+            "changedNominee": 79,
+            "holdoutPasses": 4861,
+            "nominations": 119,
+            "paidLookups": 9733,
+            "promotions": 51,
+            "searchLookups": 8371
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 103,
+            "holdoutPasses": 4760,
+            "nominations": 142,
+            "paidLookups": 8281,
+            "promotions": 26,
+            "searchLookups": 6443
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 4790,
+            "nominations": 135,
+            "paidLookups": 8403,
+            "promotions": 28,
+            "searchLookups": 6598
+          },
+          "shared-probe-race": {
+            "changedNominee": 64,
+            "holdoutPasses": 4823,
+            "nominations": 98,
+            "paidLookups": 8937,
+            "promotions": 31,
+            "searchLookups": 7233
+          }
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "44ddd2db16eb0e091914397f7aca4602e74b6ac5c18d54bb455d0375f4b09d97",
+            "retention-defer": "edb0913f1b193b652fff944c0260abb35fbddb42a36768706497960e85ade1b3",
+            "retention-first": "edb0913f1b193b652fff944c0260abb35fbddb42a36768706497960e85ade1b3",
+            "shared-probe": "2fc14d6e50349bc6a1d5434a2c276cdee79045fa570106cf1d5d83cf514ca7bc"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "5b7d65faabdec3aa4cc0cf452e0fec2c6e36912716cdc383183c9068a0e2ea76",
+            "retention-defer": "e7f751e22f1a80bd2b3f227ab69bcbcee1922361d733b91783b1bf2160a14f48",
+            "retention-first": "e7f751e22f1a80bd2b3f227ab69bcbcee1922361d733b91783b1bf2160a14f48",
+            "shared-probe": "4d1dbd644c0a51eb4c87bc4064af9b99ffa434c10ac93b63727a0a6556e44d82"
+          }
+        },
+        "bbh-disambiguation_qa/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "1a4fc58ad7e0212da180cd4668b48feb3561114c4d46d03cb1925d7bef478e3c",
+            "retention-defer": "b8bbe1a49a7047040e0b328fd837259a6b95ee16bb120645ef33a38c121919f0",
+            "retention-first": "ec0841b0b80496d29dc92a8e5ab0c2e0f7dff198d57701329fcbcbae7deede22",
+            "shared-probe": "7dfc8ea45b16e192f173917b6fd56885c2681135f86ce61c6cf269be9a93e419"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "2ae256209d3e58b799ab9282c29120dd4ed2d1e7b0336d9e44a86ecee12d5684",
+            "retention-defer": "26caad6a514396fceb177e0369c0160c16cdafc5fdec3ca335e6ea7bb108b3eb",
+            "retention-first": "f31179b2a60a56526e1465a815ca532e564ff0f7f8a250b7f7005af997760586",
+            "shared-probe": "cf12c19c3b8d2068296a6f4582c3e9d7c005ae5da5a62ae2102256142625e348"
+          }
+        },
+        "bbh-formal_fallacies/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "a2f3a63212dbd6c2cf438a48220a2b478522a000267698f20d3d86a84bb475d5",
+            "retention-defer": "da3f22beb84153bd010a8281c0f4d32e767547f65ceddbd5166449170879dd0e",
+            "retention-first": "884cd8497b9b6cb38db7dc0e714cb95e0dcb75212ef34c2c22ddc8760b7315d4",
+            "shared-probe": "40af03392f23849efb1149a3844c38928077e5e79e1cdee4889510e01cd3bc04"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "a16c48c6da68d33ce9c67003ee0f137d94880fd9e771b15a6f7e0ad534b7207d",
+            "retention-defer": "19ec6c9d8abcbf87d015169470e53d95982d4b5d4f2c7f9035882a36f70b73ca",
+            "retention-first": "0c4cf718fd1a6aa8624e0e2cb39f542672cc44539b9715f2c78bb8e23ea79649",
+            "shared-probe": "18d56c5de9d43a63829116736f72e1c7077e9f803c99134d2ff2e30c87a25a7d"
+          }
+        },
+        "bbh-formal_fallacies/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0",
+            "retention-defer": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0",
+            "retention-first": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0",
+            "shared-probe": "05ef5114883064cfcc26712c26e3ee4afa31ec373a79942586c5b250c00999c0"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "2ba47179383644b7554fddb8a01d0e3c1d34f64bbf2d88bc3535af44af4c4026",
+            "retention-defer": "2ba47179383644b7554fddb8a01d0e3c1d34f64bbf2d88bc3535af44af4c4026",
+            "retention-first": "2ba47179383644b7554fddb8a01d0e3c1d34f64bbf2d88bc3535af44af4c4026",
+            "shared-probe": "2ba47179383644b7554fddb8a01d0e3c1d34f64bbf2d88bc3535af44af4c4026"
+          }
+        },
+        "bbh-geometric_shapes/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "f5553816aa55a40e5f7807f67a75bf8964deb35087c4023e2857f1aead4cfbad",
+            "retention-defer": "22d1a05f5df91238585d8108324057ee49fa920f2e4e53a7f8e5e51a60ecd848",
+            "retention-first": "361326f3557773cc7c282d926d3c47b06586b864bd26ecaac38f8d78444e186a",
+            "shared-probe": "ae118b2ba72b3cdacd6f627466383a8d660ccc168492c6e2b535798493f46cfb"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "e62a39f9f00ba84b1b9e1bf7a955658bd10baabb1a97a749569c3845af030101",
+            "retention-defer": "ebb92459a99639f8d16e844f84a0222d37286abff5a2c64484b457f46042673f",
+            "retention-first": "71fc6d52525e4e6c930334cbab6fbe8cca600b4ebb16341185a4d56dc370f898",
+            "shared-probe": "133fbca5624082860832bdb9894c0f385e8f4a36764cef978b4fa318b4c20b91"
+          }
+        },
+        "bbh-geometric_shapes/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "c00b22f3f3e1c78c3cc0a6f19391c349158930da8eec105c3b1bf1abb84f770e",
+            "retention-defer": "f0e11959d3c825ba113bc83ad0b5c854b8b58bafdd634314bfe1dabc6e305ab3",
+            "retention-first": "f0e11959d3c825ba113bc83ad0b5c854b8b58bafdd634314bfe1dabc6e305ab3",
+            "shared-probe": "7338ee8c6065afb00bce4598b88a780555cd0cd7f9a0fd0c9671b69fb96737a9"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "f8efbcb7cf0bffa359b1275678bcc1179f3d7707099e75bb5998e5ce77784ad7",
+            "retention-defer": "c7ba054ea54122aad673e8e8bee079eb1c4cfc3e22bd0863d172a249ab9a8b8d",
+            "retention-first": "c7ba054ea54122aad673e8e8bee079eb1c4cfc3e22bd0863d172a249ab9a8b8d",
+            "shared-probe": "a2b18aa5ee5ca25c5be7b34ac6fd076e60357ec3751b74e0529af6a85da7a5a5"
+          }
+        },
+        "bbh-hyperbaton/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "93fb1cc205a58982e57ba20798bdc85d3134dc621c034912c0beefba41776643",
+            "retention-defer": "5e2fb960cf104cf725f9302b08c4f4983aa2916488986b33d86d2b71752a2d65",
+            "retention-first": "1fe04fbc775d8579f886cb5ba95d8a277b1b8874dfa8cef59fa08169ae5e1310",
+            "shared-probe": "45a2b715cbed703b5452f59346c0047a6a26a2b9b67f27caa3389d708f5378f6"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "a028a73a618066615810cd2f08e579a83ed51b03687b3b174b80f41a6d9e356d",
+            "retention-defer": "cae2f0f8f89382e3b22dc917302216d501bf486c452bb51ff17ff2a2527bb4ca",
+            "retention-first": "cae2f0f8f89382e3b22dc917302216d501bf486c452bb51ff17ff2a2527bb4ca",
+            "shared-probe": "a04268552eb8f7b33b230d6ccd2e264aeefcbcac30dd83ee365e044731d0bd29"
+          }
+        },
+        "bbh-hyperbaton/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "5ca9b079076bd07ee2469ebf908a8f73716f2771a3d4215e8bedeb7e453ed0ca",
+            "retention-defer": "1bbd49683d3b2f724be18df95ce321d6cc12e734c5845d4c004a0afe1a5d00a8",
+            "retention-first": "9677e92040d0e77266d106274f71d666e3f2f8650e741511d7aec815a2260e9b",
+            "shared-probe": "3df90cd4f9ad229f6db5c1203787db116fd524e48d69c322cbdba30de3939426"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "15fb75cd3811d7c9dc4458e998bf956085ef1d6929a209f801f225bd3f102986",
+            "retention-defer": "5c29a69afe5ada59f893ff52da5ee7d487ab2bfd295c42372fd88cb92af42fe7",
+            "retention-first": "e1377933e454d535fdcb47878c82c24fc4e1db980172f7162f773a2ea84f1ade",
+            "shared-probe": "edcdf37285662a8ee27ab1936bd38010a8c1d2b4421b308a6ed64b3bae041bc0"
+          }
+        },
+        "bbh-logical_deduction_five_objects/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "d306d5318678ee7991e092cb50f196c7499168beeefd0128e6d35d4c7cabbb7e",
+            "retention-defer": "659c89a52dd77a739cee950773cc277b30b60098db58f7f5f86c98e9243642ba",
+            "retention-first": "659c89a52dd77a739cee950773cc277b30b60098db58f7f5f86c98e9243642ba",
+            "shared-probe": "da451c17d3c6d7dbf0abb3bbe755c8408bf39f18e4bbf3a487fe37719307de7c"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "c66b6044469c066e05e556207eed036c2bcd6b112b708509346d6ac1fc62655a",
+            "retention-defer": "b2df5cb857a9852bd09459e410b5e18858cae1a03844e4fb9f171190ce88022c",
+            "retention-first": "b2df5cb857a9852bd09459e410b5e18858cae1a03844e4fb9f171190ce88022c",
+            "shared-probe": "3dab9b0c6ca41b0e2062f0de03ecf1405ba57db8e2dfb1510e297ebe8edfd3be"
+          }
+        },
+        "bbh-logical_deduction_five_objects/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "78ca3318c8821c8c19d322d4b2dd545fc39be329d78b668419b556b23de24a29",
+            "retention-defer": "b70c025601abe928a1cd883680073c9e07eed60e78508f4aa3a85b8e47064969",
+            "retention-first": "8ca05bb0ccff6345aa246de95607a01705b3344875d4b8a73bb35746d3c75fd1",
+            "shared-probe": "3b7511b79db89523d6a003fc450abf8009ad570048125f8ab23f9c28dfbf90ff"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "7a26a2d91c39eacf04b100ac6531e36ff8424a036ac2732a5f665f3e88eade24",
+            "retention-defer": "9a02e94cda6771c46010561f583831acbc6d1a938a68cedb9a0b7e6ef002662f",
+            "retention-first": "1c6ae2dbed7b28dacd673ff55e1ea5aad82443443bf1192c20428349432ab87a",
+            "shared-probe": "b998232ad50f93aeeca3b4d96e0fce1cb83b970fe1934a79ae6059f9785abc46"
+          }
+        },
+        "bbh-navigate/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "694359331f40958ee6c08027663658c81752afbc1c1d59224540588b95425fed",
+            "retention-defer": "4fefcb5ecd3d6b397ca2cf64c3d2a8657dba3099cb6cd03be6cae2abcaca9164",
+            "retention-first": "64a9debb9dedb099a36a51ca156a5af6e8d1ac64acf95da76309eb78f4a6f7d0",
+            "shared-probe": "43689fec74f23c98f0cd27407993590d9916383c6f75d5a39989bec3a4bc2007"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "cb282c623e242c55d43539a37d2b8f22bbe7a1e4abe33a481cb9c495fb37d6f2",
+            "retention-defer": "34bb8ab0148b0e2f44a23e3317a3ee27c73a6566228246b4e866e1544b5edd58",
+            "retention-first": "6353ac851a1ab32513b2b5479bcb6a4f7618d003b67beb53377edc33c9e09ae6",
+            "shared-probe": "4439d99c06697a57177e0832a64b25ec594fb7dc08feffc88d163d3e97f9937e"
+          }
+        },
+        "bbh-navigate/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "5099bc1b458f1048f5f30deca7a52a8ed2320e5d7dc81d90377b4dbc979a28a4",
+            "retention-defer": "5099bc1b458f1048f5f30deca7a52a8ed2320e5d7dc81d90377b4dbc979a28a4",
+            "retention-first": "5099bc1b458f1048f5f30deca7a52a8ed2320e5d7dc81d90377b4dbc979a28a4",
+            "shared-probe": "5099bc1b458f1048f5f30deca7a52a8ed2320e5d7dc81d90377b4dbc979a28a4"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "92f8a75ce50e704f21eb565c649b708896957b0aca776ec38f447f0b8fb88775",
+            "retention-defer": "92f8a75ce50e704f21eb565c649b708896957b0aca776ec38f447f0b8fb88775",
+            "retention-first": "92f8a75ce50e704f21eb565c649b708896957b0aca776ec38f447f0b8fb88775",
+            "shared-probe": "92f8a75ce50e704f21eb565c649b708896957b0aca776ec38f447f0b8fb88775"
+          }
+        },
+        "bbh-penguins_in_a_table/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "887da0eba7938de9561d5a35f67043b2bdfe84cd163d19bf881f96e894da90aa",
+            "retention-defer": "bb1575ebb77735f19c494fe1c0b6a44a211c1945fd49cd0a8f2b21ef2ddc8a99",
+            "retention-first": "e15aa5d209af36be5e2a22fd21136936ff1ba3925904ecea429d36b4a0dd35f9",
+            "shared-probe": "1d8e0d43209767f9dd8aa158d31a4acbef24489654c6f187df2e2710481ec539"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "30393c4b475dd9b604a27d1f476e6831040caffc1cdad5930134fecf3bef8ae0",
+            "retention-defer": "993eca62d0efa2c94e568308889f8241118baaf146ca698b181dc4a2e513a591",
+            "retention-first": "9ace4b01eb55eacd3cc9a237766953137fec4be2cf09538bf91f883f1b684b0b",
+            "shared-probe": "ae8981e0bb3b6404ef3c932cfb8e2df3611e9031a2957185a623e80f96c9506a"
+          }
+        },
+        "bbh-penguins_in_a_table/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "e134b998566567b3ad66ed49fb3de05a9b4ca769df3f091b9c533e68fbb43785",
+            "retention-defer": "c48fe0e71770ad79fa0812a3f00a8a4fb45b0bd38c1d0faa94b06ad7d195463a",
+            "retention-first": "82633d8a83ec92a132deeefc86c7641a6205ba11db5e904a353a5c7a51e44c66",
+            "shared-probe": "68577a91350c269b8cd8e9a8e78b2ae2fe3152097dbb325b4621f2f5d8eff63f"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "14d2a92c50b85e72f96225486223c6daadc6af61dcabc755ee618249cbda4c44",
+            "retention-defer": "0111c0383173f2ea291b2a8e504aaf1e8aa33ed215aa8009ad20678569ea0a23",
+            "retention-first": "1e35b82651f3f842374f6f39ec69d61e5056d5493b1607c49e18a748fac2f4cd",
+            "shared-probe": "2967c7965b145dfb01defe5d228a48f2b0f20e04e86928aec85c46b7332cdbac"
+          }
+        },
+        "bbh-sports_understanding/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "e588dd41c2589e6c5a5eb257c608605fe54c277dfc537b8e76054eee448685eb",
+            "retention-defer": "953944c5e632e7fc6adbdd2b4540afd84b38e3151f815cde91148ccdefe5788f",
+            "retention-first": "2b47ea608db29fe0b301e18f5470121b0c3c6e531b9adfd09af36239a2d6e7aa",
+            "shared-probe": "b263a61ce95c12eca4a1d0176b14e3d4f7f1d5a74bb972dff8b285aecdcc8d09"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "f35e781fb9ea10675e362e3b69363ec486936c95a3868c3a6cb806238324f547",
+            "retention-defer": "b28257704a6e1acc5b688293a2ae73702262175663bc18f6e84e83dca13c49a5",
+            "retention-first": "f120645c3ca862334244d357841c49f7d04122493d163d67052b895ccdd83e06",
+            "shared-probe": "7777234ae83cef3951a57301a0bdaa4222b507a46099904565864d5ae3a9d4a0"
+          }
+        },
+        "bbh-sports_understanding/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "55456e31e27510c0dfd6dc479bc0eb09bcd8e702a576fc5e8a6e64ab5081e3c8",
+            "retention-defer": "55456e31e27510c0dfd6dc479bc0eb09bcd8e702a576fc5e8a6e64ab5081e3c8",
+            "retention-first": "55456e31e27510c0dfd6dc479bc0eb09bcd8e702a576fc5e8a6e64ab5081e3c8",
+            "shared-probe": "55456e31e27510c0dfd6dc479bc0eb09bcd8e702a576fc5e8a6e64ab5081e3c8"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "bd60ebda2eb3d928bf7bf81dd2590ac4a6dd8c8b34b33a1915dfc81faba92a45",
+            "retention-defer": "bd60ebda2eb3d928bf7bf81dd2590ac4a6dd8c8b34b33a1915dfc81faba92a45",
+            "retention-first": "bd60ebda2eb3d928bf7bf81dd2590ac4a6dd8c8b34b33a1915dfc81faba92a45",
+            "shared-probe": "bd60ebda2eb3d928bf7bf81dd2590ac4a6dd8c8b34b33a1915dfc81faba92a45"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 4917,
+            "changedDeployment": 10,
+            "changedNominee": 30,
+            "holdoutDifference": -11,
+            "holdoutPasses": 4832,
+            "lookupDifference": 290,
+            "nominations": 150,
+            "paidLookups": 9349,
+            "promotions": 53
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 4917,
+            "changedDeployment": 7,
+            "changedNominee": 12,
+            "holdoutDifference": -17,
+            "holdoutPasses": 4826,
+            "lookupDifference": 178,
+            "nominations": 166,
+            "paidLookups": 9237,
+            "promotions": 55
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 4917,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 4843,
+            "lookupDifference": -18,
+            "nominations": 164,
+            "paidLookups": 9041,
+            "promotions": 55
+          }
+        },
+        "cap-19/gain-2": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 4906,
+            "changedDeployment": 2,
+            "changedNominee": 21,
+            "holdoutDifference": 3,
+            "holdoutPasses": 4793,
+            "lookupDifference": 245,
+            "nominations": 123,
+            "paidLookups": 8648,
+            "promotions": 30
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 4906,
+            "changedDeployment": 2,
+            "changedNominee": 9,
+            "holdoutDifference": 3,
+            "holdoutPasses": 4793,
+            "lookupDifference": 121,
+            "nominations": 134,
+            "paidLookups": 8524,
+            "promotions": 30
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 4906,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 4790,
+            "lookupDifference": -20,
+            "nominations": 135,
+            "paidLookups": 8383,
+            "promotions": 28
+          }
+        }
+      }
+    },
+    "LMentry": {
+      "anchorTotals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 172,
+            "holdoutPasses": 5690,
+            "nominations": 282,
+            "paidLookups": 8694,
+            "promotions": 179,
+            "searchLookups": 6499
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 5650,
+            "nominations": 265,
+            "paidLookups": 8751,
+            "promotions": 162,
+            "searchLookups": 6659
+          },
+          "shared-probe-race": {
+            "changedNominee": 96,
+            "holdoutPasses": 5572,
+            "nominations": 248,
+            "paidLookups": 10114,
+            "promotions": 155,
+            "searchLookups": 8100
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 163,
+            "holdoutPasses": 5156,
+            "nominations": 263,
+            "paidLookups": 8323,
+            "promotions": 97,
+            "searchLookups": 5844
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 5192,
+            "nominations": 247,
+            "paidLookups": 8368,
+            "promotions": 94,
+            "searchLookups": 5993
+          },
+          "shared-probe-race": {
+            "changedNominee": 84,
+            "holdoutPasses": 5160,
+            "nominations": 229,
+            "paidLookups": 9571,
+            "promotions": 93,
+            "searchLookups": 7243
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "ebd77235ddb6c8c45c357505f632aaadcb189fe2db6865b296789b389c6ef715",
+            "retention-defer": "4cc54cb633304f2d07d93c8eeeb552205049043d5525e5caba20c4cab58c20ee",
+            "retention-first": "69bd7ee6c18b88f0ffe7c092768833386e047ba490f1d9586b82783b0d877d2d",
+            "shared-probe": "52ec3dfd4b658bab2685895ae77632c490f830da02f5140a3922ec9fe56f6223"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "f2919c8c5412b5dfb4be1440bffba236ff639882136a4f8b8ff5e20e1e3062bd",
+            "retention-defer": "5cf8013d9c818ef02de8cff2e413fb643a64f45c84088e236fb4fc812cd8e5c5",
+            "retention-first": "7eb8dc31192f0999344cb61cb34b58c5704dbbe51335a9f399f40bec2ef54228",
+            "shared-probe": "531b6cd28bb50c6c5c4364a094a29ecc1fac25ff6fc460e006f6ac02b0598788"
+          }
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "f69807e29e352aa42224dfa4697434b14d7464a80219124ce0792520632488e0",
+            "retention-defer": "0e92cdfef2af771665bfa5a8e65442b371950cfe41720f3ae856d7df69b4c59f",
+            "retention-first": "7b05b34b191b875becf5b00a781dbf3c476f458b1c28cd258b7d17c6d5370f99",
+            "shared-probe": "97e1d96f46e5ba6deaeef657a3d2c6edad195d6eb536ad841db7ab467a73a6c6"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "504d36195196fee5dfcee8b390d36bbac0963dd024796badd4968aa909be9b10",
+            "retention-defer": "ef3cc7652a04a0bcdcef7170425a14968478eb4f0a09541531842649b1f4bef8",
+            "retention-first": "f4bfaeaaaca4813802c4f07e5a522e66012acee14038baf604faec6f2cd09364",
+            "shared-probe": "6d1a10b86a2c0b62d4e705f5b5511666bba7d834b7707f9cfec87a115faf05b6"
+          }
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "6c080848260274031339bec2b420b550a27afe0bf6e53814ffed5b513898f2ac",
+            "retention-defer": "402584f8f72e0015d07917f4d6b9db147ae6d9dc42253232badecf50c8790420",
+            "retention-first": "b3c69655822c5566ddab6ba20466791ab70116a445f4e533f91ff5578a738ecd",
+            "shared-probe": "459308a830baea0eafaeda1e28b7d585d0a2567892e0703253a50a13d0b7572b"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "5919815075b70dbc0d5c8389599453ed5850a09a7890b4330cd9c8063e2ad2e8",
+            "retention-defer": "0b69e87a2c85db1899ffec249e038d2d93cc4151429601989f0216ebf1df949d",
+            "retention-first": "4fc8342b8d2f9315dd313488b289b92d9a266ce0ee7f9e59364c04fc7e27bf51",
+            "shared-probe": "171559804b3b35a14cf3cad0fdd7f31d429a19e3676a8ea3f4851026836321a0"
+          }
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "b8f07ef1e5840fec3043dbf10c7cc6618dcd1afbc879dc7ccb666f16c5fd4e22",
+            "retention-defer": "e1baae9383b591db505b66deedd7fd55b0de4e39352b28f48c1de6bc7ce524d7",
+            "retention-first": "e5617ce12f3c832fe622ebf71ed1a485d1d098fc742d6166eb48e2389c8cd488",
+            "shared-probe": "d36a4b25968d60a6884a277aa9c663b01dc436ffb06a6aa7fbba44a7b3d15e70"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "4550cbb24bf53314e743548d7646c592b342fc13c0aea037c86bd760bf8f2fe8",
+            "retention-defer": "4ee090cdd7da764b62865e6643f9baa6b3e15563aaf346966ee80eb077a1ab5d",
+            "retention-first": "3d964dba4a90ce85b7b6968825b300e3cdd32344512dead79796ef964effd1c4",
+            "shared-probe": "e6a6eec086e21a132db45bcd52753258b0a525cf6245592d7f51990b4ffa32b0"
+          }
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "03b1347785b4139a265ec9deb0fb3a865231c659e77dfef88bb6c6218ec07b61",
+            "retention-defer": "4139e7dd2eff23b3bb0eaf77a2e711f18f09fea5cd0252e3a6efe11b0288d575",
+            "retention-first": "8f185108e1cb9bcaeebfe188134c8883feb7c07da4c35a7e366e0ce9de1dc020",
+            "shared-probe": "d36154764916cf66167b39e27119dbbd17199384fdda3bc4e65482a88604a127"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "2e6caaaad7ad364222986fff09d9871dce219d5f695daa0ca1b36de3db870ac2",
+            "retention-defer": "a50e870a75734b5b7b7f86d4ee384c530cdffcfb65831552d6923e0719e9e784",
+            "retention-first": "1d7cc90e057af6cdb3fd53c2076c6ae64dfb5f2292811f193a55f121a4c3d8a7",
+            "shared-probe": "56a87fe162b1c4efa99672fcd0eb06d232cb2662cc76e7ed4d64c6d3384126cc"
+          }
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "b61af2a8104df0f2f9fcc014880a1b7f67d9cfd9dade5d9422c2b1c237555860",
+            "retention-defer": "e4f68340f43f4ee33cfd4212dcb4827041bd31bc8d4d49a27b53d31ced428731",
+            "retention-first": "ef103626c2f27cb2c0e79167ca044317de63a89450d7f8cf9431c1884f553505",
+            "shared-probe": "9c824a2920f7c86925a9ca1ededf2f45a2a364b6ec6c35cb0cea82f498cd7ab3"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "7b208fb752682cc7f39331b05b78ee2dcde3faeb1dea4df2d97a1345cd73abce",
+            "retention-defer": "b3dd061d5511190b1b6d580fe1e10a3e6f6f506ac4977dac0858fc4459e9856d",
+            "retention-first": "94ca0c431189f3b7ab9244d08ad745724a53bbb8e56b9ab91523106776d84031",
+            "shared-probe": "8fac369bbe45389ec0bcc3f7484afd03da9fe2f8cdc0ce76d347d77126a11ca6"
+          }
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "4d2ce02d2cd2f2eaa0e22921836930a7fb4f113e511d6e9a9935dc5d9549c01b",
+            "retention-defer": "ac3b2d4066ddad4df1b369a73a7c4341e8efcb36309de7d7f334dd365cd24b78",
+            "retention-first": "afcc43f3f67696d3700c721b46720d30729a6f6cc671bcfa3ce906d46f4c4daa",
+            "shared-probe": "e4c90bcd60a739d007adcaf2e5b24cf31a2d950ef42f716deca3770b47c4beaf"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "65c30e4298bb6fd7804b12a9074a9bc222ea89c3a5918dcfae243d24a2cd09e0",
+            "retention-defer": "823bc39f48f01f73e61b75a145aa0bee8ea80d90269bd3a9c2374a4bb90ba08a",
+            "retention-first": "f60a3302356b509511a05652810e00519e11f00a498ecc5312afca07cc05b744",
+            "shared-probe": "21b853acac24552995154bccd0f2680329c7e810d8a0f8162e74291b65715bc6"
+          }
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "62fb15403b2d814f80448af61c52a0e45c92b5934d39c619fdc727629cf33435",
+            "retention-defer": "652b98f052048a2ccc07f046d785e4784d3367943c55066eeba611fecd6ed364",
+            "retention-first": "c6ba021e8bdd3cd5201d876488534577cfdd76966b7a51e3ac04a0171fef5782",
+            "shared-probe": "b029a65674c0eb068dbc25ed5e05842103ffc605623e995086c254fd5de24a69"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "41b51cc58c37aa537e84ac838fdd007b6ce48f11fdd746794686789971895548",
+            "retention-defer": "6bb475b42321904fd9e2996dfaf66c264361e12c53c46093238401273854a38f",
+            "retention-first": "4441120af1d3ce174e7c20079509788f58b97c79494c0656f9650fd131e90814",
+            "shared-probe": "d15d782090fbdf95483aa0140aa0a068beebfb7da2b5cad319066b8f4b39a7ae"
+          }
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "2fdeee857747a3ddb2be3fdc76ed740632170caadb4850f096d1c282a9727c4d",
+            "retention-defer": "218a44600ecd119df9697143b3eb39933db85a595ed5381a875991a5096eb6eb",
+            "retention-first": "f8cf64f1597c8bba85f89fc3d7dd5b5e1be131d7e28b9357afec174e412b89d1",
+            "shared-probe": "e4e79bbd06d9a2b6df5207b981e64e427cd9584b85cce786d71740237e3cb453"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "41bfbdb83988c763962b07690a03c34ee3f4e9cdfb5aa2b4ec8dde283406ef36",
+            "retention-defer": "6ebbad8d376002c631fe33a9e569c60ad23e1c561c679a8273c88a3967d78604",
+            "retention-first": "f76bde7625dc6c8d1e5d8002b5cd8c3127c418067193dd4f34ec59cf23937d8e",
+            "shared-probe": "16cc91801d0f7483c8727131abe4b5ece24ffbfcf9c96b202c4f62c0b6e3efd0"
+          }
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "78f7ed09cdb818e7da62da6e69ede7434a298ff1675f5c01b336d8a365ff5478",
+            "retention-defer": "2e87304949d61c7bcf08b810c737024eb40bd33c4de3ceca795f87fb9098c57c",
+            "retention-first": "646f6ced63e67c8dc3d70feecf1109a8e7d6f4872a41dbda2b566ba0c3cd8d3e",
+            "shared-probe": "523b59406cad42762817405193ee603fc95e52a45bd80808083b434455140741"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "1ec9020cd9ad2aa3ae173a4966e6bb93ca4cd9750e009cc6df63e264b8273e67",
+            "retention-defer": "0d7776ad2a37f5cc8bb47c9f292c527d7b20561fa7ff57cc3a9d034bb8b23386",
+            "retention-first": "f50d2f94fcbe54f407d65b87721be9f75e71eb85f91ff091225acc2146ff9d6f",
+            "shared-probe": "307fe3ee4d3bcb41253ed86d3b656f1baeee4f475fa49ce32a3fb48b5fbeaa9c"
+          }
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "09bb4a86da4e3ae050fbf7e58dcd92298af528e493c07b7cdf1492f6b529820c",
+            "retention-defer": "5e8c24cc9857b98daec60fd17efff99c904c14a8228d1b9e6a541227b3fbdc6b",
+            "retention-first": "6c712db286386ea0e6509cf52f3da2df319d7bd39085b996d8c9405be7b582e0",
+            "shared-probe": "7efe1f66f8b7c2b16ac693e2db45984a462fe11750548ed5f9be4cc1a0cf0e03"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "276d2c2c3cc962cc7911c1a073a37aa9f019af98971cd71c2a3d1c3efe1d48bd",
+            "retention-defer": "57ab7355fd88a68833ef58bf743803c2d26010a7a39ccf2b008ce714225e2af6",
+            "retention-first": "9e9265942e696e21531936954b9cc7788764bec12fb3552b5193f66d9a0c9a89",
+            "shared-probe": "6070f7f751bc6cdfbd4bcc4bdc7df38b18805d2df7581264d178a3a7539b6b2c"
+          }
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "3b311f404694c832ef6f1b7f619e811ea00ade63ca32b34222c039b15c052470",
+            "retention-defer": "1e6b5f8b077f5f68a9be42afb1e169d4f2a0a21a3bbb5502389f438ed88a5e70",
+            "retention-first": "1f7e868e51a32523c96f9ba5b9d8f1a6f891e414b746783b2bf10197d8f6cfd0",
+            "shared-probe": "ed4433db48fb166824c76b95270552460c06ba0794ac301d51cd9925305af41f"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "c94142b99f98864ccbbefc5c4eec35198f138b4929f918cab13ff3709c58fc8b",
+            "retention-defer": "2f61c3eb17889beb006cac642505ce51b5c4d9c67884e7d5d93339fc89ee5b0a",
+            "retention-first": "02b62f6d83f48aa91a38f144e4635217c3c01960242425d658eb5ea1215a3873",
+            "shared-probe": "c279f88f75dbd380bc1e0f4fca35821699246a6d344890d3bbf20c15c0e594b3"
+          }
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "4e01ace6d882ffa3d6d5e20529e62450fda1bac2fc3311c07fb70035ee6521fb",
+            "retention-defer": "8e50d9e377d9d5260820c5aee67e20d958bc02c03d10692edd14344888038400",
+            "retention-first": "8e50d9e377d9d5260820c5aee67e20d958bc02c03d10692edd14344888038400",
+            "shared-probe": "8420c77f5adb2b81e6f37dd626c7aa73489739c797b663484d3e36a4dc77941d"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "e0d526b968743317f608d22c2b1a6a3f4d69a8dc74375f0542bba36c95703514",
+            "retention-defer": "e0834e0f377c95ca3d5be28d1a9f0bdd6868835e473372ae2d95339c9dce3136",
+            "retention-first": "e0834e0f377c95ca3d5be28d1a9f0bdd6868835e473372ae2d95339c9dce3136",
+            "shared-probe": "edf7ef14dccebc2b605b320beaa50793dac804cbd6d05910e3dcf4adb2a02ff4"
+          }
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "441894d175fd01d3529e94a3de26db3f5453ccbb7403fa216e5e30cfa82c279b",
+            "retention-defer": "03aaffdead2355d8eb0315f43b1697aa76099c7e2dde7f8737a64f6f5a13fda2",
+            "retention-first": "269b877b166c8b4cb1a3196c8fc492675fe375a960f74d1ecb82594b023d5441",
+            "shared-probe": "d5e6898999dd3a5a217d9c3812b11a07d151e1f09b49630aef440fce06e14f66"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "a9b1284ba7fc85752ebe9ee40bfa1f3132cd03acf69fd80cdb4ed0c17e2245ce",
+            "retention-defer": "fe7a606ad0e9003d4969a92c9bdbe9a988fc1759acbc12c8f4143a49c2cc3b22",
+            "retention-first": "30b9b717787f49f5a5bb128bb2326105d0d953b91f962b0eaa288e31ee769374",
+            "shared-probe": "9f7889eb295681d40a36de28eff04d40604b189768d60a53504d9d19bb95cd5e"
+          }
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "2dac80c77c38e4db381027a83e20f657b2ce963773a49cd69d628d5180e4065f",
+            "retention-defer": "8d2ee7ab520b05e67fddc3d47d64e559314aa8903fbbc8c2c01470b042dc5d59",
+            "retention-first": "3e5afaf71b01f5726fbef716553b8cb889e063cfdbb375d95c1f517e630930c2",
+            "shared-probe": "0b6fef8bc8ecf39e69b0471a379bd55898babe8be215e3721b2b5667dddf55fd"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "1756868ddd1b73409f3e261da202ae735ff9cf8ba2ad2fb8cc9e4bf00ec1654c",
+            "retention-defer": "0c42830c27862524310a9f6378c84d74a699130b0d0eceedf26c5345c11a961a",
+            "retention-first": "686a59c3f77c4ac80fdb25fea7a41ce969b2cb498aa7a3cd8c7bba205a14d4ef",
+            "shared-probe": "e1ac970f33aeafb84781ee2f5feed372826ce7a3a83d0920b74cf3a0d492d835"
+          }
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "gain-defer": "089ff570961729ef562ea2d7485d3a1087b338d30f28dde94e53b944f22559d4",
+            "retention-defer": "7608ba735efcd11d95cacea4e7332fd99857b5208db5560e7573d548f4ed1c42",
+            "retention-first": "7608ba735efcd11d95cacea4e7332fd99857b5208db5560e7573d548f4ed1c42",
+            "shared-probe": "4e6ef2fc7015da758766c408b4eb510c3d9375a52be47048c7142e827dc8c478"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "a2060c5d1fc7ce8bbf7d59b94d85c2d282260b3f250596b99a3bb2a2fb27b947",
+            "retention-defer": "e90d819d8bb12745d530cec5dd239a2086df80cec3e656578cb1bf7aeaf678fc",
+            "retention-first": "e90d819d8bb12745d530cec5dd239a2086df80cec3e656578cb1bf7aeaf678fc",
+            "shared-probe": "c1fca0ef040bef47c162610d05287b6738918dc212fde4381ef18d34968024a6"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 5417,
+            "changedDeployment": 23,
+            "changedNominee": 41,
+            "holdoutDifference": 38,
+            "holdoutPasses": 5688,
+            "lookupDifference": 332,
+            "nominations": 262,
+            "paidLookups": 9083,
+            "promotions": 163
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 5417,
+            "changedDeployment": 17,
+            "changedNominee": 30,
+            "holdoutDifference": 73,
+            "holdoutPasses": 5723,
+            "lookupDifference": 247,
+            "nominations": 271,
+            "paidLookups": 8998,
+            "promotions": 167
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 5388,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 5650,
+            "lookupDifference": -22,
+            "nominations": 265,
+            "paidLookups": 8729,
+            "promotions": 162
+          }
+        },
+        "cap-19/gain-2": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 5388,
+            "changedDeployment": 15,
+            "changedNominee": 35,
+            "holdoutDifference": 51,
+            "holdoutPasses": 5243,
+            "lookupDifference": 324,
+            "nominations": 244,
+            "paidLookups": 8692,
+            "promotions": 98
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 5388,
+            "changedDeployment": 15,
+            "changedNominee": 26,
+            "holdoutDifference": 67,
+            "holdoutPasses": 5259,
+            "lookupDifference": 222,
+            "nominations": 254,
+            "paidLookups": 8590,
+            "promotions": 100
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 5388,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 5192,
+            "lookupDifference": -9,
+            "nominations": 247,
+            "paidLookups": 8359,
+            "promotions": 94
+          }
+        }
+      }
+    },
+    "LMentry/new-task": {
+      "anchorTotals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 31,
+            "holdoutPasses": 304,
+            "nominations": 34,
+            "paidLookups": 1193,
+            "promotions": 11,
+            "searchLookups": 930
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 263,
+            "nominations": 42,
+            "paidLookups": 1168,
+            "promotions": 13,
+            "searchLookups": 870
+          },
+          "shared-probe-race": {
+            "changedNominee": 10,
+            "holdoutPasses": 316,
+            "nominations": 38,
+            "paidLookups": 1327,
+            "promotions": 16,
+            "searchLookups": 1045
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 31,
+            "holdoutPasses": 299,
+            "nominations": 34,
+            "paidLookups": 1218,
+            "promotions": 6,
+            "searchLookups": 930
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 256,
+            "nominations": 42,
+            "paidLookups": 1184,
+            "promotions": 6,
+            "searchLookups": 870
+          },
+          "shared-probe-race": {
+            "changedNominee": 10,
+            "holdoutPasses": 303,
+            "nominations": 38,
+            "paidLookups": 1353,
+            "promotions": 8,
+            "searchLookups": 1045
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "b5e274eb8c1af59dde1b949f3170675bebaaad5a2844546938f54b821c9c106d",
+            "retention-defer": "67aa41506fa5f2ceaa414d25c5655bd67532547cf3ec88fc85ca5a33f9a0795b",
+            "retention-first": "63b3fe89822d10519188a17b05de6f0cd32770da7dcaaac0b1df28a2dc1ba3d4",
+            "shared-probe": "7f19593930a14caf8007b6c8362beba956d7aee2fc45efa7cb6bc7e51be303d1"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "40fa3b4eec8afa3919d6702bdbe6d269986a3199df5522372f264ef7948b692f",
+            "retention-defer": "693cbf1e20ef8d268d06a98229dc24cab04187b540e3c309703f447f47eacd27",
+            "retention-first": "d33ebfb6ecbcf9c8c0c8af8071978ac8161ab3a44e598ed464bbf2039de0a3d8",
+            "shared-probe": "6a3a8125ebada9b097f007f99a376755e8b11e553cc800ca3e4060c043d80d3f"
+          }
+        },
+        "lmentry-ends_with_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "051ecd75cf09e4b384713147445e82cd769d5d65eae13ac5f49c54f19750d7b1",
+            "retention-defer": "eb2f470063fdb5789c8f65dc9973dea4619e85202e18098ce1cbc9dfe3d886f6",
+            "retention-first": "28c354355e5c7c29d8934661e36b48493bfa8a5851e295450337857c373dc190",
+            "shared-probe": "299c1d349d8776d3ca83b2c4bf0d02db433ebcac0301264da8ae4e6afd1824fc"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "06c77edd01817b6cdfd440899b1934e0718a0c0ab70de1ebc6ec7b3cb67daadb",
+            "retention-defer": "82eff232fc760bf19198f6ed9911031e9845828c66692fe794d204510c8ae471",
+            "retention-first": "b8b19551e79b5665742341385282bab68e180fe0d84663a61c42d479dc0192a4",
+            "shared-probe": "a8707c997bfd35098db55193cf44127e3d0582a22a934c08005df470207df81f"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 233,
+            "changedDeployment": 3,
+            "changedNominee": 3,
+            "holdoutDifference": 53,
+            "holdoutPasses": 316,
+            "lookupDifference": 60,
+            "nominations": 44,
+            "paidLookups": 1228,
+            "promotions": 16
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 233,
+            "changedDeployment": 2,
+            "changedNominee": 2,
+            "holdoutDifference": 31,
+            "holdoutPasses": 294,
+            "lookupDifference": 67,
+            "nominations": 44,
+            "paidLookups": 1235,
+            "promotions": 15
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 233,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 263,
+            "lookupDifference": 1,
+            "nominations": 42,
+            "paidLookups": 1169,
+            "promotions": 13
+          }
+        },
+        "cap-19/gain-2": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 233,
+            "changedDeployment": 2,
+            "changedNominee": 3,
+            "holdoutDifference": 47,
+            "holdoutPasses": 303,
+            "lookupDifference": 61,
+            "nominations": 44,
+            "paidLookups": 1245,
+            "promotions": 8
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 233,
+            "changedDeployment": 1,
+            "changedNominee": 2,
+            "holdoutDifference": 25,
+            "holdoutPasses": 281,
+            "lookupDifference": 62,
+            "nominations": 44,
+            "paidLookups": 1246,
+            "promotions": 7
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 233,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 256,
+            "lookupDifference": -2,
+            "nominations": 42,
+            "paidLookups": 1182,
+            "promotions": 6
+          }
+        }
+      }
+    },
+    "LMentry/seen-task": {
+      "anchorTotals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 102,
+            "holdoutPasses": 5412,
+            "nominations": 174,
+            "paidLookups": 6032,
+            "promotions": 117,
+            "searchLookups": 4496
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 5307,
+            "nominations": 176,
+            "paidLookups": 6151,
+            "promotions": 109,
+            "searchLookups": 4590
+          },
+          "shared-probe-race": {
+            "changedNominee": 76,
+            "holdoutPasses": 5299,
+            "nominations": 157,
+            "paidLookups": 7153,
+            "promotions": 101,
+            "searchLookups": 5695
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 79,
+            "holdoutPasses": 5084,
+            "nominations": 144,
+            "paidLookups": 5261,
+            "promotions": 62,
+            "searchLookups": 3589
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 4963,
+            "nominations": 147,
+            "paidLookups": 5363,
+            "promotions": 56,
+            "searchLookups": 3701
+          },
+          "shared-probe-race": {
+            "changedNominee": 59,
+            "holdoutPasses": 4998,
+            "nominations": 132,
+            "paidLookups": 6144,
+            "promotions": 59,
+            "searchLookups": 4528
+          }
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "fd073faf59e5cb35a5313583a58c844a5acc6599501db44d96503959ecaefaab",
+            "retention-defer": "e169f491eda0a4c7d0db61e61c4269fe76d67954114fe00b4e01b5acb80d2f5b",
+            "retention-first": "46e2e8c8578cd29babbb77c46d9dab4cb260341a8783971e979564c0d6803303",
+            "shared-probe": "d22f8a5d5884575e4a66abe0104c67927b8d4b492fff1d2d48f13b454c358f44"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "6d079d41bbc19dd9326f95cf12d9af621f926b665069dd39a2b90962051d5533",
+            "retention-defer": "fe41a5cb6bf6585d2abd01022f76803254de6a7e7e4e9d39cb7b3d8f4b298c2c",
+            "retention-first": "89459c883852ceb3271eca8166c087201171b4e57056f4a14b7ca97fe0ec949c",
+            "shared-probe": "710fc0d2ea025486622b6b83a1a0a2f120e3ed41184620b7ac7816ea9248b28a"
+          }
+        },
+        "lmentry-all_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "731b6f9e808137d75ed0033917bdb1d7793a1bad47b44cb854a0a0941b67761f",
+            "retention-defer": "f1b775b22d3b42564f15412f6914478d877871023abbd58879ce7c10591f40ad",
+            "retention-first": "ec673123723fc3c5024fbea408e31d7d85aadf7035469f9000132138a739ca69",
+            "shared-probe": "deb470fa74c5c70169bd8687ef5610976346688834af227581135077f09424ea"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "4934fd4587f4d8a953ca69dd0d2585fe5b0eebaef3a8ba3f0e6ac5c86e8a6584",
+            "retention-defer": "8cb90f4fe816d9da76f5c3c0a17c60d1d67d366a51c21776fe325f50def699ed",
+            "retention-first": "e3c9737dc8e3b7019524f79d17f318c7f82e61c2db1cff6f8a25fe939801279f",
+            "shared-probe": "02871d094f3ac3a2bb004b67fa2a1aebc663b7b117a16006092dfb26f71859b8"
+          }
+        },
+        "lmentry-any_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "b3021f848d6347c748fdd92eb92ee90c8b746cea1245c4625811d3de9f4f3aed",
+            "retention-defer": "db461ec50330bba8dd7a9de1f7961fb7707dfe197b1df9e583e04571f614f29a",
+            "retention-first": "db461ec50330bba8dd7a9de1f7961fb7707dfe197b1df9e583e04571f614f29a",
+            "shared-probe": "4977a800d46b1ed1326568657aab8045939a485d9d18084d20ab6841e28c1833"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "4dd003d95002702204e8e872841ec06bcdf05d67e2bd31db1aa126203e9e9d57",
+            "retention-defer": "c5c60a358d1cb0354e1dc417a39622db1ce44ecc7bf4e4606c5ba35b354f5a98",
+            "retention-first": "c5c60a358d1cb0354e1dc417a39622db1ce44ecc7bf4e4606c5ba35b354f5a98",
+            "shared-probe": "9e5040de3b2fd763c2ae9550190d9322d0d1914b13fbe2316542e9a439f9ead3"
+          }
+        },
+        "lmentry-any_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "43c24dd89a1c5168c2437813c467bee715e7581bbfc80ef24c7ead616c2b85b2",
+            "retention-defer": "80ce87d130a05383d6b5aad6a607480c9fe079d48987a4c07ab4ba7965faaef3",
+            "retention-first": "8bafacae11e9db6ce44aa7a1b12b3d8ea74f4e6e15e926f456bfe6dd5e63b44e",
+            "shared-probe": "511c0308dbc9d9978bfdb6847c683e51a1eed8dd54bd1a3ad51f9d177f36fc33"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "c8ae1998b858d8a28d33f6b1ba0af74e424982962c84f2ba37bcc0691051a8f2",
+            "retention-defer": "c2488c4b779dd44dcb464553645b7976af0b1381cb40794134c50994b1af3a25",
+            "retention-first": "f06d821e86713acf6c34ba817a1a4502e193ddf56017a49ce1af4b6a83fc7de6",
+            "shared-probe": "3c90cd601fd8e84bced41d154997c9ccbf10b6b66b62a512923c0691eb3281d3"
+          }
+        },
+        "lmentry-first_alphabetically/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "13e52cb2df0da6915d285e7143eb47489d9017564800048b6b950f6be498da0d",
+            "retention-defer": "fcd74d20915a84be6c21a0871a02422af28e471cdab78fa6cd018e5d1a6fb8cd",
+            "retention-first": "2d8cde77281d6eb724884a12c19b193c0a398facbe1760a51920b42c6fbb7355",
+            "shared-probe": "330931298ea92374d3826186b2ea9bbad5490d4cf6f4e7497c21b990717eed1e"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "8943ad8cc243a37dd52dee2a53e4e3246d2a361563cc088e305855642bead66b",
+            "retention-defer": "2adf2d8a6abe7a90555dc0dec75ac769805d95f47aadd7f2daaad36c51a2df10",
+            "retention-first": "5ffd902b1ed74381beea0bcf3e40bf0dfdfc4125df0e0bbefe5ff4e014131647",
+            "shared-probe": "22deaf5fc47dad04e113732c5c8ca8e47569e5904f39a8355e47968ade0d5539"
+          }
+        },
+        "lmentry-first_alphabetically/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "be05d115fa8b5bc7cec442eb7d5e651bb6e2a0ca213855810c8a0ae3d40cc4d9",
+            "retention-defer": "81173f2d56b29cdb2c8bf82cecd9d84524338f0d87c5873c2eb2524e9b0637d6",
+            "retention-first": "89974f9b156c0f5d4934301cf0ea4c4281ac9d911af0e94aa51674b7d74bda6c",
+            "shared-probe": "5bfe3057f6d3a266b1bb193bab429e2a5337f65705af432569cbbfead3f48a03"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "861bb85a51ce706bd5e4f4d0e8fc1f851b017c0e70d5521bf365672bc4dfe772",
+            "retention-defer": "a5ec15834a8aeb2e585d56f4bb249685f1b035024d684c8a762796bde8be6a7c",
+            "retention-first": "5267bd59f2aec29100f85931d0ec5f032d1f21fbb6c87512f0d120fc23f0e699",
+            "shared-probe": "36a56f53f0647671c8be69613195b72731234db87a9b1ba66368a5486dea9426"
+          }
+        },
+        "lmentry-less_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "d8320f9d6c13a22395762a532589630f89acfc1f19b1e07dcbb1c557e7b0d77b",
+            "retention-defer": "131f139f8f1ea6a8e33319097ee14669e32152ffea458e576daf15213a0aa26e",
+            "retention-first": "347208ad814fbc6d41e873c13b83dabfbf0f4f427afacf147adaf58a1bee8a45",
+            "shared-probe": "bf45ff9937f43fd62d2861063bbc37b8d7592b6521ec534cc369b7be55d9cbff"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "cd92685bf2581a187c2f335341fbf6f0b558520c6c03b1bff80efafef0b2f4c5",
+            "retention-defer": "7479b20a1d4f7ab073c75fd5c86f0a633497c16d9339b93aa2d0c20970f8780c",
+            "retention-first": "788df2bf566e3f5cfb659df8766a7bb81f9b56a91c1cb03f05fbf865811fee76",
+            "shared-probe": "d52e7b2707bd9d08a1a9c8102ec1cff08e986996b7c41c2077b3453e6a151d90"
+          }
+        },
+        "lmentry-less_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "5e7351f72dc82e5e96bde8a50ce3cb10acfd464dcde322108c6573ff4074321d",
+            "retention-defer": "55d3077a5466a16fdb16bf578ac53ca5f81dcba3a564b1df9dfaf6d5bc232507",
+            "retention-first": "a12c375832bb7f338bad61bc93f66e03a73a1a1fe2282cc6e52d89c8499f5440",
+            "shared-probe": "142ae863885ddef87ec6a16a4b8ce2c3279ba2da360d20b6a8b322d1d0858d44"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "a884886391bc49fd9ce6ed8d71be076b1df46022bca0e60b94eac4b97bc5dc59",
+            "retention-defer": "2058ebe9d2c19c179a08004088e30bffe154a523a84e092cb5acc63d0c16ad74",
+            "retention-first": "be86fb28ff6ab237621bbc5236365fc01fda7662b7e6604db6a4d2beb7a0d187",
+            "shared-probe": "064bb82de7be3571edb43bae7c2ae1ba5e850b1a56ef4bbc7ca5a7895d8cbc10"
+          }
+        },
+        "lmentry-more_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "22f7d153f88b6bd08178ab77930c2c72ed20ac87d5c11912c3f6a2b5373a2000",
+            "retention-defer": "1f4d7dfdfd20343ac6090d9604f7c7e1501e2828cead67c0b13569dc298b91e6",
+            "retention-first": "48d69183d126da34fb7c7256da73f767006445d0fe329405e6ffe98ce168694d",
+            "shared-probe": "ef01f5a414639408cfeb04857e7befdef477f68471ad5cc5cf3404b9dbde8f9d"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "b51b9d048ae8c78a3733dfcd031c6716efc6b5bb6d73206cd42a46e6bd571fd3",
+            "retention-defer": "ba8152d08aeaf5fd08bf2fa169457a0e03b7eec4cdb4e6beb66a282496db6688",
+            "retention-first": "9ba64548f816e62a5cd3aad6996b1d68fabaa07fa2dbc33aa9876cac004f7fde",
+            "shared-probe": "4c83cd9d35667ec1cddc54e6f64fe940001170afa166e3ea08db4551be1f8c80"
+          }
+        },
+        "lmentry-more_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "8ceeb6947c50c231c703640b6215e79b47425493618586d891aad64b1476ad48",
+            "retention-defer": "76c882197a1c36314bc81d392d231ba60262e29f1b147ca4dd695a497f442505",
+            "retention-first": "d4abe52283b502c2410d102baa9e5f3810b046732688aeda277e26a26e636a00",
+            "shared-probe": "e17d86d6cd059bbd69cccc1ac2dc2ee7fe4021112f387d8cb82509fc724c4eac"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "935ed1b08b327a2726158c327277584fafc04379897bbda4caf9b0af7fa0cc5a",
+            "retention-defer": "ca8d1d18cccfc252324c44521fdf4599089deda40a1603ce49d05befafeaf4b4",
+            "retention-first": "740ab7183f8275f17eb0e1e03940b3e4890183abdf2b16c40385eb3d5e08cf5e",
+            "shared-probe": "44cbf37c242f227da04945c4affb8ae839b5d2b1dde8fa623b0843361150ec69"
+          }
+        },
+        "lmentry-rhyming_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "gain-defer": "d8ef91578ae9b6c6f2f2b53c34a9728de3bbca072f0f09644cb2682c37700499",
+            "retention-defer": "f01432be3d35231e5f9339a08e3e6d8be33fb81d3d426b539f6bbe382433b937",
+            "retention-first": "a92da196beffd6f7e54ccc47d4b4ca56cee68202d99dd75d8c8122f8054d6a12",
+            "shared-probe": "3e1c5b65d1e6c25dd1fccb062f7195353cc8869f9cb6a07a45b48dcc2ed5e82c"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "0c7b13c27b477b58bfd9fde4296ae027da133d647a20291110d66535b53b388b",
+            "retention-defer": "75140eaf37ce863a4a7b9aea56e08e55b0f5bcae2130e44cb8f8cfe1c9a84df1",
+            "retention-first": "51ffd860f65c793e3465908954b37b41888869d9c6baf4563c12002b72593dda",
+            "shared-probe": "fa1f7260b5d0991a6d4a56c9f7ba12df091dc6b98399615e76aa4bafa777a38f"
+          }
+        },
+        "lmentry-rhyming_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "gain-defer": "13e888fae481474a6869e0d1ea9567a155b84978f3814f2b3321535fb4037bdd",
+            "retention-defer": "13e888fae481474a6869e0d1ea9567a155b84978f3814f2b3321535fb4037bdd",
+            "retention-first": "13e888fae481474a6869e0d1ea9567a155b84978f3814f2b3321535fb4037bdd",
+            "shared-probe": "13e888fae481474a6869e0d1ea9567a155b84978f3814f2b3321535fb4037bdd"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "50c42f0ddd16e9c9d87c7c6e86f6757b286eb54ef91e4bb1f680af1c3ad6c5e1",
+            "retention-defer": "50c42f0ddd16e9c9d87c7c6e86f6757b286eb54ef91e4bb1f680af1c3ad6c5e1",
+            "retention-first": "50c42f0ddd16e9c9d87c7c6e86f6757b286eb54ef91e4bb1f680af1c3ad6c5e1",
+            "shared-probe": "50c42f0ddd16e9c9d87c7c6e86f6757b286eb54ef91e4bb1f680af1c3ad6c5e1"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 5117,
+            "changedDeployment": 16,
+            "changedNominee": 38,
+            "holdoutDifference": -12,
+            "holdoutPasses": 5295,
+            "lookupDifference": 204,
+            "nominations": 167,
+            "paidLookups": 6355,
+            "promotions": 105
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 5117,
+            "changedDeployment": 8,
+            "changedNominee": 14,
+            "holdoutDifference": 34,
+            "holdoutPasses": 5341,
+            "lookupDifference": 191,
+            "nominations": 177,
+            "paidLookups": 6342,
+            "promotions": 110
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 5117,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 5307,
+            "lookupDifference": -4,
+            "nominations": 176,
+            "paidLookups": 6147,
+            "promotions": 109
+          }
+        },
+        "cap-19/gain-2": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 5016,
+            "changedDeployment": 5,
+            "changedNominee": 25,
+            "holdoutDifference": -1,
+            "holdoutPasses": 4962,
+            "lookupDifference": 129,
+            "nominations": 140,
+            "paidLookups": 5492,
+            "promotions": 55
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 5016,
+            "changedDeployment": 3,
+            "changedNominee": 10,
+            "holdoutDifference": 23,
+            "holdoutPasses": 4986,
+            "lookupDifference": 118,
+            "nominations": 146,
+            "paidLookups": 5481,
+            "promotions": 59
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 5016,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 4963,
+            "lookupDifference": -8,
+            "nominations": 147,
+            "paidLookups": 5355,
+            "promotions": 56
+          }
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "anchorTotals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 125,
+            "holdoutPasses": 56067,
+            "nominations": 177,
+            "paidLookups": 12756,
+            "promotions": 30,
+            "searchLookups": 9622
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 56094,
+            "nominations": 153,
+            "paidLookups": 12792,
+            "promotions": 27,
+            "searchLookups": 9765
+          },
+          "shared-probe-race": {
+            "changedNominee": 84,
+            "holdoutPasses": 56066,
+            "nominations": 80,
+            "paidLookups": 13141,
+            "promotions": 11,
+            "searchLookups": 10430
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 71,
+            "holdoutPasses": 56065,
+            "nominations": 96,
+            "paidLookups": 8859,
+            "promotions": 2,
+            "searchLookups": 5514
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 56094,
+            "nominations": 88,
+            "paidLookups": 8962,
+            "promotions": 3,
+            "searchLookups": 5631
+          },
+          "shared-probe-race": {
+            "changedNominee": 51,
+            "holdoutPasses": 56065,
+            "nominations": 41,
+            "paidLookups": 9227,
+            "promotions": 0,
+            "searchLookups": 6011
+          }
+        }
+      },
+      "panelPathHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "gain-defer": "b25cc44cc1b626596161bdb193ab5f59a7b0e9d39f7a8106f6569a4a28132c12",
+            "retention-defer": "7d9bf984a43f7cc8fdaa808623b863748bb182c8afc2f8845b61707b4fa4935f",
+            "retention-first": "cc887dd28d69d0bcd92ca0e4ed82eef292fe4349334177d7eb8f78eaaadd8e6d",
+            "shared-probe": "aa3fba2017d5f96f478502125a34543686e3d4ddbe8c106906fcda69a95e704b"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "9e93f50bb921c6e48809e877d28e7bca287f8b6d92774b7ad92dd8fc40e8176c",
+            "retention-defer": "6981bc73661ac18505d4715e8d849e0348524853f524e52200384b096c9ef425",
+            "retention-first": "6981bc73661ac18505d4715e8d849e0348524853f524e52200384b096c9ef425",
+            "shared-probe": "9baadca30f65709c8c76b5ce34cafec61910e68610019c78a260945077826fcc"
+          }
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "gain-defer": "d658b090f6df87bfecc5e2ecc882aff8e9ce4ba8a819ec76cf45555df5f52c51",
+            "retention-defer": "ff5ed829a9f3db6902e3b081e45ca062117423ba0282520b394d0f85e47c98f5",
+            "retention-first": "5778099de0dd4000795ccbf7501baa055b5b2ddc5d005d0db25c3721c2e746d3",
+            "shared-probe": "2cf49334ac21cf9b30650b43a424f65cdefc4b1cc9ee653b373e822f6358bc18"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "2f13ecc468606ef14fbce8aa0b6c8f72bd8a9f984117c4ae1f0e307d5559bb4b",
+            "retention-defer": "79d02759cbf02568a415246b3af3dd6db15543bf1aa537961eb239d677953f3c",
+            "retention-first": "d5e8ea0c8160b242333e06b07d0cfd2a07f21f5732c45d63b2c1666a2ca6a715",
+            "shared-probe": "3d335374a64ee385d63cba818b5615336299d9256577b311f3b2fce621594dad"
+          }
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "gain-defer": "c8dc08d8be77425bf46e46a37eb558df7767ac46ad1bab26e16d4dc6db46cb85",
+            "retention-defer": "c8dc08d8be77425bf46e46a37eb558df7767ac46ad1bab26e16d4dc6db46cb85",
+            "retention-first": "c8dc08d8be77425bf46e46a37eb558df7767ac46ad1bab26e16d4dc6db46cb85",
+            "shared-probe": "c8dc08d8be77425bf46e46a37eb558df7767ac46ad1bab26e16d4dc6db46cb85"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "5bd526c4879fbe8f0b34e2cafcbb9793579e11ad881246d48baeb26cb62607a5",
+            "retention-defer": "5bd526c4879fbe8f0b34e2cafcbb9793579e11ad881246d48baeb26cb62607a5",
+            "retention-first": "5bd526c4879fbe8f0b34e2cafcbb9793579e11ad881246d48baeb26cb62607a5",
+            "shared-probe": "5bd526c4879fbe8f0b34e2cafcbb9793579e11ad881246d48baeb26cb62607a5"
+          }
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "gain-defer": "52bca130a929c2b1cd31bb550562dc40cebf7540e219c128a8fd57991bb752b8",
+            "retention-defer": "db37db3f61722c914b4eeeb1aac90a53e21e15bd2ca9d387fee93e91f82b77f7",
+            "retention-first": "278053f91ef8a562fd748bd5e34fbe60a26a84363286cdb8d4e6094dbafbf3c0",
+            "shared-probe": "c40333be56007629cd0f385a5ce4c55e728038504c56a7eb3024c252d3ad92f8"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "197209deae1bb660dda654d342d9fd078c5f9f3edb1b8f68f1047398eedb0dbf",
+            "retention-defer": "96202a66cc81120091a30e3daad78c2fb6ce21d351d67f289195779efed1602d",
+            "retention-first": "96202a66cc81120091a30e3daad78c2fb6ce21d351d67f289195779efed1602d",
+            "shared-probe": "f68921674f7b6bd3523f9da8a05f73b4f13e5af5051707b3240b0a39e182b3ed"
+          }
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "gain-defer": "c57c93938caf7ad40f837427bf812bd1c4c02461ae142e1825722b238ffd98e3",
+            "retention-defer": "dac5fedc1c424a6490024ee340e3df42d262cc8a55d8dc076fc46774eef0a353",
+            "retention-first": "f4dac4fff988f82c1ac22c483c61cf4635ecf3184389c9d05ab1a1302037d1ee",
+            "shared-probe": "2c08b02a5be2e63084a49c6020175d7fef8082ebecd55914585e0745d497c070"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "f2dadea466e01dff7a9ae19e06b4b760ea2c6c55641603631380d819ed86521c",
+            "retention-defer": "8c2faaee0b4c280682bdf0aff60b8ec8ab9fdfa2dcfaf03d41672e5618948490",
+            "retention-first": "5b8550fbce836ac442eaf64b598c918fd20e9107b45d2f91aec593339dea638d",
+            "shared-probe": "b95d439c4c630c9cad300e6e797f4adef393a5a16a99aa4883fefa3ec33e34c1"
+          }
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "gain-defer": "c4434bbd46c179243fd82fa17e23961abd38d8f51afa6a5ad3524e659fe3c4b9",
+            "retention-defer": "d3b993e86a1c2261abf75b914c6934a54fcc14264583444c61700c440a927eb7",
+            "retention-first": "f01c57980c86de5ddb1b9555c1c1eeb727da24899e726b90f82706a8806a9852",
+            "shared-probe": "ee04742d25801d967988f9e30c34fc94085208b87237829043d90e6e0a6f729e"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "acb654c43dd6edd1d00d79ff2a7463b55f8b2234f444a88a4dfa0933ddd18a01",
+            "retention-defer": "4a8f02a4794846fc316c773a0ad3986a1d636f688833b10285d2e3d5a4cd6f4c",
+            "retention-first": "f0406d3f5a7cf0e2ad099bfdd75c02f3043fb8ecfa3af039e58f51f126a9682f",
+            "shared-probe": "045263442e20deb1c5a88c305a4af21d6e645ff75cae93e81b4ee00783d05d5a"
+          }
+        },
+        "high_school_biology/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "gain-defer": "6d0fab6921ce52e0afcc8f70ac6d4f9e4f2de228e1b3d126785e8dc9f58f34e5",
+            "retention-defer": "55733600414e8ea2b5c6061ee6da7fd33f3aae0fcb9c06d898fe051d2fabeac1",
+            "retention-first": "55733600414e8ea2b5c6061ee6da7fd33f3aae0fcb9c06d898fe051d2fabeac1",
+            "shared-probe": "e09238b61d95f72b90e1336a87070206607efe27f92f7c882b626e2f15344c65"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "f5abb7f0f943333c88d896036a7c8c620f4c5cf365f476f668a36de3d6f19fc4",
+            "retention-defer": "af8d503654408663cb5e02215863417089b821ac4a3005c270105474f9a5cb94",
+            "retention-first": "af8d503654408663cb5e02215863417089b821ac4a3005c270105474f9a5cb94",
+            "shared-probe": "29e351fba2f33db81277811fd0ba1fe0075d1bd4900a69ec945d7ed1428c238e"
+          }
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "gain-defer": "80864cf7db461feba382151a4c9c1881c7e2e53fc8e0c17817fe601da7b69e3f",
+            "retention-defer": "17d084cc8663684253b0513728b51dc40d8c01626e0ca5e6a81f6bc11fd7b973",
+            "retention-first": "17d084cc8663684253b0513728b51dc40d8c01626e0ca5e6a81f6bc11fd7b973",
+            "shared-probe": "b6c162a48d1c4ddde2ba880eb9c19cecf0397b2f0c067fa8fabf673b0f195116"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "e4859c579d15d163be8b0b13a1549324c3de61d03360dbd0ea4a2f3a8b74aa94",
+            "retention-defer": "e4859c579d15d163be8b0b13a1549324c3de61d03360dbd0ea4a2f3a8b74aa94",
+            "retention-first": "e4859c579d15d163be8b0b13a1549324c3de61d03360dbd0ea4a2f3a8b74aa94",
+            "shared-probe": "e4859c579d15d163be8b0b13a1549324c3de61d03360dbd0ea4a2f3a8b74aa94"
+          }
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "gain-defer": "07f6acaf1a6ade4fe5ab168c7db1891fa5e92d9e527cf9048f4cdafd11f9504d",
+            "retention-defer": "9a624e2413ca923e5baae9e38fcc39ff56f9d490d7166e0cde7a4c5717cbdcb7",
+            "retention-first": "9a624e2413ca923e5baae9e38fcc39ff56f9d490d7166e0cde7a4c5717cbdcb7",
+            "shared-probe": "6d562cbf79a13e9f6fdfe3fdd0b9a4901e81b8d33f6f4bae24d8822e0d6c803b"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "d30b6ea74d78f2045ef29e471a3f8d29951c603ee0904264ed2bf733a348ab49",
+            "retention-defer": "def0be9ac965ebd5dab715387c9c35f4472c32034ccc6a95f5ffe4be9489f1e5",
+            "retention-first": "def0be9ac965ebd5dab715387c9c35f4472c32034ccc6a95f5ffe4be9489f1e5",
+            "shared-probe": "4f14ecc7937182d8a1c7462857120ab7f928c30002b2059e13bb99ce07684faf"
+          }
+        },
+        "high_school_geography/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "fe8f5a23f17b6bd37b73f2c26f969699957ca97a154faf0b25ff1860987bb04b",
+            "retention-defer": "cc4527dccec168261a1316040327b336b13e03af0cd0a9dd18cf8ec6178706b7",
+            "retention-first": "cc4527dccec168261a1316040327b336b13e03af0cd0a9dd18cf8ec6178706b7",
+            "shared-probe": "5db3a6d4c9b97faf3ebce0a84b1c9936051ca4d9254f9eac11fa9abaed086bc6"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "c3ac4fb1c0b8c7146b2e90149baa3b222ad6a130fc069057be0f7c94b80a63b8",
+            "retention-defer": "5b0d62407aa114bf5c71e4b7acbe25a5275971ab88cb4379b93295c629cbeabc",
+            "retention-first": "5b0d62407aa114bf5c71e4b7acbe25a5275971ab88cb4379b93295c629cbeabc",
+            "shared-probe": "2c3353004956713e1cb729a6519bfe048a2f7349dcfa3fa1c1cc6365348cbfc2"
+          }
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "gain-defer": "9c6a4d19cdeecee4c1a9fac96462ead1c5d3195f92b3a46d440129f0bd4bb61b",
+            "retention-defer": "cae93fca59dd3b30502dc16f91b7000c4573182d2f7b84311858f90ad2687083",
+            "retention-first": "cae93fca59dd3b30502dc16f91b7000c4573182d2f7b84311858f90ad2687083",
+            "shared-probe": "c3c3bca19607490b589e54e764729d9cbf3d8269cb16831963d6cd420780b855"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "c9f40d73754daff4f9cc45aecf154bd2713fa319074e1986bfa62a54b6c6eeee",
+            "retention-defer": "1f3eeb21598a348a30a9101c9501edf071a9dadbed566ae3030989b393610283",
+            "retention-first": "1f3eeb21598a348a30a9101c9501edf071a9dadbed566ae3030989b393610283",
+            "shared-probe": "d051c053d70ecf68335c072a650061facf676912e7196d76771efe1a91e2b2d8"
+          }
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "64f260f5ff1a2ff28f8d4a8541ac6832ffdc98ebbc106f3cd4eb9c6dbfc608c4",
+            "retention-defer": "8702402343bc489afcf312dbbc9bf1b4e1c14d78d3d70030231b140109f73128",
+            "retention-first": "8702402343bc489afcf312dbbc9bf1b4e1c14d78d3d70030231b140109f73128",
+            "shared-probe": "1c9f53f2004807e2b79c0596cd520bf65b0465b1782364cb55b34e12742d378f"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "29b14bf0ec8e161b9b155f3e30a6286c0343b36eb6956fcae83b33d52739f9e2",
+            "retention-defer": "29b14bf0ec8e161b9b155f3e30a6286c0343b36eb6956fcae83b33d52739f9e2",
+            "retention-first": "29b14bf0ec8e161b9b155f3e30a6286c0343b36eb6956fcae83b33d52739f9e2",
+            "shared-probe": "29b14bf0ec8e161b9b155f3e30a6286c0343b36eb6956fcae83b33d52739f9e2"
+          }
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "gain-defer": "9319e48e817a9497b771c6a15296fd76835fb645048fe79c8fe6c74726a06411",
+            "retention-defer": "6398751151754c08c977c30fe7bfc0470a2d479d70f72d84c0f3acf4e236df1e",
+            "retention-first": "9a4a24d9c40a4b8c32c2ebe2358ad90e4dd42c51630f76e9b8102eb85666ff70",
+            "shared-probe": "9d1a77e903408034cc72954fae145416bf1f997181f8efa061a5f09107ae88a4"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "8acd654e6ef077d492147d5a608038d49de14eb81831fd417b444f47bc08f01c",
+            "retention-defer": "95ddacb5c1e52824c87b4fff39fe01918ddb975cce11a7d4cd5b847ce4e8df44",
+            "retention-first": "6419c18faf5dc2f6671f7c5a1b98a3326696210985a9ee11653ff111ac33741b",
+            "shared-probe": "70276613f59fc29ca1730f73714e6047e57a048ecc79767a02522e46570d5f53"
+          }
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "gain-defer": "15a420c60c896809014a5dd610bd9378df71f8d3cdad5d727c29dc8c056f9681",
+            "retention-defer": "579ea6fccfa8a274dc230aeea8f5431630ff11a59d4bb97b6341b25a213a4648",
+            "retention-first": "579ea6fccfa8a274dc230aeea8f5431630ff11a59d4bb97b6341b25a213a4648",
+            "shared-probe": "1d58ad9a4da071411c12bfe5a106bea453f86049e10b64649dd6a47895f498f3"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "69838f159f430193ca5e405257159639ddbc6da66fa6db22da13cdbf91bd159a",
+            "retention-defer": "69838f159f430193ca5e405257159639ddbc6da66fa6db22da13cdbf91bd159a",
+            "retention-first": "69838f159f430193ca5e405257159639ddbc6da66fa6db22da13cdbf91bd159a",
+            "shared-probe": "69838f159f430193ca5e405257159639ddbc6da66fa6db22da13cdbf91bd159a"
+          }
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "gain-defer": "dd48bdfaae9bda4f23b40de83ad507fa54ba8aba11b8e4e615a4124051b3b05f",
+            "retention-defer": "b941be90aa231fc030fc3f4c6caa4e7519a21478edcdb542843f22a4bb2dd8ec",
+            "retention-first": "8391689700145001e5910ea0a65dad07e36a9bb822c37514f4f97097cfe4fd4c",
+            "shared-probe": "92c3832c1a0cdbe5e356f58151d5550841619642a3f4f6abf133ed795c63f128"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "7bb038b8f79bf6d00a92df072e8df61200303cf34ee83dd9925b4b398f065d60",
+            "retention-defer": "2c7dbc0b635350fcc82da88d940e109a3b162b820e4efd3a26ecafdbf9ea4aae",
+            "retention-first": "cfd345da7cbd366da7e4ad6120b99fc0d5650828c157415c10e8b2be6d2891f0",
+            "shared-probe": "26fc45b6ce542261e2addfaf359234a7680f1dd87ac166e0edc7c524ff56b987"
+          }
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "5fad32740e1ef50262068eedee1cbb6ecdf0c116347a5c9e3324daa747f340d4",
+            "retention-defer": "a03d29ae2c07d2c33c703d5d1718cd0e860854f5b13468aa51f93b5b15438379",
+            "retention-first": "1d480e43f47e8ca5a572869ae0a8c81026f6f279325d4ba8421d9fe8c6d5829d",
+            "shared-probe": "72b221eddd3b9d6553b77a9045e12ff6c8dd77249d74969b2148769c8c277620"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "9f026037fc858148291c4e3456732a2a9d58bdd71c1515b2ddefa08970163306",
+            "retention-defer": "f298d87357096fd1eafd2621511c8dfac5808208bd11eef44d7da743fea4a37b",
+            "retention-first": "23cea1cf63d9927bdb55a738b4376bdb3e119301422aedcb90559be6d45e0d96",
+            "shared-probe": "561c39219aa0c13ca4f711f8a10931d0262a8feb9795e7e9d6c6078544580707"
+          }
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "gain-defer": "7cb73abe56e14f43371ef85c41bc295a9ec65d6715086057cb9cc947209ff761",
+            "retention-defer": "d6012b4f4f247d7abd554d3917e4df316a778d8c4bf84bd88248d01905109119",
+            "retention-first": "d6012b4f4f247d7abd554d3917e4df316a778d8c4bf84bd88248d01905109119",
+            "shared-probe": "c0b3048a7cd82bb204d3709611c258aa93b1984b13674aed997f94698c02d47b"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "5a19cede39fb37e65e3931b81f019b590970b152e222300d06923ccee1281013",
+            "retention-defer": "f852fbfbaa5813977425e260be8bbec49ab70b48475b78db6fd825d3279c600f",
+            "retention-first": "f852fbfbaa5813977425e260be8bbec49ab70b48475b78db6fd825d3279c600f",
+            "shared-probe": "739b3d2da0bbdbef453a213f48320b4629d4de5ddc0f8b5edafbb5284fbf833e"
+          }
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "870fa1a85a5a33320506304214d7f1cab04771c6e5e01479353da67c61c75aae",
+            "retention-defer": "a48c4b011b25b6612eb4af21ef73f233875843383cb0044549a234ecac1d613c",
+            "retention-first": "61238c56b9cbba8950102ee26f9e03a4f30f1b090add41bb5bb10a53fc510548",
+            "shared-probe": "0ced5bf29946a5a112320730a78d2ca09c3e26f768c880585f257fbe2300b8c5"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "01d4339fbd0605f6bc8fde8fb09f00439c5b76b5b2106724fc30acdabeaa9d81",
+            "retention-defer": "abda4041fc5b0b68de9d36f117f5df902425166811de2561fceab1395e9a2dee",
+            "retention-first": "e6a433c16bb1d90c2735c35ffd61ec257750936b3d24a1b8860f20d24ad5df47",
+            "shared-probe": "8f14786be77cdf95ed1a26a3f90c95fe65accff102b7d5d8bd6ee862e70c5191"
+          }
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "gain-defer": "64f51c2bd5a75a7c445db07e56a1d45900b575a6b730f874833029d4a9cf1beb",
+            "retention-defer": "64f51c2bd5a75a7c445db07e56a1d45900b575a6b730f874833029d4a9cf1beb",
+            "retention-first": "64f51c2bd5a75a7c445db07e56a1d45900b575a6b730f874833029d4a9cf1beb",
+            "shared-probe": "64f51c2bd5a75a7c445db07e56a1d45900b575a6b730f874833029d4a9cf1beb"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "2036ba9d425d34f8d4432e6b5ccd7bbc8fb53932589001ac45b34f712f599caf",
+            "retention-defer": "2036ba9d425d34f8d4432e6b5ccd7bbc8fb53932589001ac45b34f712f599caf",
+            "retention-first": "2036ba9d425d34f8d4432e6b5ccd7bbc8fb53932589001ac45b34f712f599caf",
+            "shared-probe": "2036ba9d425d34f8d4432e6b5ccd7bbc8fb53932589001ac45b34f712f599caf"
+          }
+        },
+        "moral_disputes/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "d15222568239edbe89b768198ebe4454bd3921902ec8f3befb048f856eade400",
+            "retention-defer": "931a008bcfa6e5d511c2fbb0662ceab9fbd0688f41f713f1b98cd7194107490d",
+            "retention-first": "931a008bcfa6e5d511c2fbb0662ceab9fbd0688f41f713f1b98cd7194107490d",
+            "shared-probe": "72ecc9fdc59a4005c48e3be0b13f525535312f1f5e0de0e68e23627cd300bb48"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "514ac4a07b43c03bbedc46f5a04c12ff142edcd8347ed871ab253c0dcfd7ba82",
+            "retention-defer": "9baff2c2a90818947a9209957186b1dd289de95408af40334f328e5d243e1223",
+            "retention-first": "9baff2c2a90818947a9209957186b1dd289de95408af40334f328e5d243e1223",
+            "shared-probe": "514ac4a07b43c03bbedc46f5a04c12ff142edcd8347ed871ab253c0dcfd7ba82"
+          }
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "gain-defer": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34",
+            "retention-defer": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34",
+            "retention-first": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34",
+            "shared-probe": "459c7c605872bc2498d79bcdfe0c17b221a1f07abe390fe44e45f41de33c8a34"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "84a1e6095809396d902984b8bd2af6a2fe9146eebfd5b1eb117f9541a375ee39",
+            "retention-defer": "84a1e6095809396d902984b8bd2af6a2fe9146eebfd5b1eb117f9541a375ee39",
+            "retention-first": "84a1e6095809396d902984b8bd2af6a2fe9146eebfd5b1eb117f9541a375ee39",
+            "shared-probe": "84a1e6095809396d902984b8bd2af6a2fe9146eebfd5b1eb117f9541a375ee39"
+          }
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "gain-defer": "23a3f2e3f906264c8e281250c21ab59ec3210b6d7df0b9b01d59780bf8c43b47",
+            "retention-defer": "d88824cabce3b2910b25ed7b65001511412c441804443bbfe2c29fe02cdf34a0",
+            "retention-first": "40c269157fba32e5fa25a424fecfcf892e97a5b94a9edf09f3ca468ec8ed3e57",
+            "shared-probe": "04590f13f870727801b61cf12b5a532d8cb8b186c52430a4fa623c9064f86a9d"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "10da330a2afe2b1e7fbca45777433db55d572b69b8d3487bb2daca1b2ccb53f0",
+            "retention-defer": "dbfe8d09c0a5d6558bb6d1e67de0e395cd8e8cca43e966a94ddfce2da1a8b1ba",
+            "retention-first": "2aa110e68437b589008761b6e95220dbdb89d29ef3ef1b65140ee85d012e49a4",
+            "shared-probe": "651849a4a766d38659c76f9e298e205f49775363b5964a557ab1afc5e5893fd5"
+          }
+        },
+        "professional_medicine/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "gain-defer": "6b3e2d6e529b32de0356317910220f91753a28bdbc3c0ff5a693198edee837d2",
+            "retention-defer": "fad52d198ad2c1e4bea3179560240ca99d26378a80cd2ea9629f86657efe8dd8",
+            "retention-first": "fad52d198ad2c1e4bea3179560240ca99d26378a80cd2ea9629f86657efe8dd8",
+            "shared-probe": "5f7818af26d067e5cd23a1ba1434b37f3f93d3b72138ebfb0ca7da657f073239"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "9f51a1ca8ccde0ab7d632300da6716b86d8275e1ab3650b2c4d50ca23054d360",
+            "retention-defer": "9e0e3876081f505532528a84d51a530a4ceb603eb700039be6bb8721554faaf8",
+            "retention-first": "9e0e3876081f505532528a84d51a530a4ceb603eb700039be6bb8721554faaf8",
+            "shared-probe": "6c8486d7a15bfc98e530e7c6a6306abfd76a436d42b8c5c53bc214390bfa83c6"
+          }
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "gain-defer": "4d6b9f01f79c7df3d96f94a2d36cb1c5310767e8f89101e15c18cf09a7826137",
+            "retention-defer": "d8bcf45a21cf5f8f7d5d84b90e5c60105efc660f2ea49865f811b2df5a011158",
+            "retention-first": "067c071e5da907c560e3ebbdab008b691ff990a8c5aa64c3a4afc1aaf9ff4c59",
+            "shared-probe": "758ded29a6278fba8076854fd2038875facb5f91fb07248b133917db9b0eed1c"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "1d5a947a42c0add1451499ee0dc7f52296fe7464887b9d1887fced6d470b005b",
+            "retention-defer": "1d5a947a42c0add1451499ee0dc7f52296fe7464887b9d1887fced6d470b005b",
+            "retention-first": "1d5a947a42c0add1451499ee0dc7f52296fe7464887b9d1887fced6d470b005b",
+            "shared-probe": "1d5a947a42c0add1451499ee0dc7f52296fe7464887b9d1887fced6d470b005b"
+          }
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "gain-defer": "02c00c6e662973711fc98e182267207654f0f6bfeb8a6a15088cbdb5d1f09143",
+            "retention-defer": "687eeb45c3084e77f2a1102a058c933ee1c0772c0e638405ba6b3cc06ab4923f",
+            "retention-first": "687eeb45c3084e77f2a1102a058c933ee1c0772c0e638405ba6b3cc06ab4923f",
+            "shared-probe": "51334fb229a6b76ab9dbb02d8085bfe688d858fc0482cad869cbfb55214fe9e2"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "69dac6af300547848b18d1014b22aee26fa957b0a8062391a4f6ccd9500b73f1",
+            "retention-defer": "ad8d25b7545bba82def63cf9f2d9cd4358e7c776375faa2e7f9c13c749554025",
+            "retention-first": "ad8d25b7545bba82def63cf9f2d9cd4358e7c776375faa2e7f9c13c749554025",
+            "shared-probe": "752951fee4d090bd0853ac0b0c18e558dae7c91b240bb12b01d1527a3ece8f45"
+          }
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "gain-defer": "1e041a4b49f61b8325348e5dd75df5905372280cd7214b4fa6fb350fab444d49",
+            "retention-defer": "9956fc799a7dbb32dc11be4628fd3decb350b42ea3f0909473b9ac798385a883",
+            "retention-first": "9956fc799a7dbb32dc11be4628fd3decb350b42ea3f0909473b9ac798385a883",
+            "shared-probe": "ed8f737900efd19f21d2d852846a194b7ccc6d642e1c55255e2a1ca52080444b"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "76ce05236b947c03a619486be765051bbc37aef0120b862dab29bede7bfb71a5",
+            "retention-defer": "61f4fce273a6502137a4867ddec3542701e8ef5f2a684a7bbcdb8fc997acbfd5",
+            "retention-first": "61f4fce273a6502137a4867ddec3542701e8ef5f2a684a7bbcdb8fc997acbfd5",
+            "shared-probe": "7b99dc07b34c0a7d340dccc9cda7b3af635733414ea59a311f86fe649dfd08c9"
+          }
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "gain-defer": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa",
+            "retention-defer": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa",
+            "retention-first": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa",
+            "shared-probe": "1e33cf013723b6c64e8cf34dc4875e0f751decb7965eeede00e504113219fdaa"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "b63ee97021060bdd1d5f8375524c77c39c7c0c9ea8a4c2156254b3639bb23494",
+            "retention-defer": "b63ee97021060bdd1d5f8375524c77c39c7c0c9ea8a4c2156254b3639bb23494",
+            "retention-first": "b63ee97021060bdd1d5f8375524c77c39c7c0c9ea8a4c2156254b3639bb23494",
+            "shared-probe": "b63ee97021060bdd1d5f8375524c77c39c7c0c9ea8a4c2156254b3639bb23494"
+          }
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "gain-defer": "06ad8df720606204bc7586e47adadfee0f97ee54361f908a4f6ead659256ed6e",
+            "retention-defer": "99826cd9d9c09b80a8540fccd9b578997fc3048e3b52222fa4cc26df0ade4509",
+            "retention-first": "1e8ee549fb80d65c872d70c1d63258e0c4e108dc2a2591605d6d0e17bde0e5de",
+            "shared-probe": "f346f1ea30a4e9d1da52c2d0247785926cbf51f5d91252032f673b0e817703f8"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "35b1566d70cac0732e73dd3f7d4a268dd14c3ebc523dcf39107da51aff40c28f",
+            "retention-defer": "a42c61dd95f938da37dbb37d8017e64c7108eed4c7011ad2d82f27e53f4fcd33",
+            "retention-first": "b7c3fa8537ced7ba0b20ec238827715faa30d751079fe8b1f14ef31f53423093",
+            "shared-probe": "25d4cecd9c066f050a86f1a14b02d3e3d419ca6336b1f14f9e73253343cca13d"
+          }
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "gain-defer": "f51a606a988566fb136afa331b0292a2739d1d38984af7faff2462cbcf6776d3",
+            "retention-defer": "37f13b240d46b89dd537d4338c2f32157d12c9ed3c29b4e5daadc42fe49efe7f",
+            "retention-first": "37f13b240d46b89dd537d4338c2f32157d12c9ed3c29b4e5daadc42fe49efe7f",
+            "shared-probe": "f51a606a988566fb136afa331b0292a2739d1d38984af7faff2462cbcf6776d3"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "retention-defer": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "retention-first": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "shared-probe": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+          }
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "gain-defer": "796603d672b107897982fb3e51c2fb59738548a589b8b4b600e115fd360c7b33",
+            "retention-defer": "796603d672b107897982fb3e51c2fb59738548a589b8b4b600e115fd360c7b33",
+            "retention-first": "796603d672b107897982fb3e51c2fb59738548a589b8b4b600e115fd360c7b33",
+            "shared-probe": "796603d672b107897982fb3e51c2fb59738548a589b8b4b600e115fd360c7b33"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "retention-defer": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "retention-first": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+            "shared-probe": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 56116,
+            "changedDeployment": 11,
+            "changedNominee": 55,
+            "holdoutDifference": -19,
+            "holdoutPasses": 56075,
+            "lookupDifference": 35,
+            "nominations": 106,
+            "paidLookups": 12827,
+            "promotions": 18
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 56116,
+            "changedDeployment": 0,
+            "changedNominee": 1,
+            "holdoutDifference": 0,
+            "holdoutPasses": 56094,
+            "lookupDifference": 41,
+            "nominations": 154,
+            "paidLookups": 12833,
+            "promotions": 27
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 56116,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 56094,
+            "lookupDifference": -21,
+            "nominations": 153,
+            "paidLookups": 12771,
+            "promotions": 27
+          }
+        },
+        "cap-19/gain-2": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 56112,
+            "changedDeployment": 2,
+            "changedNominee": 29,
+            "holdoutDifference": -29,
+            "holdoutPasses": 56065,
+            "lookupDifference": 87,
+            "nominations": 62,
+            "paidLookups": 9049,
+            "promotions": 1
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 56112,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 56094,
+            "lookupDifference": 17,
+            "nominations": 88,
+            "paidLookups": 8979,
+            "promotions": 3
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 56112,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 56094,
+            "lookupDifference": -21,
+            "nominations": 88,
+            "paidLookups": 8941,
+            "promotions": 3
+          }
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "anchorTotals": {
+        "cap-19/gain-1": {
+          "rotating-probes": {
+            "changedNominee": 179,
+            "holdoutPasses": 26647,
+            "nominations": 260,
+            "paidLookups": 13453,
+            "promotions": 52,
+            "searchLookups": 10294
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 26619,
+            "nominations": 218,
+            "paidLookups": 13583,
+            "promotions": 47,
+            "searchLookups": 10602
+          },
+          "shared-probe-race": {
+            "changedNominee": 120,
+            "holdoutPasses": 26621,
+            "nominations": 116,
+            "paidLookups": 14020,
+            "promotions": 27,
+            "searchLookups": 11473
+          }
+        },
+        "cap-19/gain-2": {
+          "rotating-probes": {
+            "changedNominee": 114,
+            "holdoutPasses": 26624,
+            "nominations": 158,
+            "paidLookups": 9599,
+            "promotions": 7,
+            "searchLookups": 6307
+          },
+          "shared-probe": {
+            "changedNominee": 0,
+            "holdoutPasses": 26630,
+            "nominations": 132,
+            "paidLookups": 9751,
+            "promotions": 7,
+            "searchLookups": 6527
+          },
+          "shared-probe-race": {
+            "changedNominee": 75,
+            "holdoutPasses": 26628,
+            "nominations": 67,
+            "paidLookups": 10094,
+            "promotions": 1,
+            "searchLookups": 7055
+          }
+        }
+      },
+      "panelPathHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "ebb33af501e71624876c7dcde496953c26dc8232d7d371d1a9a932e5a3560c55",
+            "retention-defer": "0141574cc91ab4492adf0d1d67d51c8aa390a539bdb13e13d1c26b0344ac705a",
+            "retention-first": "d43b2118acfa6c66c153f3ecdeca79779e9c11879b679ef7fed008abf7e4bbf7",
+            "shared-probe": "08a6facc97b0fda2e1551df16d8c76566ed77b01de7f8d516b2e30473b83c44b"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "9afca4fb57416e760159f815a7505e6cf57d7dc721da87d9c51cdf002605f8c3",
+            "retention-defer": "ee78d7b11b605ad9c83e0dc71919b41d1306b982afb568e2bfb2ee4a4cee5eae",
+            "retention-first": "b2200b513b0ab28cd034a09cf2ee6749eb12159bdce18ccebb5ef4b5c9ae7090",
+            "shared-probe": "c8f23e74f284d6f155874bbea8a436a6242c05a129ac6b2c7e5bc9ba3e1824a9"
+          }
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "700d2bf4c44729cd7f31129a7c677617044036805e1a2bfa3624bdf1ee9838d9",
+            "retention-defer": "cb3d6f13f3cee764d266a392f1610bbd9eddb9805aea7c917b945556539a3ae5",
+            "retention-first": "889e50f3a55e8480ef1a362555c97fc11e3e240946354ea2b3a3f6c5170a0e68",
+            "shared-probe": "e1c70777d64cc2e002598024ca0e878940d912b044dd1938ad6c110b3a945871"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "ed455966a0f8a7c70c817e8252eab17be41f7d72ceb171fb4790ceee3e3fc437",
+            "retention-defer": "94321bbe0ccc21ccb10ef4ceca6d238074db8907038ac155a9d366d87a3e1ac7",
+            "retention-first": "69686dde6da65a4858913f3d34df28390a62173bd24863c1e34a3e9b28d50f2f",
+            "shared-probe": "c5a3b33ece55ba14654b0e9b79718d88d63324286a8a8617a7dec195671f92ef"
+          }
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "cbebe10fa9b1aff0caad79f096ab5b3cf6f360b354880b85190e574182041b01",
+            "retention-defer": "78b1a3ef7f6ab7dbb117336ee956c16751d91e1cf7ef76e7f12e409277f88e3f",
+            "retention-first": "78b1a3ef7f6ab7dbb117336ee956c16751d91e1cf7ef76e7f12e409277f88e3f",
+            "shared-probe": "1ab872eade75aef53f81afaa62a6cc5920d1342bc36bd3bbae03fbf118420a39"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "a4324118cf955d34a5e8c8351965d209a333c2a44e5c0c4774995fafaba804a8",
+            "retention-defer": "54e4c22cf8e93015b8eca168d2c6370f01a2c084979636dcd40d533fcffe6ab0",
+            "retention-first": "54e4c22cf8e93015b8eca168d2c6370f01a2c084979636dcd40d533fcffe6ab0",
+            "shared-probe": "87831af5a26ac907434feac32b72d6eb232f6c08a6bcc0d8da4f0a6fc84e4bde"
+          }
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "d17da7e52616c79f8b67ba5b5a71f38de462e111c1430e2e2bf6088d03d47802",
+            "retention-defer": "2a48ffd60f17ebb53b53df0a15a7f42a60b3ce936dbbbdaca9ddb6b4dc4863b4",
+            "retention-first": "f50b75b91589fa94c3557505b77ad7345b73f500f484e1d592f436f74f7bb4ca",
+            "shared-probe": "0c5accc4e21a113f91414ea3789e8aa3b94b4626c6c452c3bff05ced2f5fcd43"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "5a7575e3a86001479813e1c983c11941fe6ac1c0612dc89e7553543a0b3c4b2f",
+            "retention-defer": "2b297afa5a6561e473f5ea17c1727efad78ab1721d818f19127bdcba48cbea4d",
+            "retention-first": "2b3b523156150267f55af1ce4bf9cac1a85271305174ebef2b02ccf49384d11a",
+            "shared-probe": "3dd8a33b38f8be84467590ef96744bd64cb2e449184aa1e1c7dba73511d81413"
+          }
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "28e8fe61320609c218fb3d86ec6bb798a10b7b9270d5312d1e88bc588a609b6f",
+            "retention-defer": "70600e201a83dcdd769954cfbe5993b33839f9adef505d4e5ffb31b3811a0d3b",
+            "retention-first": "70600e201a83dcdd769954cfbe5993b33839f9adef505d4e5ffb31b3811a0d3b",
+            "shared-probe": "d614a18a13a2c8906113f22458e26e5820a1b7dbcab5bbb32a83eda18004d0ad"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "124bcf7f6dcd4a0af3af1019d5be2446e2ccbdc1c96332e8ad6b969c00aab649",
+            "retention-defer": "cc6a5d8090defba55f5eec13a77133fa830a04e552a21af1f5ba99e58fec4bb8",
+            "retention-first": "cc6a5d8090defba55f5eec13a77133fa830a04e552a21af1f5ba99e58fec4bb8",
+            "shared-probe": "ad0f6395a32029246b874014f5439dfd76bc4044996f6c1be1a54f23e71b2553"
+          }
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "f808d4fb7ee172b8f81f1ee928881a47316751fd480fed32e7223e66b76941ed",
+            "retention-defer": "7281b9ecddf1749201a688886f68a28b77a9e52ecfc480c2b7c3aa66a04278c0",
+            "retention-first": "a3023a08abdd34e3eb62878a967a7aacd11aaeef2615e9aa212aba7fed0010db",
+            "shared-probe": "4d35423008ec1c3b6e89150696beb77b244c16bf35583cb4ef2acc1246f9ad04"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "5d2d36c3c8a0cc00f0f17ddce066b3fef9579b8cf9bcdaa267dc59b83f13edfd",
+            "retention-defer": "3a285c0d2f74d52ae7503f4879e8f586aa55c7280c10c0d8b88a649801a25d0c",
+            "retention-first": "f7c5677d9eeb91b5e0b9868719368cea1df0e6be402994387e62499e1d96c33e",
+            "shared-probe": "d7f13ae20521592e40616c5b5621fd2ea2a96477d865cc5faa5fb4a0f1ebacec"
+          }
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "ff99ca2f8da2a061dc161b0676b2cc3651888a133db51089c3bdcaf6bd97ad01",
+            "retention-defer": "c9b64616c1ce7ddef141ee15250aa703bc6363a5fd352d1b777e5411b40d1bdc",
+            "retention-first": "c9b64616c1ce7ddef141ee15250aa703bc6363a5fd352d1b777e5411b40d1bdc",
+            "shared-probe": "953206fe3aaf725eda7f688c68c940130bf102a9a5ce0066a3d66313e4af9043"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "97624ffbdc824b0862e2e16ecd8f7d55c13191293db01a84770bb58c57f17230",
+            "retention-defer": "d418d2d3adb665fa5ea26d5a75e210649989aa0f32fc3712c26be0b5dff1e209",
+            "retention-first": "d418d2d3adb665fa5ea26d5a75e210649989aa0f32fc3712c26be0b5dff1e209",
+            "shared-probe": "ca980c59269b95f198eae0c25bf367f52efff09ac725d44bd43ef6ed1bd4c32e"
+          }
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "gain-defer": "ebe43cb86027ba88ea32cb59332d3c066c6c8d75ed01bbb6a0049bebc50ea37e",
+            "retention-defer": "fc61ef8c66f241eb140da962c856f0deaec70ea648e4af4ff2bfeaf245b33d24",
+            "retention-first": "af719af82b5c62cd6555f0eefe07f4bb073e31964105de86ce956c61872c0540",
+            "shared-probe": "58971baa7c0e64cb7a61729866919173933fb2437830af0a5e8177d83af42b67"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "f9edc2922968caabe4f6024209a7cf4f80687e552fec80715f66b571f88dc134",
+            "retention-defer": "f70457450a2c547ebcfe41601de5c2afa219164671752a7bdfb0c20f1aaa92e8",
+            "retention-first": "cfc035b214a93f4a20d42e1786e975d8220799e85386edcbc0d7f912809e361c",
+            "shared-probe": "090f602e20714c497ff97a964afd50a23f2942e816f9a89ac98255910d2090cf"
+          }
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "46934a8d7d1c40d2aa70342083812ad6044779797f8c309ed5391c639587e697",
+            "retention-defer": "e1485a58098b205059d3a2eb518e21c4b7b67c7d48c74a6efdca431208fe4f6c",
+            "retention-first": "e1485a58098b205059d3a2eb518e21c4b7b67c7d48c74a6efdca431208fe4f6c",
+            "shared-probe": "4f88bcefa287859becb1295608fce40c99be8c5337fcd7c3b737b256bb2b0e69"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "7dc426d06548f78ad3301575b97b57453bd0de805d2c3cc33f3459e0d302ebeb",
+            "retention-defer": "7dc426d06548f78ad3301575b97b57453bd0de805d2c3cc33f3459e0d302ebeb",
+            "retention-first": "7dc426d06548f78ad3301575b97b57453bd0de805d2c3cc33f3459e0d302ebeb",
+            "shared-probe": "7dc426d06548f78ad3301575b97b57453bd0de805d2c3cc33f3459e0d302ebeb"
+          }
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "gain-defer": "d99f27e196f0d1f06bdaa8b32c980798fcacc7b74eccd1fb258663f94fdec9e1",
+            "retention-defer": "e33df6de9cc0264bd014e3f730edf0fbae86c4e06fac8598aea7e5528473f509",
+            "retention-first": "a115958c80fb16732b96895bb52c57df9fd9d68c8604e3f214314d4924ff317f",
+            "shared-probe": "bae0272b60b6a0206068692cccab5e1453be9f6a40bc05a09e2ce8294960ae0e"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "1d9c28b12c8164af328d8661dabd6f06b8f3c4dd6719bbdd8b1942d34d03b663",
+            "retention-defer": "6806cf0d1b059ed001c628d020fc7814e46271537eefb29c0187c171d785f53c",
+            "retention-first": "11df6777dc730b941b5b026fcdf2ccb96cfc12b2e38fa1d5a83abfe9024993ca",
+            "shared-probe": "d5390746e4188d6108e8aae0ee369a642d18db714790f73b5130e0242b623705"
+          }
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "6b7c2d2925fb6b888e5e313f83730b2171d99169c7264f1ccff57fce8c35cecc",
+            "retention-defer": "b27844ecea1278e4c9be0357fdb237402b3a8d873f601794bb91d75caea093da",
+            "retention-first": "c2c8056062c1bcdbb81c9897d48ae8c290af99f5871f3807ab985ac906f20a90",
+            "shared-probe": "8a423fa51e1edfd5f79c5d9f04e50676b7c0ecb5720b3ba3f2a5f00d3573878a"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "656f0d533dded5cf6b6442c7a334e225c7b18d5a9d729cec724d8587ace5ed00",
+            "retention-defer": "e05a815313f98d74b0d304d553abcb77608885797debd31956c48acef8911ee5",
+            "retention-first": "993aa70273ad4275f720b0088cffa7f92496529c115f32737e52cab7e84d95e9",
+            "shared-probe": "bd8bbf9b7e4e0b3bf47ade443d6a477c33e681130ea6bee2dc22edc8316c9e46"
+          }
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "e1e07c612c5da1e61080b09d5ad32c3a59a2d2f01f03ba2ac48b484c4c91ecfa",
+            "retention-defer": "0c0c0e5a3760073ed3fa15177def0af7c099065cbc031f6669779644c87e4bf1",
+            "retention-first": "9e52ea6b683b2842c3b46f35494c719d97d94c538a32ee69c5d5e6df3d848097",
+            "shared-probe": "a03811d3f8ccaa8cd971d5dd3dd6036ffdb673c933bdc58e98fca7068b600a8c"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "f6ad2b5a47d541fe31e0071d0614fe5533212335ffe52e4baec08f9f01cc6111",
+            "retention-defer": "1ea5f0a1f7e64fff2f06b33d6aa038cc03978589f7c3fc4a5f382e6dc7891eb5",
+            "retention-first": "aa3b5bad2c840867f46e60a1a51a9a7c9fe24ded07502dabb690946b38ef309a",
+            "shared-probe": "bbfcafb66eef6719e2fcc904e3fbce6a7fd32bd48634d8a1254c324da4162fe0"
+          }
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "a17c8b7899197a8656136ecec07c13f6bf1bbb08931e8062da739940761ac848",
+            "retention-defer": "14faf1c2f676635e03d3f0884723e988fec07a5ecf175b96c1be279e23f89963",
+            "retention-first": "14faf1c2f676635e03d3f0884723e988fec07a5ecf175b96c1be279e23f89963",
+            "shared-probe": "cb74d497a9b79958c0955b4b2bc0667a0f1112d57206e6ac17003da597888a90"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "602a049226d7b6adeb5311591f6cffc98963b9252bb24abb56a040154d476cc5",
+            "retention-defer": "602a049226d7b6adeb5311591f6cffc98963b9252bb24abb56a040154d476cc5",
+            "retention-first": "602a049226d7b6adeb5311591f6cffc98963b9252bb24abb56a040154d476cc5",
+            "shared-probe": "602a049226d7b6adeb5311591f6cffc98963b9252bb24abb56a040154d476cc5"
+          }
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "gain-defer": "edbfa38dded07920b8d6c1664b1874753d57350ad7a1fdb712a45c5d10d2cc8a",
+            "retention-defer": "176828ec8eea6be1ab5167253fd8076f48eab69d1eea038ab87d900cadcf4baf",
+            "retention-first": "721206e9545b58e66a379d4018a5cf19db03616adb7c69805b3b5205c97c822b",
+            "shared-probe": "cddcdf11ebcfc2b4cf5d34ecf3dd4523c8acce79d6ffb85b87715f9f62dc8187"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "ab0576837bf0e3ab0bf4283725924469dd5b29b46071b6484a8e9f12ac6b08c1",
+            "retention-defer": "3fa033de79c9d724bb614aadf5cc7122eb3a601ba9d377fb5c02fc1db5298599",
+            "retention-first": "169fce14059f2ebe7c7d34efed931d1a4ddd1386919bb8f2161ff21137ef06f9",
+            "shared-probe": "637925974062da5d1634aabfca5c39bbdd97fad0c9aaf8259554e353dad890a5"
+          }
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "8a5df18a3394921b3510b8a903bb71ded7a0542615a5a74bdc934c1affc9718b",
+            "retention-defer": "7ae8f6204790f1959ee931115b666f06b8d881b7210de2213ed2ef5e11d2ca94",
+            "retention-first": "7ae8f6204790f1959ee931115b666f06b8d881b7210de2213ed2ef5e11d2ca94",
+            "shared-probe": "b427092b1aad0012625e986005c5db3eee74f6f499a35a1e7ba6b842d461aecf"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "27c25cfbadc993b3d3c4396d3b00f24bfe23a33da5c4968397abf205dee8e21d",
+            "retention-defer": "27c25cfbadc993b3d3c4396d3b00f24bfe23a33da5c4968397abf205dee8e21d",
+            "retention-first": "27c25cfbadc993b3d3c4396d3b00f24bfe23a33da5c4968397abf205dee8e21d",
+            "shared-probe": "27c25cfbadc993b3d3c4396d3b00f24bfe23a33da5c4968397abf205dee8e21d"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "gain-defer": "91df7a35370da68aad2c585b60d1708f52e5031f0e1c0279855e69d25b4013a8",
+            "retention-defer": "3397be289fd15c5ee5195ccbdb1728e82591ccf703fbbb73474be0eb92f92414",
+            "retention-first": "3397be289fd15c5ee5195ccbdb1728e82591ccf703fbbb73474be0eb92f92414",
+            "shared-probe": "38622cb92cca408c411dec924b4a15b70cfb0071685a5086c2629ab35b25f77e"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "bc611ad343ef4cec92deb943875c2df55844b04ab9565162fae5b8900133108d",
+            "retention-defer": "f142f146d6d358ef506c58b869d0e80ff87b4f8bcc9e1bb233d762581e7eb191",
+            "retention-first": "f142f146d6d358ef506c58b869d0e80ff87b4f8bcc9e1bb233d762581e7eb191",
+            "shared-probe": "6bc6d6be7f707cb193c14a6b8d9470f7dbb19ee01b37c1173ebd36f108496626"
+          }
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "41fbcd9a91980fa954788a1646ad29297126cb37998fbf14584748087df52eff",
+            "retention-defer": "1af0e2a682329a7c70b7ab8a775ad366c6ad751df4927fd6a80622319b20bc04",
+            "retention-first": "1af0e2a682329a7c70b7ab8a775ad366c6ad751df4927fd6a80622319b20bc04",
+            "shared-probe": "0d296f2ed541ccf7037405979e88c4d11525ec60575e373fb967ea47cfd35646"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "retention-defer": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "retention-first": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51",
+            "shared-probe": "76ed58fd58f47e76db77050be1ef90390832f0ef9770eda3383dea1e5b76ec51"
+          }
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "gain-defer": "819223b71f795174a4f52dec08b4b62ff52d7f2d45d7dbd75e9fb2ba60cacbed",
+            "retention-defer": "095601d3e21f8de317a7f3b294b9f8d534ff2ef490034df3e742d7f727e6b518",
+            "retention-first": "095601d3e21f8de317a7f3b294b9f8d534ff2ef490034df3e742d7f727e6b518",
+            "shared-probe": "c3a057bf66417e8c1751f320fbe7b62df214776f6c6f0af78516f3ff6a299a67"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "00622e70da8b107fad1b54182e521c7b3f2e484174a2e1fa0ad667ccdc4c723b",
+            "retention-defer": "47dbc5bbf38b02f8cc75619bea81c22be1c1d020882c93a32cd0e774156cba84",
+            "retention-first": "47dbc5bbf38b02f8cc75619bea81c22be1c1d020882c93a32cd0e774156cba84",
+            "shared-probe": "e5a820c8b314be61a23eaf31c80a16c5e97f91c7f1d243e65c4c8f2f41eb4c3b"
+          }
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "920342c9d0695806ea64bce49b58ab6b98645fc5fd0f5ab721a53ce351633370",
+            "retention-defer": "37aa1059bcb04600bb6a02484ac516bb68fc949b7c85952e01b67e73dc58dae5",
+            "retention-first": "37aa1059bcb04600bb6a02484ac516bb68fc949b7c85952e01b67e73dc58dae5",
+            "shared-probe": "bdc3525e9d1112a982ef153fe923b04c188a272a45f1f72c37d913810167f5c0"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "e283ecccb54de90f5db19f4d45d3181ed5f1838db69eb1778b3338e6d6028062",
+            "retention-defer": "5c1de2c810a5e1af2a60d53888cda1768ffe5eb188bb1e0fc481b782a6b4d2b2",
+            "retention-first": "5c1de2c810a5e1af2a60d53888cda1768ffe5eb188bb1e0fc481b782a6b4d2b2",
+            "shared-probe": "42dc517d5fe41f6dfc903bfe7e2035923a3376d638c898409322e0cf9ec52826"
+          }
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "228429ab465c6c12a032c2a33c666dd2edcfaa445f37277b09e7cf8762ac0bdb",
+            "retention-defer": "cb534e0edf185c5a03f06183ce6958e795e5ebcb08ed65f971ee84e4e929c603",
+            "retention-first": "cb534e0edf185c5a03f06183ce6958e795e5ebcb08ed65f971ee84e4e929c603",
+            "shared-probe": "adb8eb72299141b8eab809c34cc297c995e28d31541851553bd8f077189ac27b"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "f2b92b5b733e0fb4885096e8e03234113468ad5ef79a44fd54be79b10b6cce8c",
+            "retention-defer": "88f9676ba70ce73938aca43ffe9c126cd7f96fc9d342c42a6450a9a78c0f996d",
+            "retention-first": "88f9676ba70ce73938aca43ffe9c126cd7f96fc9d342c42a6450a9a78c0f996d",
+            "shared-probe": "8a8e031a33fd3f6098156f5019295c2290428e164df925df8a1af211b6ebd43a"
+          }
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "ecf5514ee1fab081972ce54e825a69a06107a0f7819237c961f485dd13cd8271",
+            "retention-defer": "646476bdc9b34e51e09e2ca8a80435880646a8e751f72dd2639cbd9a784da945",
+            "retention-first": "646476bdc9b34e51e09e2ca8a80435880646a8e751f72dd2639cbd9a784da945",
+            "shared-probe": "04ef40d4079850795ba80f6634fefd257b138e411385f104f9fa705b04f9c02b"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "1515e497c74c50377b23ccc3316bf819feb33405a7bc16a8cc6b5877b4e227ff",
+            "retention-defer": "1515e497c74c50377b23ccc3316bf819feb33405a7bc16a8cc6b5877b4e227ff",
+            "retention-first": "1515e497c74c50377b23ccc3316bf819feb33405a7bc16a8cc6b5877b4e227ff",
+            "shared-probe": "1515e497c74c50377b23ccc3316bf819feb33405a7bc16a8cc6b5877b4e227ff"
+          }
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "gain-defer": "5679da319f0331031f2181dc2384673506ad91fc502c3fbefebd88c091928053",
+            "retention-defer": "0e565a84b00725cf9993b3796d2b2979afac65f472bf43f0dfa3ab34e3397e5e",
+            "retention-first": "0e565a84b00725cf9993b3796d2b2979afac65f472bf43f0dfa3ab34e3397e5e",
+            "shared-probe": "3614b1bbf78c98a800aae68bc3be3b5896e5f768f51e9b8357e05352848a2923"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "77608be3905f09913bad36c910ee1d78367a54b0560500d7d014eeada5dee2b9",
+            "retention-defer": "989ed1d4a50749b55f799d8873e7e8a7dbfdf3aa1bae97fdfa6cdc1338c38960",
+            "retention-first": "989ed1d4a50749b55f799d8873e7e8a7dbfdf3aa1bae97fdfa6cdc1338c38960",
+            "shared-probe": "6d84aa1eca2f2343cb02ede8a2146406f2ec962f2687156c7a55ec58f9911153"
+          }
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "df77e727dedff388a841f30088b8463833ea2fafb405d2e607abe19a44906540",
+            "retention-defer": "95805b3b0fb6dc10e8577ef2c5800fd2ebf1e09146d426164fb2923076d9dd14",
+            "retention-first": "95805b3b0fb6dc10e8577ef2c5800fd2ebf1e09146d426164fb2923076d9dd14",
+            "shared-probe": "c82d7abbdd6c8a26459ccfcd56718a4851aa3700dca6b9458ddce82fa163139f"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "dc6ee9ddf4339ee88f2de0439e1ea49ae5824c95c3236fcdd5de42637f0956a1",
+            "retention-defer": "f8754392fdac112dbfa9c01687609ffb300eee545fa5e8c5b2b070c09a793a08",
+            "retention-first": "f8754392fdac112dbfa9c01687609ffb300eee545fa5e8c5b2b070c09a793a08",
+            "shared-probe": "7da649f06603a38b0899a60bba0f9facd878bbf98e7fc2d56c00cc6c0e8c324b"
+          }
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "23cf3ba0c7353b036fca48fd687316484a78165a571c39febbe5cb3e11aaacbb",
+            "retention-defer": "857297eb3d6b8c31b914621f0b66269b71ff8e21ccc91a0f9b02641bef7a101a",
+            "retention-first": "857297eb3d6b8c31b914621f0b66269b71ff8e21ccc91a0f9b02641bef7a101a",
+            "shared-probe": "b63fa5221455031182ee083ad0249a60b2b045964fca6eaf06fd88a91884b09d"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "8208fcb698882e90de2bfc7791d971301d313b3bdbe1a5edb56b3c4e01bfa9fc",
+            "retention-defer": "526dbea23245f5a8130eadbc82917ca49636b073218ae4be2a83bf71ce1b0c91",
+            "retention-first": "526dbea23245f5a8130eadbc82917ca49636b073218ae4be2a83bf71ce1b0c91",
+            "shared-probe": "5fdfffc74b66fa373eed5cad8e12c4af96209e4ed6118a3d3cc151881e1ac09f"
+          }
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "29cf4d6cb262aceb701cccae9512f7f0c4e55bec19d4021ef5d2378d89bea04a",
+            "retention-defer": "d56eb70a12347adfb0af3a39c5080daec51a196bc3c53b914056e29644ae43fa",
+            "retention-first": "d56eb70a12347adfb0af3a39c5080daec51a196bc3c53b914056e29644ae43fa",
+            "shared-probe": "d1e4e5be6d047f071cbfd62b6f0dc11161266a68062ee09e300e2c30b366315c"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "66f635294e28929b9b847e614460282e9af39cd27bd3f82b4ddcbb34ad16ef68",
+            "retention-defer": "3184824d809826831fdb9f24403996abe5a1d3ebecce2239034fabf9dde2b665",
+            "retention-first": "3184824d809826831fdb9f24403996abe5a1d3ebecce2239034fabf9dde2b665",
+            "shared-probe": "175a920a0d94ac3bff4d1e24db5ae886751cf4d39ee52ec2a3eed48419b725b8"
+          }
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "gain-defer": "b1f9b4134c14a47fc9438cf120db2ff0b287f340ec75e11bd1a4c5e982df391a",
+            "retention-defer": "677251022432b1e4c282576c506cd9fe2ba5c3e2090e3892dfe2e627e1c0f0c4",
+            "retention-first": "677251022432b1e4c282576c506cd9fe2ba5c3e2090e3892dfe2e627e1c0f0c4",
+            "shared-probe": "4b5e9aae2971be858e58db85a0e50dcd83bb13024be0fcd06984c01e14ee5675"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "751e644036fd2011ed903e20ed7b2b384551b24bf4f036753c8fa15b4f283a83",
+            "retention-defer": "051ae93c156fe860c6371adc0460c18584572e4df934731b05d8777a729b2fb4",
+            "retention-first": "051ae93c156fe860c6371adc0460c18584572e4df934731b05d8777a729b2fb4",
+            "shared-probe": "76e26d68ae941a2ebe1192a500102669a73a7f589e93b9adfda529acb130aec7"
+          }
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "gain-defer": "3694a0473c8d75446d8f4d993cb1d540d8760f0c2cea943391bacb0402671d00",
+            "retention-defer": "a5efeed4a53c2bf5f83044364d3c2b7ba05d69d38c25941826a2489f3137851b",
+            "retention-first": "a5efeed4a53c2bf5f83044364d3c2b7ba05d69d38c25941826a2489f3137851b",
+            "shared-probe": "48bbaaa88e18b3fb36cafdd838566408f791e0dcf16b57d81cc1cfbe744b5269"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "f026d801e312270fdf3dc9f8ab3b7c1bf38a95642a2ec85797810938dc0d4883",
+            "retention-defer": "0e51537fdba129c6baaac7e19e7111a165bb88a23f45a184dc8b36e66641c9d2",
+            "retention-first": "0e51537fdba129c6baaac7e19e7111a165bb88a23f45a184dc8b36e66641c9d2",
+            "shared-probe": "5e24e38cdce7686a60d660bbc5602a64a1d827fe9deea4262883e3454e23671c"
+          }
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "gain-defer": "088b9464b58c36fb3099b2bc6e121d273ec29b4916e704d0bc3133eca2903eb0",
+            "retention-defer": "d3d43487a3cae9c6fd220161291739955c9577d9da93bc196dba3b86fd20febe",
+            "retention-first": "d3d43487a3cae9c6fd220161291739955c9577d9da93bc196dba3b86fd20febe",
+            "shared-probe": "4f0374ba6f397599e36adffcfeed43ff2de588d1f4f629e634bd83426a6532b4"
+          },
+          "cap-19/gain-2": {
+            "gain-defer": "75eca664809d423cdb82ce12256fa95151d2c9654c30849789ef9c59fe1373ad",
+            "retention-defer": "a86ca9af3e3a4cfee594e30eba665c3e40c6108116a99c52aac5a67f3c8d5bb8",
+            "retention-first": "a86ca9af3e3a4cfee594e30eba665c3e40c6108116a99c52aac5a67f3c8d5bb8",
+            "shared-probe": "04a16ce2139a60d70cb1b892498ae60b7a8af548152c48c9638edfbc041be78d"
+          }
+        }
+      },
+      "totals": {
+        "cap-19/gain-1": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 26654,
+            "changedDeployment": 11,
+            "changedNominee": 62,
+            "holdoutDifference": -8,
+            "holdoutPasses": 26611,
+            "lookupDifference": 103,
+            "nominations": 166,
+            "paidLookups": 13686,
+            "promotions": 38
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 26654,
+            "changedDeployment": 1,
+            "changedNominee": 2,
+            "holdoutDifference": 3,
+            "holdoutPasses": 26622,
+            "lookupDifference": 24,
+            "nominations": 218,
+            "paidLookups": 13607,
+            "promotions": 46
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 26654,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 26619,
+            "lookupDifference": -40,
+            "nominations": 218,
+            "paidLookups": 13543,
+            "promotions": 47
+          }
+        },
+        "cap-19/gain-2": {
+          "gain-defer": {
+            "affordableKnownGepaPasses": 26653,
+            "changedDeployment": 3,
+            "changedNominee": 34,
+            "holdoutDifference": -3,
+            "holdoutPasses": 26627,
+            "lookupDifference": 139,
+            "nominations": 104,
+            "paidLookups": 9890,
+            "promotions": 4
+          },
+          "retention-defer": {
+            "affordableKnownGepaPasses": 26653,
+            "changedDeployment": 0,
+            "changedNominee": 2,
+            "holdoutDifference": 0,
+            "holdoutPasses": 26630,
+            "lookupDifference": 40,
+            "nominations": 132,
+            "paidLookups": 9791,
+            "promotions": 7
+          },
+          "retention-first": {
+            "affordableKnownGepaPasses": 26653,
+            "changedDeployment": 0,
+            "changedNominee": 0,
+            "holdoutDifference": 0,
+            "holdoutPasses": 26630,
+            "lookupDifference": -25,
+            "nominations": 132,
+            "paidLookups": 9726,
+            "promotions": 7
+          }
+        }
+      }
+    }
+  }
+}
