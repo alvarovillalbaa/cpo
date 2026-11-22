@@ -35,6 +35,8 @@ The experiment froze the full-roster cap at 19 across 134 panels and 32 schedule
 
 Across the archive, optimized ordering saved 767 lookups over the seeded guard. It saved 1,007 lookups on 616 paths and added 240 on 240 paths. On disjoint MMLU it gained 11 passes on four fewer lookups than ordinary one-gain CPO. Subject-tuned GEPA still led that guard by 11 passes at the guard’s budget, and ordinary two-gain CPO used 9,017 lookups for 56,094 passes. The BBH and LMentry losses keep the guard opt-in. Fresh-model performance remains unverified. [Subject-tuned comparison](deferred-certificate-subject-ceiling.md)
 
+Two follow-up routes used paid validation regressions or incomplete preservation to decide when to apply the guard. Both missed its MMLU gain. [Guard-routing replay](qualification-guard-routing.md)
+
 ## Reproduce
 
 ```sh
