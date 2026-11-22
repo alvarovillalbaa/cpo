@@ -1,0 +1,3367 @@
+{
+  "plan": {
+    "agreementSourceSha256": "97e5582a43b88a8dc0e9ab2e4cc08abf678994cd892c6f3df6c4333ba46679ce",
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "certifiedReceiptSha256": "2e358d1681804fc3987cae14272e9e6f2ba16c1624b26dfd4f1a1b0a76712241",
+    "challengers": 8,
+    "cohorts": [
+      "BBH",
+      "LMentry",
+      "BBH/seen-task",
+      "LMentry/seen-task",
+      "BBH/new-task",
+      "LMentry/new-task",
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "controlsSha256": "2d43558aaa910fb9034ddc299388a6cc1fb87aaf3794e7bcf46af5770a8918ab",
+    "fullRosterCap": 19,
+    "gate": "The primary policy at one gain must achieve a positive paired lower endpoint against certified wide on both MMLU cohorts, with no increase in lookups, and meet or beat the published split-safe GEPA ceiling at its own cost.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaValidationWidths": {
+      "split-safe-six": 6,
+      "split-safe-three": 3
+    },
+    "gepaVersion": "0.1.4",
+    "methods": [
+      "paired-row-order",
+      "paired-expected-order"
+    ],
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "nativeReceiptSha256": {
+      "docs/recorded-certificate-routing-gepa-transfer-results-v1.json": "3f21b7d5ca9725ca36501b12f4b49a68d003fd611893ef121d6ebf0738cdfb98",
+      "docs/threshold-precheck-gepa-frontier-results-v1.json": "2f5c498945d4ef5dbe8b4841047449d426769a59b1ede6d07826cd9ca1f58921"
+    },
+    "pairedPlanSha256": "26c6d64b3aa0d2df5e343eadcf2aecf4cbc0dc76db99165ab56693412632716d",
+    "pairedReceiptSha256": "d3b7875a8c6ab6a42add7eea10314870150fbc661df8c7c2161d5e117db9801e",
+    "parentPlanSha256": "67cd20e8e72c4b5c5d6d2e6bdc381fa9aa515f648fdbd4337632d8c872b0581f",
+    "parentReceiptSha256": "b50173bfd6964cceb58ae34f8492fc1df00a70f7c25b1bee6ef46530a26de0c4",
+    "parentResultSha256": {
+      "BBH": "818c79dccdc6c92b9cf8d096a4fece76ed6910765e841d6a6f88db9b0f4b69f3",
+      "BBH/new-task": "7ffd1fb082bde28bf41989de935f2d960429dd43d5062b87c590a7ef09a23462",
+      "BBH/seen-task": "0526f1cefde090232fff4538b230dfc7eab146201e9eed427b47ed4a548ba18e",
+      "LMentry": "f849048d65f5d59e625472b7b92954ebd5e1ab1fc5ff35313b95b0a339992bd1",
+      "LMentry/new-task": "35809d042423f5907887ca915f2a72f8ad9ae425885933f8c30435346f974954",
+      "LMentry/seen-task": "7398fab10d6fd1d47058ff83310ccd48a1d79b6b89099860225a09b21efb48a3",
+      "disjoint-transfer-cohort": "4d03a0543cafe5a6d7c17563e6088b498f62e0397c3f16cd8ffd7224612af2c0",
+      "earlier-screen-cohort": "e36bca05ca53ba6ffae676788f2bc950f09daca370e4ff7df788db49fd12ed10"
+    },
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "policies": [
+      "certified-wide",
+      "require-paid-repair",
+      "seek-repair-in-spare-cap"
+    ],
+    "policy": "wide/nonloss",
+    "primary": "seek-repair-in-spare-cap",
+    "primaryCohorts": [
+      "earlier-screen-cohort",
+      "disjoint-transfer-cohort"
+    ],
+    "protocol": "paid-validation-agreement-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "repairAnchorReceiptSha256": "b4412eb9955fed5675855af7a8c98022c8e688c8fb4cf57b005425a3bffdf6e0",
+    "repairs": {
+      "four-repair-cut": 4,
+      "single-repair": 1
+    },
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "runnerSha256": "a07d8c86b3669c6da0780566faf5ba3cedec80658f4fde23795b695f8384effd",
+    "scope": "Preserve original certified-wide search, qualification prefix, finalist, and case assignments. A finalist has evidence of repair if it passed a validation case the incumbent failed. The paid-only policy blocks qualification without such evidence. The spare-cap policy can seek the evidence on unused validation cases and preserves the original qualification order on admission. Compare both margins and all eight cohorts. Replay the MMLU GEPA attainers.",
+    "screenCap": 13,
+    "screenCaps": [
+      13,
+      19
+    ],
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "shortlistSourceSha256": {
+      "certified_shared_validation.py": "f750685ab1dfe3b86716be661fbfb0d212589241ac7b6da825502348372ec0b4",
+      "certified_shared_validation_cycle.py": "f4716cee84c1853c69258c37a0021db3434bf22737bbc13300b2179cf1c3aabb"
+    },
+    "sourceSha256": {
+      "budgeted_shared_panel_search.py": "75fa87af6359da13c2ebbb0a54ffc7c8eb0f79e2c68930b5dfb57e7e6dacfdea",
+      "gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "qualification_precheck_extension.py": "2222a0f1670672704d579525bf4993693d76da12dc7d133dba82f29eafd84154",
+      "shared_validation_split_safe_transfer.py": "e7cf20c0d55f15a6dcd384bce12aae6daca7049776141a74d1da66cc44fade63"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "0de54dc2a49e7149fc4e1042697703bed466e86f6ed75916d33eef41ae2f5fd8",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "certifiedDeploymentStrata": {
+        "cap-19/gain-1": {
+          "has-paid-repair": {
+            "deployments": 207,
+            "holdoutPassChange": 1315,
+            "improved": 164,
+            "regressed": 34
+          },
+          "no-paid-repair": {
+            "deployments": 75,
+            "holdoutPassChange": 100,
+            "improved": 40,
+            "regressed": 17
+          }
+        },
+        "cap-19/gain-2": {
+          "has-paid-repair": {
+            "deployments": 79,
+            "holdoutPassChange": 715,
+            "improved": 70,
+            "regressed": 7
+          },
+          "no-paid-repair": {
+            "deployments": 15,
+            "holdoutPassChange": 48,
+            "improved": 11,
+            "regressed": 3
+          }
+        }
+      },
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 282,
+            "holdoutPasses": 9840,
+            "nativeBounds": {
+              "lowerPasses": 9676,
+              "upperPasses": 9745
+            },
+            "paidLookups": 18788,
+            "qualificationLookups": 5370,
+            "searchLookups": 13418
+          },
+          "require-paid-repair": {
+            "blockedNominees": 392,
+            "blockedPromotions": 75,
+            "deployments": 207,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 9740,
+            "nativeBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            },
+            "paidLookups": 16938,
+            "paidWitness": 431,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -100,
+              "pairedRange95": [
+                -137,
+                -63
+              ]
+            },
+            "qualificationLookups": 3520,
+            "rescuedNominees": 0,
+            "searchLookups": 13418
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 346,
+            "blockedPromotions": 62,
+            "deployments": 220,
+            "extensions": 392,
+            "extraSearchLookups": 1073,
+            "holdoutPasses": 9775,
+            "nativeBounds": {
+              "lowerPasses": 9676,
+              "upperPasses": 9745
+            },
+            "paidLookups": 18235,
+            "paidWitness": 431,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -65,
+              "pairedRange95": [
+                -100,
+                -31
+              ]
+            },
+            "qualificationLookups": 3744,
+            "rescuedNominees": 46,
+            "searchLookups": 14491
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 94,
+            "holdoutPasses": 9188,
+            "nativeBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            },
+            "paidLookups": 16730,
+            "qualificationLookups": 4836,
+            "searchLookups": 11894
+          },
+          "require-paid-repair": {
+            "blockedNominees": 332,
+            "blockedPromotions": 15,
+            "deployments": 79,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 9140,
+            "nativeBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            },
+            "paidLookups": 15722,
+            "paidWitness": 392,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -48,
+              "pairedRange95": [
+                -69,
+                -28
+              ]
+            },
+            "qualificationLookups": 3828,
+            "rescuedNominees": 0,
+            "searchLookups": 11894
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 297,
+            "blockedPromotions": 9,
+            "deployments": 85,
+            "extensions": 332,
+            "extraSearchLookups": 889,
+            "holdoutPasses": 9159,
+            "nativeBounds": {
+              "lowerPasses": 8425,
+              "upperPasses": 9676
+            },
+            "paidLookups": 16723,
+            "paidWitness": 392,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -29,
+              "pairedRange95": [
+                -45,
+                -14
+              ]
+            },
+            "qualificationLookups": 3940,
+            "rescuedNominees": 35,
+            "searchLookups": 12783
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedPasses": 8425,
+      "traceHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "413ea19daee27ba97c4d6eaba75452cee7c874feb0bb258850b40d81b3e02539",
+            "require-paid-repair": "9c2a35bfc56a9cff87b258c4e03b99c09c3fd8ca976b00efe049478f3c2f1537",
+            "seek-repair-in-spare-cap": "2eb3fd6087868a2c0624c298ef48a8a78f58ff9128805f93c007a35c37179f22"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "c60be75a46a39f7f4e798ee8cdafeab022fb23158f3901ebb924469b8404f3b7",
+            "require-paid-repair": "1ff48874a0bf107e310e4b753c7f59443509b366191f495964a0bab9b9b730a5",
+            "seek-repair-in-spare-cap": "40bdf9297e313bbaa88bf83eabaead9080803657c08382581af50340f6afaba5"
+          }
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "67e731b0b84b3b4e46fc20705860429ac4ff9af67c581bb66419aeb94b64b42e",
+            "require-paid-repair": "159fb5fd8bef162d6f82b54582a8985052833ba9a6264ab9252ecc776d250ba2",
+            "seek-repair-in-spare-cap": "6ebbe3cd192492b6d9226bd69975b5a3fc91677e4df05de46ae63ad57265d835"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "4a69ae3d07320a023bc4c3d6b5db6cb632efe25ea4c2e41f75abd63c29431a05",
+            "require-paid-repair": "d947fbad188739f5ce0ad00ac47703bef093d7b7a14d3a02bf912c47172d3815",
+            "seek-repair-in-spare-cap": "1c27abae4b3819f9e9d74739ea8991ac542066ca279e60bffe88928e1f983f7b"
+          }
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a7dcf6d1faa5239013cbecd0a385b0a9f3af9c136efd6aab9b5e1b20d83c61df",
+            "require-paid-repair": "32ad0c6a6c7a5ac5df40ee0096a1cd106e3dedc47639739f73d0d97bfdf09fac",
+            "seek-repair-in-spare-cap": "08d474aec30df33c670dac0e0462f59ad864ca5f7d39228487ce75718e7c97ef"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "e4531b8a2fbe2b16537842f2e21d8d06c7048c3ccedd35252fb00014f618c012",
+            "require-paid-repair": "ae1904fb71bcfc33cc8555acc00f627cf2ccf2ef6fe20b26e81c98ac8e8b425c",
+            "seek-repair-in-spare-cap": "17efba3cce6fb800e36fa5618807d4f7706fe90a4b3d90c14edb621193ff5c13"
+          }
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "d04cdd95b5071c1fcb35cf2a53921a44fd8fdbb5fe6dbecbeab8f3b877498bdc",
+            "require-paid-repair": "38ff3efe2ff37e00a6597af87d38cfe2e58cdba25da4d891f3f22bb02f3684a0",
+            "seek-repair-in-spare-cap": "97b2a6e60ddf9eef53f7be24f3a4e07c29a64e4f6dee056cc026c9f63149222a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f4a4277dc91b43e274c62ee4bda5dfb1c0beb28a7a720f7f5970c4d8d63b739d",
+            "require-paid-repair": "52514ecea99d8a31974f11b36592df821aac7e1ff9f83cbc712ae72f83ba437c",
+            "seek-repair-in-spare-cap": "1cd7e296bc55bec3cd04c2c23a4925e12b0d687d5e3ed34674760f7588067acc"
+          }
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "620eeef8640fd7578ffbcf83e62cc26f54a89f97310eba30fbf2956219c66496",
+            "require-paid-repair": "ec1fd79b08a8052e8c532c52cb15dbdda6a54e0962c471f6cffeb768c085b05b",
+            "seek-repair-in-spare-cap": "6526b34fd10949759e885f0531ec4eb0b4a648b677acbbe3798f9fba91a6c2fc"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8c50caf0995bf9eee64d36b730a4450ef90ea4a94f245adf1e0f06beaaa9f25f",
+            "require-paid-repair": "c06b0d9c36eff43b70043512f1892f264ec9b0f47d581b63331e6aa3b647d93c",
+            "seek-repair-in-spare-cap": "827c4c0b38d9025b76d2f5ce505cee7ba4a88bd3d7aa6cd7ebf6a91aacd55638"
+          }
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "ff0947707627eb226c27056a6b464fba6dee96121fed0b2708fecb6e1e543aa5",
+            "require-paid-repair": "adcd8899531dd2bf269174ebf594fa8d73abe5e816d9bbf31936dd6392b90826",
+            "seek-repair-in-spare-cap": "0311ecbf0b0b076367184c536eb6c046672165fc8fb3b6561548a74bd9d998ac"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "02750a6842cbef6ffccfcf22fc0470b351e846222973b54bc47bcddef21fdf09",
+            "require-paid-repair": "d578ef2ed60363e31d6c8a7f34146f821c0fd6d40fae2845d19e865c1b43c107",
+            "seek-repair-in-spare-cap": "eabd34c906e9c64adf2a452a841344db0515b0a1fac4adc66950710c3319c452"
+          }
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "35d2ad0c939698265cd75a1bf4d2ef95da0a6687e14b4d904c4431ea78bd87c8",
+            "require-paid-repair": "c47cd961914bc55bef72165c58c0ef9260e2dfbd68d85c2e0897e36ba4c95101",
+            "seek-repair-in-spare-cap": "0af89743685993ddd39b81d650753b0ddf113067cde1c25cf23381bb12ae9bb2"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ed1294fd61f6f2f1b35ad4e70a4714c03d71e741db7048fe2a1fa8e56762d06c",
+            "require-paid-repair": "db4c05392df79d2b9d7fa9475905a919511dc791a0312823bd58575a13f65538",
+            "seek-repair-in-spare-cap": "b16eee79f2f3cd653cfc51afad240c0dcf351fef69b8577681f5b7025a554476"
+          }
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f651f4abd49f339a3d9421394e3032b3d9bdcf8d9bcdf9e7c2e409d761039045",
+            "require-paid-repair": "bcdaacabd5725b8d309c8170254cfce18a7640caa175e72dc7ce29729f604ccf",
+            "seek-repair-in-spare-cap": "d08324901bfa1abac08ff2ad7e6a95df5eb44332fdecb1424ff496022ae50b5f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "285ae09582ff35a3ae51e7002382a5c89d77a8dcdba81c474ead7daf9884e052",
+            "require-paid-repair": "2c1d20af9116cc24e27842abe85fe98b7d8550dc7f05cf37bf60529dff790f41",
+            "seek-repair-in-spare-cap": "d6aa2dfe2c4094c6edbfbc08083dddb1aea16a6a4b1e9ce5f647ed10cba93bd2"
+          }
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "39a93fa8145e4b10c42efa48dbf75d45be675c36f80ab1d8c4fbae0e65e980c7",
+            "require-paid-repair": "7f3e36eeb8383ff31e20121e37f39f5e386778d29bf24d9a1f4e93dd4ffcb954",
+            "seek-repair-in-spare-cap": "26b4c08e125f601b8602459d19a79f12f25ba408a97c12c291dddc0238fa45fc"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "b08e301f51ba084e54d00e1d792fde0bbf14020f4b1e2061252e74d4636c7652",
+            "require-paid-repair": "c1955e8319311a7777400f49376790783283ae8251376ade41a31e4a26784e0a",
+            "seek-repair-in-spare-cap": "fb89f6716688803f773f9eabe7355042f2a134437cf7d63476753157ed6924fc"
+          }
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "b2e972b3c95de1a545122b5386e145cbe5a43586efb9b61b5e44702e84a04b05",
+            "require-paid-repair": "123f8940c1e64380b7843d4ee96a845c779a478983c36fcbaea88d85f0a4ca7b",
+            "seek-repair-in-spare-cap": "70bddb692b5ae99a8319513b3714336e6e05ce6b54ac23bdc7fb16427aeb5d81"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "463a4fc6273492d7ec783950abc77e0cfc622945fd95ee5acfeb295004b450f0",
+            "require-paid-repair": "845f82ed5d79a1c085183952dfef3997e54c5a2b775e2d71fdc7b56cee3f0ff1",
+            "seek-repair-in-spare-cap": "ae266c4f21d0a50a4b813b8cbcecc6b76f4305c2444c8ab7a969c4df013a98bf"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f09eb7056f3c270d4bdb66e6118dbb3aa401847ed0045a9a02ff78171b7cf5df",
+            "require-paid-repair": "c33f7d10f28ca3ca22661b2b948e08efd908aa78a3fc88e4987fe361c28fae57",
+            "seek-repair-in-spare-cap": "530bb395290e900aa42aab40050e3fe3e9ba7b1f6efed57dd1dc3e571f0fdefe"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "4c9987c916c4033f21df921452fb8775591f9ab48fdd2b58e21db63979144d98",
+            "require-paid-repair": "70687c5b2c4f07d5f2f3a4e940cfd741788a65976d943edb2e982fe92fcd0196",
+            "seek-repair-in-spare-cap": "8fe0fa0b07bd0b6a6535dda18f71a66dbe45bad65142d46f523100e4b3f5bd8f"
+          }
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "360161448a3b376613bd3873b049c9b3ed5d7a88030a198aa99e6a0e2473c98c",
+            "require-paid-repair": "b333431defd5faea79bcae68c24409961e97dfa9c8d24211059f75a9a806610e",
+            "seek-repair-in-spare-cap": "efd74831a5f95a8b199c81f5fbbb3ba531d60bb03f6cf2d14dffed3fad7e7a3d"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "24f91402535f10043b7bdd2e3185bed9ad17e7bb862af7f13aaad48709fee518",
+            "require-paid-repair": "0c9ed91d7bf9a8bb3d1f0fdba54091e0fcbd76d9ddecf73629f20bc268bd060a",
+            "seek-repair-in-spare-cap": "2ff372c61dfa9f80613f0c65e80d7692f3242bcd6a9d95ca7a2574f09356fe74"
+          }
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "5a1c550161699202c0ff42c2c8703e90c98a7245f5a9a93977891db677da2b0d",
+            "require-paid-repair": "c27494c258a91f69e0fedc4c6d1dbf9ae64ef8f855e1acfd15aeeba8933656ea",
+            "seek-repair-in-spare-cap": "7d2306a0c7965353e40d9bbf6de9b868d12ef839b2f60d0f7a8e5cbc54ceaf39"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a2e7ab9eabf0469c6ec544566a879458c1181eac39276289a54748b43ca7bf96",
+            "require-paid-repair": "b53341dfd5fb1f28910009716031dabdd7ac79778be00446175d54fb95363f90",
+            "seek-repair-in-spare-cap": "fe807d26371f21cbe2d1c6e836b7a95fab1d3179a71d9091b276823e045b3663"
+          }
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f22ca74ced7bffcf083ebed27f994b146699d816e2fbf8764a1541828e68130d",
+            "require-paid-repair": "cb3d0b677f1ef0fe89ea6f0cffda64c01b05c5569e8dff2180dd82f67ef9e0ad",
+            "seek-repair-in-spare-cap": "66fbde369cfdebf8df1bcdacb0fd517f352baf5ae88f679489667dd7adbbc5c0"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ee27994729ee96dd6ce523eb2b91c556510c0bfa8219eddce8ee961a2a165dcd",
+            "require-paid-repair": "311ae706230cbdaef791f5f8f7d1cc61f04c82eedf8684ebe41d8554b2eef755",
+            "seek-repair-in-spare-cap": "9f633c9fbfd239cb31a6d9af4e27536009a1d68246762be3acac4097feab83bd"
+          }
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "c1959d4e4f7214f40ce79ed4f9168d96a45d01bcaa71ce889b793a62bedb4393",
+            "require-paid-repair": "f2eb1a3705da159e044d363f657fc7394400bbe86f5e2c250f36ea6843465b85",
+            "seek-repair-in-spare-cap": "3ba1402b7f334cab7d9f345249ab39ab50a6091a8ac87362979c6244ec9017d4"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8756ccbaabf0f593847a3a55ea9320e2b2fc92c42ff45798d2bebc35e2cf1878",
+            "require-paid-repair": "a513398e2ecf3fa568e268544a917013573b31fa7014c9ad642e2c9f77ec2766",
+            "seek-repair-in-spare-cap": "70b8d4fe6e5f0b9a9e9f6f881642c4c91ffcf73560cb0fad4723a3592e2ac03d"
+          }
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "174dfecb5a70d84ec67374e19ece2bbe8fe0ad00ab8c6d8816bfc14c877d3bbe",
+            "require-paid-repair": "d729efc1ccecb0a8d4cbcc6a730f886a9de16260df830a48a7a8b37c6dee7e0b",
+            "seek-repair-in-spare-cap": "d4476ed3414dffc85f5510d67270f0a3ceb37b3edcc042ba34ffdd894d10f908"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "752fe32dc30f5d0a08b44b5f2fc84ee39b145a786ed036187fcac91198a31db5",
+            "require-paid-repair": "a391d28ab39a12385abb438594639496537b1eee5e9e202fd62072db2d8de97b",
+            "seek-repair-in-spare-cap": "eb7f9c53325d671514613e7b1113f02c12d6002670c6d9b29e7ed6333e2cf4e0"
+          }
+        },
+        "bbh-navigate/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "641d3b0dcbf5d51cf86fa19c6251870f85c123debf21003be862766e52434bb7",
+            "require-paid-repair": "7d553da149e22b144eaf97e701e38f067e20f68dfee95c78ce7a36be8d927014",
+            "seek-repair-in-spare-cap": "e7542e9c0e9ad85600c3b81c2f85b75b117b226aabf763bf72dfac78f353f544"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "0f4298494c3971bb6ca2dacc1d1977f9e1e70322b794f951553126f0f2e4b92e",
+            "require-paid-repair": "66977d9c0553e894038aa67423edb4589ad7070d307b65b720129c98a9ffc844",
+            "seek-repair-in-spare-cap": "8a99387c3fb1c384c2a734bb3463d958c38c2e700972df46db639f11bdd0d067"
+          }
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "8b5b9967fbbeb21c9407060a0668e7a57916028aed88a8dcbae11317e16df1f4",
+            "require-paid-repair": "ff97c9a6a583e525d6289784961962cbac507c21de74040a4ba52fa81981e1db",
+            "seek-repair-in-spare-cap": "246aefd6ae17db9dfd291ad302d5e0841712cea3a3e3f6c0a1ae6f05c47212f0"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7a857dd2e6d33fe1d35a7263bc6405995844b183717ecf3eec2eb7f55b6bb5c2",
+            "require-paid-repair": "14ae39f2bbdb8b0dbb859c3fb5b81cb80b071ead1ea1fa8253de79c3eb4d50f1",
+            "seek-repair-in-spare-cap": "924bd9824a3c5b522c32514c4adeaa4bc1e6067dfb2c21cfdf5af41dd373c2e3"
+          }
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "8feb55ce63be776e21f682c922199926fe85301e7e02aaa0b9770053188c441a",
+            "require-paid-repair": "f33bad70a81c1868a4dd5afa708f5e30718235cf96dd30a588b08e3c2c7c9575",
+            "seek-repair-in-spare-cap": "3b971c1ed814856bb60481a677434f60c4af9545e1020417b3f20e28cf9c744d"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7aa757cac1f20b0edbad99e23b1d2ca137b49b71d8856e417d8df45b55c3aef0",
+            "require-paid-repair": "9ad7d344d582876feea25f1ac47d2698ba1d53fc6787ce595c9da4ebdf0932f7",
+            "seek-repair-in-spare-cap": "e3f1171557b27c4b0a5ed612538e24ba076ec95d9a3a12ee8a04c9292a121004"
+          }
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "2a19bd353a952c00ab89c965ca9c3cdc0f8cf5172553d3fb8b041626fe1f47ca",
+            "require-paid-repair": "6f58f24f635b57845f9d5deeb69375ddf70a31f43435aaf5ace64b52a7daee97",
+            "seek-repair-in-spare-cap": "0b8857cb30556a1fa4e20093ca6ef2c12e64c67aa8ca3d24469e3922306844cf"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "481f56919865d6e97963a5b1fb9b0eecf25e9966e014efc91f86bb15f250ebce",
+            "require-paid-repair": "1ff7a7d7e95a20ff581e363eb5c462b834eba68aed3c189fac9c90e127a71521",
+            "seek-repair-in-spare-cap": "2dc4287406b520c4b35e58224938edb6f9ceedd6fa3ad6136ac674d6877f11f6"
+          }
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "c170dc10b649bcf77602b4fe57cb523e8b4d036c6f3b95fb925567bf91fe5fbc",
+            "require-paid-repair": "c4a7d71e7b81e5602fb5db4e770779ae05f2e11ac3814da4d54fa892f01973fb",
+            "seek-repair-in-spare-cap": "d7565796cc826022584e501d3e24d362622077abcca526887c5bf12a5460b509"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ad3012cc8a82d80ea8b49ed0cfd368383e8553b27136d74c1e9f10579f865544",
+            "require-paid-repair": "07d0440790cea0ca8b792af3e22062693975d5e06432c0e9b548e7f4ab688627",
+            "seek-repair-in-spare-cap": "5f6bf334259bb49e34a0d857562140018b88a4e375aa719ddc22eeb762ec5a96"
+          }
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "c69a360897c74dbb3e561a89477f953a0010eedbceae1a515b6b05c3923013ed",
+            "require-paid-repair": "2b33febbe8f40b808c04bef15cb2dea78f9d8e8ad01f978023c2e4bdc2d07a00",
+            "seek-repair-in-spare-cap": "819e4e35df5b2c3faaa6ef6cacbd6efb121cad75f59c58ffb47606ada7536e23"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8e02f02476b45390a6d24defeafa31d9db2628e51ef4c77ad3db6f2419879318",
+            "require-paid-repair": "193960d0dc4f3614bd1a442b24a84ca62d7fb575577222b83b139dc35ac16c13",
+            "seek-repair-in-spare-cap": "1ce05ffc2385ed1adf93910b3b275e83267b4d8efdded71b2025a622a15d8219"
+          }
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "250cd777d7b296fed2f5c17fc557e9530ae85473570958910dfef50099957081",
+            "require-paid-repair": "7eefc830a19056dd59401a69910edbce19dca647ba91920ec3d494e94a57061f",
+            "seek-repair-in-spare-cap": "d9723bc5fde6ab27165d24a8a93efce480d96d40259797f9717f64c9d1d2a2fd"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "b977ad4374fc5d899dc3a32e2d44fc755ce22120337f141c3db99c0e194c17bc",
+            "require-paid-repair": "01d8f4edb98a6204cc6a122183b21fae00557b5e8c4508fcff5ebb1f0faaa4fa",
+            "seek-repair-in-spare-cap": "4ea0cd24a40371848d84f6feb4b6b4880e88c555886867f5723289d11e953cd2"
+          }
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "0ba58040604372d6d1184613d911c74d7d94f98ffeca1fa33752f55a8e6e4247",
+            "require-paid-repair": "0bf4a5090358b7ff557a49b125b1d439d71cf9e7a019791262941f86527900a2",
+            "seek-repair-in-spare-cap": "1a5f853b354e8dfb3205aeecf130d4b0f8385aac4faa51eccf32c0fee208abdb"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "9235e4eb4ea740ab2078e7807ba8b7090eb957f8d82a8e82b420b98e34f74641",
+            "require-paid-repair": "161f9310dbbf80f00db2fc382ee0f95d390bd6ddee21f6687ab0aca277eb4e1d",
+            "seek-repair-in-spare-cap": "a1b30d997f8c1435ab655794f0affbc88ef42566d41f0b3a241f56d4759f8c19"
+          }
+        },
+        "bbh-snarks/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "8a239161589abf15fa88fcbdadec3d2b3d19a2afe8e796fe911950de723c0a0a",
+            "require-paid-repair": "258fc9716596bf6f0189882940d9b789e0aecf5cabc741983f34c37875611f79",
+            "seek-repair-in-spare-cap": "825fef1b94d8166649095f37b22de84ce508aca02ce8c1743e56d981c2ce3f90"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "797e9d24abeb0599c8c1e6851f9f3433ee52835d88551336d1302055e521a346",
+            "require-paid-repair": "d3f0fa34374ace1b6fd942dde14ea2f0014bb1690bb7baeff1ded69538bb0921",
+            "seek-repair-in-spare-cap": "d6a2a28fde2df18d6a6cdc634bfa833d0a0d3419510192770ec2ee0ef697015a"
+          }
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "5604e13133c56daa54ac02e74a448de9a12889301933da50502211612890ee38",
+            "require-paid-repair": "ff75748da569b5411086f0ec8e7220973ca462e9a89b6a05003d80bc62a4a4d1",
+            "seek-repair-in-spare-cap": "6a7719ab3121bb98fce4b93b62f8f353ecaa936a45424738778f85c1f30bc3bf"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d18132dde7724afde89913876fbfc6bbbc191e55a128b6a14cbe9b62e904b557",
+            "require-paid-repair": "201f78c18af8b20926e37414501a845d924f6c9a97effdc3fb76606735efbfd1",
+            "seek-repair-in-spare-cap": "a97a44efd6b240cc4ddef419f258094b0e1e0d99264a487930d99e241e3828cd"
+          }
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f277220759f7c9add34dbd32f2d3cf7d2404f916e3501dc9e8f4b7343c3fac80",
+            "require-paid-repair": "ac688c20aeff1fe0b4e2ee9a020f6dab578d7bb1a4cb1f05ea4dc170c8d17a5f",
+            "seek-repair-in-spare-cap": "e362df93ba2abdd003efe0ab6e92f211ab5905035501cbf47d67b6a82e34bcf0"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8a31b853a106da5601c515e46c79c71036a4fdba2aacf053f4f5ab0d532043aa",
+            "require-paid-repair": "1be14217003873e357ab77765e3f579930278408c8deb18f55cd72a8a9f9d892",
+            "seek-repair-in-spare-cap": "b801b55d3c373327e926cdb02dad4b0c38f0ec9022abdfc924bc484688b82ec3"
+          }
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "2a026f0eed561ddfc03cdaa2722b65592b6f945df91948dbb715112cdbaa7522",
+            "require-paid-repair": "a1efe1fd2925f3930e6b53bdd66ee8a01d3c8c57e998a5e2f811046a808e447d",
+            "seek-repair-in-spare-cap": "101889fe577fde54f06cae460db4bff0fd79286e489b75cf80d51c6c7b4783bb"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "179584500506e768c6f012f1ab377c1462191630bcbe3c7a8b4a92edc81a34b8",
+            "require-paid-repair": "4fd3f972b2e6af844122e0f009b867cc51a8ac69fc07b6d95e7a2cd49e117d3d",
+            "seek-repair-in-spare-cap": "ec088f40df4acf68a6831545d3d68a9ddff8e60e2e5cc9930abe874d933ac87e"
+          }
+        }
+      }
+    },
+    "BBH/new-task": {
+      "certifiedDeploymentStrata": {
+        "cap-19/gain-1": {
+          "has-paid-repair": {
+            "deployments": 6,
+            "holdoutPassChange": 35,
+            "improved": 5,
+            "regressed": 1
+          },
+          "no-paid-repair": {
+            "deployments": 5,
+            "holdoutPassChange": 17,
+            "improved": 3,
+            "regressed": 0
+          }
+        },
+        "cap-19/gain-2": {
+          "has-paid-repair": {
+            "deployments": 2,
+            "holdoutPassChange": 13,
+            "improved": 2,
+            "regressed": 0
+          }
+        }
+      },
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 11,
+            "holdoutPasses": 620,
+            "nativeBounds": {
+              "lowerPasses": 590,
+              "upperPasses": 592
+            },
+            "paidLookups": 1209,
+            "qualificationLookups": 355,
+            "searchLookups": 854
+          },
+          "require-paid-repair": {
+            "blockedNominees": 37,
+            "blockedPromotions": 5,
+            "deployments": 6,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 603,
+            "nativeBounds": {
+              "lowerPasses": 590,
+              "upperPasses": 590
+            },
+            "paidLookups": 1049,
+            "paidWitness": 19,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -17,
+              "pairedRange95": [
+                -25,
+                -10
+              ]
+            },
+            "qualificationLookups": 195,
+            "rescuedNominees": 0,
+            "searchLookups": 854
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 31,
+            "blockedPromotions": 5,
+            "deployments": 6,
+            "extensions": 37,
+            "extraSearchLookups": 96,
+            "holdoutPasses": 603,
+            "nativeBounds": {
+              "lowerPasses": 590,
+              "upperPasses": 592
+            },
+            "paidLookups": 1170,
+            "paidWitness": 19,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -17,
+              "pairedRange95": [
+                -25,
+                -10
+              ]
+            },
+            "qualificationLookups": 220,
+            "rescuedNominees": 6,
+            "searchLookups": 950
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 2,
+            "holdoutPasses": 581,
+            "nativeBounds": {
+              "lowerPasses": 590,
+              "upperPasses": 590
+            },
+            "paidLookups": 1074,
+            "qualificationLookups": 317,
+            "searchLookups": 757
+          },
+          "require-paid-repair": {
+            "blockedNominees": 30,
+            "blockedPromotions": 0,
+            "deployments": 2,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 581,
+            "nativeBounds": {
+              "lowerPasses": 590,
+              "upperPasses": 590
+            },
+            "paidLookups": 989,
+            "paidWitness": 18,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "qualificationLookups": 232,
+            "rescuedNominees": 0,
+            "searchLookups": 757
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 26,
+            "blockedPromotions": 0,
+            "deployments": 2,
+            "extensions": 30,
+            "extraSearchLookups": 71,
+            "holdoutPasses": 581,
+            "nativeBounds": {
+              "lowerPasses": 590,
+              "upperPasses": 590
+            },
+            "paidLookups": 1068,
+            "paidWitness": 18,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "qualificationLookups": 240,
+            "rescuedNominees": 4,
+            "searchLookups": 828
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedPasses": 568,
+      "traceHashes": {
+        "bbh-causal_judgement/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "ce258ddc0e36b6b78566c652ad0016aeca58248e4f7a9fd7443eef4b2e2b442f",
+            "require-paid-repair": "2355f7d657ee5f4c78035fd35b45494729d6682c6c87014a133139e826f65489",
+            "seek-repair-in-spare-cap": "14332c73958bc424816252c1abaf796f809c72883725c082d2fcfdb3bbfdef7f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d97c30270b70e5f7f300a6ecf0d8a48e6ccfa66effb16d57a965f61433b32e07",
+            "require-paid-repair": "de2e742585600ba7573b78923173ed1f7cddcdf88e4b1d2e64884f0b28df3ac2",
+            "seek-repair-in-spare-cap": "d40f6b2a899fb4a6cc89424e8d812987f83157370330087a7b135d3f2e25bdb9"
+          }
+        },
+        "bbh-causal_judgement/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a622712d066cc82052c9d49c3bb2baff0dc94f31b760429afbe32cda3cb5e67b",
+            "require-paid-repair": "a00777c61fcd4473e95a29227a41dd5fb2b00834b935443b500c88e77187fda6",
+            "seek-repair-in-spare-cap": "0fbd0584967397f935466456367f924016b898f147ab2e4815b24429e0954551"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "91ec3baaf2a42f4d3a809e9441cc5b65120ec7c77f636c03a182c5283d72c7a9",
+            "require-paid-repair": "24ab9bf7b971bbe67ab20dda816bc8e4c7e39fe2b7af4f516d905ded6cd560a9",
+            "seek-repair-in-spare-cap": "838c87e5e28bc71521f1c798b65c3b9eacbb4b567347fa60b102c01449f7f841"
+          }
+        }
+      }
+    },
+    "BBH/seen-task": {
+      "certifiedDeploymentStrata": {
+        "cap-19/gain-1": {
+          "has-paid-repair": {
+            "deployments": 71,
+            "holdoutPassChange": 342,
+            "improved": 40,
+            "regressed": 22
+          },
+          "no-paid-repair": {
+            "deployments": 39,
+            "holdoutPassChange": 57,
+            "improved": 25,
+            "regressed": 6
+          }
+        },
+        "cap-19/gain-2": {
+          "has-paid-repair": {
+            "deployments": 34,
+            "holdoutPassChange": 296,
+            "improved": 25,
+            "regressed": 6
+          },
+          "no-paid-repair": {
+            "deployments": 5,
+            "holdoutPassChange": 8,
+            "improved": 4,
+            "regressed": 0
+          }
+        }
+      },
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 110,
+            "holdoutPasses": 4901,
+            "nativeBounds": {
+              "lowerPasses": 4920,
+              "upperPasses": 4920
+            },
+            "paidLookups": 10306,
+            "qualificationLookups": 2849,
+            "searchLookups": 7457
+          },
+          "require-paid-repair": {
+            "blockedNominees": 270,
+            "blockedPromotions": 39,
+            "deployments": 71,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 4844,
+            "nativeBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            },
+            "paidLookups": 9121,
+            "paidWitness": 187,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -57,
+              "pairedRange95": [
+                -81,
+                -32
+              ]
+            },
+            "qualificationLookups": 1664,
+            "rescuedNominees": 0,
+            "searchLookups": 7457
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 247,
+            "blockedPromotions": 33,
+            "deployments": 77,
+            "extensions": 270,
+            "extraSearchLookups": 679,
+            "holdoutPasses": 4850,
+            "nativeBounds": {
+              "lowerPasses": 4920,
+              "upperPasses": 4920
+            },
+            "paidLookups": 9903,
+            "paidWitness": 187,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -51,
+              "pairedRange95": [
+                -71,
+                -30
+              ]
+            },
+            "qualificationLookups": 1767,
+            "rescuedNominees": 23,
+            "searchLookups": 8136
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 39,
+            "holdoutPasses": 4806,
+            "nativeBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            },
+            "paidLookups": 9103,
+            "qualificationLookups": 2569,
+            "searchLookups": 6534
+          },
+          "require-paid-repair": {
+            "blockedNominees": 239,
+            "blockedPromotions": 5,
+            "deployments": 34,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 4798,
+            "nativeBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            },
+            "paidLookups": 8388,
+            "paidWitness": 154,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -8,
+              "pairedRange95": [
+                -20,
+                5
+              ]
+            },
+            "qualificationLookups": 1854,
+            "rescuedNominees": 0,
+            "searchLookups": 6534
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 224,
+            "blockedPromotions": 3,
+            "deployments": 36,
+            "extensions": 239,
+            "extraSearchLookups": 571,
+            "holdoutPasses": 4801,
+            "nativeBounds": {
+              "lowerPasses": 4502,
+              "upperPasses": 4918
+            },
+            "paidLookups": 9009,
+            "paidWitness": 154,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -5,
+              "pairedRange95": [
+                -14,
+                3
+              ]
+            },
+            "qualificationLookups": 1904,
+            "rescuedNominees": 15,
+            "searchLookups": 7105
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedPasses": 4502,
+      "traceHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "61a32b33ada1237ced525987588bf3f7fb6ef8762f32e565cba08425396b3247",
+            "require-paid-repair": "f689f24c5168e6e32d824e0c7515eccb4f2466587598d70696136fac3b60d7d4",
+            "seek-repair-in-spare-cap": "7b11b57022e6d6474e29fdfeb413e31306ae9ea83320c9fcda11339f54e6abd4"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a4a79eb8d7723657820b4208ca8455cd584951fb583b6376b5a821a3c50bc9a6",
+            "require-paid-repair": "a24c07348446f938a4fd20409db0b0fd2dcd9318674ddd7e9b49eed52b172d24",
+            "seek-repair-in-spare-cap": "55d39a3524f65a87d77533603db0a7087fff8f351955587a6a0f00e40390719c"
+          }
+        },
+        "bbh-disambiguation_qa/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a121793b03c7d2c20dc9aa68e1230413f369eee042395661a1b88c0058833cde",
+            "require-paid-repair": "2753a6d72af83147b91e4045f2b2e636c642f46d5c683decfe28b54be0f240a6",
+            "seek-repair-in-spare-cap": "5f66085d1f551e5153d356e2f5c203c55be2be0f494c03d4b47f6b8be6ae6141"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1b62c76ce2aeecbb53aa46a945196159e86b1b9126d96ee20d9646ba23b3f6d0",
+            "require-paid-repair": "75232a8b058e950d7a8a4766cee66a516db316133f91e66ae66808ee00c8fc1e",
+            "seek-repair-in-spare-cap": "bdaaccf8c41add43cb9520919f8aae2bbe2ac86ad53dd5ba6ddf3957fd6c68fb"
+          }
+        },
+        "bbh-formal_fallacies/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "6d419336f3ae58f888202f4d3fe351b29ddc6e3e3157980dbec33be54145eeb8",
+            "require-paid-repair": "4b4a2a25bb33d4eb0ca42730a5fdcdc0dd9bccaaacbe72e0ec47d76d7c6252bb",
+            "seek-repair-in-spare-cap": "d2957282a79e35d291319099eaf3b5a4648f89e189aed7b75c7f3b76ddff69ab"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1619cf02d739383d44b4678ef201808eb2222c9641e3e23efaa70be9ffcdd9d4",
+            "require-paid-repair": "5742d0b7782f455e0b626638fa9a7f2091afdbce767116654f6b00cff5ef8fa8",
+            "seek-repair-in-spare-cap": "195cff614d16a2edddf5b1433503ddecf9af5f69c7fb27633960ee9292b82b7e"
+          }
+        },
+        "bbh-formal_fallacies/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "ec8c7dc3c58ecea3b80267da76cdf4606583eacb5c18eabcc2289f59c7cfcb7e",
+            "require-paid-repair": "76dd29b007dbbb722d95395a0c2559d7b4ab086c4ff314ed7d0c479ea797679c",
+            "seek-repair-in-spare-cap": "50199f7c87584acbaf7d3750a66f8f0c1babf80677597d7864606098f31ec68a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "aee5f3fe52cd8700af2c98594f81ae0546587aa82b5414cb78b1155b7348bba7",
+            "require-paid-repair": "55d34d0925f390a780fdf7057d02b484ed0cfd9613158e43097300973961692e",
+            "seek-repair-in-spare-cap": "86f4b08d7b5917866b1dbc91998bdba058a518795ef34b59a485411315e391c8"
+          }
+        },
+        "bbh-geometric_shapes/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "663a9559869aa3c2b2ce0f59b680369e68636d726b13cd8b368d66e6e44a45d7",
+            "require-paid-repair": "1003eadd21c3c713d47f7b4215902817247cea477c060779f05306a34174ed09",
+            "seek-repair-in-spare-cap": "7eddea5b9f5c771eb1eb0c99af88414fea4b4c50bdab0a0e4ba9b653d6dc5487"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "aa20e09cb24641b4fdd167002ca44b20370413a406c84e3802e5f2fb83fb7dee",
+            "require-paid-repair": "a2cebdd751624989ea8c50bff469d94077003a5ba2133170baa6d8b1186927d7",
+            "seek-repair-in-spare-cap": "1f456eab0e86b49fa685e9face4d827ed801b5d2508611dd51951166fa740b12"
+          }
+        },
+        "bbh-geometric_shapes/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "4b839411da80422332485b57a9d6192c5457eb8d47014f973940b2a8b2351406",
+            "require-paid-repair": "92eb2abe335fe8f8539fe192e62bb752da28d2db27c991dec1eca665aca45b62",
+            "seek-repair-in-spare-cap": "3c826354e0dd29db8cf017b7e2546345205f335499f7b1b4b077cac2c14a7b44"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a2c78f49912210e52f156b336b33327ac0ff9659bdcb48b6faa61f60bc9c92d6",
+            "require-paid-repair": "69cb06b48508b85eda64341005577b2889f02427484dc622ac483b30104909dc",
+            "seek-repair-in-spare-cap": "eae7f3ac24f30a2ec58b7e02ee214cee4bb693c253071dfd77654a6698069ab5"
+          }
+        },
+        "bbh-hyperbaton/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "a64292aeb026d8a7b0dd9e5423635f35574b92be95e5852ba6f6e4addb43f09e",
+            "require-paid-repair": "9811fbfb57059db73b4e9c1eeb80c6f8c4a721867f42e43f3ea9bea0b898dc24",
+            "seek-repair-in-spare-cap": "cba81d159aef060667bcc55f4fde266f89b0ecbeb15c8bc1525a788cc747a8c0"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "aae675d61eaf24c8b7ea351c801fcdb76303f8f71b6ae8d844dc0c77e482a4ee",
+            "require-paid-repair": "438989425084c6f992ff9be37300924a58b04b738fa5fb881baa97aad7abe8cb",
+            "seek-repair-in-spare-cap": "3840c110af873a053d1db384820193bdf2f9cdc4ad4e2f0589cd41cc84225efa"
+          }
+        },
+        "bbh-hyperbaton/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "7f6e3f1b192fc64dc1f05fa7e1e99f4db357100b179161b3a30000ba607a8615",
+            "require-paid-repair": "e2c100939469530745e96a18e2f16d2e4ae4d354f76c7aa26ca804881715f8dc",
+            "seek-repair-in-spare-cap": "e0014620c2df8cdca7a2c22d64f41f3970ccc5f9a1c32083ce5e39d5ccf5859f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f79320628c108d5e56b1bd3f78efef7ce169ad1943572b8419fa4f89a5dbf6df",
+            "require-paid-repair": "010de7a158c26097802b82d6ee2c42f25cfc957cf0800b09ea50f0434083738d",
+            "seek-repair-in-spare-cap": "9e3ac6056d9afcb50fdf61a95578f525bc08442e416ba7d56b9127bbd33e3416"
+          }
+        },
+        "bbh-logical_deduction_five_objects/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "34609ffbfd0e13542c6b4c2aa77da14c54309b3dc21464d5f883661ad7a3f6ee",
+            "require-paid-repair": "c009fa028ab35911757fa284366677284f993bb60c1aa6b4ce891610a2f11d4a",
+            "seek-repair-in-spare-cap": "851d0a77544b15f205a09e45e6fca5f8eead17b3a4fc41a4c5c5059ea901d173"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "b39638de3b259dcd95194442c2b5818c6557eb56f761cea7669d192920726646",
+            "require-paid-repair": "48fdaf0ec722c2bef66f9564c97ddd4d5843cdaf4339adc579c222b228eda65e",
+            "seek-repair-in-spare-cap": "43f6977df2b8d65b166c1bc95d72fccc09649068f55f0654a46497240eb98321"
+          }
+        },
+        "bbh-logical_deduction_five_objects/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "e24395bca024cfa11c42f033f7bbbde22cac72251a1b6fef6537fafe3a1bdb07",
+            "require-paid-repair": "1ed1b322579e3b59f00140b07e26fd274cd451606ac6f260833874817dde53fa",
+            "seek-repair-in-spare-cap": "35d9825557138489d34f86eb20cc1e4cc13d65f87b0a136da13c85f83b1702db"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ffa6b9f2a0e3defddf1641469e6f735207a6e49ad9abe03f6b060ce69a84a017",
+            "require-paid-repair": "d69c95ee27919d16a0cdfc9cbbcae8464b6794e92a5742fbaeadd6c3789f312b",
+            "seek-repair-in-spare-cap": "a7b03091f8e207fd936305785740b04f24315ae0fe062c77dff46222b108c993"
+          }
+        },
+        "bbh-navigate/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "3cc4698882c107b729ad0d0d708317a68a05ee94df992f9d461ccd4e53c1d8ae",
+            "require-paid-repair": "7d784cad90812e48e0261307035b2199305978dab8556d06c3f74ea9ebbf2aaa",
+            "seek-repair-in-spare-cap": "c3fc5efff4567b1b47f7d5dffca25be1b07d6e69fb00c579832a81bc7cf7e99c"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "4f69c0450d7fc06ee45761cdcd143aaae97fe89595605693b5b54bddcbb2ab3a",
+            "require-paid-repair": "fe7b14395f61590bf2ab6c6002ec1f2d18e0f98a4a8059a123b05763bdfee653",
+            "seek-repair-in-spare-cap": "3245130b2fbaca9e177c24ce278062c8da4338ca5222be6d0037582926edf148"
+          }
+        },
+        "bbh-navigate/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "ff9933ead8a27e771a8656401815f91f5c59ebc97a26c0f2c309f84fd1dafff4",
+            "require-paid-repair": "1d9400872315e6d4a12cb32bf68355d9828b4414a5194941565e82c4eebe1075",
+            "seek-repair-in-spare-cap": "7bb0f874c19431aa57324af75389d16f84a59887f1952dfbf1d81c4dc0d2f7d4"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f155377d5f48490a32e58b70c2aa4953a6a6a71d3b1b3537a2bf97a1f8d22efd",
+            "require-paid-repair": "927f54d5b7e8092bc050c4e84102a929dfa39a8de3f2be77499699ae1f3f0b0d",
+            "seek-repair-in-spare-cap": "2cf753fb707aea18f84035a75320ccf8ad7d4cf7a29ee49baeb565b4caff9a34"
+          }
+        },
+        "bbh-penguins_in_a_table/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "78fd53b5e512bb37a76cd329b82e8e758024d0b8687382e7289339e8323bdd4a",
+            "require-paid-repair": "d6acc10b26d12572fe1c8bc75bcd441f7bd7af7e021d8d33cda16f2d651d207d",
+            "seek-repair-in-spare-cap": "f14ddce7166d12b04862377e347e323cef88eec6cfeda4cb80c1e3bb04c1f11c"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "2af4d5ff287ee5aa7d27e0a62821d3e02823ac072b5661a0803749e457977d80",
+            "require-paid-repair": "d92dfa4d1564d2fc6999fa0e8ec352a793de1e9e7e1fb1842604464fc583516c",
+            "seek-repair-in-spare-cap": "95acfb0ad328f24c70ace96bc276a30af4f91c982fbe4f12936db46150d6273a"
+          }
+        },
+        "bbh-penguins_in_a_table/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "3cff6a2a22a97dcd5b62ae833ebd19e5b30a2a59367102c272ec8753f1efce5f",
+            "require-paid-repair": "86bcb9f7e67fb1124ad0640b3386f219d96e4ab73fe0d09024da84fbfe4b8caf",
+            "seek-repair-in-spare-cap": "fcf2724f08291a0bec6f263b6052956c022c4e2f79fac0af56c0a55c2b54f5e5"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f9368403dbd2780fafb62b6c3e0f3d9b8d30e9d704a699c8e258a7a07c312dfa",
+            "require-paid-repair": "cadb186a68497bcdbd78631318a33a8b49a14d773da2dfa6d0904e392e7c233e",
+            "seek-repair-in-spare-cap": "0b0f422ec856197574c4b54d04e73d9b70a9b338eaa8cc73d47cf2fba012f25f"
+          }
+        },
+        "bbh-sports_understanding/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "1be77a1413403f41eddaf02073816a2e9e3d18ce93f9fc10f7ace642f9c61047",
+            "require-paid-repair": "c33a8c06d5534543b2d067732f3766848b4cd23fbd05499984d94ff0fbff8071",
+            "seek-repair-in-spare-cap": "1529f36d09767d7017700796616760d79dfad1eaf4d8f4defe16aba6f36acd30"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "314452a11ab1798527bfe9ecb3317dc71b6bca764df76f15e4ead58bb51fc16a",
+            "require-paid-repair": "13bf37f12e6210d268701da7a7b5b980d3659f4c511f8f47b60a821be34078ce",
+            "seek-repair-in-spare-cap": "8c4d08717a4bfa13a900807c3aa49a7a0736cb047498da725a88f0a3a80b69a0"
+          }
+        },
+        "bbh-sports_understanding/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "414d3bbff6a7125d611e44997ab34696a9295047c5bfce769fa291636b35fd4e",
+            "require-paid-repair": "7a22831997362ef90e3b420723f67bd487061214cde08181711429ea95fb448c",
+            "seek-repair-in-spare-cap": "91eafd6080f90a52ec11cf49bd1126dc2f77f11353d31816d653a1db433d904c"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8f51bf01c5242715ac151af84680c589c2860fa2c53c7aa78b72d4dd8f904dba",
+            "require-paid-repair": "94a3c18f0cbac5d89fc703a71f8cbf0043abbf066ff82de8f0a5aa4e6e5c52b6",
+            "seek-repair-in-spare-cap": "c9bb6b0d6dab8ee11b31ad40f13156323ce03313b90683f1ddb8452b8530f9f9"
+          }
+        }
+      }
+    },
+    "LMentry": {
+      "certifiedDeploymentStrata": {
+        "cap-19/gain-1": {
+          "has-paid-repair": {
+            "deployments": 201,
+            "holdoutPassChange": 1869,
+            "improved": 184,
+            "regressed": 12
+          },
+          "no-paid-repair": {
+            "deployments": 34,
+            "holdoutPassChange": 116,
+            "improved": 24,
+            "regressed": 5
+          }
+        },
+        "cap-19/gain-2": {
+          "has-paid-repair": {
+            "deployments": 112,
+            "holdoutPassChange": 1271,
+            "improved": 105,
+            "regressed": 5
+          },
+          "no-paid-repair": {
+            "deployments": 13,
+            "holdoutPassChange": 71,
+            "improved": 9,
+            "regressed": 1
+          }
+        }
+      },
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 235,
+            "holdoutPasses": 6078,
+            "nativeBounds": {
+              "lowerPasses": 5598,
+              "upperPasses": 5674
+            },
+            "paidLookups": 10666,
+            "qualificationLookups": 3010,
+            "searchLookups": 7656
+          },
+          "require-paid-repair": {
+            "blockedNominees": 139,
+            "blockedPromotions": 34,
+            "deployments": 201,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 5962,
+            "nativeBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            },
+            "paidLookups": 10017,
+            "paidWitness": 322,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -116,
+              "pairedRange95": [
+                -148,
+                -84
+              ]
+            },
+            "qualificationLookups": 2361,
+            "rescuedNominees": 0,
+            "searchLookups": 7656
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 126,
+            "blockedPromotions": 27,
+            "deployments": 208,
+            "extensions": 139,
+            "extraSearchLookups": 373,
+            "holdoutPasses": 6006,
+            "nativeBounds": {
+              "lowerPasses": 5598,
+              "upperPasses": 5674
+            },
+            "paidLookups": 10460,
+            "paidWitness": 322,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -72,
+              "pairedRange95": [
+                -100,
+                -45
+              ]
+            },
+            "qualificationLookups": 2431,
+            "rescuedNominees": 13,
+            "searchLookups": 8029
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 125,
+            "holdoutPasses": 5435,
+            "nativeBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            },
+            "paidLookups": 9756,
+            "qualificationLookups": 2853,
+            "searchLookups": 6903
+          },
+          "require-paid-repair": {
+            "blockedNominees": 116,
+            "blockedPromotions": 13,
+            "deployments": 112,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 5364,
+            "nativeBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            },
+            "paidLookups": 9375,
+            "paidWitness": 294,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -71,
+              "pairedRange95": [
+                -90,
+                -52
+              ]
+            },
+            "qualificationLookups": 2472,
+            "rescuedNominees": 0,
+            "searchLookups": 6903
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 104,
+            "blockedPromotions": 8,
+            "deployments": 117,
+            "extensions": 116,
+            "extraSearchLookups": 297,
+            "holdoutPasses": 5401,
+            "nativeBounds": {
+              "lowerPasses": 4093,
+              "upperPasses": 5598
+            },
+            "paidLookups": 9723,
+            "paidWitness": 294,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -34,
+              "pairedRange95": [
+                -48,
+                -21
+              ]
+            },
+            "qualificationLookups": 2523,
+            "rescuedNominees": 12,
+            "searchLookups": 7200
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedPasses": 4093,
+      "traceHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "dda21e68c48ffa25e0b974309bba0aed148c7cc7f4c0f7fc5ea1b7dd4212484c",
+            "require-paid-repair": "fdcff63842f28423783eaa5cdaba795e4306c71e97589e2221d5d0ed10d6a141",
+            "seek-repair-in-spare-cap": "c2640c5ee218a74bb22e32f1461d09dbc088f6ebb9202984f3e7c48bd2c5a149"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8f6f5d4551530ff0cdd5442e1438754395073bb5e9712021531e2b92de858cb9",
+            "require-paid-repair": "d3076a651bceeb31f1165e02e7ad54425f7072ca9f5aa205c90d4a6179c9ea18",
+            "seek-repair-in-spare-cap": "fa201ee4b0a01de2e2a8181d09086b173b63699001a815af2f45422b73a91ad4"
+          }
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "28337681af49fef2fc0cd7aac80376bd0bc067b88e09d3281d52f0d6fd55b319",
+            "require-paid-repair": "7ec935fce4b9f357049de853025636b2075b3d3b055a8bbfb71041bb8bac11e7",
+            "seek-repair-in-spare-cap": "85e37101138d4c70227ae21bd7d64b08ba870a6a93ab1ed817eba75cc8042c46"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "3a6b32029d428054427304c05cd1ac7a31d0aa4524070f16e5649ccf279ee818",
+            "require-paid-repair": "a60deb1552ad622a23de105b532ee4ff1a162740991bc7c384fb6af11822eec2",
+            "seek-repair-in-spare-cap": "6ef1cd9e77cb776d63be74c8678539e2a6c8e549de9eaea72605a3eef8a440cd"
+          }
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "4ce36b39c4b72f8e4347c4b852c4796872bf6776c00465b5f24094b70c7fa9dd",
+            "require-paid-repair": "1a5f93ab5bdc5d8c87ee08141dfcde04e44aeb9e5cfb130a554bf0cd127f6c14",
+            "seek-repair-in-spare-cap": "73dd1fb470ceaf204bc1080d99b853ed1dc9cba92046d65124a5cae89a816397"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "44cf4713ba09b42f18492ec22093dc41a26bdecc833b231218edcad53f45b672",
+            "require-paid-repair": "94928d765e8b2cd7bd266ee2773dc1e42af154579e2ae06615fabdc47059221c",
+            "seek-repair-in-spare-cap": "5e371000dd94475ba1b8baeba3457b0dcfaad190baf3b1a1ad6acd029c50d241"
+          }
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "2ebe4aa6d168b1d333401655ba0be504c2db38e28785a32bbf5c175c0c978302",
+            "require-paid-repair": "cd66e45a2dbe090da08ede89dfeb650fe4825cf44d2168e443baef23c2d93d44",
+            "seek-repair-in-spare-cap": "d4373e4f8465755062e758098bd4da02ade0db8a91bc1acd22ad06d350a071c9"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "6db41b9b98a9cbf0639de8637260d73563f1a13dbba93a2f6daeba36217e055b",
+            "require-paid-repair": "9353f6ce4f5fd007341abb1a9f813984d30c1d6a37315a8f7a8d082df54f976f",
+            "seek-repair-in-spare-cap": "0d99970ea01ae7dea968cebe1e78130539707bfad17132f319469ef565f9191e"
+          }
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "e1d1fd199bef0bf5dfc7a96c8d2a2366617b199a843687bb5f116d76535fbaf9",
+            "require-paid-repair": "09a9ef97cf11dbfe8056cc51943cc054df4b3989fab52b09d52fd8623e075a70",
+            "seek-repair-in-spare-cap": "52c16ab1f627ad02f0d42ba9bee9ab571075d11b9886a645612deca974c0a9a3"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "08a3373a2a0128b7a40c62295825f90046a841bab68d8270e16e96967c3bccd6",
+            "require-paid-repair": "9ba32987fb69f928b5719e3b5cd75f14726a79aa87d17932b0dcc3319bfcaf29",
+            "seek-repair-in-spare-cap": "dde5ccbf908af154784725bfa415473811dd33ce94762e5fc17a065d86cc024e"
+          }
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "2a236aa8954b59f826f1129211db3ac7daa26a62501e5940614f1e30e512f3ae",
+            "require-paid-repair": "48af1ef566c5ac3ff4528b7fd5ca65fbf16bdb182334a8445896a1b1ac0cbda3",
+            "seek-repair-in-spare-cap": "a2fc37fa9b0a274d356268986f531a9840e9016c366d1e6d14fcee3863f413a3"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a89a41cb5dcef8c6e3f52320912cc83da77e501ddd7389333ed3e18b55268524",
+            "require-paid-repair": "07d1c452ba533d1bed20cbe0eb5c6f9805f7879f6da9ea9970ca6d58bf49c57b",
+            "seek-repair-in-spare-cap": "08417cc11dfd9e4839fe9d2ab80d5eb26158b9d9f11b42559aaad66774f5c560"
+          }
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "5bb15c8be41420603108b5082a4b32149cc817947c3542bb1e66e547cff01227",
+            "require-paid-repair": "7dcd3e7c1208d2e55c0c1885c720054a6b754be71e5d5cec5957f8fbd4a3ce35",
+            "seek-repair-in-spare-cap": "fa11be83256c63c4b294a8f467d824712c911abd4bfb73e997717f96d2a0d07a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "2cddee2acf1570182e06535b9a2d4ecb9d86300dce2bd56a000a499889d862fe",
+            "require-paid-repair": "17b297b0335a2990cf549afc4e5f2b7fc0917a865b6be8a1a9c9d9e5dd0e91ed",
+            "seek-repair-in-spare-cap": "5c45a32fc30f2bb3666f0511d6b1ef2e2d3872eb01c8095fc7cdb5aa4b018652"
+          }
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "30deefbe8cab1f1b82d3491681aa7467e12d95dcf09d4a84ba09cc67348decd2",
+            "require-paid-repair": "747c282ea4bf09f9c306af6cb010181049c2f3165f7e198eccf52de54e778a18",
+            "seek-repair-in-spare-cap": "f57311e64c8d6db1597f5660ba0d5ca5e2cd7866e8c2867fb459aa5f352d88f8"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "3cbb08de9ccce00c9209c9b7a58e47f1654d836561bbfc36eaf03d1661a117e1",
+            "require-paid-repair": "050b6cbe72091b87509c4d4af77aaa42ead05161a8c9e15057d4799f4c30d2e7",
+            "seek-repair-in-spare-cap": "e1e749208c4d6bd3c74e9c1998969f6d312353af675b04fdb238421320fe3ad2"
+          }
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "36d54f2141292d40296aaf823c87e5d7c559adac965d2d1c79e5a71b6fec50e8",
+            "require-paid-repair": "ec19cd2d4b37e6307c7f0548d225ca94cc29f64902425d46eda6ca069b5ef632",
+            "seek-repair-in-spare-cap": "87857f5e77ee5772e82165db3becf89ee616bd14acb397e79a01eb13a7a43b4e"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8bd530e62b9d2b09bd1154b76fe43226d3879292a45bf265f8e930182f4d77ba",
+            "require-paid-repair": "31863003bdf9a5e19c7a928ac488ab5bade0045fd431711104f9145ce70ebae4",
+            "seek-repair-in-spare-cap": "1ba085189a7a68ce7a012b272116e5661b7a6c31d64f47f63d8cb9212545b97c"
+          }
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "767c52c431d4cb3a8388d3012895e1ee88e1d8f7cdf151495aba31b1fc51626d",
+            "require-paid-repair": "b6372e7da52ae314608b13cdd0a121b0e64192910f4237d268ae9d5c55fde643",
+            "seek-repair-in-spare-cap": "5d79c1baf5744238ef58212173f0b49f85f63c6c5af354157a0bc1b95810c8b5"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8eceee1e1f2f76121ca2aad76c8675c3f5d4c10af1561092e56654c83fd08d85",
+            "require-paid-repair": "eaabf189edab52e3942384977e1c539585bf79b94e6d79b6114d70236510bf63",
+            "seek-repair-in-spare-cap": "9a84f119f46e992817ba12aaef4391092ed426f640bb3bcfe4991d589f6bd453"
+          }
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f7b14df8045ab51f42e0fe7467042c9ed625eab16633cd00aa446407699f2c35",
+            "require-paid-repair": "ac689c4646386a25edeb4508a9a4be109f648af2189fa37c4c792abef12ecc92",
+            "seek-repair-in-spare-cap": "e4c530b73ea31d3f707b12242f347ccbf37e90fad55e4abb1c1a0517e99c332f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "483bc49290dc2856c1e470e2de49c13ada8c8d6c97fa9ea810c5b189fb0ed1bd",
+            "require-paid-repair": "51032c435d9ff2beeda00bf38af60a57dfc28a1c1e52f3f957f6715d92e09526",
+            "seek-repair-in-spare-cap": "b49ede7b38b2bfc05a48078217cb543af8b301746cb464a5cf98ed5fd7b88949"
+          }
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "ae7d63532df1a3c5eaad39f2fa49c1e2f5156365c1e4f97992b94a961a66216e",
+            "require-paid-repair": "33b35a87d2b6876145386f5e7a839c28d4b7443fdc5463fd70de8b7376f26b02",
+            "seek-repair-in-spare-cap": "7df7b4779c2c88a42eae4774b5895a793dc58b806e72c162b2617d333e844a1f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ce0fdcaf2fe35296fe1c3d318a0bc96d4d132ea229f68fd347a7e412e34525ff",
+            "require-paid-repair": "74d32dc208edde0e4a8ab0891a78d285dbf5d6283078e6c4076fb4dc01cec855",
+            "seek-repair-in-spare-cap": "a0ef0ea6052aa9fcc7b5c4b0271a1e7611daf1e9c53e2795fdfec71fbcd2b819"
+          }
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "10c712935531b1cea40fdaf27d96fb30cdf76e6d86d45f82ca61a78cef7ea869",
+            "require-paid-repair": "ed7c6acd346f1d7eda6a62e6426a7cc8e4460ea592e7ecf1ccb8e760f9b67df8",
+            "seek-repair-in-spare-cap": "1e1095e6ba7c23eafde42a1294ae0a3b54159e9982f240fb2dbd4be7a92c796a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "5356a52380cd6258f1f4b084792edb65c0701fc159b3e1766579674cae236fb5",
+            "require-paid-repair": "573889331e66f4d07b44c21692d37ad29af0d56e743f23968ffb1f291c30e203",
+            "seek-repair-in-spare-cap": "a93ad6ffce88ff32091138bfc6fdf246e6a8a87cd4654dff7874ba3351744d6a"
+          }
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "0e91eb37626edfefe59f4b9907bb59bab99a20c89cb5d53ddd4759beeb145cf5",
+            "require-paid-repair": "434a381091241f6cf4c276828bb6f9754c76fa061d03795b0b438db117c77ee4",
+            "seek-repair-in-spare-cap": "fcd61d8709c13c95f1ac99aa10c5efe852b3af03e0135b95d1f751a76be8bfad"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "15c7ae3ddf8e07559110ad209570a5cc706e96460783faa6957dcc5703efe1b3",
+            "require-paid-repair": "435cc7cc6dbf224627cfe59124c91358992c28840a42c1eaac4b43e86e6c57ed",
+            "seek-repair-in-spare-cap": "cee15d4415ee8be8000f67927c7c571fdbb9d0432c046a8fed87b20aa9cb3fef"
+          }
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "620b47819cc15b899deee6b552cf1ae8058844d48856b192dc98843033a9c46f",
+            "require-paid-repair": "700dd1bbd7c70153f5348d4560ae3fc2b6627c57ac1d4ba6b9734ec5f7e82285",
+            "seek-repair-in-spare-cap": "7171704c9c8555e86598b491722c03599b401e1e85f4d27de9b851337ca73db4"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1b0f11b1a9408f14304e9b2b937f02b6a0308d335aeea3588627cd503bd88654",
+            "require-paid-repair": "dae83fecf65554393bfab875e09032efb074a4cfd922af7addfbab076cdfe4b2",
+            "seek-repair-in-spare-cap": "b997a09f4eeeb921e71d9682d157c5966494c6b45983a0448ba1f70202bcce8b"
+          }
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "cap-19/gain-1": {
+            "certified-wide": "753b67dcf6f4b91f9c78fae04d0892bec0f209d8a5f62f534c3cd9ca225a0abe",
+            "require-paid-repair": "8b919112250fc01f4608d7d1647d47baf5fc6bdbf390336f8d940996b6179c1e",
+            "seek-repair-in-spare-cap": "b7c0a373e4e34066d1e5f7811e368df4c7887b1e61419baf9042b4a350be5780"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "dd0ba9362ca9461b1164294324f087ff8ff8c17d183814d9a5d6fa3b65ef39d6",
+            "require-paid-repair": "049e5e76a1e565c301c60633061f368fc838d3af0b89d27c46600554f83e0b8e",
+            "seek-repair-in-spare-cap": "1a34ed5e0467bca8654bf20ecdf8f3684a00a979fc12fb25e2c1045c6fedcc66"
+          }
+        }
+      }
+    },
+    "LMentry/new-task": {
+      "certifiedDeploymentStrata": {
+        "cap-19/gain-1": {
+          "has-paid-repair": {
+            "deployments": 19,
+            "holdoutPassChange": 151,
+            "improved": 10,
+            "regressed": 4
+          },
+          "no-paid-repair": {
+            "deployments": 3,
+            "holdoutPassChange": 3,
+            "improved": 1,
+            "regressed": 1
+          }
+        },
+        "cap-19/gain-2": {
+          "has-paid-repair": {
+            "deployments": 9,
+            "holdoutPassChange": 142,
+            "improved": 7,
+            "regressed": 0
+          }
+        }
+      },
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 22,
+            "holdoutPasses": 315,
+            "nativeBounds": {
+              "lowerPasses": 278,
+              "upperPasses": 278
+            },
+            "paidLookups": 1425,
+            "qualificationLookups": 377,
+            "searchLookups": 1048
+          },
+          "require-paid-repair": {
+            "blockedNominees": 18,
+            "blockedPromotions": 3,
+            "deployments": 19,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 312,
+            "nativeBounds": {
+              "lowerPasses": 278,
+              "upperPasses": 278
+            },
+            "paidLookups": 1336,
+            "paidWitness": 45,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -3,
+              "pairedRange95": [
+                -11,
+                5
+              ]
+            },
+            "qualificationLookups": 288,
+            "rescuedNominees": 0,
+            "searchLookups": 1048
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 17,
+            "blockedPromotions": 3,
+            "deployments": 19,
+            "extensions": 18,
+            "extraSearchLookups": 35,
+            "holdoutPasses": 312,
+            "nativeBounds": {
+              "lowerPasses": 278,
+              "upperPasses": 278
+            },
+            "paidLookups": 1377,
+            "paidWitness": 45,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -3,
+              "pairedRange95": [
+                -11,
+                5
+              ]
+            },
+            "qualificationLookups": 294,
+            "rescuedNominees": 1,
+            "searchLookups": 1083
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 9,
+            "holdoutPasses": 303,
+            "nativeBounds": {
+              "lowerPasses": 278,
+              "upperPasses": 278
+            },
+            "paidLookups": 1412,
+            "qualificationLookups": 364,
+            "searchLookups": 1048
+          },
+          "require-paid-repair": {
+            "blockedNominees": 18,
+            "blockedPromotions": 0,
+            "deployments": 9,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 303,
+            "nativeBounds": {
+              "lowerPasses": 278,
+              "upperPasses": 278
+            },
+            "paidLookups": 1356,
+            "paidWitness": 45,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "qualificationLookups": 308,
+            "rescuedNominees": 0,
+            "searchLookups": 1048
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 17,
+            "blockedPromotions": 0,
+            "deployments": 9,
+            "extensions": 18,
+            "extraSearchLookups": 35,
+            "holdoutPasses": 303,
+            "nativeBounds": {
+              "lowerPasses": 278,
+              "upperPasses": 278
+            },
+            "paidLookups": 1393,
+            "paidWitness": 45,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "qualificationLookups": 310,
+            "rescuedNominees": 1,
+            "searchLookups": 1083
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedPasses": 161,
+      "traceHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "e5337b8d46ad0bdbb0ff4faa8b0dd4576f7cc17b95e74bee227233159cd1551b",
+            "require-paid-repair": "8d67decb3f9c0991378bed803dfd580ba95775661cd5ae2aa250a5943f2154b3",
+            "seek-repair-in-spare-cap": "feb3f5a71499785222503fc637dfb2822904acde0af7431e17a71a89f1517fc5"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "cf3f28217c42889d77108dd363738845e61a38630de02c915fb2430d94a0ba52",
+            "require-paid-repair": "4ea4d1f101a4b823939d69c20d704bd32a407be7b00710e6bb940ded8356c4af",
+            "seek-repair-in-spare-cap": "d876919775d718a2ea81c17506cd3006be9a510922bd0dade30b18663d513332"
+          }
+        },
+        "lmentry-ends_with_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a0d1d086950802d64441983c34cf01c8ef399b02bb3123eefc265560113d0b85",
+            "require-paid-repair": "7eb6c15b7373f09c794dfce8946169f2802ba578e1cfb4b17c8cee2d0818c3db",
+            "seek-repair-in-spare-cap": "b3fc2d74f8eafd8574b166c63c8586237729c9be03d746abaf46172a085b3950"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8a3e76b111529ee7e13cf95a28f43ab980766a0df9a11510fa1b67d0ffdb6a66",
+            "require-paid-repair": "a6b6e5362681c8c9760c8fe0746861aa95f8aad46c502168024bb5c7a5026e51",
+            "seek-repair-in-spare-cap": "855154cf05b4794c161eb4a08751007c404b6d6927a45254627c1a8ed5d35f1e"
+          }
+        }
+      }
+    },
+    "LMentry/seen-task": {
+      "certifiedDeploymentStrata": {
+        "cap-19/gain-1": {
+          "has-paid-repair": {
+            "deployments": 118,
+            "holdoutPassChange": 1246,
+            "improved": 108,
+            "regressed": 6
+          },
+          "no-paid-repair": {
+            "deployments": 21,
+            "holdoutPassChange": 42,
+            "improved": 13,
+            "regressed": 6
+          }
+        },
+        "cap-19/gain-2": {
+          "has-paid-repair": {
+            "deployments": 62,
+            "holdoutPassChange": 838,
+            "improved": 59,
+            "regressed": 2
+          },
+          "no-paid-repair": {
+            "deployments": 3,
+            "holdoutPassChange": 21,
+            "improved": 3,
+            "regressed": 0
+          }
+        }
+      },
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 139,
+            "holdoutPasses": 5546,
+            "nativeBounds": {
+              "lowerPasses": 5248,
+              "upperPasses": 5404
+            },
+            "paidLookups": 7271,
+            "qualificationLookups": 2217,
+            "searchLookups": 5054
+          },
+          "require-paid-repair": {
+            "blockedNominees": 115,
+            "blockedPromotions": 21,
+            "deployments": 118,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 5504,
+            "nativeBounds": {
+              "lowerPasses": 5248,
+              "upperPasses": 5404
+            },
+            "paidLookups": 6759,
+            "paidWitness": 208,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -42,
+              "pairedRange95": [
+                -65,
+                -20
+              ]
+            },
+            "qualificationLookups": 1705,
+            "rescuedNominees": 0,
+            "searchLookups": 5054
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 98,
+            "blockedPromotions": 13,
+            "deployments": 126,
+            "extensions": 115,
+            "extraSearchLookups": 327,
+            "holdoutPasses": 5524,
+            "nativeBounds": {
+              "lowerPasses": 5248,
+              "upperPasses": 5404
+            },
+            "paidLookups": 7167,
+            "paidWitness": 208,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -22,
+              "pairedRange95": [
+                -36,
+                -8
+              ]
+            },
+            "qualificationLookups": 1786,
+            "rescuedNominees": 17,
+            "searchLookups": 5381
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 65,
+            "holdoutPasses": 5117,
+            "nativeBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            },
+            "paidLookups": 6051,
+            "qualificationLookups": 1975,
+            "searchLookups": 4076
+          },
+          "require-paid-repair": {
+            "blockedNominees": 89,
+            "blockedPromotions": 3,
+            "deployments": 62,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 5096,
+            "nativeBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            },
+            "paidLookups": 5799,
+            "paidWitness": 169,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -21,
+              "pairedRange95": [
+                -31,
+                -12
+              ]
+            },
+            "qualificationLookups": 1723,
+            "rescuedNominees": 0,
+            "searchLookups": 4076
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 77,
+            "blockedPromotions": 2,
+            "deployments": 63,
+            "extensions": 89,
+            "extraSearchLookups": 235,
+            "holdoutPasses": 5098,
+            "nativeBounds": {
+              "lowerPasses": 4258,
+              "upperPasses": 5248
+            },
+            "paidLookups": 6066,
+            "paidWitness": 169,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -19,
+              "pairedRange95": [
+                -27,
+                -12
+              ]
+            },
+            "qualificationLookups": 1755,
+            "rescuedNominees": 12,
+            "searchLookups": 4311
+          }
+        }
+      },
+      "publishedGepaBySubject": {},
+      "retainedPasses": 4258,
+      "traceHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "9b3bc1dc8d1c1ead653566ab69b4df0540770b7db5fca343d08bd2612e7a5e57",
+            "require-paid-repair": "4a9b0828f9cf689467062069876f260c3f8340b23065fde243499ebe7736a493",
+            "seek-repair-in-spare-cap": "b3e462593c43fa8e502c098f386c079c619f0778dba9c673a78ff60f520c9b0c"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "3439ce6d960844146e4ff8837284355220844b8782df0779caf1c7d4a021450a",
+            "require-paid-repair": "fb22bb759c0790218b3f2816e1250a1d49677961ff52882f14cb242ad3a26058",
+            "seek-repair-in-spare-cap": "0f4cfe7cf9d52f7ec740499562ed2de29b367ce2987a3c57e0ad5d8b3bf2c50f"
+          }
+        },
+        "lmentry-all_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "99afee5cc3b8e879c4710e4eaf0aaa0de75a2af184f48bec8b7cf1a1dd5c4322",
+            "require-paid-repair": "610d6f82a68c8af9ea7c0d2f63aff740778826537cbb75f1e6ae3dffac36741e",
+            "seek-repair-in-spare-cap": "c028c6cb01abbccfbc81dbfc7f0bff73e42c78729fa3353e3bbc3da6f10c17f6"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "91c7e1a5ea24b121e8b3a0e9cd9da25e65f4a4385a86c2dfa81123906ec8de51",
+            "require-paid-repair": "43ab75930cb163619f2b1ca01ebd7ceae945fd31df6ae554d86e9a7f648fe3e3",
+            "seek-repair-in-spare-cap": "170e8ed002313957da543b72ad39d8d7bc2af7c25fd305ee1fdae848350ab1c2"
+          }
+        },
+        "lmentry-any_words_from_category/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "0328b4649c8808073d898141efc049519c5cb8eee6b3abc7881112953b51f086",
+            "require-paid-repair": "68491510424fdeea28631264eba49ac411f3d61d3cd877bccc7c2751660f0884",
+            "seek-repair-in-spare-cap": "cff9a8f3567c4f1d3e38c037aa067ff90269dcb67e4ab3aa5aa31a1f88dcd3d6"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "c455de7e8db440b09768c55c078d2c2007d1ec567460d21082d92e25c7705771",
+            "require-paid-repair": "825afe71857802008d8cc895724d70b5339b7700448f0676bf3375c401b20231",
+            "seek-repair-in-spare-cap": "64c54759017609b1ab8339cacf8e72aa7d09b5b0faf86c33b1098eadb13bf405"
+          }
+        },
+        "lmentry-any_words_from_category/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "9e68140f63ce1f536749dfdeb704138c281ff97773615ad754752091fd1bd593",
+            "require-paid-repair": "a88726cfa356b67b2ec3926499e2d9b3b19a3ddf857685988a659f93ef1a7322",
+            "seek-repair-in-spare-cap": "7e461f4da72e6e44f89fe47e2f95cc526bb66b73b3dc56eed06373dc5deab0b8"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "95b1cb2848a7ef394e115bf00919928c09abb21bf7833c4b4ebbc0924e20b1d8",
+            "require-paid-repair": "de347f209cb5b20d1f8a4f44847f206646639036d26855437670d902c3bb4619",
+            "seek-repair-in-spare-cap": "b2992d11e9548b6c6ce930b0ea0620627821b0dea9de48c2340ca7f9c7e42c39"
+          }
+        },
+        "lmentry-first_alphabetically/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "91092625e46fba3937250798b53ca5fad24913a8bc5d52548c5892e85e18b627",
+            "require-paid-repair": "29a2fc793515843e44deecef6d040ba7bd145f00f0638217ef3672b91030c103",
+            "seek-repair-in-spare-cap": "31e2bec27cbcf2202f035d04b7312db94cec3445ef25608dfa96fb0925256bd8"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d7d8e062dd4a08b044bad05b5eb199f9a1923c673cb41597b82e63bd5f202269",
+            "require-paid-repair": "ce9c1cf0d8d5cae92dc776a00d3d2e9760710a69b35f12248fb7013fd9a1e202",
+            "seek-repair-in-spare-cap": "7c372cac1627dfce8dc74469a8096ce6a36ce3a1b746c04b0f5ce705141edf6b"
+          }
+        },
+        "lmentry-first_alphabetically/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "479505dadac295a9b07d87b18f9ded1559a9f647368a67a711eaa5ec4820ca3a",
+            "require-paid-repair": "2f93dfce9fb52929ccb1ccbd9ce59ad6226def86313b3341e92834e201fd657a",
+            "seek-repair-in-spare-cap": "b67e8a70e812cf15e254dad13b55216fdcc49d286bb80485090abfec737b52e3"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "21c9e3e32bec57a42d8fe13e3e17bde7d2af2ee7fe8b247e1db0d29372ec81fe",
+            "require-paid-repair": "514feebf7bb2109c9ab0f5f537e049a820070896603c482dfc5944682e3e1cf2",
+            "seek-repair-in-spare-cap": "192b087979493676b27dead9de8823b58b1e94eebc5b3e73099c8e2bd83a5abb"
+          }
+        },
+        "lmentry-less_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "e999c2c5cd48cc8588bd6d2859ee2dbf4c43b45cb9b272fcaf646de90895c9b4",
+            "require-paid-repair": "61f8fe604929b4e27f957ffb5a7db64dd89018ddf818a1dfd23009eff2e84018",
+            "seek-repair-in-spare-cap": "c76e4347e4640e2cc9e1fa32d55ec51a48e14310572aae9f3238c4ec795b1424"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "5bd0dfaae44c1abe54ed675e08598f1bcee6abf9074ce88ef06a32d0abf5749c",
+            "require-paid-repair": "c79d54fde200576481110ed3387e0ea2f20467c43243311c387e26112ebc47d3",
+            "seek-repair-in-spare-cap": "ed0cd87aa9f031e3d3ae26ecdde844274c4e4e42455247b0c7e6cd8f50c77d23"
+          }
+        },
+        "lmentry-less_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "16e1e3cf4eccda418dce0b400c82b3434c290d23bc80cf1897d6f29c3603daf5",
+            "require-paid-repair": "b6a6ba5a7550aa81b2090193c43c0be1b00b14ee805d0df30898b5583ce4a6b4",
+            "seek-repair-in-spare-cap": "2869dcdb5fd47931cb8b8f4c65caa26069381c3d51998bb7881b3d67e8a21f68"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "cd79bbdf8b080834e5aa423a2282e056566feb46eadd56a1c46a4efb2b143cb8",
+            "require-paid-repair": "4b7551e0cc19d76bfe713a7b57d6b4bcbf47ca203e62de6882155fe353298467",
+            "seek-repair-in-spare-cap": "4098ee891b5487e4df90c6cac895698864ab7813d94b0c88c8a5f4fc6adb0bfd"
+          }
+        },
+        "lmentry-more_letters/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "8fc8cee9974686b628e34df7ad8f0670a4cb9c0c0814d465ca2133b0dac27771",
+            "require-paid-repair": "b1b3421b92e49359a54f02ef21a65a776717001e00e7792ec3c2f3e7149e5de8",
+            "seek-repair-in-spare-cap": "89bb8aec5e8013987ce75262c4eb6041a493080aa057a3c9f98f143c60b88095"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "24358c3fcedb0c377582ccd851dd674e14845b026ea8e9ebf967bd2a9acfa914",
+            "require-paid-repair": "9cf7566270d5c5156363bbd2f9d25f0432794f60183be283a526dedec63a3a8c",
+            "seek-repair-in-spare-cap": "770754d3abc2437fc0c241d76b493aaa78b31b4b4cf00cf5f7a778ebdf311aa9"
+          }
+        },
+        "lmentry-more_letters/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "391276e3d1f40ec5d5be5cbbe98f576a0d9dbadc92683e3f5e88f98b6da06b2d",
+            "require-paid-repair": "70ad6aaf3ad2d232999054d9261b144ebd23d4aa8c9633ed12f16518c21fc9e6",
+            "seek-repair-in-spare-cap": "7352f7f7e6887db9efbfba2c65e1a13bcd0fb12217495b4a37be20c497e67b34"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "77370fe84362be6eaf628380f774cefae7a302d7f0a47b3b56e292c2e5d2fba6",
+            "require-paid-repair": "64cc78adaaace9027243030a1a2a4cb0b756510e8d0c69a8d0b53d03b6fc2ef1",
+            "seek-repair-in-spare-cap": "b0631e443684fdd52567e68e786e163924d2dbf6a0ebc653f7ca754585464111"
+          }
+        },
+        "lmentry-rhyming_word/flan-t5-xl": {
+          "cap-19/gain-1": {
+            "certified-wide": "7508ec74d0255bab64c7f48a298e344ff56722c599ad67e40d6de5a601fd9fda",
+            "require-paid-repair": "dbac5cc1baefac2c92ae3307d8199f907fbd501728070fc415d514ef23068601",
+            "seek-repair-in-spare-cap": "e321da6161d3a035b943ab687db2bcc333a9c1cedbdc68364d7c3340d9db2b99"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8fe03be3ffd06f0f35e9213845470bde95685f41821a3e0aff9d79cb2f73227b",
+            "require-paid-repair": "d807f9fa27b46d674183c7dcd97498a059e59bd3234cc0cfd52cfa4be65a4d90",
+            "seek-repair-in-spare-cap": "5f1e069c91c36bebc6ba8fec03e791604b8f1300e6a2887def9b178e2fc79666"
+          }
+        },
+        "lmentry-rhyming_word/minotaur-15b": {
+          "cap-19/gain-1": {
+            "certified-wide": "868641b03383d791be7084161270097f113676044c44977940227cd4a5fce9b4",
+            "require-paid-repair": "7eb9e0d4762deff5df0d61e11796961e73c1e35ce6300cf9ab8bf8b008f6b84f",
+            "seek-repair-in-spare-cap": "b98fee140c3eb2a2aeadfdfbef13c2fbe08024fbc667c6a235e3b2ff39fc3357"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "9d383b3215564916599917d718009233ffb444ab34dc1a65bcf5c0fd9f061e14",
+            "require-paid-repair": "e5e0ce69fa3f093975adb5990e5b37f606c47427d852f3ef18b19baaa0be6263",
+            "seek-repair-in-spare-cap": "9718f0068627e4ee6eb30720c09f82cbb19e4e93b3c6d906f5ac7664a40af824"
+          }
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "certifiedDeploymentStrata": {
+        "cap-19/gain-1": {
+          "has-paid-repair": {
+            "deployments": 30,
+            "holdoutPassChange": 30,
+            "improved": 14,
+            "regressed": 11
+          },
+          "no-paid-repair": {
+            "deployments": 72,
+            "holdoutPassChange": -61,
+            "improved": 22,
+            "regressed": 36
+          }
+        },
+        "cap-19/gain-2": {
+          "has-paid-repair": {
+            "deployments": 4,
+            "holdoutPassChange": 25,
+            "improved": 2,
+            "regressed": 1
+          },
+          "no-paid-repair": {
+            "deployments": 3,
+            "holdoutPassChange": -6,
+            "improved": 1,
+            "regressed": 1
+          }
+        }
+      },
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 102,
+            "holdoutPasses": 56034,
+            "nativeBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "paidLookups": 13942,
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -55,
+              "pairedRange95": [
+                -121,
+                11
+              ]
+            },
+            "qualificationLookups": 5191,
+            "searchLookups": 8751
+          },
+          "require-paid-repair": {
+            "blockedNominees": 546,
+            "blockedPromotions": 72,
+            "deployments": 30,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 56095,
+            "nativeBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "paidLookups": 11741,
+            "paidWitness": 133,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 61,
+              "pairedRange95": [
+                10,
+                112
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": 6,
+              "pairedRange95": [
+                -37,
+                49
+              ]
+            },
+            "qualificationLookups": 2990,
+            "rescuedNominees": 0,
+            "searchLookups": 8751
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 507,
+            "blockedPromotions": 66,
+            "deployments": 36,
+            "extensions": 546,
+            "extraSearchLookups": 1941,
+            "holdoutPasses": 56083,
+            "nativeBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "paidLookups": 13822,
+            "paidWitness": 133,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 49,
+              "pairedRange95": [
+                2,
+                98
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -6,
+              "pairedRange95": [
+                -50,
+                38
+              ]
+            },
+            "qualificationLookups": 3130,
+            "rescuedNominees": 39,
+            "searchLookups": 10692
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 7,
+            "holdoutPasses": 56084,
+            "nativeBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "paidLookups": 8977,
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -5,
+              "pairedRange95": [
+                -31,
+                22
+              ]
+            },
+            "qualificationLookups": 4007,
+            "searchLookups": 4970
+          },
+          "require-paid-repair": {
+            "blockedNominees": 287,
+            "blockedPromotions": 3,
+            "deployments": 4,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 56090,
+            "nativeBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "paidLookups": 8289,
+            "paidWitness": 83,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 6,
+              "pairedRange95": [
+                -2,
+                14
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": 1,
+              "pairedRange95": [
+                -24,
+                27
+              ]
+            },
+            "qualificationLookups": 3319,
+            "rescuedNominees": 0,
+            "searchLookups": 4970
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 268,
+            "blockedPromotions": 2,
+            "deployments": 5,
+            "extensions": 287,
+            "extraSearchLookups": 1042,
+            "holdoutPasses": 56090,
+            "nativeBounds": {
+              "lowerPasses": 56089,
+              "upperPasses": 56089
+            },
+            "paidLookups": 9379,
+            "paidWitness": 83,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 6,
+              "pairedRange95": [
+                -2,
+                14
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": 1,
+              "pairedRange95": [
+                -24,
+                27
+              ]
+            },
+            "qualificationLookups": 3367,
+            "rescuedNominees": 19,
+            "searchLookups": 6012
+          }
+        }
+      },
+      "publishedGepaBySubject": {
+        "anatomy": {
+          "holdoutPasses": 1770,
+          "paidLookups": 0
+        },
+        "clinical_knowledge": {
+          "holdoutPasses": 3318,
+          "paidLookups": 1026
+        },
+        "elementary_mathematics": {
+          "holdoutPasses": 3219,
+          "paidLookups": 1888
+        },
+        "high_school_biology": {
+          "holdoutPasses": 4603,
+          "paidLookups": 0
+        },
+        "high_school_geography": {
+          "holdoutPasses": 2930,
+          "paidLookups": 0
+        },
+        "high_school_government_and_politics": {
+          "holdoutPasses": 3044,
+          "paidLookups": 0
+        },
+        "high_school_macroeconomics": {
+          "holdoutPasses": 5371,
+          "paidLookups": 0
+        },
+        "high_school_microeconomics": {
+          "holdoutPasses": 2899,
+          "paidLookups": 1433
+        },
+        "high_school_statistics": {
+          "holdoutPasses": 1806,
+          "paidLookups": 0
+        },
+        "moral_disputes": {
+          "holdoutPasses": 4369,
+          "paidLookups": 436
+        },
+        "moral_scenarios": {
+          "holdoutPasses": 5776,
+          "paidLookups": 1420
+        },
+        "professional_medicine": {
+          "holdoutPasses": 3196,
+          "paidLookups": 0
+        },
+        "professional_psychology": {
+          "holdoutPasses": 8562,
+          "paidLookups": 611
+        },
+        "sociology": {
+          "holdoutPasses": 3458,
+          "paidLookups": 0
+        },
+        "us_foreign_policy": {
+          "holdoutPasses": 1768,
+          "paidLookups": 0
+        }
+      },
+      "retainedPasses": 56065,
+      "traceHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "477ec4f81074fa69992ccd77c6b4864f157545bf671fab141e546dce6efcf9fb",
+            "require-paid-repair": "4fe3374f0ce53804c51c711f88216acf9c9ecad53003616921b94fdaa61ff85f",
+            "seek-repair-in-spare-cap": "f0cadaf26b98bbb94ad2b07c9b00eb84cb56c75c978f205587bf17be84d2adde"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "66347c1cb1fbeae9e79ceaa4b862778f2757b5b4edb183c7ac1d4d056d81254b",
+            "require-paid-repair": "006667b2f8ae634ef49adf81839d3ad40d8f6c7945110dab8980138e6b03a8a2",
+            "seek-repair-in-spare-cap": "1301723535c1a6e0d361ca1023746c3df9e4209e352e0be750a13bbe881fc888"
+          }
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "db8c7a0232b2e71c3b72e033e01454163e8d581f821a38b82c09f0e38fe255a2",
+            "require-paid-repair": "19430a428d35f7536c8dac30cb02e6bb62f70268cb91367e7e46e24f1452bd25",
+            "seek-repair-in-spare-cap": "d57d6725384f366242f0b4abf3a887c0ed9897c2ba29429f4bb10dd2e2e3e407"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "e09d687d0a661aff5708540d1ab838bdb3da18a253a9ba4135c7660d2f1fbc1a",
+            "require-paid-repair": "6b18d4512204537878381d26d21e35abf1fae90d1390e2b9637e105d57b74256",
+            "seek-repair-in-spare-cap": "87c9e9eeb0616569b371dd971414229d9baba60ab1b3d342621c1e1acaa0f68e"
+          }
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "certified-wide": "722a3a12095dfc538076fb39e6fe1eb0078dd181c736d14e070d9b5b79702ae8",
+            "require-paid-repair": "a5bb2838fcb8ab9d7323d1dd5e7fab28672700444bc5b1a7a8fbc615fc4e6946",
+            "seek-repair-in-spare-cap": "a8fa422faf7302ae941b2e72ce5c98216d9f383a033468bc5c7a484a4af31ede"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "b965f5268cfa6c92d5b3b2f8e5212cb7313ca641a7c4d71c11e76e2de7498daf",
+            "require-paid-repair": "7ef266ea6cececb4389622c49731a11d94736697ab66dff1ce6301c187b58c1c",
+            "seek-repair-in-spare-cap": "4d274f50ed8040a7dc48ae08a5db17033b9a13bc677d7c70cfca786def5b50c2"
+          }
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "4e99347c04ff2c7eee365fe11a3075b05443a6e7673656d1865029d163a580d2",
+            "require-paid-repair": "a5b49d92074e85406080dbba85ec8a24117c3918f9a37c3ebbe51252179f1f03",
+            "seek-repair-in-spare-cap": "a0b898036bc17756d652826986f7c8a02bc97e38429b2214ceeba6fa20998182"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "61968f409a7d30b8b22c4d0d6a9836b905814fa4cde86c51f924ae61a5856542",
+            "require-paid-repair": "eb253dc36002ea99f42a2c74387401a2e98aa48f422724b1845c036ac997e664",
+            "seek-repair-in-spare-cap": "41aecf037af44d222572f09aa5470acf14bda8ac2ad01abca4ec98994a45830e"
+          }
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "1ee5bf6e1a5d06a6e8329014d1c773d3d50a617e3cc1285ef8aec08b0a376f5b",
+            "require-paid-repair": "f4b19ecdff8b534e7066574bdaf5f7af0d03ac53f730918a6dbe0093e7a87a84",
+            "seek-repair-in-spare-cap": "b1e2ec492feeb48c2cb022c67c978c78446a7ba8beb63c8c5f3133a7db28768b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "51723981acb696007d007400e1b0c6ed84506d062d1da65bc3e91cc138ba98fa",
+            "require-paid-repair": "36abbc767e2d25f8e09d2227849c17131c241b251da767ba164e0170b278573d",
+            "seek-repair-in-spare-cap": "d1094f1cbec70797023d519f1be9e1c372cafb5409071ba830895a1cce79aeab"
+          }
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "dd65fd0f1adfcb506bb440e7fa087501445d391bf2bf386405cfc0c1c09845b6",
+            "require-paid-repair": "4f03eda2247d09ad818fa9fa75c8de1fb281cc078350302be6233e15989d7346",
+            "seek-repair-in-spare-cap": "2f1449a1a7a6c2f8dd9105b41a1a4f201c009069e2d6f276700d93aac140812b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "350d0319f65c34642ea233f4ad59f18401b5e4d36afe231a005d6dddcce3e0be",
+            "require-paid-repair": "022e0d598a36153ae907675b8a95f04479bd27714773fcd0271ba49af162496c",
+            "seek-repair-in-spare-cap": "c86ec657dd177ed8612a3a0c380892a81d1a9bc2ceb5168a6e14489fe17b2f53"
+          }
+        },
+        "high_school_biology/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "certified-wide": "950fa1ce0a8fb5fa52677736d9ec2346ddea14d0cac6de3d6f79cb7cd825ef77",
+            "require-paid-repair": "925b9d385565ffef3d9b9addca3791b87c1123dffe2f6afd9f8cd5c5a43ee664",
+            "seek-repair-in-spare-cap": "048e135fb0df8ac5c5b88729fb7031e730449ddb7ca0aa5e8ad7985b06e1869a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "e363d5dfee73b6b913952b7e7a8af7d48917e52f500548378a8794a594bdac5d",
+            "require-paid-repair": "11db1a66c715fbad8e16b1788c6ec7be4494afa7977faea8b8066e7c42b4aaeb",
+            "seek-repair-in-spare-cap": "68075a203eefc04f0d2aa8ed2473dc112457769c924ea04103dcd885c2cd4223"
+          }
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "f217d4bb81efa6e0f4575823a0da7354a28362f53dc990d21e59e650f1605085",
+            "require-paid-repair": "512625482e9e22dbaf451340bc544bf444a55cd1b41964db8cbc597b1069f044",
+            "seek-repair-in-spare-cap": "e8d3482511ec6d5146e7e5a7a29d8b27c2737612f7bda90c5f050127325f7040"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d4c5292aa6a4ec5c73c64e70e6a13fcafd9febed8a72a7e9d0beaaf94939778a",
+            "require-paid-repair": "40e8d77a66411a4c0701b72d90fb1c84915907b81a0445951442aacf7eb0e8a3",
+            "seek-repair-in-spare-cap": "663eeadb6c91843062fae63db177d507c37693e3bd03378d2cff9413fedbeb75"
+          }
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "certified-wide": "0788d45d00e972a2abfa65068e8694060a15ff005bc7e6a5cc2506558036ac69",
+            "require-paid-repair": "5e42dd9a0e6e4b9e2fd7d09afa236af94947d6120e1ef72af67efc1578f24a11",
+            "seek-repair-in-spare-cap": "9dc7514a9c02c3630a1ea8f0bfe428c9a0549ebc5fca65cac946ae774b6c865f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "cb1dd919a648361ccfb067e24d9a2b51f6673365a57c18f87a6dd33ead054750",
+            "require-paid-repair": "6c59b3700eb54b9499525762b101a5d0ba1b1340c4399e4f2c8105507ac72337",
+            "seek-repair-in-spare-cap": "75f43c997b5c4ca9ba65286f0d16693f12e06a701610510fad750d2dedb445d6"
+          }
+        },
+        "high_school_geography/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "cb5f1619c7422e06b1115fd92428842e53d6410ec8710eae7c19633edcde5db8",
+            "require-paid-repair": "e70a9691402ab7fb9e7fe416b2d4fd5c87bc96f2d158290b07dbca984d87899e",
+            "seek-repair-in-spare-cap": "4f218e3a4d14587b5fb754cba7ed67e5efbefc3e5979bc8bc635739a80cd8e1a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8f4472f1df666318c91f79bd3dca174cd8b4f142bf23ceebd6cc89fd38566fa1",
+            "require-paid-repair": "9b74b378b6a69b6052d363e1ed85fd02493bb8cf8a2ec4f3389e5264b1f36d29",
+            "seek-repair-in-spare-cap": "78a7e16b4243131ff0d46b3e3ebe221ee43d4536eddea324c211085afb94e759"
+          }
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "certified-wide": "74db3af18e40b7ce287fe20be65b5868505d5a74c5f63222fef60350b2afe629",
+            "require-paid-repair": "4bf094ae4590485f1cbb17b0764d00b412c2a10a3ef6238a12f45473498a2ba6",
+            "seek-repair-in-spare-cap": "e2cc1174a2bc74589ca2a028a133cc8922d39040697ff87e47fd9b702682d3a7"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f41ef1c8e3185a5954f75fa129a70df052249390e6656ea023808d4d19ca7206",
+            "require-paid-repair": "2645f5a55adb5c3283ccfcdc118b4193f8fc0e62d2075ecb4702bd89e3c85122",
+            "seek-repair-in-spare-cap": "edf6462b919f34b77d56de8bb92403c30b4095447259382f6b07442a10effb28"
+          }
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a2f924340b8aac0a94db9104ab6839889900e46c95b536c4613392a20337b987",
+            "require-paid-repair": "cc85dd46220c853d98311ef178f334c1166f6f2f25bc40cffe8ee089957d5f37",
+            "seek-repair-in-spare-cap": "d9c1cd4f8ac720b0608e363387b2279d05d78cfee83b45e5eb6653f57d35e238"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7d9f77dfd9c9d02c064e97692be2dd9cf1c6263c6212a98e1740bcb4eceb091d",
+            "require-paid-repair": "e59089a3ce405ae58d18501516dc64b00d8f42f369822323264167a58420cba5",
+            "seek-repair-in-spare-cap": "0bfc729f19d5d5fe25219b7ab555261adc1dd3382687ae105c17d9da9f900061"
+          }
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "46fc3d557648fea15615cfa83f294f0439f17b51b5aa8c2bff7e4faa3d1df519",
+            "require-paid-repair": "462d10436f17480acc02d7f551b934cc1ea7cc9ee9c3b5f643449a320971f331",
+            "seek-repair-in-spare-cap": "0fa27c5f3e629ecdba515ee4b789206595ea45f2a32f305ae107f149f1cda5de"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "260d057159863028fe48453b54f53df5e350b0b4656fe2098be772d5e7881e04",
+            "require-paid-repair": "d09dcfd482ee14c1c2c8f8967340cdfbfdf3e607c0c45c64e6ada4a98422275a",
+            "seek-repair-in-spare-cap": "bc09469659c24b6bbcc004050e7a352fea58f2e11d2821cb54e78b07f5268290"
+          }
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f9fa3e08a81d13e42458da3392b06052917afadd6390219ed182630f3d8021c9",
+            "require-paid-repair": "f75bf85285ec70e549aace1b551b8dbf393bdbc7b3366667123c7674c9fd4ef6",
+            "seek-repair-in-spare-cap": "95acb533c12fe0d4e9897c22f3a2e9b57a9349751a883a6e548ca8ae7f14509e"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a444be214dd8edf564ebed3986da021df0f2c745838588e50d1ff7275cc6a4a4",
+            "require-paid-repair": "a08e8c4b61f58ae9a536d7e0af0863b3ac355b04b7700227a598f5615cfc0214",
+            "seek-repair-in-spare-cap": "d23262f402e331342006c7816e80fe7d59be4730b0789356a1aeaaac387889ab"
+          }
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "certified-wide": "1ba638e9a924274e9cb358d768abba41ac0dac2a0a840ce1ce641907d78bb79d",
+            "require-paid-repair": "1bd974e1f539a1e5d4ef8614ce3be5695b389ed652682bce75a5823a91d4cee8",
+            "seek-repair-in-spare-cap": "410bb3352cdbfc52bc57e660a6d0f1a22a8d99ae42274c231ebdd26827f9862c"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f7396953bdda8827504c29f79c5542892b55ff0becd39b4583cd05d88d942c80",
+            "require-paid-repair": "f32cb2970510d7182a9fcea2cca6ebda5c9c5f410984f5186b6f50daae044371",
+            "seek-repair-in-spare-cap": "d5523a9fc19ecc243813e3d96462fbed3e4a5294be5bdcce424187545c9d4c23"
+          }
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "e632bc194dd1b38523cdca988f3abc898346352bc94fd5a6638561c5dc31789c",
+            "require-paid-repair": "4619f12704863ef739234cf8eb5a37f2841c9784c54a0b265e8bd23eada912b5",
+            "seek-repair-in-spare-cap": "371561b0b8d43df44ce84b835faa29a9eb9056420af9d53ca925f52d8feea8a9"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "172e1da0bf8fbe0320a8e04c6f40afa1a97f22be7a259c5ea48be334aa312455",
+            "require-paid-repair": "df6574ff5124f73c8b23c58f8de2900f4af525a23f987739078716b8ba8b7448",
+            "seek-repair-in-spare-cap": "867bec486d046154edffcce0df4ea336d26c9e76895e4d312107b79cc80fd74b"
+          }
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "certified-wide": "eecf4938cbeca24c770a5055888c4ab10c1e2ef8246d91d31de39e98b0959f81",
+            "require-paid-repair": "2792c7581b85b3011ece135f81b3e7e9f5d86075a0ad7418126f702c3dcfa4f8",
+            "seek-repair-in-spare-cap": "69171350a7ad42b43b2450a0afe1662c8b9cc0198c8caf8df6623b5a1284d374"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "9848a1a8ddb623b6bf4d7f7435293ac4a188582b2d854167a78bcb32bdb79348",
+            "require-paid-repair": "d8697dd19dbf30ad48b9d17723d4aabc51abd3d9b5b216da6cd7d33bfc601a59",
+            "seek-repair-in-spare-cap": "0764e5465b362698388b9a4bac6d66d757edbfa8d74957d6b35cdc0f6fee13d6"
+          }
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "ebfceda87fa7b63efdad11e3a41eab33a10d193dd41259566dde5be6740d42d5",
+            "require-paid-repair": "2cabee27ffab7e89bbb15b3e76024be67f4001190d00bcd858670e0ec214aa63",
+            "seek-repair-in-spare-cap": "c712ce3f7060ddd68c24bfc1c0e822c5c2b2a124742e7f9c54f8a0c2472c70e9"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "db82e71b3169cba08e1e63d9f2504c3e2609b6d604c1863cbf6f725b476a8413",
+            "require-paid-repair": "f1b227df0e42590fdadbbaf01f60a9947f13008181ae3eaf048af8df202772dd",
+            "seek-repair-in-spare-cap": "0fabc6e82063bb7355e119151fd84f531a33a1893a07b0b36d79d4a833bedfa3"
+          }
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "cap-19/gain-1": {
+            "certified-wide": "6293fd4b74702d6b8dfcfd50edd0e3035f365a214e854d6bd5c123ea334e7754",
+            "require-paid-repair": "75ac2b8912868d0fe69499ec2818977d2e286d5a6b17693f3914626ea525dda5",
+            "seek-repair-in-spare-cap": "e0589e0adf530ade8a99821e7b8da342997ce6863264fb6fe28ed472785f8cf1"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "791dbb2023b9fdb7054e048478451d17b225caf4358a43b64f8440eb4d3d758a",
+            "require-paid-repair": "7d15a00b74b2034cace688068b4473d9a99179c92324c2c2a0c4454efde0782b",
+            "seek-repair-in-spare-cap": "364d03360541a154924a1df4501b15a6451ace46214ff68fc88fff9ff32843d1"
+          }
+        },
+        "moral_disputes/google_gemma_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "2e49b4285b331f8f5d570287469aaae44c8f133469dc7f962d8566b5bf4d422f",
+            "require-paid-repair": "ad076543ace69839bfe483d0303579f6e9c64dfadfe8081d412906dbba37e4a5",
+            "seek-repair-in-spare-cap": "43675df48a19d6484ee317a9a8d6631d3cfe836443024df0d8d29f2ee59d91d3"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ac4401b28285c8024d38db251aed4d67880c194dea7f74541f15ccc8a15c7d20",
+            "require-paid-repair": "bfe4747f028f7541bb180b4c9b6358bacac88e18837c93f5189b8953a107bc42",
+            "seek-repair-in-spare-cap": "b6eae076e5becfa091b3241d7f1ca6ddbbbea20c637b983392b539b3ec1ca969"
+          }
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "certified-wide": "58831aa90f3ba04945f5bbb45889dfd1350f4e3af0cf7c30cc2d10c0f1eddeae",
+            "require-paid-repair": "35fc9278f41987baa7a299d751d5dbb9c8a6948522af54178ee81368a11880f1",
+            "seek-repair-in-spare-cap": "b38a6230b82feaf05576f64d0b34f8496a7991014287a0a38dcda4817c2a7a60"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7ab0e901dd15f51cc66dab60125a8a960f20e719df36c4c2bfb7977a4d0be96b",
+            "require-paid-repair": "6d644f7d742104ca7b3be15411c38636a38b5d9dd50285187be25a50b6d243e6",
+            "seek-repair-in-spare-cap": "cb0d60383306eaa1124715516b607f7bfa9102c6dcda7d54b97c6f3e0541be61"
+          }
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "1d31ddb3e2d862cd4cbac4318a5eb21db99b32989e445ed0ae66b10b429e556e",
+            "require-paid-repair": "3532e0e4d0c5acb7b083a2f9ee2b7c497a39ffaf1b6d4d1c2bfa528f7685b68f",
+            "seek-repair-in-spare-cap": "967957a54805568d0e1ece933ed4280aed8ed48a59968fc8fde16de2a300d835"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "dcebf862119b6ce6c98b4649008578e87a60018fde82eb41a35cbed1703c6d09",
+            "require-paid-repair": "c947137d13f9858c79ee983aa392eb8a50f47ad229bec160d8c40cd46a5afe5f",
+            "seek-repair-in-spare-cap": "8d4a819a867b93cbf824583b737287dba689af9b3d04d80f751586b63f150fb2"
+          }
+        },
+        "professional_medicine/google_flan_ul2": {
+          "cap-19/gain-1": {
+            "certified-wide": "dda85eb39f106351e4e421f7c6f627ee25640367282719a0ad5080d03aa6e230",
+            "require-paid-repair": "cb5abb3df6683c679bc313f51a4098b427d836de2c8a2618a0ce1aa5b11af62c",
+            "seek-repair-in-spare-cap": "c5d48cc17a9a9f3eb5085f010c3efa4ca6cbc2b88d390640fe109fb3139b52df"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d567e1067efd0e1707499b83185952798d7daf85229ab775074d733676ffd66e",
+            "require-paid-repair": "e470affe9ace72fab73cbc486056a6829153a31f411e8b108a5639f5c6e33b5e",
+            "seek-repair-in-spare-cap": "81b607f80f558d836e32ad55eb99d4c253ecc043e2621de25088a23fd37dca75"
+          }
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "85a3e01e5959ff732050cc539cf3a4afd2eb4d273b9e45c1210b11be8bd0f109",
+            "require-paid-repair": "af639ae0ea9a0bbf5cf905e858c22b4b4ae8a83415f43bd70c73a961f910b796",
+            "seek-repair-in-spare-cap": "d8c2b1bd3ed454db588e8c2c13f27b8a4222bd6c3c2f455299dd9816199afff5"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "66e53d9105287751ec7ab337df874a7dce980602979d0b476d6dbbbc0fc3f4b0",
+            "require-paid-repair": "7e3da5e0ad8d51e96c62578a87a469cd93b6a5d56f09c03684f9ac2a9c9d8698",
+            "seek-repair-in-spare-cap": "df016f8cc5a83581101bd2c1420e988a236f71e09cb5856c42f54a1e962c59d9"
+          }
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "fdc77da33f6ac8cba0aca574a3a25a992282a2e36c75b756061740a91d3101e2",
+            "require-paid-repair": "5b2e16cb79c14fd3e76586eaab5237636cc258a707f148f8acb3ce62459cdf18",
+            "seek-repair-in-spare-cap": "cc5d982fc724d318135a434509eef9a1eda2c5a8a14a07cb5dd4c734b492733a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ce90351f4ded741ba28022649e073ac950a0f0111c4b49783281e030c956c7a8",
+            "require-paid-repair": "620a4f5e8683dc498d88c24c49ff82f61295c17c6458972a431cb35dac65e725",
+            "seek-repair-in-spare-cap": "02342c2103316798d226e2f05ae64f72a6f7d4a043c3a57960d83270de05802d"
+          }
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "755a20fc3dde596cb3d98d2bb8d40d50a9df5025a12df7b566fb6ef65e31f247",
+            "require-paid-repair": "327d759733cfdc7a7719aa6152b622c0842f069bd96780273539d80573293fe4",
+            "seek-repair-in-spare-cap": "0e7903c660c0faf83855f40113e88f61345ed60b5ce5b5fceed1143a64974e98"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "eb69510060a480d79a4ab7424f130281b83ea0852be608ca1a8b7d79a227eac8",
+            "require-paid-repair": "17f628e703f85854a6f74b7fdcc061c5c58b2c8c1c99f954b4c0767859cebb4f",
+            "seek-repair-in-spare-cap": "45fff441ce0401db052d6b61627efcf3cd98365ded23335490e8719a825fe790"
+          }
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "65edf81a296c341188af057c6295117954460e1f50bc0b70142abad4351e13cc",
+            "require-paid-repair": "739bad778ced2df9e1a760b21a33ac7bce0dc125c17e409deeaa5cc8f9996f91",
+            "seek-repair-in-spare-cap": "3ff4d351dc9321d18dba5806d2ce60737bfdb31c9a8d1b6f8d414505ac7d0522"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "71f24768f75aa92480d7a13457497fabc57012dd8d28eec4230d0f02768c2cd5",
+            "require-paid-repair": "d49701379846412fb795ad1e53d14141349863c6d89997e01154e62555d4bac4",
+            "seek-repair-in-spare-cap": "6385f86f31a3ea2696dad329cf552966f2d4f4aacdbbaf27ce07a47b34c7d4bf"
+          }
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "a8d1002cedf24dd3079373143a1a17d3a8a909e721293468deca97d26761b8e7",
+            "require-paid-repair": "cf7d58032ea003f19b3c3e079f1e77b63b3eafa6840a19aa11eec39af64bea1b",
+            "seek-repair-in-spare-cap": "12bcd8934afd148c50cfd915c696ba4d6821019c5f520ca1b2bb736e27dda088"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "03852a89cb1f9c97e06e90b9467b2f99fed798efbc8773febbc843b779a0f0a3",
+            "require-paid-repair": "5bdb10ab769899cf33cfaa385e01ee76e907e025476346bd16c0eacdbf43c27d",
+            "seek-repair-in-spare-cap": "5688b1bb33a78233be4642349891d60ea0f847962289e91f762882466218f612"
+          }
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "cap-19/gain-1": {
+            "certified-wide": "f70ce6db77fe9904cd7b297b61b52b97aa33eacee278d9eba4122ca91d9234b5",
+            "require-paid-repair": "ac9d13b1c793b724a24d2d01002e993c8e459b0b16e254b964eca46761abba35",
+            "seek-repair-in-spare-cap": "62db595afae5bd3dae61c6d3860da73f6d014ef46aa70625154648762dd5a876"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "require-paid-repair": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+            "seek-repair-in-spare-cap": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+          }
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "cap-19/gain-1": {
+            "certified-wide": "0bc7b7abe08df6effc4b72328b03b68bd4cbe1669428fc99d8cc56b138d1d101",
+            "require-paid-repair": "fcd6544e5d420ab67d87b1c69a0e7ad4b5b2cb623d13d534acf19ec8801ad871",
+            "seek-repair-in-spare-cap": "52dde713cc503dededba0d406d9c228cfadd141d2a4ebdc1be2d28d88518a141"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "3aff26905ea25362a299a3bd5b7da1a264b71d2b5ff9b0cfe056b1492026c9ed",
+            "require-paid-repair": "9e87021a6b85200c20092347dc480a880bfeee322cb3f43c4bd70d9468b3f173",
+            "seek-repair-in-spare-cap": "7e2bddd2e2f566fd60c1b9e9d687881373b171593ecebe319a180c247f4f8ba1"
+          }
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "certifiedDeploymentStrata": {
+        "cap-19/gain-1": {
+          "has-paid-repair": {
+            "deployments": 40,
+            "holdoutPassChange": 21,
+            "improved": 23,
+            "regressed": 10
+          },
+          "no-paid-repair": {
+            "deployments": 81,
+            "holdoutPassChange": -4,
+            "improved": 32,
+            "regressed": 34
+          }
+        },
+        "cap-19/gain-2": {
+          "has-paid-repair": {
+            "deployments": 7,
+            "holdoutPassChange": 8,
+            "improved": 5,
+            "regressed": 1
+          },
+          "no-paid-repair": {
+            "deployments": 7,
+            "holdoutPassChange": -1,
+            "improved": 2,
+            "regressed": 3
+          }
+        }
+      },
+      "comparisons": {
+        "cap-19/gain-1": {
+          "certified-wide": {
+            "deployments": 121,
+            "holdoutPasses": 26642,
+            "nativeBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            },
+            "paidLookups": 14732,
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -13,
+              "pairedRange95": [
+                -59,
+                34
+              ]
+            },
+            "qualificationLookups": 5045,
+            "searchLookups": 9687
+          },
+          "require-paid-repair": {
+            "blockedNominees": 519,
+            "blockedPromotions": 81,
+            "deployments": 40,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 26646,
+            "nativeBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            },
+            "paidLookups": 12569,
+            "paidWitness": 186,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 4,
+              "pairedRange95": [
+                -34,
+                41
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -9,
+              "pairedRange95": [
+                -38,
+                18
+              ]
+            },
+            "qualificationLookups": 2882,
+            "rescuedNominees": 0,
+            "searchLookups": 9687
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 454,
+            "blockedPromotions": 69,
+            "deployments": 52,
+            "extensions": 519,
+            "extraSearchLookups": 1728,
+            "holdoutPasses": 26639,
+            "nativeBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            },
+            "paidLookups": 14579,
+            "paidWitness": 186,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": -3,
+              "pairedRange95": [
+                -38,
+                31
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -16,
+              "pairedRange95": [
+                -49,
+                16
+              ]
+            },
+            "qualificationLookups": 3164,
+            "rescuedNominees": 65,
+            "searchLookups": 11415
+          }
+        },
+        "cap-19/gain-2": {
+          "certified-wide": {
+            "deployments": 14,
+            "holdoutPasses": 26632,
+            "nativeBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            },
+            "paidLookups": 9931,
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -23,
+              "pairedRange95": [
+                -43,
+                -2
+              ]
+            },
+            "qualificationLookups": 3957,
+            "searchLookups": 5974
+          },
+          "require-paid-repair": {
+            "blockedNominees": 303,
+            "blockedPromotions": 7,
+            "deployments": 7,
+            "extensions": 0,
+            "extraSearchLookups": 0,
+            "holdoutPasses": 26633,
+            "nativeBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            },
+            "paidLookups": 9167,
+            "paidWitness": 119,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 1,
+              "pairedRange95": [
+                -7,
+                10
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -22,
+              "pairedRange95": [
+                -39,
+                -5
+              ]
+            },
+            "qualificationLookups": 3193,
+            "rescuedNominees": 0,
+            "searchLookups": 5974
+          },
+          "seek-repair-in-spare-cap": {
+            "blockedNominees": 260,
+            "blockedPromotions": 5,
+            "deployments": 9,
+            "extensions": 303,
+            "extraSearchLookups": 981,
+            "holdoutPasses": 26636,
+            "nativeBounds": {
+              "lowerPasses": 26655,
+              "upperPasses": 26655
+            },
+            "paidLookups": 10247,
+            "paidWitness": 119,
+            "pairedAgainstCertified": {
+              "holdoutPassDifference": 4,
+              "pairedRange95": [
+                -2,
+                11
+              ]
+            },
+            "pairedAgainstPublishedGepa": {
+              "holdoutPassDifference": -19,
+              "pairedRange95": [
+                -38,
+                0
+              ]
+            },
+            "qualificationLookups": 3292,
+            "rescuedNominees": 43,
+            "searchLookups": 6955
+          }
+        }
+      },
+      "publishedGepaBySubject": {
+        "abstract_algebra": {
+          "holdoutPasses": 595,
+          "paidLookups": 1527
+        },
+        "business_ethics": {
+          "holdoutPasses": 922,
+          "paidLookups": 0
+        },
+        "college_mathematics": {
+          "holdoutPasses": 511,
+          "paidLookups": 1045
+        },
+        "college_physics": {
+          "holdoutPasses": 730,
+          "paidLookups": 1946
+        },
+        "computer_security": {
+          "holdoutPasses": 1443,
+          "paidLookups": 0
+        },
+        "conceptual_physics": {
+          "holdoutPasses": 2356,
+          "paidLookups": 745
+        },
+        "electrical_engineering": {
+          "holdoutPasses": 1456,
+          "paidLookups": 0
+        },
+        "high_school_european_history": {
+          "holdoutPasses": 2222,
+          "paidLookups": 886
+        },
+        "high_school_psychology": {
+          "holdoutPasses": 7962,
+          "paidLookups": 570
+        },
+        "human_aging": {
+          "holdoutPasses": 2500,
+          "paidLookups": 1855
+        },
+        "international_law": {
+          "holdoutPasses": 1703,
+          "paidLookups": 0
+        },
+        "jurisprudence": {
+          "holdoutPasses": 1581,
+          "paidLookups": 0
+        },
+        "management": {
+          "holdoutPasses": 1295,
+          "paidLookups": 0
+        },
+        "public_relations": {
+          "holdoutPasses": 1379,
+          "paidLookups": 0
+        }
+      },
+      "retainedPasses": 26625,
+      "traceHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "a9d5541d4e233e88242df11294d0c1c7b8782aaef33f0f12a91db65fead71188",
+            "require-paid-repair": "e8305b61c3bb0d3428f0a7baa21f82e5392e936131c27d6e1359adfd440182c5",
+            "seek-repair-in-spare-cap": "bdef4c3e4370e180ad3d29258a68b9cdb6ee925b4470d0b5defd20c56278fbf0"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "a4725a063d328d17da924cadebd9bd8991fe416ddf0871a7ead1eebaaad62df8",
+            "require-paid-repair": "84598b202790834a5f338fc725411d63c635d64c43bbe01827a9b75610280068",
+            "seek-repair-in-spare-cap": "e3eedee90c2faf8d5a5a3cd4983dda0058612972db4df65f8d83aa14a0f984e9"
+          }
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "87af491a984e9fbd005d662232df35f6f898f5e4610510a8a3e66a5bad40107b",
+            "require-paid-repair": "94ac5bec4aa89b0c2426f26f1c4e64c3dfbe43bf9ce75e23696c89ba284f263a",
+            "seek-repair-in-spare-cap": "d22eb9562c819a3a76798b371ac44cfcb27d268c4a3f754880c9ee808426b32b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "58a3a7c091c3395ae6a165bf9e6576660cb84162aa92a76fe6666bc8e72a3460",
+            "require-paid-repair": "e3b4955b8be80566c1e0a6e4d9380a73fd77a0152792db73e602ddd9ee301784",
+            "seek-repair-in-spare-cap": "4fd1db2414819931a38ff1d459a5ff77a911ff2df1cfb52e6a0b5b487ffa5178"
+          }
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "1a9cdf2cb15859f409cf6bc943412a1c434e8a42844512124e66041bfff0ecaa",
+            "require-paid-repair": "74c072fe13d3e693c4ed78542a8b4322d61e2de43db3298f1619d7ee2a433ae0",
+            "seek-repair-in-spare-cap": "1e29db3363778a9ef3af3bcf3f0b2bcda5d917b3d80403db55ee001141e37b24"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1ed8d73ac5dda4bacf5b899f2489635fc0656cee82c997bd18bd4b700b977a10",
+            "require-paid-repair": "641c7ad323cdb1680f8e98fbb668ee9c7f1e193f08ba460cca6dd117f19a6606",
+            "seek-repair-in-spare-cap": "e71a36e21f5e55831585e08887620f196f9a2ffc8d04cc03e83c2bb0292897bc"
+          }
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "4aa37604959fdb0bd9cfdad6cb2dcf7c68e5210356e0af2284331015a9795598",
+            "require-paid-repair": "d4733272c58c203858212c016b8dbc98474bdf77343a48b945fca17a623b9810",
+            "seek-repair-in-spare-cap": "bc427d1c611e354a484a3bfaeacd8dce93c83294c316f5775f13b72e0e3a26e4"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "dd8af9c950b541890925d1b44d3df97bf563f34490b1009f9c32f0d4b39cf669",
+            "require-paid-repair": "b827172b7fcb87d41ea00c51552dbc9e04b22f1a056fc388c71cc6e58717dddc",
+            "seek-repair-in-spare-cap": "d8a81047cc6e8f70e18924940fabea41695f6f8fc706cb6186e22fb58f2c2eec"
+          }
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "2e21f24fb3f41327417f5c20a197b1e2176931cb8cdc6ecd9b395e2be66f0e8b",
+            "require-paid-repair": "bf6be74bcb21c1c296dc26a6063071facd1e5f31430f811726154d973e356282",
+            "seek-repair-in-spare-cap": "01abc06be64082d10fdcd68622cb8317e2c8a79f98c3eb4d6261246623bd77ab"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ec9c424d3856cdcae02837a57edfb4049ecad265e3b11fe24bf5bbe3ebac2446",
+            "require-paid-repair": "d16173a4b1beb349ffec7c2abd1a460fafc82be83679534c75886dadfda01b1e",
+            "seek-repair-in-spare-cap": "adf3f5cd90cb44ed5c30b51f075286ed877a37a1fd4be458bb14b3128c961db6"
+          }
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "1bc01b5034af518d558cb8103738732073e73833f333cc0db9658f67218b5afa",
+            "require-paid-repair": "b9eb7d8258ba8eb9b2502549f9089f14a3ca79f8e2a0dc525e9c5b7c9fb3aea5",
+            "seek-repair-in-spare-cap": "b2370cc52d876c45d0fa01affcd97131489bf76f16fc908654bf7f6f453dd20f"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ca55c752e4481fd5f1bc028eefecd6def791182272a5837622ca1f19ace6d972",
+            "require-paid-repair": "e894d7fcdcf34fac0ba49b95779ce58776551698a0ad948a6803ec75b57d6e98",
+            "seek-repair-in-spare-cap": "486a6ffcdc649e2a88d26f22c95f4ebb49e1f5344e833e6d5a9fc2acae3b63c2"
+          }
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "b0b6c000500fb500f949ac5bb3f536c166136c533410f9c42fe739b6a4fb9649",
+            "require-paid-repair": "53842378ade03d1b7d0fc2776e3eec9879e3fcd191c69103a7f1b90830e99928",
+            "seek-repair-in-spare-cap": "a6790f24edc070b9ce21646ecb55b0beca56be355b2d6640693db0dbb4b9b300"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "4b9b68136fc7d4ecbb475e7179ab4f52ff60cdb407bb8993343f51e6681106dc",
+            "require-paid-repair": "8d6114ac2f44b1c246e45abd2cec4b91fb912ff6f13cbafb24c3418a29838b68",
+            "seek-repair-in-spare-cap": "2351f6585882858fe328a78f06851987f1bb708c878d4a05b9c7391ba78a1987"
+          }
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "81d5a2b0b118b120b4594484e8f109834535218e96a79965e7b2d72a89185036",
+            "require-paid-repair": "2fe91c4a82d07dbda53b105528bf029c11dc6ffa9abfb8ecab95826dda324b53",
+            "seek-repair-in-spare-cap": "dd0eb86cda101177833a0eab2ef1599a5bdbe45b0c09350ca9cd2f39d5b828a2"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7c1e63d29c751f64208bc8cc4ffb60f59e11dcc1141b2a7a6ab81a44415d3ebc",
+            "require-paid-repair": "6a47259f2529792cf8214605896d2941f69e3c7daeccab4b4efade53f3961b4e",
+            "seek-repair-in-spare-cap": "2a87a3dba3ce3c42a16828d678e3dc9db6080ee15bf35ae4da13c9ed8a53e46d"
+          }
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "70b517c5b033386eab90414374243f3fdefe2445ab5ec8adc746dfd03f734b85",
+            "require-paid-repair": "164d18ce9d6c93df1b8f44850279f43c83204d3e594b5aadc36b97f54a5a7c8f",
+            "seek-repair-in-spare-cap": "e2164a4d43cf8267a0228192e669f66d9b4347dcf1a098b4aba4b57d27ea5fa0"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f811f3b76e0bf48586bba21e8810b24ed2dac2d8825bef25028dab35066bdd81",
+            "require-paid-repair": "11612aaaf741ea3432b7ed5956198d76ed3ff8e603c563b99f5e8eefcf31a219",
+            "seek-repair-in-spare-cap": "56a7a71bc678072bcb3f690a0a29406cb8ba83e4d998ecb33ff873d4a70d9b8b"
+          }
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "d78b1be50acee36fbec04bf68887f32fb1d517209cc11999dba690fadf4f5860",
+            "require-paid-repair": "8cbb611f530a5a129ef8ea65a4c611f0f3cabf8fd4bcceb50a0b9c75e389b834",
+            "seek-repair-in-spare-cap": "3b2c458e3556cfd3629a3eb2991cdca114eac447f8ff717c7577542ef719f117"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8681c5066abdde7a50cac226db82e28de5a166fc5340741af3695743c3c6d5b3",
+            "require-paid-repair": "67e1794dad06bf7144abee98b28c3aee0fd9f7f36074434f7a9d67df4c6e05f4",
+            "seek-repair-in-spare-cap": "ea7e05643712b1d6cf5ebd6170b076f1b83232fd9fefa0924a5d8d60528df286"
+          }
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "e8a04d423e825b0e3986d04cc6d718a2dcb835f7904a2e4b89dce63ee26b2813",
+            "require-paid-repair": "26aaa0fcec8771b05ef46e394f1d371dd2b19f32fcbdc1d4092c2f9abb7b9f83",
+            "seek-repair-in-spare-cap": "70ca89abf0c0dbb758e3ef17f5a9d53c79d5511800d633085b7bd42fa39c0ebf"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ba4880e3b38e53021431ea76400e36f2e28092d99756bc8c620e37457002dd94",
+            "require-paid-repair": "5128cecf3c26f873629158f8994f63ad791cd7ecabe294751d7a83f580c36eda",
+            "seek-repair-in-spare-cap": "03587ad62e06ea6b93d4239d0970dd5f187c639b8d373cfb2290dbf8dc1ea0ce"
+          }
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "7aa1e78372ce3855a6fc46a392c3300c87a9de481bcb38f2ab1a828bd23fb437",
+            "require-paid-repair": "78e95895a46db55978dd7b85bc853434a041f21cbebeb628b95b6435520303dd",
+            "seek-repair-in-spare-cap": "3075712b30f92d41268e1d69979e438e38244fded2521e54b3ec040d55555cb6"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "aef45f1164bda6e92fc273c10013b26069223e7d03d218595cd032a676269fec",
+            "require-paid-repair": "86fc15177d84ea4877fb8f11978e83e2e18ed97f2afe4dcb791c6c69c8a54529",
+            "seek-repair-in-spare-cap": "bf341ca5826dc94d1bd9acf05bb1da6f81af2e7a89052c2141423cf0b1316b02"
+          }
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "c851164b9c38ac8fb28b055a35307a26607fa2cb27bc8fc4b0107a77296be177",
+            "require-paid-repair": "35008975c678bf0df0578ddc6c0354f8f290e4683b3824e7f9d39d01fb083810",
+            "seek-repair-in-spare-cap": "97fc3f3d7a82d848ac3f7203cebdc40f0266109c8e09b755bf9e062c621d3a1b"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "32c9f79219675cea26fc6f152c6e330e4619752ca25a29be63aa20ca0decc42a",
+            "require-paid-repair": "50c7935f4b3e4a96064b1c6c6dac22b32298d84b3bcdcbb28e6c54433a140104",
+            "seek-repair-in-spare-cap": "f64ed88d53c4235269db691b413364a7ed5afc925e31603580c48d3456e0a629"
+          }
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "98238a2a525dce8b6b3170faed71f5cb5eaec23b7e0035531cdc84c358678a22",
+            "require-paid-repair": "4edd7f42e31644494200fcc891ea52f5a4063bc652145a17d16a737811dbecba",
+            "seek-repair-in-spare-cap": "50f02bddbb25ea73e335d327e38515ddc5660901a6894379f8c9603c3bf62cbf"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "7520fbadaec81b17aa237eb27518bfa66a57200b7f51338ebc7e64ee50fe717b",
+            "require-paid-repair": "229c077ac98c7a1d24c4bec2b185b97abba6f4ef8b6fca113d62429fe5a82b63",
+            "seek-repair-in-spare-cap": "33048658c048bd25a4aaf733322e62f1574fc62cfe820786a2c89d4962c0354b"
+          }
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "9f8f4051c632e2e46e9ffd31daeda4e0869fc0214988da70c760aa636d65222b",
+            "require-paid-repair": "52a821b519f6be528923830651d62f2758115827c52389eed9e2973fbc11d62b",
+            "seek-repair-in-spare-cap": "351418a3c368d4b4c41bfc103b71d7488f7ce52797b4168f2517790bf8675cfe"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1754b5e89c8a0c21f016ec5cf0fe7e1f233b403eaa87fa053b141f2557f80e13",
+            "require-paid-repair": "9e4f7aa2c8ebd5dd767f68222529a975c05906a933a2a1d50f6dfedb6a98d03f",
+            "seek-repair-in-spare-cap": "5dfc93fa2fd53122f746cd49a49f0ad5a0a3ae6046e4e0e4afc9e1f7c91d639e"
+          }
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "28413d88cd84aa8697284d7d352b22b492de10ec59ecef0fe3ea36071dc25e38",
+            "require-paid-repair": "22c812cb0a538c13684fa0cadd7b48c0ce61398b40f723fac9947244e6656008",
+            "seek-repair-in-spare-cap": "790c75c5713fd94317392ca72257925c98b5839e5b07078c583332347004df13"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "99a26253d8c7cc425e17a8cdc0e9d633eff0d9febf8421edea34fcd3263c31a1",
+            "require-paid-repair": "fce99b5048b2c2d1457db3fed020f09173d6c6d923abcc849497c1c9e30b040b",
+            "seek-repair-in-spare-cap": "847dea785983ab6867ad8a72a4cd6b5aae198320f6772cce1ea5abe52328231a"
+          }
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "9fc1ee0e50068f834054b772a874325e7a697d8e8363b056cad0c0de9d5ee1f2",
+            "require-paid-repair": "99ec357702f64952e2803fc80a706bfea3eb0b856c3b11ac7df36d06c2947ad5",
+            "seek-repair-in-spare-cap": "7ab09842f1a9454de35f633d204a83da99c297b5055569a11e8a709f14031bfd"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "8119d4de1adce479e17dc2eb720a680ef64ba617ee5a071ee3c8c1bf3589e476",
+            "require-paid-repair": "6dd29b374d37ce7f2160e049602b3558c3984fe9c3ae5932743f0db24ff211bd",
+            "seek-repair-in-spare-cap": "b570f326c3fab1e217c2cef577189d0139f12a7656330f568350290a631f5e5e"
+          }
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "7e6fcb0eb8ecca992d56d5b0d28a80aaccb1046aaa0b17d061eb1600ebc49b51",
+            "require-paid-repair": "f09f646d34b2d92d973904fd578e5af34cbb01002ebbd830b7bb53d2948cf42e",
+            "seek-repair-in-spare-cap": "9f4ce9ce59c2551de506e97266bcf68d09b80e3d26f70e2dda466297752b5eaf"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "d590ecf13e6fceb2daec81c4c3555aa9f7e90bd680bd112c9ad8956173a111b8",
+            "require-paid-repair": "78a24013eb2c633093d8482457cc9edd8f96100f98adca58274c12c6a8740491",
+            "seek-repair-in-spare-cap": "431564090e0903d91a0383fe38e3c4c039ffb233bc0a09fa7a6b6579a91a4e7a"
+          }
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "f538cd2fed8fb535b5a09a2e6265568cd737307f9b034faa4963dc6c37a084f8",
+            "require-paid-repair": "368f58834685ff2818f646909ec0c62e99b292ca5676af33467bf89dc3a27977",
+            "seek-repair-in-spare-cap": "c3c0f9442113eda795664c30421ad24d4dd0fd980fedd996840cfa2e64eed096"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "fc6f435cd853ba6086d0e9f1e69d005f199298b281cefcbd62bdc25cf8b7593e",
+            "require-paid-repair": "9b789f6b1c30b6d67d945b16f8db82ccced378891305937cc5f0bc50d0d3afb9",
+            "seek-repair-in-spare-cap": "1a24c0bb71bb136c9a3cd29c7c0d1a2561d36813e563cd420ffea87b7226e4c4"
+          }
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "bbeb197c1db9a43e7a01c6f1627fa1700d98f74f162fc92c866ac4aee55705d0",
+            "require-paid-repair": "13f1c6f8802e1714ff082c4aaa4717dea5b209675741cb0a649c3c33e2ff572f",
+            "seek-repair-in-spare-cap": "a4136a58c78f6c192af6b0aca6659fa863500c362783b90ad83f88e26e05fa3a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "f1ba95bf6fba2774a4e889a5d16b71fcceaa0efda06096beb51d95b5475372a7",
+            "require-paid-repair": "eedb6e6fd4d135ab4e6bb63f9e151b079015818cf1307776464029e6c8ec0934",
+            "seek-repair-in-spare-cap": "394d03800f0145f508ab644cdeb8083f9c221c6fbe23b1cd4a318344311f5978"
+          }
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "e9ac83d5482f2e672e5e50a39511524ae85c1388c2952097d181b31f4a1df354",
+            "require-paid-repair": "8b51c03b32ba500815d6cd01149ee09c8f1b1587829a9da10cd2358a51e9ba9e",
+            "seek-repair-in-spare-cap": "fda88537c8c61a44c6f182aa9e85faaff7a3b9faf574cfcac2563e071eca3fe0"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "b53354c6bea26ab794a0aee15d399d11f452e678c7ef058c17ae8e706d20d209",
+            "require-paid-repair": "75d06b718eeeb5135433abb6705e281224c76c896c26197a3b3a0ede97c79261",
+            "seek-repair-in-spare-cap": "a3f0387bc54288891e068cde46ba1f5bc7feab397b065949b0dd18b8792d1437"
+          }
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "f4e3980f3c222ba6111b5c6969ad6862365dbf815893f4cb4748a0078e885c98",
+            "require-paid-repair": "eee6d1515c49ec7fd6e9ec1576373b76e9be90aeb3ddab025890d20cfa049940",
+            "seek-repair-in-spare-cap": "bfc3c8b5cac334a74ab3c4270a7d33ff999a2fcc8f9bbb5da1094dfce3d1ca3a"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "30be4e3d56b37ad20d5d83ffb40b19227926f49625924b261bbce8d128058467",
+            "require-paid-repair": "45becaac5a56f3b104e542daff5a2afb71b4e0b10a86342fe4a3209b516bf000",
+            "seek-repair-in-spare-cap": "231b6069198b3c42f5dd190b20eec657a7dac36a3de505c2bbc64d29c3f1dab1"
+          }
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "650223fff467521bfe7ade0db959f0ad71fb03083390ee2c4f308ad81dd00dd9",
+            "require-paid-repair": "87bbe1f2f3fc431bd882e96e07084cec37cda5b78bb5d36e62ce4a407bc9a5bf",
+            "seek-repair-in-spare-cap": "4f2c7e0522f56f02d79550596320d25702d0abf8c507c6dcfe08543d48394e69"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "1bdf79e06abf3093fe01f283b70eaa4934f6a84b5721bba1a05feda382bb448b",
+            "require-paid-repair": "dc8be655fb702b5adbb00fc6d7f3ae3c3eb6846e0c2fe590faa8d1ba7cafe6bd",
+            "seek-repair-in-spare-cap": "d7721528084d81d522fb1ec0267dd90260ed4e8e1609a22629ed3cac9c518dbc"
+          }
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "f5fd890753615db9148fa356d171823581d7cd8592b4aaa198b963bb16b30e71",
+            "require-paid-repair": "d01dd0cc8bb8f138f63ada24f789b019f37218ac8269af3c301880a6277bd7bb",
+            "seek-repair-in-spare-cap": "b0ee256263adb3f1f50670cb9eddbe2f91712c3253533c7113497971414d16fe"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ca8959255598e1f4b6bd1c53f620bcf7636dd98015fe98d842bf034a456f860e",
+            "require-paid-repair": "61c1e4422cc57e8f742b8a7cebc27c2302917d598dd1be315f9cf2799b9e9240",
+            "seek-repair-in-spare-cap": "2dd24b4d4a7a39288cbab48bf0debf12c4e8260aafb6850730b5c181dc715a5e"
+          }
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "653ed5402d6938847471786e3b0adb696d78e1da07bd0fb2e81f6c5a097f75eb",
+            "require-paid-repair": "315f91db4fa17e5accbbe1086ea583ff51b9dc5c1d7e971f58e6a1b485e816cd",
+            "seek-repair-in-spare-cap": "c0e5dfe545e9d4402d0291e79a4b892fdcd5983017e546042f4109b71f4affca"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "ba42e87dd42406e3f2a0c8a95b5fa033d335e286fd26fcb287667253782fa203",
+            "require-paid-repair": "f6c9f2d8222c10fc978063e76a29bce46c55f879c42658f007f0cf811492a191",
+            "seek-repair-in-spare-cap": "866f5ab45310627d6388d37914e95369a7863ffbb20bfc738fe822d673513b3b"
+          }
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "cap-19/gain-1": {
+            "certified-wide": "27bef6de5b7a557a72c1490be0deef6e47a69f0c31cafe046c965f6b76687cc8",
+            "require-paid-repair": "9a718500bb1816b907c928cc0eb7292a4200d049254ba6da0230d859a844e886",
+            "seek-repair-in-spare-cap": "08aa806aed65491fac1f5e87d56181a934d7b886f96745ce0e3981284eb53dbc"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "5e75554def207401ff09c47433d1fe4dabbee92b8681dacccfbc228a539e8e52",
+            "require-paid-repair": "8000be3bca557372d184f32ab086974c0f0317e9afd406ed2a77ddebc97c2876",
+            "seek-repair-in-spare-cap": "cd6446157849077f1aa3676ae06bb29e04ff7ff79b63c5efbf71ec12ba4a4ec8"
+          }
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "cap-19/gain-1": {
+            "certified-wide": "4452d7c4a9a8b8e0ecd483f32d0971acda2e40ee56fb6afe21017fb78ba46c8a",
+            "require-paid-repair": "954757a6f3a85fafacf81ce8855d9353a1a8bb68fd1b6150e6abed3c7c59cc5d",
+            "seek-repair-in-spare-cap": "5c0953b1d14af6886b4b2e36c6f0323fa71adda8d2b3ff4f3eb150f910b557e4"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "c358156bccf78e38e2cad5ac0bb7bbfb9d3fd6ee399fd4877696b5091848c26d",
+            "require-paid-repair": "f5dff04bf7b85005de495af815aece578f9b9fd705b84091a1b94ef716dfdb12",
+            "seek-repair-in-spare-cap": "a5f18d82a81aff76588b18e590c60abe55fac0a2a9651fe6d80cdb98689c17a4"
+          }
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "cap-19/gain-1": {
+            "certified-wide": "feb87f4968c8ed4488e15224072213e17aa88096768f0a17145c6dc8410b6d27",
+            "require-paid-repair": "734f9d3bf6519d6dfe6172ffd79dd1b866857f6a97eddfeecb7f0fe51ac43c4d",
+            "seek-repair-in-spare-cap": "b6740bfce408fd7d6c2c8fc793a1e5b2623150608949f250b262a5fae3b1f064"
+          },
+          "cap-19/gain-2": {
+            "certified-wide": "4de8e058715b5da43db5625e004bb694a604488f39b4496f38151a61444d8b76",
+            "require-paid-repair": "d7d94e4d3d68e90f692b3bdc21db54804d006bd726d6780dddb0cb9bf875a3e8",
+            "seek-repair-in-spare-cap": "f4cc7dc4c2e3b35928cc346cda09e0a0962507dddd8912f88a7faeb8abc1f1cc"
+          }
+        }
+      }
+    }
+  }
+}
