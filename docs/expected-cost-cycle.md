@@ -4,6 +4,8 @@
 
 CPO also exposes this qualification policy for searches that request proposals during the cycle. [Proposal-driven API](expected-cost-proposal-cycle.md)
 
+The archived cap-13 screen is available through a separate fixed-pool cycle that prepays an incumbent qualification prefix. [Prechecked certificate cycle](prechecked-certificate-cycle.md)
+
 ```python
 from cpo.expected_cost_cycle import run_expected_cost_fixed_pool_cycle
 
