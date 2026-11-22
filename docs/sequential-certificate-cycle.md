@@ -38,6 +38,8 @@ One-gain CPO on LMentry scored **83 passes above GEPA’s archived subject-tuned
 
 The BBH losses occurred at both qualification margins. This API stays opt-in. The LMentry ceiling comparison is an observed margin over settings selected with held-out grades. The paired ranges in the table compare the two CPO screens. This fixed-roster archive leaves fresh-model performance and generalization to new candidate pools unverified.
 
+Immediate certification improved the pooled BBH and LMentry results on previously studied tasks with two other archived checkpoints. The paid budget rule did not consistently choose between the original and immediate screens. [Budget routing and checkpoint transfer](certificate-budget-route.md)
+
 ## Reproduce
 
 ```sh

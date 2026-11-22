@@ -1,0 +1,2202 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "gate": "Within each cohort use at most the cheaper fixed policy\u2019s paid lookups and retain a nonnegative paired 95% lower endpoint against both fixed policies at the same gain.",
+    "gepaModes": [
+      "gepa-sequential-precheck",
+      "gepa-batched-precheck"
+    ],
+    "gepaProofRules": [
+      "gain-1",
+      "gain-2",
+      "gain-2-threshold-precheck"
+    ],
+    "gepaVersion": "0.1.4",
+    "minimumGains": [
+      1,
+      2
+    ],
+    "minimumSearchCap": 6,
+    "parentPlanSha256": "dafb9cc71d47337fcdcaf584fba5bbf43f9bd8c215f46206826aee0ab2cc881a",
+    "parentReceiptSha256": "9ff2aa90229bdcbe805de1a75644c18161641a572f16e198ce30cbbd9be6df9b",
+    "pinnedWheel": "gepa==0.1.4 --hash=sha256:12b971039599625c156d2231f6d72a29c31a22e9c237689459b5f1a3c353f532",
+    "protocol": "recorded-certificate-budget-route-v1",
+    "referencePlanSha256": "ed6526c44b3f547863d941236f02a059976c03a4e09840f5ae8731140d24d703",
+    "referenceReceiptSha256": [
+      "6841281aef1b1ef533e6c9f424e681aa3fce33dbfcad35943af33ca0292f6cfd",
+      "48fbb94ac5e99fa020a867d3642bba2c35f4456d2ad14e9dbad5795a9ad345be"
+    ],
+    "route": "Use immediate certification when remaining validation reads cover two certificates in the best case, each costing incumbent passes plus one. Otherwise use the reserved probe batch. Reuse every incumbent validation reply and keep both qualification margins.",
+    "scope": "Replay the two published fixed screens and the frozen routing rule on the original panels. Transfer every rule unchanged to the separate archived checkpoint panels. Separate tasks seen by those fixed screen studies from new task identities.",
+    "screenCap": 13,
+    "searchCap": 180,
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "prechecked_certificate_cycle.py": "60e66aa4414e97a0cd5fbdf06494dd2df8740990e648fbbdb609db7d0fbcf68d",
+      "recorded_certificate_budget_route.py": "52b0e1b8948829412df548e63861887ef24521b9aff4f6d4e7aa068a87ba26e6",
+      "recorded_qualification_margin_language_transfer.py": "0f78fc52b8921952049057d2beb9c0df8a8b658edad14642daee186da06a84ac",
+      "recorded_sequential_certificate_screen.py": "347abf82cce3284d18678293f91853933c1e3fe919e1e20d5284fab294406c2a",
+      "sequential_certificate_cycle.py": "2aef1b2ae6692df973d76373ff2b4aeefb63ed44bb564b431db97c314def95a1",
+      "threshold_prechecked_cycle.py": "94e21586ac3a73f2750e80ba4055e9c8215e521705a0dbfea57a5e15034c210a"
+    },
+    "targetArchiveSha256": "de2369fce95132c95fea9d84f5b4d3b80b96b484bcf0f9ae0f0602081c535859",
+    "targetPanels": {
+      "BBH/new-task": [
+        [
+          "bbh-causal_judgement",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-causal_judgement",
+          "minotaur-15b"
+        ]
+      ],
+      "BBH/seen-task": [
+        [
+          "bbh-disambiguation_qa",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-disambiguation_qa",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-formal_fallacies",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-geometric_shapes",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-hyperbaton",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-hyperbaton",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-logical_deduction_five_objects",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-navigate",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-navigate",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-penguins_in_a_table",
+          "minotaur-15b"
+        ],
+        [
+          "bbh-sports_understanding",
+          "flan-t5-xl"
+        ],
+        [
+          "bbh-sports_understanding",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/new-task": [
+        [
+          "lmentry-ends_with_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-ends_with_word",
+          "minotaur-15b"
+        ]
+      ],
+      "LMentry/seen-task": [
+        [
+          "lmentry-all_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-all_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-any_words_from_category",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-first_alphabetically",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-less_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-less_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-more_letters",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-more_letters",
+          "minotaur-15b"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "flan-t5-xl"
+        ],
+        [
+          "lmentry-rhyming_word",
+          "minotaur-15b"
+        ]
+      ]
+    }
+  },
+  "planSha256": "6973dc2bf5677c890b0ff35bc1ec5ce493f6d546cc4179be5dbe2e709f07d92f",
+  "providerRequests": 0,
+  "results": {
+    "BBH": {
+      "comparisons": {
+        "two-funded-certificates/gain-1": {
+          "pairedAgainstFixed": {
+            "complete-panel/13": {
+              "holdoutPassDifference": -44,
+              "pairedRange95": [
+                -88,
+                2
+              ]
+            },
+            "immediate-certificate/gain-1": {
+              "holdoutPassDifference": 22,
+              "pairedRange95": [
+                4,
+                40
+              ]
+            }
+          },
+          "passedGate": false
+        },
+        "two-funded-certificates/gain-2": {
+          "pairedAgainstFixed": {
+            "immediate-certificate/gain-2": {
+              "holdoutPassDifference": 4,
+              "pairedRange95": [
+                1,
+                8
+              ]
+            },
+            "two-net-qualification-gains": {
+              "holdoutPassDifference": -35,
+              "pairedRange95": [
+                -62,
+                -7
+              ]
+            }
+          },
+          "passedGate": false
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/airoboros-13b": {
+          "complete-panel/13": "8d8fde36e4ab6c2940f54ef525c013e5fdb64519936926e40913ad5648cc1db9",
+          "immediate-certificate/gain-1": "04f01592eed9568f755a25afed664d94bbec8b9f5d7614f0d07fc2fe2578b64c",
+          "immediate-certificate/gain-2": "61b8450f8c68efccac79e061a0bb446f4803644c36de4a11b1fc6f0496cb4406",
+          "two-funded-certificates/gain-1": "2bd9068d25c39d29be2224f9d1e67ffb73c38f20487abbfa3a95bd82307d2a90",
+          "two-funded-certificates/gain-2": "23cdcd4002644388944d984005d1ef5ab8fd5b1352cc477f43734d43a5a1f770",
+          "two-net-qualification-gains": "85a7a5b0bce35897323e25c5dc38f60ba555cd09a73c45353fb93b21a69aab0a"
+        },
+        "bbh-disambiguation_qa/nous-hermes-13b": {
+          "complete-panel/13": "e3227a567ca0585217d08a2942ab49f783a0f2cc2feb209478ae677558996ffb",
+          "immediate-certificate/gain-1": "26d7ee2eed25435718e6511407a21effe5d8495194b03ab782d128911258b79d",
+          "immediate-certificate/gain-2": "05058f9e255567abafa65ca014c32cbab95351a39956cdd856f65b6aa702ac31",
+          "two-funded-certificates/gain-1": "bb39105d17904ee4d409d9c07977fd6059a3209d4b2f9ee60118f7ded8da4df0",
+          "two-funded-certificates/gain-2": "4d8c5c8d532ab45e040db86b1c1a6e54e882746b9161d12beed28907c9018591",
+          "two-net-qualification-gains": "46c9abf5e7dd7cfde47ae04467e19765cba38cf81a8b3135f70612b5308f08ff"
+        },
+        "bbh-formal_fallacies/airoboros-13b": {
+          "complete-panel/13": "9a888bc26af1fd63cc5949ecda3540407279c592afe2375cba325371e65c7682",
+          "immediate-certificate/gain-1": "9170696dd7aa23cd8e5212c2921e1ee1e6151f05d6dae9806c5a0bdcfa1a2eb5",
+          "immediate-certificate/gain-2": "72a8c46f7d241bfca823254cc9a03cf39a31edfd53814028990652920f683091",
+          "two-funded-certificates/gain-1": "9170696dd7aa23cd8e5212c2921e1ee1e6151f05d6dae9806c5a0bdcfa1a2eb5",
+          "two-funded-certificates/gain-2": "72a8c46f7d241bfca823254cc9a03cf39a31edfd53814028990652920f683091",
+          "two-net-qualification-gains": "1c97125c89bd4e54d8d19bce57336722d21bac8f86f6591eaacd847b79689473"
+        },
+        "bbh-formal_fallacies/nous-hermes-13b": {
+          "complete-panel/13": "a78f41266461f9e04ba2714e0ef621e767eaf144060376631e94663fba7bf597",
+          "immediate-certificate/gain-1": "a2b4280c2b8003a825f05c814d671669a191ab21133563baf20ab8b72d29405d",
+          "immediate-certificate/gain-2": "606894911544e04e438c53ec14fe7ef05fc49b19348dda15ad10eb8f24a2499b",
+          "two-funded-certificates/gain-1": "577361b1a357940aaa2172b8e4697d7aad47473a0dbcae46ea8e068e5c67dca4",
+          "two-funded-certificates/gain-2": "c6aa446b57d7c64c8e657fb4c7f3bd5db22d46420b69e0ccf7b11b8a32b9ee70",
+          "two-net-qualification-gains": "21046c6e8f61d0f4e1ec896daa5e89435b2f8d2768c033c2b67191d45e3580ae"
+        },
+        "bbh-geometric_shapes/airoboros-13b": {
+          "complete-panel/13": "319f0ac4ca846b12aa657f7ec677f24b23072e51e0154b0086a308d139292af1",
+          "immediate-certificate/gain-1": "fb9d9a1427ab950888a9495b24e415bff597c43f12598e7975ee092a544a7899",
+          "immediate-certificate/gain-2": "f5cb2dbbb83c3fe8f16829b0cb256b8dd51e7d309c854a4b2503f4b49114fd18",
+          "two-funded-certificates/gain-1": "ce4524a64c0b88b8ea583a0ba3709a5eff874f17ca8151c45ed9d59600825591",
+          "two-funded-certificates/gain-2": "f778b7bcdc3df6a44f25409d9683c73303c920ef746db6eb9fed0e1075eae250",
+          "two-net-qualification-gains": "84d82f44859bfbdad9c9bb133099282322c7bff1a6dc289be740fb4e7cc2380f"
+        },
+        "bbh-geometric_shapes/nous-hermes-13b": {
+          "complete-panel/13": "3eef2ee3188f11df3b6dd0617c0aab8b7cf30b0ce13cdb83253bdb1bbd89d774",
+          "immediate-certificate/gain-1": "137ecfc6130ebe98174c17cff79b8bbf47fd20f8c5ec0e63600898ce65c62c1b",
+          "immediate-certificate/gain-2": "0fb681a9c5c6664528fef2d28d85d1979f5c1ef9d3013ea6e1442a96651d3b0f",
+          "two-funded-certificates/gain-1": "137ecfc6130ebe98174c17cff79b8bbf47fd20f8c5ec0e63600898ce65c62c1b",
+          "two-funded-certificates/gain-2": "0fb681a9c5c6664528fef2d28d85d1979f5c1ef9d3013ea6e1442a96651d3b0f",
+          "two-net-qualification-gains": "a98c75e2d6b7325b570379217574bdaa7c0b137248b691eb34edcae7b6966ce1"
+        },
+        "bbh-hyperbaton/airoboros-13b": {
+          "complete-panel/13": "af517fd49eddce45a95dd2a9931a7c23d1badc071cd000bf4f8fa69563351f5b",
+          "immediate-certificate/gain-1": "41f63bcac7f811f3291e4e1f6a80d4e4435b06d34a463cbacf1671991a949052",
+          "immediate-certificate/gain-2": "7ed13b94ad775e558f7090bd7e6178096803ea18d9a874000dc38a1b24742bd1",
+          "two-funded-certificates/gain-1": "6f823c89c22852414e5cbaa4f233b3ce454050b96099dbc95e9d71ff1490f7a7",
+          "two-funded-certificates/gain-2": "17a50c7960b18390884caf9ce3a271ed1018cafff1edd84bdaf4fce2e433bb1c",
+          "two-net-qualification-gains": "6879ead8c78156204a4f8d81e0d3f491251c687d51cdb9501dfa03e04d1cc790"
+        },
+        "bbh-hyperbaton/nous-hermes-13b": {
+          "complete-panel/13": "782ed7592f6dc4a279cf4b1765bfc5b33919d02c83588d9044034e58b54a4301",
+          "immediate-certificate/gain-1": "c1c7e56eb7c276448ddacb5ad0882b1419141bc1d367baebf31b8c9aea28329f",
+          "immediate-certificate/gain-2": "e36f8dd11d9e0da6d1efb0d3b124bf96218ca0ba79730dc78e1769a166ba3c85",
+          "two-funded-certificates/gain-1": "9135a92960efadadf6fa6b7f563503a964422584814b11364bada4cc450f81da",
+          "two-funded-certificates/gain-2": "9afcb2450f13e3a439b0897d5e8c0c4661715db7737bdaa8aaa812f6182ccc50",
+          "two-net-qualification-gains": "7a8635b923a526fdee750e23570ce881954a13ad940fc7ad356e8a20c9419eb2"
+        },
+        "bbh-logical_deduction_five_objects/airoboros-13b": {
+          "complete-panel/13": "52c16b8699a4419e993486a03b7d6a70d4094dba101729c4fe62b5e04531f29f",
+          "immediate-certificate/gain-1": "3540b5f2228890d6fea6d07d70ca40d29e4c503724bea8da370cb4f86b791c24",
+          "immediate-certificate/gain-2": "7c73282af7f249af76714b6f26aa70dce81f8372f24b165f814fa2ff86883a86",
+          "two-funded-certificates/gain-1": "aa4691fc2357fc2587ecf9c6d05b5b59e7c7a7dbd29fe398c948fa740b4564e0",
+          "two-funded-certificates/gain-2": "44f08ecf4da2ee050c47e2093737df86228a2f308359ad770eedf4a3daf280a8",
+          "two-net-qualification-gains": "1de48d6206dc893c809edcaa5df97dcd4f4bfb04348bbbbb1d1a60c24e459efe"
+        },
+        "bbh-logical_deduction_five_objects/nous-hermes-13b": {
+          "complete-panel/13": "d6996f35dd485166d560b6f851d0f428c836deb5a4434c93177f7041ea6dc9e2",
+          "immediate-certificate/gain-1": "23beb5059e76fbf54aefba58313b06d61fe1748b817f3eb07b4e691a2deef74d",
+          "immediate-certificate/gain-2": "2cc9ce97d60c14f8ce4b1a3ae7eda0e717e0bea13a51fdd0bc2220354ea5f64d",
+          "two-funded-certificates/gain-1": "bddfff920623b44f9a16d88533e9feeba80a6147eabbd0fe17be52f4b6e35d96",
+          "two-funded-certificates/gain-2": "bb890f12eb6bc91aed47b03338cdf6d33a3f509a85841279d4783500efe47b24",
+          "two-net-qualification-gains": "e7752c7c1b8b0326b68e8a980129fce3270cd428df9c0bc36e51b4d7b4484bea"
+        },
+        "bbh-logical_deduction_seven_objects/airoboros-13b": {
+          "complete-panel/13": "eca3534c8c250b9189f81af564cfb0c493df8e00a32848d4f7fa99a25f9b25fe",
+          "immediate-certificate/gain-1": "3826bbcc8d58c58e1d90b2feedf85e76164a273c205fd9b985c0f70c0ca59272",
+          "immediate-certificate/gain-2": "219cf6c62c41cead8c1e4a9b169d5e619d00d887c0a736c4faad3626e44c89fb",
+          "two-funded-certificates/gain-1": "89abd6458305c474d0da7bc53195c9a0bb4f383092cefdab42e188c91236404d",
+          "two-funded-certificates/gain-2": "ef5d86ccba221410f2d6d24a0fa1e99c0afcdc9da63da2c3b705d13f066f9207",
+          "two-net-qualification-gains": "6dc2900705fdb10eeb44f533ebf64285f49fa20f2612c220f4011d924f4228ad"
+        },
+        "bbh-logical_deduction_seven_objects/nous-hermes-13b": {
+          "complete-panel/13": "ff48f8cd639371a3fdae140c4843210d449295e94036cbd198014cd9e41365f3",
+          "immediate-certificate/gain-1": "e8a64f848c743267df325da8c662734e12e2061045f73ffcd6f0af2c7a1d83a6",
+          "immediate-certificate/gain-2": "aeeb5a53855b1f800fc879711b00a38c91566917490cfad0f907c250e733ae14",
+          "two-funded-certificates/gain-1": "e8a64f848c743267df325da8c662734e12e2061045f73ffcd6f0af2c7a1d83a6",
+          "two-funded-certificates/gain-2": "aeeb5a53855b1f800fc879711b00a38c91566917490cfad0f907c250e733ae14",
+          "two-net-qualification-gains": "8b10a92f60322654b5d886f0eaef554e920c5373e76c1b2ffa4057c3efb0deee"
+        },
+        "bbh-logical_deduction_three_objects/airoboros-13b": {
+          "complete-panel/13": "c11af5403a1aeff600c6eb825a59b18df9b182e305e15c219253cb969f2ba2b5",
+          "immediate-certificate/gain-1": "0141749c3ff39e6202843232bacbb897ca1e7419093e8963b6d103606693478b",
+          "immediate-certificate/gain-2": "c14e82dec3b9ce327786abab921a94b551076a831c7d863f17b67d6ec7971376",
+          "two-funded-certificates/gain-1": "e39b0e4ee264c24247a143b2fcf8612193d24ce732d9f496fcdef8b2b1bff819",
+          "two-funded-certificates/gain-2": "7ebc1313356a3b419697d33c4bb087440b792c8e833beb6125993d4bb985c96b",
+          "two-net-qualification-gains": "5a9ca732c0c01089411a331be953b312d4483438569aae06134c5558433fb470"
+        },
+        "bbh-logical_deduction_three_objects/nous-hermes-13b": {
+          "complete-panel/13": "92fca01c1d3c3a23d0cdafeb3545974072f167382233956caf5f27ab0c365278",
+          "immediate-certificate/gain-1": "2ab3bd3def76ea11a5d7370450ce0a8420b4531f06188ae992954261ab7665c9",
+          "immediate-certificate/gain-2": "ddbcf4b698621c27aa8ca168fc09115e17c48042c8d0fa29f29bff9b9365341b",
+          "two-funded-certificates/gain-1": "51b3992088b078b69a0ddd753f7406c0eb76b16dce355db98c495f6c5481bac9",
+          "two-funded-certificates/gain-2": "066c04b6dbb80e4abd67cde35592ad084213b14015fc489c880f9f0fe2e23f6b",
+          "two-net-qualification-gains": "f526d71091ed4ea291cff2ec4f91d713e74c57e24f587a8f275a4ed089ee0f52"
+        },
+        "bbh-movie_recommendation/airoboros-13b": {
+          "complete-panel/13": "6c2a6c863e8b177f642175bd9650a3d16086aed08661eb8ebb498606e7a473b2",
+          "immediate-certificate/gain-1": "93277f3266762dc7db2bc11cb79df8290eeb637060adc47f91e704123687727a",
+          "immediate-certificate/gain-2": "1dccaf4f7f3c9f107ac2427f6efec2c2a443b15c2a926d2c0998ba44923de950",
+          "two-funded-certificates/gain-1": "2959faacb6926a13e2e49004e8e8883063b882c56dc89bce5b2ebbbad6781faa",
+          "two-funded-certificates/gain-2": "9b6d71c2f2382cc0ad4eed05c4bec95a8f2e1a4299bf93d1a161c9988eaf1170",
+          "two-net-qualification-gains": "0a157bdb945baf219d2b579ae45806a349930fe2aa1c6c2a8b1b4485e4832453"
+        },
+        "bbh-movie_recommendation/nous-hermes-13b": {
+          "complete-panel/13": "5ba8baa0f79b00b8b90212c51655662d7f232e7ae9a59d8f19ef795ec56d4dcb",
+          "immediate-certificate/gain-1": "90e354c83cc95e7a9698fe806f662ed1dd17a63457c0e25a04d1e4f8590cef05",
+          "immediate-certificate/gain-2": "4c0c263264f96dfb8ea9bdd59faaa516a439a79e70821aca705c434120f90aaa",
+          "two-funded-certificates/gain-1": "65c9d06ed89d3d4a8b348c0f7a3fd2f8ee2dcd90005c58ba46437445a4fb67f7",
+          "two-funded-certificates/gain-2": "0f4949a308e087b73e47324c94e6fa17386effe12b05ace3301a234a0d75f051",
+          "two-net-qualification-gains": "f5bc0d441c5003bcfcb31ffb4d3c9163437d36ddbb9b8e3731a5866e9f690827"
+        },
+        "bbh-navigate/airoboros-13b": {
+          "complete-panel/13": "d96b8eb59d467a4fd51a36f8e0f26d129c8dac48b618e085922afab73c5297e0",
+          "immediate-certificate/gain-1": "d123a03b296dd874a765a935bc76fe84f2c1ee3071ce712ec8bfa22e73c15567",
+          "immediate-certificate/gain-2": "1b8d5e7b25703d0ea25daf18883f3306965ec8ab3cdfe083fc8144d881634c4d",
+          "two-funded-certificates/gain-1": "451a88626b15cd2e721e79ca3fa35fbf673fe85ec06ecdbbc3a5c8ce3ac3e5bd",
+          "two-funded-certificates/gain-2": "b9e2e858cc99ac846f802535cb199a3b791c4dc7c7ce7350ebd7d6f693930a0d",
+          "two-net-qualification-gains": "c36466497c658bdfe56e026ca467d4c3819d0b05154b1057c0f5ee4603833416"
+        },
+        "bbh-navigate/nous-hermes-13b": {
+          "complete-panel/13": "d1d84c609a7a2796a4809bf387cd112f61f7a014bc78495b411c9a6e0cbb3265",
+          "immediate-certificate/gain-1": "46297cc63c5970ae619254936e795eaa92afdfaa2a24a48b9804d616f6aee97b",
+          "immediate-certificate/gain-2": "7a7512fb4699941332106e8e543e42e4446faeb4305287a4ee5fc68bafd1274d",
+          "two-funded-certificates/gain-1": "2cd5552bb1c17e0a2e3acb6ebf29600ffc05312cc572c54bb6f009c958030b28",
+          "two-funded-certificates/gain-2": "cc8c270faf0fd791b128fb470d98b1e2d3a99eaaa932a35b75d9db5500d96ae6",
+          "two-net-qualification-gains": "d8b497d9feae2216f42a540372762f7c82c09226943ffb90eca9d6daba568faa"
+        },
+        "bbh-penguins_in_a_table/airoboros-13b": {
+          "complete-panel/13": "cad9d66fb26294da9d0ac19c8cd5d81a175e7442445766d67ed4be235602402b",
+          "immediate-certificate/gain-1": "8f3e3487ba86c99a7455b0e8de16b8ab01e083dfff0c37de7c43c8814aa4e3a7",
+          "immediate-certificate/gain-2": "4cdfe99a92c8415f4215e95dc729295ee9c47df9269ba3ac424112217331f2b7",
+          "two-funded-certificates/gain-1": "122dff509f7d7121d62814b94a0fbb93aee5ae3f25eac5696bd69b4948282596",
+          "two-funded-certificates/gain-2": "64d00b95d9c29ecd35d9ab52b21c6a6898d4e42fcec370297893c3cae56bd923",
+          "two-net-qualification-gains": "8c894b9d1ceb40ca1a9ca4179037f1c20581c33630ea65bae2123f0c0b52906f"
+        },
+        "bbh-penguins_in_a_table/nous-hermes-13b": {
+          "complete-panel/13": "b19169d2326a5c41696b38e4a50ba7f6c49f9899533762934598bdf84052761a",
+          "immediate-certificate/gain-1": "1d7a7c263d5326db7c0f0b6084cac23b0f464d3c34fc7a114151319bc7fa8cf4",
+          "immediate-certificate/gain-2": "55f3759c881e2f88e6e51fd6fb1af0c049a5d82493159ccc53ead125c2cd3a64",
+          "two-funded-certificates/gain-1": "7e2b24b49669b45236e7fdeda82d8a6363f06d3cd79f6eaeff64b1dc89aeda49",
+          "two-funded-certificates/gain-2": "277db4634f9b0245619855c9838f6519c269d51463f3fb96287f227a2c077fc4",
+          "two-net-qualification-gains": "a7ffd2fbb593406d3f2f985312f0af16bcaa96ccd94e3ae2c0ef791e917d9cb2"
+        },
+        "bbh-ruin_names/airoboros-13b": {
+          "complete-panel/13": "ea087a6f2bda122f8036ac3ebd45b2e1438ba7478f29e46b73d0d7def85c4d29",
+          "immediate-certificate/gain-1": "7fd3d251bd15fcf993cfedc39a4855ff882bea9b98df827ea2b6c529ee67ca34",
+          "immediate-certificate/gain-2": "7203c427f705bc5e8fd8705551705cd96ac8f6a094d1446c3af2b1b8dcb0cb0a",
+          "two-funded-certificates/gain-1": "45ac89e1b38006195159b0033379536adbd7e3eecff9dc8a27cf33d3536a1efb",
+          "two-funded-certificates/gain-2": "3f0837abbb69bfd26aaf8b87a053cb8d01b90149082d09e906d5b4b36b45c001",
+          "two-net-qualification-gains": "c36227e2f78a0d95d12d65199782a470a664cb9692b0b071b4639e9aebdb7c6f"
+        },
+        "bbh-ruin_names/nous-hermes-13b": {
+          "complete-panel/13": "931a7af933d7254e0f6de894057afc79a8e4d61e96619500f9d32c668aead8bf",
+          "immediate-certificate/gain-1": "a09a68f19ccb1a486b39b257ec5eaa060340ff746e4690d5d82dae7b78613e8c",
+          "immediate-certificate/gain-2": "baf47cac989c62d6e969c1bee92e1621bc8584536f799eb11a5ce5e316620332",
+          "two-funded-certificates/gain-1": "8fb8170aa8c80ecab8c312d094a75a09c35b32c1787f13bc7b777e98dc385e4f",
+          "two-funded-certificates/gain-2": "b2f7a7c9a5e114d74c762b8a7f88a13ec096cd5d151832f3ad1b0432f225f27e",
+          "two-net-qualification-gains": "6333d1dff589cb9fdb8d1afc8676e6274e5df80863a01af18032220bb765d23e"
+        },
+        "bbh-salient_translation_error_detection/airoboros-13b": {
+          "complete-panel/13": "5ac0d5ef6802ba5180a5ea5329006464002d5a2326caaecf2b914154353b4044",
+          "immediate-certificate/gain-1": "5d2e4d20c484c2dd44392e25e56487b5740ed144daf3b60c35deab73984979c5",
+          "immediate-certificate/gain-2": "9cb0e878e17f928a1ec8f9caeb64ea0c633b9b681f686ee4c16285b30d200e8f",
+          "two-funded-certificates/gain-1": "f959e5e3eb5f499bc7ae436b666c686a72d7a6acf12fad9de786ebb598b9ba9f",
+          "two-funded-certificates/gain-2": "d224de46ef1be69739433626da1094039071d788f290180649bcf7cc95a91f41",
+          "two-net-qualification-gains": "3d473cfe6c30244550b4a3d10b79e2d70bf002ea4e729ae98feb2a545431500f"
+        },
+        "bbh-salient_translation_error_detection/nous-hermes-13b": {
+          "complete-panel/13": "6bdf188790287dfcb46d0f45b22370e72b26dfafe14fddb2ed619a8145ffa963",
+          "immediate-certificate/gain-1": "25555e34e62c41761ce4f7547f170c566f7be807d400638df22b083f90486a9a",
+          "immediate-certificate/gain-2": "3515107aafb59dc6f6ac62dde2830c5403ccece4d06af1cceda8ef193a7678f8",
+          "two-funded-certificates/gain-1": "b21119b7ca2f0ed1b66a4574346a62ecc28524003b6de45f297e3481d15d5db0",
+          "two-funded-certificates/gain-2": "c689491414d62915453edadf70200a55ef831396e874973cdf4b71f4c8335242",
+          "two-net-qualification-gains": "2e44b36cfef29980882f8f831a04a3c177ad731a54ea98de8a53648148ae983d"
+        },
+        "bbh-snarks/airoboros-13b": {
+          "complete-panel/13": "5f1f857536fc25db2544d86ea0f221eac9c250d6a563a950b005a82026a7f538",
+          "immediate-certificate/gain-1": "942cfb5509571e1e83fa7c02fb6670880403cb2a6f989fd587488917f96ab97a",
+          "immediate-certificate/gain-2": "865de3dcfcba73e71569a5a02dc7a15f04b5bb5146742cb5af10e8cea1788304",
+          "two-funded-certificates/gain-1": "eaaef28a332f10d5c056fd805dab8b60e4456ff644a24feefadf7cef5a28f49b",
+          "two-funded-certificates/gain-2": "833184768fd16c98459ec31b9218e026303752e63d436b4fd9528f3dee0b1f58",
+          "two-net-qualification-gains": "d22248c99b61e8db480e6099d452a60eeaba0ce6c14903516b83ea6d99926f93"
+        },
+        "bbh-snarks/nous-hermes-13b": {
+          "complete-panel/13": "69b20f9ba4a8099c713754aab5adc9e4671f76e671aa3e676a7e4207e40bd7db",
+          "immediate-certificate/gain-1": "7298c227e8fc4de66d9e6b1e1fe958e1956778f501196b8fa8d999d0fb66b607",
+          "immediate-certificate/gain-2": "6db015e36440c6691c3a97d0ac0bf9c8f1dc6d64d30c806a41ef0cff73237dee",
+          "two-funded-certificates/gain-1": "8944550ff6bc56e36f337e27a11180b55e4af6beead8cb2f89e0c4926bfd76d6",
+          "two-funded-certificates/gain-2": "c3e433fbe3b229094f8e3dbe8be0266d47cbb8481dcd64f7af269f827a6fda94",
+          "two-net-qualification-gains": "75f31562e53f4a922ba125afb14d481e86c5c43587497884ce885a66b6f9fb1e"
+        },
+        "bbh-sports_understanding/airoboros-13b": {
+          "complete-panel/13": "149d9d3af0e432e92dc174ddc584276ef185cf9a4c1dbf6252080a1fbb24acae",
+          "immediate-certificate/gain-1": "257f3510358e72d5f815d6a99214f4313a555555ddcfc27bc61ac3c142c0935b",
+          "immediate-certificate/gain-2": "46611583fd535fc3bdf96668681722198e7de577e5daefb33ffc0bad4b9a68cb",
+          "two-funded-certificates/gain-1": "fd06af0f06e4ff8619d2ee522343664e081c073d186bf12410ead8309d47f076",
+          "two-funded-certificates/gain-2": "e65915c39a8263349d1da7fea16589012619f97890b82f4c623aa2213580c46f",
+          "two-net-qualification-gains": "3352c5bf836265c7c23c3150c12e9079a411f05ed0df32a53c6e2ab3ddd17b92"
+        },
+        "bbh-sports_understanding/nous-hermes-13b": {
+          "complete-panel/13": "698583ced15799b07de14d907077942b9e7adbb2ad2cb7e7d3c9865921d10cdf",
+          "immediate-certificate/gain-1": "e38a0161e7a3ce4ec1ae4c622a9eadb0c00817dde44c152f9510b60dcfdb09e2",
+          "immediate-certificate/gain-2": "ff59de549eaa75d3be7daabb1498c17cc4981fc5cbfe52c6daf3f1d9cb83881c",
+          "two-funded-certificates/gain-1": "1d564830ccf50938d47e1979b454af084896469654a9a1d18c284922059f910b",
+          "two-funded-certificates/gain-2": "eea25dc0bdcf08ba2cc18ee3007125572c431856c63cb99367dd1e39f598cf67",
+          "two-net-qualification-gains": "7142361c9760ec1d99d9710665c2cbb4ed3c86e8bc69f21413ea8f818580a20e"
+        }
+      },
+      "strata": {
+        "two-funded-certificates/gain-1": {
+          "immediate": {
+            "differentDeployments": 70,
+            "immediateMinusReservedLookups": -266,
+            "immediateMinusReservedPasses": -44,
+            "paths": 610
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 23
+          },
+          "reserved": {
+            "differentDeployments": 8,
+            "immediateMinusReservedLookups": -174,
+            "immediateMinusReservedPasses": -22,
+            "paths": 263
+          }
+        },
+        "two-funded-certificates/gain-2": {
+          "immediate": {
+            "differentDeployments": 26,
+            "immediateMinusReservedLookups": -217,
+            "immediateMinusReservedPasses": -35,
+            "paths": 572
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 127
+          },
+          "reserved": {
+            "differentDeployments": 1,
+            "immediateMinusReservedLookups": -93,
+            "immediateMinusReservedPasses": -4,
+            "paths": 197
+          }
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 9363,
+          "paidLookups": 12567
+        },
+        "immediate-certificate/gain-1": {
+          "holdoutPasses": 9297,
+          "paidLookups": 12127
+        },
+        "immediate-certificate/gain-2": {
+          "holdoutPasses": 8914,
+          "paidLookups": 11797
+        },
+        "retain-start": {
+          "holdoutPasses": 8425,
+          "paidLookups": 0
+        },
+        "two-funded-certificates/gain-1": {
+          "holdoutPasses": 9319,
+          "paidLookups": 12301
+        },
+        "two-funded-certificates/gain-2": {
+          "holdoutPasses": 8918,
+          "paidLookups": 11890
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 8953,
+          "paidLookups": 12107
+        }
+      }
+    },
+    "BBH/new-task": {
+      "comparisons": {
+        "two-funded-certificates/gain-1": {
+          "pairedAgainstFixed": {
+            "complete-panel/13": {
+              "holdoutPassDifference": -11,
+              "pairedRange95": [
+                -18,
+                -5
+              ]
+            },
+            "immediate-certificate/gain-1": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            }
+          },
+          "passedGate": false
+        },
+        "two-funded-certificates/gain-2": {
+          "pairedAgainstFixed": {
+            "immediate-certificate/gain-2": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "two-net-qualification-gains": {
+              "holdoutPassDifference": 1,
+              "pairedRange95": [
+                -2,
+                4
+              ]
+            }
+          },
+          "passedGate": false
+        }
+      },
+      "panelPathHashes": {
+        "bbh-causal_judgement/flan-t5-xl": {
+          "complete-panel/13": "5e8406898855fe185132ade895ed262c381a3fc747b0bac498add597391fb5f8",
+          "immediate-certificate/gain-1": "29955437c83f7017178a70cc4fe6a8a2340e813d47d0c907f6241f6b173a8b6e",
+          "immediate-certificate/gain-2": "e6526c63b4b3baef594a526e2b7c85fdba1d8378ba499d0851449bdfd8864d03",
+          "two-funded-certificates/gain-1": "7b07e3fcfa56f35800548bb314c7aace504711e43bf3ce3f28ec17f05aef0620",
+          "two-funded-certificates/gain-2": "9fee29f5d52e22d235aa5005a295727a4a45d01eef3c5f8931dd641ad572a136",
+          "two-net-qualification-gains": "8f88faa12cd4436742bee4e3b898a90f303369b494b0dbc5c3e4a06e58f09171"
+        },
+        "bbh-causal_judgement/minotaur-15b": {
+          "complete-panel/13": "8e8a91514a23bbdedda6d85fbb756b85161ab6e2b9eaa20a3b7f2d6a730b8213",
+          "immediate-certificate/gain-1": "9e32369456d9edbf1fc67c8d4611b5bef2a8ebea20cc79c701cb1bbf5f083def",
+          "immediate-certificate/gain-2": "23474ac5af302ab08a9b01fe01569f4518a52c8ec3fa2c630f780e55db9990c5",
+          "two-funded-certificates/gain-1": "9e32369456d9edbf1fc67c8d4611b5bef2a8ebea20cc79c701cb1bbf5f083def",
+          "two-funded-certificates/gain-2": "23474ac5af302ab08a9b01fe01569f4518a52c8ec3fa2c630f780e55db9990c5",
+          "two-net-qualification-gains": "33b0ef1a3a91340bd6048cb6dd2016d94d374ef9a076413575d217797c8095aa"
+        }
+      },
+      "strata": {
+        "two-funded-certificates/gain-1": {
+          "immediate": {
+            "differentDeployments": 4,
+            "immediateMinusReservedLookups": -14,
+            "immediateMinusReservedPasses": -11,
+            "paths": 34
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 6
+          },
+          "reserved": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": -18,
+            "immediateMinusReservedPasses": 0,
+            "paths": 24
+          }
+        },
+        "two-funded-certificates/gain-2": {
+          "immediate": {
+            "differentDeployments": 1,
+            "immediateMinusReservedLookups": -6,
+            "immediateMinusReservedPasses": 1,
+            "paths": 33
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 14
+          },
+          "reserved": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": -6,
+            "immediateMinusReservedPasses": 0,
+            "paths": 17
+          }
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 586,
+          "paidLookups": 845
+        },
+        "immediate-certificate/gain-1": {
+          "holdoutPasses": 575,
+          "paidLookups": 813
+        },
+        "immediate-certificate/gain-2": {
+          "holdoutPasses": 569,
+          "paidLookups": 783
+        },
+        "retain-start": {
+          "holdoutPasses": 568,
+          "paidLookups": 0
+        },
+        "two-funded-certificates/gain-1": {
+          "holdoutPasses": 575,
+          "paidLookups": 831
+        },
+        "two-funded-certificates/gain-2": {
+          "holdoutPasses": 569,
+          "paidLookups": 789
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 568,
+          "paidLookups": 795
+        }
+      }
+    },
+    "BBH/seen-task": {
+      "comparisons": {
+        "two-funded-certificates/gain-1": {
+          "pairedAgainstFixed": {
+            "complete-panel/13": {
+              "holdoutPassDifference": 130,
+              "pairedRange95": [
+                98,
+                160
+              ]
+            },
+            "immediate-certificate/gain-1": {
+              "holdoutPassDifference": 1,
+              "pairedRange95": [
+                -11,
+                13
+              ]
+            }
+          },
+          "passedGate": false
+        },
+        "two-funded-certificates/gain-2": {
+          "pairedAgainstFixed": {
+            "immediate-certificate/gain-2": {
+              "holdoutPassDifference": -1,
+              "pairedRange95": [
+                -13,
+                10
+              ]
+            },
+            "two-net-qualification-gains": {
+              "holdoutPassDifference": 101,
+              "pairedRange95": [
+                73,
+                128
+              ]
+            }
+          },
+          "passedGate": false
+        }
+      },
+      "panelPathHashes": {
+        "bbh-disambiguation_qa/flan-t5-xl": {
+          "complete-panel/13": "711fb73a6439f4dc5e805b0ae3b21ad61c91fead271544ca6869df79ace47cfd",
+          "immediate-certificate/gain-1": "34ccac91a79074b515571f80090849440016420314dd9af14787043231a73f74",
+          "immediate-certificate/gain-2": "7b707a45fe62a7b3de13ba7b7f7c0616230e5947d2b1ec791fa41d25490a7af7",
+          "two-funded-certificates/gain-1": "e9aaa4e9fb9e3a3f2e708ba11af619b65a04446b06d964d1f2138564cc01ce78",
+          "two-funded-certificates/gain-2": "73d392e93bbb52de18828645125b6dd7ccd5093291c85fde11647d5433f2f008",
+          "two-net-qualification-gains": "8fd071da6b1554189943c6b2acfb1f0b889269360cf7531466022aac49bdd9b4"
+        },
+        "bbh-disambiguation_qa/minotaur-15b": {
+          "complete-panel/13": "3be87122f39c2a3a467d46f355a1eebc1d37e5af068566cd41e0d19cee0ffbd2",
+          "immediate-certificate/gain-1": "941289856c4f0a195b731cdb929ddec5322b57c4afbbbe372e23e94b82796dd3",
+          "immediate-certificate/gain-2": "a5c58c9a16d671478d17eaabfd3de929a2c69e63cb2d80dbd586e353fcfd0499",
+          "two-funded-certificates/gain-1": "f8868ffbeaf3e4198a9758d58247b4804f198ac8dbcb2ee1ac3651c582ba2599",
+          "two-funded-certificates/gain-2": "2d397121b935135b45284d817215c6ff041b4b17eebc92d4409ff08bcb79f64a",
+          "two-net-qualification-gains": "6ea656413f4685c4f45ea851f48bdf3b025b227ced88c6d260f1d4a0be11318f"
+        },
+        "bbh-formal_fallacies/flan-t5-xl": {
+          "complete-panel/13": "0ee6801cdacd0111f6c2d47ef082e76988258430aabec03205e40000713d4cfc",
+          "immediate-certificate/gain-1": "c54ba30be5d576c59853d7ceb8aa885cb141f67a5c50b720fd112324997c6fbe",
+          "immediate-certificate/gain-2": "3772b10ff2b78182ad40999cee0547b4eb3e6b23f706d07224a016c5746b7f98",
+          "two-funded-certificates/gain-1": "c9d7d2dea46e8faa834d915f0bc03b6098cd5a35760c4bb413036cf10d741ff5",
+          "two-funded-certificates/gain-2": "e8f07b1013f6b25fd66ab47f5946be09fe2491e2d696ae57d00be9d440836cbb",
+          "two-net-qualification-gains": "a2dfae2f20c7429d7765ef3f5b32bdfb5ffd74f14a05367ebc5abb5aa17b8eb7"
+        },
+        "bbh-formal_fallacies/minotaur-15b": {
+          "complete-panel/13": "88ff281463d72fade01ac4d52eb1d6149d3ca628d44ed338cf0eac0beccbc298",
+          "immediate-certificate/gain-1": "7777814f907d54b300b7e1db9a7a215ba1b0de949fd81e1317a55239b9b37f67",
+          "immediate-certificate/gain-2": "36eeeb3e285b66fb5c58aeb4525150d56ddc488954492f8f2b8a66f44b7406f9",
+          "two-funded-certificates/gain-1": "7777814f907d54b300b7e1db9a7a215ba1b0de949fd81e1317a55239b9b37f67",
+          "two-funded-certificates/gain-2": "36eeeb3e285b66fb5c58aeb4525150d56ddc488954492f8f2b8a66f44b7406f9",
+          "two-net-qualification-gains": "2c6c3e61b40d8cb6b55cac3703f2d0f7a48fd6586bd1896c874306156746b465"
+        },
+        "bbh-geometric_shapes/flan-t5-xl": {
+          "complete-panel/13": "8b105738b598dc68d1e9ec1b826625001e1dcdc1a790d090081961db22d634fb",
+          "immediate-certificate/gain-1": "8958110f7301d663e787eb3c07af1b1d540782da84b5d4ff8b4f77de544d289b",
+          "immediate-certificate/gain-2": "31f0c3d9469717064e4dcbc2f2954cc01e5be786d85e4f0ea4e289a05f74b88f",
+          "two-funded-certificates/gain-1": "b6988bb8458f7b62707451a6c70624579600d6bb8a0cbf2cc853d8e020882875",
+          "two-funded-certificates/gain-2": "aee0c6b54af5b87c225fedaa13efb50b2f4f7fc986b41a60ce97897b41ba2b9c",
+          "two-net-qualification-gains": "8be225d0abaa1ba9f11c8227e278c4c8e48eb12af28703d5756f413083d565d6"
+        },
+        "bbh-geometric_shapes/minotaur-15b": {
+          "complete-panel/13": "235fd1ef2e88a9bf5c9e8504e9a4ea52253fc8bb85acc35362e5d22da0555bb9",
+          "immediate-certificate/gain-1": "5c9081496bc32a97866628c8e055ce460c6ef14a8158dee7f8e564248ab6a12f",
+          "immediate-certificate/gain-2": "4100da4b38da4fdeca7464c6e0ce0fdaa13b156bea6aa110c7347d0a0ebd16f8",
+          "two-funded-certificates/gain-1": "5c9081496bc32a97866628c8e055ce460c6ef14a8158dee7f8e564248ab6a12f",
+          "two-funded-certificates/gain-2": "4100da4b38da4fdeca7464c6e0ce0fdaa13b156bea6aa110c7347d0a0ebd16f8",
+          "two-net-qualification-gains": "3cd6d554c77cb8cc55d5770642607a376bff73b997e4cb8828de05754f88600c"
+        },
+        "bbh-hyperbaton/flan-t5-xl": {
+          "complete-panel/13": "bac5b0e5c71e3617c01c5aee95ca2e4f59bf18fbedfd43e922fc407eb445227c",
+          "immediate-certificate/gain-1": "9183d18e5dab01b158e892ae619eaab2bc9a64d38e5ce0de821595896e6b6d5a",
+          "immediate-certificate/gain-2": "6340758339c8801b1ae5b8d05d9e008f3be00dfe932472a5226aa914a7770353",
+          "two-funded-certificates/gain-1": "7fcceaf4bce8ba552bda4893d78cb3eaa5f97a19a315145f589aad6aa25037c4",
+          "two-funded-certificates/gain-2": "56d73420f4f0a5182768f34f05d9f196564f7d930985689f07f017c74bcaa3d4",
+          "two-net-qualification-gains": "2da86c28086e669e1a2c6fdbeee4443be4f7ea9261f0434c7f327cfde6cbaf69"
+        },
+        "bbh-hyperbaton/minotaur-15b": {
+          "complete-panel/13": "c7d95e59911f0083aa7bcb67315032b02d53ff73c55047cbecf128ba77f67d99",
+          "immediate-certificate/gain-1": "d770a28a9a50ff4a2b16c8366b4f54913e40ff8dcfd1594f8a4e5c67efdff716",
+          "immediate-certificate/gain-2": "a866e80395367f563162ba717d7eba4736f3bcce6f3078310b4e82b6f296135b",
+          "two-funded-certificates/gain-1": "7fe04b1c7b7755575cfc91fb51b2bcfbb77c3f7b2c433312eac4047b99824b48",
+          "two-funded-certificates/gain-2": "5eb28222932ac33fcab2e526d0257ceaf59cc65e2c0c47c5785ee55d9303dcce",
+          "two-net-qualification-gains": "3ae478e35f62a59b83eab984e376f751f383f28934e2af00a3e88668ccdbf740"
+        },
+        "bbh-logical_deduction_five_objects/flan-t5-xl": {
+          "complete-panel/13": "66e1c9a17e9abed2c78bea6c1491302622384d48e9749e836a4a51ed3b0fce39",
+          "immediate-certificate/gain-1": "79c5a91d23cc54e3af34a070a1a7a97abc6dc577380e5ca72c3edc687f6256c0",
+          "immediate-certificate/gain-2": "abc84d21b0c2618b52ce173131440e43fdfc88f51432857bbd0b623dbc4d4a3c",
+          "two-funded-certificates/gain-1": "98ccaab071a25c312e0a7d854b73417e452dcf59e5d852e05dcfe86570580f12",
+          "two-funded-certificates/gain-2": "e6c75392eb992aa190769de95014fe40375d7dbd3f57b855138d3879f61d9818",
+          "two-net-qualification-gains": "052bdd7c7ec0a8f4fbaf87969a15bfa54d04822dd6f74e4f4f40c5188d0178c2"
+        },
+        "bbh-logical_deduction_five_objects/minotaur-15b": {
+          "complete-panel/13": "183d265e015c2a47697d971b049b7fd202e4d9023d49c4e9a52fa11a79a91cef",
+          "immediate-certificate/gain-1": "afeddcbc592ec39a0789dd5a361b7d25f804b05aeb3ae48ba2b83773efd6f21a",
+          "immediate-certificate/gain-2": "e080b237545d2519a72ebd9e74762caa9ea7a0eaa98d8168db0830e5bd79bdb6",
+          "two-funded-certificates/gain-1": "afeddcbc592ec39a0789dd5a361b7d25f804b05aeb3ae48ba2b83773efd6f21a",
+          "two-funded-certificates/gain-2": "e080b237545d2519a72ebd9e74762caa9ea7a0eaa98d8168db0830e5bd79bdb6",
+          "two-net-qualification-gains": "730eb4946eae5379862ee0636b3e9e53d1b7822c1dafed7217c378d5e3ea0d83"
+        },
+        "bbh-navigate/flan-t5-xl": {
+          "complete-panel/13": "85217dfe3415371fc3d81f3c697dd35c74c722e770826dba24e361ae96792ec0",
+          "immediate-certificate/gain-1": "6725e31fb7035d6e4cb194e5cf68f427d6135b9a378d6a56bbfd92cf109a5909",
+          "immediate-certificate/gain-2": "e02045da2e7649225a0d0fd02d1ef1fe0c17c4344ac47da8233107be56e83d3d",
+          "two-funded-certificates/gain-1": "c39148715d513cd139294847c4bc1015fdff449ab0f52ebfe2d54e68a4dbbd90",
+          "two-funded-certificates/gain-2": "18fe9f9b006ee83bcaa289c0c4469d87a5885e0a3756300e767c5e7caa0b0516",
+          "two-net-qualification-gains": "eafcaf756e1a2aaba3eb5687a6f6bdcc895e9379563495da539e03c133e60800"
+        },
+        "bbh-navigate/minotaur-15b": {
+          "complete-panel/13": "b3fd0adebbb6791e4f3e8c062417194861e6cbc6918d5f8d5c14b83d43af2865",
+          "immediate-certificate/gain-1": "4199c0bf75c794331a6d56e26ca211ba7614f4b042bbc8a285a0492e9609ffbe",
+          "immediate-certificate/gain-2": "862ff9ed156840986db44d9808b488ea57987d560dc21e7a7ff7817028b56e60",
+          "two-funded-certificates/gain-1": "4199c0bf75c794331a6d56e26ca211ba7614f4b042bbc8a285a0492e9609ffbe",
+          "two-funded-certificates/gain-2": "862ff9ed156840986db44d9808b488ea57987d560dc21e7a7ff7817028b56e60",
+          "two-net-qualification-gains": "7e79ec02ee1cdfe2509153bb00945498a69a895528d474a49ca0a4a5647edda9"
+        },
+        "bbh-penguins_in_a_table/flan-t5-xl": {
+          "complete-panel/13": "2ee0a7fb32093657a68ee87bd12d8f879e0ae292741eeceec446050a90c0c996",
+          "immediate-certificate/gain-1": "b79ffb20d760522f145a0fa817779d0cc51f791d8e28797d4e0529b74389a991",
+          "immediate-certificate/gain-2": "f9497946d7b9594f9dd653344c1346a9bde16214782f77657bc7894881a375c3",
+          "two-funded-certificates/gain-1": "1037c4c3398ecb29335ab0fe10068b42160fd81ff93df9a97c287216dc98bd73",
+          "two-funded-certificates/gain-2": "18840e5719078fbf8930fa20a089313f31cc4a8bfd92e06d61a4d052651cc9dd",
+          "two-net-qualification-gains": "d09cd8f44f4c0091f10d4dfa91a23346031885ca1306428570d89615b1b12c98"
+        },
+        "bbh-penguins_in_a_table/minotaur-15b": {
+          "complete-panel/13": "a20ba934629add35882faa468bf4693a2bdb82f81b65a2fdc10fb00b696dfd3a",
+          "immediate-certificate/gain-1": "69b3b922b54f07874086e7408f30519f6858cc5ad2fef60ebf8b36357aa334fa",
+          "immediate-certificate/gain-2": "1841cbcdafcfa45b0cf4d8b70812e583f0e6564bbdaa016ef5bb6ec007cc6edb",
+          "two-funded-certificates/gain-1": "69b3b922b54f07874086e7408f30519f6858cc5ad2fef60ebf8b36357aa334fa",
+          "two-funded-certificates/gain-2": "1841cbcdafcfa45b0cf4d8b70812e583f0e6564bbdaa016ef5bb6ec007cc6edb",
+          "two-net-qualification-gains": "49d9f94f9c7ccc08006d909f9c08ae268d81aa463a8828af95a3a8a32c1b5db3"
+        },
+        "bbh-sports_understanding/flan-t5-xl": {
+          "complete-panel/13": "afc37ca5fba75294350dd9e2d0b748a2c8401cc96358d8cc7e6887aa3d9aef9b",
+          "immediate-certificate/gain-1": "012dde08e4588edcfc277c6840bddc091f3717f5d3978627448aaba61d2c1083",
+          "immediate-certificate/gain-2": "673fc8b51344cbbc6fcef35bef742ce0f78521a97dca8bc8200cb310e848d971",
+          "two-funded-certificates/gain-1": "fb342dbc3f4bdeec6b09a82c226a4e3c11a6a46315a7c4955fe38d4f12171efd",
+          "two-funded-certificates/gain-2": "1a73324ee8a5ea0f1c03fe5154a69f0dae8f588dfcbc079484db375ce3e36340",
+          "two-net-qualification-gains": "1f857bb0f7133f6f30cdef96ca7c8231d76273402bbeb0580f5f1c635d4ffb69"
+        },
+        "bbh-sports_understanding/minotaur-15b": {
+          "complete-panel/13": "f4bd16d6dc57d40f6ecdf66fef88cc284b3b22ea44c2adfe92813d405025765d",
+          "immediate-certificate/gain-1": "9ea59815a1d140148a32311de20c4db5cf056509075d6a00b00dc21df8b637a1",
+          "immediate-certificate/gain-2": "bf4eb753bae8d60754ee2e1768c848861232c645ebf67b9dfed5dfb655fbe930",
+          "two-funded-certificates/gain-1": "9ea59815a1d140148a32311de20c4db5cf056509075d6a00b00dc21df8b637a1",
+          "two-funded-certificates/gain-2": "bf4eb753bae8d60754ee2e1768c848861232c645ebf67b9dfed5dfb655fbe930",
+          "two-net-qualification-gains": "334e4a37ec346f3b19da8503ef8e1572e9f213d7c3de8301c4386721e40a6702"
+        }
+      },
+      "strata": {
+        "two-funded-certificates/gain-1": {
+          "immediate": {
+            "differentDeployments": 21,
+            "immediateMinusReservedLookups": -84,
+            "immediateMinusReservedPasses": 130,
+            "paths": 332
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 30
+          },
+          "reserved": {
+            "differentDeployments": 7,
+            "immediateMinusReservedLookups": -100,
+            "immediateMinusReservedPasses": -1,
+            "paths": 150
+          }
+        },
+        "two-funded-certificates/gain-2": {
+          "immediate": {
+            "differentDeployments": 14,
+            "immediateMinusReservedLookups": -37,
+            "immediateMinusReservedPasses": 101,
+            "paths": 312
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 98
+          },
+          "reserved": {
+            "differentDeployments": 3,
+            "immediateMinusReservedLookups": -66,
+            "immediateMinusReservedPasses": 1,
+            "paths": 102
+          }
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 4648,
+          "paidLookups": 6903
+        },
+        "immediate-certificate/gain-1": {
+          "holdoutPasses": 4777,
+          "paidLookups": 6719
+        },
+        "immediate-certificate/gain-2": {
+          "holdoutPasses": 4734,
+          "paidLookups": 6427
+        },
+        "retain-start": {
+          "holdoutPasses": 4502,
+          "paidLookups": 0
+        },
+        "two-funded-certificates/gain-1": {
+          "holdoutPasses": 4778,
+          "paidLookups": 6819
+        },
+        "two-funded-certificates/gain-2": {
+          "holdoutPasses": 4733,
+          "paidLookups": 6493
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 4632,
+          "paidLookups": 6530
+        }
+      }
+    },
+    "LMentry": {
+      "comparisons": {
+        "two-funded-certificates/gain-1": {
+          "pairedAgainstFixed": {
+            "complete-panel/13": {
+              "holdoutPassDifference": 182,
+              "pairedRange95": [
+                119,
+                246
+              ]
+            },
+            "immediate-certificate/gain-1": {
+              "holdoutPassDifference": 2,
+              "pairedRange95": [
+                -2,
+                6
+              ]
+            }
+          },
+          "passedGate": false
+        },
+        "two-funded-certificates/gain-2": {
+          "pairedAgainstFixed": {
+            "immediate-certificate/gain-2": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "two-net-qualification-gains": {
+              "holdoutPassDifference": 154,
+              "pairedRange95": [
+                106,
+                202
+              ]
+            }
+          },
+          "passedGate": false
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/airoboros-13b": {
+          "complete-panel/13": "7089e429b2661b84e29cb8105a4990830d6c1c3a6bd8c023ee01c9cd7851fc84",
+          "immediate-certificate/gain-1": "cbd46db84562346515f86b6a2a254004170ec23d0c5cf4991243f5710a6922e8",
+          "immediate-certificate/gain-2": "34e535c96f00200df74039b0578199491a8093c02822b811714a52f7d6c224a8",
+          "two-funded-certificates/gain-1": "11a8e0a232d730ce43ed3a396305b985fb2065ebb5f9f9c805c1064c8d27d772",
+          "two-funded-certificates/gain-2": "cf72cbd9b0a70c5ce69ce278a1738c9f1e1def6520f0bb7aa96e44303e7efb37",
+          "two-net-qualification-gains": "c2693440de3ceca9ef669753e4e613a9cf74ea017875d50a12ef7ea2ed8ee2e7"
+        },
+        "lmentry-all_words_from_category/nous-hermes-13b": {
+          "complete-panel/13": "0e0e5f55c2fb7bf6940828d98fe95179529fcad38910ee347119977a50ed2530",
+          "immediate-certificate/gain-1": "b1757c8765bde4aa75259f2c273122e921e52d6cd937daae8c5989ad64dad581",
+          "immediate-certificate/gain-2": "f329c052072e01bbad679cc1b5ada1d7e63d6bb7296f584638cdca1bbe61ffca",
+          "two-funded-certificates/gain-1": "236cb2a59cb4b2bed2e53917eca094edc7bc05820ec33f008f328e367595cc84",
+          "two-funded-certificates/gain-2": "8dc3f995815e22fe025a1beaf5812c4bdc7e202b9990979abf4b203c2c3a3470",
+          "two-net-qualification-gains": "78f6af26207a9803da2c72018081d57774078c19026a52998f660e0830d0e152"
+        },
+        "lmentry-any_words_from_category/airoboros-13b": {
+          "complete-panel/13": "9d08fe4e38d20b60d1f4f3b43cd655edd40535470b68322c1a8005fc1005b966",
+          "immediate-certificate/gain-1": "b5bf9afd541b61ad9d7e0ae31e2efbdb8079ebc34cd7ba34cb163d7f080c5645",
+          "immediate-certificate/gain-2": "e40bda0f9deeeebcb8c5b8ee014c816569bc481e992b356c9b12045d937e89a6",
+          "two-funded-certificates/gain-1": "4d075b462f8de99a3a018b6f9a27fad6b3615a92f03d568f9945d01fe8df2698",
+          "two-funded-certificates/gain-2": "3bc1a693f15af9fcb7142c08ce453800772a3447b1098f70264d933edb6840eb",
+          "two-net-qualification-gains": "ef3884a49b81cb5af8dc5bd85e427a9fb5e9951e7baf808da11a20bf9dee9928"
+        },
+        "lmentry-any_words_from_category/nous-hermes-13b": {
+          "complete-panel/13": "05895c133301732c2d89819eff6c609c92fee01321fdc0b070f79258a4a03fb7",
+          "immediate-certificate/gain-1": "2b41f39c14092e4710285d9a423bc47e63a4f2a7dd3c93fabe500b9e3c8fc01f",
+          "immediate-certificate/gain-2": "a40aa5ba8b0e1bcb6ff552c7950779dadf5039ebe3f31e329653ab7f53f4bfc2",
+          "two-funded-certificates/gain-1": "26bfece1b28223ac5b9928827ecfef2c1e66a50d832a9a62f6d1a42f30ac3d0f",
+          "two-funded-certificates/gain-2": "db4676ef84ef9361ce2e359d077695fd4405ccd5a8b2ffe85a545a79a988a16d",
+          "two-net-qualification-gains": "e6303eeed262d511fcfeeff4aa79c01b3e5cee1d1403012d133722f63313d381"
+        },
+        "lmentry-first_alphabetically/airoboros-13b": {
+          "complete-panel/13": "f1d21c42361a3f99a69f81882b7e3e03a830a09c7ef0e5570ed9d8bdc378c31f",
+          "immediate-certificate/gain-1": "dfa4750d5a9f423410cf56676b9b6dfa2f8dd42c7d0518e819fdeec0c6aac25e",
+          "immediate-certificate/gain-2": "725c0affda750758c72c84712f5a2bf236a563a839adfa6b155649a628d98521",
+          "two-funded-certificates/gain-1": "883e196e3d6a4a15cb1a8cc9187f813474c2644cf699384118afa659053ea4e7",
+          "two-funded-certificates/gain-2": "8c06b447e5f8839ba374addaeced27575635c3260af02d27e247a0c15bb52e2b",
+          "two-net-qualification-gains": "9563a1de55d65841ae7b61f539c53bb8241ab4f1a40518a94403cc749d682c83"
+        },
+        "lmentry-first_alphabetically/nous-hermes-13b": {
+          "complete-panel/13": "288a7de25b3ea0fc97c5c9c301780a026b1f5f937d8f8eff715b6b1bb9d43829",
+          "immediate-certificate/gain-1": "dcedfc4e5f8d49747a0dfb3667af2375daccbfabd2b92e9873ef5b12e145d497",
+          "immediate-certificate/gain-2": "76b808c198302958b3b5c81de6b0445babcedbe880225d3fc8474195355b817e",
+          "two-funded-certificates/gain-1": "ef6439a2444ec2428332d409db4d81c03de7467383d9d43a72d77064e7825408",
+          "two-funded-certificates/gain-2": "9c4af95a706b583e2f9808236f95125a47f326a18edc3ed4566cc58704585685",
+          "two-net-qualification-gains": "33c89358771648d94c16358942f2b77999126c8d0f7fc26eb8bd4917f12ac7ef"
+        },
+        "lmentry-homophones/airoboros-13b": {
+          "complete-panel/13": "b27bac137d2a789a6c1a69a357c634e7c67c38254a736575861a7add331d9bbc",
+          "immediate-certificate/gain-1": "72bbc5979b6e3b16b42fd2c4f93758838f72f471ffc77877d6865c2ac409f7eb",
+          "immediate-certificate/gain-2": "6a96e8ebe60af5413407c31001b6b9e2812f454ba4b1f79f7c85afeefe64e25b",
+          "two-funded-certificates/gain-1": "d15117a8fd6b510ba6f49c3f24bc051a50574608cff46f80676d9dd0abd63062",
+          "two-funded-certificates/gain-2": "64371448537d216a6dacb5341a58a5941bc19365f80a93ec18866d519997fa91",
+          "two-net-qualification-gains": "f531226f2ae008e52ad2d95ace5f50a389d2103281100a70b99c31099b07bfd6"
+        },
+        "lmentry-homophones/nous-hermes-13b": {
+          "complete-panel/13": "1e6365a63b94634e6d02df8b87a889388889e3acb835cbb0b95466713d1d9ac4",
+          "immediate-certificate/gain-1": "546eb9268748c2f9eec95400ca9c220d89c812b0197058a3a514dc464473dd60",
+          "immediate-certificate/gain-2": "8b83690167d492b1799d0d789b7021e1b0d443b82230e4a228e30e8be22c6abd",
+          "two-funded-certificates/gain-1": "307384348c9fa0032532c54f1b9878c2cf1895c26c2b79dd3a5829bc53732827",
+          "two-funded-certificates/gain-2": "c8105c6be86d163af27606b0a8379726cfb237b01a6e0f16b7cc3f9cabfe3ae9",
+          "two-net-qualification-gains": "e623242947b1e3b6fa97a23b34b03887c3325a5984181e9898439aa60418fa46"
+        },
+        "lmentry-less_letters/airoboros-13b": {
+          "complete-panel/13": "9830b7aa9d137bef4b9220bc65d0310b7332530818f45e3cecda5435b90c4779",
+          "immediate-certificate/gain-1": "42e3cbe3437a31419fa7f6c873edb3ac64a4e764a87e1dc967d1e414cd833cf3",
+          "immediate-certificate/gain-2": "3e7f20a92facefd434049e880041134d0ac8a303e16d0013263e5f388692cc9e",
+          "two-funded-certificates/gain-1": "89048fd2e94a5766cbab27c5e65f2ebef43a93301908b78629be3a6188353c4e",
+          "two-funded-certificates/gain-2": "1efa177f52d1b065675a4117b5731352063656a005337f702d4b5f75391a9a81",
+          "two-net-qualification-gains": "3c2493a6b9bf2545f457c4e703a03b360b14d2ab62fd10b0273a74d7500aaf59"
+        },
+        "lmentry-less_letters/nous-hermes-13b": {
+          "complete-panel/13": "5130ecf59a8f4e784c2e1f2eed0a9b22cc00a3b3ab0b839dd6296b5ccdd156e7",
+          "immediate-certificate/gain-1": "381ac39e77ad98fe7c08fe307cdb84da672937109adeea1da659663c3e551db9",
+          "immediate-certificate/gain-2": "716a6bcf6706ad68c1f12ae0e71cb9d6ff747f9962f408fd4a8b528c876b6e66",
+          "two-funded-certificates/gain-1": "98364135d2380a9dd50159772f2ebfa6440114a10d53a8fbd4fcf6691eb05c18",
+          "two-funded-certificates/gain-2": "bd5c9a0483a97d8124eb229b7447cd597bbc230c8c888922eae6e8620fe1cfce",
+          "two-net-qualification-gains": "56fd8ba59a54556accf9ee36fffa5a71050ebbbac1d04b8e096468ee8c3b7838"
+        },
+        "lmentry-more_letters/airoboros-13b": {
+          "complete-panel/13": "07b280e53badd32ddad25f49a0c287f72605ef1149a7b5092aa1a06f2c03ed0e",
+          "immediate-certificate/gain-1": "bcd2902109e1fdc66813f6b086eb9a5cf35acd90da123c28c4a2f6f1df7e449d",
+          "immediate-certificate/gain-2": "f23b6f104d7886b065cc3927bfb0bb2de6c264ff4ad64ec188f2113a1d7e08a5",
+          "two-funded-certificates/gain-1": "dfc13209185d8ad245640ed1c380d7c468f5bfc76e0d8fc0a8cd327b822f16e5",
+          "two-funded-certificates/gain-2": "ee815504a38bc92ad2ffe7eef1b143eee1486b4172577e7876772e31ff075b66",
+          "two-net-qualification-gains": "0f87f729b5b56d308f77cf58ff3ce9d8638fb3897375aa3e269dd2f80cde168c"
+        },
+        "lmentry-more_letters/nous-hermes-13b": {
+          "complete-panel/13": "9da94abc83f75836d937b98c5dc025c0a835380603ab07d5e344edbf428f70ef",
+          "immediate-certificate/gain-1": "3cc701f44b4af5569cc5c08029a62a8c7562421981d80bfb6d5e599dfb64c4b6",
+          "immediate-certificate/gain-2": "8aab717c81fe92d7b8a77e3f325e4ed1ece4bc65252a35ae57fd5ffe1d469194",
+          "two-funded-certificates/gain-1": "76078b35c68a151356ac9c0148ed05a9df2c3eab2eaf9cd132adcc3b649f8421",
+          "two-funded-certificates/gain-2": "bc7b9336bde5a5fd462b73af7470a85176963e490338506175fae573f19aaccf",
+          "two-net-qualification-gains": "c8959a23ffa7f89d60021a0cc7f07816f94242b7112b74b6729d7f859272119f"
+        },
+        "lmentry-rhyming_word/airoboros-13b": {
+          "complete-panel/13": "1475c9be5d58e55d35fc1f27afb083aa9fbd280ff00eb90990be039d2684d781",
+          "immediate-certificate/gain-1": "eea83a77151484ba1df9dcb17a5e8579196c1eeee93d8916efd1bd7e12baf34e",
+          "immediate-certificate/gain-2": "0fe1355065e23e4fc5286df62ac10faefce601c415f7b3f397c1c837fd63b222",
+          "two-funded-certificates/gain-1": "32c49ce20503a182182f751defb7d33a9914d24e5649cc8f5cae04c1560f2af1",
+          "two-funded-certificates/gain-2": "f42006a61ef946a04c7ddf5273e84fd770da81d480de914310e9d9df68a74c73",
+          "two-net-qualification-gains": "2e23968b5f03105edcbcd99e3c03d83558e277103c8882e4ae2186474110b23a"
+        },
+        "lmentry-rhyming_word/nous-hermes-13b": {
+          "complete-panel/13": "6feba106e92c5503cc8f57da03297f4c5caa1df5d9076a51561b3df3c746ac3a",
+          "immediate-certificate/gain-1": "aa0fc16a43970b85ddb715c1cb61f39e8ad78df1b27f82e6f21405fdf827360c",
+          "immediate-certificate/gain-2": "d9a4532ce2c9480a6b139acfd3e02e44108def39e3d348b4c54ec29808e37c07",
+          "two-funded-certificates/gain-1": "b9495565898dc1923fb24645292c5531a82eddc3e7c8d3627f9d5d96502a9462",
+          "two-funded-certificates/gain-2": "e33f8f4afed332cd09564871d128904a7de37bb042f4f3663b3aba1602a26302",
+          "two-net-qualification-gains": "19e2d0070fa750f96b3821f27e001389888c3f5cea15d868405410a3c609daac"
+        },
+        "lmentry-word_before/airoboros-13b": {
+          "complete-panel/13": "f91414382716ecbc33f78d90dd681cef1c0b29918a44586486f53932dc32507b",
+          "immediate-certificate/gain-1": "009dafb223f18f1115bf9395cbc578d03965ce6a33c42ee85634a3a53c7715ce",
+          "immediate-certificate/gain-2": "46cb99754c877ffb6c3bccbe9dc528e7101003491fd7696ea84227ce01287e9f",
+          "two-funded-certificates/gain-1": "c86b534f742d264d9e4b12d891ad18c6f3f453f31061b2ed71cd4ed13f5c17bf",
+          "two-funded-certificates/gain-2": "f4653a202a269514ca7e4cefdd2bac592d55f8685382e415de8bdbf0e711eaa2",
+          "two-net-qualification-gains": "6f8ddb81bc824894754a6552595b74065d0483aaaf783913ffed87e92a7e9398"
+        },
+        "lmentry-word_before/nous-hermes-13b": {
+          "complete-panel/13": "59cc467c1fea28214407f2f0c19b16b51a15a203990c1a3748a55d9c18a292ab",
+          "immediate-certificate/gain-1": "1353422c91405daaa661a9ea90d0779f252dde4327b5e8084add41ca5883c154",
+          "immediate-certificate/gain-2": "e74629e82af3983596eec4a137f3b67e98944b880b28b09b3c95818d83cb73bd",
+          "two-funded-certificates/gain-1": "1353422c91405daaa661a9ea90d0779f252dde4327b5e8084add41ca5883c154",
+          "two-funded-certificates/gain-2": "e74629e82af3983596eec4a137f3b67e98944b880b28b09b3c95818d83cb73bd",
+          "two-net-qualification-gains": "0894f909770dafa744fad6bd90f6bf28a1451fed8810859e9623227f3f348dfe"
+        }
+      },
+      "strata": {
+        "two-funded-certificates/gain-1": {
+          "immediate": {
+            "differentDeployments": 82,
+            "immediateMinusReservedLookups": 45,
+            "immediateMinusReservedPasses": 182,
+            "paths": 367
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 19
+          },
+          "reserved": {
+            "differentDeployments": 1,
+            "immediateMinusReservedLookups": -49,
+            "immediateMinusReservedPasses": -2,
+            "paths": 126
+          }
+        },
+        "two-funded-certificates/gain-2": {
+          "immediate": {
+            "differentDeployments": 46,
+            "immediateMinusReservedLookups": 36,
+            "immediateMinusReservedPasses": 154,
+            "paths": 351
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 71
+          },
+          "reserved": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": -34,
+            "immediateMinusReservedPasses": 0,
+            "paths": 90
+          }
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 5166,
+          "paidLookups": 7105
+        },
+        "immediate-certificate/gain-1": {
+          "holdoutPasses": 5346,
+          "paidLookups": 7101
+        },
+        "immediate-certificate/gain-2": {
+          "holdoutPasses": 4980,
+          "paidLookups": 6913
+        },
+        "retain-start": {
+          "holdoutPasses": 4093,
+          "paidLookups": 0
+        },
+        "two-funded-certificates/gain-1": {
+          "holdoutPasses": 5348,
+          "paidLookups": 7150
+        },
+        "two-funded-certificates/gain-2": {
+          "holdoutPasses": 4980,
+          "paidLookups": 6947
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 4826,
+          "paidLookups": 6911
+        }
+      }
+    },
+    "LMentry/new-task": {
+      "comparisons": {
+        "two-funded-certificates/gain-1": {
+          "pairedAgainstFixed": {
+            "complete-panel/13": {
+              "holdoutPassDifference": 50,
+              "pairedRange95": [
+                39,
+                61
+              ]
+            },
+            "immediate-certificate/gain-1": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            }
+          },
+          "passedGate": false
+        },
+        "two-funded-certificates/gain-2": {
+          "pairedAgainstFixed": {
+            "immediate-certificate/gain-2": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "two-net-qualification-gains": {
+              "holdoutPassDifference": 44,
+              "pairedRange95": [
+                37,
+                51
+              ]
+            }
+          },
+          "passedGate": false
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-ends_with_word/flan-t5-xl": {
+          "complete-panel/13": "50c969de74baf1978b49f16b8245f09bbb9a258a1374ac4310748a1ebfc20349",
+          "immediate-certificate/gain-1": "df4f56f72aeeeb86f8116456fe44ce50a78c4d00d463bd4f4fc08a4651f686e8",
+          "immediate-certificate/gain-2": "70a6838d840080a8b9bfbba2d62e8ae246e75c55bf5075cf2dfff395c81b6b0a",
+          "two-funded-certificates/gain-1": "df4f56f72aeeeb86f8116456fe44ce50a78c4d00d463bd4f4fc08a4651f686e8",
+          "two-funded-certificates/gain-2": "70a6838d840080a8b9bfbba2d62e8ae246e75c55bf5075cf2dfff395c81b6b0a",
+          "two-net-qualification-gains": "d45c4c0a7a5b534551ec98c06bcd1dec07ceb8f1e4e7944820644adbee5a5d1c"
+        },
+        "lmentry-ends_with_word/minotaur-15b": {
+          "complete-panel/13": "7d538508879677f2c0b10ff9fac242735e402ab81ae2dd0995957bea95542854",
+          "immediate-certificate/gain-1": "9b1e6eb4a5f86a384bf94bbd84545ff35c4898b6fe0a301d89cf8cbededa204e",
+          "immediate-certificate/gain-2": "7518dd57ca0d08d339998fbc163304bad53f9357a5ee499579b80a67323a427e",
+          "two-funded-certificates/gain-1": "9b1e6eb4a5f86a384bf94bbd84545ff35c4898b6fe0a301d89cf8cbededa204e",
+          "two-funded-certificates/gain-2": "7518dd57ca0d08d339998fbc163304bad53f9357a5ee499579b80a67323a427e",
+          "two-net-qualification-gains": "d8c17b143c948710a3195c0bc8adbae1bfb28342a52648b8641ba7493f83a7e7"
+        }
+      },
+      "strata": {
+        "two-funded-certificates/gain-1": {
+          "immediate": {
+            "differentDeployments": 8,
+            "immediateMinusReservedLookups": 39,
+            "immediateMinusReservedPasses": 50,
+            "paths": 64
+          }
+        },
+        "two-funded-certificates/gain-2": {
+          "immediate": {
+            "differentDeployments": 2,
+            "immediateMinusReservedLookups": 31,
+            "immediateMinusReservedPasses": 44,
+            "paths": 64
+          }
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 212,
+          "paidLookups": 907
+        },
+        "immediate-certificate/gain-1": {
+          "holdoutPasses": 262,
+          "paidLookups": 946
+        },
+        "immediate-certificate/gain-2": {
+          "holdoutPasses": 256,
+          "paidLookups": 983
+        },
+        "retain-start": {
+          "holdoutPasses": 161,
+          "paidLookups": 0
+        },
+        "two-funded-certificates/gain-1": {
+          "holdoutPasses": 262,
+          "paidLookups": 946
+        },
+        "two-funded-certificates/gain-2": {
+          "holdoutPasses": 256,
+          "paidLookups": 983
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 212,
+          "paidLookups": 952
+        }
+      }
+    },
+    "LMentry/seen-task": {
+      "comparisons": {
+        "two-funded-certificates/gain-1": {
+          "pairedAgainstFixed": {
+            "complete-panel/13": {
+              "holdoutPassDifference": 149,
+              "pairedRange95": [
+                109,
+                190
+              ]
+            },
+            "immediate-certificate/gain-1": {
+              "holdoutPassDifference": 12,
+              "pairedRange95": [
+                1,
+                23
+              ]
+            }
+          },
+          "passedGate": false
+        },
+        "two-funded-certificates/gain-2": {
+          "pairedAgainstFixed": {
+            "immediate-certificate/gain-2": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "two-net-qualification-gains": {
+              "holdoutPassDifference": 133,
+              "pairedRange95": [
+                102,
+                165
+              ]
+            }
+          },
+          "passedGate": false
+        }
+      },
+      "panelPathHashes": {
+        "lmentry-all_words_from_category/flan-t5-xl": {
+          "complete-panel/13": "919d4cf2a6790cfc70eec622434be7c614777a7295d75dd23ea0b22526754269",
+          "immediate-certificate/gain-1": "1f5ee7ea8f7ecc6b5e8771f50b8716a0a46811ad73bd203b0b7965adfb50e567",
+          "immediate-certificate/gain-2": "9d561b18302977a55e8388ae301f5e864d74dc9554e6958773b4dd1206725a95",
+          "two-funded-certificates/gain-1": "536a2bbcac5b1fd5d92fbd2b75fb2da27d5b56b2abccfa724763fa70b4f54763",
+          "two-funded-certificates/gain-2": "78752c45606aa1afd83446ae51b3cdd6ac56998659887c83ea4e5a696c184e95",
+          "two-net-qualification-gains": "202afcd99041c93905eb7e7a42c907926948289a13289d6370d2385135aacf7a"
+        },
+        "lmentry-all_words_from_category/minotaur-15b": {
+          "complete-panel/13": "bcb49e9cb0911cc7c894fde93eadbfe448f7c74db6dfc88b302bf08fce847c00",
+          "immediate-certificate/gain-1": "6cb6eea4d5a25b22b48d23bd904ab766c8197fad283a89de8440686fa0c985e8",
+          "immediate-certificate/gain-2": "0ecbea70e29754a8a7d8347c79cc8ca7892656224f8ff88c688692209c35cb9d",
+          "two-funded-certificates/gain-1": "23f036410a03b16fdf591a0528ae3173bbf95a0687703f0a05adfb38db8c541d",
+          "two-funded-certificates/gain-2": "f413a6b44f8bbe36655aadd14f869b48d74ba7639556e6a36ee6344e47098937",
+          "two-net-qualification-gains": "8c454efe29e1a60442296954686d7642e25457ddcbfd6d861e2865a5ea7085cc"
+        },
+        "lmentry-any_words_from_category/flan-t5-xl": {
+          "complete-panel/13": "d634d275c5dbf767ba0618345c13dfbf30c5985d39fd3f2208541ebc0deaf162",
+          "immediate-certificate/gain-1": "0bb8f79f1742050850e17f401226a84c7d0e1c91a62f363a53de9dad2e636a3d",
+          "immediate-certificate/gain-2": "b9d1bfb30edbfd8f379c294be8d0722d87b493510833f588086eb653fd967473",
+          "two-funded-certificates/gain-1": "ea7782555046a87837d498091dd230b8b61fa0d6a822e453ecdc1d2af2d04cf7",
+          "two-funded-certificates/gain-2": "a62a36f204b4007beadd0706006ab91cdc612d29b18f26ea37d1f91a6012d984",
+          "two-net-qualification-gains": "96d146f98a19fc3956e4d4141edf1f78ff2aa958736d5a18262f111533424927"
+        },
+        "lmentry-any_words_from_category/minotaur-15b": {
+          "complete-panel/13": "63fee7404d4fe27c08b92ac3ce91f51c6e7167e771cc1131130cd3dc00aed481",
+          "immediate-certificate/gain-1": "03e31d4eaf7732ecc40301798b14bb6e965fd51f12d147b117a9d7cb4297df80",
+          "immediate-certificate/gain-2": "d3f7b9ed711bddd16e9ee16bf88e2a464e62bb465c0ceec5ad517533b113af24",
+          "two-funded-certificates/gain-1": "33cd3a81abb61ce185b5b6dd82699883ef309eeb49b0b438a852ca0c8def0687",
+          "two-funded-certificates/gain-2": "0e68eeb02f20bb755e2af954adfdb5a674d7200c224beda5f09f40226368b43f",
+          "two-net-qualification-gains": "eae4263952cab3b8ff333e195a49575e1bc8a53c4ceda5a4dbf57cdeb86ecd3d"
+        },
+        "lmentry-first_alphabetically/flan-t5-xl": {
+          "complete-panel/13": "fba5b95c04eb3d1d1611b737e7284f11f969f9e7f1f49a310984ae9725d31f4d",
+          "immediate-certificate/gain-1": "5b1505b76a4cd9656a98abe7c6e57893c4308880a1805996f08548262476946f",
+          "immediate-certificate/gain-2": "6abcefb37215fda1a37747b9f41879eece8aa808f8f1e9c7b117f9ef3ac413ed",
+          "two-funded-certificates/gain-1": "9a5124edb41a28db5904d5a29e6400e6a1a7057503d6a39e50c5b0b9e169d9cf",
+          "two-funded-certificates/gain-2": "101188a342bb11a7154b08b1b414bcdbe83932954238bc8eb44ae63652a5d3ff",
+          "two-net-qualification-gains": "a3cc1715b968a9bb338b00734ea9f8ce33f6aaeeb901fd7655b77db97b0226c8"
+        },
+        "lmentry-first_alphabetically/minotaur-15b": {
+          "complete-panel/13": "6d9e4a19fbab0672bb6fa586713d9b28def7e0e709571be1151ac8d76117f3be",
+          "immediate-certificate/gain-1": "80a7b9750da913bf34bea34e73806a8064f8e12266f7d6dbe9266a7a10c7afff",
+          "immediate-certificate/gain-2": "22043773850414a3c05a559822578f9af6a11e56e34404f89388786617b49f7c",
+          "two-funded-certificates/gain-1": "78b27238b3377e26a38186f39f8d1f81deb7a208be7be9b11cf1a9754ccadb67",
+          "two-funded-certificates/gain-2": "eed35e9b26ef299adcc7d428dc08ce8fdb0cb7f7cf9e708cdeba9621d53ad47d",
+          "two-net-qualification-gains": "021a6b7068a099b240f8040ba46bd6b45cdc7fe0c9aa46679b30bb2b5a06694f"
+        },
+        "lmentry-less_letters/flan-t5-xl": {
+          "complete-panel/13": "5d3f718289f9042845e9f95a8053537a981e2089b61e82b02145512ab6d9996e",
+          "immediate-certificate/gain-1": "c70d4f2e61d175f863910a4f1b6b187ba7e9fd22f6e2fa8778e557db21e9d2da",
+          "immediate-certificate/gain-2": "fa4d21747896859e60f28ade77ce3fbbf92602f60bb4290a7b24f1d63985d440",
+          "two-funded-certificates/gain-1": "9e04eb5b529d65689fdecceb5a7d17566b2f690c0eda33b852041dbeb36a1cbd",
+          "two-funded-certificates/gain-2": "194b7edd7d9ae6c103524640e714c464e40f76152898a76b184db4a08208e183",
+          "two-net-qualification-gains": "2bbd5664fe44c0dfa91735371d435c9a81af0db81484b86828a8aa38c005d585"
+        },
+        "lmentry-less_letters/minotaur-15b": {
+          "complete-panel/13": "d949abb5146e54046e3f7784427eb1c2eb5a07ac7068307cbe5998399e26a2b6",
+          "immediate-certificate/gain-1": "3f06fa2bfc889d6133383298a9c3d2476eb54083fbeadc4fecab4acfc210464c",
+          "immediate-certificate/gain-2": "6919ef1f76cfed502e4886fca667c82341af01262ee7219d8ecdd5f320c835ef",
+          "two-funded-certificates/gain-1": "66a57c102f57503ccc4a3cbe2aea4d03253c269e0c58eda2a12f745ce4126cd4",
+          "two-funded-certificates/gain-2": "490a0b75f6721cfd8b310e80130e6b48b9810a2d93f9e0ca21fd33bba5ae4348",
+          "two-net-qualification-gains": "e8d47c1b0fd4706c21df72af908cdfbebc1095b34b105142fb427469518fd7f6"
+        },
+        "lmentry-more_letters/flan-t5-xl": {
+          "complete-panel/13": "c0f9407c2ad534ec8b803fb444a06b5df3b4f96d8fde4ee88b611cc15d56515f",
+          "immediate-certificate/gain-1": "a7eeb8b0046ffc9ead7da98d9d96ff3d084e657092d77d0552308a1074408c4e",
+          "immediate-certificate/gain-2": "3a0be45abef29ad78b327a3754268d485a89e8e4f990afe696160f96ba0cee55",
+          "two-funded-certificates/gain-1": "b6058992aa27882f15296ad28144193a42a4ae8b81bafa5b17d3e9f59ff39222",
+          "two-funded-certificates/gain-2": "5c17b77138af2db14ec81bbb856c9601fd7afe8563ba79189273aa5c8ef8ed9e",
+          "two-net-qualification-gains": "fc386b6c494b8d418a144fb39330239c7eccabe1ba6c8e5bbf6d3147dd4475dd"
+        },
+        "lmentry-more_letters/minotaur-15b": {
+          "complete-panel/13": "11ab5a85b052b00955b24aa35b6ae32fac7f7185fab54063de748adaad81cb4c",
+          "immediate-certificate/gain-1": "07b5cac82c89d533f6d8ef16ba5f13dc74eccfc6c3ad61e286f8e60564fe2046",
+          "immediate-certificate/gain-2": "8a38e8826c79266f746d2af8552d3fa5d3d4c79a711f02acf16d9ee0e689ea40",
+          "two-funded-certificates/gain-1": "159e2b62bc6ecce9c088bca09bad5adc63da01988c8e18259de7453d4b040527",
+          "two-funded-certificates/gain-2": "051329a5a8ae68d7ab4d6a1fb6b785bd434ca434e745ea4ef99505b100df3644",
+          "two-net-qualification-gains": "f6f52ca87ffbdb5c44a74f2e1c0ecc128ff01cfed4075252f2b2b32cdbfdc464"
+        },
+        "lmentry-rhyming_word/flan-t5-xl": {
+          "complete-panel/13": "325cc823fb80a0c7de789de6a49255569edaf71de9504e8ce0b53ca87092aa97",
+          "immediate-certificate/gain-1": "a863697965f1f39a30418f22aafd5ad12b97217a6015a22f7a0ddd4ab1186365",
+          "immediate-certificate/gain-2": "3000214ca7fb4c6c226694518950bc547c4ece7f959a33708e974f62e0542507",
+          "two-funded-certificates/gain-1": "c6610605d2819c19ebbc9a0ec0b62b659598aadaad7533251ba75455baa0469a",
+          "two-funded-certificates/gain-2": "a7964d1cb4571b317555a707e928bab7e4b95e1121b75584e6c3fae108bd12e8",
+          "two-net-qualification-gains": "94710b073b927bc6f3e2b979b3d8456ef53af829efef7a5989f8d9fb8d320de4"
+        },
+        "lmentry-rhyming_word/minotaur-15b": {
+          "complete-panel/13": "88714c20c5f3e8fae426a72f5c46a4b4b877a1124f64c687fcab7498bd0da2a6",
+          "immediate-certificate/gain-1": "fb9a1ada981e8432ddd1b782d8b3a80273c0a6a8430e86e0def5f7a00cf9f106",
+          "immediate-certificate/gain-2": "2d6e177d0cb01e76950782ec41a55f697dc3a674a1119875bc1dba1413d70c76",
+          "two-funded-certificates/gain-1": "fb9a1ada981e8432ddd1b782d8b3a80273c0a6a8430e86e0def5f7a00cf9f106",
+          "two-funded-certificates/gain-2": "2d6e177d0cb01e76950782ec41a55f697dc3a674a1119875bc1dba1413d70c76",
+          "two-net-qualification-gains": "028590fc6eb6da407a07b1fd05c4e9ce7ef9af5f3341376f23370271cdb34cad"
+        }
+      },
+      "strata": {
+        "two-funded-certificates/gain-1": {
+          "immediate": {
+            "differentDeployments": 34,
+            "immediateMinusReservedLookups": 3,
+            "immediateMinusReservedPasses": 149,
+            "paths": 197
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 42
+          },
+          "reserved": {
+            "differentDeployments": 4,
+            "immediateMinusReservedLookups": -90,
+            "immediateMinusReservedPasses": -12,
+            "paths": 145
+          }
+        },
+        "two-funded-certificates/gain-2": {
+          "immediate": {
+            "differentDeployments": 21,
+            "immediateMinusReservedLookups": 12,
+            "immediateMinusReservedPasses": 133,
+            "paths": 178
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 113
+          },
+          "reserved": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": -56,
+            "immediateMinusReservedPasses": 0,
+            "paths": 93
+          }
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 4909,
+          "paidLookups": 5029
+        },
+        "immediate-certificate/gain-1": {
+          "holdoutPasses": 5046,
+          "paidLookups": 4942
+        },
+        "immediate-certificate/gain-2": {
+          "holdoutPasses": 4829,
+          "paidLookups": 4455
+        },
+        "retain-start": {
+          "holdoutPasses": 4258,
+          "paidLookups": 0
+        },
+        "two-funded-certificates/gain-1": {
+          "holdoutPasses": 5058,
+          "paidLookups": 5032
+        },
+        "two-funded-certificates/gain-2": {
+          "holdoutPasses": 4829,
+          "paidLookups": 4511
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 4696,
+          "paidLookups": 4499
+        }
+      }
+    },
+    "disjoint-transfer-cohort": {
+      "comparisons": {
+        "two-funded-certificates/gain-1": {
+          "pairedAgainstFixed": {
+            "complete-panel/13": {
+              "holdoutPassDifference": 2,
+              "pairedRange95": [
+                -6,
+                10
+              ]
+            },
+            "immediate-certificate/gain-1": {
+              "holdoutPassDifference": -20,
+              "pairedRange95": [
+                -37,
+                -3
+              ]
+            }
+          },
+          "passedGate": false
+        },
+        "two-funded-certificates/gain-2": {
+          "pairedAgainstFixed": {
+            "immediate-certificate/gain-2": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "two-net-qualification-gains": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            }
+          },
+          "passedGate": false
+        }
+      },
+      "panelPathHashes": {
+        "anatomy/mistralai_mixtral_8x7b_instruct_v01": {
+          "complete-panel/13": "c4a474c03d3e4912d3e6839cab1cd08579044bf7860025054ed87dd1714f4a9d",
+          "immediate-certificate/gain-1": "a1f6e64119278b975c3cc4c455ebe7aaea288fafd7ae83bc810781ef52cb081e",
+          "immediate-certificate/gain-2": "2cdf44163929e0bc49ec978353161092f61e3e0182ef4a22f878974e57ce821f",
+          "two-funded-certificates/gain-1": "7550ac62490f6dc41908b4b844ad8372bd4eb704415f05cf212527cbe2da1f07",
+          "two-funded-certificates/gain-2": "0b4547e9addd4fb15e346a5ce8a657837131fda1933f33d1e906867d4e25cadf",
+          "two-net-qualification-gains": "1c845043c2d56556d195fdcfc80caa4ae84881e37713b2b2cc8f7a4bee42e477"
+        },
+        "anatomy/tiiuae_falcon_180b": {
+          "complete-panel/13": "708e7b9488897bd23bf89abc05f47534470936ef6774d2e8eed9db429573275e",
+          "immediate-certificate/gain-1": "bdf83d814fa49b52235f1966d1e11194c313061a2718940e1ffb21731613a6a9",
+          "immediate-certificate/gain-2": "c18619bbbb2177c6c26f7f7c8dd9336a0b2eafbd7647cf6c5bea535f2bc6b3fb",
+          "two-funded-certificates/gain-1": "6a01305fe242f39863f31f908ef25f080069e633f81dc6b1af2e39f3b016fc44",
+          "two-funded-certificates/gain-2": "15feb5cd2821f7c2e63b6c10f6245d9afb3c804fd225b1cd133756381a765163",
+          "two-net-qualification-gains": "1f07a2b9dd1b2fc0c8d17aa9a4b6be9ded07e890fce67df00863a6f50683d198"
+        },
+        "clinical_knowledge/google_flan_ul2": {
+          "complete-panel/13": "dae604b2a757f5cf932e979ef6b668bc8b0e19c7ea050c793fb228f09e7d294e",
+          "immediate-certificate/gain-1": "dc88e42fe2f450724801ebdbcb1bc04db9934a90fbc0ff15cb55b5abf927cc88",
+          "immediate-certificate/gain-2": "d95e358a28763f67e9751259340beb4ed72d265121162337cc458896e07dae81",
+          "two-funded-certificates/gain-1": "b4daf9d301bcfa5ff89606e6d9615d617e275b72c7f4d0ffe8574a72ef5f2b1c",
+          "two-funded-certificates/gain-2": "5ec06535dc60fe46185b353b09364dfbee2ab48a2c93d3b119496b8f801f33f1",
+          "two-net-qualification-gains": "d5a8d10e853f2b25ff39177d68c872d8b329a24ee52f6f13932eacb9b058943f"
+        },
+        "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01": {
+          "complete-panel/13": "46ba73192b78eb190346d9793c0aa88db0b04b20de8ab61f436a145131147e45",
+          "immediate-certificate/gain-1": "da66820ea373c478f43cd5a7947c4e44e6079dd8069ab50c292d523e6ad8315e",
+          "immediate-certificate/gain-2": "c517ab50de7d37ea49b4445567cd809cf7a640e51b3fa7008a47cf97ae095c5b",
+          "two-funded-certificates/gain-1": "46ba73192b78eb190346d9793c0aa88db0b04b20de8ab61f436a145131147e45",
+          "two-funded-certificates/gain-2": "0885ee5fcc88a83d31c0c0e29c744d4806886d2ce2123bf5cbe40c99fe6954d7",
+          "two-net-qualification-gains": "0885ee5fcc88a83d31c0c0e29c744d4806886d2ce2123bf5cbe40c99fe6954d7"
+        },
+        "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01": {
+          "complete-panel/13": "6da281790315b19c57e3a880782a0c3de05fd6ac389036c8d5889e993c5ac991",
+          "immediate-certificate/gain-1": "2ecb820abe96a21b7af67f23bdf446177b72d12615ce33f95dccbbbb6e983c9e",
+          "immediate-certificate/gain-2": "f733fa200392e667b4571e9c92069b703b769e08bf84162336ddd3773cb21826",
+          "two-funded-certificates/gain-1": "73dffb11be3826c4cc81a6a8c8634d862f56edc5c1d33e2b14633bf559b52b7e",
+          "two-funded-certificates/gain-2": "4690c67cc6c509fe564293758563f327196fe9f37acc2db27d7f72dded7cd22f",
+          "two-net-qualification-gains": "a11b33db02370e197b2da3b217b17d680652cd907dce298ec0961080014218e2"
+        },
+        "elementary_mathematics/tiiuae_falcon_180b": {
+          "complete-panel/13": "061c5c74d30b5e05f7d7b22f1a04741c2ad7f02f79219beeaaf0ce50f66e1d73",
+          "immediate-certificate/gain-1": "1f44dfc4d47e6906270cefeb8808bb2238e6df80641019df2e91df4aaf9a8627",
+          "immediate-certificate/gain-2": "dff59a7cdcd8d45fea18d9584fc24a5dab341ffdd08ffca997801425fbce5217",
+          "two-funded-certificates/gain-1": "170cf4ca22df9f20d2cedea02a5ba57008ce3a430904ecb41823e28180bcf6b2",
+          "two-funded-certificates/gain-2": "da437fac7e5377a909aea422368906bd6b5781aa4ee33ae34518132f0b639f3f",
+          "two-net-qualification-gains": "7fefce161fdbb742d68a26130c6713578eeb3a7d51bbb528550558102c3d60e5"
+        },
+        "high_school_biology/google_flan_ul2": {
+          "complete-panel/13": "46b49750a23de794e667a1385b5e89c1e497458a4c6a88f47784a865da31b325",
+          "immediate-certificate/gain-1": "c05df44fcf14539f73c6c5629bd352b56ebbc6969db94b0af97473ccf64073e4",
+          "immediate-certificate/gain-2": "47361c21f42b289603ce1fcf1fcaed5cba1cd5ca8c705d0bffe2e890584ff445",
+          "two-funded-certificates/gain-1": "40eea3b9005b07e45482f2858482c7561813b7100163f4d9563839c88f9acafa",
+          "two-funded-certificates/gain-2": "796bdca27ffad0e0c9220e238060da0059980104d1eae06e7ed8c22af7bf79c1",
+          "two-net-qualification-gains": "18b11c0eefd4b01a1bd6fdd38f69bda504cf5c1901fdd686cc3aff442b9cec65"
+        },
+        "high_school_biology/mistralai_mixtral_8x7b_instruct_v01": {
+          "complete-panel/13": "de27cf251575238f8c3b43cbac94c2d393895eaa3b3a6327fc06a956254fcd0b",
+          "immediate-certificate/gain-1": "3c120c7399de2e4ad97d60dacc8eab94dc367aae16f97635a5ec9771d8630e36",
+          "immediate-certificate/gain-2": "6953eeea125c50d277945d93201c4d57a3fa8cda41f45ec9aea4a8ab4283cce2",
+          "two-funded-certificates/gain-1": "de27cf251575238f8c3b43cbac94c2d393895eaa3b3a6327fc06a956254fcd0b",
+          "two-funded-certificates/gain-2": "e042e336b67cb8e92acab684f0c69c2ba1ebdb1dd958c4e7df33247d383d89ed",
+          "two-net-qualification-gains": "e042e336b67cb8e92acab684f0c69c2ba1ebdb1dd958c4e7df33247d383d89ed"
+        },
+        "high_school_geography/google_flan_t5_xxl": {
+          "complete-panel/13": "09b8d748c49ec9ae6f478c48e1688f4990458f14b748291a90beb4a073e3f2f9",
+          "immediate-certificate/gain-1": "327e679bf8b7de685dd5e05434347c030df9c0270b51d634e58fc96cac23de20",
+          "immediate-certificate/gain-2": "06e0de8f2cda582794915a42c6c590f1d145e3c5c70f9cbb8a5dafd70339ebea",
+          "two-funded-certificates/gain-1": "a458d3577392e24d1938e05517b4f2de82c34e5c723e648d1956408f5e239995",
+          "two-funded-certificates/gain-2": "8ea2ef589866c81c168b6205e231876482ca6725873d2a4efc7d861deb5a80f2",
+          "two-net-qualification-gains": "32ec83e6e7baff6e0fedba7ee7d6b8517b95d009bf3b20fe7d537e9e963fd7ff"
+        },
+        "high_school_geography/google_gemma_7b": {
+          "complete-panel/13": "61fbb4d20a64c56740ece19e132758968c2b146c635a9781ed919494a8b62828",
+          "immediate-certificate/gain-1": "febe16f6498da720f519b1af97ee5f42f9d9377ed5216a1a3cf1e23c4a08c047",
+          "immediate-certificate/gain-2": "618d0d9d2bf0062ccb09fcce1c91e7e0382b94009ef1f491e5aac24a84df0ef9",
+          "two-funded-certificates/gain-1": "34fad41f53302cb96489383f0939a03d568aeefc7b2517ec17b7ced3c8e91602",
+          "two-funded-certificates/gain-2": "b658c2e4b1c0e5aca28b26579a7b417f93f07e3aa33b43f03ceb1c5a0b290191",
+          "two-net-qualification-gains": "b658c2e4b1c0e5aca28b26579a7b417f93f07e3aa33b43f03ceb1c5a0b290191"
+        },
+        "high_school_government_and_politics/google_flan_t5_xxl": {
+          "complete-panel/13": "d69fc9294768b5aa6d493b6520aa3e2c8b0f5e9edb5f79332eea53ca84eb01f5",
+          "immediate-certificate/gain-1": "786d994620c0b81cd39fb289a27d09a453e6758fd53578c6cc1b43b612af9370",
+          "immediate-certificate/gain-2": "64dfcfd59c74e207158070d8b42a1ddd4c05955f031f7d5da6c72f625e591212",
+          "two-funded-certificates/gain-1": "d69fc9294768b5aa6d493b6520aa3e2c8b0f5e9edb5f79332eea53ca84eb01f5",
+          "two-funded-certificates/gain-2": "eaa0062eed1e6933726b679550635ecff2369de3bfc7a6246c9f6e9606cefe24",
+          "two-net-qualification-gains": "eaa0062eed1e6933726b679550635ecff2369de3bfc7a6246c9f6e9606cefe24"
+        },
+        "high_school_government_and_politics/google_gemma_7b": {
+          "complete-panel/13": "a1d6f63ae8515afabab4dfee41476d4b30860e98b1d1fb78d4152dc906ba4f12",
+          "immediate-certificate/gain-1": "d7725e179049acd62a27d0c072d6870b695c1c3f80801a8db49e7568a4e94daa",
+          "immediate-certificate/gain-2": "4f81802f770e30e4534354c104c7304fed11375c91b248bec5bc2e02b3a8c9e2",
+          "two-funded-certificates/gain-1": "a1d6f63ae8515afabab4dfee41476d4b30860e98b1d1fb78d4152dc906ba4f12",
+          "two-funded-certificates/gain-2": "b034b51f1fdaf57aa664c8b795c407e5c288ef0de2c255c12b5ca723d33460c6",
+          "two-net-qualification-gains": "b034b51f1fdaf57aa664c8b795c407e5c288ef0de2c255c12b5ca723d33460c6"
+        },
+        "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01": {
+          "complete-panel/13": "8c65b0e67c8e348ddb2ecd2806a2deb9076834c3c7c08b98f8a39c520ab4d9fa",
+          "immediate-certificate/gain-1": "127adb2d5905e510aa18368b6eac7d3e62171af36c88c05e6ae838bf6e3a77d0",
+          "immediate-certificate/gain-2": "dcd8f703cf88d8522fa55e890dfd3aae2b12ee4b9f24f9c0d38a12e943ec7479",
+          "two-funded-certificates/gain-1": "638587a83dd48703bbbf9084aa5b767293844bfec822de64a2565f1efa503ba9",
+          "two-funded-certificates/gain-2": "c340d4d6ae67fd87f79ff57b1170e1e6ca5ac6532e492c1b6fc8810b182523a3",
+          "two-net-qualification-gains": "f9282e13bd74b8d129fda04ca77a804b1286346cc97a59a46f0350765668dec2"
+        },
+        "high_school_macroeconomics/tiiuae_falcon_180b": {
+          "complete-panel/13": "6b549c5c809bb39d7d7cb86430ef8f33e29a93e6c72d61a4852037907d987a93",
+          "immediate-certificate/gain-1": "ebaab1e4ca7724ed01fa7d28f4c8690303c24223b6c9b13cda9c6834463cd08d",
+          "immediate-certificate/gain-2": "7be81ff2b4fd0dfc6bf60104c55d190be0966a615c6389c6950758f1254f4c80",
+          "two-funded-certificates/gain-1": "6b549c5c809bb39d7d7cb86430ef8f33e29a93e6c72d61a4852037907d987a93",
+          "two-funded-certificates/gain-2": "f22c9d33fe78b7fc5269137acf87c47983b132a7da5ac00b0bba1f77e6097612",
+          "two-net-qualification-gains": "f22c9d33fe78b7fc5269137acf87c47983b132a7da5ac00b0bba1f77e6097612"
+        },
+        "high_school_microeconomics/google_flan_t5_xxl": {
+          "complete-panel/13": "961f64b88b3927f13fab0cda2def8afaa5acc8e54c1d884dcdfb415d8c0e9135",
+          "immediate-certificate/gain-1": "b5d306e5b8c369996372d0db4feefcf0a95fd6c3c74d5209feb8fe7af10e1f80",
+          "immediate-certificate/gain-2": "8c61dd5ed3ea6f90d091bac5b61bbe005b72094346f2b7bfdf4e966bebdc33f1",
+          "two-funded-certificates/gain-1": "6fe81832789f1cc7bd787efdf054ca37f964732c63276e8d7dc94e9687f2de1f",
+          "two-funded-certificates/gain-2": "5cdafea2096c1356cfd0e30253696c2bb484461af9bd4bdb2eaf96c407f0e693",
+          "two-net-qualification-gains": "2adc70ddfd5f314ba1afbf258af4235668f713f08055d3019d4e91813a94b49e"
+        },
+        "high_school_microeconomics/google_gemma_7b": {
+          "complete-panel/13": "d36af98c404607c721100d4464b26d6d3cef11e6602f52436772698f6c904c5b",
+          "immediate-certificate/gain-1": "c7206bc58896b05daaed53b710f5f7e6d1cd6400cf33e5b8baccab0f3a5a59a0",
+          "immediate-certificate/gain-2": "fee59c78449a446fd890037e14d91234cb043591c22c045f618dad2584455ec4",
+          "two-funded-certificates/gain-1": "6f7657849dbc4500d357a58ad7fabd9ece7fe2b8a2aae58dbf504c9de915ab3b",
+          "two-funded-certificates/gain-2": "7e1c7e448d91611dae7d13a90f15bc9434aaa03390632f070802eb050e3b9f90",
+          "two-net-qualification-gains": "6890dea2a35cfafd8cb47f254fa6f1445e437a42ba5450b3eddb5a8155da210b"
+        },
+        "high_school_statistics/google_flan_t5_xxl": {
+          "complete-panel/13": "4d28f01c50b8753c2dafc4183f69dee6b4f39bfabc75713be2020896e3e5e119",
+          "immediate-certificate/gain-1": "134e66b9e138cfe72a553ba4f2864887c27c39162cb3fcdb3aa0500539517193",
+          "immediate-certificate/gain-2": "8a8d31f94515bb54547c676c56bfbcb7d2008cd88f6bcac4c26178a12de12a4e",
+          "two-funded-certificates/gain-1": "382655b609311c7bebe6a03f96c5242a9f98af40e0da990f4a1c1b7c55ec9bb0",
+          "two-funded-certificates/gain-2": "286f0bf17f981151338c4749df38dc8f6f1ee96568092c14f87475a74585b238",
+          "two-net-qualification-gains": "be92c79c544b39ea9edf36ab3f2068e3812dc6a4b85336d616d75f91d71a017a"
+        },
+        "high_school_statistics/google_gemma_7b": {
+          "complete-panel/13": "c80d853d8b288fae03f80a5460e003efd857c011ee3629f7c6459d0f9ead245f",
+          "immediate-certificate/gain-1": "ad0811456ea2ef28da4372385096cf98e13c24b11a130b47755aad9d9d30a065",
+          "immediate-certificate/gain-2": "17e620a6719d5a2ce01f9bcb9fc507eecfd047ac47d6fd7cc455b3aa1eb31293",
+          "two-funded-certificates/gain-1": "1e31c83e3f9701cc0f45bfac292c6050ec9932c1b1cdfe90668a375a76e207f9",
+          "two-funded-certificates/gain-2": "e421ebde5349228a8fc19f44bd0674a0b6df91da20d2c6eab4830d263449afbd",
+          "two-net-qualification-gains": "6c4d21fc1473dbe2ab06db7f77cbccf31bd4cb773ea6a5c4c6225203085644af"
+        },
+        "moral_disputes/google_flan_t5_xxl": {
+          "complete-panel/13": "dc1adcba68a0c4a3dbe1b65d4912a4ec4b325849dcc13f81e0aa047d0ed7f8cc",
+          "immediate-certificate/gain-1": "a6af51620f3b0183df03529a33b27b518eeeaeb9687f8f8b075296a51cb57a50",
+          "immediate-certificate/gain-2": "c20bdc838e06fd92b58f86b3d2f939610c294f257cf9fe90856c1c62b5022d5b",
+          "two-funded-certificates/gain-1": "dc1adcba68a0c4a3dbe1b65d4912a4ec4b325849dcc13f81e0aa047d0ed7f8cc",
+          "two-funded-certificates/gain-2": "0985bc1e632a82684e5568fa3f9b083788f4771623803d1cfaf254e5d160792f",
+          "two-net-qualification-gains": "0985bc1e632a82684e5568fa3f9b083788f4771623803d1cfaf254e5d160792f"
+        },
+        "moral_disputes/google_gemma_7b": {
+          "complete-panel/13": "9a9b28a051b7bc4bdf7ca6069ebcc335f9c4776348cbf04d29b007d7cbd85816",
+          "immediate-certificate/gain-1": "60e0332ca4526f05dfc1c13b472ac2231f46eb357cb530ba7369a830e2197c45",
+          "immediate-certificate/gain-2": "9d48aa0c0eba5f019ab3e0c9d1ddf41b3773ba86e7961d95a92e225be2563dbe",
+          "two-funded-certificates/gain-1": "02319afda0a2f5e32b052047bf60ab927df7db86e68d11d36e50dedbece4098a",
+          "two-funded-certificates/gain-2": "6b65af88ce0267c2181ee59ce3f6a0fe8422b390fab583ea3bc92f475dc6d476",
+          "two-net-qualification-gains": "189143391bc0df8c4d5a147ae2b94196463aeae9e91f536c677c3a361590cc57"
+        },
+        "moral_scenarios/google_flan_ul2": {
+          "complete-panel/13": "4e4431311dc877732a5adfe1653f5b0a5724e5cb5c68409bc878fa57cb32d821",
+          "immediate-certificate/gain-1": "444ff268261202d1614c77cc96407152a444b637811a63d0a6576b698f201373",
+          "immediate-certificate/gain-2": "56ebfadbc9f2161a314eb11895cb395b5fcfa0a530fdd21a3cc8328700da26b4",
+          "two-funded-certificates/gain-1": "6c4273fc8b9c353509252ce9c47b35cac078683db01c7eb9c4862dd51b1aafa5",
+          "two-funded-certificates/gain-2": "0672d7d1903ef032b76f44c1b3a34abee40466fa5c87864f2473248e366660c5",
+          "two-net-qualification-gains": "36b3561eeb6c0a44311a1ead3fa6353d1c9b72963ca48e9360bde906676a7009"
+        },
+        "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01": {
+          "complete-panel/13": "60708df22da791b57bf1cc120fad00c1b4c54e2f2ca411693cc980355378cb2c",
+          "immediate-certificate/gain-1": "ccb3987d05aa7a99b7483fe2740bad333eb385d34c7c41511a15830f589c6552",
+          "immediate-certificate/gain-2": "dfbfccf17bd211ad2b2b702e9250b6834afd7aa4acd20f56c47b8319e86fe79b",
+          "two-funded-certificates/gain-1": "3255c186c6c6b92e158490b4330b2d8cb020b60ca2f54fb7dc4c920787f90ffa",
+          "two-funded-certificates/gain-2": "ca1a8e224d43343febca876ff8a3f875d972a526c36d248ee82455a36474ea6d",
+          "two-net-qualification-gains": "c79c227c1eeb1fb12bbf90fcfd91914d9981fd932e00dc23113b06fd470738c1"
+        },
+        "professional_medicine/google_flan_ul2": {
+          "complete-panel/13": "8ab681ddf925f2a0f065ae3c8dfb88a71f72c177f50f0c091ed60bbd07b48b6a",
+          "immediate-certificate/gain-1": "ccce97c627a88e3827bc30becf85d5533b34ffb949a091bed358b3143735dec3",
+          "immediate-certificate/gain-2": "0c5a86c6573db53cd948e11dfb8219d57a54b9bf14eb38a7d57e7c01180792bf",
+          "two-funded-certificates/gain-1": "8c852fea07d1c2ff66695ec36b1db2f0cb10e0a967e0e03b4c9fa3d08e7a8bc0",
+          "two-funded-certificates/gain-2": "ce453c359446df6bd542ec74ddbbac08e3479aac9b44a76057fffcb96229cfe1",
+          "two-net-qualification-gains": "60765c2e308f1d7f22c2f3cd0e853d7e0314044b2fa3d0080db6ad36bd37ff5c"
+        },
+        "professional_medicine/mistralai_mixtral_8x7b_instruct_v01": {
+          "complete-panel/13": "10cb587f29a83edacce99d05bff17eee817e80496b3fd6ab11d5411e2a656dd2",
+          "immediate-certificate/gain-1": "476496e14ed558a36c1fdad2bf7699ea964c5cd5bde3da49fa3ad7c07873b8ba",
+          "immediate-certificate/gain-2": "d2b8120e2e0430cf4b455dc046a9a5759e54987e496a1e65368f9ba4ad3f1c0d",
+          "two-funded-certificates/gain-1": "10cb587f29a83edacce99d05bff17eee817e80496b3fd6ab11d5411e2a656dd2",
+          "two-funded-certificates/gain-2": "0b77b3cc49879098c7cd5753ea910f34e473d2c57c240b4dca90aab55ee7ded7",
+          "two-net-qualification-gains": "0b77b3cc49879098c7cd5753ea910f34e473d2c57c240b4dca90aab55ee7ded7"
+        },
+        "professional_psychology/mistralai_mixtral_8x7b_instruct_v01": {
+          "complete-panel/13": "2bb12b436d7e1f6e0d5a3c963ab1e9ef900c6850a989beb810eaf699dcfff14a",
+          "immediate-certificate/gain-1": "7a6fbec7f8c98148d55bbc44ccbfd280001b82bb9a760cb132e6d2e3170d478c",
+          "immediate-certificate/gain-2": "958667d91a858844de74eecb54dd5d76949a2509299f7e4ff94296cdbd52c730",
+          "two-funded-certificates/gain-1": "2bb12b436d7e1f6e0d5a3c963ab1e9ef900c6850a989beb810eaf699dcfff14a",
+          "two-funded-certificates/gain-2": "309557eac050aed043f58b5450c7fe9701606105b7bf72799b806be9a099e8c9",
+          "two-net-qualification-gains": "309557eac050aed043f58b5450c7fe9701606105b7bf72799b806be9a099e8c9"
+        },
+        "professional_psychology/tiiuae_falcon_180b": {
+          "complete-panel/13": "2f62c7d57404c5cca92bb41c4954345f4c37590d6f31dbe8b607dae1766527b4",
+          "immediate-certificate/gain-1": "433f87ef51b6a478da1c6dae266d0aa89c1991ce1a1d734dd37429056fe29ceb",
+          "immediate-certificate/gain-2": "9aea90a472ca09c769ad750423e30338a0c0df09352aed9a5dc036ed527a8426",
+          "two-funded-certificates/gain-1": "5215decfa97ef777f07354304bc2b1cee91ec46404a077b153c79c08ed01412e",
+          "two-funded-certificates/gain-2": "a69786bb4770a67ceef8bfc3c734cdd2ef72ca201e270d0f53ecb05bcdd85cbf",
+          "two-net-qualification-gains": "8f06e5c227753022bacf6555395d51f505377a6a8cb82d8ce7f62cf954d00d67"
+        },
+        "sociology/mistralai_mixtral_8x7b_instruct_v01": {
+          "complete-panel/13": "57e18a1711ce654cc921a682d465ed6d7a808324301bfc9cd0ecee5c9cc62d4d",
+          "immediate-certificate/gain-1": "96fa626a7b01f2f3aaabf91fee31c6373117ad55eac3addbdaf80a469e71d16f",
+          "immediate-certificate/gain-2": "cb1bbce33a38235c9d6917f630e5a655a348aa5d9fa2edd915ebbf32ba51ad1e",
+          "two-funded-certificates/gain-1": "57e18a1711ce654cc921a682d465ed6d7a808324301bfc9cd0ecee5c9cc62d4d",
+          "two-funded-certificates/gain-2": "aac812ac3dbe10792d6d5b23bd2b9399b4fcc0679519d19763d95997c9badef5",
+          "two-net-qualification-gains": "aac812ac3dbe10792d6d5b23bd2b9399b4fcc0679519d19763d95997c9badef5"
+        },
+        "sociology/tiiuae_falcon_180b": {
+          "complete-panel/13": "0e53402880e65071365a7fe5abf270ebe86a8ed1c7bac5c17b1fb5dbafe28e05",
+          "immediate-certificate/gain-1": "9fa2073d023ecee2a28708b7bb59dbc16de51a387986a12091d90e284cd6cd80",
+          "immediate-certificate/gain-2": "a9103404335e615a321c764d587b5d67dde516aa7bc22d076c8277de2246752b",
+          "two-funded-certificates/gain-1": "0e53402880e65071365a7fe5abf270ebe86a8ed1c7bac5c17b1fb5dbafe28e05",
+          "two-funded-certificates/gain-2": "b4495f4f1938611241b861bda754003bb8e5f5d161da300285af280b1117d1ee",
+          "two-net-qualification-gains": "b4495f4f1938611241b861bda754003bb8e5f5d161da300285af280b1117d1ee"
+        },
+        "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01": {
+          "complete-panel/13": "56638542138eed8265bc399b2bd1edb5ef6ad29a6c97e6ac74c491cb51f41775",
+          "immediate-certificate/gain-1": "a04c4dde132fdc67d145d2a8dfa75162037fac57b25fbfae72108dc9041282f5",
+          "immediate-certificate/gain-2": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+          "two-funded-certificates/gain-1": "56638542138eed8265bc399b2bd1edb5ef6ad29a6c97e6ac74c491cb51f41775",
+          "two-funded-certificates/gain-2": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d",
+          "two-net-qualification-gains": "e9e50a211c415b720acf8a198cf432b2b1a02c02e1ba9bcf2e2604219165ff6d"
+        },
+        "us_foreign_policy/tiiuae_falcon_180b": {
+          "complete-panel/13": "cb4372d395003b4e5841208deb73600634c8d6cb26f6148577e9e15a2b404376",
+          "immediate-certificate/gain-1": "2acdb95a49baa30efd3b878143ff406728046fc12f359fd25ad63809e1143f37",
+          "immediate-certificate/gain-2": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+          "two-funded-certificates/gain-1": "cb4372d395003b4e5841208deb73600634c8d6cb26f6148577e9e15a2b404376",
+          "two-funded-certificates/gain-2": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2",
+          "two-net-qualification-gains": "a04b0f37e4d224cb2c2975044b2d7a026401fdeb3f96a32131762324e4791ce2"
+        }
+      },
+      "strata": {
+        "two-funded-certificates/gain-1": {
+          "immediate": {
+            "differentDeployments": 2,
+            "immediateMinusReservedLookups": -97,
+            "immediateMinusReservedPasses": 2,
+            "paths": 122
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 265
+          },
+          "reserved": {
+            "differentDeployments": 5,
+            "immediateMinusReservedLookups": -254,
+            "immediateMinusReservedPasses": 20,
+            "paths": 573
+          }
+        },
+        "two-funded-certificates/gain-2": {
+          "immediate": {
+            "differentDeployments": 1,
+            "immediateMinusReservedLookups": -56,
+            "immediateMinusReservedPasses": 0,
+            "paths": 92
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 578
+          },
+          "reserved": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": -120,
+            "immediateMinusReservedPasses": 0,
+            "paths": 290
+          }
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 56079,
+          "paidLookups": 9596
+        },
+        "immediate-certificate/gain-1": {
+          "holdoutPasses": 56101,
+          "paidLookups": 9245
+        },
+        "immediate-certificate/gain-2": {
+          "holdoutPasses": 56094,
+          "paidLookups": 6934
+        },
+        "retain-start": {
+          "holdoutPasses": 56065,
+          "paidLookups": 0
+        },
+        "two-funded-certificates/gain-1": {
+          "holdoutPasses": 56081,
+          "paidLookups": 9499
+        },
+        "two-funded-certificates/gain-2": {
+          "holdoutPasses": 56094,
+          "paidLookups": 7054
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 56094,
+          "paidLookups": 7110
+        }
+      }
+    },
+    "earlier-screen-cohort": {
+      "comparisons": {
+        "two-funded-certificates/gain-1": {
+          "pairedAgainstFixed": {
+            "complete-panel/13": {
+              "holdoutPassDifference": 4,
+              "pairedRange95": [
+                -10,
+                18
+              ]
+            },
+            "immediate-certificate/gain-1": {
+              "holdoutPassDifference": -10,
+              "pairedRange95": [
+                -22,
+                1
+              ]
+            }
+          },
+          "passedGate": false
+        },
+        "two-funded-certificates/gain-2": {
+          "pairedAgainstFixed": {
+            "immediate-certificate/gain-2": {
+              "holdoutPassDifference": -1,
+              "pairedRange95": [
+                -3,
+                0
+              ]
+            },
+            "two-net-qualification-gains": {
+              "holdoutPassDifference": -1,
+              "pairedRange95": [
+                -6,
+                4
+              ]
+            }
+          },
+          "passedGate": false
+        }
+      },
+      "panelPathHashes": {
+        "abstract_algebra/codellama_codellama_34b_instruct": {
+          "complete-panel/13": "f6377c095f9af83a4a1ceb86eb3dffbea4fe2519a075a058f270e129fc3ba765",
+          "immediate-certificate/gain-1": "d1e46eb77912c7e97e3ccc81894ec60de0d9348d950ce78501d5cb294587cf88",
+          "immediate-certificate/gain-2": "65cab5946560baea62b3573ac123bb6d96d2f01879613bae77ac9acc10cc7476",
+          "two-funded-certificates/gain-1": "d132cc8c2d70a3c08be7e62f9d3b99caf55912b3893adacd55ed45a072d115c4",
+          "two-funded-certificates/gain-2": "cccfb6e608b415f7bc9ddb7e6305f97f34351dd439b3c52bbb967c4e844b9088",
+          "two-net-qualification-gains": "ecb60fa47f408f6de84e11b26bc56d5bc825e3cdbe026867104a98fc347d9c37"
+        },
+        "abstract_algebra/ibm_mistralai_merlinite_7b": {
+          "complete-panel/13": "5bd4425c56871f1f37dd81af546b2e605d22f84dacb6d0bd18c30f8094e49051",
+          "immediate-certificate/gain-1": "1f7d36785c46ba2ab8f59b007abffdd8c105bfc245cd5d45a79f5384a512dce7",
+          "immediate-certificate/gain-2": "b9261d8327ceb06155fe7f7675387b63861eae82d396fdfdab950a6a470df864",
+          "two-funded-certificates/gain-1": "c770cfb7cbe02c2e1a16839180a042484ed1cf0191e37ef5f3cfcfa6dc1685bf",
+          "two-funded-certificates/gain-2": "2f469dada023ae703431d59394fbd5c1de600725e61435c17bc8658376e7d182",
+          "two-net-qualification-gains": "345bcb65d9b4692f513dc4bff44dabd98659c68a50221ca119a2b533f3d4fc3a"
+        },
+        "business_ethics/codellama_codellama_34b_instruct": {
+          "complete-panel/13": "6bff7096345ed6523bf21d15fb49f6119480942b2182d28eec9f08503c8de559",
+          "immediate-certificate/gain-1": "e77fb809b64deb422a74486cd44f3c34143483cc56235bdbb1d10d8bcdc85ba7",
+          "immediate-certificate/gain-2": "1e474bd679bfb808dbe5cb4843d70a2368e38bf96f50150bb8586fcf66eed249",
+          "two-funded-certificates/gain-1": "0892d1280f677cbf42c449215b04ca2b2b19fd2cdce096cf92db56f87266b7ce",
+          "two-funded-certificates/gain-2": "5f319a628d1b5395abd2349db7fb46f4062b859d192b82f027c0820d7d89c7ed",
+          "two-net-qualification-gains": "a1729f26a52fc84d53f1d5ba2b364eb2beb856d2dd7c6fa15a58085c57d38610"
+        },
+        "business_ethics/ibm_mistralai_merlinite_7b": {
+          "complete-panel/13": "36dab89355e334f0b03206eecc8854289403f5910cd02010664677b1f9cbe168",
+          "immediate-certificate/gain-1": "13b239cc16e9cbb5d67195f9efd4a8d24dca16407bd6238e2836288f5066887f",
+          "immediate-certificate/gain-2": "c5ee1fa690fd8998c6588f0293a298d44bb9181a52fd4f5e13f66022605be0ba",
+          "two-funded-certificates/gain-1": "d0791f1f5717ad2c1d227c246c495e20c87d3530c9d0b9078f10afe5faf69d7b",
+          "two-funded-certificates/gain-2": "f14e83fe4350a16cc4a470ca8d5a58529dc1f100e48901a4619660532e6ee2bd",
+          "two-net-qualification-gains": "797882c724b3717a3fd3154c7ea64160c8481ec313855aa2d6eb7389d84e8c33"
+        },
+        "college_mathematics/codellama_codellama_34b_instruct": {
+          "complete-panel/13": "ae8d5fb43609a857469370079752e7589bb0a765c7696c0a367c38e986faede9",
+          "immediate-certificate/gain-1": "42093860428ba4dd729b008f3f0b409122e4ad074b3757bee7912d81e199df15",
+          "immediate-certificate/gain-2": "7ffa7c4e6d047502aab432f081b9fc71e74e7ce32622c043dcd1bb8199e1e05d",
+          "two-funded-certificates/gain-1": "b1bab395f6280c9414e643ce0936726590ec816c5237c97bff1c555835b8923f",
+          "two-funded-certificates/gain-2": "791ba8f1696fb17c80aa8c08f4afb9a69b3d6f21fc4ebf6f56590a329e89982e",
+          "two-net-qualification-gains": "e2b90aec1807347ba1debcbd020fa008da229a2a4f4c304ae8c7a1514f4733ba"
+        },
+        "college_mathematics/ibm_mistralai_merlinite_7b": {
+          "complete-panel/13": "e080561ed8c9d44593f7b5357bd27cd5d100bb8f1d655ef2e9ba9311e2ddb7b9",
+          "immediate-certificate/gain-1": "70670795583809ec9e41bade4851aa7218bf1f42c989ac7a91c37c002e1fbf77",
+          "immediate-certificate/gain-2": "42279142c308da9ddadb7ce2ec615c0c2d32e973ed35ac143f825a54ee5cf180",
+          "two-funded-certificates/gain-1": "707f88adf9eb222791f1310caa3c4c5945b00dfbb49e0bbdea5a070b6c217d30",
+          "two-funded-certificates/gain-2": "38a4a17fd46a8b32be4657efe35af066534cc3919be3ce8135fcb54fa372d1fd",
+          "two-net-qualification-gains": "8f8c74b02f82696df6b663a5e0516548821bfaf5902661e84d7219f2dde4a55f"
+        },
+        "college_physics/meta_llama_llama_3_8b_instruct": {
+          "complete-panel/13": "8b80a9c42339d5144fb19c9f5930c8125af8f5c3353c3b117825c432ec03b145",
+          "immediate-certificate/gain-1": "5cc3473ee76aa11b2ba7dc416ab6ecbd96279151f4916d34e4ef8bf668567dda",
+          "immediate-certificate/gain-2": "dd99a82cabb23b35fc1baaccb04a1b2fb72397dc48b07b55b53a624090a505de",
+          "two-funded-certificates/gain-1": "3ff314e70cf8016316d914ff9b9b45c6fb743e1cb58ccad2779fe603dd92cd64",
+          "two-funded-certificates/gain-2": "f6b96f5ddca612a3c17044462484d7bbe7d4fe0230f28f817df9369b174cd8e6",
+          "two-net-qualification-gains": "0cbdf997668e34a8c1f7eef9a5db82895d19606098cded84f2584e7ab573aa8a"
+        },
+        "college_physics/mistralai_mistral_7b_v0_1": {
+          "complete-panel/13": "1df0ef8552d8c7b95bbf9b2dc7cf47d97251da5736b3c897a85cad59e84777eb",
+          "immediate-certificate/gain-1": "2384042b91af6be3ff5c269b323003df053185f1b2f13daa4d3b1a47285eb6e8",
+          "immediate-certificate/gain-2": "f21d48b972090afc4e8299453f8d1a5259f7ea0e056f5f54b8dacb359be90f66",
+          "two-funded-certificates/gain-1": "c429f9513cc39b8cdf2ea85b9a136ad06ae58845a5a4e6ff48ad438bde0868f2",
+          "two-funded-certificates/gain-2": "0a7f28ac0cc0655a8c060e863797794ae4d82520999a8b37d767a5ca6baa1c89",
+          "two-net-qualification-gains": "8a2321765773a09425f53867e21e000393d8a793d62f78fab7efe6f628111734"
+        },
+        "computer_security/meta_llama_llama_3_8b_instruct": {
+          "complete-panel/13": "2eec330a0e044cdcd5658aec51760240024b330adfd72def032692dd3d75cb3f",
+          "immediate-certificate/gain-1": "e793bd3280e7a70ab43eda7cc658ff0c67c586c6ac89f5cef2bddf448fbbb851",
+          "immediate-certificate/gain-2": "e534e05486070a5389e255ac8a2ca94c6e892d399c8d76c4abc25260415abaa2",
+          "two-funded-certificates/gain-1": "2eec330a0e044cdcd5658aec51760240024b330adfd72def032692dd3d75cb3f",
+          "two-funded-certificates/gain-2": "e534e05486070a5389e255ac8a2ca94c6e892d399c8d76c4abc25260415abaa2",
+          "two-net-qualification-gains": "e534e05486070a5389e255ac8a2ca94c6e892d399c8d76c4abc25260415abaa2"
+        },
+        "computer_security/mistralai_mistral_7b_v0_1": {
+          "complete-panel/13": "e03a97bf05c545e983c3776a74da07838bdc99ac66cc04b6b77bafd5975a7cd9",
+          "immediate-certificate/gain-1": "3a85011749fbeb24e8db00ee9194931519f192220feaa071e4b89ea4f0d17fee",
+          "immediate-certificate/gain-2": "63f2c9f15700b5bfa756b23646ced90081f25fb20897f54987e5412ef64f5a34",
+          "two-funded-certificates/gain-1": "e03a97bf05c545e983c3776a74da07838bdc99ac66cc04b6b77bafd5975a7cd9",
+          "two-funded-certificates/gain-2": "e7584e2d77cd886c37c188dbb9599f69b1bbf226e227c7b9f32d91c6b9ebee97",
+          "two-net-qualification-gains": "e7584e2d77cd886c37c188dbb9599f69b1bbf226e227c7b9f32d91c6b9ebee97"
+        },
+        "conceptual_physics/codellama_codellama_34b_instruct": {
+          "complete-panel/13": "c714d2d091f6fce0485a138aa637446b41ab97e1043d7a277fc5e980414346de",
+          "immediate-certificate/gain-1": "41db5541bc562a3babc3e4509a72010778d5a06437ccf87b275c090a36424d17",
+          "immediate-certificate/gain-2": "28142114bf8701ac4584ad16691a9d4cb05e7f36e6824b382ddedc38cae7fd1d",
+          "two-funded-certificates/gain-1": "95093930b57abc9b69c9a94e53fde6fc3da901ffeda0ecdd413c01a8c45353cc",
+          "two-funded-certificates/gain-2": "28cf65b7c3a893ab940cbc0cc90db0767325938741cf2e1fadd4c691d6e2d668",
+          "two-net-qualification-gains": "c3a31e8c4ef988c722383ebed5a7449513dc96de76b29ce91b54822ff39e8431"
+        },
+        "conceptual_physics/ibm_mistralai_merlinite_7b": {
+          "complete-panel/13": "631235837992c578f6e4954784a8dcc909d90cc51677effdc717ab08012a3ad5",
+          "immediate-certificate/gain-1": "6652711aa4b83c357e7d070a6465f92d79de960c99f634673597184ef065d339",
+          "immediate-certificate/gain-2": "db8cc9a8d2755b4f22a70ac185ee634ab7d1b09946b955341fe04f30034e91c9",
+          "two-funded-certificates/gain-1": "f68cd9266001da32d4fd349b440adbc1b7110545a452ce755fd6bd1b4ff98aab",
+          "two-funded-certificates/gain-2": "1db89f7dfc7370a07165086d5d8369251d069557f19f89cae223cd24a4ca773d",
+          "two-net-qualification-gains": "c0403ef2e51a9ebdf5c8abadf3b943fe7d551c4503481006ef063038d1bc80ac"
+        },
+        "electrical_engineering/meta_llama_llama_3_8b_instruct": {
+          "complete-panel/13": "3947bf5a191bbbd2e3c57b32f1c12e73c0171343758fffc7bb4771a8f5895781",
+          "immediate-certificate/gain-1": "e43f7dcdaf28a5c806231ee04ee163ebcc8fc1463ffd9134e6004ec9fcc2756c",
+          "immediate-certificate/gain-2": "2e724ccfc1d0a90ca62ab0f2c4f93a57a2a44e2b33f6c7887da2926c571e5434",
+          "two-funded-certificates/gain-1": "29215d8fbdfbd89de05907475124671d494c51591be7b11fcd5f4edf4c7d05f8",
+          "two-funded-certificates/gain-2": "c50aa2e53dbe45438eb4670ee226de2b7fa46d74d3867867b40142c683057168",
+          "two-net-qualification-gains": "b83af054db9e9d2606cbd3af9d8b25cec28947679d6e03a408ad2cc32d5de8ef"
+        },
+        "electrical_engineering/mistralai_mistral_7b_v0_1": {
+          "complete-panel/13": "e3bf98aefa31bf08eac2d97154007df6609640eae6a3900e4f933b5b591cceca",
+          "immediate-certificate/gain-1": "407fc671a7fe87f2918aacb66445b6241f6d4edccef7a6b162e814b2e4d96c67",
+          "immediate-certificate/gain-2": "2e321af16d13dc6729aa9e2e7b75e13d7176c4815a58b7efe8aee9efd4667b2d",
+          "two-funded-certificates/gain-1": "1fb1795ccd1b9ee9d568f369b0fce53de5f8f94f0887dcc543eb4e5547b28b81",
+          "two-funded-certificates/gain-2": "9d87ac34e6a80aac27204125364f7ad82a2ab2889fa9612a715a52ab19d095e4",
+          "two-net-qualification-gains": "782f62da2ec1f660a4c2fa2f4ea3b665e1ef824ea396dda154974fd2c9ee874c"
+        },
+        "high_school_european_history/meta_llama_llama_3_8b_instruct": {
+          "complete-panel/13": "2068de64b717940a3fefd7f5c6aa8521a7c105cad23ca50953bd35ce42e38797",
+          "immediate-certificate/gain-1": "6d63fcb146b6bf8243400f534739db7dd54eca1a5e35be3025f724a63d63e109",
+          "immediate-certificate/gain-2": "cdf65b5df499f63d01d02496dcb3e0322560a2b482f32e7ad928d3412f1662f4",
+          "two-funded-certificates/gain-1": "9350e6fc7d250fd843584649b46fb7407f40034dee0d511d0ce0d045e4ae54c0",
+          "two-funded-certificates/gain-2": "753ce55030968a2ffc8480cc9974b978c7fda770912b0d9548a0d54ecc48015d",
+          "two-net-qualification-gains": "753ce55030968a2ffc8480cc9974b978c7fda770912b0d9548a0d54ecc48015d"
+        },
+        "high_school_european_history/mistralai_mistral_7b_v0_1": {
+          "complete-panel/13": "b71edd95aa7e674a807c391d1e21387e66ac2bbfef409e6b5fb93e281ee06c92",
+          "immediate-certificate/gain-1": "9680ae215222c5f4d65972abb1465801ed52e6b25b1397c0cfa09068b6544eba",
+          "immediate-certificate/gain-2": "089fc67c7970adf7bccd528fb1ddc452798fb565ac8f58540ff87375a0f72b83",
+          "two-funded-certificates/gain-1": "d817f7fd2e543ff92ac57079d47c13128b9a0991c64bc0d6f627a9feaa21eec8",
+          "two-funded-certificates/gain-2": "42c405514151f762390683c2d1ede1d857fecfbde002ecbc0c6858e6f294f6e7",
+          "two-net-qualification-gains": "42c405514151f762390683c2d1ede1d857fecfbde002ecbc0c6858e6f294f6e7"
+        },
+        "high_school_psychology/meta_llama_llama_3_8b_instruct": {
+          "complete-panel/13": "ffcfb97988c860ee31041e746a39a846aee50123dcf83fc729045214ed14e4d4",
+          "immediate-certificate/gain-1": "bbb61530d999904b8ce0d375c25ae39799eac6dc3f04693ec1330f61ab4ef17d",
+          "immediate-certificate/gain-2": "c9f5d8c7f6284cedd5b1f68d9bcdad8a3f954f452196f082b61de948cd8fd212",
+          "two-funded-certificates/gain-1": "ffcfb97988c860ee31041e746a39a846aee50123dcf83fc729045214ed14e4d4",
+          "two-funded-certificates/gain-2": "c9f5d8c7f6284cedd5b1f68d9bcdad8a3f954f452196f082b61de948cd8fd212",
+          "two-net-qualification-gains": "c9f5d8c7f6284cedd5b1f68d9bcdad8a3f954f452196f082b61de948cd8fd212"
+        },
+        "high_school_psychology/mistralai_mistral_7b_v0_1": {
+          "complete-panel/13": "0bae99d8965b4917cfb2cf86c450ca424f85c2de1c810e62b873be1e113a0478",
+          "immediate-certificate/gain-1": "84025dcc70518475c2a3a52df64be6603707a032005ea7bd4ae9d73982cf955a",
+          "immediate-certificate/gain-2": "13cc14930df2de0af20772d933b4300f0d6243fec149fbcbeb9cf0bf977b0590",
+          "two-funded-certificates/gain-1": "499dd29f8ee7ce933206a0d4cac3e9449fbc108d58bd2f1aac3b46573e4e2d4a",
+          "two-funded-certificates/gain-2": "9af5c53bd6e097b693a050fc3eb159e88943988e86789dd420667bb9a5f9a05f",
+          "two-net-qualification-gains": "9af5c53bd6e097b693a050fc3eb159e88943988e86789dd420667bb9a5f9a05f"
+        },
+        "human_aging/codellama_codellama_34b_instruct": {
+          "complete-panel/13": "79123bfeb35b0ff40b1c3559380cb3868351926898b00db080edbdcea832da50",
+          "immediate-certificate/gain-1": "f72eebba67a54065023dbf83593decb26d37b4ee08f46766da2344d01526e8e9",
+          "immediate-certificate/gain-2": "5d27ed127114a5d7d6d19c0c7eb7f8337cfb6d1e699b224af67b1fb088289d06",
+          "two-funded-certificates/gain-1": "55b7a00a71526ad802d348d0bc1dc8cc63a94221f204b90e7929dd56e5ebb701",
+          "two-funded-certificates/gain-2": "dc03f094d7c9915a0c6c3c7ed8bae4a42fa60916afbe906989b21195e10d0961",
+          "two-net-qualification-gains": "efdc8d53a264daf72d52d3438d1119f469cd08ce287c47256a96d44b8c02bc1e"
+        },
+        "human_aging/ibm_mistralai_merlinite_7b": {
+          "complete-panel/13": "a44a3acfe7b8bb7fbad14990afb549389832ef4a6e3fa185007e2244ebe9da2c",
+          "immediate-certificate/gain-1": "eb0a7690aea0bd2f81c62c80d349d88940b3d1288d308b3bec4de613f6a3b5b0",
+          "immediate-certificate/gain-2": "c5ae8cc07b43ac9c4069bd433e3e0913974f6fa411c3a5dabe0474676387811e",
+          "two-funded-certificates/gain-1": "e07b24ba4a451d706c00fd0ea33df7f9e35372c0bd569dc3ba3df1d0b11482a1",
+          "two-funded-certificates/gain-2": "cdc5d3bb987c9b5defd0d3068004a37a4e7ad95457d58facef454d14ca2d60f2",
+          "two-net-qualification-gains": "cdc5d3bb987c9b5defd0d3068004a37a4e7ad95457d58facef454d14ca2d60f2"
+        },
+        "international_law/meta_llama_llama_3_8b_instruct": {
+          "complete-panel/13": "45efc45ed7bccc184143f7c29538df5e0a3e6afd3b414f0ffabdeed8813145e1",
+          "immediate-certificate/gain-1": "762fbcc26afa08ed0660f718249cec5be0ced0a2401001f8624627eef162df04",
+          "immediate-certificate/gain-2": "0764f3687757df5da4848d74603ad0e4988c08dae74f55b2ec83b044f48ccfed",
+          "two-funded-certificates/gain-1": "02a1c5267eb6d5e85a641abb25b00e573ba16d79fc562cafdf8780f6bceeeda1",
+          "two-funded-certificates/gain-2": "4abe4a8e976ec6cc5f2a1ffb329cf1406deb321f3c62ae94d146c1fc1592af26",
+          "two-net-qualification-gains": "4abe4a8e976ec6cc5f2a1ffb329cf1406deb321f3c62ae94d146c1fc1592af26"
+        },
+        "international_law/mistralai_mistral_7b_v0_1": {
+          "complete-panel/13": "e80ae396c231e120ae89a64f8cb2aa3c4489f0f87a8724f19b3d66d9a6934628",
+          "immediate-certificate/gain-1": "00b6644e945625d71ac4ed07282519fa8189cd782badbd0c41aa92899877bd58",
+          "immediate-certificate/gain-2": "84a846d123857032a95e9d3521968c61dfba27e0d8b91788eb3887c8b5241ab4",
+          "two-funded-certificates/gain-1": "77673154cc74c36ca278128d62dd26d12d2ccf7248e9e2b8e7a71eccb665cb9a",
+          "two-funded-certificates/gain-2": "d941f0048170be66fefeab6becefc217703a08c239410de37c65c7c75777b1b2",
+          "two-net-qualification-gains": "10c00a3ab28c31015167dd7aa178a685544ab460943e096216d463ae91b460a1"
+        },
+        "jurisprudence/codellama_codellama_34b_instruct": {
+          "complete-panel/13": "0a6ef95cd01f99239630c270df3a0de7e6ea41dfa53e862d5719ba3fab4bde0e",
+          "immediate-certificate/gain-1": "318f6e1b58a57638e8e6ec530122ef5ab99b843cdf50fa7c18a143fec7426ce6",
+          "immediate-certificate/gain-2": "4fc8e26831ad710120ca5c868cedcdd87b72efa59cf86c515cc430b61a523a39",
+          "two-funded-certificates/gain-1": "9e0d6777854def2d7404fe714715b2fe1711ee6478643fa0717c5678b522f212",
+          "two-funded-certificates/gain-2": "f32ee84d692e99387e6093db78dfde8a55d186abda17bbfcb054e6cdaf8bf8a5",
+          "two-net-qualification-gains": "e976c2f426fff422d2d4585b5ce37b791ecd6c71bbd8f4e438136516917899e5"
+        },
+        "jurisprudence/ibm_mistralai_merlinite_7b": {
+          "complete-panel/13": "65c73b8d69f709de1a5384acc63e726f87015c96ea97ead4f709170b9562ab28",
+          "immediate-certificate/gain-1": "5bf63c6f90848dce2b0142250976ae7f72fea22ef90ed35f4f6b7b54b58b47a8",
+          "immediate-certificate/gain-2": "da6bc1713e4da1596b91e905c731fc6c48ef11438282fc800c27429a13bc6465",
+          "two-funded-certificates/gain-1": "77c546edbc7f607aba4ac767fc5c66aee6a8b16ecf0740ec9ddcebe7e73e8680",
+          "two-funded-certificates/gain-2": "7ca9f9c1fd97ec8e85b97da43565120f5a7eb0501d8a8ca3f8d87a8bbbb25607",
+          "two-net-qualification-gains": "7ca9f9c1fd97ec8e85b97da43565120f5a7eb0501d8a8ca3f8d87a8bbbb25607"
+        },
+        "management/codellama_codellama_34b_instruct": {
+          "complete-panel/13": "81db7d96cd5d0be8116ebcb853ad0c7b05e67668256ef05a0db6335912bd7fd4",
+          "immediate-certificate/gain-1": "7ebad79aeb9d02bfe0c002183c38579e1acb0ef4a379854ac4013db15ebb9d06",
+          "immediate-certificate/gain-2": "d5cb07eff75a7852792dfe6c67e82279e58123ed6258978f9c48be707c8a85b7",
+          "two-funded-certificates/gain-1": "c4e0e4ed225fa5eadfbeecf2c82f1d9712e6f017ab75384bbfffe06530be5261",
+          "two-funded-certificates/gain-2": "9f5f0f70cf6cb0a09b6d9a1a6c3787a37a2dc87c7a19dd51e8e26369616f7e0a",
+          "two-net-qualification-gains": "3c2b8a30592d57df0c8524ee94963634220bb45e7b1e5dbab0000e7ec7b84c34"
+        },
+        "management/ibm_mistralai_merlinite_7b": {
+          "complete-panel/13": "22f2c4b59e79aa2df98ed41bc61acbd332d1936ed8bcebb8c824fddab28e84de",
+          "immediate-certificate/gain-1": "6a3ef749478d3eb84b4dbc4d24054ca236aab9d9c1ba12636b59bff1e9a6c01b",
+          "immediate-certificate/gain-2": "40c29bdf644272b6090e3e6aa63b251f88f3c2a31a989e9ee3347fa00d049ed2",
+          "two-funded-certificates/gain-1": "22f2c4b59e79aa2df98ed41bc61acbd332d1936ed8bcebb8c824fddab28e84de",
+          "two-funded-certificates/gain-2": "448953303220e266a62b431939796f17baaa80340724263753df1c5508cb07d9",
+          "two-net-qualification-gains": "448953303220e266a62b431939796f17baaa80340724263753df1c5508cb07d9"
+        },
+        "public_relations/meta_llama_llama_3_8b_instruct": {
+          "complete-panel/13": "73e496432964fc652464ef620593d2f52016c93a5d652a5aba0812cd054ee5cd",
+          "immediate-certificate/gain-1": "ad12ebc5b3ac81d51047869c377bc5b673bc4780098b71caab7c91cb928c8ead",
+          "immediate-certificate/gain-2": "ab7df602b80c1cd03ddca6db404de729b792a5e1dcf2016e25aadcbbc2427044",
+          "two-funded-certificates/gain-1": "73e496432964fc652464ef620593d2f52016c93a5d652a5aba0812cd054ee5cd",
+          "two-funded-certificates/gain-2": "3fa8353cd206568de5270f302df91ffc033ae406580dc002fd14001fa2d7c0d2",
+          "two-net-qualification-gains": "3fa8353cd206568de5270f302df91ffc033ae406580dc002fd14001fa2d7c0d2"
+        },
+        "public_relations/mistralai_mistral_7b_v0_1": {
+          "complete-panel/13": "2f6db666ba72909f9eda2c6db53de49fec6777f56249d1177cd8ee7df4db3c77",
+          "immediate-certificate/gain-1": "e29b397c888581174a8efb7defb4f84adc13412ffa0dea73c62c9f8e77a004b2",
+          "immediate-certificate/gain-2": "fde3826dda9817099b0071096460a9d0e63ff7537e6ddf69b513b501f554a6ed",
+          "two-funded-certificates/gain-1": "2f6db666ba72909f9eda2c6db53de49fec6777f56249d1177cd8ee7df4db3c77",
+          "two-funded-certificates/gain-2": "91fbdae83ea82e489a86b22dcaf34b04221e45e755f09e46b1dbc33169175c2b",
+          "two-net-qualification-gains": "91fbdae83ea82e489a86b22dcaf34b04221e45e755f09e46b1dbc33169175c2b"
+        }
+      },
+      "strata": {
+        "two-funded-certificates/gain-1": {
+          "immediate": {
+            "differentDeployments": 12,
+            "immediateMinusReservedLookups": -293,
+            "immediateMinusReservedPasses": 4,
+            "paths": 191
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 168
+          },
+          "reserved": {
+            "differentDeployments": 9,
+            "immediateMinusReservedLookups": -320,
+            "immediateMinusReservedPasses": 10,
+            "paths": 537
+          }
+        },
+        "two-funded-certificates/gain-2": {
+          "immediate": {
+            "differentDeployments": 3,
+            "immediateMinusReservedLookups": -168,
+            "immediateMinusReservedPasses": -1,
+            "paths": 149
+          },
+          "no-validation": {
+            "differentDeployments": 0,
+            "immediateMinusReservedLookups": 0,
+            "immediateMinusReservedPasses": 0,
+            "paths": 460
+          },
+          "reserved": {
+            "differentDeployments": 1,
+            "immediateMinusReservedLookups": -127,
+            "immediateMinusReservedPasses": 1,
+            "paths": 287
+          }
+        }
+      },
+      "totals": {
+        "complete-panel/13": {
+          "holdoutPasses": 26613,
+          "paidLookups": 10253
+        },
+        "immediate-certificate/gain-1": {
+          "holdoutPasses": 26627,
+          "paidLookups": 9640
+        },
+        "immediate-certificate/gain-2": {
+          "holdoutPasses": 26628,
+          "paidLookups": 7451
+        },
+        "retain-start": {
+          "holdoutPasses": 26625,
+          "paidLookups": 0
+        },
+        "two-funded-certificates/gain-1": {
+          "holdoutPasses": 26617,
+          "paidLookups": 9960
+        },
+        "two-funded-certificates/gain-2": {
+          "holdoutPasses": 26627,
+          "paidLookups": 7578
+        },
+        "two-net-qualification-gains": {
+          "holdoutPasses": 26628,
+          "paidLookups": 7746
+        }
+      }
+    }
+  }
+}
