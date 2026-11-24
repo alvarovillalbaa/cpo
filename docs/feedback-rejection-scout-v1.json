@@ -1,0 +1,4171 @@
+{
+  "language": {
+    "additional-MMLU": {
+      "comparisons": {
+        "first-miss-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 7393,
+              "paidLookups": 0
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 7399,
+              "paidLookups": 6001
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": {
+                "holdoutPasses": 7393,
+                "paidLookups": 0,
+                "setting": "retain-start"
+              },
+              "lowerPasses": 7393,
+              "upperPasses": 7393
+            },
+            "subject-tuned-gepa": {
+              "attainer": {
+                "holdoutPasses": 7399,
+                "paidLookups": 6001,
+                "settingsBySubject": {
+                  "college_biology": "retain-start",
+                  "college_physics": "retain-start",
+                  "electrical_engineering": "split-safe-three:gepa-sequential-precheck/32/gain-1",
+                  "human_aging": "split-safe-three:gepa-batched-precheck/25/paired-gain-1"
+                }
+              },
+              "lowerPasses": 7399,
+              "upperPasses": 7399
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 5,
+              "pairedRange95": [
+                -4,
+                15
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": -1,
+              "pairedRange95": [
+                -12,
+                10
+              ]
+            }
+          }
+        },
+        "rejection-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 7393,
+              "paidLookups": 0
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 7399,
+              "paidLookups": 6001
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": {
+                "holdoutPasses": 7393,
+                "paidLookups": 0,
+                "setting": "retain-start"
+              },
+              "lowerPasses": 7393,
+              "upperPasses": 7393
+            },
+            "subject-tuned-gepa": {
+              "attainer": {
+                "holdoutPasses": 7399,
+                "paidLookups": 6001,
+                "settingsBySubject": {
+                  "college_biology": "retain-start",
+                  "college_physics": "retain-start",
+                  "electrical_engineering": "split-safe-three:gepa-sequential-precheck/32/gain-1",
+                  "human_aging": "split-safe-three:gepa-batched-precheck/25/paired-gain-1"
+                }
+              },
+              "lowerPasses": 7399,
+              "upperPasses": 7399
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 5,
+              "pairedRange95": [
+                -4,
+                15
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": -1,
+              "pairedRange95": [
+                -12,
+                10
+              ]
+            }
+          }
+        }
+      },
+      "episodes": 256,
+      "schedules": {
+        "cpo-feedback": {
+          "fitted-opening-repair": 128,
+          "retain-start": 8,
+          "successive-halving/4/6": 328,
+          "successive-halving/8/14": 17,
+          "uniform/8/18": 287
+        },
+        "first-miss-scout": {
+          "first-miss-scout": 10,
+          "fitted-opening-repair": 128,
+          "successive-halving/4/6": 326,
+          "successive-halving/8/14": 17,
+          "uniform/8/18": 287
+        },
+        "rejection-scout": {
+          "fitted-opening-repair": 128,
+          "rejection-scout": 10,
+          "successive-halving/4/6": 326,
+          "successive-halving/8/14": 17,
+          "uniform/8/18": 287
+        }
+      },
+      "totals": {
+        "cpo-feedback": {
+          "holdoutPasses": 7398,
+          "overriddenCycles": 53,
+          "paidLookups": 6166,
+          "trainingLookups": 512
+        },
+        "first-miss-scout": {
+          "holdoutPasses": 7398,
+          "overriddenCycles": 55,
+          "paidLookups": 6212,
+          "trainingLookups": 512
+        },
+        "rejection-scout": {
+          "holdoutPasses": 7398,
+          "overriddenCycles": 55,
+          "paidLookups": 6208,
+          "trainingLookups": 512
+        }
+      },
+      "traceSha256": {
+        "cpo-feedback": "44204ba211539ad548456e225fda82276329a628673dc61ad5926e0cabaa596f",
+        "first-miss-scout": "661912f63cec01fe9509fe270d54e27a51c0ab19e39cc93d915d79ae73bf0bd1",
+        "rejection-scout": "8677bca5f908f442c0618461aabdacabd9f284d38efcf41a0b2fd2b223d9e0d8"
+      }
+    },
+    "bounded-BBH": {
+      "comparisons": {
+        "first-miss-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 6111,
+              "paidLookups": 0
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 6111,
+              "paidLookups": 0
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": null,
+              "lowerPasses": 6111,
+              "upperPasses": 6290
+            },
+            "subject-tuned-gepa": {
+              "attainer": null,
+              "lowerPasses": 6111,
+              "upperPasses": 6350
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 224,
+              "pairedRange95": [
+                119,
+                326
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 9,
+              "pairedRange95": [
+                -5,
+                23
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": 224,
+              "pairedRange95": [
+                119,
+                326
+              ]
+            }
+          }
+        },
+        "rejection-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 6111,
+              "paidLookups": 0
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 6111,
+              "paidLookups": 0
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": null,
+              "lowerPasses": 6111,
+              "upperPasses": 6290
+            },
+            "subject-tuned-gepa": {
+              "attainer": null,
+              "lowerPasses": 6111,
+              "upperPasses": 6350
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 215,
+              "pairedRange95": [
+                112,
+                316
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                -13,
+                13
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": 215,
+              "pairedRange95": [
+                112,
+                316
+              ]
+            }
+          }
+        }
+      },
+      "episodes": 384,
+      "schedules": {
+        "cpo-feedback": {
+          "fitted-opening-repair": 341,
+          "retain-start": 33,
+          "successive-halving/4/6": 273,
+          "successive-halving/8/14": 51,
+          "uniform/8/18": 454
+        },
+        "first-miss-scout": {
+          "first-miss-scout": 36,
+          "fitted-opening-repair": 341,
+          "successive-halving/4/6": 270,
+          "successive-halving/8/14": 51,
+          "uniform/8/18": 454
+        },
+        "rejection-scout": {
+          "fitted-opening-repair": 341,
+          "rejection-scout": 34,
+          "successive-halving/4/6": 272,
+          "successive-halving/8/14": 51,
+          "uniform/8/18": 454
+        }
+      },
+      "totals": {
+        "cpo-feedback": {
+          "holdoutPasses": 6326,
+          "overriddenCycles": 194,
+          "paidLookups": 12173,
+          "trainingLookups": 768
+        },
+        "first-miss-scout": {
+          "holdoutPasses": 6335,
+          "overriddenCycles": 197,
+          "paidLookups": 12401,
+          "trainingLookups": 768
+        },
+        "rejection-scout": {
+          "holdoutPasses": 6326,
+          "overriddenCycles": 195,
+          "paidLookups": 12326,
+          "trainingLookups": 768
+        }
+      },
+      "traceSha256": {
+        "cpo-feedback": "d98480319efaf488689c8602959c77dc22fc486b4d5b277eba6881802a873e0b",
+        "first-miss-scout": "901e3563161d0835947ef0629b5bed886e9c52aa578fade79b1f4a759613d24b",
+        "rejection-scout": "91dce1e683c6bddf201acdba6035117345ba4825508e977c499ac51ea3e72973"
+      }
+    },
+    "bounded-LMentry": {
+      "comparisons": {
+        "first-miss-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 5346,
+              "paidLookups": 14728
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 3855,
+              "paidLookups": 0
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": {
+                "holdoutPasses": 5346,
+                "paidLookups": 14728,
+                "setting": "split-safe-three:gepa-batched-precheck/17/gain-1"
+              },
+              "lowerPasses": 5346,
+              "upperPasses": 5346
+            },
+            "subject-tuned-gepa": {
+              "attainer": null,
+              "lowerPasses": 3855,
+              "upperPasses": 5931
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 1057,
+              "pairedRange95": [
+                975,
+                1137
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": 2548,
+              "pairedRange95": [
+                2412,
+                2681
+              ]
+            }
+          }
+        },
+        "rejection-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 5346,
+              "paidLookups": 14728
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 3855,
+              "paidLookups": 0
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": {
+                "holdoutPasses": 5346,
+                "paidLookups": 14728,
+                "setting": "split-safe-three:gepa-batched-precheck/17/gain-1"
+              },
+              "lowerPasses": 5346,
+              "upperPasses": 5346
+            },
+            "subject-tuned-gepa": {
+              "attainer": null,
+              "lowerPasses": 3855,
+              "upperPasses": 5931
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 1057,
+              "pairedRange95": [
+                975,
+                1137
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": 2548,
+              "pairedRange95": [
+                2412,
+                2681
+              ]
+            }
+          }
+        }
+      },
+      "episodes": 384,
+      "schedules": {
+        "cpo-feedback": {
+          "fitted-opening-repair": 561,
+          "retain-start": 15,
+          "successive-halving/4/6": 189,
+          "successive-halving/8/14": 108,
+          "uniform/8/18": 279
+        },
+        "first-miss-scout": {
+          "first-miss-scout": 15,
+          "fitted-opening-repair": 561,
+          "successive-halving/4/6": 189,
+          "successive-halving/8/14": 108,
+          "uniform/8/18": 279
+        },
+        "rejection-scout": {
+          "fitted-opening-repair": 561,
+          "rejection-scout": 15,
+          "successive-halving/4/6": 189,
+          "successive-halving/8/14": 108,
+          "uniform/8/18": 279
+        }
+      },
+      "totals": {
+        "cpo-feedback": {
+          "holdoutPasses": 6403,
+          "overriddenCycles": 168,
+          "paidLookups": 14824,
+          "trainingLookups": 768
+        },
+        "first-miss-scout": {
+          "holdoutPasses": 6403,
+          "overriddenCycles": 168,
+          "paidLookups": 14908,
+          "trainingLookups": 768
+        },
+        "rejection-scout": {
+          "holdoutPasses": 6403,
+          "overriddenCycles": 168,
+          "paidLookups": 14877,
+          "trainingLookups": 768
+        }
+      },
+      "traceSha256": {
+        "cpo-feedback": "99309535904e7c65075f32cd3633796856fe534c36353b8915dac98139880aa6",
+        "first-miss-scout": "1077530bfe8e67412c6b065f0df3be3131821f6474142c47df55a9af9e40e72d",
+        "rejection-scout": "a877f737685130f7238c1abb957b75880544caa0d710c1a51220d8b9c1dad0f0"
+      }
+    },
+    "bounded-MMLU": {
+      "comparisons": {
+        "first-miss-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 7711,
+              "paidLookups": 5683
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 7706,
+              "paidLookups": 0
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": {
+                "holdoutPasses": 7711,
+                "paidLookups": 5683,
+                "setting": "split-safe-three:gepa-sequential-precheck/10/gain-1"
+              },
+              "lowerPasses": 7711,
+              "upperPasses": 7711
+            },
+            "subject-tuned-gepa": {
+              "attainer": null,
+              "lowerPasses": 7706,
+              "upperPasses": 7717
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 4,
+              "pairedRange95": [
+                -12,
+                20
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": 9,
+              "pairedRange95": [
+                -8,
+                26
+              ]
+            }
+          }
+        },
+        "rejection-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 7711,
+              "paidLookups": 5683
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 7706,
+              "paidLookups": 0
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": {
+                "holdoutPasses": 7711,
+                "paidLookups": 5683,
+                "setting": "split-safe-three:gepa-sequential-precheck/10/gain-1"
+              },
+              "lowerPasses": 7711,
+              "upperPasses": 7711
+            },
+            "subject-tuned-gepa": {
+              "attainer": null,
+              "lowerPasses": 7706,
+              "upperPasses": 7717
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 4,
+              "pairedRange95": [
+                -12,
+                20
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": 9,
+              "pairedRange95": [
+                -8,
+                26
+              ]
+            }
+          }
+        }
+      },
+      "episodes": 256,
+      "schedules": {
+        "cpo-feedback": {
+          "fitted-opening-repair": 127,
+          "retain-start": 11,
+          "successive-halving/4/6": 334,
+          "successive-halving/8/14": 9,
+          "uniform/8/18": 287
+        },
+        "first-miss-scout": {
+          "first-miss-scout": 11,
+          "fitted-opening-repair": 127,
+          "successive-halving/4/6": 334,
+          "successive-halving/8/14": 9,
+          "uniform/8/18": 287
+        },
+        "rejection-scout": {
+          "fitted-opening-repair": 127,
+          "rejection-scout": 11,
+          "successive-halving/4/6": 334,
+          "successive-halving/8/14": 9,
+          "uniform/8/18": 287
+        }
+      },
+      "totals": {
+        "cpo-feedback": {
+          "holdoutPasses": 7715,
+          "overriddenCycles": 51,
+          "paidLookups": 5873,
+          "trainingLookups": 512
+        },
+        "first-miss-scout": {
+          "holdoutPasses": 7715,
+          "overriddenCycles": 51,
+          "paidLookups": 5944,
+          "trainingLookups": 512
+        },
+        "rejection-scout": {
+          "holdoutPasses": 7715,
+          "overriddenCycles": 51,
+          "paidLookups": 5926,
+          "trainingLookups": 512
+        }
+      },
+      "traceSha256": {
+        "cpo-feedback": "a1e7c9e226a3f42e460583d66f147029053236b4f60d77e220012bece4a2842a",
+        "first-miss-scout": "8925299b741feefc1102828fc24c36fe5dbbeff3f812cff6531c3d211cb4d622",
+        "rejection-scout": "8027ed5247bdf800876478f1754c88f667d9fa54103166539beb9a0f1876e5c5"
+      }
+    },
+    "four-case-MMLU": {
+      "comparisons": {
+        "first-miss-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 22350,
+              "paidLookups": 8525
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 22369,
+              "paidLookups": 9289
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": {
+                "holdoutPasses": 22350,
+                "paidLookups": 8525,
+                "setting": "split-safe-three:gepa-sequential-precheck/10/paired-gain-1"
+              },
+              "lowerPasses": 22350,
+              "upperPasses": 22350
+            },
+            "subject-tuned-gepa": {
+              "attainer": {
+                "holdoutPasses": 22369,
+                "paidLookups": 9289,
+                "settingsBySubject": {
+                  "college_chemistry": "retain-start",
+                  "college_medicine": "split-safe-three:gepa-sequential-precheck/10/gain-1",
+                  "human_sexuality": "split-safe-three:gepa-sequential-precheck/37/paired-gain-1",
+                  "medical_genetics": "retain-start",
+                  "professional_law": "split-safe-six:gepa-batched-precheck/40/paired-gain-1",
+                  "virology": "retain-start"
+                }
+              },
+              "lowerPasses": 22369,
+              "upperPasses": 22369
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 16,
+              "pairedRange95": [
+                -5,
+                37
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": -3,
+              "pairedRange95": [
+                -23,
+                17
+              ]
+            }
+          }
+        },
+        "rejection-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 22350,
+              "paidLookups": 8525
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 22369,
+              "paidLookups": 9289
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": {
+                "holdoutPasses": 22350,
+                "paidLookups": 8525,
+                "setting": "split-safe-three:gepa-sequential-precheck/10/paired-gain-1"
+              },
+              "lowerPasses": 22350,
+              "upperPasses": 22350
+            },
+            "subject-tuned-gepa": {
+              "attainer": {
+                "holdoutPasses": 22369,
+                "paidLookups": 9289,
+                "settingsBySubject": {
+                  "college_chemistry": "retain-start",
+                  "college_medicine": "split-safe-three:gepa-sequential-precheck/10/gain-1",
+                  "human_sexuality": "split-safe-three:gepa-sequential-precheck/37/paired-gain-1",
+                  "medical_genetics": "retain-start",
+                  "professional_law": "split-safe-six:gepa-batched-precheck/40/paired-gain-1",
+                  "virology": "retain-start"
+                }
+              },
+              "lowerPasses": 22369,
+              "upperPasses": 22369
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 16,
+              "pairedRange95": [
+                -5,
+                37
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": -3,
+              "pairedRange95": [
+                -23,
+                17
+              ]
+            }
+          }
+        }
+      },
+      "episodes": 384,
+      "schedules": {
+        "cpo-feedback": {
+          "fitted-opening-repair": 265,
+          "retain-start": 4,
+          "successive-halving/4/6": 416,
+          "successive-halving/8/14": 14,
+          "uniform/8/18": 453
+        },
+        "first-miss-scout": {
+          "first-miss-scout": 4,
+          "fitted-opening-repair": 265,
+          "successive-halving/4/6": 416,
+          "successive-halving/8/14": 14,
+          "uniform/8/18": 453
+        },
+        "rejection-scout": {
+          "fitted-opening-repair": 265,
+          "rejection-scout": 4,
+          "successive-halving/4/6": 416,
+          "successive-halving/8/14": 14,
+          "uniform/8/18": 453
+        }
+      },
+      "totals": {
+        "cpo-feedback": {
+          "holdoutPasses": 22366,
+          "overriddenCycles": 42,
+          "paidLookups": 10530,
+          "trainingLookups": 768
+        },
+        "first-miss-scout": {
+          "holdoutPasses": 22366,
+          "overriddenCycles": 42,
+          "paidLookups": 10550,
+          "trainingLookups": 768
+        },
+        "rejection-scout": {
+          "holdoutPasses": 22366,
+          "overriddenCycles": 42,
+          "paidLookups": 10550,
+          "trainingLookups": 768
+        }
+      },
+      "traceSha256": {
+        "cpo-feedback": "a80fa90283cb25d8c99260f1132f2c16acd4131ab712bcd8b28a04a1bbbb6214",
+        "first-miss-scout": "c75831efbb967d9f97dcbb62880d66952fad3c8856b26a3182df7ae1fb0bc31e",
+        "rejection-scout": "d1eee493e338afc94e90f3f38f8f4cd38dbf97c5ea6dc7cc02a73ca9782403a7"
+      }
+    },
+    "tie-BBH": {
+      "comparisons": {
+        "first-miss-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 1944,
+              "paidLookups": 0
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 1944,
+              "paidLookups": 0
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": null,
+              "lowerPasses": 1944,
+              "upperPasses": 2091
+            },
+            "subject-tuned-gepa": {
+              "attainer": null,
+              "lowerPasses": 1944,
+              "upperPasses": 2126
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 195,
+              "pairedRange95": [
+                128,
+                262
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": -1,
+              "pairedRange95": [
+                -8,
+                6
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": 195,
+              "pairedRange95": [
+                128,
+                262
+              ]
+            }
+          }
+        },
+        "rejection-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 1944,
+              "paidLookups": 0
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 1944,
+              "paidLookups": 0
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": null,
+              "lowerPasses": 1944,
+              "upperPasses": 2091
+            },
+            "subject-tuned-gepa": {
+              "attainer": null,
+              "lowerPasses": 1944,
+              "upperPasses": 2126
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 195,
+              "pairedRange95": [
+                128,
+                262
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": -1,
+              "pairedRange95": [
+                -8,
+                6
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": 195,
+              "pairedRange95": [
+                128,
+                262
+              ]
+            }
+          }
+        }
+      },
+      "episodes": 256,
+      "schedules": {
+        "cpo-feedback": {
+          "fitted-opening-repair": 440,
+          "retain-start": 7,
+          "successive-halving/4/6": 41,
+          "successive-halving/8/14": 83,
+          "uniform/8/18": 197
+        },
+        "first-miss-scout": {
+          "first-miss-scout": 10,
+          "fitted-opening-repair": 440,
+          "successive-halving/4/6": 38,
+          "successive-halving/8/14": 83,
+          "uniform/8/18": 197
+        },
+        "rejection-scout": {
+          "fitted-opening-repair": 440,
+          "rejection-scout": 8,
+          "successive-halving/4/6": 40,
+          "successive-halving/8/14": 83,
+          "uniform/8/18": 197
+        }
+      },
+      "totals": {
+        "cpo-feedback": {
+          "holdoutPasses": 2140,
+          "overriddenCycles": 163,
+          "paidLookups": 12196,
+          "trainingLookups": 512
+        },
+        "first-miss-scout": {
+          "holdoutPasses": 2139,
+          "overriddenCycles": 166,
+          "paidLookups": 12261,
+          "trainingLookups": 512
+        },
+        "rejection-scout": {
+          "holdoutPasses": 2139,
+          "overriddenCycles": 164,
+          "paidLookups": 12237,
+          "trainingLookups": 512
+        }
+      },
+      "traceSha256": {
+        "cpo-feedback": "b8800e4c3a72faef1cb052c99b7c64e0869e51340d0b7f68ca9c6e554733daed",
+        "first-miss-scout": "853f062f2df788570ffc3cad4b5b3749dfed5b33e0929359b7f797887a1da4e2",
+        "rejection-scout": "611c1544d025ffb256a256ade2d4a1d18283ba23b179cc5a27c5889495a40102"
+      }
+    },
+    "tie-LMentry": {
+      "comparisons": {
+        "first-miss-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 557,
+              "paidLookups": 0
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 919,
+              "paidLookups": 6508
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": null,
+              "lowerPasses": 557,
+              "upperPasses": 835
+            },
+            "subject-tuned-gepa": {
+              "attainer": {
+                "holdoutPasses": 919,
+                "paidLookups": 6508,
+                "settingsBySubject": {
+                  "lmentry-homophones": "split-safe-three:gepa-sequential-precheck/44/gain-1",
+                  "lmentry-word_before": "retain-start"
+                }
+              },
+              "lowerPasses": 919,
+              "upperPasses": 919
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 440,
+              "pairedRange95": [
+                376,
+                499
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": 78,
+              "pairedRange95": [
+                40,
+                117
+              ]
+            }
+          }
+        },
+        "rejection-scout": {
+          "nativeAnchors": {
+            "common-gepa": {
+              "holdoutPasses": 557,
+              "paidLookups": 0
+            },
+            "subject-tuned-gepa": {
+              "holdoutPasses": 919,
+              "paidLookups": 6508
+            }
+          },
+          "nativeBoundsAtCost": {
+            "common-gepa": {
+              "attainer": null,
+              "lowerPasses": 557,
+              "upperPasses": 835
+            },
+            "subject-tuned-gepa": {
+              "attainer": {
+                "holdoutPasses": 919,
+                "paidLookups": 6508,
+                "settingsBySubject": {
+                  "lmentry-homophones": "split-safe-three:gepa-sequential-precheck/44/gain-1",
+                  "lmentry-word_before": "retain-start"
+                }
+              },
+              "lowerPasses": 919,
+              "upperPasses": 919
+            }
+          },
+          "paired": {
+            "common-gepa": {
+              "holdoutPassDifference": 440,
+              "pairedRange95": [
+                376,
+                499
+              ]
+            },
+            "cpo-feedback": {
+              "holdoutPassDifference": 0,
+              "pairedRange95": [
+                0,
+                0
+              ]
+            },
+            "subject-tuned-gepa": {
+              "holdoutPassDifference": 78,
+              "pairedRange95": [
+                40,
+                117
+              ]
+            }
+          }
+        }
+      },
+      "episodes": 128,
+      "schedules": {
+        "cpo-feedback": {
+          "fitted-opening-repair": 259,
+          "retain-start": 2,
+          "successive-halving/4/6": 13,
+          "successive-halving/8/14": 44,
+          "uniform/8/18": 66
+        },
+        "first-miss-scout": {
+          "first-miss-scout": 2,
+          "fitted-opening-repair": 259,
+          "successive-halving/4/6": 13,
+          "successive-halving/8/14": 44,
+          "uniform/8/18": 66
+        },
+        "rejection-scout": {
+          "fitted-opening-repair": 259,
+          "rejection-scout": 2,
+          "successive-halving/4/6": 13,
+          "successive-halving/8/14": 44,
+          "uniform/8/18": 66
+        }
+      },
+      "totals": {
+        "cpo-feedback": {
+          "holdoutPasses": 997,
+          "overriddenCycles": 64,
+          "paidLookups": 6820,
+          "trainingLookups": 256
+        },
+        "first-miss-scout": {
+          "holdoutPasses": 997,
+          "overriddenCycles": 64,
+          "paidLookups": 6834,
+          "trainingLookups": 256
+        },
+        "rejection-scout": {
+          "holdoutPasses": 997,
+          "overriddenCycles": 64,
+          "paidLookups": 6829,
+          "trainingLookups": 256
+        }
+      },
+      "traceSha256": {
+        "cpo-feedback": "0c1142689a97ba15e30d21d601260f7fb10163f092e7335fbf866bfbc7b42b4e",
+        "first-miss-scout": "4e9e9321a923767c304a8f552d2624f8a649c8c30b6d34238fb4a85e38c5bcf0",
+        "rejection-scout": "bf1a9c3733a5ad0f3acaed168d05aebe3aadea32fd817bb370bd8899de91eeac"
+      }
+    }
+  },
+  "plan": {
+    "feedbackAPIReceiptSha256": "a690b791eedeb3db94ca718fbd20a968d542b4dfef14e383d73301590c5e29e4",
+    "gepaVersion": "0.1.4",
+    "languageTransferReceiptSha256": {
+      "additional-mmlu": "85fd60522ba28610af3fd120382e9bd9c4c321ceb95697c452c29ee5d5d59e74",
+      "bounded-bbh": "7c8451cbc72c8f9269ec42360c13ad6339d388baf65bb50f6fe861bb1e1f89a3",
+      "bounded-lmentry": "e4624f1b16d0000f67266dcb2b0c90f6cdd47898e3664385ed4c940d7626f25f",
+      "bounded-mmlu": "581bfae8b75dc897326c1d3e376c1f72aaf29388f4f0cad24643ca7a91d9caf6",
+      "four-case-mmlu": "d762a35942403485f1142e7090c9cf693b4b531fd1867ac816a921e7609d1dd5",
+      "tie-bbh": "f4c6d4fda704ba7e210457f0ca2e5adffb5c518b102359d6ee098cf77fb72765",
+      "tie-lmentry": "728d3620b241d7835bfddc9075e8610f5e3855c144bb1a1b139360a83fea4bc1"
+    },
+    "maxScoutValidationLookups": 6,
+    "method": "Replace the retain action after a rejected finalist in the two-pass opening state with one shared validation case for at most four challengers. Scout the first case, or look for the first incumbent miss within two cases. Keep independent qualification and let its observed outcome drive the same follow-up rule. Retain critical panels. Test with the original and two-round halving on Promptolution, and with the original halving on the seven frozen language cohorts.",
+    "promptolutionCorpusSha256": "729bba5141874b28e3b172757d5e009f6e847f2b04050c75359d6273a01c9491",
+    "protocol": "cpo-feedback-rejection-scout-v1",
+    "scoutChallengers": 4,
+    "scoutIncumbentRows": {
+      "first-miss-scout": 2,
+      "rejection-scout": 1
+    },
+    "sourceSha256": "7f254b02b372b34ab745bca5ef1aca12ce7c3c5de9095e96db636f7f1ebfc61d",
+    "twoRoundPlanSha256": "2937920d5d5c11e6a9d0ec3f2b5e003b2a89552dd53a3785cb2d4a3a10edecf1",
+    "twoRoundReceiptSha256": "fcc852d0a9824325199c8f706ad13bfbd78e9c5b4f32fc477d12411d325fe8e9"
+  },
+  "planSha256": "33ac3e51a73611c73db4d7695f90f5114e039c6da560287d9448df2b5932f004",
+  "promptolution": {
+    "pooled": {
+      "first-miss-scout": {
+        "allControlsHindsight": {
+          "candidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 2373
+          },
+          "candidatePassesAboveHindsight": -256,
+          "fixedControlPassesAtBudget": null,
+          "frontierPointCount": 798,
+          "gainFromChoosingPerEpisode": null,
+          "hindsightAtBudget": {
+            "holdoutPasses": 4141,
+            "paidLookups": 1757,
+            "settings": [
+              "halving/cap-8",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "halving/cap-12",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "cpo-one-admission",
+              "cpo-three-admissions",
+              "cpo-one-admission",
+              "cpo-three-admissions",
+              "retain-start",
+              "halving/cap-8",
+              "cpo-one-admission",
+              "halving/cap-19",
+              "cpo-one-admission",
+              "gepa-sequential/validation-6/cap-16",
+              "halving/cap-4",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "gepa-sequential/validation-4/cap-12",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-12",
+              "halving/cap-12",
+              "halving/cap-4",
+              "halving/cap-19",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-batched/validation-2/cap-14",
+              "cpo-one-admission",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-6",
+              "halving/cap-19",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-6",
+              "gepa-batched/validation-4/cap-20",
+              "halving/cap-4",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "halving/cap-4"
+            ]
+          },
+          "minimumCostToMatchCandidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 900,
+            "settings": [
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "halving/cap-4",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-6",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-6",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "halving/cap-4"
+            ]
+          },
+          "unconstrainedHindsight": {
+            "holdoutPasses": 4141,
+            "paidLookups": 1757
+          }
+        },
+        "nativeHindsight": {
+          "candidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 2373
+          },
+          "candidatePassesAboveHindsight": -17,
+          "fixedControlPassesAtBudget": null,
+          "frontierPointCount": 550,
+          "gainFromChoosingPerEpisode": null,
+          "hindsightAtBudget": {
+            "holdoutPasses": 3902,
+            "paidLookups": 1973,
+            "settings": [
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16"
+            ]
+          },
+          "minimumCostToMatchCandidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 1818,
+            "settings": [
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16"
+            ]
+          },
+          "unconstrainedHindsight": {
+            "holdoutPasses": 3902,
+            "paidLookups": 1973
+          }
+        },
+        "paired": {
+          "comparedControls": [
+            "cpo-feedback"
+          ],
+          "control": "cpo-feedback",
+          "controlPaidLookups": 2348,
+          "controlPasses": 3885,
+          "drawsEqual": 464,
+          "drawsHigher": 1800,
+          "drawsLower": 1832,
+          "interval95PercentagePoints": [
+            -0.104166667,
+            0.104166667
+          ],
+          "paidLookupDelta": 25,
+          "passDelta": 0
+        }
+      },
+      "rejection-scout": {
+        "allControlsHindsight": {
+          "candidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 2364
+          },
+          "candidatePassesAboveHindsight": -256,
+          "fixedControlPassesAtBudget": null,
+          "frontierPointCount": 798,
+          "gainFromChoosingPerEpisode": null,
+          "hindsightAtBudget": {
+            "holdoutPasses": 4141,
+            "paidLookups": 1757,
+            "settings": [
+              "halving/cap-8",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "halving/cap-12",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "cpo-one-admission",
+              "cpo-three-admissions",
+              "cpo-one-admission",
+              "cpo-three-admissions",
+              "retain-start",
+              "halving/cap-8",
+              "cpo-one-admission",
+              "halving/cap-19",
+              "cpo-one-admission",
+              "gepa-sequential/validation-6/cap-16",
+              "halving/cap-4",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "gepa-sequential/validation-4/cap-12",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-12",
+              "halving/cap-12",
+              "halving/cap-4",
+              "halving/cap-19",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-batched/validation-2/cap-14",
+              "cpo-one-admission",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-6",
+              "halving/cap-19",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-6",
+              "gepa-batched/validation-4/cap-20",
+              "halving/cap-4",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "halving/cap-4"
+            ]
+          },
+          "minimumCostToMatchCandidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 900,
+            "settings": [
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "halving/cap-4",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-6",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-6",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "halving/cap-4"
+            ]
+          },
+          "unconstrainedHindsight": {
+            "holdoutPasses": 4141,
+            "paidLookups": 1757
+          }
+        },
+        "nativeHindsight": {
+          "candidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 2364
+          },
+          "candidatePassesAboveHindsight": -17,
+          "fixedControlPassesAtBudget": null,
+          "frontierPointCount": 550,
+          "gainFromChoosingPerEpisode": null,
+          "hindsightAtBudget": {
+            "holdoutPasses": 3902,
+            "paidLookups": 1973,
+            "settings": [
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16"
+            ]
+          },
+          "minimumCostToMatchCandidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 1818,
+            "settings": [
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16"
+            ]
+          },
+          "unconstrainedHindsight": {
+            "holdoutPasses": 3902,
+            "paidLookups": 1973
+          }
+        },
+        "paired": {
+          "comparedControls": [
+            "cpo-feedback"
+          ],
+          "control": "cpo-feedback",
+          "controlPaidLookups": 2348,
+          "controlPasses": 3885,
+          "drawsEqual": 464,
+          "drawsHigher": 1800,
+          "drawsLower": 1832,
+          "interval95PercentagePoints": [
+            -0.104166667,
+            0.104166667
+          ],
+          "paidLookupDelta": 16,
+          "passDelta": 0
+        }
+      },
+      "two-round-first-miss-scout": {
+        "allControlsHindsight": {
+          "candidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 2400
+          },
+          "candidatePassesAboveHindsight": -256,
+          "fixedControlPassesAtBudget": null,
+          "frontierPointCount": 798,
+          "gainFromChoosingPerEpisode": null,
+          "hindsightAtBudget": {
+            "holdoutPasses": 4141,
+            "paidLookups": 1757,
+            "settings": [
+              "halving/cap-8",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "halving/cap-12",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "cpo-one-admission",
+              "cpo-three-admissions",
+              "cpo-one-admission",
+              "cpo-three-admissions",
+              "retain-start",
+              "halving/cap-8",
+              "cpo-one-admission",
+              "halving/cap-19",
+              "cpo-one-admission",
+              "gepa-sequential/validation-6/cap-16",
+              "halving/cap-4",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "gepa-sequential/validation-4/cap-12",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-12",
+              "halving/cap-12",
+              "halving/cap-4",
+              "halving/cap-19",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-batched/validation-2/cap-14",
+              "cpo-one-admission",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-6",
+              "halving/cap-19",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-6",
+              "gepa-batched/validation-4/cap-20",
+              "halving/cap-4",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "halving/cap-4"
+            ]
+          },
+          "minimumCostToMatchCandidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 900,
+            "settings": [
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "halving/cap-4",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-6",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-6",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "halving/cap-4"
+            ]
+          },
+          "unconstrainedHindsight": {
+            "holdoutPasses": 4141,
+            "paidLookups": 1757
+          }
+        },
+        "nativeHindsight": {
+          "candidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 2400
+          },
+          "candidatePassesAboveHindsight": -17,
+          "fixedControlPassesAtBudget": null,
+          "frontierPointCount": 550,
+          "gainFromChoosingPerEpisode": null,
+          "hindsightAtBudget": {
+            "holdoutPasses": 3902,
+            "paidLookups": 1973,
+            "settings": [
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16"
+            ]
+          },
+          "minimumCostToMatchCandidate": {
+            "holdoutPasses": 3885,
+            "paidLookups": 1818,
+            "settings": [
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16"
+            ]
+          },
+          "unconstrainedHindsight": {
+            "holdoutPasses": 3902,
+            "paidLookups": 1973
+          }
+        },
+        "paired": {
+          "comparedControls": [
+            "two-round-feedback"
+          ],
+          "control": "two-round-feedback",
+          "controlPaidLookups": 2360,
+          "controlPasses": 3872,
+          "drawsEqual": 20,
+          "drawsHigher": 4061,
+          "drawsLower": 15,
+          "interval95PercentagePoints": [
+            0.052083333,
+            0.399305556
+          ],
+          "paidLookupDelta": 40,
+          "passDelta": 13
+        }
+      },
+      "two-round-rejection-scout": {
+        "allControlsHindsight": {
+          "candidate": {
+            "holdoutPasses": 3872,
+            "paidLookups": 2382
+          },
+          "candidatePassesAboveHindsight": -269,
+          "fixedControlPassesAtBudget": null,
+          "frontierPointCount": 798,
+          "gainFromChoosingPerEpisode": null,
+          "hindsightAtBudget": {
+            "holdoutPasses": 4141,
+            "paidLookups": 1757,
+            "settings": [
+              "halving/cap-8",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "halving/cap-12",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "cpo-one-admission",
+              "cpo-three-admissions",
+              "cpo-one-admission",
+              "cpo-three-admissions",
+              "retain-start",
+              "halving/cap-8",
+              "cpo-one-admission",
+              "halving/cap-19",
+              "cpo-one-admission",
+              "gepa-sequential/validation-6/cap-16",
+              "halving/cap-4",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "gepa-sequential/validation-4/cap-12",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-12",
+              "halving/cap-12",
+              "halving/cap-4",
+              "halving/cap-19",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-batched/validation-2/cap-14",
+              "cpo-one-admission",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-6",
+              "halving/cap-19",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-6",
+              "gepa-batched/validation-4/cap-20",
+              "halving/cap-4",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "halving/cap-4"
+            ]
+          },
+          "minimumCostToMatchCandidate": {
+            "holdoutPasses": 3872,
+            "paidLookups": 881,
+            "settings": [
+              "cpo-one-admission",
+              "halving/cap-4",
+              "retain-start",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-4",
+              "gepa-sequential/validation-2/cap-14",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "retain-start",
+              "halving/cap-4",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-4",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "retain-start",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "halving/cap-6",
+              "cpo-one-admission",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-4",
+              "halving/cap-6",
+              "retain-start",
+              "halving/cap-4",
+              "halving/cap-8",
+              "cpo-one-admission",
+              "cpo-one-admission",
+              "gepa-sequential/validation-2/cap-8",
+              "halving/cap-4"
+            ]
+          },
+          "unconstrainedHindsight": {
+            "holdoutPasses": 4141,
+            "paidLookups": 1757
+          }
+        },
+        "nativeHindsight": {
+          "candidate": {
+            "holdoutPasses": 3872,
+            "paidLookups": 2382
+          },
+          "candidatePassesAboveHindsight": -30,
+          "fixedControlPassesAtBudget": null,
+          "frontierPointCount": 550,
+          "gainFromChoosingPerEpisode": null,
+          "hindsightAtBudget": {
+            "holdoutPasses": 3902,
+            "paidLookups": 1973,
+            "settings": [
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16"
+            ]
+          },
+          "minimumCostToMatchCandidate": {
+            "holdoutPasses": 3872,
+            "paidLookups": 1760,
+            "settings": [
+              "retain-start",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-14",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "retain-start",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "retain-start",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-6/cap-26",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-batched/validation-4/cap-20",
+              "gepa-sequential/validation-4/cap-12",
+              "gepa-sequential/validation-2/cap-14",
+              "gepa-batched/validation-2/cap-14",
+              "gepa-sequential/validation-2/cap-8",
+              "gepa-sequential/validation-6/cap-16"
+            ]
+          },
+          "unconstrainedHindsight": {
+            "holdoutPasses": 3902,
+            "paidLookups": 1973
+          }
+        },
+        "paired": {
+          "comparedControls": [
+            "two-round-feedback"
+          ],
+          "control": "two-round-feedback",
+          "controlPaidLookups": 2360,
+          "controlPasses": 3872,
+          "drawsEqual": 464,
+          "drawsHigher": 1800,
+          "drawsLower": 1832,
+          "interval95PercentagePoints": [
+            -0.104166667,
+            0.104166667
+          ],
+          "paidLookupDelta": 22,
+          "passDelta": 0
+        }
+      }
+    },
+    "tasks": {
+      "gsm8k": {
+        "comparisons": {
+          "first-miss-scout": {
+            "allControlsHindsight": {
+              "candidate": {
+                "holdoutPasses": 2451,
+                "paidLookups": 901
+              },
+              "candidatePassesAboveHindsight": -154,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 259,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 2605,
+                "paidLookups": 790,
+                "settings": [
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "halving/cap-12",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "cpo-one-admission",
+                  "cpo-three-admissions",
+                  "cpo-one-admission",
+                  "cpo-three-admissions",
+                  "retain-start",
+                  "halving/cap-8",
+                  "cpo-one-admission",
+                  "halving/cap-19",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-6/cap-16",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "halving/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-4/cap-12",
+                  "cpo-one-admission",
+                  "cpo-one-admission"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 2454,
+                "paidLookups": 378,
+                "settings": [
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 2605,
+                "paidLookups": 790
+              }
+            },
+            "nativeHindsight": {
+              "candidate": {
+                "holdoutPasses": 2451,
+                "paidLookups": 901
+              },
+              "candidatePassesAboveHindsight": -30,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 141,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 2481,
+                "paidLookups": 845,
+                "settings": [
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-14"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 2453,
+                "paidLookups": 720,
+                "settings": [
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-14",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-14",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-14"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 2481,
+                "paidLookups": 845
+              }
+            },
+            "paired": {
+              "comparedControls": [
+                "cpo-feedback"
+              ],
+              "control": "cpo-feedback",
+              "controlPaidLookups": 883,
+              "controlPasses": 2451,
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ],
+              "paidLookupDelta": 18,
+              "passDelta": 0
+            }
+          },
+          "rejection-scout": {
+            "allControlsHindsight": {
+              "candidate": {
+                "holdoutPasses": 2451,
+                "paidLookups": 892
+              },
+              "candidatePassesAboveHindsight": -154,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 259,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 2605,
+                "paidLookups": 790,
+                "settings": [
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "halving/cap-12",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "cpo-one-admission",
+                  "cpo-three-admissions",
+                  "cpo-one-admission",
+                  "cpo-three-admissions",
+                  "retain-start",
+                  "halving/cap-8",
+                  "cpo-one-admission",
+                  "halving/cap-19",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-6/cap-16",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "halving/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-4/cap-12",
+                  "cpo-one-admission",
+                  "cpo-one-admission"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 2454,
+                "paidLookups": 378,
+                "settings": [
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 2605,
+                "paidLookups": 790
+              }
+            },
+            "nativeHindsight": {
+              "candidate": {
+                "holdoutPasses": 2451,
+                "paidLookups": 892
+              },
+              "candidatePassesAboveHindsight": -30,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 141,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 2481,
+                "paidLookups": 845,
+                "settings": [
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-14"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 2453,
+                "paidLookups": 720,
+                "settings": [
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-14",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-14",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-14"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 2481,
+                "paidLookups": 845
+              }
+            },
+            "paired": {
+              "comparedControls": [
+                "cpo-feedback"
+              ],
+              "control": "cpo-feedback",
+              "controlPaidLookups": 883,
+              "controlPasses": 2451,
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ],
+              "paidLookupDelta": 9,
+              "passDelta": 0
+            }
+          },
+          "two-round-first-miss-scout": {
+            "allControlsHindsight": {
+              "candidate": {
+                "holdoutPasses": 2451,
+                "paidLookups": 917
+              },
+              "candidatePassesAboveHindsight": -154,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 259,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 2605,
+                "paidLookups": 790,
+                "settings": [
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "halving/cap-12",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "cpo-one-admission",
+                  "cpo-three-admissions",
+                  "cpo-one-admission",
+                  "cpo-three-admissions",
+                  "retain-start",
+                  "halving/cap-8",
+                  "cpo-one-admission",
+                  "halving/cap-19",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-6/cap-16",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "halving/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-4/cap-12",
+                  "cpo-one-admission",
+                  "cpo-one-admission"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 2454,
+                "paidLookups": 378,
+                "settings": [
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 2605,
+                "paidLookups": 790
+              }
+            },
+            "nativeHindsight": {
+              "candidate": {
+                "holdoutPasses": 2451,
+                "paidLookups": 917
+              },
+              "candidatePassesAboveHindsight": -30,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 141,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 2481,
+                "paidLookups": 845,
+                "settings": [
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-14"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 2453,
+                "paidLookups": 720,
+                "settings": [
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-14",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-14",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-14"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 2481,
+                "paidLookups": 845
+              }
+            },
+            "paired": {
+              "comparedControls": [
+                "two-round-feedback"
+              ],
+              "control": "two-round-feedback",
+              "controlPaidLookups": 884,
+              "controlPasses": 2438,
+              "drawsEqual": 2,
+              "drawsHigher": 4090,
+              "drawsLower": 4,
+              "interval95PercentagePoints": [
+                0.173611111,
+                0.729166667
+              ],
+              "paidLookupDelta": 33,
+              "passDelta": 13
+            }
+          },
+          "two-round-rejection-scout": {
+            "allControlsHindsight": {
+              "candidate": {
+                "holdoutPasses": 2438,
+                "paidLookups": 899
+              },
+              "candidatePassesAboveHindsight": -167,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 259,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 2605,
+                "paidLookups": 790,
+                "settings": [
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "halving/cap-12",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "cpo-one-admission",
+                  "cpo-three-admissions",
+                  "cpo-one-admission",
+                  "cpo-three-admissions",
+                  "retain-start",
+                  "halving/cap-8",
+                  "cpo-one-admission",
+                  "halving/cap-19",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-6/cap-16",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "halving/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-4/cap-12",
+                  "cpo-one-admission",
+                  "cpo-one-admission"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 2441,
+                "paidLookups": 363,
+                "settings": [
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "gepa-sequential/validation-2/cap-8",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 2605,
+                "paidLookups": 790
+              }
+            },
+            "nativeHindsight": {
+              "candidate": {
+                "holdoutPasses": 2438,
+                "paidLookups": 899
+              },
+              "candidatePassesAboveHindsight": -43,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 141,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 2481,
+                "paidLookups": 845,
+                "settings": [
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-14"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 2440,
+                "paidLookups": 687,
+                "settings": [
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-14",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-4/cap-12",
+                  "retain-start",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-14",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-4/cap-12",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-14"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 2481,
+                "paidLookups": 845
+              }
+            },
+            "paired": {
+              "comparedControls": [
+                "two-round-feedback"
+              ],
+              "control": "two-round-feedback",
+              "controlPaidLookups": 884,
+              "controlPasses": 2438,
+              "drawsEqual": 4096,
+              "drawsHigher": 0,
+              "drawsLower": 0,
+              "interval95PercentagePoints": [
+                0.0,
+                0.0
+              ],
+              "paidLookupDelta": 15,
+              "passDelta": 0
+            }
+          }
+        },
+        "episode47139": {
+          "cpo-feedback": {
+            "holdoutPasses": 75,
+            "paidLookups": 23,
+            "transitions": [
+              [
+                "successive-halving/4/6",
+                null,
+                "unoptimized"
+              ],
+              [
+                "successive-halving/4/6",
+                "DSPy-GEPA",
+                "DSPy-GEPA"
+              ],
+              [
+                "successive-halving/4/6",
+                null,
+                "DSPy-GEPA"
+              ]
+            ]
+          },
+          "first-miss-scout": {
+            "holdoutPasses": 75,
+            "paidLookups": 23,
+            "transitions": [
+              [
+                "successive-halving/4/6",
+                null,
+                "unoptimized"
+              ],
+              [
+                "successive-halving/4/6",
+                "DSPy-GEPA",
+                "DSPy-GEPA"
+              ],
+              [
+                "successive-halving/4/6",
+                null,
+                "DSPy-GEPA"
+              ]
+            ]
+          },
+          "rejection-scout": {
+            "holdoutPasses": 75,
+            "paidLookups": 23,
+            "transitions": [
+              [
+                "successive-halving/4/6",
+                null,
+                "unoptimized"
+              ],
+              [
+                "successive-halving/4/6",
+                "DSPy-GEPA",
+                "DSPy-GEPA"
+              ],
+              [
+                "successive-halving/4/6",
+                null,
+                "DSPy-GEPA"
+              ]
+            ]
+          },
+          "two-round-feedback": {
+            "holdoutPasses": 62,
+            "paidLookups": 18,
+            "transitions": [
+              [
+                "successive-halving/4/6",
+                "AdalFlow",
+                "unoptimized"
+              ],
+              [
+                "retain-start",
+                null,
+                "unoptimized"
+              ],
+              [
+                "successive-halving/4/6",
+                null,
+                "unoptimized"
+              ]
+            ]
+          },
+          "two-round-first-miss-scout": {
+            "holdoutPasses": 75,
+            "paidLookups": 29,
+            "transitions": [
+              [
+                "successive-halving/4/6",
+                "AdalFlow",
+                "unoptimized"
+              ],
+              [
+                "first-miss-scout",
+                "DSPy-GEPA",
+                "DSPy-GEPA"
+              ],
+              [
+                "successive-halving/4/6",
+                null,
+                "DSPy-GEPA"
+              ]
+            ]
+          },
+          "two-round-rejection-scout": {
+            "holdoutPasses": 62,
+            "paidLookups": 20,
+            "transitions": [
+              [
+                "successive-halving/4/6",
+                "AdalFlow",
+                "unoptimized"
+              ],
+              [
+                "rejection-scout",
+                null,
+                "unoptimized"
+              ],
+              [
+                "successive-halving/4/6",
+                null,
+                "unoptimized"
+              ]
+            ]
+          }
+        },
+        "episodes": 32,
+        "totals": {
+          "cpo-feedback": {
+            "admissionLookups": 384,
+            "holdoutPasses": 2451,
+            "paidLookups": 883,
+            "scheduleSwitches": 5,
+            "scoutCycles": 0,
+            "trainingLookups": 64,
+            "validationLookups": 435
+          },
+          "first-miss-scout": {
+            "admissionLookups": 397,
+            "holdoutPasses": 2451,
+            "paidLookups": 901,
+            "scheduleSwitches": 6,
+            "scoutCycles": 3,
+            "trainingLookups": 64,
+            "validationLookups": 440
+          },
+          "rejection-scout": {
+            "admissionLookups": 390,
+            "holdoutPasses": 2451,
+            "paidLookups": 892,
+            "scheduleSwitches": 6,
+            "scoutCycles": 3,
+            "trainingLookups": 64,
+            "validationLookups": 438
+          },
+          "two-round-feedback": {
+            "admissionLookups": 381,
+            "holdoutPasses": 2438,
+            "paidLookups": 884,
+            "scheduleSwitches": 7,
+            "scoutCycles": 0,
+            "trainingLookups": 64,
+            "validationLookups": 439
+          },
+          "two-round-first-miss-scout": {
+            "admissionLookups": 406,
+            "holdoutPasses": 2451,
+            "paidLookups": 917,
+            "scheduleSwitches": 8,
+            "scoutCycles": 5,
+            "trainingLookups": 64,
+            "validationLookups": 447
+          },
+          "two-round-rejection-scout": {
+            "admissionLookups": 392,
+            "holdoutPasses": 2438,
+            "paidLookups": 899,
+            "scheduleSwitches": 8,
+            "scoutCycles": 5,
+            "trainingLookups": 64,
+            "validationLookups": 443
+          }
+        },
+        "traceSha256": {
+          "cpo-feedback": "f79408f0d7af734c030b0bc1d1c985cc1ff32256c24c84a56db8a4318ffea135",
+          "first-miss-scout": "29d7d3c09d301a583630d2e5635d7e13bd58ece3f081bf3a01275bd5a3e878d3",
+          "rejection-scout": "7f8f1407fed3e770aebea7493875862c0a9cb27a85f19f65547e736cba567d42",
+          "two-round-feedback": "985bf5813fe014a2e14f7cff244b483d9cf0f75e1f08138955d2d9c0e4f40339",
+          "two-round-first-miss-scout": "feb23214f8181103a569ae5083107cef71b736466d070ee1d14ed97e5d6b621d",
+          "two-round-rejection-scout": "566d1de48f7b88c64c63544a46776ccd6b75f20d7b2acda42757ff5f6306757e"
+        }
+      },
+      "sst5": {
+        "comparisons": {
+          "first-miss-scout": {
+            "allControlsHindsight": {
+              "candidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 1472
+              },
+              "candidatePassesAboveHindsight": -102,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 270,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 1536,
+                "paidLookups": 967,
+                "settings": [
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-12",
+                  "halving/cap-12",
+                  "halving/cap-4",
+                  "halving/cap-19",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-6",
+                  "halving/cap-19",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-6",
+                  "gepa-batched/validation-4/cap-20",
+                  "halving/cap-4",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "halving/cap-4"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 539,
+                "settings": [
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "retain-start",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-6",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-6",
+                  "retain-start",
+                  "halving/cap-4",
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "halving/cap-4"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 1536,
+                "paidLookups": 967
+              }
+            },
+            "nativeHindsight": {
+              "candidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 1472
+              },
+              "candidatePassesAboveHindsight": 13,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 177,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 1421,
+                "paidLookups": 1128,
+                "settings": [
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-6/cap-16"
+                ]
+              },
+              "minimumCostToMatchCandidate": null,
+              "unconstrainedHindsight": {
+                "holdoutPasses": 1421,
+                "paidLookups": 1128
+              }
+            },
+            "paired": {
+              "comparedControls": [
+                "cpo-feedback"
+              ],
+              "control": "cpo-feedback",
+              "controlPaidLookups": 1465,
+              "controlPasses": 1434,
+              "drawsEqual": 487,
+              "drawsHigher": 1815,
+              "drawsLower": 1794,
+              "interval95PercentagePoints": [
+                -0.208333333,
+                0.208333333
+              ],
+              "paidLookupDelta": 7,
+              "passDelta": 0
+            }
+          },
+          "rejection-scout": {
+            "allControlsHindsight": {
+              "candidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 1472
+              },
+              "candidatePassesAboveHindsight": -102,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 270,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 1536,
+                "paidLookups": 967,
+                "settings": [
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-12",
+                  "halving/cap-12",
+                  "halving/cap-4",
+                  "halving/cap-19",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-6",
+                  "halving/cap-19",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-6",
+                  "gepa-batched/validation-4/cap-20",
+                  "halving/cap-4",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "halving/cap-4"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 539,
+                "settings": [
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "retain-start",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-6",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-6",
+                  "retain-start",
+                  "halving/cap-4",
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "halving/cap-4"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 1536,
+                "paidLookups": 967
+              }
+            },
+            "nativeHindsight": {
+              "candidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 1472
+              },
+              "candidatePassesAboveHindsight": 13,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 177,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 1421,
+                "paidLookups": 1128,
+                "settings": [
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-6/cap-16"
+                ]
+              },
+              "minimumCostToMatchCandidate": null,
+              "unconstrainedHindsight": {
+                "holdoutPasses": 1421,
+                "paidLookups": 1128
+              }
+            },
+            "paired": {
+              "comparedControls": [
+                "cpo-feedback"
+              ],
+              "control": "cpo-feedback",
+              "controlPaidLookups": 1465,
+              "controlPasses": 1434,
+              "drawsEqual": 487,
+              "drawsHigher": 1815,
+              "drawsLower": 1794,
+              "interval95PercentagePoints": [
+                -0.208333333,
+                0.208333333
+              ],
+              "paidLookupDelta": 7,
+              "passDelta": 0
+            }
+          },
+          "two-round-first-miss-scout": {
+            "allControlsHindsight": {
+              "candidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 1483
+              },
+              "candidatePassesAboveHindsight": -102,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 270,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 1536,
+                "paidLookups": 967,
+                "settings": [
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-12",
+                  "halving/cap-12",
+                  "halving/cap-4",
+                  "halving/cap-19",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-6",
+                  "halving/cap-19",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-6",
+                  "gepa-batched/validation-4/cap-20",
+                  "halving/cap-4",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "halving/cap-4"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 539,
+                "settings": [
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "retain-start",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-6",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-6",
+                  "retain-start",
+                  "halving/cap-4",
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "halving/cap-4"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 1536,
+                "paidLookups": 967
+              }
+            },
+            "nativeHindsight": {
+              "candidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 1483
+              },
+              "candidatePassesAboveHindsight": 13,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 177,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 1421,
+                "paidLookups": 1128,
+                "settings": [
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-6/cap-16"
+                ]
+              },
+              "minimumCostToMatchCandidate": null,
+              "unconstrainedHindsight": {
+                "holdoutPasses": 1421,
+                "paidLookups": 1128
+              }
+            },
+            "paired": {
+              "comparedControls": [
+                "two-round-feedback"
+              ],
+              "control": "two-round-feedback",
+              "controlPaidLookups": 1476,
+              "controlPasses": 1434,
+              "drawsEqual": 487,
+              "drawsHigher": 1815,
+              "drawsLower": 1794,
+              "interval95PercentagePoints": [
+                -0.208333333,
+                0.208333333
+              ],
+              "paidLookupDelta": 7,
+              "passDelta": 0
+            }
+          },
+          "two-round-rejection-scout": {
+            "allControlsHindsight": {
+              "candidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 1483
+              },
+              "candidatePassesAboveHindsight": -102,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 270,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 1536,
+                "paidLookups": 967,
+                "settings": [
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-12",
+                  "halving/cap-12",
+                  "halving/cap-4",
+                  "halving/cap-19",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-6",
+                  "halving/cap-19",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-6",
+                  "gepa-batched/validation-4/cap-20",
+                  "halving/cap-4",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-14",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "halving/cap-4"
+                ]
+              },
+              "minimumCostToMatchCandidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 539,
+                "settings": [
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "retain-start",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "retain-start",
+                  "cpo-one-admission",
+                  "cpo-one-admission",
+                  "halving/cap-6",
+                  "cpo-one-admission",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-4",
+                  "halving/cap-6",
+                  "retain-start",
+                  "halving/cap-4",
+                  "halving/cap-8",
+                  "halving/cap-4",
+                  "cpo-one-admission",
+                  "gepa-sequential/validation-2/cap-8",
+                  "halving/cap-4"
+                ]
+              },
+              "unconstrainedHindsight": {
+                "holdoutPasses": 1536,
+                "paidLookups": 967
+              }
+            },
+            "nativeHindsight": {
+              "candidate": {
+                "holdoutPasses": 1434,
+                "paidLookups": 1483
+              },
+              "candidatePassesAboveHindsight": 13,
+              "fixedControlPassesAtBudget": null,
+              "frontierPointCount": 177,
+              "gainFromChoosingPerEpisode": null,
+              "hindsightAtBudget": {
+                "holdoutPasses": 1421,
+                "paidLookups": 1128,
+                "settings": [
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "retain-start",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "retain-start",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-6/cap-16",
+                  "retain-start",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-6/cap-16",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-4/cap-20",
+                  "gepa-batched/validation-6/cap-26",
+                  "gepa-sequential/validation-2/cap-14",
+                  "gepa-batched/validation-2/cap-14",
+                  "gepa-sequential/validation-2/cap-8",
+                  "gepa-sequential/validation-6/cap-16"
+                ]
+              },
+              "minimumCostToMatchCandidate": null,
+              "unconstrainedHindsight": {
+                "holdoutPasses": 1421,
+                "paidLookups": 1128
+              }
+            },
+            "paired": {
+              "comparedControls": [
+                "two-round-feedback"
+              ],
+              "control": "two-round-feedback",
+              "controlPaidLookups": 1476,
+              "controlPasses": 1434,
+              "drawsEqual": 487,
+              "drawsHigher": 1815,
+              "drawsLower": 1794,
+              "interval95PercentagePoints": [
+                -0.208333333,
+                0.208333333
+              ],
+              "paidLookupDelta": 7,
+              "passDelta": 0
+            }
+          }
+        },
+        "episode47139": {},
+        "episodes": 32,
+        "totals": {
+          "cpo-feedback": {
+            "admissionLookups": 452,
+            "holdoutPasses": 1434,
+            "paidLookups": 1465,
+            "scheduleSwitches": 19,
+            "scoutCycles": 0,
+            "trainingLookups": 64,
+            "validationLookups": 949
+          },
+          "first-miss-scout": {
+            "admissionLookups": 457,
+            "holdoutPasses": 1434,
+            "paidLookups": 1472,
+            "scheduleSwitches": 19,
+            "scoutCycles": 1,
+            "trainingLookups": 64,
+            "validationLookups": 951
+          },
+          "rejection-scout": {
+            "admissionLookups": 457,
+            "holdoutPasses": 1434,
+            "paidLookups": 1472,
+            "scheduleSwitches": 19,
+            "scoutCycles": 1,
+            "trainingLookups": 64,
+            "validationLookups": 951
+          },
+          "two-round-feedback": {
+            "admissionLookups": 452,
+            "holdoutPasses": 1434,
+            "paidLookups": 1476,
+            "scheduleSwitches": 19,
+            "scoutCycles": 0,
+            "trainingLookups": 64,
+            "validationLookups": 960
+          },
+          "two-round-first-miss-scout": {
+            "admissionLookups": 457,
+            "holdoutPasses": 1434,
+            "paidLookups": 1483,
+            "scheduleSwitches": 19,
+            "scoutCycles": 1,
+            "trainingLookups": 64,
+            "validationLookups": 962
+          },
+          "two-round-rejection-scout": {
+            "admissionLookups": 457,
+            "holdoutPasses": 1434,
+            "paidLookups": 1483,
+            "scheduleSwitches": 19,
+            "scoutCycles": 1,
+            "trainingLookups": 64,
+            "validationLookups": 962
+          }
+        },
+        "traceSha256": {
+          "cpo-feedback": "2126cce0e3ef3187eb7e5ee3fd4fecc2e3c487c8fc2eb2f7c7261ce79c212c18",
+          "first-miss-scout": "4523ff601da02b8dbc4cb28a0dc5eecf16b801576b446c467b99fa193db920bd",
+          "rejection-scout": "1ee448b4d8c5c94e7d4905d61338f043845e1deed91f1b3d7039ccf94d0a29c6",
+          "two-round-feedback": "c2a73827bbf6c2ab2dcd1089a1cbc18d560276b572ce0bec94692758bf32c44c",
+          "two-round-first-miss-scout": "996a6040a5358621acbf6e4766596f99ec009806e03fe301641678e37721ba8a",
+          "two-round-rejection-scout": "55144201f2ad7b20a906324e69f0904db12ad450a51c4d888dfe0556ea3f7364"
+        }
+      }
+    }
+  },
+  "providerRequests": 0
+}
