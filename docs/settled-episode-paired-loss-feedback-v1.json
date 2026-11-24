@@ -1,0 +1,1012 @@
+{
+  "archivedTransfer": {
+    "additional-MMLU": {
+      "episodes": 256,
+      "nativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 7393,
+          "paidLookups": 0
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 7399,
+          "paidLookups": 6001
+        }
+      },
+      "nativeBoundsAtCost": {
+        "common-gepa": {
+          "attainer": {
+            "holdoutPasses": 7393,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "lowerPasses": 7393,
+          "upperPasses": 7393
+        },
+        "subject-tuned-gepa": {
+          "attainer": {
+            "holdoutPasses": 7399,
+            "paidLookups": 6001,
+            "settingsBySubject": {
+              "college_biology": "retain-start",
+              "college_physics": "retain-start",
+              "electrical_engineering": "split-safe-three:gepa-sequential-precheck/32/gain-1",
+              "human_aging": "split-safe-three:gepa-batched-precheck/25/paired-gain-1"
+            }
+          },
+          "lowerPasses": 7399,
+          "upperPasses": 7399
+        }
+      },
+      "paired": {
+        "common-gepa": {
+          "holdoutPassDifference": 5,
+          "pairedRange95": [
+            -4,
+            15
+          ]
+        },
+        "qualification-feedback": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            0,
+            0
+          ]
+        },
+        "settled-two": {
+          "holdoutPassDifference": 1,
+          "pairedRange95": [
+            -3,
+            5
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": -1,
+          "pairedRange95": [
+            -12,
+            10
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -7,
+          "pairedRange95": [
+            -19,
+            4
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 1,
+          "pairedRange95": [
+            -6,
+            10
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 1,
+          "pairedRange95": [
+            -6,
+            10
+          ]
+        }
+      },
+      "policies": {
+        "paired-loss-feedback": {
+          "holdoutPasses": 7398,
+          "overriddenCycles": 53,
+          "paidLookups": 6166,
+          "trainingLookups": 512
+        },
+        "qualification-feedback": {
+          "holdoutPasses": 7398,
+          "overriddenCycles": 53,
+          "paidLookups": 6166,
+          "trainingLookups": 512
+        },
+        "settled-two": {
+          "holdoutPasses": 7397,
+          "overriddenCycles": 0,
+          "paidLookups": 6211,
+          "trainingLookups": 512
+        }
+      },
+      "reachableRejections": {
+        "no-paired-loss-observed": 47,
+        "paired-loss-observed": 6
+      },
+      "simpleAtCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 7405,
+          "paidLookups": 5354,
+          "settingsBySubject": {
+            "college_biology": "retain-start",
+            "college_physics": "retain-start",
+            "electrical_engineering": "uniform/4/30",
+            "human_aging": "retain-start"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 7397,
+          "paidLookups": 5124,
+          "setting": "successive-halving/4/6"
+        },
+        "uniform": {
+          "holdoutPasses": 7397,
+          "paidLookups": 5124,
+          "setting": "uniform/4/6"
+        }
+      }
+    },
+    "bounded-BBH": {
+      "episodes": 384,
+      "nativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 6111,
+          "paidLookups": 0
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 6111,
+          "paidLookups": 0
+        }
+      },
+      "nativeBoundsAtCost": {
+        "common-gepa": {
+          "attainer": null,
+          "lowerPasses": 6111,
+          "upperPasses": 6290
+        },
+        "subject-tuned-gepa": {
+          "attainer": null,
+          "lowerPasses": 6111,
+          "upperPasses": 6350
+        }
+      },
+      "paired": {
+        "common-gepa": {
+          "holdoutPassDifference": 215,
+          "pairedRange95": [
+            118,
+            310
+          ]
+        },
+        "qualification-feedback": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            0,
+            0
+          ]
+        },
+        "settled-two": {
+          "holdoutPassDifference": -12,
+          "pairedRange95": [
+            -35,
+            10
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": 215,
+          "pairedRange95": [
+            118,
+            310
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -62,
+          "pairedRange95": [
+            -132,
+            7
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 17,
+          "pairedRange95": [
+            -31,
+            66
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 17,
+          "pairedRange95": [
+            -31,
+            66
+          ]
+        }
+      },
+      "policies": {
+        "paired-loss-feedback": {
+          "holdoutPasses": 6326,
+          "overriddenCycles": 194,
+          "paidLookups": 12173,
+          "trainingLookups": 768
+        },
+        "qualification-feedback": {
+          "holdoutPasses": 6326,
+          "overriddenCycles": 194,
+          "paidLookups": 12173,
+          "trainingLookups": 768
+        },
+        "settled-two": {
+          "holdoutPasses": 6338,
+          "overriddenCycles": 0,
+          "paidLookups": 12340,
+          "trainingLookups": 768
+        }
+      },
+      "reachableRejections": {
+        "no-paired-loss-observed": 119,
+        "paired-loss-observed": 75
+      },
+      "simpleAtCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 6388,
+          "paidLookups": 12120,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "uniform/4/10",
+            "bbh-formal_fallacies": "successive-halving/4/10",
+            "bbh-hyperbaton": "retain-start",
+            "bbh-logical_deduction_five_objects": "retain-start",
+            "bbh-navigate": "successive-halving/8/20",
+            "bbh-penguins_in_a_table": "successive-halving/4/12"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 6309,
+          "paidLookups": 9061,
+          "setting": "successive-halving/4/6"
+        },
+        "uniform": {
+          "holdoutPasses": 6309,
+          "paidLookups": 9061,
+          "setting": "uniform/4/6"
+        }
+      }
+    },
+    "bounded-LMentry": {
+      "episodes": 384,
+      "nativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 5346,
+          "paidLookups": 14728
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 3855,
+          "paidLookups": 0
+        }
+      },
+      "nativeBoundsAtCost": {
+        "common-gepa": {
+          "attainer": {
+            "holdoutPasses": 5346,
+            "paidLookups": 14728,
+            "setting": "split-safe-three:gepa-batched-precheck/17/gain-1"
+          },
+          "lowerPasses": 5346,
+          "upperPasses": 5346
+        },
+        "subject-tuned-gepa": {
+          "attainer": null,
+          "lowerPasses": 3855,
+          "upperPasses": 5931
+        }
+      },
+      "paired": {
+        "common-gepa": {
+          "holdoutPassDifference": 1057,
+          "pairedRange95": [
+            975,
+            1137
+          ]
+        },
+        "qualification-feedback": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            0,
+            0
+          ]
+        },
+        "settled-two": {
+          "holdoutPassDifference": 13,
+          "pairedRange95": [
+            -5,
+            31
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": 2548,
+          "pairedRange95": [
+            2412,
+            2681
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": 101,
+          "pairedRange95": [
+            43,
+            156
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 363,
+          "pairedRange95": [
+            306,
+            419
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 363,
+          "pairedRange95": [
+            306,
+            419
+          ]
+        }
+      },
+      "policies": {
+        "paired-loss-feedback": {
+          "holdoutPasses": 6403,
+          "overriddenCycles": 168,
+          "paidLookups": 14824,
+          "trainingLookups": 768
+        },
+        "qualification-feedback": {
+          "holdoutPasses": 6403,
+          "overriddenCycles": 168,
+          "paidLookups": 14824,
+          "trainingLookups": 768
+        },
+        "settled-two": {
+          "holdoutPasses": 6390,
+          "overriddenCycles": 0,
+          "paidLookups": 15146,
+          "trainingLookups": 768
+        }
+      },
+      "reachableRejections": {
+        "no-paired-loss-observed": 107,
+        "paired-loss-observed": 61
+      },
+      "simpleAtCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 6302,
+          "paidLookups": 14800,
+          "settingsBySubject": {
+            "lmentry-any_words_from_category": "successive-halving/8/17",
+            "lmentry-ends_with_word": "successive-halving/8/14",
+            "lmentry-first_alphabetically": "successive-halving/4/6",
+            "lmentry-homophones": "successive-halving/8/9",
+            "lmentry-less_letters": "successive-halving/8/9",
+            "lmentry-rhyming_word": "successive-halving/8/9"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 6040,
+          "paidLookups": 13650,
+          "setting": "successive-halving/8/9"
+        },
+        "uniform": {
+          "holdoutPasses": 6040,
+          "paidLookups": 13650,
+          "setting": "uniform/8/9"
+        }
+      }
+    },
+    "bounded-MMLU": {
+      "episodes": 256,
+      "nativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 7711,
+          "paidLookups": 5683
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 7706,
+          "paidLookups": 0
+        }
+      },
+      "nativeBoundsAtCost": {
+        "common-gepa": {
+          "attainer": {
+            "holdoutPasses": 7711,
+            "paidLookups": 5683,
+            "setting": "split-safe-three:gepa-sequential-precheck/10/gain-1"
+          },
+          "lowerPasses": 7711,
+          "upperPasses": 7711
+        },
+        "subject-tuned-gepa": {
+          "attainer": null,
+          "lowerPasses": 7706,
+          "upperPasses": 7717
+        }
+      },
+      "paired": {
+        "common-gepa": {
+          "holdoutPassDifference": 4,
+          "pairedRange95": [
+            -12,
+            20
+          ]
+        },
+        "qualification-feedback": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            0,
+            0
+          ]
+        },
+        "settled-two": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            0,
+            0
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": 9,
+          "pairedRange95": [
+            -8,
+            26
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -13,
+          "pairedRange95": [
+            -33,
+            6
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 9,
+          "pairedRange95": [
+            -8,
+            26
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 9,
+          "pairedRange95": [
+            -8,
+            26
+          ]
+        }
+      },
+      "policies": {
+        "paired-loss-feedback": {
+          "holdoutPasses": 7715,
+          "overriddenCycles": 51,
+          "paidLookups": 5873,
+          "trainingLookups": 512
+        },
+        "qualification-feedback": {
+          "holdoutPasses": 7715,
+          "overriddenCycles": 51,
+          "paidLookups": 5873,
+          "trainingLookups": 512
+        },
+        "settled-two": {
+          "holdoutPasses": 7715,
+          "overriddenCycles": 0,
+          "paidLookups": 5956,
+          "trainingLookups": 512
+        }
+      },
+      "reachableRejections": {
+        "no-paired-loss-observed": 47,
+        "paired-loss-observed": 4
+      },
+      "simpleAtCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 7728,
+          "paidLookups": 5575,
+          "settingsBySubject": {
+            "anatomy": "successive-halving/4/6",
+            "computer_security": "retain-start",
+            "high_school_chemistry": "successive-halving/8/20",
+            "human_aging": "retain-start"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 7706,
+          "paidLookups": 0,
+          "setting": "retain-start"
+        },
+        "uniform": {
+          "holdoutPasses": 7706,
+          "paidLookups": 0,
+          "setting": "retain-start"
+        }
+      }
+    },
+    "four-case-MMLU": {
+      "episodes": 384,
+      "nativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 22350,
+          "paidLookups": 8525
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 22369,
+          "paidLookups": 9289
+        }
+      },
+      "nativeBoundsAtCost": {
+        "common-gepa": {
+          "attainer": {
+            "holdoutPasses": 22350,
+            "paidLookups": 8525,
+            "setting": "split-safe-three:gepa-sequential-precheck/10/paired-gain-1"
+          },
+          "lowerPasses": 22350,
+          "upperPasses": 22350
+        },
+        "subject-tuned-gepa": {
+          "attainer": {
+            "holdoutPasses": 22369,
+            "paidLookups": 9289,
+            "settingsBySubject": {
+              "college_chemistry": "retain-start",
+              "college_medicine": "split-safe-three:gepa-sequential-precheck/10/gain-1",
+              "human_sexuality": "split-safe-three:gepa-sequential-precheck/37/paired-gain-1",
+              "medical_genetics": "retain-start",
+              "professional_law": "split-safe-six:gepa-batched-precheck/40/paired-gain-1",
+              "virology": "retain-start"
+            }
+          },
+          "lowerPasses": 22369,
+          "upperPasses": 22369
+        }
+      },
+      "paired": {
+        "common-gepa": {
+          "holdoutPassDifference": 16,
+          "pairedRange95": [
+            -5,
+            37
+          ]
+        },
+        "qualification-feedback": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            0,
+            0
+          ]
+        },
+        "settled-two": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            0,
+            0
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": -3,
+          "pairedRange95": [
+            -23,
+            17
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -43,
+          "pairedRange95": [
+            -63,
+            -23
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 9,
+          "pairedRange95": [
+            -8,
+            25
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 9,
+          "pairedRange95": [
+            -8,
+            25
+          ]
+        }
+      },
+      "policies": {
+        "paired-loss-feedback": {
+          "holdoutPasses": 22366,
+          "overriddenCycles": 42,
+          "paidLookups": 10530,
+          "trainingLookups": 768
+        },
+        "qualification-feedback": {
+          "holdoutPasses": 22366,
+          "overriddenCycles": 42,
+          "paidLookups": 10530,
+          "trainingLookups": 768
+        },
+        "settled-two": {
+          "holdoutPasses": 22366,
+          "overriddenCycles": 0,
+          "paidLookups": 10522,
+          "trainingLookups": 768
+        }
+      },
+      "reachableRejections": {
+        "no-paired-loss-observed": 40,
+        "paired-loss-observed": 2
+      },
+      "simpleAtCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 22409,
+          "paidLookups": 10430,
+          "settingsBySubject": {
+            "college_chemistry": "uniform/4/15",
+            "college_medicine": "retain-start",
+            "human_sexuality": "uniform/8/27",
+            "medical_genetics": "retain-start",
+            "professional_law": "successive-halving/8/17",
+            "virology": "retain-start"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 22357,
+          "paidLookups": 7439,
+          "setting": "successive-halving/4/6"
+        },
+        "uniform": {
+          "holdoutPasses": 22357,
+          "paidLookups": 7439,
+          "setting": "uniform/4/6"
+        }
+      }
+    },
+    "tie-BBH": {
+      "episodes": 256,
+      "nativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 1944,
+          "paidLookups": 0
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 1944,
+          "paidLookups": 0
+        }
+      },
+      "nativeBoundsAtCost": {
+        "common-gepa": {
+          "attainer": null,
+          "lowerPasses": 1944,
+          "upperPasses": 2091
+        },
+        "subject-tuned-gepa": {
+          "attainer": null,
+          "lowerPasses": 1944,
+          "upperPasses": 2126
+        }
+      },
+      "paired": {
+        "common-gepa": {
+          "holdoutPassDifference": 196,
+          "pairedRange95": [
+            133,
+            259
+          ]
+        },
+        "qualification-feedback": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            0,
+            0
+          ]
+        },
+        "settled-two": {
+          "holdoutPassDifference": 2,
+          "pairedRange95": [
+            -16,
+            21
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": 196,
+          "pairedRange95": [
+            133,
+            259
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -27,
+          "pairedRange95": [
+            -69,
+            15
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 2,
+          "pairedRange95": [
+            -33,
+            37
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 29,
+          "pairedRange95": [
+            -2,
+            60
+          ]
+        }
+      },
+      "policies": {
+        "paired-loss-feedback": {
+          "holdoutPasses": 2140,
+          "overriddenCycles": 163,
+          "paidLookups": 12196,
+          "trainingLookups": 512
+        },
+        "qualification-feedback": {
+          "holdoutPasses": 2140,
+          "overriddenCycles": 163,
+          "paidLookups": 12196,
+          "trainingLookups": 512
+        },
+        "settled-two": {
+          "holdoutPasses": 2138,
+          "overriddenCycles": 0,
+          "paidLookups": 12520,
+          "trainingLookups": 512
+        }
+      },
+      "reachableRejections": {
+        "no-paired-loss-observed": 104,
+        "paired-loss-observed": 59
+      },
+      "simpleAtCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 2167,
+          "paidLookups": 12058,
+          "settingsBySubject": {
+            "bbh-movie_recommendation": "successive-halving/8/9",
+            "bbh-ruin_names": "successive-halving/4/8",
+            "bbh-salient_translation_error_detection": "successive-halving/4/16",
+            "bbh-snarks": "successive-halving/8/17"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 2138,
+          "paidLookups": 11541,
+          "setting": "successive-halving/4/12"
+        },
+        "uniform": {
+          "holdoutPasses": 2111,
+          "paidLookups": 10071,
+          "setting": "uniform/4/10"
+        }
+      }
+    },
+    "tie-LMentry": {
+      "episodes": 128,
+      "nativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 557,
+          "paidLookups": 0
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 919,
+          "paidLookups": 6508
+        }
+      },
+      "nativeBoundsAtCost": {
+        "common-gepa": {
+          "attainer": null,
+          "lowerPasses": 557,
+          "upperPasses": 835
+        },
+        "subject-tuned-gepa": {
+          "attainer": {
+            "holdoutPasses": 919,
+            "paidLookups": 6508,
+            "settingsBySubject": {
+              "lmentry-homophones": "split-safe-three:gepa-sequential-precheck/44/gain-1",
+              "lmentry-word_before": "retain-start"
+            }
+          },
+          "lowerPasses": 919,
+          "upperPasses": 919
+        }
+      },
+      "paired": {
+        "common-gepa": {
+          "holdoutPassDifference": 440,
+          "pairedRange95": [
+            376,
+            499
+          ]
+        },
+        "qualification-feedback": {
+          "holdoutPassDifference": 0,
+          "pairedRange95": [
+            0,
+            0
+          ]
+        },
+        "settled-two": {
+          "holdoutPassDifference": -7,
+          "pairedRange95": [
+            -16,
+            2
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": 78,
+          "pairedRange95": [
+            40,
+            117
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -14,
+          "pairedRange95": [
+            -36,
+            9
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 15,
+          "pairedRange95": [
+            0,
+            31
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 39,
+          "pairedRange95": [
+            8,
+            70
+          ]
+        }
+      },
+      "policies": {
+        "paired-loss-feedback": {
+          "holdoutPasses": 997,
+          "overriddenCycles": 64,
+          "paidLookups": 6820,
+          "trainingLookups": 256
+        },
+        "qualification-feedback": {
+          "holdoutPasses": 997,
+          "overriddenCycles": 64,
+          "paidLookups": 6820,
+          "trainingLookups": 256
+        },
+        "settled-two": {
+          "holdoutPasses": 1004,
+          "overriddenCycles": 0,
+          "paidLookups": 6863,
+          "trainingLookups": 256
+        }
+      },
+      "reachableRejections": {
+        "no-paired-loss-observed": 51,
+        "paired-loss-observed": 13
+      },
+      "simpleAtCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 1011,
+          "paidLookups": 6506,
+          "settingsBySubject": {
+            "lmentry-homophones": "uniform/8/18",
+            "lmentry-word_before": "uniform/4/10"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 982,
+          "paidLookups": 6547,
+          "setting": "successive-halving/8/14"
+        },
+        "uniform": {
+          "holdoutPasses": 958,
+          "paidLookups": 4838,
+          "setting": "uniform/4/10"
+        }
+      }
+    }
+  },
+  "discovery": {
+    "alteredSubtype": null,
+    "distinctTables": 39365,
+    "feasibleTables": 1323,
+    "points": {
+      "BBH": {
+        "holdoutPasses": 2769,
+        "paidLookups": 11523
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 681,
+        "paidLookups": 2530
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 914,
+        "paidLookups": 5873
+      },
+      "LMentry": {
+        "holdoutPasses": 2279,
+        "paidLookups": 4113
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 2478,
+        "paidLookups": 3871
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 54430,
+        "paidLookups": 19613
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 20527,
+        "paidLookups": 16714
+      }
+    },
+    "rules": [
+      [
+        "fitted-opening-repair",
+        "successive-halving/8/14",
+        "successive-halving/8/14"
+      ],
+      [
+        "uniform/8/18",
+        "fitted-opening-repair",
+        "fitted-opening-repair"
+      ],
+      [
+        "successive-halving/4/6",
+        "retain-start",
+        "retain-start"
+      ]
+    ],
+    "support": {
+      "no-paired-loss-observed": [
+        21,
+        30,
+        23
+      ],
+      "paired-loss-observed": [
+        8,
+        13,
+        9
+      ]
+    }
+  },
+  "parentFeedbackSha256": "0f62d18925adaa00c4e34f6678fc2fabcb0015c20f235ec0067562435b984268",
+  "protocol": "settled-episode-paired-loss-feedback-v1",
+  "providerRequests": 0,
+  "reference": {
+    "BBH": {
+      "holdoutPasses": 2769,
+      "paidLookups": 11523
+    },
+    "BBH/new-task": {
+      "holdoutPasses": 681,
+      "paidLookups": 2530
+    },
+    "BBH/seen-task": {
+      "holdoutPasses": 914,
+      "paidLookups": 5873
+    },
+    "LMentry": {
+      "holdoutPasses": 2279,
+      "paidLookups": 4113
+    },
+    "LMentry/seen-task": {
+      "holdoutPasses": 2478,
+      "paidLookups": 3871
+    },
+    "disjoint-transfer-cohort": {
+      "holdoutPasses": 54430,
+      "paidLookups": 19613
+    },
+    "earlier-screen-cohort": {
+      "holdoutPasses": 20527,
+      "paidLookups": 16714
+    }
+  },
+  "sourceSha256": "66a46fd16988c8cda127449e1458501abf66e5b7c470d0cb260848a8f37ba7cb",
+  "transferReceiptSha256": {
+    "additional-mmlu": "85fd60522ba28610af3fd120382e9bd9c4c321ceb95697c452c29ee5d5d59e74",
+    "bounded-bbh": "7c8451cbc72c8f9269ec42360c13ad6339d388baf65bb50f6fe861bb1e1f89a3",
+    "bounded-lmentry": "e4624f1b16d0000f67266dcb2b0c90f6cdd47898e3664385ed4c940d7626f25f",
+    "bounded-mmlu": "581bfae8b75dc897326c1d3e376c1f72aaf29388f4f0cad24643ca7a91d9caf6",
+    "four-case-mmlu": "d762a35942403485f1142e7090c9cf693b4b531fd1867ac816a921e7609d1dd5",
+    "tie-bbh": "f4c6d4fda704ba7e210457f0ca2e5adffb5c518b102359d6ee098cf77fb72765",
+    "tie-lmentry": "728d3620b241d7835bfddc9075e8610f5e3855c144bb1a1b139360a83fea4bc1"
+  }
+}
