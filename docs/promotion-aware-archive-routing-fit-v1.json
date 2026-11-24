@@ -1,0 +1,953 @@
+{
+  "budgets": {
+    "BBH": 48799,
+    "BBH/new-task": 3035,
+    "BBH/seen-task": 26414,
+    "LMentry": 27446,
+    "LMentry/new-task": 3731,
+    "LMentry/seen-task": 18182,
+    "disjoint-transfer-cohort": 30551,
+    "earlier-screen-cohort": 33251
+  },
+  "discoveryPanels": {
+    "BBH": [
+      "bbh-disambiguation_qa/airoboros-13b",
+      "bbh-disambiguation_qa/nous-hermes-13b",
+      "bbh-formal_fallacies/airoboros-13b",
+      "bbh-formal_fallacies/nous-hermes-13b",
+      "bbh-geometric_shapes/airoboros-13b",
+      "bbh-geometric_shapes/nous-hermes-13b",
+      "bbh-hyperbaton/airoboros-13b",
+      "bbh-hyperbaton/nous-hermes-13b",
+      "bbh-logical_deduction_five_objects/airoboros-13b",
+      "bbh-logical_deduction_five_objects/nous-hermes-13b",
+      "bbh-logical_deduction_seven_objects/airoboros-13b",
+      "bbh-logical_deduction_seven_objects/nous-hermes-13b",
+      "bbh-logical_deduction_three_objects/airoboros-13b",
+      "bbh-logical_deduction_three_objects/nous-hermes-13b",
+      "bbh-movie_recommendation/airoboros-13b",
+      "bbh-movie_recommendation/nous-hermes-13b",
+      "bbh-navigate/airoboros-13b",
+      "bbh-navigate/nous-hermes-13b",
+      "bbh-penguins_in_a_table/airoboros-13b",
+      "bbh-penguins_in_a_table/nous-hermes-13b",
+      "bbh-ruin_names/airoboros-13b",
+      "bbh-ruin_names/nous-hermes-13b",
+      "bbh-salient_translation_error_detection/airoboros-13b",
+      "bbh-salient_translation_error_detection/nous-hermes-13b",
+      "bbh-snarks/airoboros-13b",
+      "bbh-snarks/nous-hermes-13b",
+      "bbh-sports_understanding/airoboros-13b",
+      "bbh-sports_understanding/nous-hermes-13b"
+    ],
+    "BBH/new-task": [
+      "bbh-causal_judgement/flan-t5-xl",
+      "bbh-causal_judgement/minotaur-15b"
+    ],
+    "BBH/seen-task": [
+      "bbh-disambiguation_qa/flan-t5-xl",
+      "bbh-disambiguation_qa/minotaur-15b",
+      "bbh-formal_fallacies/flan-t5-xl",
+      "bbh-formal_fallacies/minotaur-15b",
+      "bbh-geometric_shapes/flan-t5-xl",
+      "bbh-geometric_shapes/minotaur-15b",
+      "bbh-hyperbaton/flan-t5-xl",
+      "bbh-hyperbaton/minotaur-15b",
+      "bbh-logical_deduction_five_objects/flan-t5-xl",
+      "bbh-logical_deduction_five_objects/minotaur-15b",
+      "bbh-navigate/flan-t5-xl",
+      "bbh-navigate/minotaur-15b",
+      "bbh-penguins_in_a_table/flan-t5-xl",
+      "bbh-penguins_in_a_table/minotaur-15b",
+      "bbh-sports_understanding/flan-t5-xl",
+      "bbh-sports_understanding/minotaur-15b"
+    ],
+    "LMentry": [
+      "lmentry-all_words_from_category/airoboros-13b",
+      "lmentry-all_words_from_category/nous-hermes-13b",
+      "lmentry-any_words_from_category/airoboros-13b",
+      "lmentry-any_words_from_category/nous-hermes-13b",
+      "lmentry-first_alphabetically/airoboros-13b",
+      "lmentry-first_alphabetically/nous-hermes-13b",
+      "lmentry-homophones/airoboros-13b",
+      "lmentry-homophones/nous-hermes-13b",
+      "lmentry-less_letters/airoboros-13b",
+      "lmentry-less_letters/nous-hermes-13b",
+      "lmentry-more_letters/airoboros-13b",
+      "lmentry-more_letters/nous-hermes-13b",
+      "lmentry-rhyming_word/airoboros-13b",
+      "lmentry-rhyming_word/nous-hermes-13b",
+      "lmentry-word_before/airoboros-13b",
+      "lmentry-word_before/nous-hermes-13b"
+    ],
+    "LMentry/new-task": [
+      "lmentry-ends_with_word/flan-t5-xl",
+      "lmentry-ends_with_word/minotaur-15b"
+    ],
+    "LMentry/seen-task": [
+      "lmentry-all_words_from_category/flan-t5-xl",
+      "lmentry-all_words_from_category/minotaur-15b",
+      "lmentry-any_words_from_category/flan-t5-xl",
+      "lmentry-any_words_from_category/minotaur-15b",
+      "lmentry-first_alphabetically/flan-t5-xl",
+      "lmentry-first_alphabetically/minotaur-15b",
+      "lmentry-less_letters/flan-t5-xl",
+      "lmentry-less_letters/minotaur-15b",
+      "lmentry-more_letters/flan-t5-xl",
+      "lmentry-more_letters/minotaur-15b",
+      "lmentry-rhyming_word/flan-t5-xl",
+      "lmentry-rhyming_word/minotaur-15b"
+    ],
+    "disjoint-transfer-cohort": [
+      "clinical_knowledge/google_flan_ul2",
+      "clinical_knowledge/mistralai_mixtral_8x7b_instruct_v01",
+      "high_school_biology/google_flan_ul2",
+      "high_school_biology/mistralai_mixtral_8x7b_instruct_v01",
+      "moral_scenarios/google_flan_ul2",
+      "moral_scenarios/mistralai_mixtral_8x7b_instruct_v01",
+      "professional_medicine/google_flan_ul2",
+      "professional_medicine/mistralai_mixtral_8x7b_instruct_v01",
+      "anatomy/mistralai_mixtral_8x7b_instruct_v01",
+      "anatomy/tiiuae_falcon_180b",
+      "elementary_mathematics/mistralai_mixtral_8x7b_instruct_v01",
+      "elementary_mathematics/tiiuae_falcon_180b",
+      "high_school_macroeconomics/mistralai_mixtral_8x7b_instruct_v01",
+      "high_school_macroeconomics/tiiuae_falcon_180b",
+      "professional_psychology/mistralai_mixtral_8x7b_instruct_v01",
+      "professional_psychology/tiiuae_falcon_180b",
+      "sociology/mistralai_mixtral_8x7b_instruct_v01",
+      "sociology/tiiuae_falcon_180b",
+      "us_foreign_policy/mistralai_mixtral_8x7b_instruct_v01",
+      "us_foreign_policy/tiiuae_falcon_180b",
+      "high_school_geography/google_gemma_7b",
+      "high_school_geography/google_flan_t5_xxl",
+      "high_school_government_and_politics/google_gemma_7b",
+      "high_school_government_and_politics/google_flan_t5_xxl",
+      "high_school_microeconomics/google_gemma_7b",
+      "high_school_microeconomics/google_flan_t5_xxl",
+      "high_school_statistics/google_gemma_7b",
+      "high_school_statistics/google_flan_t5_xxl",
+      "moral_disputes/google_gemma_7b",
+      "moral_disputes/google_flan_t5_xxl"
+    ],
+    "earlier-screen-cohort": [
+      "abstract_algebra/codellama_codellama_34b_instruct",
+      "abstract_algebra/ibm_mistralai_merlinite_7b",
+      "business_ethics/codellama_codellama_34b_instruct",
+      "business_ethics/ibm_mistralai_merlinite_7b",
+      "college_mathematics/codellama_codellama_34b_instruct",
+      "college_mathematics/ibm_mistralai_merlinite_7b",
+      "conceptual_physics/codellama_codellama_34b_instruct",
+      "conceptual_physics/ibm_mistralai_merlinite_7b",
+      "human_aging/codellama_codellama_34b_instruct",
+      "human_aging/ibm_mistralai_merlinite_7b",
+      "jurisprudence/codellama_codellama_34b_instruct",
+      "jurisprudence/ibm_mistralai_merlinite_7b",
+      "management/codellama_codellama_34b_instruct",
+      "management/ibm_mistralai_merlinite_7b",
+      "college_physics/meta_llama_llama_3_8b_instruct",
+      "college_physics/mistralai_mistral_7b_v0_1",
+      "computer_security/meta_llama_llama_3_8b_instruct",
+      "computer_security/mistralai_mistral_7b_v0_1",
+      "electrical_engineering/meta_llama_llama_3_8b_instruct",
+      "electrical_engineering/mistralai_mistral_7b_v0_1",
+      "high_school_european_history/meta_llama_llama_3_8b_instruct",
+      "high_school_european_history/mistralai_mistral_7b_v0_1",
+      "high_school_psychology/meta_llama_llama_3_8b_instruct",
+      "high_school_psychology/mistralai_mistral_7b_v0_1",
+      "international_law/meta_llama_llama_3_8b_instruct",
+      "international_law/mistralai_mistral_7b_v0_1",
+      "public_relations/meta_llama_llama_3_8b_instruct",
+      "public_relations/mistralai_mistral_7b_v0_1"
+    ]
+  },
+  "excludedTasks": {
+    "BBH": [],
+    "BBH/new-task": [],
+    "BBH/seen-task": [],
+    "LMentry": [],
+    "LMentry/new-task": [],
+    "LMentry/seen-task": [],
+    "disjoint-transfer-cohort": [],
+    "earlier-screen-cohort": []
+  },
+  "feasibleAt95Percent": {
+    "fitted-fixed-screen": 0,
+    "fitted-promotion-switch": 0
+  },
+  "fitted": {
+    "fitted-fixed-screen": {
+      "actions": [
+        "cohort-nonloss-short-circuit",
+        "cohort-nonloss-short-circuit"
+      ],
+      "byCohort": {
+        "BBH": {
+          "holdoutPasses": 10634,
+          "paidLookups": 47539
+        },
+        "BBH/new-task": {
+          "holdoutPasses": 699,
+          "paidLookups": 2948
+        },
+        "BBH/seen-task": {
+          "holdoutPasses": 5096,
+          "paidLookups": 25426
+        },
+        "LMentry": {
+          "holdoutPasses": 7048,
+          "paidLookups": 26614
+        },
+        "LMentry/new-task": {
+          "holdoutPasses": 583,
+          "paidLookups": 3710
+        },
+        "LMentry/seen-task": {
+          "holdoutPasses": 6185,
+          "paidLookups": 17184
+        },
+        "disjoint-transfer-cohort": {
+          "holdoutPasses": 56162,
+          "paidLookups": 27101
+        },
+        "earlier-screen-cohort": {
+          "holdoutPasses": 26651,
+          "paidLookups": 30159
+        }
+      }
+    },
+    "fitted-promotion-switch": {
+      "actions": [
+        "cohort-nonloss-short-circuit",
+        "fitted-static"
+      ],
+      "byCohort": {
+        "BBH": {
+          "holdoutPasses": 10640,
+          "paidLookups": 47956
+        },
+        "BBH/new-task": {
+          "holdoutPasses": 699,
+          "paidLookups": 2948
+        },
+        "BBH/seen-task": {
+          "holdoutPasses": 5096,
+          "paidLookups": 25646
+        },
+        "LMentry": {
+          "holdoutPasses": 7042,
+          "paidLookups": 27027
+        },
+        "LMentry/new-task": {
+          "holdoutPasses": 583,
+          "paidLookups": 3731
+        },
+        "LMentry/seen-task": {
+          "holdoutPasses": 6189,
+          "paidLookups": 17504
+        },
+        "disjoint-transfer-cohort": {
+          "holdoutPasses": 56162,
+          "paidLookups": 27205
+        },
+        "earlier-screen-cohort": {
+          "holdoutPasses": 26651,
+          "paidLookups": 30230
+        }
+      }
+    },
+    "fixed-budget-switch": {
+      "actions": [
+        "cohort-budgeted-short-circuit",
+        "cohort-nonloss-short-circuit"
+      ],
+      "byCohort": {
+        "BBH": {
+          "holdoutPasses": 10605,
+          "paidLookups": 43681
+        },
+        "BBH/new-task": {
+          "holdoutPasses": 722,
+          "paidLookups": 2942
+        },
+        "BBH/seen-task": {
+          "holdoutPasses": 5162,
+          "paidLookups": 24919
+        },
+        "LMentry": {
+          "holdoutPasses": 6984,
+          "paidLookups": 24341
+        },
+        "LMentry/new-task": {
+          "holdoutPasses": 541,
+          "paidLookups": 3698
+        },
+        "LMentry/seen-task": {
+          "holdoutPasses": 6128,
+          "paidLookups": 15585
+        },
+        "disjoint-transfer-cohort": {
+          "holdoutPasses": 56154,
+          "paidLookups": 25333
+        },
+        "earlier-screen-cohort": {
+          "holdoutPasses": 26654,
+          "paidLookups": 27267
+        }
+      }
+    }
+  },
+  "options": {
+    "cohort-budgeted-short-circuit|cohort-budgeted-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10598,
+        "paidLookups": 42215
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 714,
+        "paidLookups": 2952
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5185,
+        "paidLookups": 24268
+      },
+      "LMentry": {
+        "holdoutPasses": 6938,
+        "paidLookups": 22788
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 536,
+        "paidLookups": 3683
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6142,
+        "paidLookups": 14889
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56168,
+        "paidLookups": 25302
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26658,
+        "paidLookups": 26936
+      }
+    },
+    "cohort-budgeted-short-circuit|cohort-nonloss-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10605,
+        "paidLookups": 43681
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 722,
+        "paidLookups": 2942
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5162,
+        "paidLookups": 24919
+      },
+      "LMentry": {
+        "holdoutPasses": 6984,
+        "paidLookups": 24341
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 541,
+        "paidLookups": 3698
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6128,
+        "paidLookups": 15585
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56154,
+        "paidLookups": 25333
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26654,
+        "paidLookups": 27267
+      }
+    },
+    "cohort-budgeted-short-circuit|fitted-static": {
+      "BBH": {
+        "holdoutPasses": 10611,
+        "paidLookups": 44139
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 722,
+        "paidLookups": 2943
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5162,
+        "paidLookups": 25163
+      },
+      "LMentry": {
+        "holdoutPasses": 6978,
+        "paidLookups": 24741
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 541,
+        "paidLookups": 3712
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6128,
+        "paidLookups": 15907
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56154,
+        "paidLookups": 25465
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26655,
+        "paidLookups": 27421
+      }
+    },
+    "cohort-budgeted-short-circuit|prefix-and-validation-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10594,
+        "paidLookups": 43445
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 714,
+        "paidLookups": 2986
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5190,
+        "paidLookups": 24741
+      },
+      "LMentry": {
+        "holdoutPasses": 6936,
+        "paidLookups": 24045
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 536,
+        "paidLookups": 3732
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6127,
+        "paidLookups": 15562
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56171,
+        "paidLookups": 25445
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26657,
+        "paidLookups": 27386
+      }
+    },
+    "cohort-nonloss-short-circuit|cohort-budgeted-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10623,
+        "paidLookups": 46065
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 691,
+        "paidLookups": 2963
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5103,
+        "paidLookups": 24770
+      },
+      "LMentry": {
+        "holdoutPasses": 7001,
+        "paidLookups": 25032
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 579,
+        "paidLookups": 3728
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6193,
+        "paidLookups": 16413
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56181,
+        "paidLookups": 27083
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26651,
+        "paidLookups": 29965
+      }
+    },
+    "cohort-nonloss-short-circuit|cohort-nonloss-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10634,
+        "paidLookups": 47539
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 699,
+        "paidLookups": 2948
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5096,
+        "paidLookups": 25426
+      },
+      "LMentry": {
+        "holdoutPasses": 7048,
+        "paidLookups": 26614
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 583,
+        "paidLookups": 3710
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6185,
+        "paidLookups": 17184
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56162,
+        "paidLookups": 27101
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26651,
+        "paidLookups": 30159
+      }
+    },
+    "cohort-nonloss-short-circuit|fitted-static": {
+      "BBH": {
+        "holdoutPasses": 10640,
+        "paidLookups": 47956
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 699,
+        "paidLookups": 2948
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5096,
+        "paidLookups": 25646
+      },
+      "LMentry": {
+        "holdoutPasses": 7042,
+        "paidLookups": 27027
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 583,
+        "paidLookups": 3731
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6189,
+        "paidLookups": 17504
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56162,
+        "paidLookups": 27205
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26651,
+        "paidLookups": 30230
+      }
+    },
+    "cohort-nonloss-short-circuit|prefix-and-validation-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10609,
+        "paidLookups": 47173
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 691,
+        "paidLookups": 2980
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5108,
+        "paidLookups": 25197
+      },
+      "LMentry": {
+        "holdoutPasses": 7006,
+        "paidLookups": 26285
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 579,
+        "paidLookups": 3751
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6174,
+        "paidLookups": 17130
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56184,
+        "paidLookups": 27180
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26653,
+        "paidLookups": 30204
+      }
+    },
+    "fitted-static|cohort-budgeted-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10623,
+        "paidLookups": 46908
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 687,
+        "paidLookups": 3050
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5101,
+        "paidLookups": 25532
+      },
+      "LMentry": {
+        "holdoutPasses": 7001,
+        "paidLookups": 25451
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 579,
+        "paidLookups": 3728
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6197,
+        "paidLookups": 17076
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56178,
+        "paidLookups": 30418
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26648,
+        "paidLookups": 32981
+      }
+    },
+    "fitted-static|cohort-nonloss-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10634,
+        "paidLookups": 48382
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 695,
+        "paidLookups": 3035
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5094,
+        "paidLookups": 26194
+      },
+      "LMentry": {
+        "holdoutPasses": 7048,
+        "paidLookups": 27033
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 583,
+        "paidLookups": 3710
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6189,
+        "paidLookups": 17842
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56159,
+        "paidLookups": 30446
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26648,
+        "paidLookups": 33160
+      }
+    },
+    "fitted-static|fitted-static": {
+      "BBH": {
+        "holdoutPasses": 10640,
+        "paidLookups": 48799
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 695,
+        "paidLookups": 3035
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5094,
+        "paidLookups": 26414
+      },
+      "LMentry": {
+        "holdoutPasses": 7042,
+        "paidLookups": 27446
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 583,
+        "paidLookups": 3731
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6193,
+        "paidLookups": 18182
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56159,
+        "paidLookups": 30551
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26648,
+        "paidLookups": 33251
+      }
+    },
+    "fitted-static|prefix-and-validation-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10609,
+        "paidLookups": 48016
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 687,
+        "paidLookups": 3067
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5106,
+        "paidLookups": 25965
+      },
+      "LMentry": {
+        "holdoutPasses": 7006,
+        "paidLookups": 26704
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 579,
+        "paidLookups": 3751
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6178,
+        "paidLookups": 17791
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56181,
+        "paidLookups": 30523
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26650,
+        "paidLookups": 33216
+      }
+    },
+    "prefix-and-validation-short-circuit|cohort-budgeted-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10664,
+        "paidLookups": 45818
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 711,
+        "paidLookups": 3189
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5155,
+        "paidLookups": 25988
+      },
+      "LMentry": {
+        "holdoutPasses": 7050,
+        "paidLookups": 24449
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 581,
+        "paidLookups": 3754
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6212,
+        "paidLookups": 16413
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56162,
+        "paidLookups": 29329
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26652,
+        "paidLookups": 31491
+      }
+    },
+    "prefix-and-validation-short-circuit|cohort-nonloss-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10665,
+        "paidLookups": 47526
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 719,
+        "paidLookups": 3184
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5139,
+        "paidLookups": 26619
+      },
+      "LMentry": {
+        "holdoutPasses": 7100,
+        "paidLookups": 26043
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 586,
+        "paidLookups": 3759
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6208,
+        "paidLookups": 17191
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56145,
+        "paidLookups": 29414
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26651,
+        "paidLookups": 31856
+      }
+    },
+    "prefix-and-validation-short-circuit|fitted-static": {
+      "BBH": {
+        "holdoutPasses": 10671,
+        "paidLookups": 47967
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 719,
+        "paidLookups": 3185
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5139,
+        "paidLookups": 26922
+      },
+      "LMentry": {
+        "holdoutPasses": 7094,
+        "paidLookups": 26469
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 586,
+        "paidLookups": 3780
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6208,
+        "paidLookups": 17534
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56145,
+        "paidLookups": 29576
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26652,
+        "paidLookups": 32008
+      }
+    },
+    "prefix-and-validation-short-circuit|prefix-and-validation-short-circuit": {
+      "BBH": {
+        "holdoutPasses": 10656,
+        "paidLookups": 47201
+      },
+      "BBH/new-task": {
+        "holdoutPasses": 711,
+        "paidLookups": 3228
+      },
+      "BBH/seen-task": {
+        "holdoutPasses": 5160,
+        "paidLookups": 26466
+      },
+      "LMentry": {
+        "holdoutPasses": 7053,
+        "paidLookups": 25747
+      },
+      "LMentry/new-task": {
+        "holdoutPasses": 581,
+        "paidLookups": 3793
+      },
+      "LMentry/seen-task": {
+        "holdoutPasses": 6197,
+        "paidLookups": 17173
+      },
+      "disjoint-transfer-cohort": {
+        "holdoutPasses": 56166,
+        "paidLookups": 29527
+      },
+      "earlier-screen-cohort": {
+        "holdoutPasses": 26651,
+        "paidLookups": 31995
+      }
+    }
+  },
+  "plan": {
+    "actions": [
+      "fitted-static",
+      "prefix-and-validation-short-circuit",
+      "cohort-budgeted-short-circuit",
+      "cohort-nonloss-short-circuit"
+    ],
+    "budgetPercent": 100,
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "cycles": 3,
+    "discoveryReceiptSha256": "3f4cfc4f2bc4ff98adabafbbb87ee67f7d7ddb2c0b94c5424b9c6008a599e4ed",
+    "fullRosterCap": 19,
+    "gepaVersion": "0.1.4",
+    "protocol": "promotion-aware-archive-routing-fit-v1",
+    "scope": "Evaluate every pair of existing screen actions on discovery. Use the first action until the episode\u2019s first verified promotion and the second thereafter. Fit one pair across cohorts with the static lookup cap per discovery cohort. Maximize total passes, minimize total cost on score ties and use name order for exact ties. Fit the same-action control under identical constraints. Report feasibility at 95 percent of each static cap. As a secondary analysis select the best distinct-action pair within the fitted fixed policy\u2019s actual lookup count in every discovery cohort. Target scores are excluded from fitting.",
+    "screenFitSha256": "03efa6bac5004515cc8c1b72a01bcf7b404803416312974e536e6cda3aec4dcf",
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "continuous_archive_routing.py": "ec14401f7f15eba4906f760685af47bb62b364ca09be60c3705eb9cf15d2b767",
+      "paid_prefix_archive_routing.py": "b6416a9a41693801db7894b959e96f16e292df8d78a6f4d6165ce831ae534c64",
+      "promotion_aware_archive_routing.py": "5794e8a5f40752ada693a0f57d9381b57c6fc3b9846b7388d6c732fa8a9234c5",
+      "short_circuit_archive_routing.py": "9486b2b4d5c76b8d77a022e6fa13b325c10f5191e83ad878f5d7c2150896c321"
+    }
+  },
+  "planSha256": "ec086724a6ca005f2f97da8bc7ba28708435c1d856ec0016e8aecd2f6b2851a7",
+  "realizedFixedBudgets": {
+    "BBH": 47539,
+    "BBH/new-task": 2948,
+    "BBH/seen-task": 25426,
+    "LMentry": 26614,
+    "LMentry/new-task": 3710,
+    "LMentry/seen-task": 17184,
+    "disjoint-transfer-cohort": 27101,
+    "earlier-screen-cohort": 30159
+  },
+  "static": {
+    "BBH": {
+      "holdoutPasses": 10640,
+      "paidLookups": 48799
+    },
+    "BBH/new-task": {
+      "holdoutPasses": 695,
+      "paidLookups": 3035
+    },
+    "BBH/seen-task": {
+      "holdoutPasses": 5094,
+      "paidLookups": 26414
+    },
+    "LMentry": {
+      "holdoutPasses": 7042,
+      "paidLookups": 27446
+    },
+    "LMentry/new-task": {
+      "holdoutPasses": 583,
+      "paidLookups": 3731
+    },
+    "LMentry/seen-task": {
+      "holdoutPasses": 6193,
+      "paidLookups": 18182
+    },
+    "disjoint-transfer-cohort": {
+      "holdoutPasses": 56159,
+      "paidLookups": 30551
+    },
+    "earlier-screen-cohort": {
+      "holdoutPasses": 26648,
+      "paidLookups": 33251
+    }
+  }
+}
