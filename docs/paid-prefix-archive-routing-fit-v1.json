@@ -1,0 +1,137 @@
+{
+  "closedPrecheck": {
+    "holdoutPasses": 24905,
+    "paidLookups": 2212
+  },
+  "discoveryBudget": 65728,
+  "models": {
+    "fitted-static": {
+      "actions": {
+        "open": "incumbent-first"
+      },
+      "stateCounts": {
+        "open": 3735
+      },
+      "trainingPoint": {
+        "holdoutPasses": 109706,
+        "paidLookups": 65728
+      }
+    },
+    "prefix-and-validation": {
+      "actions": {
+        "1/0": "certified-wide",
+        "1/1": "preserve-one",
+        "2/0": "incumbent-first",
+        "2/1": "preserve-one",
+        "3/0": "single-repair",
+        "3/1": "preserve-one",
+        "4/0": "retain-start",
+        "4/1": "retain-start"
+      },
+      "stateCounts": {
+        "1/0": 1639,
+        "1/1": 706,
+        "2/0": 387,
+        "2/1": 412,
+        "3/0": 145,
+        "3/1": 237,
+        "4/0": 83,
+        "4/1": 126
+      },
+      "trainingPoint": {
+        "holdoutPasses": 109921,
+        "paidLookups": 65268
+      }
+    },
+    "qualification-prefix": {
+      "actions": {
+        "1": "certified-wide",
+        "2": "preserve-one",
+        "3": "retain-start",
+        "4": "single-repair"
+      },
+      "stateCounts": {
+        "1": 2345,
+        "2": 799,
+        "3": 382,
+        "4": 209
+      },
+      "trainingPoint": {
+        "holdoutPasses": 109786,
+        "paidLookups": 65588
+      }
+    }
+  },
+  "plan": {
+    "actions": [
+      "retain-start",
+      "certified-wide",
+      "incumbent-first",
+      "single-repair",
+      "preserve-one"
+    ],
+    "budgetControl": "incumbent-first",
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "discoveryReceiptSha256": "3f4cfc4f2bc4ff98adabafbbb87ee67f7d7ddb2c0b94c5424b9c6008a599e4ed",
+    "features": [
+      "fitted-static",
+      "qualification-prefix",
+      "prefix-and-validation"
+    ],
+    "fullRosterCap": 19,
+    "gepaVersion": "0.1.4",
+    "minimumGain": 1,
+    "protocol": "paid-prefix-archive-routing-fit-v1",
+    "scope": "Fit one deterministic search choice per observed incumbent qualification-prefix length, with or without the first incumbent validation grade. All policies share the original independent precheck and proof. Optimize archived held-out passes under the pooled incumbent-first budget on discovery alone. Compare with an equally funded fitted static choice. Price every physical read and use the fitted static action on unseen states.",
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "benchmarks/incumbent_first_paid_repair.py": "e88861881bfb85f1f1ed89ab612e9f93563a6947877d75d82566cd3395c40fc6",
+      "benchmarks/paid_prefix_archive_routing.py": "b6416a9a41693801db7894b959e96f16e292df8d78a6f4d6165ce831ae534c64",
+      "benchmarks/paired_repair_race.py": "2a38cd08bbcb8456b9ed6349f089be71bb95fff8a2fd613260a60f8c5c463d42",
+      "benchmarks/recorded_first_certificate_transfer.py": "89cef093acee078eee02f46f169d36a89c7c4cc48d944d94f7fcffb95a665040",
+      "benchmarks/shared_validation_archive_transfer.py": "d576caf1a04965eb7f67adf6264994fce9948a266c553be93a19932f525badd4",
+      "benchmarks/validation_repair_anchor.py": "a07d8c86b3669c6da0780566faf5ba3cedec80658f4fde23795b695f8384effd",
+      "cpo/certified_shared_validation_cycle.py": "f4716cee84c1853c69258c37a0021db3434bf22737bbc13300b2179cf1c3aabb",
+      "cpo/two_sided_certificate_cycle.py": "627d48aa21ebae7011e9c69bb28fb37f607079920af2304b13b6e8fa9180eb5a"
+    }
+  },
+  "planSha256": "57127dd0d27cdc19bc0e50c87b9a9861631b38ebefabe9b50e71db1b370bfc16"
+}
