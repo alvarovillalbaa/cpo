@@ -1,0 +1,1084 @@
+{
+  "plan": {
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "corpusSha256": "83ea1db450d2113b23066158e8f4d6b6ba02b7dd537f9ae557ab41f331565e1f",
+    "cpoFamilies": [
+      "routed",
+      "fixed-screen",
+      "paired-certificate",
+      "math-strict-cpo"
+    ],
+    "datasets": {
+      "aime": {
+        "folds": [
+          [
+            0,
+            2,
+            4,
+            7,
+            9,
+            10,
+            12,
+            13,
+            18,
+            19,
+            20,
+            21,
+            24,
+            25,
+            27,
+            32,
+            33,
+            37,
+            38,
+            40,
+            43,
+            44
+          ],
+          [
+            1,
+            3,
+            5,
+            6,
+            8,
+            11,
+            14,
+            15,
+            16,
+            17,
+            22,
+            23,
+            26,
+            28,
+            29,
+            30,
+            31,
+            34,
+            35,
+            36,
+            39,
+            41,
+            42
+          ]
+        ],
+        "qualification": 4,
+        "searchCaps": {
+          "high": 30,
+          "low": 19,
+          "middle": 24
+        },
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ],
+        "training": 5,
+        "validation": 6
+      },
+      "arc": {
+        "folds": [
+          [
+            0,
+            1,
+            3,
+            5,
+            7,
+            11,
+            12,
+            15,
+            16,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            31,
+            32,
+            35,
+            37,
+            40,
+            41,
+            43,
+            44,
+            46,
+            48,
+            49,
+            51,
+            52,
+            54,
+            55,
+            56,
+            57,
+            59,
+            69,
+            70,
+            73,
+            76,
+            78,
+            79
+          ],
+          [
+            2,
+            4,
+            6,
+            8,
+            9,
+            10,
+            13,
+            14,
+            18,
+            19,
+            20,
+            21,
+            22,
+            29,
+            30,
+            33,
+            34,
+            36,
+            38,
+            39,
+            42,
+            45,
+            47,
+            50,
+            53,
+            58,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            71,
+            72,
+            74,
+            75,
+            77
+          ]
+        ],
+        "qualification": 6,
+        "searchCaps": {
+          "high": 40,
+          "low": 19,
+          "middle": 29
+        },
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ],
+        "training": 9,
+        "validation": 8
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "group": "rotated",
+    "mathTransferSha256": "53f3d0c02287f18f5a02328c2c1ed3d5355813f713a85a42633d3c62edeed180",
+    "originalMathPlanSha256": "b8b6e7ed7d0e5fa6371b54503b480c785743a24ea280a68cbbcea9cf8990ba1d",
+    "parentFrontierSha256": "01d1b0415bb7eab21600f78fdffc9cc057ab8c3760f0d39821b31ce2c6387e61",
+    "parentPlanSha256": "6b1269e93b43db3506200931ab91c77a4481ea471cd3e59b04270e05843f446e",
+    "proofFitSha256": "4f9004b8b10323b9571523e3cd2de324767731a6c399d6a0e4ceaeaf6c2d769d",
+    "protocol": "recorded-math-budget-crossfit-v1",
+    "rosterWidth": 4,
+    "routerFitSha256": "03efa6bac5004515cc8c1b72a01bcf7b404803416312974e536e6cda3aec4dcf",
+    "routerSearchCap": 19,
+    "scope": "Split archived cases into two disjoint folds by hashed identity before applying any episode splits. Each direction tunes on its calibration fold only. Audit only the selected settings on the other fold. Keep validation and qualification widths, halve training, and hold out the remaining cases. Apply one shared hard cap per episode, with up to two reads per qualification case reserved in addition to the search allowance. Report realized lookups and case-paired effects in both directions.",
+    "searchCap": 180,
+    "sourceSha256": {
+      "benchmarks/adaptive_archive_search.py": "8af13f4703ddb0200444fd6b3da870a308b1d85fbf149245b99396d26d06fff9",
+      "benchmarks/continuous_archive_backup.py": "5896f75fb17ba905d11aa978d4b7a6c8c71dde840005f968917fa49eb913be2a",
+      "benchmarks/continuous_backup_allocation.py": "99755b45f1524c667ab7bb11d493dfd839e17d6462e45169594ad3db9569e70b",
+      "benchmarks/gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "benchmarks/joint_archive_proof.py": "d2c2c9a0d89977842f4ae42318925bae92b107161b80b83e3ae19f28ae01c0fd",
+      "benchmarks/paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "benchmarks/recorded_math_budget_crossfit.py": "0f926fbf3e874b146cd5d743613cff3ec93a28dcd0abc0510cf5215d5189b3e1",
+      "benchmarks/recorded_math_router_frontier.py": "b9aa909e4f8af12173a76a11834615ba4a9924a31b43d695bc6278b294534fda",
+      "benchmarks/recorded_math_router_transfer.py": "270cdc7f0d2bf5009821a234df9200caaeb4a813df1960a7be030df7bdb082fa",
+      "benchmarks/recorded_math_validation_ties.py": "ea8a310a65392ddad1d3ecc5c1a4639674b941e8e02e344a81abf1ad802f07b0",
+      "benchmarks/recorded_two_witness_math_transfer.py": "1641fc09f52c4d99cdca7a76763c1f79e535858d9ed870184e3bcefd989b3cf9",
+      "benchmarks/routed_validation_ties.py": "116afb17765817c2cbf5ae1a434ebe980dcf04e6f588940877778008483fe399",
+      "benchmarks/shared_validation_split_safe_transfer.py": "e7cf20c0d55f15a6dcd384bce12aae6daca7049776141a74d1da66cc44fade63",
+      "cpo/deferred_certificate_cycle.py": "1ae3346815495b85c57ff0db6b196f61cb29cbd5bcc77ff8cf0c033adcc613e8",
+      "cpo/expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+      "cpo/joint_order_qualification.py": "e23551aa7525082c3b95244b4bc4cfe91d17c5858097e341f7eee2576902bfe2",
+      "cpo/paired_order_certificate_cycle.py": "a43caeae8788129acb4eb5d8c8036d85277beac70f8a3514d09c7209d24747c8",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "cpo/pool.py": "5e5e2ca90b0e6839d6c14d6eb9ba3680874092063196fec406f396c765a03ec0",
+      "cpo/two_sided_certificate_cycle.py": "627d48aa21ebae7011e9c69bb28fb37f607079920af2304b13b6e8fa9180eb5a"
+    },
+    "strictMathReceiptSha256": "bf90d2fab3a9b33eece3a15392234db88afcaa13e5b8e2cf897ac54c9656e451"
+  },
+  "planSha256": "444247fef736f730e7de400dddc70f52957b89627ee8eb548c25fdcf0f85aa4b",
+  "providerRequests": 0,
+  "results": {
+    "aime": {
+      "directions": [
+        {
+          "auditFold": 1,
+          "auditHoldoutRowsPerEpisode": 8,
+          "calibrationFold": 0,
+          "calibrationHoldoutRowsPerEpisode": 7,
+          "calibrationTotalsSha256": {
+            "cpo": "4db04d9a7f568751ae7e3ce5976e5d0febad1a0ca93f889c85fe8a7748730d4f",
+            "gepa": "6fcb6d56d6132da3b6a90e042786649c253e684366cf5730b84afa633d02660d",
+            "simple": "4db04d9a7f568751ae7e3ce5976e5d0febad1a0ca93f889c85fe8a7748730d4f"
+          },
+          "comparisons": {
+            "high": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 1394,
+                  "paidLookups": 2821,
+                  "setting": "routed/7"
+                },
+                "gepa": {
+                  "holdoutPasses": 1387,
+                  "paidLookups": 6845,
+                  "setting": "full:gepa-sequential-precheck/26/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1390,
+                  "paidLookups": 4265,
+                  "setting": "successive-halving/4/10"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 1156,
+                  "paidLookups": 2807,
+                  "setting": "routed/7"
+                },
+                "gepa": {
+                  "holdoutPasses": 1138,
+                  "paidLookups": 6738,
+                  "setting": "full:gepa-sequential-precheck/26/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1149,
+                  "paidLookups": 4193,
+                  "setting": "successive-halving/4/10"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 7,
+                  "pairedRange95": [
+                    -15,
+                    27
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": 4,
+                  "pairedRange95": [
+                    -13,
+                    20
+                  ]
+                }
+              }
+            },
+            "low": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 1394,
+                  "paidLookups": 2821,
+                  "setting": "routed/7"
+                },
+                "gepa": {
+                  "holdoutPasses": 1379,
+                  "paidLookups": 4101,
+                  "setting": "full:gepa-sequential-precheck/16/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1390,
+                  "paidLookups": 4265,
+                  "setting": "successive-halving/4/10"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 1156,
+                  "paidLookups": 2807,
+                  "setting": "routed/7"
+                },
+                "gepa": {
+                  "holdoutPasses": 1130,
+                  "paidLookups": 3865,
+                  "setting": "full:gepa-sequential-precheck/16/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1149,
+                  "paidLookups": 4193,
+                  "setting": "successive-halving/4/10"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 15,
+                  "pairedRange95": [
+                    -11,
+                    42
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": 4,
+                  "pairedRange95": [
+                    -13,
+                    20
+                  ]
+                }
+              }
+            },
+            "middle": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 1394,
+                  "paidLookups": 2821,
+                  "setting": "routed/7"
+                },
+                "gepa": {
+                  "holdoutPasses": 1388,
+                  "paidLookups": 6069,
+                  "setting": "full:gepa-sequential-precheck/24/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1390,
+                  "paidLookups": 4265,
+                  "setting": "successive-halving/4/10"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 1156,
+                  "paidLookups": 2807,
+                  "setting": "routed/7"
+                },
+                "gepa": {
+                  "holdoutPasses": 1137,
+                  "paidLookups": 5996,
+                  "setting": "full:gepa-sequential-precheck/24/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1149,
+                  "paidLookups": 4193,
+                  "setting": "successive-halving/4/10"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 6,
+                  "pairedRange95": [
+                    -17,
+                    28
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": 4,
+                  "pairedRange95": [
+                    -13,
+                    20
+                  ]
+                }
+              }
+            }
+          },
+          "episodes": 320
+        },
+        {
+          "auditFold": 0,
+          "auditHoldoutRowsPerEpisode": 7,
+          "calibrationFold": 1,
+          "calibrationHoldoutRowsPerEpisode": 8,
+          "calibrationTotalsSha256": {
+            "cpo": "28629c6cd8c24817dcc7db5f1417fb55e5fe21dce7e50f2c28798c07e1fcbea7",
+            "gepa": "7b5a8dd999f3e3ef0e7b858bf7c42cee6607e6f3502ff49e9110374d3a66ea51",
+            "simple": "28629c6cd8c24817dcc7db5f1417fb55e5fe21dce7e50f2c28798c07e1fcbea7"
+          },
+          "comparisons": {
+            "high": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 1146,
+                  "paidLookups": 6555,
+                  "setting": "math-strict-cpo/21"
+                },
+                "gepa": {
+                  "holdoutPasses": 1131,
+                  "paidLookups": 5180,
+                  "setting": "half:gepa-batched-precheck/28/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1140,
+                  "paidLookups": 10536,
+                  "setting": "uniform/4/30"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 1421,
+                  "paidLookups": 6473,
+                  "setting": "math-strict-cpo/21"
+                },
+                "gepa": {
+                  "holdoutPasses": 1395,
+                  "paidLookups": 5732,
+                  "setting": "half:gepa-batched-precheck/28/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1414,
+                  "paidLookups": 10838,
+                  "setting": "uniform/4/30"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 15,
+                  "pairedRange95": [
+                    -13,
+                    43
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": 6,
+                  "pairedRange95": [
+                    -6,
+                    18
+                  ]
+                }
+              }
+            },
+            "low": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 1144,
+                  "paidLookups": 6055,
+                  "setting": "math-strict-cpo/19"
+                },
+                "gepa": {
+                  "holdoutPasses": 1130,
+                  "paidLookups": 4361,
+                  "setting": "half:gepa-sequential-precheck/18/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1143,
+                  "paidLookups": 5859,
+                  "setting": "uniform/4/15"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 1418,
+                  "paidLookups": 5941,
+                  "setting": "math-strict-cpo/19"
+                },
+                "gepa": {
+                  "holdoutPasses": 1386,
+                  "paidLookups": 4627,
+                  "setting": "half:gepa-sequential-precheck/18/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1401,
+                  "paidLookups": 6022,
+                  "setting": "uniform/4/15"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 14,
+                  "pairedRange95": [
+                    -12,
+                    40
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": 1,
+                  "pairedRange95": [
+                    -12,
+                    13
+                  ]
+                }
+              }
+            },
+            "middle": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 1146,
+                  "paidLookups": 6555,
+                  "setting": "math-strict-cpo/21"
+                },
+                "gepa": {
+                  "holdoutPasses": 1137,
+                  "paidLookups": 5996,
+                  "setting": "full:gepa-sequential-precheck/24/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1140,
+                  "paidLookups": 7412,
+                  "setting": "uniform/4/20"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 1421,
+                  "paidLookups": 6473,
+                  "setting": "math-strict-cpo/21"
+                },
+                "gepa": {
+                  "holdoutPasses": 1388,
+                  "paidLookups": 6069,
+                  "setting": "full:gepa-sequential-precheck/24/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 1403,
+                  "paidLookups": 7630,
+                  "setting": "uniform/4/20"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 9,
+                  "pairedRange95": [
+                    -18,
+                    35
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": 6,
+                  "pairedRange95": [
+                    -5,
+                    18
+                  ]
+                }
+              }
+            }
+          },
+          "episodes": 320
+        }
+      ],
+      "pairedAcrossAuditFolds": {
+        "high": {
+          "gepa": {
+            "holdoutPassDifference": 22,
+            "pairedRange95": [
+              -13,
+              59
+            ]
+          },
+          "simple": {
+            "holdoutPassDifference": 10,
+            "pairedRange95": [
+              -11,
+              31
+            ]
+          }
+        },
+        "low": {
+          "gepa": {
+            "holdoutPassDifference": 29,
+            "pairedRange95": [
+              -8,
+              69
+            ]
+          },
+          "simple": {
+            "holdoutPassDifference": 5,
+            "pairedRange95": [
+              -16,
+              26
+            ]
+          }
+        },
+        "middle": {
+          "gepa": {
+            "holdoutPassDifference": 15,
+            "pairedRange95": [
+              -21,
+              52
+            ]
+          },
+          "simple": {
+            "holdoutPassDifference": 10,
+            "pairedRange95": [
+              -10,
+              31
+            ]
+          }
+        }
+      }
+    },
+    "arc": {
+      "directions": [
+        {
+          "auditFold": 1,
+          "auditHoldoutRowsPerEpisode": 17,
+          "calibrationFold": 0,
+          "calibrationHoldoutRowsPerEpisode": 17,
+          "calibrationTotalsSha256": {
+            "cpo": "4b22fbe6bae1bb7df4b8894ce4c0afc12ef51335a1cb388dcb564268de66973b",
+            "gepa": "5787bdcc17d4a7662f53840fe8fcc84a1711a0f0fcb6691d2f37e8358d387ce1",
+            "simple": "4b22fbe6bae1bb7df4b8894ce4c0afc12ef51335a1cb388dcb564268de66973b"
+          },
+          "comparisons": {
+            "high": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 4555,
+                  "paidLookups": 8265,
+                  "setting": "math-strict-cpo/25"
+                },
+                "gepa": {
+                  "holdoutPasses": 4490,
+                  "paidLookups": 9649,
+                  "setting": "full:gepa-sequential-precheck/40/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 4586,
+                  "paidLookups": 14672,
+                  "setting": "uniform/4/40"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 5087,
+                  "paidLookups": 7289,
+                  "setting": "math-strict-cpo/25"
+                },
+                "gepa": {
+                  "holdoutPasses": 5070,
+                  "paidLookups": 7426,
+                  "setting": "full:gepa-sequential-precheck/40/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 5082,
+                  "paidLookups": 12324,
+                  "setting": "uniform/4/40"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 65,
+                  "pairedRange95": [
+                    34,
+                    99
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": -31,
+                  "pairedRange95": [
+                    -58,
+                    -7
+                  ]
+                }
+              }
+            },
+            "low": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 4527,
+                  "paidLookups": 6666,
+                  "setting": "math-strict-cpo/19"
+                },
+                "gepa": {
+                  "holdoutPasses": 4459,
+                  "paidLookups": 4534,
+                  "setting": "half:gepa-sequential-precheck/16/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 4547,
+                  "paidLookups": 7621,
+                  "setting": "successive-halving/4/18"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 5042,
+                  "paidLookups": 6171,
+                  "setting": "math-strict-cpo/19"
+                },
+                "gepa": {
+                  "holdoutPasses": 4953,
+                  "paidLookups": 3784,
+                  "setting": "half:gepa-sequential-precheck/16/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 5051,
+                  "paidLookups": 6588,
+                  "setting": "successive-halving/4/18"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 68,
+                  "pairedRange95": [
+                    35,
+                    104
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": -20,
+                  "pairedRange95": [
+                    -33,
+                    -8
+                  ]
+                }
+              }
+            },
+            "middle": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 4555,
+                  "paidLookups": 8265,
+                  "setting": "math-strict-cpo/25"
+                },
+                "gepa": {
+                  "holdoutPasses": 4491,
+                  "paidLookups": 7709,
+                  "setting": "full:gepa-sequential-precheck/28/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 4552,
+                  "paidLookups": 8279,
+                  "setting": "successive-halving/4/20"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 5087,
+                  "paidLookups": 7289,
+                  "setting": "math-strict-cpo/25"
+                },
+                "gepa": {
+                  "holdoutPasses": 5035,
+                  "paidLookups": 6156,
+                  "setting": "full:gepa-sequential-precheck/28/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 5063,
+                  "paidLookups": 7135,
+                  "setting": "successive-halving/4/20"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 64,
+                  "pairedRange95": [
+                    31,
+                    102
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": 3,
+                  "pairedRange95": [
+                    -8,
+                    13
+                  ]
+                }
+              }
+            }
+          },
+          "episodes": 360
+        },
+        {
+          "auditFold": 0,
+          "auditHoldoutRowsPerEpisode": 17,
+          "calibrationFold": 1,
+          "calibrationHoldoutRowsPerEpisode": 17,
+          "calibrationTotalsSha256": {
+            "cpo": "6121ffe943dc94eda834ac5cce5da8063296206942f0830b67268d32c702fbff",
+            "gepa": "c78e171cee08baaf1cc8cd7c64b37f8f10666cdf08e8059696eb0094dfb5903c",
+            "simple": "6121ffe943dc94eda834ac5cce5da8063296206942f0830b67268d32c702fbff"
+          },
+          "comparisons": {
+            "high": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 5082,
+                  "paidLookups": 7820,
+                  "setting": "math-strict-cpo/40"
+                },
+                "gepa": {
+                  "holdoutPasses": 5013,
+                  "paidLookups": 6724,
+                  "setting": "full:gepa-batched-precheck/40/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 5064,
+                  "paidLookups": 11007,
+                  "setting": "uniform/4/35"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 4586,
+                  "paidLookups": 9104,
+                  "setting": "math-strict-cpo/40"
+                },
+                "gepa": {
+                  "holdoutPasses": 4499,
+                  "paidLookups": 8760,
+                  "setting": "full:gepa-batched-precheck/40/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 4586,
+                  "paidLookups": 13086,
+                  "setting": "uniform/4/35"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 69,
+                  "pairedRange95": [
+                    26,
+                    116
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": 18,
+                  "pairedRange95": [
+                    1,
+                    37
+                  ]
+                }
+              }
+            },
+            "low": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 4998,
+                  "paidLookups": 3494,
+                  "setting": "fixed-screen/13"
+                },
+                "gepa": {
+                  "holdoutPasses": 4953,
+                  "paidLookups": 3784,
+                  "setting": "half:gepa-sequential-precheck/16/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 5051,
+                  "paidLookups": 6588,
+                  "setting": "successive-halving/4/18"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 4545,
+                  "paidLookups": 4423,
+                  "setting": "fixed-screen/13"
+                },
+                "gepa": {
+                  "holdoutPasses": 4459,
+                  "paidLookups": 4534,
+                  "setting": "half:gepa-sequential-precheck/16/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 4547,
+                  "paidLookups": 7621,
+                  "setting": "successive-halving/4/18"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 45,
+                  "pairedRange95": [
+                    20,
+                    75
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": -53,
+                  "pairedRange95": [
+                    -79,
+                    -27
+                  ]
+                }
+              }
+            },
+            "middle": {
+              "audit": {
+                "cpo": {
+                  "holdoutPasses": 5084,
+                  "paidLookups": 7622,
+                  "setting": "math-strict-cpo/29"
+                },
+                "gepa": {
+                  "holdoutPasses": 5035,
+                  "paidLookups": 6156,
+                  "setting": "full:gepa-sequential-precheck/28/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 5063,
+                  "paidLookups": 8361,
+                  "setting": "uniform/4/25"
+                }
+              },
+              "calibration": {
+                "cpo": {
+                  "holdoutPasses": 4577,
+                  "paidLookups": 8808,
+                  "setting": "math-strict-cpo/29"
+                },
+                "gepa": {
+                  "holdoutPasses": 4491,
+                  "paidLookups": 7709,
+                  "setting": "full:gepa-sequential-precheck/28/paired-gain-1"
+                },
+                "simple": {
+                  "holdoutPasses": 4577,
+                  "paidLookups": 9777,
+                  "setting": "uniform/4/25"
+                }
+              },
+              "pairedAudit": {
+                "gepa": {
+                  "holdoutPassDifference": 49,
+                  "pairedRange95": [
+                    3,
+                    99
+                  ]
+                },
+                "simple": {
+                  "holdoutPassDifference": 21,
+                  "pairedRange95": [
+                    0,
+                    42
+                  ]
+                }
+              }
+            }
+          },
+          "episodes": 360
+        }
+      ],
+      "pairedAcrossAuditFolds": {
+        "high": {
+          "gepa": {
+            "holdoutPassDifference": 134,
+            "pairedRange95": [
+              80,
+              192
+            ]
+          },
+          "simple": {
+            "holdoutPassDifference": -13,
+            "pairedRange95": [
+              -45,
+              18
+            ]
+          }
+        },
+        "low": {
+          "gepa": {
+            "holdoutPassDifference": 113,
+            "pairedRange95": [
+              70,
+              159
+            ]
+          },
+          "simple": {
+            "holdoutPassDifference": -73,
+            "pairedRange95": [
+              -102,
+              -44
+            ]
+          }
+        },
+        "middle": {
+          "gepa": {
+            "holdoutPassDifference": 113,
+            "pairedRange95": [
+              55,
+              176
+            ]
+          },
+          "simple": {
+            "holdoutPassDifference": 24,
+            "pairedRange95": [
+              1,
+              48
+            ]
+          }
+        }
+      }
+    }
+  }
+}
