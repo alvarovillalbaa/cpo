@@ -1,0 +1,232 @@
+{
+  "incumbentFirstByCohort": {
+    "BBH": {
+      "holdoutPasses": 9740,
+      "paidLookups": 16512
+    },
+    "BBH/new-task": {
+      "holdoutPasses": 603,
+      "paidLookups": 972
+    },
+    "BBH/seen-task": {
+      "holdoutPasses": 4844,
+      "paidLookups": 8864
+    },
+    "LMentry": {
+      "holdoutPasses": 5962,
+      "paidLookups": 9827
+    },
+    "LMentry/new-task": {
+      "holdoutPasses": 312,
+      "paidLookups": 1336
+    },
+    "LMentry/seen-task": {
+      "holdoutPasses": 5504,
+      "paidLookups": 6511
+    },
+    "disjoint-transfer-cohort": {
+      "holdoutPasses": 56095,
+      "paidLookups": 10271
+    },
+    "earlier-screen-cohort": {
+      "holdoutPasses": 26646,
+      "paidLookups": 11435
+    }
+  },
+  "menusSha256": "3095fde4f9ebe8a71d363b23a7abafcca81fb4207b0e38e6505d3e2111a6f129",
+  "models": {
+    "cohort-budgeted": {
+      "actions": {
+        "1/0": "certified-wide",
+        "1/1": "preserve-one",
+        "2/0": "single-repair",
+        "2/1": "retain-start",
+        "3/0": "single-repair",
+        "3/1": "retain-start",
+        "4/0": "retain-start",
+        "4/1": "single-repair"
+      },
+      "byCohort": {
+        "BBH": {
+          "budget": 15686,
+          "holdoutPasses": 9751,
+          "paidLookups": 14574
+        },
+        "BBH/new-task": {
+          "budget": 923,
+          "holdoutPasses": 615,
+          "paidLookups": 913
+        },
+        "BBH/seen-task": {
+          "budget": 8420,
+          "holdoutPasses": 4873,
+          "paidLookups": 8407
+        },
+        "LMentry": {
+          "budget": 9335,
+          "holdoutPasses": 5902,
+          "paidLookups": 8491
+        },
+        "LMentry/new-task": {
+          "budget": 1269,
+          "holdoutPasses": 268,
+          "paidLookups": 1262
+        },
+        "LMentry/seen-task": {
+          "budget": 6185,
+          "holdoutPasses": 5522,
+          "paidLookups": 5588
+        },
+        "disjoint-transfer-cohort": {
+          "budget": 9757,
+          "holdoutPasses": 56110,
+          "paidLookups": 8550
+        },
+        "earlier-screen-cohort": {
+          "budget": 10863,
+          "holdoutPasses": 26640,
+          "paidLookups": 9018
+        }
+      }
+    },
+    "cohort-nonloss": {
+      "actions": {
+        "1/0": "incumbent-first",
+        "1/1": "incumbent-first",
+        "2/0": "incumbent-first",
+        "2/1": "incumbent-first",
+        "3/0": "incumbent-first",
+        "3/1": "incumbent-first",
+        "4/0": "retain-start",
+        "4/1": "retain-start"
+      },
+      "byCohort": {
+        "BBH": {
+          "budget": 16512,
+          "holdoutPasses": 9740,
+          "paidLookups": 16291
+        },
+        "BBH/new-task": {
+          "budget": 972,
+          "holdoutPasses": 603,
+          "paidLookups": 972
+        },
+        "BBH/seen-task": {
+          "budget": 8864,
+          "holdoutPasses": 4844,
+          "paidLookups": 8633
+        },
+        "LMentry": {
+          "budget": 9827,
+          "holdoutPasses": 5962,
+          "paidLookups": 9735
+        },
+        "LMentry/new-task": {
+          "budget": 1336,
+          "holdoutPasses": 312,
+          "paidLookups": 1336
+        },
+        "LMentry/seen-task": {
+          "budget": 6511,
+          "holdoutPasses": 5505,
+          "paidLookups": 6305
+        },
+        "disjoint-transfer-cohort": {
+          "budget": 10271,
+          "holdoutPasses": 56095,
+          "paidLookups": 9575
+        },
+        "earlier-screen-cohort": {
+          "budget": 11435,
+          "holdoutPasses": 26647,
+          "paidLookups": 10634
+        }
+      }
+    }
+  },
+  "plan": {
+    "actions": [
+      "retain-start",
+      "certified-wide",
+      "incumbent-first",
+      "single-repair",
+      "preserve-one"
+    ],
+    "budgetControl": "incumbent-first",
+    "budgetedSourceSha256": "41a5acf28dad81a2a126b03832e75065497f852ea3d98417230faa6a26c40eb9",
+    "caseCounts": [
+      10,
+      6,
+      4
+    ],
+    "challengers": 8,
+    "discoveryReceiptSha256": "3f4cfc4f2bc4ff98adabafbbb87ee67f7d7ddb2c0b94c5424b9c6008a599e4ed",
+    "features": [
+      "fitted-static",
+      "qualification-prefix",
+      "prefix-and-validation"
+    ],
+    "fullRosterCap": 19,
+    "gepaVersion": "0.1.4",
+    "minimumGain": 1,
+    "parentPlanSha256": "57127dd0d27cdc19bc0e50c87b9a9861631b38ebefabe9b50e71db1b370bfc16",
+    "policies": {
+      "cohort-budgeted": {
+        "budgetPercent": 95,
+        "requireNonloss": false
+      },
+      "cohort-nonloss": {
+        "budgetPercent": 100,
+        "requireNonloss": true
+      }
+    },
+    "pooledFitSha256": "23f78bb833491e0f588f55997eebd87c1dca940ef106999089936feab2dadceb",
+    "protocol": "cohort-budgeted-archive-routing-fit-v1",
+    "scope": "Fit the existing paid lookup router on discovery outcomes only. Enforce a separate cap on each discovery cohort. Within those caps maximize total passes, minimize total lookups and break exact ties lexicographically. The nonloss control also requires every discovery cohort to match or exceed its incumbent-first score. The deployed table uses no cohort labels.",
+    "seeds": [
+      43101,
+      43120,
+      43139,
+      43158,
+      43177,
+      43196,
+      43215,
+      43234,
+      43253,
+      43272,
+      43291,
+      43310,
+      43329,
+      43348,
+      43367,
+      43386,
+      43405,
+      43424,
+      43443,
+      43462,
+      43481,
+      43500,
+      43519,
+      43538,
+      43557,
+      43576,
+      43595,
+      43614,
+      43633,
+      43652,
+      43671,
+      43690
+    ],
+    "sourceSha256": {
+      "benchmarks/incumbent_first_paid_repair.py": "e88861881bfb85f1f1ed89ab612e9f93563a6947877d75d82566cd3395c40fc6",
+      "benchmarks/paid_prefix_archive_routing.py": "b6416a9a41693801db7894b959e96f16e292df8d78a6f4d6165ce831ae534c64",
+      "benchmarks/paired_repair_race.py": "2a38cd08bbcb8456b9ed6349f089be71bb95fff8a2fd613260a60f8c5c463d42",
+      "benchmarks/recorded_first_certificate_transfer.py": "89cef093acee078eee02f46f169d36a89c7c4cc48d944d94f7fcffb95a665040",
+      "benchmarks/shared_validation_archive_transfer.py": "d576caf1a04965eb7f67adf6264994fce9948a266c553be93a19932f525badd4",
+      "benchmarks/validation_repair_anchor.py": "a07d8c86b3669c6da0780566faf5ba3cedec80658f4fde23795b695f8384effd",
+      "cpo/certified_shared_validation_cycle.py": "f4716cee84c1853c69258c37a0021db3434bf22737bbc13300b2179cf1c3aabb",
+      "cpo/two_sided_certificate_cycle.py": "627d48aa21ebae7011e9c69bb28fb37f607079920af2304b13b6e8fa9180eb5a"
+    }
+  },
+  "planSha256": "8712ecb341c21fe2b378a9c876e0bedc35b3c15ef1b4b524dea67f9bae80e9e6"
+}
