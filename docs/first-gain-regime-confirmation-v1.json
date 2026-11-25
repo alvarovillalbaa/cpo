@@ -1,0 +1,665 @@
+{
+  "fixtureQualified": true,
+  "plan": {
+    "candidate": "cpo-first-gain",
+    "casesByTask": {
+      "outage": 16,
+      "ticket": 8,
+      "warehouse": 24
+    },
+    "confirmationRule": "Bind the final prompts and costs only after verified qualifying model development. Score all assigned cases and repeats for the initial prompt and every finalist. Require all paired quality and cost gates, per-task floors, and an exact pass on each regime case. Share only identical prompt, case and repeat requests.",
+    "controls": [
+      "cpo-certified-nomination",
+      "successive-halving",
+      "gepa-sequential",
+      "gepa-batched"
+    ],
+    "delivery": "offline-design-and-gate-rehearsal",
+    "developmentManifestSha256": "80b96150569d3be6927f3f6d171d56b0b3b986e1bb210ccfa5b185d2dcfd376f",
+    "developmentPlanSha256": "4e622cefedca4a2a00e2396d6c6f20dfab849be8943ddf8ad03b507551e61282",
+    "efficiencyPercent": 90,
+    "generationRequestCeiling": 576,
+    "minimumAddedPasses": 4,
+    "minimumPassesPerRegime": 1,
+    "minimumTaskPasses": {
+      "outage": 24,
+      "ticket": 12,
+      "warehouse": 36
+    },
+    "panelSha256": "091a097f92f033279f7e603750afde8c50c4580cd8451a5e489bc7857e5254ec",
+    "protocol": "cpo-first-gain-regime-confirmation-v1",
+    "repeats": 2,
+    "sourceSha256": {
+      "benchmarks/certified_nomination_prospective.py": "052a480dfb4a51d609c40f57e19781ab7c80aeb30dec6186bb9f580cdc11cda3",
+      "benchmarks/first_gain_independent_proposals.py": "aef032466c988a004df4e16a96c1020ca4c2608530439a77fee90ec94b99db63",
+      "benchmarks/first_gain_regime_confirmation.py": "817632b67b6abbc2b850ab8bd8996f422c8ad33e69922f2c69d33afddd3f1017",
+      "benchmarks/full_roster_precheck_prospective.py": "616a0282143e199dddc584a3714da82e33f18add3d4d9bc6a82cb56a521232ad",
+      "benchmarks/gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "benchmarks/grounded.py": "c9c7129fa1a67501a31cb5e897acc546d921a5ac3fb95530f57ade7752793350",
+      "benchmarks/grounded_fixture.py": "f42d309d629cafd303f42bc319dc388333398134644597ad274de9d380cf2a31",
+      "benchmarks/grounded_staged.py": "c8062bf39dcb806b7b1558f479bc4bc6258893821d8e1a39f569b6307fb1fe9c",
+      "benchmarks/grounded_staged_policy_comparison.py": "a75e57c37f44a142eb3d53229cd0d1268bc79e8902c457a07292afde95ebcb58",
+      "benchmarks/grounded_witness_episode.py": "28f819b02dddedcd013f89ce354fcf35e418bcdc5e9960f7dba948653d87a384",
+      "benchmarks/opening_screen_typed.py": "2ec7fc7f811d5c9f1bd1bc44db7013e70acbb5c1cdfda70b377f2faa6007b95e",
+      "benchmarks/pool.py": "ba1e6012e5068d34a57b8139ecba2aff5dbe809051f6958a9f23134f5fe69016",
+      "benchmarks/prompteval_transfer.py": "3f467c074f22b3d96d5ef0654fc9d9ba7c588363b51cc8ec62744a38a24b452c",
+      "benchmarks/settled_episode_prospective.py": "c9fcdc5b831ed71d9318e825465d79564d9a32ac47eeddfd11681904555511a5",
+      "benchmarks/settled_episode_prospective_fixture.py": "fb52b27116a30136cd2f17f7e4e6594e3188ffdc2f8b872eb33cc58515104338",
+      "benchmarks/typed_policy.py": "9fb85272a82c61499ba7b614d233964f9e8c077ad1ca630ac1030737202a0f1f",
+      "benchmarks/validation_routed_prospective.py": "5f1c4c5524d2d8002a6c6d4fe5e924adc3dc3fa77b32c617054f1426d021d175",
+      "benchmarks/witness_regime_coverage.py": "b382b284965c8d6467ce6418f45646973901f6f6f4fd8e26f0484b89e6b0a487",
+      "cpo/__init__.py": "f5fa7191a6ee4ee3b4d627dd2d324f78e79969ef8a8e5b35031951af2280be56",
+      "cpo/_contract.py": "6dc35e791b4cbff252a4950017fcf603d8c8f37609d61a11bfeddcdae4257102",
+      "cpo/_paired_read_order.py": "d3efdfc272f61167e77a66f38dd3b726c8dabbe96702f35396d1652fea8456dd",
+      "cpo/anchored_validation.py": "20d4ae69a2dd763800adc2c5a7b85ce0285510ca957cae4d5f5058c23a376ac0",
+      "cpo/batched_field_rewrite.py": "3e87e41f392a78d7d0ef065c4b52e90c578455d2a334200733468ab98edc23a2",
+      "cpo/bounded_discovery.py": "de4716458537ac93b8d4d9b9cae0f0eaf84a58bfcb0094fd44dba7e9cdd00acf",
+      "cpo/bounded_opening_repair.py": "886a0a6b0243f31ee1b3036c7f90b6adb25f587c787866ce34638c06f2b00101",
+      "cpo/bounded_uniform_validation.py": "710ba12473675f1198ec9da2451eb04c73f4420b5c3ff594e818e0b9d1a0330c",
+      "cpo/certified_pool.py": "e290a11f7ec66d5a7349c78f8e82f0b2795d404789051340005f5e4b926c50ba",
+      "cpo/certified_shared_validation_cycle.py": "f4716cee84c1853c69258c37a0021db3434bf22737bbc13300b2179cf1c3aabb",
+      "cpo/challenger.py": "478272234d6443c1aeca6ff59c80abf43ac7437a458a13807e5ae2602b2b88ac",
+      "cpo/composition.py": "1749fe2fff089c880c6b2f4827b7b25812440f461e6b415e1061a41e2079a2bf",
+      "cpo/coverage_confirmation.py": "882fe59b4ebc45dea54c2c8248193d868220b803ace792ed8953ca5d33401277",
+      "cpo/covered_pool.py": "223a3f33fb4313d1ac33bb815c4fd2b7de15138c526f4b1b25f5e05f951d3dc6",
+      "cpo/cycle.py": "c392102ce24bfe9986b896746a29f224313aef8d692116c072039e945d85f6e7",
+      "cpo/deferred_certificate_cycle.py": "1ae3346815495b85c57ff0db6b196f61cb29cbd5bcc77ff8cf0c033adcc613e8",
+      "cpo/demonstrations.py": "3148666f6b7907b277ace66099a753597e0afe24f67c1bfab46449de511b1ffe",
+      "cpo/development_qualification.py": "ca79032327fe7d5aa5591f35c4e731cc35124c94d74f8e268c5e5eb8b57bed5e",
+      "cpo/development_qualification_bounds.py": "b85cee640291d68200993046a833f3d083c6316d8d3a48273347080d4fd729b2",
+      "cpo/episode_admission.py": "90b6df1a6f9fc9f15bc9570b6982accb5f1d8871146701ee694eaab7f3c2602a",
+      "cpo/episode_probe.py": "a5454fa834eef31c7cb4335365ebf731c72fa28d11e06487d99f0724eb1943b9",
+      "cpo/evidence.py": "0e2cb3266cf1bb9fb9134a95820035f891f51761d6524c7f5a98dd6150a57ae8",
+      "cpo/expected_cost_cycle.py": "5ad0c4aaa39b10b442188db94864c0581c2f30056e445db4d14db4b734752583",
+      "cpo/expected_cost_proposal_cycle.py": "67c24e4b7fce56a1b941762ff8932ceedd64e07e7ff6c034b8ab0e71cc6cd182",
+      "cpo/expected_qualification.py": "ee675d1288e759c06698c7de91b96c1ba2656410cf153fc9bf13d4929b425029",
+      "cpo/family_ordered_validation.py": "5fcf8f6a448d1f346a534be25843684d8894e4bf95dc8876b51b82c88ec37595",
+      "cpo/family_qualification.py": "9ca2fd90b8da62743f4d95165af336103ccf2447a0585522a3a5698199eb0f9b",
+      "cpo/feedback_episode.py": "3626b828ee0d37e3a58aeb29961fe4f00496967c6835b27e8d1cc7cec79528f8",
+      "cpo/fixed_pool_cycle.py": "ae7877ace6cd043cbda3929ecc68cb5824b31aa491575029c81ba5a1c0f47649",
+      "cpo/full_roster_precheck/__init__.py": "4283579d6118efbf4ccd35fb7c15dc6f853e0249b3716b26d3bfd6f51c59672e",
+      "cpo/full_roster_precheck/certified_nomination.py": "1e2aa5669aaa5da383440af5c5583475f2a29c0974fab328604d912992ea40f3",
+      "cpo/full_roster_precheck/first_gain.py": "ae846103592d26586d1532bb3d1fed96c5d69a761e2307099aa253b8ac6def95",
+      "cpo/full_roster_precheck/fixed_opening.py": "675fed33c7421958a70ba07b868ab8c73450758c154bea2616fa3c683418798a",
+      "cpo/full_roster_precheck/validation_routing.py": "4878094bed3f32707500cbcfc3984d0004b5993db2795ca138ffb3f3d1510c48",
+      "cpo/gepa_frontier.py": "79a03f18e23c708bfbed737e1f7dd188ac7d6c8fedd4b53daa5683e81d88758f",
+      "cpo/gepa_parent.py": "8c1a6af0fb97261374322d7ea1454bac384ed9086bfcca508e49556118021af5",
+      "cpo/interleaved_validation_cases.py": "a7b1adbb24d0de9d3cab2eb1d7d209a96ccf19da7cf1ac49c8cdc3f5a049e5e3",
+      "cpo/joint_order_qualification.py": "e23551aa7525082c3b95244b4bc4cfe91d17c5858097e341f7eee2576902bfe2",
+      "cpo/lazy_incumbent.py": "c127c24775dd3e6a35513e1ab8c69d2acb97de3d05d7e2f2e5ebe09fe16e2b74",
+      "cpo/opening.py": "e5ce21274aedadfc72e851340448c36dc9e2eda82301ef666bd3dbeb47a525ba",
+      "cpo/opening_certificate.py": "0c33b20108d240656a8f15602e5f5b2a4ceb27b57e1f2e2cf4c2deeb5d455539",
+      "cpo/opening_dominance.py": "86786743ebea794dd1f1fa8de6551fbd35a7b8edeaa969a694c6c1f8d23dc970",
+      "cpo/opening_repair_cycle.py": "842f1bae68bfee3f098156dd13d673a41d3221ee74644a1f5e00b77c0dd60889",
+      "cpo/opening_screen_cycle.py": "d2d60763878b49470c9fd39b25292092f703123a2abf6aff04c91245c583c51e",
+      "cpo/opening_validation.py": "35aec8a3b391ae8fab76067a9fd8cac77f489f6f78e1bf977f42dcf744c90464",
+      "cpo/optimizer.py": "1f25446f2e7843b8f60d8f90a8478291eab5b2783a42a458b6dc63fc8e191dde",
+      "cpo/ordered_uniform_validation.py": "283565496c05be228645fad6eec591a2424b79831ffc4ef6de1d70b54ad0386d",
+      "cpo/paired_field_rewrite.py": "67473886886ba64db96e9296a5a73a6dfc516256c477d00ce4306e68d0883ef5",
+      "cpo/paired_order_certificate_cycle.py": "a43caeae8788129acb4eb5d8c8036d85277beac70f8a3514d09c7209d24747c8",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "cpo/paired_rewrite.py": "954397dfe843a0c3a82002410258f60e3e69de40fc029d4c7e9dd88197a91c7f",
+      "cpo/perfect_challenger_screen.py": "671a64b431986f48c223da0e1c21907d6e51f16fc179e191ea9b41529d33ddf0",
+      "cpo/pool.py": "5e5e2ca90b0e6839d6c14d6eb9ba3680874092063196fec406f396c765a03ec0",
+      "cpo/prechecked_certificate_cycle.py": "60e66aa4414e97a0cd5fbdf06494dd2df8740990e648fbbdb609db7d0fbcf68d",
+      "cpo/qualification_precheck.py": "1c54e5daecc135c55ebb362bb08aca8e71f0d116d93c0009fde3ed4d338226ee",
+      "cpo/qualification_prefix_cycle.py": "d8fe65b96410ef4fdcb7ebd30ba498b293eee7dea230a352468eea12e1158864",
+      "cpo/quoted_shared_validation_cycle.py": "aa36879d392022feee30fa045983316be030e34c28a20dce969f617b6ee2a811",
+      "cpo/regression_free_qualification.py": "5ab4bf2266946cebc89923823f6bb267fb2d435f0384d2423117e23a60488c9f",
+      "cpo/reinvested_shared_validation_cycle.py": "7d8c7df6e6f968358e074e4e44077c4de019ecfcb660e7598e37851341d5752e",
+      "cpo/required_probe.py": "3023f356ebdf526873c3fe7e3b1f5833c1a6437505078b51f07ef6a1331b3229",
+      "cpo/routed_repair_cycle.py": "8daa5e6f1f49ffe3b0d49c0ea1842233ecc3f8b119738e891a4b5877b631484a",
+      "cpo/second_case_qualification.py": "44cffab975145cae05cae7b9de7b60f38e7c74ccc9b28d619be1232f6a5fef1f",
+      "cpo/second_row_validation.py": "67fcc899899dc8b6a28aa7d3911de56fc98e69a943dfe52ceae9d4333383f45d",
+      "cpo/sequential_certificate_cycle.py": "2aef1b2ae6692df973d76373ff2b4aeefb63ed44bb564b431db97c314def95a1",
+      "cpo/sequential_field_rewrite.py": "67ff43a93137534e8f94502206f08ba35b6746d9b54f045f6f63b6ca3bdeeb38",
+      "cpo/settled_episode.py": "b1387fcbb59f996ffebe184a5f426c6d75b5c60d64d872308070659539f100a8",
+      "cpo/settled_episode_schedule.py": "623cdf4e971dd233beb6672edf4514bd0ddd24ae5918aa891b5a63051bc02a1b",
+      "cpo/shared_validation_cycle.py": "737b4961eb30cd18759bd42a767f3a66591230464c0413ded86aa7104538e070",
+      "cpo/single_finalist.py": "8567084fa5647176b0c12ccd21c5fdcd348ad603c5508ea8809792352649c6ca",
+      "cpo/switch_validation_case.py": "9c73b78492587ca47ef791ec9f42c998480bdbca2c89bccc7b06195d6dcfbef8",
+      "cpo/threshold_prechecked_cycle.py": "94e21586ac3a73f2750e80ba4055e9c8215e521705a0dbfea57a5e15034c210a",
+      "cpo/two_sided_certificate_cycle.py": "627d48aa21ebae7011e9c69bb28fb37f607079920af2304b13b6e8fa9180eb5a",
+      "cpo/validation.py": "715ef305e374db23d16de098f5b6267124a4a8f53f7862c63ea2928e7edd3ef0",
+      "cpo/validation_guided_repair.py": "238ffa97895fc7ecd841e7e07c8d49d8b09fd209ec8bb1a2c0b1b7521c4b48c6",
+      "pyproject.toml": "93ea35e19696e40e77060bd6aa91d01233c1fc2801e7d93180820ba9302df7b3",
+      "requirements-benchmark.txt": "0b044f88d32eb5bca0c22c365ff30328a9b941b94c6e989df27efe48ec757364"
+    }
+  },
+  "planSha256": "52c2bc5f86e338c393aeebea21c24e5a1d3510b09e97845d71d312ffe7090170",
+  "providerRequests": 0,
+  "rows": {
+    "outage": [
+      {
+        "critical": false,
+        "expected": {
+          "credit": 0,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "first-gain-confirmation-outage-01",
+        "input": "Duration minutes=29; Plan=STANDARD; Monthly fee whole USD=260506; Evidence=POSTED."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "credit": 6,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "first-gain-confirmation-outage-02",
+        "input": "Duration minutes=30; Plan=STANDARD; Monthly fee whole USD=260515; Evidence=POSTED."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "credit": 0,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "first-gain-confirmation-outage-03",
+        "input": "Duration minutes=29; Plan=PLUS; Monthly fee whole USD=260526; Evidence=POSTED."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "credit": 10,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "first-gain-confirmation-outage-04",
+        "input": "Duration minutes=30; Plan=PLUS; Monthly fee whole USD=260539; Evidence=POSTED."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "credit": 23,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "first-gain-confirmation-outage-05",
+        "input": "Duration minutes=119; Plan=STANDARD; Monthly fee whole USD=260561; Evidence=POSTED."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 24,
+          "reason": "LONG",
+          "review": true
+        },
+        "id": "first-gain-confirmation-outage-06",
+        "input": "Duration minutes=120; Plan=STANDARD; Monthly fee whole USD=260566; Evidence=POSTED."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "credit": 39,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "first-gain-confirmation-outage-07",
+        "input": "Duration minutes=119; Plan=PLUS; Monthly fee whole USD=260581; Evidence=POSTED."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 40,
+          "reason": "LONG",
+          "review": true
+        },
+        "id": "first-gain-confirmation-outage-08",
+        "input": "Duration minutes=120; Plan=PLUS; Monthly fee whole USD=260595; Evidence=POSTED."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "credit": 4,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "first-gain-confirmation-outage-09",
+        "input": "Duration minutes=37; Plan=STANDARD; Monthly fee whole USD=44; Evidence=POSTED."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "credit": 3,
+          "reason": "NORMAL",
+          "review": false
+        },
+        "id": "first-gain-confirmation-outage-10",
+        "input": "Duration minutes=41; Plan=PLUS; Monthly fee whole USD=31; Evidence=POSTED."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 4,
+          "reason": "LONG",
+          "review": true
+        },
+        "id": "first-gain-confirmation-outage-11",
+        "input": "Duration minutes=122; Plan=PLUS; Monthly fee whole USD=41; Evidence=POSTED."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 2,
+          "reason": "LONG",
+          "review": true
+        },
+        "id": "first-gain-confirmation-outage-12",
+        "input": "Duration minutes=123; Plan=STANDARD; Monthly fee whole USD=26; Evidence=POSTED."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 0,
+          "reason": "NEEDS_DOC",
+          "review": true
+        },
+        "id": "first-gain-confirmation-outage-13",
+        "input": "Duration minutes=26; Plan=STANDARD; Monthly fee whole USD=260691; Evidence=MISSING."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 12,
+          "reason": "NEEDS_DOC",
+          "review": true
+        },
+        "id": "first-gain-confirmation-outage-14",
+        "input": "Duration minutes=36; Plan=PLUS; Monthly fee whole USD=260696; Evidence=MISSING."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 2,
+          "reason": "NEEDS_DOC",
+          "review": true
+        },
+        "id": "first-gain-confirmation-outage-15",
+        "input": "Duration minutes=121; Plan=STANDARD; Monthly fee whole USD=21; Evidence=MISSING."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "credit": 40,
+          "reason": "NEEDS_DOC",
+          "review": true
+        },
+        "id": "first-gain-confirmation-outage-16",
+        "input": "Duration minutes=121; Plan=PLUS; Monthly fee whole USD=260729; Evidence=MISSING."
+      }
+    ],
+    "ticket": [
+      {
+        "critical": true,
+        "expected": {
+          "queue": "Q-M74"
+        },
+        "id": "first-gain-confirmation-ticket-01",
+        "input": "Topic=refund-question. Channel=web. Reference=CPO-20000."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "queue": "Q-L91"
+        },
+        "id": "first-gain-confirmation-ticket-02",
+        "input": "Topic=invoice-copy. Channel=email. Reference=CPO-20001."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "queue": "Q-X36"
+        },
+        "id": "first-gain-confirmation-ticket-03",
+        "input": "Topic=delivery-date. Channel=chat. Reference=CPO-20002."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "queue": "Q-J58"
+        },
+        "id": "first-gain-confirmation-ticket-04",
+        "input": "Topic=return-label. Channel=web. Reference=CPO-20003."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "queue": "Q-V27"
+        },
+        "id": "first-gain-confirmation-ticket-05",
+        "input": "Topic=packaging. Channel=email. Reference=CPO-20004."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "queue": "Q-F43"
+        },
+        "id": "first-gain-confirmation-ticket-06",
+        "input": "Topic=translation. Channel=email. Reference=CPO-20005."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "queue": "GENERAL"
+        },
+        "id": "first-gain-confirmation-ticket-07",
+        "input": "Topic=general-inquiry. Channel=chat. Reference=CPO-20006."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "queue": "GENERAL"
+        },
+        "id": "first-gain-confirmation-ticket-08",
+        "input": "Topic=unlisted-topic. Channel=email. Reference=CPO-20007."
+      }
+    ],
+    "warehouse": [
+      {
+        "critical": false,
+        "expected": {
+          "action": "RELEASE",
+          "available": 9,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-01",
+        "input": "On hand=60035; Reserved=60025; Damaged=1; Inspection=PASS; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "REVIEW",
+          "available": 11,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-02",
+        "input": "On hand=60038; Reserved=60023; Damaged=4; Inspection=PASS; Tier=RUSH; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 5,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-03",
+        "input": "On hand=60041; Reserved=60029; Damaged=7; Inspection=FAIL; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 2,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-04",
+        "input": "On hand=60044; Reserved=60038; Damaged=4; Inspection=FAIL; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-05",
+        "input": "On hand=60047; Reserved=60045; Damaged=2; Inspection=PASS; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-06",
+        "input": "On hand=60050; Reserved=60048; Damaged=2; Inspection=PASS; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-07",
+        "input": "On hand=60053; Reserved=60057; Damaged=2; Inspection=PASS; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-08",
+        "input": "On hand=60056; Reserved=60056; Damaged=4; Inspection=FAIL; Tier=RUSH; Site=SOUTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-09",
+        "input": "On hand=60059; Reserved=60064; Damaged=1; Inspection=PASS; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-10",
+        "input": "On hand=60062; Reserved=60061; Damaged=5; Inspection=PASS; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-11",
+        "input": "On hand=60065; Reserved=60062; Damaged=5; Inspection=PASS; Tier=RUSH; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-12",
+        "input": "On hand=60068; Reserved=60067; Damaged=6; Inspection=FAIL; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-13",
+        "input": "On hand=60071; Reserved=60073; Damaged=2; Inspection=FAIL; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-14",
+        "input": "On hand=60074; Reserved=60072; Damaged=4; Inspection=FAIL; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-15",
+        "input": "On hand=60077; Reserved=60075; Damaged=2; Inspection=PASS; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-16",
+        "input": "On hand=60080; Reserved=60074; Damaged=6; Inspection=PASS; Tier=RUSH; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-17",
+        "input": "On hand=60083; Reserved=60077; Damaged=6; Inspection=FAIL; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-18",
+        "input": "On hand=60086; Reserved=60084; Damaged=2; Inspection=FAIL; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-19",
+        "input": "On hand=60089; Reserved=60088; Damaged=1; Inspection=FAIL; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 0,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-20",
+        "input": "On hand=60092; Reserved=60089; Damaged=3; Inspection=FAIL; Tier=RUSH; Site=SOUTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "RELEASE",
+          "available": 7,
+          "owner": "CREW-S",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-21",
+        "input": "On hand=60095; Reserved=60082; Damaged=6; Inspection=PASS; Tier=NORMAL; Site=SOUTH."
+      },
+      {
+        "critical": false,
+        "expected": {
+          "action": "REVIEW",
+          "available": 9,
+          "owner": "CREW-N",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-22",
+        "input": "On hand=60098; Reserved=60083; Damaged=6; Inspection=PASS; Tier=RUSH; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 2,
+          "owner": "CREW-N",
+          "windowHours": 8
+        },
+        "id": "first-gain-confirmation-warehouse-23",
+        "input": "On hand=60101; Reserved=60095; Damaged=4; Inspection=FAIL; Tier=NORMAL; Site=NORTH."
+      },
+      {
+        "critical": true,
+        "expected": {
+          "action": "HOLD",
+          "available": 10,
+          "owner": "CREW-S",
+          "windowHours": 4
+        },
+        "id": "first-gain-confirmation-warehouse-24",
+        "input": "On hand=60104; Reserved=60090; Damaged=4; Inspection=FAIL; Tier=RUSH; Site=SOUTH."
+      }
+    ]
+  },
+  "tasks": {
+    "outage": {
+      "caseCount": 16,
+      "criticalCaseCount": 8,
+      "developmentHoldoutCoverage": 16,
+      "oneSharedFailedRepeatFinalPasses": 16,
+      "oneSharedFailedRepeatPairedGatePasses": 16,
+      "originalReserveCoverage": 8,
+      "persistentCandidateFaultFinalPasses": 0,
+      "persistentCandidateFaultPairedGatePasses": 0,
+      "persistentSharedFaultFinalPasses": 0,
+      "persistentSharedFaultPairedGatePasses": 16
+    },
+    "ticket": {
+      "caseCount": 8,
+      "criticalCaseCount": 3,
+      "developmentHoldoutCoverage": 8,
+      "oneSharedFailedRepeatFinalPasses": 8,
+      "oneSharedFailedRepeatPairedGatePasses": 8,
+      "originalReserveCoverage": 8,
+      "persistentCandidateFaultFinalPasses": 0,
+      "persistentCandidateFaultPairedGatePasses": 0,
+      "persistentSharedFaultFinalPasses": 0,
+      "persistentSharedFaultPairedGatePasses": 8
+    },
+    "warehouse": {
+      "caseCount": 24,
+      "criticalCaseCount": 16,
+      "developmentHoldoutCoverage": 18,
+      "oneSharedFailedRepeatFinalPasses": 24,
+      "oneSharedFailedRepeatPairedGatePasses": 24,
+      "originalReserveCoverage": 8,
+      "persistentCandidateFaultFinalPasses": 0,
+      "persistentCandidateFaultPairedGatePasses": 0,
+      "persistentSharedFaultFinalPasses": 0,
+      "persistentSharedFaultPairedGatePasses": 24
+    }
+  }
+}
