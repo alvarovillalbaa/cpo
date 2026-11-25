@@ -14,7 +14,7 @@ For a noncritical uniform screen with two challengers and three to six funded ca
 
 Unroutable openings start with uniform as in the original API. Wider rosters, protected validation cases, unsupported depths, and other schedules retain their existing screens. The function validates the complete layout before any callback. Each deployment still requires independent qualification. [Focused package tests](../tests/unit/test_certified_nomination_episode.py)
 
-The package replay compares each of the two settings with its benchmark implementation across 824 archived episodes. It requires the exact same ordered callback ledger, cycle transitions, outcomes, and full benchmark receipt. The paid-rate setting saved 502 lookups over ordinary routing in that benchmark, and the neutral setting saved 509. These savings are from recorded replies. [Benchmark and limits](validation-routed-nominee-certificate.md) · [Package parity receipt](certified-nomination-api-parity-v1.json)
+The package replay compares each of the two settings with its benchmark implementation across 824 archived episodes. It requires the exact same ordered callback ledger, cycle transitions, outcomes, and full benchmark receipt. The paid-rate setting saved 502 lookups over ordinary routing in that benchmark, and the neutral setting saved 509. These savings are from recorded replies. [Benchmark and limits](validation-routed-nominee-certificate.md) · [Package parity receipt](certified-nomination-api-parity-v1.json) · [Prospective rehearsal](certified-nomination-prospective.md)
 
 ## Reproduce offline
 
