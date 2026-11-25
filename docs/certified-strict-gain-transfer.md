@@ -22,6 +22,8 @@ Allowing controls to choose a different setting per task raised the strongest af
 
 Against halving at each task's own budget, the 18-read variant gained 45 passes on GSM8K (+0.56 to +2.50 points) and 38 on SST-5 (+0.21 to +2.40 points). The 14-read variant's SST-5 range included zero. These comparisons support the 18-read variant on this archive. The experiment used shared archived prompts and recorded grades. Fresh proposal performance and end-to-end model cost remain unverified.
 
+The same policy is available through the opt-in episode API. [Usage and wheel verification](first-gain-episode.md)
+
 ## Reproduce offline
 
 Use Python 3.12, the hash-pinned GEPA 0.1.4 wheel, and the original Promptolution archive. Run without arguments to preview the seal.
