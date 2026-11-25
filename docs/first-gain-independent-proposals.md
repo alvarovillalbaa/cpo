@@ -16,6 +16,8 @@ The journal charges each arm for its own reflection. It can share a reply when t
 
 The fixture forced an outage nomination rejection in every arm and verified that each next cycle kept the preceding incumbent. In warehouse, sequential GEPA used its first draft as the parent for a second reflection in the same cycle. All five final prompts tied on scripted grades. First-gain CPO also tied exact nomination on search uses, so it failed the gain-or-efficiency rule against that control. These scripted outcomes verify the accounting and decision paths. Fresh proposals and real model quality and cost remain unverified. [Verification receipt](first-gain-independent-proposals-rehearsal-v1.json)
 
+A later audit found mismatched training feedback in nine batched GEPA reflections. The corrected portable fixture binds each reflection to its own sampled training cases. [Correction and reproduction command](first-gain-native-feedback.md)
+
 ## Reproduce offline
 
 Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel. Running without arguments previews the plan and seal.
