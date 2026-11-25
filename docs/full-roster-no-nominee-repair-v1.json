@@ -1,0 +1,679 @@
+{
+  "plan": {
+    "archivedMathPlanSha256": "b8b6e7ed7d0e5fa6371b54503b480c785743a24ea280a68cbbcea9cf8990ba1d",
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "challengerCounts": [
+      4,
+      8
+    ],
+    "corpusSha256": "83ea1db450d2113b23066158e8f4d6b6ba02b7dd537f9ae557ab41f331565e1f",
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "optInVerificationSha256": "636cc17bbfd8d330557c3b683b6fe0e5bca795744b9f520472e9d095ef4743a7",
+    "parentPlanSha256": "999bfe82cb008e3d245ec8a1c2ac019d4dc09458c829f4164343bb49fa2ee5e6",
+    "parentReceiptSha256": "1d9c66cbe25b27f7fa7f5c6267fa8b58f48054f37d52a153ef91fa4ee5c68b31",
+    "primaryArms": [
+      "cpo-feedback",
+      "cpo-full-roster-precheck"
+    ],
+    "protocol": "cpo-full-roster-no-nominee-repair-v1",
+    "qualificationRows": 4,
+    "scope": "Separate harmful promotions from better proof-eligible candidates in hindsight. On no-nominee trials, retain when the observed admission precheck rules out a gain. Otherwise offer one challenger with a paid repair and no observed paired loss. If there is none, use at most one new challenger reply on an already paid incumbent miss. Keep the original 19-read validation ceiling, disjoint admission and four-case proof. Choose by paid facts only. Compare at actual lookups with the original GEPA sweep.",
+    "searchCap": 180,
+    "sourceSha256": {
+      "benchmarks/full_roster_no_nominee_repair.py": "a14f92eaf0ce026a5bd95ca4380df34dc05402c70dee8e2d3459bd72886e82de",
+      "benchmarks/full_roster_precheck_math.py": "bfb12a1d1fd8d7e51c57075aa65d3548d61171ef66d4844e3ef238a7c08c31f1",
+      "benchmarks/gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "benchmarks/recorded_math_router_transfer.py": "270cdc7f0d2bf5009821a234df9200caaeb4a813df1960a7be030df7bdb082fa",
+      "benchmarks/recorded_math_validation_ties.py": "ea8a310a65392ddad1d3ecc5c1a4639674b941e8e02e344a81abf1ad802f07b0",
+      "benchmarks/recorded_two_witness_math_transfer.py": "1641fc09f52c4d99cdca7a76763c1f79e535858d9ed870184e3bcefd989b3cf9",
+      "benchmarks/routed_validation_ties.py": "116afb17765817c2cbf5ae1a434ebe980dcf04e6f588940877778008483fe399",
+      "cpo/feedback_episode.py": "3626b828ee0d37e3a58aeb29961fe4f00496967c6835b27e8d1cc7cec79528f8",
+      "cpo/full_roster_precheck/__init__.py": "4283579d6118efbf4ccd35fb7c15dc6f853e0249b3716b26d3bfd6f51c59672e",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "cpo/pool.py": "5e5e2ca90b0e6839d6c14d6eb9ba3680874092063196fec406f396c765a03ec0"
+    },
+    "trainingProbes": 2
+  },
+  "planSha256": "de3070de7c6455d362a9a44e1d595d25b3363d734643ab288db40d8656d1001a",
+  "providerRequests": 0,
+  "results": {
+    "aime": {
+      "root/4": {
+        "bestAffordableGepaOrRetain": {
+          "holdoutPasses": 501,
+          "paidLookups": 514,
+          "setting": "half:gepa-sequential-precheck/14/paired-gain-1"
+        },
+        "diagnosticsByOriginalOutcome": {
+          "no-nominee": {
+            "betterEligibleNomineeCeiling": 23,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 23
+          },
+          "promoted": {
+            "betterEligibleNomineeCeiling": 7,
+            "grossBeneficialPromotionPasses": 4,
+            "grossHarmfulPromotionPasses": 7,
+            "trials": 9
+          },
+          "rejected-nominee": {
+            "betterEligibleNomineeCeiling": 1,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 8
+          }
+        },
+        "episodes": 40,
+        "paired": {
+          "control": {
+            "holdoutPassDifference": -4,
+            "pairedRange95": [
+              -29,
+              18
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": 0,
+            "pairedRange95": [
+              0,
+              0
+            ]
+          }
+        },
+        "probesAndQualification": {
+          "additionalDeployments": 0,
+          "newValidationProbes": 2,
+          "newWitnesses": 1,
+          "paidWitnesses": 0,
+          "qualificationAttempts": 1
+        },
+        "totals": {
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 497,
+            "paidLookups": 519,
+            "qualificationLookups": 144,
+            "trainingLookups": 80,
+            "validationLookups": 295
+          },
+          "one-miss-probe": {
+            "holdoutPasses": 497,
+            "paidLookups": 525,
+            "qualificationLookups": 148,
+            "trainingLookups": 80,
+            "validationLookups": 297
+          }
+        }
+      },
+      "root/8": {
+        "bestAffordableGepaOrRetain": {
+          "holdoutPasses": 500,
+          "paidLookups": 0,
+          "setting": "retain-start"
+        },
+        "diagnosticsByOriginalOutcome": {
+          "no-nominee": {
+            "betterEligibleNomineeCeiling": 27,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 22
+          },
+          "promoted": {
+            "betterEligibleNomineeCeiling": 14,
+            "grossBeneficialPromotionPasses": 3,
+            "grossHarmfulPromotionPasses": 13,
+            "trials": 10
+          },
+          "rejected-nominee": {
+            "betterEligibleNomineeCeiling": 4,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 8
+          }
+        },
+        "episodes": 40,
+        "paired": {
+          "control": {
+            "holdoutPassDifference": -10,
+            "pairedRange95": [
+              -46,
+              23
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": 0,
+            "pairedRange95": [
+              0,
+              0
+            ]
+          }
+        },
+        "probesAndQualification": {
+          "newValidationProbes": 3,
+          "paidWitnesses": 0
+        },
+        "totals": {
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 490,
+            "paidLookups": 448,
+            "qualificationLookups": 130,
+            "trainingLookups": 80,
+            "validationLookups": 238
+          },
+          "one-miss-probe": {
+            "holdoutPasses": 490,
+            "paidLookups": 451,
+            "qualificationLookups": 130,
+            "trainingLookups": 80,
+            "validationLookups": 241
+          }
+        }
+      },
+      "rotated/4": {
+        "bestAffordableGepaOrRetain": {
+          "holdoutPasses": 4067,
+          "paidLookups": 2857,
+          "setting": "half:gepa-sequential-precheck/10/paired-gain-1"
+        },
+        "diagnosticsByOriginalOutcome": {
+          "no-nominee": {
+            "betterEligibleNomineeCeiling": 153,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 192
+          },
+          "promoted": {
+            "betterEligibleNomineeCeiling": 45,
+            "grossBeneficialPromotionPasses": 31,
+            "grossHarmfulPromotionPasses": 52,
+            "trials": 38
+          },
+          "rejected-nominee": {
+            "betterEligibleNomineeCeiling": 52,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 90
+          }
+        },
+        "episodes": 320,
+        "paired": {
+          "control": {
+            "holdoutPassDifference": -32,
+            "pairedRange95": [
+              -73,
+              8
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": 0,
+            "pairedRange95": [
+              0,
+              0
+            ]
+          }
+        },
+        "probesAndQualification": {
+          "newValidationProbes": 9,
+          "paidWitnessWithClosedAdmission": 3,
+          "paidWitnesses": 3
+        },
+        "totals": {
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 4035,
+            "paidLookups": 3881,
+            "qualificationLookups": 1081,
+            "trainingLookups": 640,
+            "validationLookups": 2160
+          },
+          "one-miss-probe": {
+            "holdoutPasses": 4035,
+            "paidLookups": 3890,
+            "qualificationLookups": 1081,
+            "trainingLookups": 640,
+            "validationLookups": 2169
+          }
+        }
+      },
+      "rotated/8": {
+        "bestAffordableGepaOrRetain": {
+          "holdoutPasses": 4067,
+          "paidLookups": 2857,
+          "setting": "half:gepa-sequential-precheck/10/paired-gain-1"
+        },
+        "diagnosticsByOriginalOutcome": {
+          "no-nominee": {
+            "betterEligibleNomineeCeiling": 206,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 191
+          },
+          "promoted": {
+            "betterEligibleNomineeCeiling": 63,
+            "grossBeneficialPromotionPasses": 33,
+            "grossHarmfulPromotionPasses": 44,
+            "trials": 40
+          },
+          "rejected-nominee": {
+            "betterEligibleNomineeCeiling": 76,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 89
+          }
+        },
+        "episodes": 320,
+        "paired": {
+          "control": {
+            "holdoutPassDifference": -19,
+            "pairedRange95": [
+              -62,
+              24
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": 3,
+            "pairedRange95": [
+              -2,
+              8
+            ]
+          }
+        },
+        "probesAndQualification": {
+          "additionalDeployments": 1,
+          "newValidationProbes": 41,
+          "newWitnesses": 1,
+          "paidWitnessWithClosedAdmission": 8,
+          "paidWitnesses": 8,
+          "qualificationAttempts": 1
+        },
+        "totals": {
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 4045,
+            "paidLookups": 3556,
+            "qualificationLookups": 946,
+            "trainingLookups": 640,
+            "validationLookups": 1970
+          },
+          "one-miss-probe": {
+            "holdoutPasses": 4048,
+            "paidLookups": 3605,
+            "qualificationLookups": 954,
+            "trainingLookups": 640,
+            "validationLookups": 2011
+          }
+        }
+      }
+    },
+    "arc": {
+      "root/4": {
+        "bestAffordableGepaOrRetain": {
+          "holdoutPasses": 575,
+          "paidLookups": 0,
+          "setting": "retain-start"
+        },
+        "diagnosticsByOriginalOutcome": {
+          "no-nominee": {
+            "betterEligibleNomineeCeiling": 145,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 5
+          },
+          "promoted": {
+            "betterEligibleNomineeCeiling": 86,
+            "grossBeneficialPromotionPasses": 830,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 35
+          }
+        },
+        "episodes": 40,
+        "paired": {
+          "control": {
+            "holdoutPassDifference": 856,
+            "pairedRange95": [
+              680,
+              1024
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": 26,
+            "pairedRange95": [
+              17,
+              35
+            ]
+          }
+        },
+        "probesAndQualification": {
+          "additionalDeployments": 1,
+          "newValidationProbes": 1,
+          "newWitnesses": 1,
+          "paidWitnesses": 0,
+          "qualificationAttempts": 1
+        },
+        "totals": {
+          "cpo-full-roster-precheck": {
+            "historicalCostNanodollars": 58462438000,
+            "holdoutPasses": 1405,
+            "paidLookups": 619,
+            "qualificationLookups": 231,
+            "trainingLookups": 80,
+            "validationLookups": 308
+          },
+          "one-miss-probe": {
+            "historicalCostNanodollars": 58934306000,
+            "holdoutPasses": 1431,
+            "paidLookups": 624,
+            "qualificationLookups": 235,
+            "trainingLookups": 80,
+            "validationLookups": 309
+          }
+        }
+      },
+      "root/8": {
+        "bestAffordableGepaOrRetain": {
+          "holdoutPasses": 575,
+          "paidLookups": 0,
+          "setting": "retain-start"
+        },
+        "diagnosticsByOriginalOutcome": {
+          "no-nominee": {
+            "betterEligibleNomineeCeiling": 286,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 10
+          },
+          "promoted": {
+            "betterEligibleNomineeCeiling": 116,
+            "grossBeneficialPromotionPasses": 702,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 30
+          }
+        },
+        "episodes": 40,
+        "paired": {
+          "control": {
+            "holdoutPassDifference": 702,
+            "pairedRange95": [
+              556,
+              842
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": 0,
+            "pairedRange95": [
+              0,
+              0
+            ]
+          }
+        },
+        "probesAndQualification": {
+          "newValidationProbes": 2,
+          "paidWitnesses": 0
+        },
+        "totals": {
+          "cpo-full-roster-precheck": {
+            "historicalCostNanodollars": 55816081750,
+            "holdoutPasses": 1277,
+            "paidLookups": 569,
+            "qualificationLookups": 203,
+            "trainingLookups": 80,
+            "validationLookups": 286
+          },
+          "one-miss-probe": {
+            "historicalCostNanodollars": 56215517250,
+            "holdoutPasses": 1277,
+            "paidLookups": 571,
+            "qualificationLookups": 203,
+            "trainingLookups": 80,
+            "validationLookups": 288
+          }
+        }
+      },
+      "rotated/4": {
+        "bestAffordableGepaOrRetain": {
+          "holdoutPasses": 13374,
+          "paidLookups": 2615,
+          "setting": "half:gepa-batched-precheck/28/paired-gain-2-threshold-precheck"
+        },
+        "diagnosticsByOriginalOutcome": {
+          "no-nominee": {
+            "betterEligibleNomineeCeiling": 353,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 286
+          },
+          "promoted": {
+            "betterEligibleNomineeCeiling": 68,
+            "grossBeneficialPromotionPasses": 619,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 42
+          },
+          "rejected-nominee": {
+            "betterEligibleNomineeCeiling": 100,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 32
+          }
+        },
+        "episodes": 360,
+        "paired": {
+          "control": {
+            "holdoutPassDifference": 187,
+            "pairedRange95": [
+              138,
+              236
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": -2,
+            "pairedRange95": [
+              -6,
+              2
+            ]
+          }
+        },
+        "probesAndQualification": {
+          "additionalDeployments": 1,
+          "newValidationProbes": 6,
+          "newWitnesses": 1,
+          "paidWitnessWithClosedAdmission": 11,
+          "paidWitnesses": 11,
+          "qualificationAttempts": 1
+        },
+        "totals": {
+          "cpo-full-roster-precheck": {
+            "historicalCostNanodollars": 362692461450,
+            "holdoutPasses": 13563,
+            "paidLookups": 2750,
+            "qualificationLookups": 816,
+            "trainingLookups": 720,
+            "validationLookups": 1214
+          },
+          "one-miss-probe": {
+            "historicalCostNanodollars": 364206895450,
+            "holdoutPasses": 13561,
+            "paidLookups": 2762,
+            "qualificationLookups": 822,
+            "trainingLookups": 720,
+            "validationLookups": 1220
+          }
+        }
+      },
+      "rotated/8": {
+        "bestAffordableGepaOrRetain": {
+          "holdoutPasses": 13372,
+          "paidLookups": 2463,
+          "setting": "half:gepa-sequential-precheck/20/paired-gain-2-threshold-precheck"
+        },
+        "diagnosticsByOriginalOutcome": {
+          "no-nominee": {
+            "betterEligibleNomineeCeiling": 615,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 298
+          },
+          "promoted": {
+            "betterEligibleNomineeCeiling": 114,
+            "grossBeneficialPromotionPasses": 505,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 36
+          },
+          "rejected-nominee": {
+            "betterEligibleNomineeCeiling": 125,
+            "grossBeneficialPromotionPasses": 0,
+            "grossHarmfulPromotionPasses": 0,
+            "trials": 26
+          }
+        },
+        "episodes": 360,
+        "paired": {
+          "control": {
+            "holdoutPassDifference": 75,
+            "pairedRange95": [
+              43,
+              107
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": -2,
+            "pairedRange95": [
+              -6,
+              2
+            ]
+          }
+        },
+        "probesAndQualification": {
+          "additionalDeployments": 1,
+          "newValidationProbes": 39,
+          "newWitnesses": 2,
+          "paidWitnessWithClosedAdmission": 23,
+          "paidWitnesses": 23,
+          "qualificationAttempts": 2
+        },
+        "totals": {
+          "cpo-full-roster-precheck": {
+            "historicalCostNanodollars": 328809643850,
+            "holdoutPasses": 13449,
+            "paidLookups": 2485,
+            "qualificationLookups": 557,
+            "trainingLookups": 720,
+            "validationLookups": 1208
+          },
+          "one-miss-probe": {
+            "historicalCostNanodollars": 336274835000,
+            "holdoutPasses": 13447,
+            "paidLookups": 2537,
+            "qualificationLookups": 570,
+            "trainingLookups": 720,
+            "validationLookups": 1247
+          }
+        }
+      }
+    }
+  }
+}
