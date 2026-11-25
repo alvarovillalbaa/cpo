@@ -1,0 +1,1480 @@
+{
+  "plan": {
+    "admissionPerCycle": 4,
+    "arms": [
+      "cpo-settled",
+      "validation-routed-opening",
+      "uniform-depth-4",
+      "stalled-uniform-tail"
+    ],
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "controlSettings": {
+      "gepa-batched/validation-2/cap-14": {
+        "mode": "batched",
+        "searchCap": 14,
+        "validationRows": 2
+      },
+      "gepa-batched/validation-4/cap-20": {
+        "mode": "batched",
+        "searchCap": 20,
+        "validationRows": 4
+      },
+      "gepa-batched/validation-6/cap-26": {
+        "mode": "batched",
+        "searchCap": 26,
+        "validationRows": 6
+      },
+      "gepa-batched/validation-6/cap-32": {
+        "mode": "batched",
+        "searchCap": 32,
+        "validationRows": 6
+      },
+      "gepa-sequential/validation-2/cap-14": {
+        "mode": "sequential",
+        "searchCap": 14,
+        "validationRows": 2
+      },
+      "gepa-sequential/validation-2/cap-8": {
+        "mode": "sequential",
+        "searchCap": 8,
+        "validationRows": 2
+      },
+      "gepa-sequential/validation-4/cap-12": {
+        "mode": "sequential",
+        "searchCap": 12,
+        "validationRows": 4
+      },
+      "gepa-sequential/validation-4/cap-20": {
+        "mode": "sequential",
+        "searchCap": 20,
+        "validationRows": 4
+      },
+      "gepa-sequential/validation-6/cap-16": {
+        "mode": "sequential",
+        "searchCap": 16,
+        "validationRows": 6
+      },
+      "gepa-sequential/validation-6/cap-26": {
+        "mode": "sequential",
+        "searchCap": 26,
+        "validationRows": 6
+      },
+      "gepa-sequential/validation-6/cap-32": {
+        "mode": "sequential",
+        "searchCap": 32,
+        "validationRows": 6
+      },
+      "halving/cap-12": {
+        "mode": "halving",
+        "searchCap": 12,
+        "validationRows": 6
+      },
+      "halving/cap-19": {
+        "mode": "halving",
+        "searchCap": 19,
+        "validationRows": 6
+      },
+      "halving/cap-4": {
+        "mode": "halving",
+        "searchCap": 4,
+        "validationRows": 6
+      },
+      "halving/cap-6": {
+        "mode": "halving",
+        "searchCap": 6,
+        "validationRows": 6
+      },
+      "halving/cap-8": {
+        "mode": "halving",
+        "searchCap": 8,
+        "validationRows": 6
+      }
+    },
+    "corpusSha256": "83ea1db450d2113b23066158e8f4d6b6ba02b7dd537f9ae557ab41f331565e1f",
+    "datasets": {
+      "aime": {
+        "cohorts": [
+          10,
+          6,
+          4,
+          25
+        ],
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ]
+      },
+      "arc": {
+        "cohorts": [
+          18,
+          8,
+          6,
+          48
+        ],
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ]
+      }
+    },
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "nativeMethods": [
+      "gepa-sequential/validation-2/cap-8",
+      "gepa-sequential/validation-2/cap-14",
+      "gepa-batched/validation-2/cap-14",
+      "gepa-sequential/validation-4/cap-12",
+      "gepa-sequential/validation-4/cap-20",
+      "gepa-batched/validation-4/cap-20",
+      "gepa-sequential/validation-6/cap-16",
+      "gepa-sequential/validation-6/cap-26",
+      "gepa-batched/validation-6/cap-26",
+      "gepa-sequential/validation-6/cap-32",
+      "gepa-batched/validation-6/cap-32"
+    ],
+    "parentReceipts": {
+      "docs/recorded-math-validation-ties-results-v1.json": "bf90d2fab3a9b33eece3a15392234db88afcaa13e5b8e2cf897ac54c9656e451",
+      "docs/validation-routed-tail-v1.json": "2c426656fc00e48138f99ef40fa1518e4149aa0e7e8f32e0051c03296df3c613"
+    },
+    "primary": "stalled-uniform-tail",
+    "protocol": "cpo-validation-routed-tail-math-v1",
+    "rosterWidth": 2,
+    "scope": "Transfer without refitting to the recorded math seeds, root and rotated starts, and holdouts. Run one cycle per episode with the first two challengers in the same seeded roster order. Use the first six original validation and first four reserved qualification cases for every arm. Compare at actual lookups and at ARC historical evaluator charges. Keep the transferred native GEPA and halving menu and reselect the best affordable control within each paired resample.",
+    "sourceSha256": {
+      "benchmarks/continuous_archive_routing.py": "ec14401f7f15eba4906f760685af47bb62b364ca09be60c3705eb9cf15d2b767",
+      "benchmarks/feedback_rejection_scout.py": "7f254b02b372b34ab745bca5ef1aca12ce7c3c5de9095e96db636f7f1ebfc61d",
+      "benchmarks/fixed_opening_language_transfer.py": "9b42e846f82492da0dc3a2a1b5f1df30e43e6d386ca4e0058b5a6b157420b7c1",
+      "benchmarks/gepa_disjoint_cases.py": "f4a74be138aab503922f86ac4d355d33e1fecbc7e5ea8364fa2f5dffb2ed2f35",
+      "benchmarks/gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "benchmarks/grounded_witness_episode.py": "28f819b02dddedcd013f89ce354fcf35e418bcdc5e9960f7dba948653d87a384",
+      "benchmarks/pool.py": "ba1e6012e5068d34a57b8139ecba2aff5dbe809051f6958a9f23134f5fe69016",
+      "benchmarks/prompteval_transfer.py": "3f467c074f22b3d96d5ef0654fc9d9ba7c588363b51cc8ec62744a38a24b452c",
+      "benchmarks/promptolution_settled_episode_transfer.py": "f44a18b3fd608774ce39212f2d29bf51ef0b65016cf094b87ee45045bf484a4a",
+      "benchmarks/promptolution_witness_episode.py": "0f3a49656c45942e2d2287df168f05b2ef2e3ef6f0de10a9b3682a907384a573",
+      "benchmarks/recorded_math_validation_ties.py": "ea8a310a65392ddad1d3ecc5c1a4639674b941e8e02e344a81abf1ad802f07b0",
+      "benchmarks/recorded_two_witness_math_transfer.py": "1641fc09f52c4d99cdca7a76763c1f79e535858d9ed870184e3bcefd989b3cf9",
+      "benchmarks/reinvested_halving_language_transfer.py": "64a8a6980d0c97bb1b89302781258dbc0b08fceb0665e8e3f64e5f3085d1205b",
+      "benchmarks/routed_validation_ties.py": "116afb17765817c2cbf5ae1a434ebe980dcf04e6f588940877778008483fe399",
+      "benchmarks/settled_episode_refit.py": "1edfe0afa59ce596c022e0002c0c79916a8421873c32aa716173ceb3c727c64a",
+      "benchmarks/validation_routed_depth.py": "b1c6aa3ced91c3dd320e75d96a7d4a6bb1c73f208e4cfdc89096fe3c9e6609da",
+      "benchmarks/validation_routed_promptolution.py": "f63d09adc55b358d2d33ebaf7abc75feeb421cbe7267a2f8751160850bfd1f9a",
+      "benchmarks/validation_routed_roster_width.py": "7c09c41294c5ccf73c8de81e4c0e5d806ec6fbc5fa38d4437db416bce3c68047",
+      "benchmarks/validation_routed_tail.py": "f547a24ae0caddf6450da692b7847b9a3534e01762dc7d587ae81ee0cba8f0d4",
+      "benchmarks/validation_routed_tail_math.py": "fec221d66ab46255e8a0a634c44a4d0d0bf86979af7aa37ea7dfa7a8282ca62b",
+      "benchmarks/witness_validation_cost_frontier.py": "6bba4298fc9549052d50f7c7a89cd966443a7dd4c813c664a1f54c3785f53184",
+      "cpo/bounded_uniform_validation.py": "710ba12473675f1198ec9da2451eb04c73f4420b5c3ff594e818e0b9d1a0330c",
+      "cpo/feedback_episode.py": "3626b828ee0d37e3a58aeb29961fe4f00496967c6835b27e8d1cc7cec79528f8",
+      "cpo/full_roster_precheck/__init__.py": "4283579d6118efbf4ccd35fb7c15dc6f853e0249b3716b26d3bfd6f51c59672e",
+      "cpo/full_roster_precheck/fixed_opening.py": "675fed33c7421958a70ba07b868ab8c73450758c154bea2616fa3c683418798a",
+      "cpo/full_roster_precheck/validation_routing.py": "4878094bed3f32707500cbcfc3984d0004b5993db2795ca138ffb3f3d1510c48",
+      "cpo/ordered_uniform_validation.py": "283565496c05be228645fad6eec591a2424b79831ffc4ef6de1d70b54ad0386d",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "cpo/pool.py": "5e5e2ca90b0e6839d6c14d6eb9ba3680874092063196fec406f396c765a03ec0",
+      "cpo/rotating_witness/episode.py": "2d6fe5153cfdf3bdf34f0dc30506571a692b2bdfd4416717eb6c4e4b778f6e5e",
+      "cpo/settled_episode.py": "b1387fcbb59f996ffebe184a5f426c6d75b5c60d64d872308070659539f100a8"
+    },
+    "validationPerCycle": 6
+  },
+  "planSha256": "1f18bbcb97fb5a27efda180898fb96613c3f6a75fa15247901e50f905c0d33ae",
+  "providerRequests": 0,
+  "results": {
+    "aime": {
+      "root": {
+        "episodes": 40,
+        "layoutSha256": "3bb005a1666a8fc6f7772bd558e30a9a107048256147e124fc1f83d2ba3b0818",
+        "matched": {
+          "paidLookups": {
+            "halving": {
+              "bestWithinCost": "halving/cap-4",
+              "bestWithinCostPoint": {
+                "admissionLookups": 56,
+                "holdoutPasses": 502,
+                "paidLookups": 216,
+                "promotions": 3,
+                "validationLookups": 160
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0,
+                "promotions": 0
+              },
+              "holdoutPassDifference": -3,
+              "pairedRange95": [
+                -23,
+                3
+              ],
+              "resampledChoices": {
+                "halving/cap-4": 1418,
+                "halving/cap-6": 1072,
+                "retain-start": 1606
+              }
+            },
+            "nativeGepa": {
+              "bestWithinCost": "gepa-sequential/validation-2/cap-14",
+              "bestWithinCostPoint": {
+                "admissionLookups": 19,
+                "holdoutPasses": 501,
+                "paidLookups": 377,
+                "promotions": 2,
+                "trainingLookups": 240,
+                "validationLookups": 118
+              },
+              "cheapestMatching": "retain-start",
+              "cheapestMatchingPoint": {
+                "holdoutPasses": 500,
+                "paidLookups": 0,
+                "promotions": 0
+              },
+              "holdoutPassDifference": -2,
+              "pairedRange95": [
+                -23,
+                14
+              ],
+              "resampledChoices": {
+                "gepa-sequential/validation-2/cap-14": 2193,
+                "gepa-sequential/validation-6/cap-16": 15,
+                "retain-start": 1888
+              }
+            }
+          }
+        },
+        "paired": {
+          "cpo-settled": {
+            "holdoutPassDifference": 11,
+            "pairedRange95": [
+              -5,
+              28
+            ]
+          },
+          "uniform-depth-4": {
+            "holdoutPassDifference": 2,
+            "pairedRange95": [
+              -4,
+              8
+            ]
+          },
+          "validation-routed-opening": {
+            "holdoutPassDifference": 1,
+            "pairedRange95": [
+              -10,
+              11
+            ]
+          }
+        },
+        "schedules": {
+          "cpo-settled": {
+            "fitted-opening-repair": 8,
+            "successive-halving/4/6": 10,
+            "uniform/8/18": 22
+          },
+          "stalled-uniform-tail": {
+            "successive-halving/4/6": 10,
+            "uniform/8/18": 30
+          },
+          "uniform-depth-4": {
+            "successive-halving/4/6": 10,
+            "uniform/8/18": 30
+          },
+          "validation-routed-opening": {
+            "successive-halving/4/6": 10,
+            "uniform/8/18": 30
+          }
+        },
+        "totals": {
+          "cpo-settled": {
+            "admissionLookups": 157,
+            "holdoutPasses": 488,
+            "paidLookups": 644,
+            "promotions": 8,
+            "scheduleSwitches": 0,
+            "trainingLookups": 80,
+            "validationLookups": 407
+          },
+          "gepa-batched/validation-2/cap-14": {
+            "admissionLookups": 25,
+            "holdoutPasses": 501,
+            "paidLookups": 381,
+            "promotions": 2,
+            "trainingLookups": 240,
+            "validationLookups": 116
+          },
+          "gepa-batched/validation-4/cap-20": {
+            "admissionLookups": 47,
+            "holdoutPasses": 492,
+            "paidLookups": 603,
+            "promotions": 3,
+            "trainingLookups": 312,
+            "validationLookups": 244
+          },
+          "gepa-batched/validation-6/cap-26": {
+            "admissionLookups": 55,
+            "holdoutPasses": 494,
+            "paidLookups": 759,
+            "promotions": 4,
+            "trainingLookups": 320,
+            "validationLookups": 384
+          },
+          "gepa-batched/validation-6/cap-32": {
+            "admissionLookups": 55,
+            "holdoutPasses": 494,
+            "paidLookups": 759,
+            "promotions": 4,
+            "trainingLookups": 320,
+            "validationLookups": 384
+          },
+          "gepa-sequential/validation-2/cap-14": {
+            "admissionLookups": 19,
+            "holdoutPasses": 501,
+            "paidLookups": 377,
+            "promotions": 2,
+            "trainingLookups": 240,
+            "validationLookups": 118
+          },
+          "gepa-sequential/validation-2/cap-8": {
+            "holdoutPasses": 500,
+            "paidLookups": 218,
+            "promotions": 0,
+            "trainingLookups": 120,
+            "validationLookups": 98
+          },
+          "gepa-sequential/validation-4/cap-12": {
+            "admissionLookups": 26,
+            "holdoutPasses": 491,
+            "paidLookups": 386,
+            "promotions": 2,
+            "trainingLookups": 156,
+            "validationLookups": 204
+          },
+          "gepa-sequential/validation-4/cap-20": {
+            "admissionLookups": 54,
+            "holdoutPasses": 492,
+            "paidLookups": 614,
+            "promotions": 3,
+            "trainingLookups": 312,
+            "validationLookups": 248
+          },
+          "gepa-sequential/validation-6/cap-16": {
+            "admissionLookups": 34,
+            "holdoutPasses": 493,
+            "paidLookups": 506,
+            "promotions": 3,
+            "trainingLookups": 160,
+            "validationLookups": 312
+          },
+          "gepa-sequential/validation-6/cap-26": {
+            "admissionLookups": 55,
+            "holdoutPasses": 494,
+            "paidLookups": 753,
+            "promotions": 4,
+            "trainingLookups": 320,
+            "validationLookups": 378
+          },
+          "gepa-sequential/validation-6/cap-32": {
+            "admissionLookups": 55,
+            "holdoutPasses": 494,
+            "paidLookups": 753,
+            "promotions": 4,
+            "trainingLookups": 320,
+            "validationLookups": 378
+          },
+          "halving/cap-12": {
+            "admissionLookups": 130,
+            "holdoutPasses": 489,
+            "paidLookups": 610,
+            "promotions": 9,
+            "validationLookups": 480
+          },
+          "halving/cap-19": {
+            "admissionLookups": 148,
+            "holdoutPasses": 492,
+            "paidLookups": 748,
+            "promotions": 10,
+            "validationLookups": 600
+          },
+          "halving/cap-4": {
+            "admissionLookups": 56,
+            "holdoutPasses": 502,
+            "paidLookups": 216,
+            "promotions": 3,
+            "validationLookups": 160
+          },
+          "halving/cap-6": {
+            "admissionLookups": 70,
+            "holdoutPasses": 501,
+            "paidLookups": 270,
+            "promotions": 4,
+            "validationLookups": 200
+          },
+          "halving/cap-8": {
+            "admissionLookups": 75,
+            "holdoutPasses": 501,
+            "paidLookups": 355,
+            "promotions": 4,
+            "validationLookups": 280
+          },
+          "retain-start": {
+            "holdoutPasses": 500,
+            "paidLookups": 0,
+            "promotions": 0
+          },
+          "stalled-uniform-tail": {
+            "admissionLookups": 165,
+            "holdoutPasses": 499,
+            "paidLookups": 533,
+            "promotions": 5,
+            "scheduleSwitches": 0,
+            "validationLookups": 368
+          },
+          "uniform-depth-4": {
+            "admissionLookups": 152,
+            "holdoutPasses": 497,
+            "paidLookups": 458,
+            "promotions": 4,
+            "scheduleSwitches": 0,
+            "validationLookups": 306
+          },
+          "validation-routed-opening": {
+            "admissionLookups": 147,
+            "holdoutPasses": 498,
+            "paidLookups": 601,
+            "promotions": 3,
+            "scheduleSwitches": 0,
+            "validationLookups": 454
+          }
+        }
+      },
+      "rotated": {
+        "episodes": 320,
+        "layoutSha256": "7de5b5bf608ac7e1a6596a90dc6451632f626994bf257aeee099148a21de23dd",
+        "matched": {
+          "paidLookups": {
+            "halving": {
+              "bestWithinCost": "halving/cap-4",
+              "bestWithinCostPoint": {
+                "admissionLookups": 440,
+                "holdoutPasses": 4066,
+                "paidLookups": 1720,
+                "promotions": 21,
+                "validationLookups": 1280
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 10,
+              "pairedRange95": [
+                -45,
+                47
+              ],
+              "resampledChoices": {
+                "halving/cap-4": 2638,
+                "halving/cap-6": 7,
+                "halving/cap-8": 235,
+                "retain-start": 1216
+              }
+            },
+            "nativeGepa": {
+              "bestWithinCost": "gepa-sequential/validation-6/cap-16",
+              "bestWithinCostPoint": {
+                "admissionLookups": 197,
+                "holdoutPasses": 4071,
+                "paidLookups": 3803,
+                "promotions": 8,
+                "trainingLookups": 1260,
+                "validationLookups": 2346
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 5,
+              "pairedRange95": [
+                -52,
+                51
+              ],
+              "resampledChoices": {
+                "gepa-sequential/validation-2/cap-14": 70,
+                "gepa-sequential/validation-2/cap-8": 783,
+                "gepa-sequential/validation-4/cap-12": 526,
+                "gepa-sequential/validation-6/cap-16": 2424,
+                "retain-start": 293
+              }
+            }
+          }
+        },
+        "paired": {
+          "cpo-settled": {
+            "holdoutPassDifference": 7,
+            "pairedRange95": [
+              -14,
+              29
+            ]
+          },
+          "uniform-depth-4": {
+            "holdoutPassDifference": 11,
+            "pairedRange95": [
+              -10,
+              32
+            ]
+          },
+          "validation-routed-opening": {
+            "holdoutPassDifference": 4,
+            "pairedRange95": [
+              -13,
+              21
+            ]
+          }
+        },
+        "schedules": {
+          "cpo-settled": {
+            "fitted-opening-repair": 78,
+            "successive-halving/4/6": 90,
+            "uniform/8/18": 152
+          },
+          "stalled-uniform-tail": {
+            "successive-halving/4/6": 82,
+            "uniform/8/18": 238
+          },
+          "uniform-depth-4": {
+            "successive-halving/4/6": 82,
+            "uniform/8/18": 238
+          },
+          "validation-routed-opening": {
+            "successive-halving/4/6": 82,
+            "uniform/8/18": 238
+          }
+        },
+        "totals": {
+          "cpo-settled": {
+            "admissionLookups": 1182,
+            "holdoutPasses": 4069,
+            "paidLookups": 4719,
+            "promotions": 36,
+            "scheduleSwitches": 0,
+            "trainingLookups": 640,
+            "validationLookups": 2897
+          },
+          "gepa-batched/validation-2/cap-14": {
+            "admissionLookups": 204,
+            "holdoutPasses": 4057,
+            "paidLookups": 2936,
+            "promotions": 11,
+            "trainingLookups": 1904,
+            "validationLookups": 828
+          },
+          "gepa-batched/validation-4/cap-20": {
+            "admissionLookups": 294,
+            "holdoutPasses": 4066,
+            "paidLookups": 4494,
+            "promotions": 15,
+            "trainingLookups": 2424,
+            "validationLookups": 1776
+          },
+          "gepa-batched/validation-6/cap-26": {
+            "admissionLookups": 361,
+            "holdoutPasses": 4067,
+            "paidLookups": 5611,
+            "promotions": 15,
+            "trainingLookups": 2520,
+            "validationLookups": 2730
+          },
+          "gepa-batched/validation-6/cap-32": {
+            "admissionLookups": 361,
+            "holdoutPasses": 4067,
+            "paidLookups": 5611,
+            "promotions": 15,
+            "trainingLookups": 2520,
+            "validationLookups": 2730
+          },
+          "gepa-sequential/validation-2/cap-14": {
+            "admissionLookups": 204,
+            "holdoutPasses": 4057,
+            "paidLookups": 2894,
+            "promotions": 11,
+            "trainingLookups": 1864,
+            "validationLookups": 826
+          },
+          "gepa-sequential/validation-2/cap-8": {
+            "admissionLookups": 97,
+            "holdoutPasses": 4067,
+            "paidLookups": 1775,
+            "promotions": 5,
+            "trainingLookups": 952,
+            "validationLookups": 726
+          },
+          "gepa-sequential/validation-4/cap-12": {
+            "admissionLookups": 140,
+            "holdoutPasses": 4067,
+            "paidLookups": 2864,
+            "promotions": 6,
+            "trainingLookups": 1212,
+            "validationLookups": 1512
+          },
+          "gepa-sequential/validation-4/cap-20": {
+            "admissionLookups": 285,
+            "holdoutPasses": 4064,
+            "paidLookups": 4469,
+            "promotions": 14,
+            "trainingLookups": 2416,
+            "validationLookups": 1768
+          },
+          "gepa-sequential/validation-6/cap-16": {
+            "admissionLookups": 197,
+            "holdoutPasses": 4071,
+            "paidLookups": 3803,
+            "promotions": 8,
+            "trainingLookups": 1260,
+            "validationLookups": 2346
+          },
+          "gepa-sequential/validation-6/cap-26": {
+            "admissionLookups": 347,
+            "holdoutPasses": 4065,
+            "paidLookups": 5599,
+            "promotions": 14,
+            "trainingLookups": 2516,
+            "validationLookups": 2736
+          },
+          "gepa-sequential/validation-6/cap-32": {
+            "admissionLookups": 347,
+            "holdoutPasses": 4065,
+            "paidLookups": 5599,
+            "promotions": 14,
+            "trainingLookups": 2516,
+            "validationLookups": 2736
+          },
+          "halving/cap-12": {
+            "admissionLookups": 1013,
+            "holdoutPasses": 4057,
+            "paidLookups": 4853,
+            "promotions": 36,
+            "validationLookups": 3840
+          },
+          "halving/cap-19": {
+            "admissionLookups": 1178,
+            "holdoutPasses": 4071,
+            "paidLookups": 5978,
+            "promotions": 50,
+            "validationLookups": 4800
+          },
+          "halving/cap-4": {
+            "admissionLookups": 440,
+            "holdoutPasses": 4066,
+            "paidLookups": 1720,
+            "promotions": 21,
+            "validationLookups": 1280
+          },
+          "halving/cap-6": {
+            "admissionLookups": 606,
+            "holdoutPasses": 4049,
+            "paidLookups": 2206,
+            "promotions": 24,
+            "validationLookups": 1600
+          },
+          "halving/cap-8": {
+            "admissionLookups": 670,
+            "holdoutPasses": 4054,
+            "paidLookups": 2910,
+            "promotions": 26,
+            "validationLookups": 2240
+          },
+          "retain-start": {
+            "holdoutPasses": 4056,
+            "paidLookups": 0,
+            "promotions": 0
+          },
+          "stalled-uniform-tail": {
+            "admissionLookups": 1286,
+            "holdoutPasses": 4076,
+            "paidLookups": 4125,
+            "promotions": 41,
+            "scheduleSwitches": 0,
+            "validationLookups": 2839
+          },
+          "uniform-depth-4": {
+            "admissionLookups": 1183,
+            "holdoutPasses": 4065,
+            "paidLookups": 3510,
+            "promotions": 34,
+            "scheduleSwitches": 0,
+            "validationLookups": 2327
+          },
+          "validation-routed-opening": {
+            "admissionLookups": 1182,
+            "holdoutPasses": 4072,
+            "paidLookups": 4658,
+            "promotions": 34,
+            "scheduleSwitches": 0,
+            "validationLookups": 3476
+          }
+        }
+      }
+    },
+    "arc": {
+      "root": {
+        "episodes": 40,
+        "layoutSha256": "ece901db459e0c00e82987054b9c5a4ac745b9ff78443329a0ed507946018a01",
+        "matched": {
+          "historicalCostNanodollars": {
+            "halving": {
+              "bestWithinCost": "halving/cap-8",
+              "bestWithinCostPoint": {
+                "admissionLookups": 216,
+                "historicalCostNanodollars": 50286386100,
+                "holdoutPasses": 1327,
+                "paidLookups": 496,
+                "promotions": 33,
+                "validationLookups": 280
+              },
+              "cheapestMatching": "halving/cap-12",
+              "cheapestMatchingPoint": {
+                "admissionLookups": 233,
+                "historicalCostNanodollars": 73649019100,
+                "holdoutPasses": 1446,
+                "paidLookups": 713,
+                "promotions": 37,
+                "validationLookups": 480
+              },
+              "holdoutPassDifference": 70,
+              "pairedRange95": [
+                41,
+                101
+              ],
+              "resampledChoices": {
+                "halving/cap-8": 4096
+              }
+            },
+            "nativeGepa": {
+              "bestWithinCost": "gepa-sequential/validation-2/cap-14",
+              "bestWithinCostPoint": {
+                "admissionLookups": 173,
+                "historicalCostNanodollars": 54322271900,
+                "holdoutPasses": 1193,
+                "paidLookups": 559,
+                "promotions": 26,
+                "trainingLookups": 232,
+                "validationLookups": 154
+              },
+              "cheapestMatching": "gepa-sequential/validation-6/cap-26",
+              "cheapestMatchingPoint": {
+                "admissionLookups": 236,
+                "historicalCostNanodollars": 97661178100,
+                "holdoutPasses": 1425,
+                "paidLookups": 1018,
+                "promotions": 36,
+                "trainingLookups": 284,
+                "validationLookups": 498
+              },
+              "holdoutPassDifference": 204,
+              "pairedRange95": [
+                154,
+                255
+              ],
+              "resampledChoices": {
+                "gepa-sequential/validation-2/cap-14": 4096
+              }
+            }
+          },
+          "paidLookups": {
+            "halving": {
+              "bestWithinCost": "halving/cap-8",
+              "bestWithinCostPoint": {
+                "admissionLookups": 216,
+                "historicalCostNanodollars": 50286386100,
+                "holdoutPasses": 1327,
+                "paidLookups": 496,
+                "promotions": 33,
+                "validationLookups": 280
+              },
+              "cheapestMatching": "halving/cap-12",
+              "cheapestMatchingPoint": {
+                "admissionLookups": 233,
+                "historicalCostNanodollars": 73649019100,
+                "holdoutPasses": 1446,
+                "paidLookups": 713,
+                "promotions": 37,
+                "validationLookups": 480
+              },
+              "holdoutPassDifference": 70,
+              "pairedRange95": [
+                41,
+                101
+              ],
+              "resampledChoices": {
+                "halving/cap-8": 4096
+              }
+            },
+            "nativeGepa": {
+              "bestWithinCost": "gepa-sequential/validation-2/cap-14",
+              "bestWithinCostPoint": {
+                "admissionLookups": 173,
+                "historicalCostNanodollars": 54322271900,
+                "holdoutPasses": 1193,
+                "paidLookups": 559,
+                "promotions": 26,
+                "trainingLookups": 232,
+                "validationLookups": 154
+              },
+              "cheapestMatching": "gepa-sequential/validation-6/cap-26",
+              "cheapestMatchingPoint": {
+                "admissionLookups": 236,
+                "historicalCostNanodollars": 97661178100,
+                "holdoutPasses": 1425,
+                "paidLookups": 1018,
+                "promotions": 36,
+                "trainingLookups": 284,
+                "validationLookups": 498
+              },
+              "holdoutPassDifference": 204,
+              "pairedRange95": [
+                154,
+                255
+              ],
+              "resampledChoices": {
+                "gepa-sequential/validation-2/cap-14": 4096
+              }
+            }
+          }
+        },
+        "paired": {
+          "cpo-settled": {
+            "holdoutPassDifference": 41,
+            "pairedRange95": [
+              20,
+              63
+            ]
+          },
+          "uniform-depth-4": {
+            "holdoutPassDifference": 30,
+            "pairedRange95": [
+              14,
+              45
+            ]
+          },
+          "validation-routed-opening": {
+            "holdoutPassDifference": -35,
+            "pairedRange95": [
+              -54,
+              -14
+            ]
+          }
+        },
+        "schedules": {
+          "cpo-settled": {
+            "fitted-opening-repair": 26,
+            "successive-halving/4/6": 4,
+            "uniform/8/18": 10
+          },
+          "stalled-uniform-tail": {
+            "successive-halving/4/6": 3,
+            "uniform/8/18": 37
+          },
+          "uniform-depth-4": {
+            "successive-halving/4/6": 3,
+            "uniform/8/18": 37
+          },
+          "validation-routed-opening": {
+            "successive-halving/4/6": 3,
+            "uniform/8/18": 37
+          }
+        },
+        "totals": {
+          "cpo-settled": {
+            "admissionLookups": 227,
+            "historicalCostNanodollars": 59569070750,
+            "holdoutPasses": 1356,
+            "paidLookups": 674,
+            "promotions": 34,
+            "scheduleSwitches": 0,
+            "trainingLookups": 80,
+            "validationLookups": 367
+          },
+          "gepa-batched/validation-2/cap-14": {
+            "admissionLookups": 192,
+            "historicalCostNanodollars": 65533479800,
+            "holdoutPasses": 1271,
+            "paidLookups": 682,
+            "promotions": 29,
+            "trainingLookups": 296,
+            "validationLookups": 194
+          },
+          "gepa-batched/validation-4/cap-20": {
+            "admissionLookups": 214,
+            "historicalCostNanodollars": 91860809800,
+            "holdoutPasses": 1367,
+            "paidLookups": 942,
+            "promotions": 33,
+            "trainingLookups": 320,
+            "validationLookups": 408
+          },
+          "gepa-batched/validation-6/cap-26": {
+            "admissionLookups": 242,
+            "historicalCostNanodollars": 112242450700,
+            "holdoutPasses": 1449,
+            "paidLookups": 1162,
+            "promotions": 37,
+            "trainingLookups": 320,
+            "validationLookups": 600
+          },
+          "gepa-batched/validation-6/cap-32": {
+            "admissionLookups": 242,
+            "historicalCostNanodollars": 112242450700,
+            "holdoutPasses": 1449,
+            "paidLookups": 1162,
+            "promotions": 37,
+            "trainingLookups": 320,
+            "validationLookups": 600
+          },
+          "gepa-sequential/validation-2/cap-14": {
+            "admissionLookups": 173,
+            "historicalCostNanodollars": 54322271900,
+            "holdoutPasses": 1193,
+            "paidLookups": 559,
+            "promotions": 26,
+            "trainingLookups": 232,
+            "validationLookups": 154
+          },
+          "gepa-sequential/validation-2/cap-8": {
+            "admissionLookups": 131,
+            "historicalCostNanodollars": 39382291300,
+            "holdoutPasses": 1058,
+            "paidLookups": 417,
+            "promotions": 21,
+            "trainingLookups": 148,
+            "validationLookups": 138
+          },
+          "gepa-sequential/validation-4/cap-12": {
+            "admissionLookups": 174,
+            "historicalCostNanodollars": 58692998600,
+            "holdoutPasses": 1231,
+            "paidLookups": 622,
+            "promotions": 28,
+            "trainingLookups": 160,
+            "validationLookups": 288
+          },
+          "gepa-sequential/validation-4/cap-20": {
+            "admissionLookups": 208,
+            "historicalCostNanodollars": 77762748200,
+            "holdoutPasses": 1336,
+            "paidLookups": 800,
+            "promotions": 32,
+            "trainingLookups": 272,
+            "validationLookups": 320
+          },
+          "gepa-sequential/validation-6/cap-16": {
+            "admissionLookups": 182,
+            "historicalCostNanodollars": 71012356500,
+            "holdoutPasses": 1234,
+            "paidLookups": 768,
+            "promotions": 29,
+            "trainingLookups": 160,
+            "validationLookups": 426
+          },
+          "gepa-sequential/validation-6/cap-26": {
+            "admissionLookups": 236,
+            "historicalCostNanodollars": 97661178100,
+            "holdoutPasses": 1425,
+            "paidLookups": 1018,
+            "promotions": 36,
+            "trainingLookups": 284,
+            "validationLookups": 498
+          },
+          "gepa-sequential/validation-6/cap-32": {
+            "admissionLookups": 236,
+            "historicalCostNanodollars": 97661178100,
+            "holdoutPasses": 1425,
+            "paidLookups": 1018,
+            "promotions": 36,
+            "trainingLookups": 284,
+            "validationLookups": 498
+          },
+          "halving/cap-12": {
+            "admissionLookups": 233,
+            "historicalCostNanodollars": 73649019100,
+            "holdoutPasses": 1446,
+            "paidLookups": 713,
+            "promotions": 37,
+            "validationLookups": 480
+          },
+          "halving/cap-19": {
+            "admissionLookups": 239,
+            "historicalCostNanodollars": 87156199100,
+            "holdoutPasses": 1463,
+            "paidLookups": 839,
+            "promotions": 37,
+            "validationLookups": 600
+          },
+          "halving/cap-4": {
+            "admissionLookups": 166,
+            "historicalCostNanodollars": 30292311750,
+            "holdoutPasses": 1164,
+            "paidLookups": 326,
+            "promotions": 26,
+            "validationLookups": 160
+          },
+          "halving/cap-6": {
+            "admissionLookups": 177,
+            "historicalCostNanodollars": 38154059950,
+            "holdoutPasses": 1228,
+            "paidLookups": 377,
+            "promotions": 28,
+            "validationLookups": 200
+          },
+          "halving/cap-8": {
+            "admissionLookups": 216,
+            "historicalCostNanodollars": 50286386100,
+            "holdoutPasses": 1327,
+            "paidLookups": 496,
+            "promotions": 33,
+            "validationLookups": 280
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "holdoutPasses": 575,
+            "paidLookups": 0,
+            "promotions": 0
+          },
+          "stalled-uniform-tail": {
+            "admissionLookups": 238,
+            "historicalCostNanodollars": 58620142900,
+            "holdoutPasses": 1397,
+            "paidLookups": 610,
+            "promotions": 36,
+            "scheduleSwitches": 0,
+            "validationLookups": 372
+          },
+          "uniform-depth-4": {
+            "admissionLookups": 226,
+            "historicalCostNanodollars": 56205562900,
+            "holdoutPasses": 1367,
+            "paidLookups": 584,
+            "promotions": 34,
+            "scheduleSwitches": 0,
+            "validationLookups": 358
+          },
+          "validation-routed-opening": {
+            "admissionLookups": 238,
+            "historicalCostNanodollars": 73644554600,
+            "holdoutPasses": 1432,
+            "paidLookups": 774,
+            "promotions": 37,
+            "scheduleSwitches": 0,
+            "validationLookups": 536
+          }
+        }
+      },
+      "rotated": {
+        "episodes": 360,
+        "layoutSha256": "6280f0b7428a48186574b6b42f98b57e4b2bf53210d20c1ade6b9f6403742161",
+        "matched": {
+          "historicalCostNanodollars": {
+            "halving": {
+              "bestWithinCost": "halving/cap-6",
+              "bestWithinCostPoint": {
+                "admissionLookups": 557,
+                "historicalCostNanodollars": 291182619350,
+                "holdoutPasses": 13416,
+                "paidLookups": 2357,
+                "promotions": 30,
+                "validationLookups": 1800
+              },
+              "cheapestMatching": "halving/cap-12",
+              "cheapestMatchingPoint": {
+                "admissionLookups": 909,
+                "historicalCostNanodollars": 659182301300,
+                "holdoutPasses": 13605,
+                "paidLookups": 5229,
+                "promotions": 49,
+                "validationLookups": 4320
+              },
+              "holdoutPassDifference": 164,
+              "pairedRange95": [
+                120,
+                208
+              ],
+              "resampledChoices": {
+                "halving/cap-6": 4096
+              }
+            },
+            "nativeGepa": {
+              "bestWithinCost": "gepa-batched/validation-2/cap-14",
+              "bestWithinCostPoint": {
+                "admissionLookups": 233,
+                "historicalCostNanodollars": 301369221650,
+                "holdoutPasses": 13411,
+                "paidLookups": 2425,
+                "promotions": 26,
+                "trainingLookups": 1344,
+                "validationLookups": 848
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 169,
+              "pairedRange95": [
+                123,
+                215
+              ],
+              "resampledChoices": {
+                "gepa-batched/validation-2/cap-14": 4096
+              }
+            }
+          },
+          "paidLookups": {
+            "halving": {
+              "bestWithinCost": "halving/cap-6",
+              "bestWithinCostPoint": {
+                "admissionLookups": 557,
+                "historicalCostNanodollars": 291182619350,
+                "holdoutPasses": 13416,
+                "paidLookups": 2357,
+                "promotions": 30,
+                "validationLookups": 1800
+              },
+              "cheapestMatching": "halving/cap-12",
+              "cheapestMatchingPoint": {
+                "admissionLookups": 909,
+                "historicalCostNanodollars": 659182301300,
+                "holdoutPasses": 13605,
+                "paidLookups": 5229,
+                "promotions": 49,
+                "validationLookups": 4320
+              },
+              "holdoutPassDifference": 164,
+              "pairedRange95": [
+                120,
+                208
+              ],
+              "resampledChoices": {
+                "halving/cap-6": 4096
+              }
+            },
+            "nativeGepa": {
+              "bestWithinCost": "gepa-batched/validation-2/cap-14",
+              "bestWithinCostPoint": {
+                "admissionLookups": 233,
+                "historicalCostNanodollars": 301369221650,
+                "holdoutPasses": 13411,
+                "paidLookups": 2425,
+                "promotions": 26,
+                "trainingLookups": 1344,
+                "validationLookups": 848
+              },
+              "cheapestMatching": null,
+              "cheapestMatchingPoint": null,
+              "holdoutPassDifference": 169,
+              "pairedRange95": [
+                123,
+                215
+              ],
+              "resampledChoices": {
+                "gepa-batched/validation-2/cap-14": 4096
+              }
+            }
+          }
+        },
+        "paired": {
+          "cpo-settled": {
+            "holdoutPassDifference": 13,
+            "pairedRange95": [
+              -6,
+              32
+            ]
+          },
+          "uniform-depth-4": {
+            "holdoutPassDifference": 63,
+            "pairedRange95": [
+              44,
+              82
+            ]
+          },
+          "validation-routed-opening": {
+            "holdoutPassDifference": 0,
+            "pairedRange95": [
+              -14,
+              13
+            ]
+          }
+        },
+        "schedules": {
+          "cpo-settled": {
+            "fitted-opening-repair": 42,
+            "successive-halving/4/6": 193,
+            "uniform/8/18": 125
+          },
+          "stalled-uniform-tail": {
+            "successive-halving/4/6": 192,
+            "uniform/8/18": 168
+          },
+          "uniform-depth-4": {
+            "successive-halving/4/6": 192,
+            "uniform/8/18": 168
+          },
+          "validation-routed-opening": {
+            "successive-halving/4/6": 192,
+            "uniform/8/18": 168
+          }
+        },
+        "totals": {
+          "cpo-settled": {
+            "admissionLookups": 1332,
+            "historicalCostNanodollars": 463806909350,
+            "holdoutPasses": 13567,
+            "paidLookups": 3571,
+            "promotions": 43,
+            "scheduleSwitches": 0,
+            "trainingLookups": 720,
+            "validationLookups": 1519
+          },
+          "gepa-batched/validation-2/cap-14": {
+            "admissionLookups": 233,
+            "historicalCostNanodollars": 301369221650,
+            "holdoutPasses": 13411,
+            "paidLookups": 2425,
+            "promotions": 26,
+            "trainingLookups": 1344,
+            "validationLookups": 848
+          },
+          "gepa-batched/validation-4/cap-20": {
+            "admissionLookups": 276,
+            "historicalCostNanodollars": 494282692700,
+            "holdoutPasses": 13536,
+            "paidLookups": 3932,
+            "promotions": 33,
+            "trainingLookups": 1896,
+            "validationLookups": 1760
+          },
+          "gepa-batched/validation-6/cap-26": {
+            "admissionLookups": 299,
+            "historicalCostNanodollars": 638968916200,
+            "holdoutPasses": 13507,
+            "paidLookups": 5117,
+            "promotions": 31,
+            "trainingLookups": 2160,
+            "validationLookups": 2658
+          },
+          "gepa-batched/validation-6/cap-32": {
+            "admissionLookups": 299,
+            "historicalCostNanodollars": 638968916200,
+            "holdoutPasses": 13507,
+            "paidLookups": 5117,
+            "promotions": 31,
+            "trainingLookups": 2160,
+            "validationLookups": 2658
+          },
+          "gepa-sequential/validation-2/cap-14": {
+            "admissionLookups": 225,
+            "historicalCostNanodollars": 292045035300,
+            "holdoutPasses": 13386,
+            "paidLookups": 2333,
+            "promotions": 25,
+            "trainingLookups": 1284,
+            "validationLookups": 824
+          },
+          "gepa-sequential/validation-2/cap-8": {
+            "admissionLookups": 135,
+            "historicalCostNanodollars": 200710018000,
+            "holdoutPasses": 13226,
+            "paidLookups": 1581,
+            "promotions": 15,
+            "trainingLookups": 672,
+            "validationLookups": 774
+          },
+          "gepa-sequential/validation-4/cap-12": {
+            "admissionLookups": 173,
+            "historicalCostNanodollars": 347300153950,
+            "holdoutPasses": 13337,
+            "paidLookups": 2709,
+            "promotions": 20,
+            "trainingLookups": 948,
+            "validationLookups": 1588
+          },
+          "gepa-sequential/validation-4/cap-20": {
+            "admissionLookups": 276,
+            "historicalCostNanodollars": 485276961850,
+            "holdoutPasses": 13530,
+            "paidLookups": 3840,
+            "promotions": 33,
+            "trainingLookups": 1852,
+            "validationLookups": 1712
+          },
+          "gepa-sequential/validation-6/cap-16": {
+            "admissionLookups": 170,
+            "historicalCostNanodollars": 460966191900,
+            "holdoutPasses": 13349,
+            "paidLookups": 3638,
+            "promotions": 20,
+            "trainingLookups": 1080,
+            "validationLookups": 2388
+          },
+          "gepa-sequential/validation-6/cap-26": {
+            "admissionLookups": 295,
+            "historicalCostNanodollars": 630301308700,
+            "holdoutPasses": 13491,
+            "paidLookups": 5033,
+            "promotions": 30,
+            "trainingLookups": 2128,
+            "validationLookups": 2610
+          },
+          "gepa-sequential/validation-6/cap-32": {
+            "admissionLookups": 295,
+            "historicalCostNanodollars": 630301308700,
+            "holdoutPasses": 13491,
+            "paidLookups": 5033,
+            "promotions": 30,
+            "trainingLookups": 2128,
+            "validationLookups": 2610
+          },
+          "halving/cap-12": {
+            "admissionLookups": 909,
+            "historicalCostNanodollars": 659182301300,
+            "holdoutPasses": 13605,
+            "paidLookups": 5229,
+            "promotions": 49,
+            "validationLookups": 4320
+          },
+          "halving/cap-19": {
+            "admissionLookups": 1019,
+            "historicalCostNanodollars": 807094032050,
+            "holdoutPasses": 13667,
+            "paidLookups": 6419,
+            "promotions": 53,
+            "validationLookups": 5400
+          },
+          "halving/cap-4": {
+            "admissionLookups": 455,
+            "historicalCostNanodollars": 232901079250,
+            "holdoutPasses": 13370,
+            "paidLookups": 1895,
+            "promotions": 26,
+            "validationLookups": 1440
+          },
+          "halving/cap-6": {
+            "admissionLookups": 557,
+            "historicalCostNanodollars": 291182619350,
+            "holdoutPasses": 13416,
+            "paidLookups": 2357,
+            "promotions": 30,
+            "validationLookups": 1800
+          },
+          "halving/cap-8": {
+            "admissionLookups": 696,
+            "historicalCostNanodollars": 398906125400,
+            "holdoutPasses": 13503,
+            "paidLookups": 3216,
+            "promotions": 36,
+            "validationLookups": 2520
+          },
+          "retain-start": {
+            "historicalCostNanodollars": 0,
+            "holdoutPasses": 12944,
+            "paidLookups": 0,
+            "promotions": 0
+          },
+          "stalled-uniform-tail": {
+            "admissionLookups": 1356,
+            "historicalCostNanodollars": 380110294350,
+            "holdoutPasses": 13580,
+            "paidLookups": 2914,
+            "promotions": 47,
+            "scheduleSwitches": 0,
+            "validationLookups": 1558
+          },
+          "uniform-depth-4": {
+            "admissionLookups": 1327,
+            "historicalCostNanodollars": 359032164800,
+            "holdoutPasses": 13517,
+            "paidLookups": 2748,
+            "promotions": 43,
+            "scheduleSwitches": 0,
+            "validationLookups": 1421
+          },
+          "validation-routed-opening": {
+            "admissionLookups": 1328,
+            "historicalCostNanodollars": 416672207650,
+            "holdoutPasses": 13580,
+            "paidLookups": 3212,
+            "promotions": 46,
+            "scheduleSwitches": 0,
+            "validationLookups": 1884
+          }
+        }
+      }
+    }
+  }
+}
