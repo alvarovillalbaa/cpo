@@ -1,0 +1,1544 @@
+{
+  "plan": {
+    "archivedMathPlanSha256": "b8b6e7ed7d0e5fa6371b54503b480c785743a24ea280a68cbbcea9cf8990ba1d",
+    "bootstrapDraws": 4096,
+    "bootstrapSeed": 20261126,
+    "challengerCounts": [
+      4,
+      8
+    ],
+    "corpusSha256": "83ea1db450d2113b23066158e8f4d6b6ba02b7dd537f9ae557ab41f331565e1f",
+    "datasets": {
+      "aime": {
+        "folds": [
+          [
+            0,
+            2,
+            4,
+            7,
+            9,
+            10,
+            12,
+            13,
+            18,
+            19,
+            20,
+            21,
+            24,
+            25,
+            27,
+            32,
+            33,
+            37,
+            38,
+            40,
+            43,
+            44
+          ],
+          [
+            1,
+            3,
+            5,
+            6,
+            8,
+            11,
+            14,
+            15,
+            16,
+            17,
+            22,
+            23,
+            26,
+            28,
+            29,
+            30,
+            31,
+            34,
+            35,
+            36,
+            39,
+            41,
+            42
+          ]
+        ],
+        "qualification": 4,
+        "seeds": [
+          17011,
+          17030,
+          17049,
+          17068,
+          17087,
+          17106,
+          17125,
+          17144,
+          17163,
+          17182,
+          17201,
+          17220,
+          17239,
+          17258,
+          17277,
+          17296,
+          17315,
+          17334,
+          17353,
+          17372,
+          17391,
+          17410,
+          17429,
+          17448,
+          17467,
+          17486,
+          17505,
+          17524,
+          17543,
+          17562,
+          17581,
+          17600,
+          17619,
+          17638,
+          17657,
+          17676,
+          17695,
+          17714,
+          17733,
+          17752
+        ],
+        "training": 5,
+        "validation": 6
+      },
+      "arc": {
+        "folds": [
+          [
+            0,
+            1,
+            3,
+            5,
+            7,
+            11,
+            12,
+            15,
+            16,
+            17,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            31,
+            32,
+            35,
+            37,
+            40,
+            41,
+            43,
+            44,
+            46,
+            48,
+            49,
+            51,
+            52,
+            54,
+            55,
+            56,
+            57,
+            59,
+            69,
+            70,
+            73,
+            76,
+            78,
+            79
+          ],
+          [
+            2,
+            4,
+            6,
+            8,
+            9,
+            10,
+            13,
+            14,
+            18,
+            19,
+            20,
+            21,
+            22,
+            29,
+            30,
+            33,
+            34,
+            36,
+            38,
+            39,
+            42,
+            45,
+            47,
+            50,
+            53,
+            58,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            71,
+            72,
+            74,
+            75,
+            77
+          ]
+        ],
+        "qualification": 4,
+        "seeds": [
+          16141,
+          16160,
+          16179,
+          16198,
+          16217,
+          16236,
+          16255,
+          16274,
+          16293,
+          16312,
+          16331,
+          16350,
+          16369,
+          16388,
+          16407,
+          16426,
+          16445,
+          16464,
+          16483,
+          16502,
+          16521,
+          16540,
+          16559,
+          16578,
+          16597,
+          16616,
+          16635,
+          16654,
+          16673,
+          16692,
+          16711,
+          16730,
+          16749,
+          16768,
+          16787,
+          16806,
+          16825,
+          16844,
+          16863,
+          16882
+        ],
+        "training": 9,
+        "validation": 8
+      }
+    },
+    "fixedMenu": [
+      "fitted-opening-repair",
+      "uniform/8/18",
+      "successive-halving/4/6"
+    ],
+    "gepaVersion": "0.1.4",
+    "incumbentGroups": [
+      "root",
+      "rotated"
+    ],
+    "optInVerificationSha256": "636cc17bbfd8d330557c3b683b6fe0e5bca795744b9f520472e9d095ef4743a7",
+    "parentPlanSha256": "999bfe82cb008e3d245ec8a1c2ac019d4dc09458c829f4164343bb49fa2ee5e6",
+    "parentReceiptSha256": "1d9c66cbe25b27f7fa7f5c6267fa8b58f48054f37d52a153ef91fa4ee5c68b31",
+    "primaryArms": [
+      "cpo-full-roster-precheck",
+      "calibrated-fixed-opening",
+      "calibrated-gepa-or-retain"
+    ],
+    "protocol": "cpo-full-roster-fixed-opening-v1",
+    "qualificationRows": 4,
+    "scope": "Fit one fixed opening per subject, geometry and calibration direction. Replay the published full-roster route and its three schedules with no training reads. Fit both the fixed policy and split-safe GEPA or retention at the adaptive arm's realized calibration lookup budget, with one shared hard per-trial cap. Audit only the selected settings and the published adaptive route on the other fold.",
+    "searchCap": 21,
+    "sourceSha256": {
+      "benchmarks/full_roster_fixed_opening.py": "848512d54797c736faa33a261be3c80fe5ac20fa9f5e1eea93d891595788a57f",
+      "benchmarks/full_roster_precheck_math.py": "bfb12a1d1fd8d7e51c57075aa65d3548d61171ef66d4844e3ef238a7c08c31f1",
+      "benchmarks/gepa_paid_cap_transfer.py": "6dac594311b6abe3e6fee93f0ec7a93ed37e9d5587f67f56b3764fc2c8b09300",
+      "benchmarks/paired_order_gepa_comparison.py": "5c68d3f6ad79eecc0a80c17816e04c6ab1d8231ad88e43446c36e88002ac6d56",
+      "benchmarks/recorded_math_budget_crossfit.py": "0f926fbf3e874b146cd5d743613cff3ec93a28dcd0abc0510cf5215d5189b3e1",
+      "benchmarks/recorded_math_router_transfer.py": "270cdc7f0d2bf5009821a234df9200caaeb4a813df1960a7be030df7bdb082fa",
+      "benchmarks/recorded_math_validation_ties.py": "ea8a310a65392ddad1d3ecc5c1a4639674b941e8e02e344a81abf1ad802f07b0",
+      "benchmarks/recorded_two_witness_math_transfer.py": "1641fc09f52c4d99cdca7a76763c1f79e535858d9ed870184e3bcefd989b3cf9",
+      "benchmarks/routed_validation_ties.py": "116afb17765817c2cbf5ae1a434ebe980dcf04e6f588940877778008483fe399",
+      "cpo/feedback_episode.py": "3626b828ee0d37e3a58aeb29961fe4f00496967c6835b27e8d1cc7cec79528f8",
+      "cpo/full_roster_precheck/__init__.py": "4283579d6118efbf4ccd35fb7c15dc6f853e0249b3716b26d3bfd6f51c59672e",
+      "cpo/paired_qualification.py": "0506020ce5b31590e3e569b5d3278739da302e7b5e2741fc18d586cb523f79c7",
+      "cpo/pool.py": "5e5e2ca90b0e6839d6c14d6eb9ba3680874092063196fec406f396c765a03ec0"
+    },
+    "totalCap": 29,
+    "trainingProbes": 2
+  },
+  "planSha256": "591d483b0a4bbeb141935111cc9afbdac29e8b21cda1655b9bf668c8d6a006ef",
+  "providerRequests": 0,
+  "results": {
+    "aime": {
+      "root/4": {
+        "auditTotals": {
+          "calibrated-fixed-opening": {
+            "holdoutPasses": 311,
+            "paidLookups": 611
+          },
+          "calibrated-gepa-or-retain": {
+            "holdoutPasses": 311,
+            "paidLookups": 518
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 316,
+            "paidLookups": 1082
+          }
+        },
+        "directions": [
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "holdoutPasses": 140,
+                "paidLookups": 170,
+                "qualificationLookups": 70,
+                "validationLookups": 100
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 135,
+                "paidLookups": 0
+              },
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 145,
+                "paidLookups": 598,
+                "qualificationLookups": 174,
+                "trainingLookups": 80,
+                "validationLookups": 344
+              }
+            },
+            "auditFold": 1,
+            "auditScoringRowsPerTrial": 8,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 171,
+                "paidLookups": 484,
+                "qualificationLookups": 133,
+                "trainingLookups": 80,
+                "validationLookups": 271
+              },
+              "fitted-opening-repair": {
+                "holdoutPasses": 171,
+                "paidLookups": 431,
+                "qualificationLookups": 136,
+                "validationLookups": 295
+              },
+              "successive-halving/4/6": {
+                "holdoutPasses": 171,
+                "paidLookups": 144,
+                "qualificationLookups": 61,
+                "validationLookups": 83
+              },
+              "uniform/8/18": {
+                "holdoutPasses": 171,
+                "paidLookups": 441,
+                "qualificationLookups": 140,
+                "validationLookups": 301
+              }
+            },
+            "calibrationFold": 0,
+            "calibrationGepa": {
+              "holdoutPasses": 176,
+              "paidLookups": 0,
+              "setting": "retain-start"
+            },
+            "fixedSetting": "successive-halving/4/6",
+            "trials": 40
+          },
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "holdoutPasses": 171,
+                "paidLookups": 441,
+                "qualificationLookups": 140,
+                "validationLookups": 301
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 176,
+                "paidLookups": 518
+              },
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 171,
+                "paidLookups": 484,
+                "qualificationLookups": 133,
+                "trainingLookups": 80,
+                "validationLookups": 271
+              }
+            },
+            "auditFold": 0,
+            "auditScoringRowsPerTrial": 7,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 145,
+                "paidLookups": 598,
+                "qualificationLookups": 174,
+                "trainingLookups": 80,
+                "validationLookups": 344
+              },
+              "fitted-opening-repair": {
+                "holdoutPasses": 143,
+                "paidLookups": 557,
+                "qualificationLookups": 185,
+                "validationLookups": 372
+              },
+              "successive-halving/4/6": {
+                "holdoutPasses": 140,
+                "paidLookups": 170,
+                "qualificationLookups": 70,
+                "validationLookups": 100
+              },
+              "uniform/8/18": {
+                "holdoutPasses": 145,
+                "paidLookups": 564,
+                "qualificationLookups": 197,
+                "validationLookups": 367
+              }
+            },
+            "calibrationFold": 1,
+            "calibrationGepa": {
+              "holdoutPasses": 136,
+              "paidLookups": 554,
+              "setting": "full:gepa-sequential-precheck/16/paired-gain-2"
+            },
+            "fixedSetting": "uniform/8/18",
+            "trials": 40
+          }
+        ],
+        "pairedAudit": {
+          "calibrated-gepa-or-retain": {
+            "holdoutPassDifference": 0,
+            "pairedRange95": [
+              -8,
+              8
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": -5,
+            "pairedRange95": [
+              -17,
+              9
+            ]
+          }
+        }
+      },
+      "root/8": {
+        "auditTotals": {
+          "calibrated-fixed-opening": {
+            "holdoutPasses": 311,
+            "paidLookups": 502
+          },
+          "calibrated-gepa-or-retain": {
+            "holdoutPasses": 311,
+            "paidLookups": 518
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 313,
+            "paidLookups": 1006
+          }
+        },
+        "directions": [
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "holdoutPasses": 140,
+                "paidLookups": 170,
+                "qualificationLookups": 70,
+                "validationLookups": 100
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 135,
+                "paidLookups": 0
+              },
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 142,
+                "paidLookups": 582,
+                "qualificationLookups": 154,
+                "trainingLookups": 80,
+                "validationLookups": 348
+              }
+            },
+            "auditFold": 1,
+            "auditScoringRowsPerTrial": 8,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 171,
+                "paidLookups": 424,
+                "qualificationLookups": 82,
+                "trainingLookups": 80,
+                "validationLookups": 262
+              },
+              "fitted-opening-repair": {
+                "holdoutPasses": 171,
+                "paidLookups": 422,
+                "qualificationLookups": 135,
+                "validationLookups": 287
+              },
+              "successive-halving/4/6": {
+                "holdoutPasses": 171,
+                "paidLookups": 144,
+                "qualificationLookups": 61,
+                "validationLookups": 83
+              },
+              "uniform/8/18": {
+                "holdoutPasses": 171,
+                "paidLookups": 332,
+                "qualificationLookups": 81,
+                "validationLookups": 251
+              }
+            },
+            "calibrationFold": 0,
+            "calibrationGepa": {
+              "holdoutPasses": 176,
+              "paidLookups": 0,
+              "setting": "retain-start"
+            },
+            "fixedSetting": "successive-halving/4/6",
+            "trials": 40
+          },
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "holdoutPasses": 171,
+                "paidLookups": 332,
+                "qualificationLookups": 81,
+                "validationLookups": 251
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 176,
+                "paidLookups": 518
+              },
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 171,
+                "paidLookups": 424,
+                "qualificationLookups": 82,
+                "trainingLookups": 80,
+                "validationLookups": 262
+              }
+            },
+            "auditFold": 0,
+            "auditScoringRowsPerTrial": 7,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 142,
+                "paidLookups": 582,
+                "qualificationLookups": 154,
+                "trainingLookups": 80,
+                "validationLookups": 348
+              },
+              "fitted-opening-repair": {
+                "holdoutPasses": 143,
+                "paidLookups": 593,
+                "qualificationLookups": 191,
+                "validationLookups": 402
+              },
+              "successive-halving/4/6": {
+                "holdoutPasses": 140,
+                "paidLookups": 170,
+                "qualificationLookups": 70,
+                "validationLookups": 100
+              },
+              "uniform/8/18": {
+                "holdoutPasses": 142,
+                "paidLookups": 475,
+                "qualificationLookups": 142,
+                "validationLookups": 333
+              }
+            },
+            "calibrationFold": 1,
+            "calibrationGepa": {
+              "holdoutPasses": 136,
+              "paidLookups": 554,
+              "setting": "full:gepa-sequential-precheck/16/paired-gain-2"
+            },
+            "fixedSetting": "uniform/8/18",
+            "trials": 40
+          }
+        ],
+        "pairedAudit": {
+          "calibrated-gepa-or-retain": {
+            "holdoutPassDifference": 0,
+            "pairedRange95": [
+              -9,
+              9
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": -2,
+            "pairedRange95": [
+              -13,
+              10
+            ]
+          }
+        }
+      },
+      "rotated/4": {
+        "auditTotals": {
+          "calibrated-fixed-opening": {
+            "holdoutPasses": 2542,
+            "paidLookups": 7922
+          },
+          "calibrated-gepa-or-retain": {
+            "holdoutPasses": 2506,
+            "paidLookups": 7848
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 2538,
+            "paidLookups": 7909
+          }
+        },
+        "directions": [
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "holdoutPasses": 1399,
+                "paidLookups": 4024,
+                "qualificationLookups": 1316,
+                "validationLookups": 2708
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 1379,
+                "paidLookups": 4101
+              },
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 1395,
+                "paidLookups": 4011,
+                "qualificationLookups": 1152,
+                "trainingLookups": 640,
+                "validationLookups": 2219
+              }
+            },
+            "auditFold": 1,
+            "auditScoringRowsPerTrial": 8,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 1143,
+                "paidLookups": 3898,
+                "qualificationLookups": 1167,
+                "trainingLookups": 640,
+                "validationLookups": 2091
+              },
+              "fitted-opening-repair": {
+                "holdoutPasses": 1146,
+                "paidLookups": 3641,
+                "qualificationLookups": 1261,
+                "validationLookups": 2380
+              },
+              "successive-halving/4/6": {
+                "holdoutPasses": 1139,
+                "paidLookups": 1500,
+                "qualificationLookups": 651,
+                "validationLookups": 849
+              },
+              "uniform/8/18": {
+                "holdoutPasses": 1143,
+                "paidLookups": 3838,
+                "qualificationLookups": 1384,
+                "validationLookups": 2454
+              }
+            },
+            "calibrationFold": 0,
+            "calibrationGepa": {
+              "holdoutPasses": 1130,
+              "paidLookups": 3865,
+              "setting": "full:gepa-sequential-precheck/16/paired-gain-1"
+            },
+            "fixedSetting": "fitted-opening-repair",
+            "trials": 320
+          },
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "holdoutPasses": 1143,
+                "paidLookups": 3898,
+                "qualificationLookups": 1167,
+                "trainingLookups": 640,
+                "validationLookups": 2091
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 1127,
+                "paidLookups": 3747
+              },
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 1143,
+                "paidLookups": 3898,
+                "qualificationLookups": 1167,
+                "trainingLookups": 640,
+                "validationLookups": 2091
+              }
+            },
+            "auditFold": 0,
+            "auditScoringRowsPerTrial": 7,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 1395,
+                "paidLookups": 4011,
+                "qualificationLookups": 1152,
+                "trainingLookups": 640,
+                "validationLookups": 2219
+              },
+              "fitted-opening-repair": {
+                "holdoutPasses": 1399,
+                "paidLookups": 4024,
+                "qualificationLookups": 1316,
+                "validationLookups": 2708
+              },
+              "successive-halving/4/6": {
+                "holdoutPasses": 1392,
+                "paidLookups": 1352,
+                "qualificationLookups": 573,
+                "validationLookups": 779
+              },
+              "uniform/8/18": {
+                "holdoutPasses": 1401,
+                "paidLookups": 4093,
+                "qualificationLookups": 1371,
+                "validationLookups": 2722
+              }
+            },
+            "calibrationFold": 1,
+            "calibrationGepa": {
+              "holdoutPasses": 1383,
+              "paidLookups": 3946,
+              "setting": "half:gepa-sequential-precheck/14/paired-gain-1"
+            },
+            "fixedSetting": "cpo-full-roster-precheck",
+            "trials": 320
+          }
+        ],
+        "pairedAudit": {
+          "calibrated-gepa-or-retain": {
+            "holdoutPassDifference": 36,
+            "pairedRange95": [
+              -8,
+              80
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": 4,
+            "pairedRange95": [
+              -7,
+              15
+            ]
+          }
+        }
+      },
+      "rotated/8": {
+        "auditTotals": {
+          "calibrated-fixed-opening": {
+            "holdoutPasses": 2526,
+            "paidLookups": 5156
+          },
+          "calibrated-gepa-or-retain": {
+            "holdoutPasses": 2503,
+            "paidLookups": 2658
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 2537,
+            "paidLookups": 7653
+          }
+        },
+        "directions": [
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "holdoutPasses": 1387,
+                "paidLookups": 3656,
+                "qualificationLookups": 1024,
+                "validationLookups": 2632
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 1375,
+                "paidLookups": 0
+              },
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 1391,
+                "paidLookups": 3829,
+                "qualificationLookups": 1022,
+                "trainingLookups": 640,
+                "validationLookups": 2167
+              }
+            },
+            "auditFold": 1,
+            "auditScoringRowsPerTrial": 8,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 1146,
+                "paidLookups": 3824,
+                "qualificationLookups": 1050,
+                "trainingLookups": 640,
+                "validationLookups": 2134
+              },
+              "fitted-opening-repair": {
+                "holdoutPasses": 1153,
+                "paidLookups": 3871,
+                "qualificationLookups": 1356,
+                "validationLookups": 2515
+              },
+              "successive-halving/4/6": {
+                "holdoutPasses": 1139,
+                "paidLookups": 1500,
+                "qualificationLookups": 651,
+                "validationLookups": 849
+              },
+              "uniform/8/18": {
+                "holdoutPasses": 1146,
+                "paidLookups": 3524,
+                "qualificationLookups": 1145,
+                "validationLookups": 2379
+              }
+            },
+            "calibrationFold": 0,
+            "calibrationGepa": {
+              "holdoutPasses": 1128,
+              "paidLookups": 0,
+              "setting": "retain-start"
+            },
+            "fixedSetting": "uniform/8/18",
+            "trials": 320
+          },
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "holdoutPasses": 1139,
+                "paidLookups": 1500,
+                "qualificationLookups": 651,
+                "validationLookups": 849
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 1128,
+                "paidLookups": 2658
+              },
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 1146,
+                "paidLookups": 3824,
+                "qualificationLookups": 1050,
+                "trainingLookups": 640,
+                "validationLookups": 2134
+              }
+            },
+            "auditFold": 0,
+            "auditScoringRowsPerTrial": 7,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "holdoutPasses": 1391,
+                "paidLookups": 3829,
+                "qualificationLookups": 1022,
+                "trainingLookups": 640,
+                "validationLookups": 2167
+              },
+              "fitted-opening-repair": {
+                "holdoutPasses": 1399,
+                "paidLookups": 4256,
+                "qualificationLookups": 1355,
+                "validationLookups": 2901
+              },
+              "successive-halving/4/6": {
+                "holdoutPasses": 1392,
+                "paidLookups": 1352,
+                "qualificationLookups": 573,
+                "validationLookups": 779
+              },
+              "uniform/8/18": {
+                "holdoutPasses": 1387,
+                "paidLookups": 3656,
+                "qualificationLookups": 1024,
+                "validationLookups": 2632
+              }
+            },
+            "calibrationFold": 1,
+            "calibrationGepa": {
+              "holdoutPasses": 1380,
+              "paidLookups": 2810,
+              "setting": "half:gepa-sequential-precheck/10/paired-gain-1"
+            },
+            "fixedSetting": "successive-halving/4/6",
+            "trials": 320
+          }
+        ],
+        "pairedAudit": {
+          "calibrated-gepa-or-retain": {
+            "holdoutPassDifference": 23,
+            "pairedRange95": [
+              -13,
+              60
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": -11,
+            "pairedRange95": [
+              -36,
+              12
+            ]
+          }
+        }
+      }
+    },
+    "arc": {
+      "root/4": {
+        "auditTotals": {
+          "calibrated-fixed-opening": {
+            "holdoutPasses": 1108,
+            "paidLookups": 1119
+          },
+          "calibrated-gepa-or-retain": {
+            "holdoutPasses": 769,
+            "paidLookups": 1217
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 1051,
+            "paidLookups": 1262
+          }
+        },
+        "directions": [
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "historicalCostNanodollars": 62676155350,
+                "holdoutPasses": 529,
+                "paidLookups": 593,
+                "qualificationLookups": 250,
+                "validationLookups": 343
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 358,
+                "paidLookups": 619
+              },
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 65488119300,
+                "holdoutPasses": 496,
+                "paidLookups": 661,
+                "qualificationLookups": 231,
+                "trainingLookups": 80,
+                "validationLookups": 350
+              }
+            },
+            "auditFold": 1,
+            "auditScoringRowsPerTrial": 19,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 56687247150,
+                "holdoutPasses": 555,
+                "paidLookups": 601,
+                "qualificationLookups": 228,
+                "trainingLookups": 80,
+                "validationLookups": 293
+              },
+              "fitted-opening-repair": {
+                "historicalCostNanodollars": 55692725550,
+                "holdoutPasses": 567,
+                "paidLookups": 556,
+                "qualificationLookups": 235,
+                "validationLookups": 321
+              },
+              "successive-halving/4/6": {
+                "historicalCostNanodollars": 16026483650,
+                "holdoutPasses": 382,
+                "paidLookups": 173,
+                "qualificationLookups": 104,
+                "validationLookups": 69
+              },
+              "uniform/8/18": {
+                "historicalCostNanodollars": 54028904050,
+                "holdoutPasses": 579,
+                "paidLookups": 526,
+                "qualificationLookups": 243,
+                "validationLookups": 283
+              }
+            },
+            "calibrationFold": 0,
+            "calibrationGepa": {
+              "holdoutPasses": 411,
+              "paidLookups": 598,
+              "setting": "half:gepa-sequential-precheck/12/paired-gain-2-threshold-precheck"
+            },
+            "fixedSetting": "uniform/8/18",
+            "trials": 40
+          },
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "historicalCostNanodollars": 54028904050,
+                "holdoutPasses": 579,
+                "paidLookups": 526,
+                "qualificationLookups": 243,
+                "validationLookups": 283
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 411,
+                "paidLookups": 598
+              },
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 56687247150,
+                "holdoutPasses": 555,
+                "paidLookups": 601,
+                "qualificationLookups": 228,
+                "trainingLookups": 80,
+                "validationLookups": 293
+              }
+            },
+            "auditFold": 0,
+            "auditScoringRowsPerTrial": 19,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 65488119300,
+                "holdoutPasses": 496,
+                "paidLookups": 661,
+                "qualificationLookups": 231,
+                "trainingLookups": 80,
+                "validationLookups": 350
+              },
+              "fitted-opening-repair": {
+                "historicalCostNanodollars": 62974908250,
+                "holdoutPasses": 505,
+                "paidLookups": 612,
+                "qualificationLookups": 240,
+                "validationLookups": 372
+              },
+              "successive-halving/4/6": {
+                "historicalCostNanodollars": 20766487450,
+                "holdoutPasses": 342,
+                "paidLookups": 214,
+                "qualificationLookups": 122,
+                "validationLookups": 92
+              },
+              "uniform/8/18": {
+                "historicalCostNanodollars": 62676155350,
+                "holdoutPasses": 529,
+                "paidLookups": 593,
+                "qualificationLookups": 250,
+                "validationLookups": 343
+              }
+            },
+            "calibrationFold": 1,
+            "calibrationGepa": {
+              "holdoutPasses": 358,
+              "paidLookups": 619,
+              "setting": "half:gepa-sequential-precheck/12/paired-gain-2-threshold-precheck"
+            },
+            "fixedSetting": "uniform/8/18",
+            "trials": 40
+          }
+        ],
+        "pairedAudit": {
+          "calibrated-gepa-or-retain": {
+            "holdoutPassDifference": 339,
+            "pairedRange95": [
+              269,
+              408
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": 57,
+            "pairedRange95": [
+              43,
+              71
+            ]
+          }
+        }
+      },
+      "root/8": {
+        "auditTotals": {
+          "calibrated-fixed-opening": {
+            "holdoutPasses": 1042,
+            "paidLookups": 875
+          },
+          "calibrated-gepa-or-retain": {
+            "holdoutPasses": 432,
+            "paidLookups": 0
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 972,
+            "paidLookups": 1108
+          }
+        },
+        "directions": [
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "historicalCostNanodollars": 50806503000,
+                "holdoutPasses": 485,
+                "paidLookups": 473,
+                "qualificationLookups": 218,
+                "validationLookups": 255
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 193,
+                "paidLookups": 0
+              },
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 58156018150,
+                "holdoutPasses": 471,
+                "paidLookups": 593,
+                "qualificationLookups": 218,
+                "trainingLookups": 80,
+                "validationLookups": 295
+              }
+            },
+            "auditFold": 1,
+            "auditScoringRowsPerTrial": 19,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 47669578150,
+                "holdoutPasses": 501,
+                "paidLookups": 515,
+                "qualificationLookups": 206,
+                "trainingLookups": 80,
+                "validationLookups": 229
+              },
+              "fitted-opening-repair": {
+                "historicalCostNanodollars": 48580731550,
+                "holdoutPasses": 473,
+                "paidLookups": 476,
+                "qualificationLookups": 197,
+                "validationLookups": 279
+              },
+              "successive-halving/4/6": {
+                "historicalCostNanodollars": 16026483650,
+                "holdoutPasses": 382,
+                "paidLookups": 173,
+                "qualificationLookups": 104,
+                "validationLookups": 69
+              },
+              "uniform/8/18": {
+                "historicalCostNanodollars": 38530237300,
+                "holdoutPasses": 557,
+                "paidLookups": 402,
+                "qualificationLookups": 229,
+                "validationLookups": 173
+              }
+            },
+            "calibrationFold": 0,
+            "calibrationGepa": {
+              "holdoutPasses": 239,
+              "paidLookups": 0,
+              "setting": "retain-start"
+            },
+            "fixedSetting": "uniform/8/18",
+            "trials": 40
+          },
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "historicalCostNanodollars": 38530237300,
+                "holdoutPasses": 557,
+                "paidLookups": 402,
+                "qualificationLookups": 229,
+                "validationLookups": 173
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 239,
+                "paidLookups": 0
+              },
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 47669578150,
+                "holdoutPasses": 501,
+                "paidLookups": 515,
+                "qualificationLookups": 206,
+                "trainingLookups": 80,
+                "validationLookups": 229
+              }
+            },
+            "auditFold": 0,
+            "auditScoringRowsPerTrial": 19,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 58156018150,
+                "holdoutPasses": 471,
+                "paidLookups": 593,
+                "qualificationLookups": 218,
+                "trainingLookups": 80,
+                "validationLookups": 295
+              },
+              "fitted-opening-repair": {
+                "historicalCostNanodollars": 63601963000,
+                "holdoutPasses": 473,
+                "paidLookups": 604,
+                "qualificationLookups": 225,
+                "validationLookups": 379
+              },
+              "successive-halving/4/6": {
+                "historicalCostNanodollars": 20766487450,
+                "holdoutPasses": 342,
+                "paidLookups": 214,
+                "qualificationLookups": 122,
+                "validationLookups": 92
+              },
+              "uniform/8/18": {
+                "historicalCostNanodollars": 50806503000,
+                "holdoutPasses": 485,
+                "paidLookups": 473,
+                "qualificationLookups": 218,
+                "validationLookups": 255
+              }
+            },
+            "calibrationFold": 1,
+            "calibrationGepa": {
+              "holdoutPasses": 193,
+              "paidLookups": 0,
+              "setting": "retain-start"
+            },
+            "fixedSetting": "uniform/8/18",
+            "trials": 40
+          }
+        ],
+        "pairedAudit": {
+          "calibrated-gepa-or-retain": {
+            "holdoutPassDifference": 610,
+            "pairedRange95": [
+              484,
+              730
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": 70,
+            "pairedRange95": [
+              44,
+              98
+            ]
+          }
+        }
+      },
+      "rotated/4": {
+        "auditTotals": {
+          "calibrated-fixed-opening": {
+            "holdoutPasses": 10612,
+            "paidLookups": 4934
+          },
+          "calibrated-gepa-or-retain": {
+            "holdoutPasses": 10378,
+            "paidLookups": 4792
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 10612,
+            "paidLookups": 4934
+          }
+        },
+        "directions": [
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "historicalCostNanodollars": 363669176300,
+                "holdoutPasses": 5055,
+                "paidLookups": 2720,
+                "qualificationLookups": 779,
+                "trainingLookups": 720,
+                "validationLookups": 1221
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 4898,
+                "paidLookups": 2757
+              },
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 363669176300,
+                "holdoutPasses": 5055,
+                "paidLookups": 2720,
+                "qualificationLookups": 779,
+                "trainingLookups": 720,
+                "validationLookups": 1221
+              }
+            },
+            "auditFold": 1,
+            "auditScoringRowsPerTrial": 19,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 288319924800,
+                "holdoutPasses": 5557,
+                "paidLookups": 2214,
+                "qualificationLookups": 664,
+                "trainingLookups": 720,
+                "validationLookups": 830
+              },
+              "fitted-opening-repair": {
+                "historicalCostNanodollars": 282885192000,
+                "holdoutPasses": 5576,
+                "paidLookups": 2216,
+                "qualificationLookups": 1353,
+                "validationLookups": 863
+              },
+              "successive-halving/4/6": {
+                "historicalCostNanodollars": 101819647750,
+                "holdoutPasses": 5511,
+                "paidLookups": 775,
+                "qualificationLookups": 279,
+                "validationLookups": 496
+              },
+              "uniform/8/18": {
+                "historicalCostNanodollars": 302926295250,
+                "holdoutPasses": 5573,
+                "paidLookups": 2323,
+                "qualificationLookups": 1370,
+                "validationLookups": 953
+              }
+            },
+            "calibrationFold": 0,
+            "calibrationGepa": {
+              "holdoutPasses": 5486,
+              "paidLookups": 2059,
+              "setting": "half:gepa-sequential-precheck/20/gain-2-threshold-precheck"
+            },
+            "fixedSetting": "cpo-full-roster-precheck",
+            "trials": 360
+          },
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "historicalCostNanodollars": 288319924800,
+                "holdoutPasses": 5557,
+                "paidLookups": 2214,
+                "qualificationLookups": 664,
+                "trainingLookups": 720,
+                "validationLookups": 830
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 5480,
+                "paidLookups": 2035
+              },
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 288319924800,
+                "holdoutPasses": 5557,
+                "paidLookups": 2214,
+                "qualificationLookups": 664,
+                "trainingLookups": 720,
+                "validationLookups": 830
+              }
+            },
+            "auditFold": 0,
+            "auditScoringRowsPerTrial": 19,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 363669176300,
+                "holdoutPasses": 5055,
+                "paidLookups": 2720,
+                "qualificationLookups": 779,
+                "trainingLookups": 720,
+                "validationLookups": 1221
+              },
+              "fitted-opening-repair": {
+                "historicalCostNanodollars": 366253507250,
+                "holdoutPasses": 5048,
+                "paidLookups": 2821,
+                "qualificationLookups": 1370,
+                "validationLookups": 1451
+              },
+              "successive-halving/4/6": {
+                "historicalCostNanodollars": 133312866250,
+                "holdoutPasses": 4917,
+                "paidLookups": 957,
+                "qualificationLookups": 264,
+                "validationLookups": 693
+              },
+              "uniform/8/18": {
+                "historicalCostNanodollars": 391201483450,
+                "holdoutPasses": 5074,
+                "paidLookups": 2940,
+                "qualificationLookups": 1403,
+                "validationLookups": 1537
+              }
+            },
+            "calibrationFold": 1,
+            "calibrationGepa": {
+              "holdoutPasses": 4881,
+              "paidLookups": 2624,
+              "setting": "half:gepa-batched-precheck/20/paired-gain-2-threshold-precheck"
+            },
+            "fixedSetting": "cpo-full-roster-precheck",
+            "trials": 360
+          }
+        ],
+        "pairedAudit": {
+          "calibrated-gepa-or-retain": {
+            "holdoutPassDifference": 234,
+            "pairedRange95": [
+              169,
+              301
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": 0,
+            "pairedRange95": [
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "rotated/8": {
+        "auditTotals": {
+          "calibrated-fixed-opening": {
+            "holdoutPasses": 10561,
+            "paidLookups": 3958
+          },
+          "calibrated-gepa-or-retain": {
+            "holdoutPasses": 10305,
+            "paidLookups": 4073
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPasses": 10568,
+            "paidLookups": 4376
+          }
+        },
+        "directions": [
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "historicalCostNanodollars": 340661683550,
+                "holdoutPasses": 5018,
+                "paidLookups": 2495,
+                "qualificationLookups": 479,
+                "trainingLookups": 720,
+                "validationLookups": 1296
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 4846,
+                "paidLookups": 2159
+              },
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 340661683550,
+                "holdoutPasses": 5018,
+                "paidLookups": 2495,
+                "qualificationLookups": 479,
+                "trainingLookups": 720,
+                "validationLookups": 1296
+              }
+            },
+            "auditFold": 1,
+            "auditScoringRowsPerTrial": 19,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 245001487550,
+                "holdoutPasses": 5550,
+                "paidLookups": 1881,
+                "qualificationLookups": 362,
+                "trainingLookups": 720,
+                "validationLookups": 799
+              },
+              "fitted-opening-repair": {
+                "historicalCostNanodollars": 276568454200,
+                "holdoutPasses": 5562,
+                "paidLookups": 2132,
+                "qualificationLookups": 1355,
+                "validationLookups": 777
+              },
+              "successive-halving/4/6": {
+                "historicalCostNanodollars": 101819647750,
+                "holdoutPasses": 5511,
+                "paidLookups": 775,
+                "qualificationLookups": 279,
+                "validationLookups": 496
+              },
+              "uniform/8/18": {
+                "historicalCostNanodollars": 190870899550,
+                "holdoutPasses": 5543,
+                "paidLookups": 1463,
+                "qualificationLookups": 421,
+                "validationLookups": 1042
+              }
+            },
+            "calibrationFold": 0,
+            "calibrationGepa": {
+              "holdoutPasses": 5415,
+              "paidLookups": 1732,
+              "setting": "half:gepa-sequential-precheck/12/gain-2-threshold-precheck"
+            },
+            "fixedSetting": "cpo-full-roster-precheck",
+            "trials": 360
+          },
+          {
+            "audit": {
+              "calibrated-fixed-opening": {
+                "historicalCostNanodollars": 190870899550,
+                "holdoutPasses": 5543,
+                "paidLookups": 1463,
+                "qualificationLookups": 421,
+                "validationLookups": 1042
+              },
+              "calibrated-gepa-or-retain": {
+                "holdoutPasses": 5459,
+                "paidLookups": 1914
+              },
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 245001487550,
+                "holdoutPasses": 5550,
+                "paidLookups": 1881,
+                "qualificationLookups": 362,
+                "trainingLookups": 720,
+                "validationLookups": 799
+              }
+            },
+            "auditFold": 0,
+            "auditScoringRowsPerTrial": 19,
+            "calibrationCpoMenu": {
+              "cpo-full-roster-precheck": {
+                "historicalCostNanodollars": 340661683550,
+                "holdoutPasses": 5018,
+                "paidLookups": 2495,
+                "qualificationLookups": 479,
+                "trainingLookups": 720,
+                "validationLookups": 1296
+              },
+              "fitted-opening-repair": {
+                "historicalCostNanodollars": 344516008500,
+                "holdoutPasses": 5014,
+                "paidLookups": 2615,
+                "qualificationLookups": 1309,
+                "validationLookups": 1306
+              },
+              "successive-halving/4/6": {
+                "historicalCostNanodollars": 133312866250,
+                "holdoutPasses": 4917,
+                "paidLookups": 957,
+                "qualificationLookups": 264,
+                "validationLookups": 693
+              },
+              "uniform/8/18": {
+                "historicalCostNanodollars": 347833145100,
+                "holdoutPasses": 5026,
+                "paidLookups": 2486,
+                "qualificationLookups": 679,
+                "validationLookups": 1807
+              }
+            },
+            "calibrationFold": 1,
+            "calibrationGepa": {
+              "holdoutPasses": 4875,
+              "paidLookups": 2439,
+              "setting": "half:gepa-sequential-precheck/16/paired-gain-2-threshold-precheck"
+            },
+            "fixedSetting": "uniform/8/18",
+            "trials": 360
+          }
+        ],
+        "pairedAudit": {
+          "calibrated-gepa-or-retain": {
+            "holdoutPassDifference": 256,
+            "pairedRange95": [
+              180,
+              334
+            ]
+          },
+          "cpo-full-roster-precheck": {
+            "holdoutPassDifference": -7,
+            "pairedRange95": [
+              -20,
+              5
+            ]
+          }
+        }
+      }
+    }
+  }
+}
