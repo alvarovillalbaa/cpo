@@ -12,6 +12,8 @@ The confirmation ceiling is **576 generations** for 48 cases, two repeats, and a
 
 The rehearsal injected one schema-valid policy error into each regime. When all arms shared a persistent error, the paired comparison passed all 48 fixtures and the per-regime requirement rejected all 48. When all arms shared only one failed repeat, all 48 fixtures qualified. The paired comparison caught all 48 persistent candidate-only errors. These tests measure the gate's ability to detect the defined synthetic faults. Binding model prompts and costs requires a complete, qualifying development archive. [Runner](../benchmarks/first_gain_regime_confirmation.py) · [Tests](../tests/unit/test_first_gain_regime_confirmation.py)
 
+The offline binding rehearsal checks the complete development archive and the exact confirmation request schedule. [Binding and replay](first-gain-bound-confirmation.md)
+
 ## Reproduce offline
 
 Run without arguments to preview the seal. Use Python 3.12 and the hash-pinned GEPA 0.1.4 wheel for the accompanying benchmark tests.
