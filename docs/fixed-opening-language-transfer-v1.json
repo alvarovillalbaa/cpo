@@ -1,0 +1,976 @@
+{
+  "cohorts": {
+    "additional-MMLU": {
+      "byAdaptiveOpening": {
+        "fitted-opening-repair": {
+          "changedFinalPrompts": 2,
+          "episodes": 39,
+          "paidLookupDelta": -6
+        },
+        "successive-halving/4/6": {
+          "changedFinalPrompts": 5,
+          "episodes": 112,
+          "paidLookupDelta": 1449
+        },
+        "uniform/8/18": {
+          "changedFinalPrompts": 0,
+          "episodes": 105,
+          "paidLookupDelta": -210
+        }
+      },
+      "episodes": 256,
+      "nativeBoundsAtFixedCost": {
+        "common-gepa": {
+          "attainer": {
+            "holdoutPasses": 7393,
+            "paidLookups": 0,
+            "setting": "retain-start"
+          },
+          "lowerPasses": 7393,
+          "upperPasses": 7393
+        },
+        "subject-tuned-gepa": {
+          "attainer": {
+            "holdoutPasses": 7399,
+            "paidLookups": 6001,
+            "settingsBySubject": {
+              "college_biology": "retain-start",
+              "college_physics": "retain-start",
+              "electrical_engineering": "split-safe-three:gepa-sequential-precheck/32/gain-1",
+              "human_aging": "split-safe-three:gepa-batched-precheck/25/paired-gain-1"
+            }
+          },
+          "lowerPasses": 7399,
+          "upperPasses": 7399
+        }
+      },
+      "paidTraceSha256": {
+        "adaptive-full-roster": "cfb0aa2bfb7a6ef61742511179880f0adb8c505e0107c964a6ecc114eee48704",
+        "fixed-uniform": "51c84b097869c229bfc1cfa8c180dda5ae81daabfbaf29ab9ec59b3ed2dffcec"
+      },
+      "paired": {
+        "adaptive-full-roster": {
+          "holdoutPassDifference": -3,
+          "pairedRange95": [
+            -13,
+            7
+          ]
+        },
+        "common-gepa": {
+          "holdoutPassDifference": 2,
+          "pairedRange95": [
+            -8,
+            13
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": -4,
+          "pairedRange95": [
+            -17,
+            9
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -10,
+          "pairedRange95": [
+            -21,
+            1
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": -2,
+          "pairedRange95": [
+            -11,
+            7
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": -2,
+          "pairedRange95": [
+            -11,
+            7
+          ]
+        }
+      },
+      "replayedNativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 7393,
+          "paidLookups": 0
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 7399,
+          "paidLookups": 6001
+        }
+      },
+      "simpleAtFixedCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 7405,
+          "paidLookups": 5354,
+          "settingsBySubject": {
+            "college_biology": "retain-start",
+            "college_physics": "retain-start",
+            "electrical_engineering": "uniform/4/30",
+            "human_aging": "retain-start"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 7397,
+          "paidLookups": 5124,
+          "setting": "successive-halving/4/6"
+        },
+        "uniform": {
+          "holdoutPasses": 7397,
+          "paidLookups": 5124,
+          "setting": "uniform/4/6"
+        }
+      },
+      "totals": {
+        "adaptive-full-roster": {
+          "holdoutPasses": 7398,
+          "overriddenCycles": 53,
+          "paidLookups": 5246,
+          "qualificationLookups": 904,
+          "trainingLookups": 512,
+          "validationLookups": 3830
+        },
+        "fixed-uniform": {
+          "holdoutPasses": 7395,
+          "overriddenCycles": 77,
+          "paidLookups": 6479,
+          "qualificationLookups": 1057,
+          "validationLookups": 5422
+        }
+      }
+    },
+    "bounded-BBH": {
+      "byAdaptiveOpening": {
+        "fitted-opening-repair": {
+          "changedFinalPrompts": 21,
+          "episodes": 94,
+          "paidLookupDelta": -269
+        },
+        "successive-halving/4/6": {
+          "changedFinalPrompts": 27,
+          "episodes": 102,
+          "paidLookupDelta": 1714
+        },
+        "uniform/8/18": {
+          "changedFinalPrompts": 0,
+          "episodes": 188,
+          "paidLookupDelta": -376
+        }
+      },
+      "episodes": 384,
+      "nativeBoundsAtFixedCost": {
+        "common-gepa": {
+          "attainer": null,
+          "lowerPasses": 6111,
+          "upperPasses": 6290
+        },
+        "subject-tuned-gepa": {
+          "attainer": null,
+          "lowerPasses": 6111,
+          "upperPasses": 6350
+        }
+      },
+      "paidTraceSha256": {
+        "adaptive-full-roster": "468ec77392602691358bb6cce56729dbd9da58763860f5f16eba02c084051a4a",
+        "fixed-uniform": "138d5d9a639594ef21133ca49c0cb140c13aa8b50e5c7e5310f1c40c9c8babef"
+      },
+      "paired": {
+        "adaptive-full-roster": {
+          "holdoutPassDifference": 6,
+          "pairedRange95": [
+            -41,
+            52
+          ]
+        },
+        "common-gepa": {
+          "holdoutPassDifference": 221,
+          "pairedRange95": [
+            118,
+            319
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": 221,
+          "pairedRange95": [
+            118,
+            319
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -58,
+          "pairedRange95": [
+            -140,
+            22
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 11,
+          "pairedRange95": [
+            -33,
+            55
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 23,
+          "pairedRange95": [
+            -44,
+            87
+          ]
+        }
+      },
+      "replayedNativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 6111,
+          "paidLookups": 0
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 6111,
+          "paidLookups": 0
+        }
+      },
+      "simpleAtFixedCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 6390,
+          "paidLookups": 12320,
+          "settingsBySubject": {
+            "bbh-disambiguation_qa": "successive-halving/8/14",
+            "bbh-formal_fallacies": "successive-halving/4/10",
+            "bbh-hyperbaton": "retain-start",
+            "bbh-logical_deduction_five_objects": "successive-halving/4/6",
+            "bbh-navigate": "uniform/4/25",
+            "bbh-penguins_in_a_table": "retain-start"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 6321,
+          "paidLookups": 12570,
+          "setting": "successive-halving/4/8"
+        },
+        "uniform": {
+          "holdoutPasses": 6309,
+          "paidLookups": 9061,
+          "setting": "uniform/4/6"
+        }
+      },
+      "totals": {
+        "adaptive-full-roster": {
+          "holdoutPasses": 6326,
+          "overriddenCycles": 194,
+          "paidLookups": 11549,
+          "qualificationLookups": 3563,
+          "trainingLookups": 768,
+          "validationLookups": 7218
+        },
+        "fixed-uniform": {
+          "holdoutPasses": 6332,
+          "overriddenCycles": 221,
+          "paidLookups": 12618,
+          "qualificationLookups": 3825,
+          "validationLookups": 8793
+        }
+      }
+    },
+    "bounded-LMentry": {
+      "byAdaptiveOpening": {
+        "fitted-opening-repair": {
+          "changedFinalPrompts": 45,
+          "episodes": 208,
+          "paidLookupDelta": -1641
+        },
+        "successive-halving/4/6": {
+          "changedFinalPrompts": 19,
+          "episodes": 68,
+          "paidLookupDelta": 902
+        },
+        "uniform/8/18": {
+          "changedFinalPrompts": 0,
+          "episodes": 108,
+          "paidLookupDelta": -216
+        }
+      },
+      "episodes": 384,
+      "nativeBoundsAtFixedCost": {
+        "common-gepa": {
+          "attainer": null,
+          "lowerPasses": 3855,
+          "upperPasses": 5346
+        },
+        "subject-tuned-gepa": {
+          "attainer": null,
+          "lowerPasses": 3855,
+          "upperPasses": 5931
+        }
+      },
+      "paidTraceSha256": {
+        "adaptive-full-roster": "db383db3380c95452c41915c341d009cbe7f18da1585cfcdfc3896779e596b65",
+        "fixed-uniform": "63328a305ec2527d5b5fcf0bc5e43192653102e2db5df4143378df4fc927b591"
+      },
+      "paired": {
+        "adaptive-full-roster": {
+          "holdoutPassDifference": 96,
+          "pairedRange95": [
+            45,
+            145
+          ]
+        },
+        "common-gepa": {
+          "holdoutPassDifference": 2644,
+          "pairedRange95": [
+            2498,
+            2786
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": 2644,
+          "pairedRange95": [
+            2498,
+            2786
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": 355,
+          "pairedRange95": [
+            284,
+            420
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 660,
+          "pairedRange95": [
+            598,
+            721
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 1004,
+          "pairedRange95": [
+            925,
+            1078
+          ]
+        }
+      },
+      "replayedNativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 3855,
+          "paidLookups": 0
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 3855,
+          "paidLookups": 0
+        }
+      },
+      "simpleAtFixedCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 6144,
+          "paidLookups": 13359,
+          "settingsBySubject": {
+            "lmentry-any_words_from_category": "successive-halving/8/17",
+            "lmentry-ends_with_word": "retain-start",
+            "lmentry-first_alphabetically": "uniform/4/10",
+            "lmentry-homophones": "successive-halving/8/14",
+            "lmentry-less_letters": "successive-halving/8/9",
+            "lmentry-rhyming_word": "successive-halving/8/9"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 5839,
+          "paidLookups": 12385,
+          "setting": "successive-halving/4/8"
+        },
+        "uniform": {
+          "holdoutPasses": 5495,
+          "paidLookups": 8968,
+          "setting": "uniform/4/6"
+        }
+      },
+      "totals": {
+        "adaptive-full-roster": {
+          "holdoutPasses": 6403,
+          "overriddenCycles": 168,
+          "paidLookups": 14428,
+          "qualificationLookups": 4052,
+          "trainingLookups": 768,
+          "validationLookups": 9608
+        },
+        "fixed-uniform": {
+          "holdoutPasses": 6499,
+          "overriddenCycles": 168,
+          "paidLookups": 13473,
+          "qualificationLookups": 3796,
+          "validationLookups": 9677
+        }
+      }
+    },
+    "bounded-MMLU": {
+      "byAdaptiveOpening": {
+        "fitted-opening-repair": {
+          "changedFinalPrompts": 2,
+          "episodes": 35,
+          "paidLookupDelta": -64
+        },
+        "successive-halving/4/6": {
+          "changedFinalPrompts": 4,
+          "episodes": 115,
+          "paidLookupDelta": 1506
+        },
+        "uniform/8/18": {
+          "changedFinalPrompts": 0,
+          "episodes": 106,
+          "paidLookupDelta": -212
+        }
+      },
+      "episodes": 256,
+      "nativeBoundsAtFixedCost": {
+        "common-gepa": {
+          "attainer": {
+            "holdoutPasses": 7711,
+            "paidLookups": 5683,
+            "setting": "split-safe-three:gepa-sequential-precheck/10/gain-1"
+          },
+          "lowerPasses": 7711,
+          "upperPasses": 7711
+        },
+        "subject-tuned-gepa": {
+          "attainer": null,
+          "lowerPasses": 7706,
+          "upperPasses": 7717
+        }
+      },
+      "paidTraceSha256": {
+        "adaptive-full-roster": "9d1e7024a5c7e5e76e8e688d50d458bad35018998ffc90b847f9644ee55c1260",
+        "fixed-uniform": "b9009ff20b6d1b11ee2005b008bb211d0c1d8b666b6c3a7ff6cc5eb137973257"
+      },
+      "paired": {
+        "adaptive-full-roster": {
+          "holdoutPassDifference": -1,
+          "pairedRange95": [
+            -8,
+            5
+          ]
+        },
+        "common-gepa": {
+          "holdoutPassDifference": 3,
+          "pairedRange95": [
+            -13,
+            19
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": 8,
+          "pairedRange95": [
+            -9,
+            25
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -18,
+          "pairedRange95": [
+            -35,
+            -2
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 8,
+          "pairedRange95": [
+            -9,
+            25
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 8,
+          "pairedRange95": [
+            -9,
+            25
+          ]
+        }
+      },
+      "replayedNativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 7711,
+          "paidLookups": 5683
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 7706,
+          "paidLookups": 0
+        }
+      },
+      "simpleAtFixedCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 7732,
+          "paidLookups": 6001,
+          "settingsBySubject": {
+            "anatomy": "retain-start",
+            "computer_security": "retain-start",
+            "high_school_chemistry": "successive-halving/8/20",
+            "human_aging": "successive-halving/4/8"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 7706,
+          "paidLookups": 0,
+          "setting": "retain-start"
+        },
+        "uniform": {
+          "holdoutPasses": 7706,
+          "paidLookups": 0,
+          "setting": "retain-start"
+        }
+      },
+      "totals": {
+        "adaptive-full-roster": {
+          "holdoutPasses": 7715,
+          "overriddenCycles": 51,
+          "paidLookups": 5072,
+          "qualificationLookups": 925,
+          "trainingLookups": 512,
+          "validationLookups": 3635
+        },
+        "fixed-uniform": {
+          "holdoutPasses": 7714,
+          "overriddenCycles": 73,
+          "paidLookups": 6302,
+          "qualificationLookups": 1061,
+          "validationLookups": 5241
+        }
+      }
+    },
+    "four-case-MMLU": {
+      "byAdaptiveOpening": {
+        "fitted-opening-repair": {
+          "changedFinalPrompts": 1,
+          "episodes": 85,
+          "paidLookupDelta": -305
+        },
+        "successive-halving/4/6": {
+          "changedFinalPrompts": 3,
+          "episodes": 140,
+          "paidLookupDelta": 1496
+        },
+        "uniform/8/18": {
+          "changedFinalPrompts": 0,
+          "episodes": 159,
+          "paidLookupDelta": -318
+        }
+      },
+      "episodes": 384,
+      "nativeBoundsAtFixedCost": {
+        "common-gepa": {
+          "attainer": {
+            "holdoutPasses": 22350,
+            "paidLookups": 8525,
+            "setting": "split-safe-three:gepa-sequential-precheck/10/paired-gain-1"
+          },
+          "lowerPasses": 22350,
+          "upperPasses": 22350
+        },
+        "subject-tuned-gepa": {
+          "attainer": {
+            "holdoutPasses": 22369,
+            "paidLookups": 9289,
+            "settingsBySubject": {
+              "college_chemistry": "retain-start",
+              "college_medicine": "split-safe-three:gepa-sequential-precheck/10/gain-1",
+              "human_sexuality": "split-safe-three:gepa-sequential-precheck/37/paired-gain-1",
+              "medical_genetics": "retain-start",
+              "professional_law": "split-safe-six:gepa-batched-precheck/40/paired-gain-1",
+              "virology": "retain-start"
+            }
+          },
+          "lowerPasses": 22369,
+          "upperPasses": 22369
+        }
+      },
+      "paidTraceSha256": {
+        "adaptive-full-roster": "056b03a9082925cebe87255be2ed5a8ecd87789d04e494b88dde124ac4165bfe",
+        "fixed-uniform": "0efb746aa745d6526fb461254fce61ee88e0a09762ce9b6f69b59c6152e883b6"
+      },
+      "paired": {
+        "adaptive-full-roster": {
+          "holdoutPassDifference": -1,
+          "pairedRange95": [
+            -10,
+            8
+          ]
+        },
+        "common-gepa": {
+          "holdoutPassDifference": 15,
+          "pairedRange95": [
+            -6,
+            36
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": -4,
+          "pairedRange95": [
+            -24,
+            17
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -43,
+          "pairedRange95": [
+            -60,
+            -26
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 8,
+          "pairedRange95": [
+            -9,
+            25
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 8,
+          "pairedRange95": [
+            -9,
+            25
+          ]
+        }
+      },
+      "replayedNativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 22350,
+          "paidLookups": 8525
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 22369,
+          "paidLookups": 9289
+        }
+      },
+      "simpleAtFixedCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 22408,
+          "paidLookups": 9958,
+          "settingsBySubject": {
+            "college_chemistry": "uniform/4/15",
+            "college_medicine": "successive-halving/4/10",
+            "human_sexuality": "retain-start",
+            "medical_genetics": "retain-start",
+            "professional_law": "successive-halving/8/17",
+            "virology": "successive-halving/4/6"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 22357,
+          "paidLookups": 7439,
+          "setting": "successive-halving/4/6"
+        },
+        "uniform": {
+          "holdoutPasses": 22357,
+          "paidLookups": 7439,
+          "setting": "uniform/4/6"
+        }
+      },
+      "totals": {
+        "adaptive-full-roster": {
+          "holdoutPasses": 22366,
+          "overriddenCycles": 42,
+          "paidLookups": 9114,
+          "qualificationLookups": 1099,
+          "trainingLookups": 768,
+          "validationLookups": 7247
+        },
+        "fixed-uniform": {
+          "holdoutPasses": 22365,
+          "overriddenCycles": 49,
+          "paidLookups": 9987,
+          "qualificationLookups": 819,
+          "validationLookups": 9168
+        }
+      }
+    },
+    "tie-BBH": {
+      "byAdaptiveOpening": {
+        "fitted-opening-repair": {
+          "changedFinalPrompts": 22,
+          "episodes": 150,
+          "paidLookupDelta": -656
+        },
+        "successive-halving/4/6": {
+          "changedFinalPrompts": 5,
+          "episodes": 16,
+          "paidLookupDelta": 369
+        },
+        "uniform/8/18": {
+          "changedFinalPrompts": 0,
+          "episodes": 90,
+          "paidLookupDelta": -180
+        }
+      },
+      "episodes": 256,
+      "nativeBoundsAtFixedCost": {
+        "common-gepa": {
+          "attainer": null,
+          "lowerPasses": 1944,
+          "upperPasses": 2091
+        },
+        "subject-tuned-gepa": {
+          "attainer": null,
+          "lowerPasses": 1944,
+          "upperPasses": 2126
+        }
+      },
+      "paidTraceSha256": {
+        "adaptive-full-roster": "e5ef0fcbd7fe106443672de612d2d19bc54dc850d66426f6c7a7ccbc1e0a70da",
+        "fixed-uniform": "40629d1d22ee1eb63f0c682b7a91ad70257b2bcc561e66a63892b1b6c85e821c"
+      },
+      "paired": {
+        "adaptive-full-roster": {
+          "holdoutPassDifference": -31,
+          "pairedRange95": [
+            -60,
+            -3
+          ]
+        },
+        "common-gepa": {
+          "holdoutPassDifference": 165,
+          "pairedRange95": [
+            106,
+            225
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": 165,
+          "pairedRange95": [
+            106,
+            225
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": -50,
+          "pairedRange95": [
+            -101,
+            3
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": -7,
+          "pairedRange95": [
+            -49,
+            33
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": -2,
+          "pairedRange95": [
+            -32,
+            28
+          ]
+        }
+      },
+      "replayedNativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 1944,
+          "paidLookups": 0
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 1944,
+          "paidLookups": 0
+        }
+      },
+      "simpleAtFixedCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 2159,
+          "paidLookups": 11170,
+          "settingsBySubject": {
+            "bbh-movie_recommendation": "successive-halving/4/6",
+            "bbh-ruin_names": "successive-halving/4/8",
+            "bbh-salient_translation_error_detection": "successive-halving/4/16",
+            "bbh-snarks": "successive-halving/8/17"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 2116,
+          "paidLookups": 9993,
+          "setting": "successive-halving/4/10"
+        },
+        "uniform": {
+          "holdoutPasses": 2111,
+          "paidLookups": 10071,
+          "setting": "uniform/4/10"
+        }
+      },
+      "totals": {
+        "adaptive-full-roster": {
+          "holdoutPasses": 2140,
+          "overriddenCycles": 163,
+          "paidLookups": 11974,
+          "qualificationLookups": 2574,
+          "trainingLookups": 512,
+          "validationLookups": 8888
+        },
+        "fixed-uniform": {
+          "holdoutPasses": 2109,
+          "overriddenCycles": 168,
+          "paidLookups": 11507,
+          "qualificationLookups": 2439,
+          "validationLookups": 9068
+        }
+      }
+    },
+    "tie-LMentry": {
+      "byAdaptiveOpening": {
+        "fitted-opening-repair": {
+          "changedFinalPrompts": 16,
+          "episodes": 95,
+          "paidLookupDelta": -631
+        },
+        "successive-halving/4/6": {
+          "changedFinalPrompts": 0,
+          "episodes": 5,
+          "paidLookupDelta": 133
+        },
+        "uniform/8/18": {
+          "changedFinalPrompts": 0,
+          "episodes": 28,
+          "paidLookupDelta": -56
+        }
+      },
+      "episodes": 128,
+      "nativeBoundsAtFixedCost": {
+        "common-gepa": {
+          "attainer": null,
+          "lowerPasses": 557,
+          "upperPasses": 835
+        },
+        "subject-tuned-gepa": {
+          "attainer": null,
+          "lowerPasses": 557,
+          "upperPasses": 919
+        }
+      },
+      "paidTraceSha256": {
+        "adaptive-full-roster": "6d33f8db43edfff562589befe346adb9b1a282fe2f9f6db5ba25d23fe8a79443",
+        "fixed-uniform": "aae6f7811ddca5cccff94f2d5d880f96cc3dc0b8ee66feb16b9a918376335f31"
+      },
+      "paired": {
+        "adaptive-full-roster": {
+          "holdoutPassDifference": 19,
+          "pairedRange95": [
+            1,
+            37
+          ]
+        },
+        "common-gepa": {
+          "holdoutPassDifference": 459,
+          "pairedRange95": [
+            398,
+            517
+          ]
+        },
+        "subject-tuned-gepa": {
+          "holdoutPassDifference": 459,
+          "pairedRange95": [
+            398,
+            517
+          ]
+        },
+        "subject-tuned-simple": {
+          "holdoutPassDifference": 11,
+          "pairedRange95": [
+            -5,
+            28
+          ]
+        },
+        "successive-halving": {
+          "holdoutPassDifference": 62,
+          "pairedRange95": [
+            28,
+            95
+          ]
+        },
+        "uniform": {
+          "holdoutPassDifference": 58,
+          "pairedRange95": [
+            33,
+            82
+          ]
+        }
+      },
+      "replayedNativeAnchors": {
+        "common-gepa": {
+          "holdoutPasses": 557,
+          "paidLookups": 0
+        },
+        "subject-tuned-gepa": {
+          "holdoutPasses": 557,
+          "paidLookups": 0
+        }
+      },
+      "simpleAtFixedCost": {
+        "subject-tuned-simple": {
+          "holdoutPasses": 1005,
+          "paidLookups": 6094,
+          "settingsBySubject": {
+            "lmentry-homophones": "uniform/8/18",
+            "lmentry-word_before": "successive-halving/4/8"
+          }
+        },
+        "successive-halving": {
+          "holdoutPasses": 954,
+          "paidLookups": 4810,
+          "setting": "successive-halving/4/10"
+        },
+        "uniform": {
+          "holdoutPasses": 958,
+          "paidLookups": 4838,
+          "setting": "uniform/4/10"
+        }
+      },
+      "totals": {
+        "adaptive-full-roster": {
+          "holdoutPasses": 997,
+          "overriddenCycles": 64,
+          "paidLookups": 6734,
+          "qualificationLookups": 1215,
+          "trainingLookups": 256,
+          "validationLookups": 5263
+        },
+        "fixed-uniform": {
+          "holdoutPasses": 1016,
+          "overriddenCycles": 71,
+          "paidLookups": 6180,
+          "qualificationLookups": 1108,
+          "validationLookups": 5072
+        }
+      }
+    }
+  },
+  "plan": {
+    "arcPlanSha256": "591d483b0a4bbeb141935111cc9afbdac29e8b21cda1655b9bf668c8d6a006ef",
+    "arcReceiptSha256": "f0b747ac89f2a1e57fe9c42e81c0e383a4a53f2b4d1e6cbc018bfd932a3f021b",
+    "arms": [
+      "adaptive-full-roster",
+      "fixed-uniform"
+    ],
+    "baselineReceiptSha256": "636cc17bbfd8d330557c3b683b6fe0e5bca795744b9f520472e9d095ef4743a7",
+    "gepaVersion": "0.1.4",
+    "languageDiscoveryFitSha256": "722c4170fc156acd1b0e9f499f3619b2a5edb539aea946d1272d4369ae8f435f",
+    "languageReceiptSha256": {
+      "additional-MMLU": "85fd60522ba28610af3fd120382e9bd9c4c321ceb95697c452c29ee5d5d59e74",
+      "bounded-BBH": "7c8451cbc72c8f9269ec42360c13ad6339d388baf65bb50f6fe861bb1e1f89a3",
+      "bounded-LMentry": "e4624f1b16d0000f67266dcb2b0c90f6cdd47898e3664385ed4c940d7626f25f",
+      "bounded-MMLU": "581bfae8b75dc897326c1d3e376c1f72aaf29388f4f0cad24643ca7a91d9caf6",
+      "four-case-MMLU": "d762a35942403485f1142e7090c9cf693b4b531fd1867ac816a921e7609d1dd5",
+      "tie-BBH": "f4c6d4fda704ba7e210457f0ca2e5adffb5c518b102359d6ee098cf77fb72765",
+      "tie-LMentry": "728d3620b241d7835bfddc9075e8610f5e3855c144bb1a1b139360a83fea4bc1"
+    },
+    "opening": "uniform/8/18",
+    "protocol": "cpo-fixed-opening-language-transfer-v1",
+    "scope": "Transfer the ARC root choice to each frozen language cohort without tuning. Keep all seeds, ordered rosters, starting prompts, folds and independent qualification. Compare with adaptive full-roster CPO, replayed native GEPA anchors, and archived uniform and halving controls at the fixed arm's paid lookup count. Report cohort-specific paired case ranges and existing native budget bounds.",
+    "sourceSha256": {
+      "benchmarks/feedback_rejection_scout.py": "7f254b02b372b34ab745bca5ef1aca12ce7c3c5de9095e96db636f7f1ebfc61d",
+      "benchmarks/fixed_opening_language_transfer.py": "9b42e846f82492da0dc3a2a1b5f1df30e43e6d386ca4e0058b5a6b157420b7c1",
+      "benchmarks/reinvested_halving_language_transfer.py": "64a8a6980d0c97bb1b89302781258dbc0b08fceb0665e8e3f64e5f3085d1205b",
+      "benchmarks/settled_episode_refit.py": "1edfe0afa59ce596c022e0002c0c79916a8421873c32aa716173ceb3c727c64a",
+      "cpo/full_roster_precheck/__init__.py": "4283579d6118efbf4ccd35fb7c15dc6f853e0249b3716b26d3bfd6f51c59672e",
+      "cpo/full_roster_precheck/fixed_opening.py": "675fed33c7421958a70ba07b868ab8c73450758c154bea2616fa3c683418798a"
+    }
+  },
+  "planSha256": "a765a30487b01f54a2681d2afb05647e699049a6e43ee12e83c4d14803fd4a8d",
+  "providerRequests": 0
+}
